@@ -3,7 +3,7 @@
 **Đề tài:** Ứng dụng OCR kết hợp chữ ký số trong quản lý công văn điện tử tiếng Việt  
 **Dữ liệu phân tích:** toàn bộ kết quả đã scan trong thư mục `jobs/`, phân tích sâu job mới nhất `2bbba632396d`  
 **File scan mới nhất:** `upload\39-bgddt.pdf`  
-**Thời điểm cập nhật số liệu:** 2026-06-01 23:48:11  
+**Thời điểm cập nhật số liệu:** 2026-06-02 05:05:32  
 
 ## 1. Tóm tắt nghiên cứu
 
@@ -221,18 +221,18 @@ OCR và LayoutLMv3 có vai trò khác nhau. OCR nhận dạng chữ từ ảnh; 
 | Torch device | `cuda` |
 | Field label schema | `True` |
 | Field source | `layoutlmv3+best_ocr_rule` |
-| Accepted model fields | `0` |
+| Accepted model fields | `2` |
 | Rejected model fields | `1` |
 
 | Trường | Giá trị trích xuất | Nguồn/nhận xét |
 |---|---|---|
 | Số ký hiệu | 39/2026/TT-BGDĐT | layoutlmv3+best_ocr_rule |
 | Ngày ban hành | 12/05/2026 | layoutlmv3+best_ocr_rule |
-| Cơ quan ban hành | BỘ GIÁO DỤC VÀ ĐÀO TAO | layoutlmv3+best_ocr_rule |
+| Cơ quan ban hành | BỘ GIÁO DỤC VÀ ĐÀO TẠO | layoutlmv3+best_ocr_rule |
 | Loại văn bản | THÔNG TƯ | layoutlmv3+best_ocr_rule |
 | Nơi gửi | N/A | layoutlmv3+best_ocr_rule |
 | Nơi nhận | N/A | layoutlmv3+best_ocr_rule |
-| Trích yếu | THÔNG TU' Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Gỉáo dục phòng và an ninh các cơ sở giáo dục nghiệp, cơ sở giáo dục đại học, trung tâm phòng và an ninh | layoutlmv3+best_ocr_rule |
+| Trích yếu | Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo dục quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, trung tâm giáo dục quốc phòng và an ninh | layoutlmv3+best_ocr_rule |
 
 LayoutLMv3 thật đã chạy bằng transformers từ model local. Trong job mới nhất, field do model dự đoán chưa được guard chấp nhận hoàn toàn, nên metadata cuối cùng được merge với rule fallback. Cách làm này giúp giảm nguy cơ ghi sai metadata vào hồ sơ công văn.
 
