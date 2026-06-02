@@ -1,0 +1,555 @@
+{
+  "job_id": "bea57eaa33ea",
+  "uploaded_file": "upload\\sample_cong_van_scan.png",
+  "raw_image": "images\\sample_cong_van_scan_page1.png",
+  "preprocessed_image": "images\\sample_cong_van_scan_page1_opencv_preprocessed.png",
+  "opencv_steps": [
+    "grayscale",
+    "denoise_fastNlMeans",
+    "deskew_minAreaRect",
+    "CLAHE_contrast",
+    "adaptive_threshold",
+    "morph_close"
+  ],
+  "ground_truth_file": null,
+  "ground_truth_text_length": 0,
+  "results": [
+    {
+      "engine": "easyocr",
+      "variant": "opencv_preprocessed",
+      "status": "ok",
+      "text": "TRƯỜNG ĐẠ HỌC ĐIỆN LỰC\nCỘNG HÒA XÃ HỘICHỦ NGHĨA VIỆT NAM\nKHOA CÔNG NGHỆ THÔNG TIN\nĐộc Iập - Tự do _\nHạnh phúc\nSố: 123/CV-CNTT\nHà Nội, ngày 15 tháng 05 năm 2026\nCÔNG VĂN\nV/v triển khai thử nghiệm hệ thõng quản lý công văn tích\nOCR và chữ ký số\nKính gửi: Phòng Quản lý khoa học và Hợp tác quốc tế\nNhằm phục vụ công tác nghiên cứu khoa học sinh viên năm 2026, Khoa Công nghệ thông tin\nđề nghị nhóm nghiên cứu triển khai thử nghiệm hệ thống hỗ trợ quản lý công văn đi và đến:\nHệ\ncần có chức năng tiếp nhận văn bản scan, nhận diện ký tự quang học OCR,\ntrích xuất các trường thông tin chính như số ký hiệu; ngày ban hành, trích yếu; nơi\nnơi nhận;\nthời hỗ trợ ký số và kiểm tra tính toàn vẹn của văn bản điện tử.\nNhóm nghiên cứu có trách nhiệm chuẩn bị dữ liệu thử nghiệm; báo cáo kết quả so sánh\ncác\nnghệ OCR và đề xuất phương án phù hợp với điều kiện triển khai tại đơn vị:\nNơi nhận:\nNhư trên;\nLưu: VT, CNTTT\nTRUONO KHOA\n4ẩ2\nNam\nhợp\nthống\ngửi,\nđồng\ncông",
+      "boxes": [
+        {
+          "text": "TRƯỜNG ĐẠ HỌC ĐIỆN LỰC",
+          "confidence": 0.9602045572276996,
+          "bbox": [
+            138,
+            117,
+            541,
+            161
+          ]
+        },
+        {
+          "text": "CỘNG HÒA XÃ HỘICHỦ NGHĨA VIỆT NAM",
+          "confidence": 0.8629399517101095,
+          "bbox": [
+            1035,
+            117,
+            1619,
+            161
+          ]
+        },
+        {
+          "text": "KHOA CÔNG NGHỆ THÔNG TIN",
+          "confidence": 0.583756561098406,
+          "bbox": [
+            215,
+            157,
+            603,
+            197
+          ]
+        },
+        {
+          "text": "Độc Iập - Tự do _",
+          "confidence": 0.5581801715134306,
+          "bbox": [
+            1123,
+            163,
+            1319,
+            201
+          ]
+        },
+        {
+          "text": "Hạnh phúc",
+          "confidence": 0.7449018783786863,
+          "bbox": [
+            1329,
+            160,
+            1472,
+            202
+          ]
+        },
+        {
+          "text": "Số: 123/CV-CNTT",
+          "confidence": 0.5739156811616916,
+          "bbox": [
+            148,
+            282,
+            360,
+            314
+          ]
+        },
+        {
+          "text": "Hà Nội, ngày 15 tháng 05 năm 2026",
+          "confidence": 0.7276246327697126,
+          "bbox": [
+            1009,
+            280,
+            1453,
+            324
+          ]
+        },
+        {
+          "text": "CÔNG VĂN",
+          "confidence": 0.993093871481013,
+          "bbox": [
+            687,
+            409,
+            865,
+            451
+          ]
+        },
+        {
+          "text": "V/v triển khai thử nghiệm hệ thõng quản lý công văn tích",
+          "confidence": 0.8169344538078226,
+          "bbox": [
+            468,
+            463,
+            1278,
+            517
+          ]
+        },
+        {
+          "text": "OCR và chữ ký số",
+          "confidence": 0.8456707803021142,
+          "bbox": [
+            1339,
+            473,
+            1587,
+            513
+          ]
+        },
+        {
+          "text": "Kính gửi: Phòng Quản lý khoa học và Hợp tác quốc tế",
+          "confidence": 0.7766812566296502,
+          "bbox": [
+            169,
+            587,
+            825,
+            632
+          ]
+        },
+        {
+          "text": "Nhằm phục vụ công tác nghiên cứu khoa học sinh viên năm 2026, Khoa Công nghệ thông tin",
+          "confidence": 0.8313072113056925,
+          "bbox": [
+            169,
+            699,
+            1307,
+            742
+          ]
+        },
+        {
+          "text": "đề nghị nhóm nghiên cứu triển khai thử nghiệm hệ thống hỗ trợ quản lý công văn đi và đến:",
+          "confidence": 0.6938495209767255,
+          "bbox": [
+            167,
+            746,
+            1304,
+            791
+          ]
+        },
+        {
+          "text": "Hệ",
+          "confidence": 0.9994202771817483,
+          "bbox": [
+            169,
+            797,
+            209,
+            833
+          ]
+        },
+        {
+          "text": "cần có chức năng tiếp nhận văn bản scan, nhận diện ký tự quang học OCR,",
+          "confidence": 0.7465420888708157,
+          "bbox": [
+            287,
+            794,
+            1207,
+            837
+          ]
+        },
+        {
+          "text": "trích xuất các trường thông tin chính như số ký hiệu; ngày ban hành, trích yếu; nơi",
+          "confidence": 0.5679468540133435,
+          "bbox": [
+            165,
+            841,
+            1179,
+            886
+          ]
+        },
+        {
+          "text": "nơi nhận;",
+          "confidence": 0.9951123861194352,
+          "bbox": [
+            167,
+            893,
+            293,
+            929
+          ]
+        },
+        {
+          "text": "thời hỗ trợ ký số và kiểm tra tính toàn vẹn của văn bản điện tử.",
+          "confidence": 0.9104031247550597,
+          "bbox": [
+            359,
+            891,
+            1131,
+            931
+          ]
+        },
+        {
+          "text": "Nhóm nghiên cứu có trách nhiệm chuẩn bị dữ liệu thử nghiệm; báo cáo kết quả so sánh",
+          "confidence": 0.8595597925208613,
+          "bbox": [
+            167,
+            986,
+            1247,
+            1030
+          ]
+        },
+        {
+          "text": "các",
+          "confidence": 0.9997353705847453,
+          "bbox": [
+            166,
+            1038,
+            216,
+            1070
+          ]
+        },
+        {
+          "text": "nghệ OCR và đề xuất phương án phù hợp với điều kiện triển khai tại đơn vị:",
+          "confidence": 0.47509965708214574,
+          "bbox": [
+            277,
+            1035,
+            1205,
+            1079
+          ]
+        },
+        {
+          "text": "Nơi nhận:",
+          "confidence": 0.9521534060767602,
+          "bbox": [
+            170,
+            1134,
+            294,
+            1166
+          ]
+        },
+        {
+          "text": "Như trên;",
+          "confidence": 0.9740086939756237,
+          "bbox": [
+            184,
+            1182,
+            308,
+            1214
+          ]
+        },
+        {
+          "text": "Lưu: VT, CNTTT",
+          "confidence": 0.8561672756633365,
+          "bbox": [
+            184,
+            1232,
+            364,
+            1264
+          ]
+        },
+        {
+          "text": "TRUONO KHOA",
+          "confidence": 0.3715217164141669,
+          "bbox": [
+            1131,
+            1423,
+            1353,
+            1461
+          ]
+        },
+        {
+          "text": "4ẩ2",
+          "confidence": 0.0546957158570475,
+          "bbox": [
+            1280,
+            1624,
+            1312,
+            1652
+          ]
+        },
+        {
+          "text": "Nam",
+          "confidence": 0.9997445240593368,
+          "bbox": [
+            1322,
+            1626,
+            1384,
+            1656
+          ]
+        },
+        {
+          "text": "hợp",
+          "confidence": 0.974292264170944,
+          "bbox": [
+            1273,
+            470,
+            1343,
+            516
+          ]
+        },
+        {
+          "text": "thống",
+          "confidence": 0.9845221137188265,
+          "bbox": [
+            203,
+            791,
+            291,
+            838
+          ]
+        },
+        {
+          "text": "gửi,",
+          "confidence": 0.7803804278373718,
+          "bbox": [
+            1172,
+            841,
+            1232,
+            886
+          ]
+        },
+        {
+          "text": "đồng",
+          "confidence": 0.9975042939186096,
+          "bbox": [
+            285,
+            888,
+            364,
+            934
+          ]
+        },
+        {
+          "text": "công",
+          "confidence": 0.9999948740005493,
+          "bbox": [
+            207,
+            1031,
+            284,
+            1078
+          ]
+        }
+      ],
+      "elapsed_sec": 21.954609399996116,
+      "error": "",
+      "raw": null,
+      "cer": null,
+      "wer": null,
+      "quality_guard": {
+        "token_count": 204,
+        "letter_count": 700,
+        "marked_letter_ratio": 0.2686,
+        "marked_token_ratio": 0.8529,
+        "admin_keyword_hits": 45,
+        "admin_keyword_ratio": 0.2206,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      }
+    }
+  ],
+  "comparison_summary": {
+    "total_runs": 1,
+    "ok_runs": 1,
+    "error_runs": 0,
+    "skipped_runs": 0,
+    "issue_runs": 0,
+    "has_ground_truth": false,
+    "best_cer": null,
+    "best_wer": null,
+    "fastest": {
+      "engine": "easyocr",
+      "variant": "opencv_preprocessed",
+      "label": "easyocr / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 21.955,
+      "text_len": 948,
+      "avg_confidence": 79.59,
+      "quality_score": 90.82,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 204,
+        "letter_count": 700,
+        "marked_letter_ratio": 0.2686,
+        "marked_token_ratio": 0.8529,
+        "admin_keyword_hits": 45,
+        "admin_keyword_ratio": 0.2206,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 90.814,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 90.82,
+      "confidence_bar": 79.59
+    },
+    "best_quality": {
+      "engine": "easyocr",
+      "variant": "opencv_preprocessed",
+      "label": "easyocr / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 21.955,
+      "text_len": 948,
+      "avg_confidence": 79.59,
+      "quality_score": 90.82,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 204,
+        "letter_count": 700,
+        "marked_letter_ratio": 0.2686,
+        "marked_token_ratio": 0.8529,
+        "admin_keyword_hits": 45,
+        "admin_keyword_ratio": 0.2206,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 90.814,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 90.82,
+      "confidence_bar": 79.59
+    },
+    "best_confidence": {
+      "engine": "easyocr",
+      "variant": "opencv_preprocessed",
+      "label": "easyocr / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 21.955,
+      "text_len": 948,
+      "avg_confidence": 79.59,
+      "quality_score": 90.82,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 204,
+        "letter_count": 700,
+        "marked_letter_ratio": 0.2686,
+        "marked_token_ratio": 0.8529,
+        "admin_keyword_hits": 45,
+        "admin_keyword_ratio": 0.2206,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 90.814,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 90.82,
+      "confidence_bar": 79.59
+    },
+    "rows": [
+      {
+        "engine": "easyocr",
+        "variant": "opencv_preprocessed",
+        "label": "easyocr / opencv_preprocessed",
+        "status": "ok",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 21.955,
+        "text_len": 948,
+        "avg_confidence": 79.59,
+        "quality_score": 90.82,
+        "quality_source": "confidence + text length + Vietnamese guard",
+        "quality_guard": {
+          "token_count": 204,
+          "letter_count": 700,
+          "marked_letter_ratio": 0.2686,
+          "marked_token_ratio": 0.8529,
+          "admin_keyword_hits": 45,
+          "admin_keyword_ratio": 0.2206,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 100.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 90.814,
+        "error": "",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 100.0,
+        "text_bar": 100.0,
+        "quality_bar": 90.82,
+        "confidence_bar": 79.59
+      }
+    ],
+    "preprocessing_effect": [],
+    "engine_status": [
+      {
+        "engine": "easyocr",
+        "ok": 1,
+        "skipped": 0,
+        "error": 0,
+        "total": 1
+      }
+    ]
+  },
+  "layoutlmv3_postprocess": {
+    "mode": "fallback_rule_based",
+    "note": "Chưa cấu hình LAYOUTLMV3_MODEL_DIR. Đang dùng rule/regex để mô phỏng hậu xử lý trường thông tin. Muốn chạy LayoutLMv3 thật cần fine-tune model token classification cho công văn.",
+    "fields": {
+      "so_ky_hieu": "123/CV-CNTT",
+      "ngay_ban_hanh": "15/05/2026",
+      "trich_yeu": "triển khai thử nghiệm hệ thõng quản lý công văn tích",
+      "co_quan_ban_hanh": "TRƯỜNG ĐẠ HỌC ĐIỆN LỰC",
+      "noi_gui": "",
+      "noi_nhan": "Như trên;",
+      "loai_van_ban": "Công Văn",
+      "confidence_note": "rule_based"
+    }
+  },
+  "best_engine": {
+    "engine": "easyocr",
+    "variant": "opencv_preprocessed"
+  }
+}

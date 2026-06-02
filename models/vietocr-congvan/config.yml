@@ -1,0 +1,69 @@
+aug:
+  image_aug: false
+  masked_language_model: true
+backbone: vgg19_bn
+cnn:
+  hidden: 256
+  ks:
+  - - 2
+    - 2
+  - - 2
+    - 2
+  - - 2
+    - 1
+  - - 2
+    - 1
+  - - 1
+    - 1
+  pretrained: true
+  ss:
+  - - 2
+    - 2
+  - - 2
+    - 2
+  - - 2
+    - 1
+  - - 2
+    - 1
+  - - 1
+    - 1
+dataloader:
+  num_workers: 0
+  pin_memory: true
+dataset:
+  data_root: D:\ocr_workspace\ocr_full_demo_v2_latest\dataset_template\vietocr_finetune
+  image_height: 32
+  image_max_width: 768
+  image_min_width: 32
+  name: congvan
+  train_annotation: train.txt
+  valid_annotation: val.txt
+device: cuda:0
+optimizer:
+  max_lr: 0.0001
+  pct_start: 0.1
+predictor:
+  beamsearch: false
+pretrain: https://vocr.vn/data/vietocr/vgg_transformer.pth
+quiet: false
+seq_modeling: transformer
+trainer:
+  batch_size: 8
+  checkpoint: D:\ocr_workspace\ocr_full_demo_v2_latest\models\vietocr-congvan\checkpoint.pth
+  export: D:\ocr_workspace\ocr_full_demo_v2_latest\models\vietocr-congvan\transformerocr.pth
+  iters: 120
+  log: D:\ocr_workspace\ocr_full_demo_v2_latest\models\vietocr-congvan\train.log
+  metrics: 128
+  print_every: 10
+  valid_every: 60
+transformer:
+  d_model: 256
+  dim_feedforward: 2048
+  max_seq_length: 1024
+  nhead: 8
+  num_decoder_layers: 6
+  num_encoder_layers: 6
+  pos_dropout: 0.1
+  trans_dropout: 0.1
+vocab: 'aAàÀảẢãÃáÁạẠăĂằẰẳẲẵẴắẮặẶâÂầẦẩẨẫẪấẤậẬbBcCdDđĐeEèÈẻẺẽẼéÉẹẸêÊềỀểỂễỄếẾệỆfFgGhHiIìÌỉỈĩĨíÍịỊjJkKlLmMnNoOòÒỏỎõÕóÓọỌôÔồỒổỔỗỖốỐộỘơƠờỜởỞỡỠớỚợỢpPqQrRsStTuUùÙủỦũŨúÚụỤưƯừỪửỬữỮứỨựỰvVwWxXyYỳỲỷỶỹỸýÝỵỴzZ0123456789!"#$%&''()*+,-./:;<=>?@[\]^_`{|}~ '
+weights: D:\ocr_workspace\ocr_full_demo_v2_latest\models\vietocr-congvan\transformerocr.pth

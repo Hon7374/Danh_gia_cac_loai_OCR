@@ -1,0 +1,24 @@
+INFO:     127.0.0.1:57980 - "GET /documents/4eb0cda1c107 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50396 - "GET /documents/4eb0cda1c107 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50503 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50503 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53244 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53244 - "GET /static/styles.css?v=utf8-20260531 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50864 - "GET /jobs/2bbba632396d/images/39-bgddt_page1.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59457 - "GET /jobs/2bbba632396d/images/39-bgddt_page1_opencv_preprocessed.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55070 - "GET /reports/2bbba632396d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50898 - "GET /reports/2bbba632396d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57103 - "GET /reports/2bbba632396d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60404 - "GET /static/styles.css?v=utf8-20260531 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49904 - "GET /jobs/2bbba632396d/images/39-bgddt_page1.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58181 - "GET /jobs/2bbba632396d/images/39-bgddt_page1_opencv_preprocessed.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49904 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58004 - "GET /run HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:58004 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58004 - "GET /static/styles.css?v=utf8-20260531 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:58193 - "GET /reports/2bbba632396d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59041 - "GET /reports/2bbba632396d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50956 - "GET /static/styles.css?v=utf8-20260531 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51789 - "GET /jobs/2bbba632396d/images/39-bgddt_page1_opencv_preprocessed.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62425 - "GET /jobs/2bbba632396d/images/39-bgddt_page1.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62425 - "GET /favicon.ico HTTP/1.1" 404 Not Found

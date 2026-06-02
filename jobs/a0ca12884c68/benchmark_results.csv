@@ -1,0 +1,25 @@
+﻿engine,variant,status,elapsed_sec,cer,wer,error,text_preview
+tesseract,opencv_preprocessed,ok,1.7702139999892097,,,,"NGAN HÀNG NHÀ NƯỚC VIỆT NAM Số: /2026/TT-NHNN CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Hà Nội, ngay49 thang 5 năm 2026 *,':+N HANG NHÀ NƯỚC VIỆT NAM vụ PHÁP CHẾ DA THAM ĐỊNH Add Sil 22 THONG TU Phan cấp, thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa đối, bé sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giãn hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng Căn cứ Luật Ngân hàng Nhà nước Việt Na"
+easyocr,opencv_preprocessed,ok,28.240335899987258,,,,"NGÂN HANG NHÀ NƯỚC
+CQNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+VIỆT NAM
+Độc lập-
+Tự do
+Hanb phúc
+số.//  12026/TT-NHNN
+Hà Nội, ngày49
+5 năm 2026
+,:N HAng NHA NUOC VIÉT MAM
+VỤ PHÁP CHẾ
+ĐÀ THẢM ĐỊNH
+a9,
+""""
+12026
+THÔNG TƯ
+Phân cấp thực hiện thủ tuc hành chính trong lĩnh vực thông tin tín dụng và
+sửa đổí, bổ sung một sổ đỉều của các Thông tư liên quan đến cắt giảm,
+đơn giản
+cấp thực hỉện thủ tục hành chính trong lĩnh vực
+thành lập và hoat động ngân hàng
+Căn cứ Luật Ngân hàng Nhà nước Việt Nam số
+46/2010/QH12;"

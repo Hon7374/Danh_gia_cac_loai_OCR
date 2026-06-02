@@ -1,0 +1,98 @@
+﻿engine,variant,status,elapsed_sec,cer,wer,error,text_preview
+tesseract,raw,ok,14.94405230000848,0.015653128710595866,0.049171960072595285,,"CHÍNH PHỦ CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM ———— Độc lập - Tự do - Hạnh phúc Số: 151/2026/NĐ-CP Hà Nội, ngày 13 tháng 5 năm 2026 - NGHỊ ĐỊNH Quy định về tô chức và hoạt động của văn phòng thi hành án dân sự, Thừa hành viên Căn cứ Luật Tổ chức Chính phủ số 63/2025/QH15; Căn cứ Luật Thi hành án dân sự số 106/2025/QH15; Căn cứ Luật Doanh nghiệp số 59/2020/QH14 được sửa đổi, bồ sung bởi Luật số 03/2022/QH15 và Luật số 76/2025/QH15, Theo dé nghị của Bộ trưởng Bộ Tư pháp; Chính phi: ban hành Nghị địn"
+tesseract,opencv_preprocessed,ok,14.966753099986818,0.01733845741353115,0.057962794918330306,,"CHÍNH PHỦ CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Số: 151/2026/NĐ-CP Hà Nội, ngày 13 tháng 5 năm 2026 NGHỊ ĐỊNH Quy định về tổ chức và hoạt động của văn phòng thi hành án dân sự, Thừa hành viên Căn cứ Luật TỔ chức Chính phú số 63/2025/QH15; Căn cứ Luật Thi hành án dân sự số 1 06/2025/QH15; Căn cứ Luật Doanh nghiệp số 59/2020/QH14 được sửa đổi, bỗ sung bởi Luật số 03/2022/QH15 và Luật số 76/2025/QHI 5; Theo đề nghị của Bộ trưởng Bộ Tư pháp; Chính phủ ban hành Nghị định quy "
+easyocr,raw,ok,662.7072149000014,0.10871646898101452,0.11921506352087115,,"CHÍNH PHỦ
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập
+Tự do
+Hanh
+Số: 151/2026/NĐ-CP
+Hà Nội, ngày 13 tháng 5 năm 2026
+NGHỊ ĐỊNH
+Quy định về tổ chức và hoạt động của văn phòng
+thi hành án dân sự, Thừa hành viên
+Căn cứ Luật Tổ chức Chính phủ số 63/2025/QH15;
+Căn cứ Luật Thi hành án dân sự số 106/2025/QH15;
+Căn cứ Luật Doanh nghiệp số 59/2020/QH14
+sửa đổi, bổ sung bởi
+Luật số 03/2022/QH15 và Luật số 76/2025/QH15;
+Theo đề nghị của Bộ trưởng Bộ Tư pháp;
+Chính phủ ban hành Nghị định quy định về tổ chức "
+easyocr,opencv_preprocessed,ok,686.3253854999784,0.11361924338955351,0.12653130671506352,,"CHÍNH PHỦ
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập
+Tự do
+Hạnh phúc
+Số: 151/2026/NĐ-CP
+Hà Nội; ngày 13 tháng 5 năm 2026
+NGHỊ ĐỊNH
+Quy định về tổ chức và hoạt động của văn phòng
+thi hành án dân sự, Thừa hành viên
+Căn cứ Luật Tổ chức Chính phủ số 63/2025/QH15;
+Căn cứ Luật Thi hành án dân sự số 106/2025/QH15;
+Căn cứ Luật Doanh nghiệp số 59/2020/QH14 được sửa đổi, bổ sung bởi
+Luật số 03/2022/QH15 và Luật số 76/2025/QH15;
+Theo đề nghị của Bộ trưởng Bộ Tư pháp;
+Chính phủ ban hành Nghị định quy định v"
+paddle_vietocr,raw,ok,261.08198670001,0.08196825964276139,0.10095281306715063,,"CHÍNH PHỦ
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập - Tự do - Hạnh phúc
+Số: 151/2026/NĐ-CP
+Hà Nội, ngày 13 tháng 5 năm 2026
+NGHỊ ĐỊNH
+Quy định về tổ chức và hoạt động của văn phòng
+thi hành án dân sự, Thừa hành viên
+Căn cứ Luật Tổ chức Chính phủ số 63/2025/QH15;
+Căn cứ Luật Thi hành án dân sự số 106/2025/QH15;
+Căn cứ Luật Doanh nghiệp số 59/2020/QH14 được sửa đổi, bởi, bởi
+Luật số 03/2022/QH15 và Luật số 76/2025/QH15;
+Theo đề nghị của Bộ trưởng Bộ Tư pháp;
+Chính phủ ban hành Nghị định quy định "
+paddle_vietocr,opencv_preprocessed,ok,279.6240361999953,0.060607995097225593,0.08047867513611615,,"CHÍNH PHŨ
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập - Tự do - Hạnh phúc
+Số: 151/2026/NĐ-CP
+hà nội, ngày 13 tháng 5 năm 2026
+NGHỊ ĐỊNH
+Quy định về tổ chức và hoạt động của văn phòng
+thi hành án dân sự, Thừa hành viên
+Căn cứ Luật Tổ chức Chính phủ số 63/2025/QH15;
+Căn cứ Luật Thi hành án dân sư số 106/2025/QH15;
+Căn cứ Luật Doanh nghiệp số 59/2020/QH14 được sửa đổi, bổi
+Luật số 03/2022/QH15 và Luật số 76/2025/QH15;
+Theo đề nghị của Bộ trưởng Bộ Tư pháp;
+Chính phủ ban hành Nghị định quy định về tổ"
+paddleocr_vl,raw,ok,4506.726528899977,0.043678102217739365,0.0363543557168784,,"# CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc
+
+Số: 151/2026/NĐ-CP
+
+Hà Nội, ngày 13 tháng 5 năm 2026
+
+# NGHỊ ĐỊNH Quy định về tổ chức và hoạt động của văn phòng thi hành án dân sự, Thừa hành viên
+
+Căn cứ Luật Tổ chức Chính phủ số 63/2025/QH15;
+
+Căn cứ Luật Thi hành án dân sự số 106/2025/QH15;
+
+Căn cứ Luật Doanh nghiệp số 59/2020/QH14 được sửa đổi, bổ sung bởi Luật số 03/2022/QH15 và Luật số 76/2025/QH15;
+
+Theo đề nghị của Bộ trưởng Bộ Tư pháp;
+
+Chính phủ ban hành Nghị định quy "
+paddleocr_vl,opencv_preprocessed,ok,4344.545317300013,0.04531236035391903,0.040607985480943735,,"# CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM ĐỘC LẬP - TỪ DO - HẠNH PHÚC
+
+Số: 151/2026/NĐ-CP
+
+Hà Nội, ngày 13 tháng 5 năm 2026
+
+# NGHỊ ĐỊNH Quy định về tổ chức và hoạt động của văn phòng thi hành án dân sự, Thừa hành viên
+
+Căn cứ Luật Tổ chức Chính phủ số 63/2025/QH15;
+
+Căn cứ Luật Thi hành án dân sự số 106/2025/QH15;
+
+Căn cứ Luật Doanh nghiệp số 59/2020/QH14 được sửa đổi, bổ sung bởi Luật số 03/2022/QH15 và Luật số 76/2025/QH15;
+
+Theo đề nghị của Bộ trưởng Bộ Tư pháp;
+
+Chính phủ ban hành Nghị định quy "

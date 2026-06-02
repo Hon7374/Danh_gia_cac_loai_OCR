@@ -1,0 +1,67 @@
+{
+  "started_at_unix": 1780332098.4286468,
+  "jobs_total": 1,
+  "jobs": [
+    {
+      "job_id": "2bbba632396d",
+      "changed": false,
+      "rows": [
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "ok",
+            "text_len": 13159,
+            "elapsed_sec": 49.21103209996363,
+            "cer": 0.1929107021131561,
+            "wer": 0.2959360889197638,
+            "quality_guard": {
+              "token_count": 2727,
+              "letter_count": 9620,
+              "marked_letter_ratio": 0.2587,
+              "marked_token_ratio": 0.7939,
+              "admin_keyword_hits": 738,
+              "admin_keyword_ratio": 0.2706,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 14711,
+            "elapsed_sec": 130.9095858000219,
+            "cer": 0.27205938044383854,
+            "wer": 0.35984716915595694,
+            "quality_guard": {
+              "token_count": 3020,
+              "letter_count": 10812,
+              "marked_letter_ratio": 0.2409,
+              "marked_token_ratio": 0.746,
+              "admin_keyword_hits": 804,
+              "admin_keyword_ratio": 0.2662,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 95.64,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 7,
+          "failed_pages": 0,
+          "accepted": false,
+          "decision": "CER/WER xấu hơn bản cũ (0.2290 -> 0.3028)."
+        }
+      ]
+    }
+  ],
+  "finished_at_unix": 1780332229.4416027,
+  "changed_jobs": 0
+}

@@ -1,0 +1,2 @@
+models/layoutlmv3-congvan-token-classification/model.safetensors filter=lfs diff=lfs merge=lfs -text
+models/vietocr-congvan/transformerocr.pth filter=lfs diff=lfs merge=lfs -text

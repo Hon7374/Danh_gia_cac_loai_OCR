@@ -1,0 +1,85 @@
+﻿engine,variant,status,elapsed_sec,cer,wer,error,text_preview
+tesseract,raw,ok,2.3978484999970533,0.35341196293176075,0.41811175337186895,,"NGÂN HÀNG NHÀ NƯỚC VIỆT NAM Sá:⁄/ /2026/TT-NHNN “Š⁄;-N HÀNG NHÀ NƯỚC VIỆT NAM| VỤ PHÁP CHẾ ĐÃ THẤM ĐỊNH AYN ...5...| „ôQ⁄2© CONG HÒA XÃ HOI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Hà Nội, ngày{9tháng 5 năm 2026 THÔNG TƯ Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa doi, bỗ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng Căn cứ Luật Ngân hang Nhà nư"
+tesseract,opencv_preprocessed,ok,1.4631992999929935,0.3550021105951878,0.46525096525096526,,"NGÂN HÀNG NHÀ NƯỚC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM VIỆT NAM Độc lập - Tự do - Hạnh phúc Số: /2026/TT-NHNN Hà Nội, ngay49 thang 5 năm 2026 *s:N HANG NHÀ NƯỚC VIỆT NAM VỤ PHAP CHẾ ĐÃ THẤM ĐỊNH ADA Sib wd OLS THONG TƯ Phân ca thực hiện thủ tực hành chính trong lĩnh vực thông tin tín dụng và sửa đôi, bỗ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng Căn cứ Luật Ngân hàng Nhà nước Việt Na"
+easyocr,raw,ok,19.452313099987805,0.3468869123252859,0.42054263565891475,,"NGÂN HÀNG NHÀ NƯỚC
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+VIỆT NAM
+Độc lập
+do
+Hạnh phúc
+Số://  /2026/TT-NHNN
+Hà Nội, ngày/g -
+5 năm 2026
+HÀNG NHÀ NƯÓC VIET NAM
+VỤ PHÁP CHẾ
+ĐÃ THẨM ĐỊNH
+49 .
+,2026
+THÔNG TƯ
+Phân cấp thực hiện thủ tuc hành chính trong lĩnh vực thông tin tín dụng và
+sửa đổi, bổ sung một sổ điều của các
+tư liên quan đến cắt giảm,
+đơn giản hóa,
+cấp
+hiện thủ tục hành chính trong lĩnh vực
+thành lập và hoạt động
+Căn cứ Luật Ngân
+Nhà nước Việt Nam sổ 46/2010/QH12;
+Căn cứ Luật Các tổ chức tín
+"
+easyocr,opencv_preprocessed,ok,13.43079700000817,0.3470688190314358,0.4796116504854369,,"NGÂN HÀNG NHÀ NƯỚC
+CỘNG HÒA XÃ HQI CHỦ NGHĨA VI}T NAM
+VIỆT NAM
+Độc lập- Tự do
+Hanh phúc
+số://  12026/TT-NHNN
+Hà Nội, ngày49 =
+5 năm 2026
+',N Hang NhÀ NUdC VIiT MAM
+VỤ PHÁP CHẾ
+ĐÂ THẨM Đ[NH
+iqu
+12026
+THÔNG TƯ
+Phân cấp thực hiện thủ tuc hành chính trong lĩnh vực thông tin tín dụng và
+sửa đổi, bổ
+một số điều của các Thông tư liên quan đến cắt giảm,
+đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực
+tiàGh lập và boat động ngân hàng
+Căn cứ Luật Ngân
+Nhà nước Việt Nam số 46/2010/QHI2;
+"
+paddle_vietocr,raw,ok,27.63278139999602,0.3932217231523071,0.41682242990654206,,"NGÂN HÀNG NHÀ NƯỚC
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+VIỆT NAM
+Độc lập - Tự do - Hạnh phúc
+Số: 1M /2026/TT-NHNN
+hà nội, ngày 19 tháng 5 năm 2026
+NGÂN HÀNG NHÀ NƯỚC VIỆT NAM
+VỤ PHÁP CHE
+ĐÃ THẨM ĐỊNH
+19.1.251.2026
+THÔNG TƯ
+Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và
+sửa đồi, bổ sung một số điều của các Thông tư liên quan đến cắt giảm,
+đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực
+thành lập và hoạt động ngân hàng
+Căn cứ Luật Ngân hàng Nhà nước Việ"
+paddle_vietocr,opencv_preprocessed,ok,27.202121299982537,0.3967280163599182,0.449438202247191,,"NGÂN HÀNG NHÀ NƯỚC
+CỘNG HÒA XÃ HỌI CHỦ NGHĨA VIỆT NAM
+VIỆT NAM
+Độc lập - Tự do - Hạnh phúc
+Số: 14 12026/TT-NHNN
+Hà Nội, ngày 19 tháng 5 năm 2020
+""5.....N HÀNG NHÀ NƯỚC VIỆT NASA
+VỤ PHÁP CHẾ
+ĐÃ THẨM ĐỊNH
+19.1 maul 2026
+THÔNG TƯ
+Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và
+sửa đồi, bổ sung một số điêu của các Thông tư liên quan đến cắt giảm;
+đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực
+thành lập và hoạt động ngân hàng
+Căn cứ Luật Ngân hàng Nhà nư"
+paddleocr_vl,raw,error,0.049733799998648465,,,PaddleOCR-VL lỗi: partially initialized module 'paddle' has no attribute 'tensor' (most likely due to a circular import),
+paddleocr_vl,opencv_preprocessed,error,0.009284600004320964,,,PaddleOCR-VL lỗi: partially initialized module 'paddle' has no attribute 'tensor' (most likely due to a circular import),

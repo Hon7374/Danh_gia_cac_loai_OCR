@@ -1,0 +1,28 @@
+{
+  "labels": [
+    "O",
+    "B-so_ky_hieu",
+    "I-so_ky_hieu",
+    "B-ngay_ban_hanh",
+    "I-ngay_ban_hanh",
+    "B-trich_yeu",
+    "I-trich_yeu",
+    "B-co_quan_ban_hanh",
+    "I-co_quan_ban_hanh",
+    "B-noi_gui",
+    "I-noi_gui",
+    "B-noi_nhan",
+    "I-noi_nhan",
+    "B-loai_van_ban",
+    "I-loai_van_ban"
+  ],
+  "fields": [
+    "so_ky_hieu",
+    "ngay_ban_hanh",
+    "trich_yeu",
+    "co_quan_ban_hanh",
+    "noi_gui",
+    "noi_nhan",
+    "loai_van_ban"
+  ]
+}

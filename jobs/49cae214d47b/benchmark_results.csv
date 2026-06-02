@@ -1,0 +1,11 @@
+﻿engine,variant,status,elapsed_sec,cer,wer,error,text_preview
+tesseract,raw,ok,0.45851775799997085,0.98659793814433,1.0,,Đang cập nhật file đính kèm
+tesseract,opencv_preprocessed,ok,0.38052562199982276,0.98659793814433,1.0,,Đang cập nhật file đính kèm
+easyocr,raw,skipped,0.0001323379999575991,,,Chưa cài easyocr. Chạy: pip install -r requirements-optional-ocr.txt,
+easyocr,opencv_preprocessed,skipped,9.751800007506972e-05,,,Chưa cài easyocr. Chạy: pip install -r requirements-optional-ocr.txt,
+paddle_vietocr,raw,ok,23.664497499994468,0.98659793814433,1.0,,Đang cập nhật file đính kèm
+paddle_vietocr,opencv_preprocessed,ok,23.832087000017054,0.98659793814433,1.0,,Đang cập nhật file đính kèm
+glm_ocr,raw,skipped,6.310001481324434e-07,,,Chưa cấu hình GLM_OCR_API_KEY hoặc ZAI_API_KEY trong .env nên bỏ qua GLM-OCR API.,
+glm_ocr,opencv_preprocessed,skipped,1.8199989426648244e-07,,,Chưa cấu hình GLM_OCR_API_KEY hoặc ZAI_API_KEY trong .env nên bỏ qua GLM-OCR API.,
+paddleocr_vl,raw,skipped,3.518600010465889e-05,,,Chưa cài PaddleOCR-VL/PaddleOCR 3.x. Chạy scripts/setup_latest_windows.ps1 -Full hoặc cấu hình PADDLEOCR_VL_CMD.,
+paddleocr_vl,opencv_preprocessed,skipped,2.917799997703696e-05,,,Chưa cài PaddleOCR-VL/PaddleOCR 3.x. Chạy scripts/setup_latest_windows.ps1 -Full hoặc cấu hình PADDLEOCR_VL_CMD.,

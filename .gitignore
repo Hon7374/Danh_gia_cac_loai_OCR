@@ -15,18 +15,14 @@ Dockerfile.*
 docker-compose*.yml
 START_DOCKER.bat
 
-# Local OCR/model artifacts that are too large for normal GitHub pushes
-models/
-cache/
-jobs/
-logs/
-tmp_preprocess_test/
+# Model training artifacts that are too large for GitHub.
+# Runtime model files are tracked; large weights use Git LFS.
+models/layoutlmv3-congvan-token-classification/checkpoint-*/
+models/vietocr-congvan/train_congvan/
+models/vietocr-congvan/valid_congvan/
 
-# Generated/local storage
-storage/
-output/
-outputs/
-results/
+# Generated/local scratch cache
+cache/
 
 # OS/editor noise
 .DS_Store

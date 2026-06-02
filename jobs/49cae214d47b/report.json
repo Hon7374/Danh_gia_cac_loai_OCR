@@ -1,0 +1,1177 @@
+{
+  "job_id": "49cae214d47b",
+  "uploaded_file": "upload/Nghị định số 2-ND Ấn định tiền phụ cấp cho các công nhân bị thải hồi.pdf",
+  "raw_image": "images/Nghị định số 2-ND Ấn định tiền phụ cấp cho các công nhân bị thải hồi_page1.png",
+  "preprocessed_image": "images/Nghị định số 2-ND Ấn định tiền phụ cấp cho các công nhân bị thải hồi_page1_opencv_preprocessed.png",
+  "opencv_steps": [
+    "grayscale",
+    "denoise_fastNlMeans",
+    "deskew_minAreaRect",
+    "CLAHE_contrast",
+    "adaptive_threshold",
+    "morph_close"
+  ],
+  "ground_truth_file": {
+    "filename": "Nghị định số 2-ND Ấn định tiền phụ cấp cho các công nhân bị thải hồi.doc",
+    "relative_path": "ground_truth/Nghị định số 2-ND Ấn định tiền phụ cấp cho các công nhân bị thải hồi.doc",
+    "size_bytes": 39424,
+    "text_length": 1958,
+    "reader": "microsoft_word_doc",
+    "warning": "Da doc file .doc bang Microsoft Word. CER/WER se so sanh voi text OCR cua toan bo file da chay."
+  },
+  "ground_truth_text_length": 1958,
+  "results": [
+    {
+      "engine": "tesseract",
+      "variant": "raw",
+      "status": "ok",
+      "text": "Đang cập nhật file đính kèm",
+      "boxes": [
+        {
+          "text": "Đang",
+          "confidence": 92.0,
+          "bbox": [
+            670,
+            1263,
+            759,
+            1298
+          ]
+        },
+        {
+          "text": "cập",
+          "confidence": 96.0,
+          "bbox": [
+            772,
+            1261,
+            827,
+            1297
+          ]
+        },
+        {
+          "text": "nhật",
+          "confidence": 96.0,
+          "bbox": [
+            841,
+            1261,
+            916,
+            1297
+          ]
+        },
+        {
+          "text": "file",
+          "confidence": 96.0,
+          "bbox": [
+            928,
+            1262,
+            979,
+            1290
+          ]
+        },
+        {
+          "text": "đính",
+          "confidence": 96.0,
+          "bbox": [
+            991,
+            1262,
+            1066,
+            1290
+          ]
+        },
+        {
+          "text": "kèm",
+          "confidence": 96.0,
+          "bbox": [
+            1078,
+            1262,
+            1148,
+            1290
+          ]
+        }
+      ],
+      "elapsed_sec": 0.45851775799997085,
+      "error": "",
+      "raw": {
+        "tesseract_binary": "/usr/bin/tesseract",
+        "lang_requested": "vie+eng"
+      },
+      "cer": 0.98659793814433,
+      "wer": 1.0,
+      "quality_guard": {
+        "token_count": 6,
+        "letter_count": 22,
+        "marked_letter_ratio": 0.2727,
+        "marked_token_ratio": 0.8333,
+        "admin_keyword_hits": 1,
+        "admin_keyword_ratio": 0.1667,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "ground_truth_compare_length": 1958
+    },
+    {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "status": "ok",
+      "text": "Đang cập nhật file đính kèm",
+      "boxes": [
+        {
+          "text": "Đang",
+          "confidence": 93.0,
+          "bbox": [
+            670,
+            1262,
+            759,
+            1298
+          ]
+        },
+        {
+          "text": "cập",
+          "confidence": 96.0,
+          "bbox": [
+            771,
+            1261,
+            827,
+            1298
+          ]
+        },
+        {
+          "text": "nhật",
+          "confidence": 96.0,
+          "bbox": [
+            841,
+            1261,
+            917,
+            1298
+          ]
+        },
+        {
+          "text": "file",
+          "confidence": 88.0,
+          "bbox": [
+            928,
+            1262,
+            979,
+            1290
+          ]
+        },
+        {
+          "text": "đính",
+          "confidence": 96.0,
+          "bbox": [
+            991,
+            1262,
+            1066,
+            1290
+          ]
+        },
+        {
+          "text": "kèm",
+          "confidence": 95.0,
+          "bbox": [
+            1078,
+            1262,
+            1149,
+            1290
+          ]
+        }
+      ],
+      "elapsed_sec": 0.38052562199982276,
+      "error": "",
+      "raw": {
+        "tesseract_binary": "/usr/bin/tesseract",
+        "lang_requested": "vie+eng"
+      },
+      "cer": 0.98659793814433,
+      "wer": 1.0,
+      "quality_guard": {
+        "token_count": 6,
+        "letter_count": 22,
+        "marked_letter_ratio": 0.2727,
+        "marked_token_ratio": 0.8333,
+        "admin_keyword_hits": 1,
+        "admin_keyword_ratio": 0.1667,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "ground_truth_compare_length": 1958
+    },
+    {
+      "engine": "easyocr",
+      "variant": "raw",
+      "status": "skipped",
+      "text": "",
+      "boxes": [],
+      "elapsed_sec": 0.0001323379999575991,
+      "error": "Chưa cài easyocr. Chạy: pip install -r requirements-optional-ocr.txt",
+      "raw": null,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    },
+    {
+      "engine": "easyocr",
+      "variant": "opencv_preprocessed",
+      "status": "skipped",
+      "text": "",
+      "boxes": [],
+      "elapsed_sec": 9.751800007506972e-05,
+      "error": "Chưa cài easyocr. Chạy: pip install -r requirements-optional-ocr.txt",
+      "raw": null,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    },
+    {
+      "engine": "paddle_vietocr",
+      "variant": "raw",
+      "status": "ok",
+      "text": "Đang cập nhật file đính kèm",
+      "boxes": [
+        {
+          "text": "Đang cập nhật file đính kèm",
+          "confidence": 0.9745251536369324,
+          "bbox": [
+            663,
+            1250,
+            1152,
+            1300
+          ],
+          "label": null,
+          "page": 1
+        }
+      ],
+      "elapsed_sec": 23.664497499994468,
+      "error": "",
+      "quality_guard": {
+        "token_count": 6,
+        "letter_count": 22,
+        "marked_letter_ratio": 0.2727,
+        "marked_token_ratio": 0.8333,
+        "admin_keyword_hits": 1,
+        "admin_keyword_ratio": 0.1667,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "raw": {
+        "page_count": 1,
+        "ok_pages": 1,
+        "error_pages": 0,
+        "skipped_pages": 0,
+        "first_page_text": "Đang cập nhật file đính kèm",
+        "page_elapsed_total": 23.642725299985614,
+        "wall_elapsed_sec": 23.664497499994468,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "ok",
+            "elapsed_sec": 23.642725299985614,
+            "text_len": 27,
+            "boxes": 1,
+            "error": ""
+          }
+        ],
+        "refresh": {
+          "mode": "rerun_paddle_detection_and_finetuned_vietocr",
+          "refreshed_at_unix": 1780327962.1973708,
+          "vietocr_model": null,
+          "note": "Reran PaddleOCR detection and fine-tuned VietOCR recognition."
+        }
+      },
+      "previous_eval": {
+        "status": "skipped",
+        "text_len": 0,
+        "elapsed_sec": 5.002000011700147e-05,
+        "cer": null,
+        "wer": null,
+        "quality_guard": null
+      },
+      "cer": 0.98659793814433,
+      "wer": 1.0,
+      "ground_truth_compare_length": 1958
+    },
+    {
+      "engine": "paddle_vietocr",
+      "variant": "opencv_preprocessed",
+      "status": "ok",
+      "text": "Đang cập nhật file đính kèm",
+      "boxes": [
+        {
+          "text": "Đang cập nhật file đính kèm",
+          "confidence": 0.9832844734191895,
+          "bbox": [
+            662,
+            1250,
+            1154,
+            1301
+          ],
+          "label": null,
+          "page": 1
+        }
+      ],
+      "elapsed_sec": 23.832087000017054,
+      "error": "",
+      "quality_guard": {
+        "token_count": 6,
+        "letter_count": 22,
+        "marked_letter_ratio": 0.2727,
+        "marked_token_ratio": 0.8333,
+        "admin_keyword_hits": 1,
+        "admin_keyword_ratio": 0.1667,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "raw": {
+        "page_count": 1,
+        "ok_pages": 1,
+        "error_pages": 0,
+        "skipped_pages": 0,
+        "first_page_text": "Đang cập nhật file đính kèm",
+        "page_elapsed_total": 23.813066700007766,
+        "wall_elapsed_sec": 23.832087000017054,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "ok",
+            "elapsed_sec": 23.813066700007766,
+            "text_len": 27,
+            "boxes": 1,
+            "error": ""
+          }
+        ],
+        "refresh": {
+          "mode": "rerun_paddle_detection_and_finetuned_vietocr",
+          "refreshed_at_unix": 1780327986.0294948,
+          "vietocr_model": null,
+          "note": "Reran PaddleOCR detection and fine-tuned VietOCR recognition."
+        }
+      },
+      "previous_eval": {
+        "status": "skipped",
+        "text_len": 0,
+        "elapsed_sec": 3.3800999972299905e-05,
+        "cer": null,
+        "wer": null,
+        "quality_guard": null
+      },
+      "cer": 0.98659793814433,
+      "wer": 1.0,
+      "ground_truth_compare_length": 1958
+    },
+    {
+      "engine": "glm_ocr",
+      "variant": "raw",
+      "status": "skipped",
+      "text": "",
+      "boxes": [],
+      "elapsed_sec": 6.310001481324434e-07,
+      "error": "Chưa cấu hình GLM_OCR_API_KEY hoặc ZAI_API_KEY trong .env nên bỏ qua GLM-OCR API.",
+      "raw": null,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    },
+    {
+      "engine": "glm_ocr",
+      "variant": "opencv_preprocessed",
+      "status": "skipped",
+      "text": "",
+      "boxes": [],
+      "elapsed_sec": 1.8199989426648244e-07,
+      "error": "Chưa cấu hình GLM_OCR_API_KEY hoặc ZAI_API_KEY trong .env nên bỏ qua GLM-OCR API.",
+      "raw": null,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    },
+    {
+      "engine": "paddleocr_vl",
+      "variant": "raw",
+      "status": "skipped",
+      "text": "",
+      "boxes": [],
+      "elapsed_sec": 3.518600010465889e-05,
+      "error": "Chưa cài PaddleOCR-VL/PaddleOCR 3.x. Chạy scripts/setup_latest_windows.ps1 -Full hoặc cấu hình PADDLEOCR_VL_CMD.",
+      "raw": null,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    },
+    {
+      "engine": "paddleocr_vl",
+      "variant": "opencv_preprocessed",
+      "status": "skipped",
+      "text": "",
+      "boxes": [],
+      "elapsed_sec": 2.917799997703696e-05,
+      "error": "Chưa cài PaddleOCR-VL/PaddleOCR 3.x. Chạy scripts/setup_latest_windows.ps1 -Full hoặc cấu hình PADDLEOCR_VL_CMD.",
+      "raw": null,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    }
+  ],
+  "comparison_summary": {
+    "total_runs": 10,
+    "ok_runs": 4,
+    "error_runs": 0,
+    "skipped_runs": 6,
+    "issue_runs": 6,
+    "has_ground_truth": true,
+    "best_cer": {
+      "engine": "tesseract",
+      "variant": "raw",
+      "label": "tesseract / raw",
+      "status": "ok",
+      "cer_pct": 98.66,
+      "wer_pct": 100.0,
+      "elapsed_sec": 0.459,
+      "text_len": 27,
+      "avg_confidence": 95.33,
+      "quality_score": 0.87,
+      "quality_source": "CER/WER",
+      "quality_guard": {
+        "token_count": 6,
+        "letter_count": 22,
+        "marked_letter_ratio": 0.2727,
+        "marked_token_ratio": 0.8333,
+        "admin_keyword_hits": 1,
+        "admin_keyword_ratio": 0.1667,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 0.8711340206185554,
+      "error": "",
+      "cer_bar": 98.66,
+      "wer_bar": 100,
+      "time_bar": 1.93,
+      "text_bar": 100.0,
+      "quality_bar": 0.87,
+      "confidence_bar": 95.33
+    },
+    "best_wer": {
+      "engine": "tesseract",
+      "variant": "raw",
+      "label": "tesseract / raw",
+      "status": "ok",
+      "cer_pct": 98.66,
+      "wer_pct": 100.0,
+      "elapsed_sec": 0.459,
+      "text_len": 27,
+      "avg_confidence": 95.33,
+      "quality_score": 0.87,
+      "quality_source": "CER/WER",
+      "quality_guard": {
+        "token_count": 6,
+        "letter_count": 22,
+        "marked_letter_ratio": 0.2727,
+        "marked_token_ratio": 0.8333,
+        "admin_keyword_hits": 1,
+        "admin_keyword_ratio": 0.1667,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 0.8711340206185554,
+      "error": "",
+      "cer_bar": 98.66,
+      "wer_bar": 100,
+      "time_bar": 1.93,
+      "text_bar": 100.0,
+      "quality_bar": 0.87,
+      "confidence_bar": 95.33
+    },
+    "fastest": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "label": "tesseract / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": 98.66,
+      "wer_pct": 100.0,
+      "elapsed_sec": 0.381,
+      "text_len": 27,
+      "avg_confidence": 94.0,
+      "quality_score": 0.87,
+      "quality_source": "CER/WER",
+      "quality_guard": {
+        "token_count": 6,
+        "letter_count": 22,
+        "marked_letter_ratio": 0.2727,
+        "marked_token_ratio": 0.8333,
+        "admin_keyword_hits": 1,
+        "admin_keyword_ratio": 0.1667,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 0.8711340206185554,
+      "error": "",
+      "cer_bar": 98.66,
+      "wer_bar": 100,
+      "time_bar": 1.6,
+      "text_bar": 100.0,
+      "quality_bar": 0.87,
+      "confidence_bar": 94.0
+    },
+    "best_quality": {
+      "engine": "tesseract",
+      "variant": "raw",
+      "label": "tesseract / raw",
+      "status": "ok",
+      "cer_pct": 98.66,
+      "wer_pct": 100.0,
+      "elapsed_sec": 0.459,
+      "text_len": 27,
+      "avg_confidence": 95.33,
+      "quality_score": 0.87,
+      "quality_source": "CER/WER",
+      "quality_guard": {
+        "token_count": 6,
+        "letter_count": 22,
+        "marked_letter_ratio": 0.2727,
+        "marked_token_ratio": 0.8333,
+        "admin_keyword_hits": 1,
+        "admin_keyword_ratio": 0.1667,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 0.8711340206185554,
+      "error": "",
+      "cer_bar": 98.66,
+      "wer_bar": 100,
+      "time_bar": 1.93,
+      "text_bar": 100.0,
+      "quality_bar": 0.87,
+      "confidence_bar": 95.33
+    },
+    "best_confidence": {
+      "engine": "paddle_vietocr",
+      "variant": "opencv_preprocessed",
+      "label": "paddle_vietocr / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": 98.66,
+      "wer_pct": 100.0,
+      "elapsed_sec": 23.832,
+      "text_len": 27,
+      "avg_confidence": 98.33,
+      "quality_score": 0.87,
+      "quality_source": "CER/WER",
+      "quality_guard": {
+        "token_count": 6,
+        "letter_count": 22,
+        "marked_letter_ratio": 0.2727,
+        "marked_token_ratio": 0.8333,
+        "admin_keyword_hits": 1,
+        "admin_keyword_ratio": 0.1667,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 0.8711340206185554,
+      "error": "",
+      "cer_bar": 98.66,
+      "wer_bar": 100,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 0.87,
+      "confidence_bar": 98.33
+    },
+    "rows": [
+      {
+        "engine": "tesseract",
+        "variant": "raw",
+        "label": "tesseract / raw",
+        "status": "ok",
+        "cer_pct": 98.66,
+        "wer_pct": 100.0,
+        "elapsed_sec": 0.459,
+        "text_len": 27,
+        "avg_confidence": 95.33,
+        "quality_score": 0.87,
+        "quality_source": "CER/WER",
+        "quality_guard": {
+          "token_count": 6,
+          "letter_count": 22,
+          "marked_letter_ratio": 0.2727,
+          "marked_token_ratio": 0.8333,
+          "admin_keyword_hits": 1,
+          "admin_keyword_ratio": 0.1667,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 100.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 0.8711340206185554,
+        "error": "",
+        "cer_bar": 98.66,
+        "wer_bar": 100,
+        "time_bar": 1.93,
+        "text_bar": 100.0,
+        "quality_bar": 0.87,
+        "confidence_bar": 95.33
+      },
+      {
+        "engine": "tesseract",
+        "variant": "opencv_preprocessed",
+        "label": "tesseract / opencv_preprocessed",
+        "status": "ok",
+        "cer_pct": 98.66,
+        "wer_pct": 100.0,
+        "elapsed_sec": 0.381,
+        "text_len": 27,
+        "avg_confidence": 94.0,
+        "quality_score": 0.87,
+        "quality_source": "CER/WER",
+        "quality_guard": {
+          "token_count": 6,
+          "letter_count": 22,
+          "marked_letter_ratio": 0.2727,
+          "marked_token_ratio": 0.8333,
+          "admin_keyword_hits": 1,
+          "admin_keyword_ratio": 0.1667,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 100.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 0.8711340206185554,
+        "error": "",
+        "cer_bar": 98.66,
+        "wer_bar": 100,
+        "time_bar": 1.6,
+        "text_bar": 100.0,
+        "quality_bar": 0.87,
+        "confidence_bar": 94.0
+      },
+      {
+        "engine": "easyocr",
+        "variant": "raw",
+        "label": "easyocr / raw",
+        "status": "skipped",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.0,
+        "text_len": 0,
+        "avg_confidence": null,
+        "quality_score": null,
+        "quality_source": null,
+        "quality_guard": {
+          "token_count": 0,
+          "letter_count": 0,
+          "marked_letter_ratio": 0.0,
+          "marked_token_ratio": 0.0,
+          "admin_keyword_hits": 0,
+          "broken_token_hits": 0,
+          "likely_vietnamese": false,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 0.0,
+          "quality_penalty": 0.0,
+          "note": "Không đủ text để đánh giá chất lượng tiếng Việt."
+        },
+        "selection_score": -1.0,
+        "error": "Chưa cài easyocr. Chạy: pip install -r requirements-optional-ocr.txt",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 0.0,
+        "text_bar": 0.0,
+        "quality_bar": 0,
+        "confidence_bar": 0
+      },
+      {
+        "engine": "easyocr",
+        "variant": "opencv_preprocessed",
+        "label": "easyocr / opencv_preprocessed",
+        "status": "skipped",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.0,
+        "text_len": 0,
+        "avg_confidence": null,
+        "quality_score": null,
+        "quality_source": null,
+        "quality_guard": {
+          "token_count": 0,
+          "letter_count": 0,
+          "marked_letter_ratio": 0.0,
+          "marked_token_ratio": 0.0,
+          "admin_keyword_hits": 0,
+          "broken_token_hits": 0,
+          "likely_vietnamese": false,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 0.0,
+          "quality_penalty": 0.0,
+          "note": "Không đủ text để đánh giá chất lượng tiếng Việt."
+        },
+        "selection_score": -1.0,
+        "error": "Chưa cài easyocr. Chạy: pip install -r requirements-optional-ocr.txt",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 0.0,
+        "text_bar": 0.0,
+        "quality_bar": 0,
+        "confidence_bar": 0
+      },
+      {
+        "engine": "paddle_vietocr",
+        "variant": "raw",
+        "label": "paddle_vietocr / raw",
+        "status": "ok",
+        "cer_pct": 98.66,
+        "wer_pct": 100.0,
+        "elapsed_sec": 23.664,
+        "text_len": 27,
+        "avg_confidence": 97.45,
+        "quality_score": 0.87,
+        "quality_source": "CER/WER",
+        "quality_guard": {
+          "token_count": 6,
+          "letter_count": 22,
+          "marked_letter_ratio": 0.2727,
+          "marked_token_ratio": 0.8333,
+          "admin_keyword_hits": 1,
+          "admin_keyword_ratio": 0.1667,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 100.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 0.8711340206185554,
+        "error": "",
+        "cer_bar": 98.66,
+        "wer_bar": 100,
+        "time_bar": 99.3,
+        "text_bar": 100.0,
+        "quality_bar": 0.87,
+        "confidence_bar": 97.45
+      },
+      {
+        "engine": "paddle_vietocr",
+        "variant": "opencv_preprocessed",
+        "label": "paddle_vietocr / opencv_preprocessed",
+        "status": "ok",
+        "cer_pct": 98.66,
+        "wer_pct": 100.0,
+        "elapsed_sec": 23.832,
+        "text_len": 27,
+        "avg_confidence": 98.33,
+        "quality_score": 0.87,
+        "quality_source": "CER/WER",
+        "quality_guard": {
+          "token_count": 6,
+          "letter_count": 22,
+          "marked_letter_ratio": 0.2727,
+          "marked_token_ratio": 0.8333,
+          "admin_keyword_hits": 1,
+          "admin_keyword_ratio": 0.1667,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 100.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 0.8711340206185554,
+        "error": "",
+        "cer_bar": 98.66,
+        "wer_bar": 100,
+        "time_bar": 100.0,
+        "text_bar": 100.0,
+        "quality_bar": 0.87,
+        "confidence_bar": 98.33
+      },
+      {
+        "engine": "glm_ocr",
+        "variant": "raw",
+        "label": "glm_ocr / raw",
+        "status": "skipped",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.0,
+        "text_len": 0,
+        "avg_confidence": null,
+        "quality_score": null,
+        "quality_source": null,
+        "quality_guard": {
+          "token_count": 0,
+          "letter_count": 0,
+          "marked_letter_ratio": 0.0,
+          "marked_token_ratio": 0.0,
+          "admin_keyword_hits": 0,
+          "broken_token_hits": 0,
+          "likely_vietnamese": false,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 0.0,
+          "quality_penalty": 0.0,
+          "note": "Không đủ text để đánh giá chất lượng tiếng Việt."
+        },
+        "selection_score": -1.0,
+        "error": "Chưa cấu hình GLM_OCR_API_KEY hoặc ZAI_API_KEY trong .env nên bỏ qua GLM-OCR API.",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 0.0,
+        "text_bar": 0.0,
+        "quality_bar": 0,
+        "confidence_bar": 0
+      },
+      {
+        "engine": "glm_ocr",
+        "variant": "opencv_preprocessed",
+        "label": "glm_ocr / opencv_preprocessed",
+        "status": "skipped",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.0,
+        "text_len": 0,
+        "avg_confidence": null,
+        "quality_score": null,
+        "quality_source": null,
+        "quality_guard": {
+          "token_count": 0,
+          "letter_count": 0,
+          "marked_letter_ratio": 0.0,
+          "marked_token_ratio": 0.0,
+          "admin_keyword_hits": 0,
+          "broken_token_hits": 0,
+          "likely_vietnamese": false,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 0.0,
+          "quality_penalty": 0.0,
+          "note": "Không đủ text để đánh giá chất lượng tiếng Việt."
+        },
+        "selection_score": -1.0,
+        "error": "Chưa cấu hình GLM_OCR_API_KEY hoặc ZAI_API_KEY trong .env nên bỏ qua GLM-OCR API.",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 0.0,
+        "text_bar": 0.0,
+        "quality_bar": 0,
+        "confidence_bar": 0
+      },
+      {
+        "engine": "paddleocr_vl",
+        "variant": "raw",
+        "label": "paddleocr_vl / raw",
+        "status": "skipped",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.0,
+        "text_len": 0,
+        "avg_confidence": null,
+        "quality_score": null,
+        "quality_source": null,
+        "quality_guard": {
+          "token_count": 0,
+          "letter_count": 0,
+          "marked_letter_ratio": 0.0,
+          "marked_token_ratio": 0.0,
+          "admin_keyword_hits": 0,
+          "broken_token_hits": 0,
+          "likely_vietnamese": false,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 0.0,
+          "quality_penalty": 0.0,
+          "note": "Không đủ text để đánh giá chất lượng tiếng Việt."
+        },
+        "selection_score": -1.0,
+        "error": "Chưa cài PaddleOCR-VL/PaddleOCR 3.x. Chạy scripts/setup_latest_windows.ps1 -Full hoặc cấu hình PADDLEOCR_VL_CMD.",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 0.0,
+        "text_bar": 0.0,
+        "quality_bar": 0,
+        "confidence_bar": 0
+      },
+      {
+        "engine": "paddleocr_vl",
+        "variant": "opencv_preprocessed",
+        "label": "paddleocr_vl / opencv_preprocessed",
+        "status": "skipped",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.0,
+        "text_len": 0,
+        "avg_confidence": null,
+        "quality_score": null,
+        "quality_source": null,
+        "quality_guard": {
+          "token_count": 0,
+          "letter_count": 0,
+          "marked_letter_ratio": 0.0,
+          "marked_token_ratio": 0.0,
+          "admin_keyword_hits": 0,
+          "broken_token_hits": 0,
+          "likely_vietnamese": false,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 0.0,
+          "quality_penalty": 0.0,
+          "note": "Không đủ text để đánh giá chất lượng tiếng Việt."
+        },
+        "selection_score": -1.0,
+        "error": "Chưa cài PaddleOCR-VL/PaddleOCR 3.x. Chạy scripts/setup_latest_windows.ps1 -Full hoặc cấu hình PADDLEOCR_VL_CMD.",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 0.0,
+        "text_bar": 0.0,
+        "quality_bar": 0,
+        "confidence_bar": 0
+      }
+    ],
+    "preprocessing_effect": [
+      {
+        "engine": "tesseract",
+        "raw_status": "ok",
+        "pre_status": "ok",
+        "cer_delta": 0.0,
+        "wer_delta": 0.0,
+        "time_delta": -0.078,
+        "text_len_delta": 0
+      },
+      {
+        "engine": "easyocr",
+        "raw_status": "skipped",
+        "pre_status": "skipped",
+        "cer_delta": null,
+        "wer_delta": null,
+        "time_delta": 0.0,
+        "text_len_delta": 0
+      },
+      {
+        "engine": "paddle_vietocr",
+        "raw_status": "ok",
+        "pre_status": "ok",
+        "cer_delta": 0.0,
+        "wer_delta": 0.0,
+        "time_delta": 0.168,
+        "text_len_delta": 0
+      },
+      {
+        "engine": "glm_ocr",
+        "raw_status": "skipped",
+        "pre_status": "skipped",
+        "cer_delta": null,
+        "wer_delta": null,
+        "time_delta": 0.0,
+        "text_len_delta": 0
+      },
+      {
+        "engine": "paddleocr_vl",
+        "raw_status": "skipped",
+        "pre_status": "skipped",
+        "cer_delta": null,
+        "wer_delta": null,
+        "time_delta": 0.0,
+        "text_len_delta": 0
+      }
+    ],
+    "engine_status": [
+      {
+        "engine": "tesseract",
+        "ok": 2,
+        "skipped": 0,
+        "error": 0,
+        "total": 2
+      },
+      {
+        "engine": "easyocr",
+        "ok": 0,
+        "skipped": 2,
+        "error": 0,
+        "total": 2
+      },
+      {
+        "engine": "paddle_vietocr",
+        "ok": 2,
+        "skipped": 0,
+        "error": 0,
+        "total": 2
+      },
+      {
+        "engine": "glm_ocr",
+        "ok": 0,
+        "skipped": 2,
+        "error": 0,
+        "total": 2
+      },
+      {
+        "engine": "paddleocr_vl",
+        "ok": 0,
+        "skipped": 2,
+        "error": 0,
+        "total": 2
+      }
+    ]
+  },
+  "layoutlmv3_postprocess": {
+    "mode": "fallback_rule_based",
+    "note": "Chưa cấu hình LAYOUTLMV3_MODEL_DIR. Đang dùng rule/regex để mô phỏng hậu xử lý trường thông tin. Muốn chạy LayoutLMv3 thật cần fine-tune model token classification cho công văn.",
+    "fields": {
+      "so_ky_hieu": "",
+      "ngay_ban_hanh": "",
+      "trich_yeu": "",
+      "co_quan_ban_hanh": "",
+      "noi_gui": "",
+      "noi_nhan": "",
+      "loai_van_ban": "",
+      "confidence_note": "rule_based"
+    }
+  },
+  "best_engine": {
+    "engine": "tesseract",
+    "variant": "raw"
+  },
+  "refresh_history": [
+    {
+      "type": "vietocr_finetune_refresh",
+      "timestamp_unix": 1780327986.0325074,
+      "ground_truth_recomputed": true,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 5.002000011700147e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 27,
+            "elapsed_sec": 23.664497499994468,
+            "cer": 0.98659793814433,
+            "wer": 1.0,
+            "quality_guard": {
+              "token_count": 6,
+              "letter_count": 22,
+              "marked_letter_ratio": 0.2727,
+              "marked_token_ratio": 0.8333,
+              "admin_keyword_hits": 1,
+              "admin_keyword_ratio": 0.1667,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 3.3800999972299905e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 27,
+            "elapsed_sec": 23.832087000017054,
+            "cer": 0.98659793814433,
+            "wer": 1.0,
+            "quality_guard": {
+              "token_count": 6,
+              "letter_count": 22,
+              "marked_letter_ratio": 0.2727,
+              "marked_token_ratio": 0.8333,
+              "admin_keyword_hits": 1,
+              "admin_keyword_ratio": 0.1667,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        }
+      ]
+    }
+  ]
+}

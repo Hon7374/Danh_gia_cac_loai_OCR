@@ -1,0 +1,41 @@
+﻿engine,variant,status,elapsed_sec,cer,wer,error,text_preview
+tesseract,raw,ok,2.5664756909999937,0.3487484089944845,0.43106796116504853,,"NGÂN HÀNG NHÀ NƯỚC VIỆT NAM Số: /2026/TT-NHNN ˆx⁄::N HÀNG NHÀ NƯỚC VIỆT NAM| VỤ PHÁP CHẾ ĐÃ THÂM ĐỊNH AN see wR CONG HÒA XÃ HỘI CHỦ NGHĨA VIET NAM Độc lập - Tự do - Hạnh phúc Hà Nội, ngay49 thang 5 năm 2026 THÔNG TƯ Phân cấ thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa đối, bổ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phan cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng Căn cứ Luật Ngân hàng Nhà nước Việt Nam "
+tesseract,opencv_preprocessed,ok,1.5172350870000173,0.3592233009708738,0.4922779922779923,,"NGAN HÀNG NHÀ NƯỚC VIỆT NAM Số: /2026/TT-NHNN CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Hà Nội, ngày49thảng 5 năm 2026 *,':+N HÀNG NHÀ NƯỚC VIỆT NAM vụ PHÁP CHẾ DA THAM ĐỊNH Ada Sint 22 THONG TU Phan cấp, thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa doi, bé sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng Căn cứ Luật Ngân hàng Nhà nước Việt Na"
+easyocr,raw,skipped,0.0002029849999871658,,,Chưa cài easyocr. Chạy: pip install -r requirements-optional-ocr.txt,
+easyocr,opencv_preprocessed,skipped,5.165799996120768e-05,,,Chưa cài easyocr. Chạy: pip install -r requirements-optional-ocr.txt,
+paddle_vietocr,raw,ok,29.767336899996735,0.38978162340337863,0.41132075471698115,,"NGÂN HÀNG NHÀ NƯỚC
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+VIỆT NAM
+Độc lập - Tự do - Hạnh phúc
+Số: 1M /2026/TT-NHNN
+hà nội, ngày 19 tháng 5 năm 2026
+NGÀN HÀNG NHÀ NƯỚC VIỆT NAM
+VỤ PHÁP CHE'
+ĐÃ THẨM ĐỊNH
+09.1.001.2026
+THÔNG TƯ
+Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và
+sửa đồi, bồ sung một số điều của các Thông tư liên quan đến cắt giảm;
+đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực
+thành lập và hoạt động ngân hàng
+Căn cứ Luật Ngân hàng Nhà nước Vi"
+paddle_vietocr,opencv_preprocessed,ok,29.237659999984317,0.3922290388548057,0.43820224719101125,,"NGÂN HÀNG NHÀ NƯỚC
+CỘNG HÒA XÃ HỌI CHỦ NGHĨA VIỆT NAM
+VIỆT NAM
+Độc lập - Tự do - Hạnh phúc
+Số: 14 2026/TT-NHNN
+hà nội, ngày 19 tháng 5 năm 202
+""3-N HÀNG NHÀ NƯỚC VIỆT NAM
+VỤ PHÁP CHẾ
+ĐÃ THẨM ĐỊNH
+1941 nam 112020
+THÔNG TƯ
+Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và
+sửa đồi, bồ sung một số điều của các Thông tư liên quan đến cắt giảm;
+đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực
+thành lập và hoạt động ngân hàng
+Căn cử Luật Ngân hàng Nhà nước Việ"
+glm_ocr,raw,skipped,9.870000212686136e-07,,,Chưa cấu hình GLM_OCR_API_KEY hoặc ZAI_API_KEY trong .env nên bỏ qua GLM-OCR API.,
+glm_ocr,opencv_preprocessed,skipped,1.829999973779195e-07,,,Chưa cấu hình GLM_OCR_API_KEY hoặc ZAI_API_KEY trong .env nên bỏ qua GLM-OCR API.,
+paddleocr_vl,raw,skipped,3.041099995471086e-05,,,Chưa cài PaddleOCR-VL/PaddleOCR 3.x. Chạy scripts/setup_latest_windows.ps1 -Full hoặc cấu hình PADDLEOCR_VL_CMD.,
+paddleocr_vl,opencv_preprocessed,skipped,2.912000002197601e-05,,,Chưa cài PaddleOCR-VL/PaddleOCR 3.x. Chạy scripts/setup_latest_windows.ps1 -Full hoặc cấu hình PADDLEOCR_VL_CMD.,

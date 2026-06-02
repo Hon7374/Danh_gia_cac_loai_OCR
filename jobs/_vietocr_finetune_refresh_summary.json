@@ -1,0 +1,1212 @@
+{
+  "started_at_unix": 1780327876.5959685,
+  "jobs_total": 12,
+  "jobs": [
+    {
+      "job_id": "3b198ee77c6b",
+      "changed": true,
+      "best_engine": {
+        "engine": "tesseract",
+        "variant": "raw"
+      },
+      "has_ground_truth": true,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 3.600800027925288e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1816,
+            "elapsed_sec": 31.73305530002108,
+            "cer": 0.38978162340337863,
+            "wer": 0.41132075471698115,
+            "quality_guard": {
+              "token_count": 388,
+              "letter_count": 1289,
+              "marked_letter_ratio": 0.3026,
+              "marked_token_ratio": 0.8686,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.3299,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 4.3123000068590045e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1829,
+            "elapsed_sec": 30.176712199987378,
+            "cer": 0.3922290388548057,
+            "wer": 0.43820224719101125,
+            "quality_guard": {
+              "token_count": 389,
+              "letter_count": 1297,
+              "marked_letter_ratio": 0.2968,
+              "marked_token_ratio": 0.856,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.329,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        }
+      ]
+    },
+    {
+      "job_id": "49cae214d47b",
+      "changed": true,
+      "best_engine": {
+        "engine": "tesseract",
+        "variant": "raw"
+      },
+      "has_ground_truth": true,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 5.002000011700147e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 27,
+            "elapsed_sec": 23.664497499994468,
+            "cer": 0.98659793814433,
+            "wer": 1.0,
+            "quality_guard": {
+              "token_count": 6,
+              "letter_count": 22,
+              "marked_letter_ratio": 0.2727,
+              "marked_token_ratio": 0.8333,
+              "admin_keyword_hits": 1,
+              "admin_keyword_ratio": 0.1667,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 3.3800999972299905e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 27,
+            "elapsed_sec": 23.832087000017054,
+            "cer": 0.98659793814433,
+            "wer": 1.0,
+            "quality_guard": {
+              "token_count": 6,
+              "letter_count": 22,
+              "marked_letter_ratio": 0.2727,
+              "marked_token_ratio": 0.8333,
+              "admin_keyword_hits": 1,
+              "admin_keyword_ratio": 0.1667,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        }
+      ]
+    },
+    {
+      "job_id": "4eb0cda1c107",
+      "changed": true,
+      "best_engine": {
+        "engine": "tesseract",
+        "variant": "raw"
+      },
+      "has_ground_truth": true,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "ok",
+            "text_len": 69699,
+            "elapsed_sec": 715.1358981000376,
+            "cer": 0.11991369074218301,
+            "wer": 0.515426497277677,
+            "quality_guard": {
+              "token_count": 17125,
+              "letter_count": 49359,
+              "marked_letter_ratio": 0.1612,
+              "marked_token_ratio": 0.4391,
+              "admin_keyword_hits": 2610,
+              "admin_keyword_ratio": 0.1524,
+              "broken_token_hits": 1015,
+              "broken_token_ratio": 0.0593,
+              "likely_vietnamese": true,
+              "diacritic_loss": true,
+              "severe_diacritic_loss": true,
+              "vietnamese_quality_score": 45.62,
+              "quality_penalty": 30.0,
+              "note": "Nghi ngờ rụng dấu/mất nguyên âm tiếng Việt nghiêm trọng."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 79896,
+            "elapsed_sec": 261.08198670001,
+            "cer": 0.08196825964276139,
+            "wer": 0.10095281306715063,
+            "quality_guard": {
+              "token_count": 17401,
+              "letter_count": 59271,
+              "marked_letter_ratio": 0.2904,
+              "marked_token_ratio": 0.8675,
+              "admin_keyword_hits": 3585,
+              "admin_keyword_ratio": 0.206,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 38,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "ok",
+            "text_len": 69673,
+            "elapsed_sec": 708.2886152000283,
+            "cer": 0.12067974924351722,
+            "wer": 0.5151429219600726,
+            "quality_guard": {
+              "token_count": 17105,
+              "letter_count": 49358,
+              "marked_letter_ratio": 0.1619,
+              "marked_token_ratio": 0.4414,
+              "admin_keyword_hits": 2610,
+              "admin_keyword_ratio": 0.1526,
+              "broken_token_hits": 1004,
+              "broken_token_ratio": 0.0587,
+              "likely_vietnamese": true,
+              "diacritic_loss": true,
+              "severe_diacritic_loss": true,
+              "vietnamese_quality_score": 46.03,
+              "quality_penalty": 30.0,
+              "note": "Nghi ngờ rụng dấu/mất nguyên âm tiếng Việt nghiêm trọng."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 79189,
+            "elapsed_sec": 279.6240361999953,
+            "cer": 0.060607995097225593,
+            "wer": 0.08047867513611615,
+            "quality_guard": {
+              "token_count": 17251,
+              "letter_count": 58723,
+              "marked_letter_ratio": 0.2899,
+              "marked_token_ratio": 0.8673,
+              "admin_keyword_hits": 3600,
+              "admin_keyword_ratio": 0.2087,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 38,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        }
+      ]
+    },
+    {
+      "job_id": "5272abe89271",
+      "changed": false,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "ok",
+            "text_len": 1765,
+            "elapsed_sec": 581.5844945999852,
+            "cer": 0.31565549427238015,
+            "wer": 0.3300970873786408,
+            "quality_guard": {
+              "token_count": 376,
+              "letter_count": 1259,
+              "marked_letter_ratio": 0.2947,
+              "marked_token_ratio": 0.859,
+              "admin_keyword_hits": 130,
+              "admin_keyword_ratio": 0.3457,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1816,
+            "elapsed_sec": 8.238559199962765,
+            "cer": 0.38978162340337863,
+            "wer": 0.41132075471698115,
+            "quality_guard": {
+              "token_count": 388,
+              "letter_count": 1289,
+              "marked_letter_ratio": 0.3026,
+              "marked_token_ratio": 0.8686,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.3299,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": false,
+          "decision": "CER/WER xấu hơn bản cũ (0.3207 -> 0.3973)."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "ok",
+            "text_len": 1782,
+            "elapsed_sec": 591.848375600006,
+            "cer": 0.33347333053338934,
+            "wer": 0.36153846153846153,
+            "quality_guard": {
+              "token_count": 381,
+              "letter_count": 1268,
+              "marked_letter_ratio": 0.2957,
+              "marked_token_ratio": 0.8583,
+              "admin_keyword_hits": 130,
+              "admin_keyword_ratio": 0.3412,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1829,
+            "elapsed_sec": 8.820393399975728,
+            "cer": 0.3922290388548057,
+            "wer": 0.43820224719101125,
+            "quality_guard": {
+              "token_count": 389,
+              "letter_count": 1297,
+              "marked_letter_ratio": 0.2968,
+              "marked_token_ratio": 0.856,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.329,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": false,
+          "decision": "CER/WER xấu hơn bản cũ (0.3433 -> 0.4083)."
+        }
+      ]
+    },
+    {
+      "job_id": "570fc6dc673c",
+      "changed": false,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "ok",
+            "text_len": 1765,
+            "elapsed_sec": 495.09749539999757,
+            "cer": 0.31565549427238015,
+            "wer": 0.3300970873786408,
+            "quality_guard": {
+              "token_count": 376,
+              "letter_count": 1259,
+              "marked_letter_ratio": 0.2947,
+              "marked_token_ratio": 0.859,
+              "admin_keyword_hits": 130,
+              "admin_keyword_ratio": 0.3457,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1816,
+            "elapsed_sec": 8.293921199976467,
+            "cer": 0.38978162340337863,
+            "wer": 0.41132075471698115,
+            "quality_guard": {
+              "token_count": 388,
+              "letter_count": 1289,
+              "marked_letter_ratio": 0.3026,
+              "marked_token_ratio": 0.8686,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.3299,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": false,
+          "decision": "CER/WER xấu hơn bản cũ (0.3207 -> 0.3973)."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "ok",
+            "text_len": 1782,
+            "elapsed_sec": 544.4053698999924,
+            "cer": 0.33347333053338934,
+            "wer": 0.36153846153846153,
+            "quality_guard": {
+              "token_count": 381,
+              "letter_count": 1268,
+              "marked_letter_ratio": 0.2957,
+              "marked_token_ratio": 0.8583,
+              "admin_keyword_hits": 130,
+              "admin_keyword_ratio": 0.3412,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1829,
+            "elapsed_sec": 8.42469740001252,
+            "cer": 0.3922290388548057,
+            "wer": 0.43820224719101125,
+            "quality_guard": {
+              "token_count": 389,
+              "letter_count": 1297,
+              "marked_letter_ratio": 0.2968,
+              "marked_token_ratio": 0.856,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.329,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": false,
+          "decision": "CER/WER xấu hơn bản cũ (0.3433 -> 0.4083)."
+        }
+      ]
+    },
+    {
+      "job_id": "92189c246949",
+      "changed": true,
+      "best_engine": {
+        "engine": "tesseract",
+        "variant": "raw"
+      },
+      "has_ground_truth": true,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 3.6948999877495226e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1816,
+            "elapsed_sec": 30.263153100037016,
+            "cer": 0.38978162340337863,
+            "wer": 0.41132075471698115,
+            "quality_guard": {
+              "token_count": 388,
+              "letter_count": 1289,
+              "marked_letter_ratio": 0.3026,
+              "marked_token_ratio": 0.8686,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.3299,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 3.251799989811843e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1829,
+            "elapsed_sec": 28.648425600025803,
+            "cer": 0.3922290388548057,
+            "wer": 0.43820224719101125,
+            "quality_guard": {
+              "token_count": 389,
+              "letter_count": 1297,
+              "marked_letter_ratio": 0.2968,
+              "marked_token_ratio": 0.856,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.329,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        }
+      ]
+    },
+    {
+      "job_id": "b900fed40965",
+      "changed": true,
+      "best_engine": {
+        "engine": "tesseract",
+        "variant": "raw"
+      },
+      "has_ground_truth": true,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "ok",
+            "text_len": 11881,
+            "elapsed_sec": 110.75543129997095,
+            "cer": 0.1318639703097781,
+            "wer": 0.5359499826328586,
+            "quality_guard": {
+              "token_count": 2828,
+              "letter_count": 8381,
+              "marked_letter_ratio": 0.162,
+              "marked_token_ratio": 0.4579,
+              "admin_keyword_hits": 460,
+              "admin_keyword_ratio": 0.1627,
+              "broken_token_hits": 403,
+              "broken_token_ratio": 0.1425,
+              "likely_vietnamese": true,
+              "diacritic_loss": true,
+              "severe_diacritic_loss": true,
+              "vietnamese_quality_score": 33.06,
+              "quality_penalty": 30.0,
+              "note": "Nghi ngờ rụng dấu/mất nguyên âm tiếng Việt nghiêm trọng."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 13344,
+            "elapsed_sec": 56.135496100003365,
+            "cer": 0.06566689388775278,
+            "wer": 0.08579367836054186,
+            "quality_guard": {
+              "token_count": 2842,
+              "letter_count": 9830,
+              "marked_letter_ratio": 0.2889,
+              "marked_token_ratio": 0.8716,
+              "admin_keyword_hits": 866,
+              "admin_keyword_ratio": 0.3047,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 7,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "ok",
+            "text_len": 11929,
+            "elapsed_sec": 108.97539810003946,
+            "cer": 0.13595394985988032,
+            "wer": 0.5453282389718652,
+            "quality_guard": {
+              "token_count": 2833,
+              "letter_count": 8401,
+              "marked_letter_ratio": 0.1612,
+              "marked_token_ratio": 0.4564,
+              "admin_keyword_hits": 471,
+              "admin_keyword_ratio": 0.1663,
+              "broken_token_hits": 397,
+              "broken_token_ratio": 0.1401,
+              "likely_vietnamese": true,
+              "diacritic_loss": true,
+              "severe_diacritic_loss": true,
+              "vietnamese_quality_score": 33.29,
+              "quality_penalty": 30.0,
+              "note": "Nghi ngờ rụng dấu/mất nguyên âm tiếng Việt nghiêm trọng."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 13159,
+            "elapsed_sec": 48.53415640001185,
+            "cer": 0.1929107021131561,
+            "wer": 0.2959360889197638,
+            "quality_guard": {
+              "token_count": 2727,
+              "letter_count": 9620,
+              "marked_letter_ratio": 0.2587,
+              "marked_token_ratio": 0.7939,
+              "admin_keyword_hits": 738,
+              "admin_keyword_ratio": 0.2706,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 7,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        }
+      ]
+    },
+    {
+      "job_id": "cb04ccd30a94",
+      "changed": true,
+      "best_engine": {
+        "engine": "tesseract",
+        "variant": "raw"
+      },
+      "has_ground_truth": true,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 3.5918998037232086e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1816,
+            "elapsed_sec": 29.220876699953806,
+            "cer": 0.38978162340337863,
+            "wer": 0.41132075471698115,
+            "quality_guard": {
+              "token_count": 388,
+              "letter_count": 1289,
+              "marked_letter_ratio": 0.3026,
+              "marked_token_ratio": 0.8686,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.3299,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 3.176199970766902e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1829,
+            "elapsed_sec": 30.412095099978615,
+            "cer": 0.3922290388548057,
+            "wer": 0.43820224719101125,
+            "quality_guard": {
+              "token_count": 389,
+              "letter_count": 1297,
+              "marked_letter_ratio": 0.2968,
+              "marked_token_ratio": 0.856,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.329,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        }
+      ]
+    },
+    {
+      "job_id": "d704e3a52d57",
+      "changed": true,
+      "best_engine": {
+        "engine": "easyocr",
+        "variant": "raw"
+      },
+      "has_ground_truth": true,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "error",
+            "text_len": 0,
+            "elapsed_sec": 67.97003729999415,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1833,
+            "elapsed_sec": 27.63278139999602,
+            "cer": 0.3932217231523071,
+            "wer": 0.41682242990654206,
+            "quality_guard": {
+              "token_count": 392,
+              "letter_count": 1306,
+              "marked_letter_ratio": 0.2986,
+              "marked_token_ratio": 0.8673,
+              "admin_keyword_hits": 130,
+              "admin_keyword_ratio": 0.3316,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "error",
+            "text_len": 0,
+            "elapsed_sec": 0.014451299997745082,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1829,
+            "elapsed_sec": 27.202121299982537,
+            "cer": 0.3967280163599182,
+            "wer": 0.449438202247191,
+            "quality_guard": {
+              "token_count": 388,
+              "letter_count": 1301,
+              "marked_letter_ratio": 0.2975,
+              "marked_token_ratio": 0.8634,
+              "admin_keyword_hits": 129,
+              "admin_keyword_ratio": 0.3325,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        }
+      ]
+    },
+    {
+      "job_id": "dd17e0520998",
+      "changed": false,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "ok",
+            "text_len": 1765,
+            "elapsed_sec": 554.2407902999985,
+            "cer": 0.31565549427238015,
+            "wer": 0.3300970873786408,
+            "quality_guard": {
+              "token_count": 376,
+              "letter_count": 1259,
+              "marked_letter_ratio": 0.2947,
+              "marked_token_ratio": 0.859,
+              "admin_keyword_hits": 130,
+              "admin_keyword_ratio": 0.3457,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1816,
+            "elapsed_sec": 9.482317300047725,
+            "cer": 0.38978162340337863,
+            "wer": 0.41132075471698115,
+            "quality_guard": {
+              "token_count": 388,
+              "letter_count": 1289,
+              "marked_letter_ratio": 0.3026,
+              "marked_token_ratio": 0.8686,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.3299,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": false,
+          "decision": "CER/WER xấu hơn bản cũ (0.3207 -> 0.3973)."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "ok",
+            "text_len": 1782,
+            "elapsed_sec": 541.7307759999967,
+            "cer": 0.33347333053338934,
+            "wer": 0.36153846153846153,
+            "quality_guard": {
+              "token_count": 381,
+              "letter_count": 1268,
+              "marked_letter_ratio": 0.2957,
+              "marked_token_ratio": 0.8583,
+              "admin_keyword_hits": 130,
+              "admin_keyword_ratio": 0.3412,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1829,
+            "elapsed_sec": 8.825357800000347,
+            "cer": 0.3922290388548057,
+            "wer": 0.43820224719101125,
+            "quality_guard": {
+              "token_count": 389,
+              "letter_count": 1297,
+              "marked_letter_ratio": 0.2968,
+              "marked_token_ratio": 0.856,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.329,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": false,
+          "decision": "CER/WER xấu hơn bản cũ (0.3433 -> 0.4083)."
+        }
+      ]
+    },
+    {
+      "job_id": "e1eff61002aa",
+      "changed": true,
+      "best_engine": {
+        "engine": "tesseract",
+        "variant": "raw"
+      },
+      "has_ground_truth": true,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 3.679200000306082e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1816,
+            "elapsed_sec": 29.767336899996735,
+            "cer": 0.38978162340337863,
+            "wer": 0.41132075471698115,
+            "quality_guard": {
+              "token_count": 388,
+              "letter_count": 1289,
+              "marked_letter_ratio": 0.3026,
+              "marked_token_ratio": 0.8686,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.3299,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "skipped",
+            "text_len": 0,
+            "elapsed_sec": 2.9560000029960065e-05,
+            "cer": null,
+            "wer": null,
+            "quality_guard": null
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1829,
+            "elapsed_sec": 29.237659999984317,
+            "cer": 0.3922290388548057,
+            "wer": 0.43820224719101125,
+            "quality_guard": {
+              "token_count": 389,
+              "letter_count": 1297,
+              "marked_letter_ratio": 0.2968,
+              "marked_token_ratio": 0.856,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.329,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        }
+      ]
+    },
+    {
+      "job_id": "f263c8877f78",
+      "changed": false,
+      "rows": [
+        {
+          "variant": "raw",
+          "old": {
+            "status": "ok",
+            "text_len": 1765,
+            "elapsed_sec": 580.6004859999957,
+            "cer": 0.31565549427238015,
+            "wer": 0.3300970873786408,
+            "quality_guard": {
+              "token_count": 376,
+              "letter_count": 1259,
+              "marked_letter_ratio": 0.2947,
+              "marked_token_ratio": 0.859,
+              "admin_keyword_hits": 130,
+              "admin_keyword_ratio": 0.3457,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1816,
+            "elapsed_sec": 9.867226900008973,
+            "cer": 0.38978162340337863,
+            "wer": 0.41132075471698115,
+            "quality_guard": {
+              "token_count": 388,
+              "letter_count": 1289,
+              "marked_letter_ratio": 0.3026,
+              "marked_token_ratio": 0.8686,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.3299,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": false,
+          "decision": "CER/WER xấu hơn bản cũ (0.3207 -> 0.3973)."
+        },
+        {
+          "variant": "opencv_preprocessed",
+          "old": {
+            "status": "ok",
+            "text_len": 1782,
+            "elapsed_sec": 465.02290450000146,
+            "cer": 0.33347333053338934,
+            "wer": 0.36153846153846153,
+            "quality_guard": {
+              "token_count": 381,
+              "letter_count": 1268,
+              "marked_letter_ratio": 0.2957,
+              "marked_token_ratio": 0.8583,
+              "admin_keyword_hits": 130,
+              "admin_keyword_ratio": 0.3412,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 1829,
+            "elapsed_sec": 8.572768500016537,
+            "cer": 0.3922290388548057,
+            "wer": 0.43820224719101125,
+            "quality_guard": {
+              "token_count": 389,
+              "letter_count": 1297,
+              "marked_letter_ratio": 0.2968,
+              "marked_token_ratio": 0.856,
+              "admin_keyword_hits": 128,
+              "admin_keyword_ratio": 0.329,
+              "broken_token_hits": 0,
+              "broken_token_ratio": 0.0,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 100.0,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 1,
+          "failed_pages": 0,
+          "accepted": false,
+          "decision": "CER/WER xấu hơn bản cũ (0.3433 -> 0.4083)."
+        }
+      ]
+    }
+  ],
+  "finished_at_unix": 1780328939.02657,
+  "changed_jobs": 8
+}

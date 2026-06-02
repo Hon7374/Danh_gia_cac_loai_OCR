@@ -1,0 +1,95 @@
+﻿engine,variant,status,elapsed_sec,cer,wer,error,text_preview
+tesseract,raw,ok,3.6923501000273973,0.03014466409149436,0.06286905175408128,,"BỘ GIÁO DỤC VÀ ĐÀO TẠO CỘNG HOA XA HOI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Số: 39/2026/TT-BGDĐT Hà Nội, ngày 12 tháng 05 năm 2026 THÔNG TƯ Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo dục quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, trung tâm giáo dục quốc phòng và an ninh Căn cứ Luật Giáo đục số 43/2019/QH14 ngày 14 tháng 6 năm 2019; Luật sửa đổi, bổ sung một số diéu của Luật Giáo duc số 123/2025/QH15 ngày 10 tháng 12 năm "
+tesseract,opencv_preprocessed,ok,2.401924700010568,0.23199272892524425,0.27544286210489755,,"BỘ GIÁO DỤC VÀ ĐÀO TẠO — CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Số: 39/2026/TT-BGDĐT Hà Nội, ngày 12 tháng 05 năm 2026 THÔNG TƯ Quy định Quy trình biên soạn, thẫm định và ban hành Giáo trình Giáo duc quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, trung tâm giáo dục quốc phòng và an ninh Căn cứ Luật Giáo dục số 43/2019/QH14 ngày 14 thẳng 6 năm 2019; Luật sửa đối, bổ sung một số điều của Luật Giáo dục số 1 23/2025/QHi J ngày 10 thang 12 "
+easyocr,raw,ok,83.77634540002327,0.2008634401272438,0.2091003820771101,,"BỘ GIÁO DỤC VÀ ĐÀO TAO
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập
+do
+Hanh phúc
+Số: 39
+/2026/TT-BGDĐT
+Hà Nội, ngày 12
+05 năm 2026
+THÔNG TƯ
+Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo dục
+quốc phòng và an ninh trong các cơ sở
+dục
+nghiệp, cơ sở giáo dục
+đại học, trung tâm
+dục
+phòng và an ninh
+Căn cứ Luật Giáo dục số 43/2019/QH14 ngày 14
+6 năm 2019; Luật
+sửa đổi, bổ sung một số điều của Luật Giáo dục số 123/2025/QH15 ngày 10
+12 năm 2025;
+Căncứ Luật Giáo dục đại học số 125/202"
+easyocr,opencv_preprocessed,ok,84.23294509999687,0.28645004923123535,0.3893713094824592,,"BỘ GIÁO DUC VÀ ĐAO TAO
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập - Tự do
+Hanh phúc
+Số: 39
+/2026/TT-BGDĐT
+Hà Nội, ngày 12
+05 năm 2026
+THÔNG TU'
+Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Gỉáo dục
+phòng và an ninh
+các cơ sở giáo dục
+nghiệp, cơ sở giáo dục
+đại học, trung tâm
+dục
+phòng và an ninh
+Căn cứ Luật Giáo dục số 43/2019/QHl4 ngày 14
+6 năm 2019; Luật
+sửa đổi; bổ sung một số điều của Luật Giáo dục sỗ 123/2025/QH15 ngày 10 _
+12 năm 2025;
+CăncứLuật Giáo dục đại học số 125/20"
+paddle_vietocr,raw,ok,56.135496100003365,0.06566689388775278,0.08579367836054186,,"BỘ GIÁO DỤC VÀ ĐÀO TAO
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập- Tự do - Hạnh phúc
+89/2026/TT-BGDĐT
+Hà Nội, ngày 12 tháng 05 năm 2026
+THÔNG TƯ
+Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo trình Giáo Giáo trình Giáo Giáo
+quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ dục
+đại học, trung tâm giáo dục quốc phòng và an ninh và an ninh thành thành
+Căn cứ Luật Giáo dục số 43/2019/QH14 ngày 14 tháng 6 năm 2019; Luật
+sửa đổi, bổ sung một số điều của Luật Giáo dục "
+paddle_vietocr,opencv_preprocessed,ok,48.53415640001185,0.1929107021131561,0.2959360889197638,,"BỘ GIÁO DỤC VÀ ĐÀO TẠO
+CỌNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập- Tự do - Hạnh phúc
+88: 39 /2026/TT-BGDĐT
+Hà Nội, ngày 12 tháng 05 năm 20202
+THÔNG TƯ
+Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo dục
+quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục
+đại học, trung tâm giáo dục quốc phòng và an ninh
+Căn cứ Luật Giáo dục số 43/2019/QH14 ngày 14 tháng 6 năm 2019; Luật
+sửa đổi, bổ sung một số điều của Luật Giáo dục số 123/2025/OH15 ngày 10 tháng
+2 năm "
+paddleocr_vl,raw,ok,1070.1861635000096,0.06581837461183064,0.055574852379298365,,"# CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc
+
+Số: 39 /2026/TT-BGĐỘT
+
+Hà Nội, ngày 12 tháng 05 năm 2026
+
+# THÔNG TỬ
+
+Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo dục quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, trung tâm giáo dục quốc phòng và an ninh
+
+Căn cứ Luật Giáo dục số 43/2019/QH14 ngày 14 tháng 6 năm 2019; Luật sửa đổi, bổ sung một số điều của Luật Giáo dục số 123/2025/QH15 ngày 10 tháng 12 năm 2025;
+
+Căn cứ"
+paddleocr_vl,opencv_preprocessed,ok,931.1229247000301,0.06703022040445353,0.06252170892671066,,"# CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM ĐỘC LẬP - TỪ DO - HẠNH PHÚC
+
+Số: 39 /2026/TT-BGDEBT
+
+Hà Nội, ngày 12 tháng 05 năm 2026
+
+# THÔNG TỪ
+
+Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo dục quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, trung tâm giáo dục quốc phòng và an ninh
+
+Căn cứ Luật Giáo dục số 43/2019/QH14 ngày 14 tháng 6 năm 2019; Luật sửa đổi, bổ sung một số điều của Luật Giáo dục số 123/2025/QH15 ngày 10 tháng 12 năm 2025;
+
+Căn c"

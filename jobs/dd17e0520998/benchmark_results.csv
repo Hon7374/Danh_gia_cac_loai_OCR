@@ -1,0 +1,73 @@
+﻿engine,variant,status,elapsed_sec,cer,wer,error,text_preview
+tesseract,raw,ok,3.003716399995028,0.3491726771319474,0.4349514563106796,,"NGÂN HÀNG NHÀ NƯỚC VIỆT NAM Số:⁄/ /2026/TT-NHNN WN HÀNG NHÀ NƯỚC VIỆT NAM| VỤ PHÁP CHẾ ĐÃ THÂM ĐỊNH AN weal wR CONG HÒA XÃ HỘI CHỦ NGHĨA VIET NAM Độc lập - Tự do - Hạnh phúc Hà Nội, ngày{93tháng 5 năm 2026 THÔNG TƯ Phân ca thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa đối, bổ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phan cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng Căn cứ Luật Ngân hàng Nhà nước Việt Nam s"
+tesseract,opencv_preprocessed,ok,1.744091499989736,0.35289151540734487,0.4691119691119691,,"NGAN HÀNG NHÀ NƯỚC VIỆT NAM Số: /2026/TT-NHNN CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Hà Nội, ngay49 thang 5 năm 2026 *,':+N HANG NHÀ NƯỚC VIỆT NAM vụ PHÁP CHẾ DA THAM ĐỊNH Add Sil 22 THONG TU Phan cấp, thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa đối, bé sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giãn hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng Căn cứ Luật Ngân hàng Nhà nước Việt Na"
+easyocr,raw,error,38.28550090000499,,,EasyOCR lỗi: 'NoneType' object has no attribute 'shape',
+easyocr,opencv_preprocessed,error,23.92814129999897,,,EasyOCR lỗi: 'NoneType' object has no attribute 'shape',
+paddle_vietocr,raw,ok,554.2407902999985,0.31565549427238015,0.3300970873786408,,"NGÂN HÀNG NHÀ NƯỚC
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+VIỆT NAM
+Độc lập - Tự do - Hạnh phúc
+Số: 11/2026/TT-NHNN
+Hà Nội, ngày 19 tháng 5 năm 2026
+NGÂN HÀNG NHÀ NƯỚC VIỆT NAM
+VỤ PHÁP CHẾ
+ĐÃ THẨM ĐỊNH
+19.7.2026
+THÔNG TƯ
+Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và
+sửa đồi, bổ sung một số điều của các Thông tư liên quan đến cắt giảm,
+đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực
+thành lập và hoạt động ngân hàng
+Căn cứ Luật Ngân hàng Nhà nước Việt Nam"
+paddle_vietocr,opencv_preprocessed,ok,541.7307759999967,0.33347333053338934,0.36153846153846153,,"NGÂN HÀNG NHÀ NƯỚC
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+VIỆT NAM
+Độc lập - Tự do - Hạnh phúc
+Số 11/2026/TT-NHNN
+Hà Nội, ngày 19 tháng 5 năm 2026
+""BẢN HÀNG NHÀ NƯỚC VIỆT NAM
+VỤ PHÁP CHẾ
+ĐÃ THẢM ĐỊNH
+19.1 măn 1.2026
+THÔNG TƯ
+Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và
+sửa đồi, bồ sung một số điều của các Thông tư liên quan đến cắt giám,
+đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực
+thành lập và hoạt động ngân hàng
+Căn cứ Luật Ngân hàng Nhà nước Việ"
+glm_ocr,raw,skipped,2.1000014385208488e-06,,,Chưa cấu hình GLM_OCR_API_KEY hoặc ZAI_API_KEY trong .env nên bỏ qua GLM-OCR API.,
+glm_ocr,opencv_preprocessed,skipped,1.1999945854768157e-06,,,Chưa cấu hình GLM_OCR_API_KEY hoặc ZAI_API_KEY trong .env nên bỏ qua GLM-OCR API.,
+paddleocr_vl,raw,ok,1260.5463553000009,0.30104257167680276,0.36779324055666,,"NGÀN HÀNG NHÀ NƯỚC VIỆT NAM
+
+VỤ PHÁP CHỈ
+
+ĐẠ THẦM ĐỊNH
+
+19.1.5.1.2026
+
+## THÔNG TỪ
+
+# Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa đổi, bổ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng
+
+Căn cứ Luật Ngân hàng Nhà nước Việt Nam số 46/2010/QH12;
+
+Căn cứ Luật Các tổ chức tín dụng số 32/2024/QH15 được sửa đổi, bổ sung bởi Luật số 96/2025/QH15;
+
+Căn cứ Nghị "
+paddleocr_vl,opencv_preprocessed,ok,1152.5904987999966,0.2933974639265413,0.354,,"V3-N HÀNG NHÀ NƯỚC VIỆT NAM
+
+VỤ PHÁP CHỈ
+
+ĐÃ THẦM ĐỊNH
+
+19.1.2026
+
+## THÔNG TỬ
+
+Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa đổi, bổ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng
+
+Căn cứ Luật Ngân hàng Nhà nước Việt Nam số 46/2010/QH12;
+
+Căn cứ Luật Các tổ chức tín dụng số 32/2024/QH15 được sửa đổi, bổ sung bởi Luật số 96/2025/QH15;
+
+Căn cứ Nghị định s"

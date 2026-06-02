@@ -1,0 +1,119 @@
+﻿engine,variant,status,elapsed_sec,cer,wer,error,text_preview
+tesseract,raw,ok,2.3960570999770425,0.35341196293176075,0.41811175337186895,,"NGÂN HÀNG NHÀ NƯỚC VIỆT NAM Sá:⁄/ /2026/TT-NHNN “Š⁄;-N HÀNG NHÀ NƯỚC VIỆT NAM| VỤ PHÁP CHẾ ĐÃ THẤM ĐỊNH AYN ...5...| „ôQ⁄2© CONG HÒA XÃ HOI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Hà Nội, ngày{9tháng 5 năm 2026 THÔNG TƯ Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa doi, bỗ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng Căn cứ Luật Ngân hang Nhà nư"
+tesseract,opencv_preprocessed,ok,1.4411413999914657,0.3550021105951878,0.46525096525096526,,"NGÂN HÀNG NHÀ NƯỚC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM VIỆT NAM Độc lập - Tự do - Hạnh phúc Số: /2026/TT-NHNN Hà Nội, ngay49 thang 5 năm 2026 *s:N HANG NHÀ NƯỚC VIỆT NAM VỤ PHAP CHẾ ĐÃ THẤM ĐỊNH ADA Sib wd OLS THONG TƯ Phân ca thực hiện thủ tực hành chính trong lĩnh vực thông tin tín dụng và sửa đôi, bỗ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng Căn cứ Luật Ngân hàng Nhà nước Việt Na"
+easyocr,raw,ok,14.24005700001726,0.3468869123252859,0.42054263565891475,,"NGÂN HÀNG NHÀ NƯỚC
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+VIỆT NAM
+Độc lập
+do
+Hạnh phúc
+Số://  /2026/TT-NHNN
+Hà Nội, ngày/g -
+5 năm 2026
+HÀNG NHÀ NƯÓC VIET NAM
+VỤ PHÁP CHẾ
+ĐÃ THẨM ĐỊNH
+49 .
+,2026
+THÔNG TƯ
+Phân cấp thực hiện thủ tuc hành chính trong lĩnh vực thông tin tín dụng và
+sửa đổi, bổ sung một sổ điều của các
+tư liên quan đến cắt giảm,
+đơn giản hóa,
+cấp
+hiện thủ tục hành chính trong lĩnh vực
+thành lập và hoạt động
+Căn cứ Luật Ngân
+Nhà nước Việt Nam sổ 46/2010/QH12;
+Căn cứ Luật Các tổ chức tín
+"
+easyocr,opencv_preprocessed,ok,12.812204600020777,0.3470688190314358,0.4796116504854369,,"NGÂN HÀNG NHÀ NƯỚC
+CỘNG HÒA XÃ HQI CHỦ NGHĨA VI}T NAM
+VIỆT NAM
+Độc lập- Tự do
+Hanh phúc
+số://  12026/TT-NHNN
+Hà Nội, ngày49 =
+5 năm 2026
+',N Hang NhÀ NUdC VIiT MAM
+VỤ PHÁP CHẾ
+ĐÂ THẨM Đ[NH
+iqu
+12026
+THÔNG TƯ
+Phân cấp thực hiện thủ tuc hành chính trong lĩnh vực thông tin tín dụng và
+sửa đổi, bổ
+một số điều của các Thông tư liên quan đến cắt giảm,
+đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực
+tiàGh lập và boat động ngân hàng
+Căn cứ Luật Ngân
+Nhà nước Việt Nam số 46/2010/QHI2;
+"
+paddle_vietocr,raw,ok,13.665177099988796,0.3253358925143954,0.7052401746724891,,"NGÂN HÀNG NHÀ NƯC
+CNG HÒA XĂ HI CH NGHA VIT NAM
+VIT NAM
+Đc lp - T do - Hnh phúc
+S:11/2026/TT-NHNN
+HàNi, ngày19 tháng5năm 2026
+N'HÀNG NHÀ NƯC VIT NAM
+V PHÁP CH
+Đ THM ĐNH
+19112026
+THÔNG TU
+Phân cp thc hin th tc hành chính trong lĩnhvc thông tin tín dng và
+sa đi, b sung mt s điu ca các Thông tư liên quan đn ct gim,
+đn gin hóa, phân cp thc hin th tc hành chính trong lĩnh vc
+tħành lp và hot đng ngân hàng
+Căn cú Lut Ngân hàng Nhà nưc Vit Nam s 46/2010/QH12;
+Căn cú Lut Các t chc tín dng só 32/2024/QH15"
+paddle_vietocr,opencv_preprocessed,ok,12.864629099960439,0.33935361216730037,0.7408207343412527,,"NGÂN HÀNG NHÀ NƯC
+CQNG HA X HQI CH NGH VIT NAM
+VIT NAM
+Đc lp - T do - Hnh phúc
+S6:11 /2026/TT-NHNN
+Hà Ni, ngày/9tháng 5 năm 2026
+N HNG NHÀ NƯC VIT NAM
+V PHP CH
+D THM ĐINH
+19112026
+THÔNG TU
+Phân cp thc hin th tc hành chính trong lĩnh vc thông tin tín dng và
+sa đi, b sung mt s diu ca các Thông tưr liên quan đn ct gim,
+đon gin hóa, phân cp thc hin th tc hành chính trong lĩnh vc
+tħành lp và hot đng ngân hàng
+Căn c Lut Ngân hàng Nhà nưc Vięt Nam s 46/2010/QH12;
+Căn c Lut Các t chc tín dng s 32/2024/Q"
+paddleocr_vl,raw,ok,115.61065019998932,0.29969551979121356,0.3665338645418327,,"NGẠN HÀNG NHÀ NƯỚC VIỆT NAM
+
+VỤ PHÁP CHỈ
+
+ĐẠ THẦM ĐỊNH
+
+19.1.51.2026
+
+# THÔNG TỪ
+
+# Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa đổi, bổ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng
+
+Căn cứ Luật Ngân hàng Nhà nước Việt Nam số 46/2010/QH12;
+
+Căn cứ Luật Các tổ chức tín dụng số 32/2024/QH15 được sửa đổi, bổ sung bởi Luật số 96/2025/QH15;
+
+Căn cứ Nghị đị"
+paddleocr_vl,opencv_preprocessed,ok,114.50432119998732,0.29203152364273205,0.354,,"N HÀNG NHÀ NƯỚC VIỆT NAM
+
+VỤ PHÁP CHẾ
+
+ĐẠ THẦM ĐỊNH
+
+19.1.2026
+
+## THÔNG TỬ
+
+Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa đổi, bổ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng
+
+Căn cứ Luật Ngân hàng Nhà nước Việt Nam số 46/2010/QH12;
+
+Căn cứ Luật Các tổ chức tín dụng số 32/2024/QH15 được sửa đổi, bổ sung bởi Luật số 96/2025/QH15;
+
+Căn cứ Nghị định số 2"

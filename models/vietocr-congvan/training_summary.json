@@ -1,0 +1,56 @@
+{
+  "model_dir": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\vietocr-congvan",
+  "weights": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\vietocr-congvan\\transformerocr.pth",
+  "config": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\vietocr-congvan\\config.yml",
+  "dataset_dir": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\vietocr_finetune",
+  "device": "cuda:0",
+  "iters": 120,
+  "batch_size": 8,
+  "eval": {
+    "sample_count": 128,
+    "cer": 0.02432179607109448,
+    "wer": 0.03697078115682767,
+    "examples": [
+      {
+        "image": "images/4eb0cda1c107_p017_l0016.png",
+        "truth": "minh việc tống đạt hoàn thành cho Tòa án nhân dân, Viện kiểm sát nhân dân,",
+        "pred": "minh việc tống đạt hoàn thành cho Tòa án nhân dân, Viện kiểm sát nhân dân,"
+      },
+      {
+        "image": "images/4eb0cda1c107_p030_l0027.png",
+        "truth": "nghiệp công nghệ số và quy định của pháp luật khác có liên quan.",
+        "pred": "nghiệp công nghệ số và quy định của pháp luật khác có liên quan."
+      },
+      {
+        "image": "images/4eb0cda1c107_p030_l0026.png",
+        "truth": "đầu tư công, khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số, công",
+        "pred": "đầu tư công, khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số, công"
+      },
+      {
+        "image": "images/4eb0cda1c107_p027_l0008.png",
+        "truth": "phải thi hành án mà chưa có quyết định phong tỏa thì Thừa hành viên lập biên",
+        "pred": "phải thi hành án mà chưa có quyết định phong tỏa thì Thừa hành viên lập biên"
+      },
+      {
+        "image": "images/c2ff930c08f7_p006_l0025.png",
+        "truth": "phôi hợp, cung câp hô sơ tự kiêm tra văn bản, thông tin, tài liệu trong thời hạn",
+        "pred": "phối hợp, cung cấp hồ sơ tự kiểm tra văn bản, thông tin, tài liệu trong thời hạn"
+      },
+      {
+        "image": "images/b900fed40965_p006_l0006.png",
+        "truth": "soạn, thẩm định Giáo trình Giáo dục quốc phòng và an ninh. Chủ trì phối hợp với",
+        "pred": "soạn, thẩm định Giáo trình Giáo dục quốc phòng và an ninh. Chủ trì phối hợp với"
+      },
+      {
+        "image": "images/b900fed40965_p001_l0006.png",
+        "truth": "THÔNG TƯ",
+        "pred": "THÔNG TƯ"
+      },
+      {
+        "image": "images/4eb0cda1c107_p032_l0003.png",
+        "truth": "nhận hồ sơ công việc. Việc bàn giao phải được lập thành biên bản và kèm danh",
+        "pred": "nhận hồ sơ công việc. Việc bàn giao phải được lập thành biên bản và kèm danh"
+      }
+    ]
+  }
+}
