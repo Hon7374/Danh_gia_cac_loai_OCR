@@ -1,0 +1,192 @@
+{
+  "dataset_dir": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training",
+  "source_dir": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages",
+  "rendered_dir": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages",
+  "train_jsonl": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\train.jsonl",
+  "eval_jsonl": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\eval.jsonl",
+  "record_count": 6,
+  "train_count": 6,
+  "eval_count": 0,
+  "processed": [
+    {
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\nguyenthikimngan_QClientichbanhanh_from_word_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 423,
+      "labeled_count": 22,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "01/04/2025",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "co_quan_ban_hanh": false,
+        "trich_yeu": true,
+        "noi_gui": false,
+        "noi_nhan": false
+      },
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\nguyenthikimngan_QClientichbanhanh_from_word.pdf"
+    },
+    {
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\VanBanGoc_135_2026_ND_CP_07042026_signed_1_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 306,
+      "labeled_count": 22,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "07/04/2026",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "co_quan_ban_hanh": false,
+        "trich_yeu": true,
+        "noi_gui": false,
+        "noi_nhan": false
+      },
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\VanBanGoc_135_2026_ND-CP_07042026-signed_1.pdf"
+    },
+    {
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\VanBanGoc_2026_149_64_2026_N_CP_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 381,
+      "labeled_count": 15,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "28/02/2026",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "co_quan_ban_hanh": false,
+        "trich_yeu": true,
+        "noi_gui": false,
+        "noi_nhan": false
+      },
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\VanBanGoc_2026_149_64_2026_NĐ-CP.pdf"
+    },
+    {
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\VanBanGoc_302_2025_ND_CP_19112025_signed_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 396,
+      "labeled_count": 82,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "19/11/2025",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "co_quan_ban_hanh": false,
+        "trich_yeu": true,
+        "noi_gui": false,
+        "noi_nhan": false
+      },
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\VanBanGoc_302_2025_ND-CP_19112025-signed.pdf"
+    },
+    {
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\VanBanGoc_49_2025_QD_TTg_22122025_signed_1766546111229_1_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 333,
+      "labeled_count": 59,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "22/12/2025",
+        "trich_yeu": "giải thé và cham đứt hoạt động của Quỹ Bảo hộ công dân và pháp nhân Việt Nam ở nước ngoài. Điều 1. Giải thể và chấm dứt hoạt động của Quỹ Bảo hộ công dân và pháp nhân Việt Nam ở nước ngoài trực thuộc Bộ Ngoại giao. Điều 2. Tổ chức thực hiện 1. Bộ Ngoại giao: a) Tiếp nhận các nhiệm vụ của Quỹ Bảo hộ công dân và pháp nhân Việt Nam ở nước ngoài, bảo đảm không dé gián đoạn nhiệm vu bảo hộ công dân và pháp nhân Việt Nam ở nước ngoài",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "CÔNG VĂN",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "co_quan_ban_hanh": false,
+        "trich_yeu": true,
+        "noi_gui": false,
+        "noi_nhan": false
+      },
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\VanBanGoc_49_2025_QD-TTg_22122025-signed-1766546111229 (1).pdf"
+    },
+    {
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\VanBanGoc_50_2025_QD_TTg_25122025_signed_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 418,
+      "labeled_count": 89,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "25/12/2025",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "co_quan_ban_hanh": false,
+        "trich_yeu": true,
+        "noi_gui": false,
+        "noi_nhan": false
+      },
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\VanBanGoc_50_2025_QD-TTg_25122025-signed.pdf"
+    }
+  ],
+  "skipped": [
+    {
+      "file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\135 2026 ND-CP quy dinh Nghi dinh co che uu dai uu tien cho NSMO.docx",
+      "reason": "DOC/DOCX cần convert sang PDF hoặc ảnh để có bbox layout"
+    },
+    {
+      "file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\2026_149_64_2026_NĐ-CP.docx",
+      "reason": "DOC/DOCX cần convert sang PDF hoặc ảnh để có bbox layout"
+    },
+    {
+      "file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\nguyenthikimngan_QClientichbanhanh.docx",
+      "reason": "DOC/DOCX cần convert sang PDF hoặc ảnh để có bbox layout"
+    },
+    {
+      "file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\Quyet dinh giai the Quy BHCD.doc",
+      "reason": "DOC/DOCX cần convert sang PDF hoặc ảnh để có bbox layout"
+    }
+  ]
+}

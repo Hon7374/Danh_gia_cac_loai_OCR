@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OCR Benchmark</title>
+  <link rel="stylesheet" href="/static/styles.css?v=utf8-20260531" />
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">OCR Full Benchmark Demo</p>
+        <h1>So sánh OCR cho công văn</h1>
+        <p class="lead">Upload PDF hoặc ảnh scan, chọn engine, chạy raw vs OpenCV, sau đó xem CER/WER, thời gian xử lý và trích xuất trường trên dashboard.</p>
+      </div>
+      <nav class="header-actions" aria-label="File mẫu">
+        <a href="/documents">Kho công văn</a>
+        <a href="{{sample_img}}">Ảnh mẫu</a>
+        <a href="{{sample_pdf}}">PDF mẫu</a>
+        <a href="{{sample_truth}}">Text chuẩn</a>
+      </nav>
+    </header>
+
+    <section class="input-layout">
+      <form class="panel run-panel" action="/run" method="post" enctype="multipart/form-data">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Chạy benchmark</p>
+            <h2>Thiết lập lần chạy</h2>
+          </div>
+          <span class="pill">Local + {% if device_summary.torch_device != 'cpu' or device_summary.paddle_device != 'cpu' %}GPU{% else %}CPU{% endif %}</span>
+        </div>
+        <p class="hint">
+          Thiết bị hiện tại:
+          Torch {{device_summary.torch_device}}{% if not device_summary.torch_cuda_available %} (chưa có CUDA){% endif %},
+          Paddle {{device_summary.paddle_device}}{% if not device_summary.paddle_cuda_available %} (chưa có CUDA){% endif %}.
+          Tesseract luôn chạy CPU.
+        </p>
+
+        <label class="field">
+          <span>File công văn PDF/ảnh scan</span>
+          <input class="input" type="file" name="file" accept=".pdf,.png,.jpg,.jpeg,.tif,.tiff,.bmp,.webp" required />
+        </label>
+
+        <div class="field">
+          <span>Chọn OCR engine</span>
+          <div class="engine-grid">
+            {% for engine in engines %}
+            <label class="engine-option">
+              <input type="checkbox" name="engines" value="{{engine.key}}" {% if engine.checked %}checked{% endif %} />
+              <span>
+                <b>{{engine.label}}</b>
+                <small>{{engine.key}} · {{engine.hint}}</small>
+              </span>
+              <em>{{engine.badge}}</em>
+            </label>
+            {% endfor %}
+          </div>
+        </div>
+
+        <label class="toggle-row">
+          <input type="checkbox" name="compare_raw_preprocessed" value="1" />
+          <span>
+            <b>So sánh raw và OpenCV</b>
+            <small>Tùy chọn này chạy mỗi engine 2 lần nên thời gian gần như nhân đôi. Chỉ bật khi cần phân tích preprocessing.</small>
+          </span>
+        </label>
+
+        <label class="field">
+          <span>File text chuẩn để tính CER/WER</span>
+          <input class="input" type="file" name="ground_truth_file" accept=".txt,.md,.csv,.json,.doc,.docx" />
+        </label>
+        <p class="hint">Nên upload file text chuẩn để các biểu đồ lỗi CER/WER và quality score có ý nghĩa. Hỗ trợ .txt, .md, .csv, .json, .doc, .docx. File .doc sẽ được đọc bằng Microsoft Word nếu máy có Word.</p>
+
+        <details class="advanced-box">
+          <summary>Dán nhanh text chuẩn</summary>
+          <textarea name="ground_truth" rows="7" placeholder="Dán text chuẩn ở đây nếu chưa có file. Nếu đã upload file text chuẩn thì ô này sẽ bị bỏ qua."></textarea>
+        </details>
+
+        <button class="primary-action" type="submit">Chạy benchmark OCR</button>
+      </form>
+
+      <aside class="side-stack">
+        <section class="panel">
+          <div class="section-title compact">
+            <h2>Luồng xử lý</h2>
+          </div>
+          <ol class="timeline">
+            <li><b>Upload</b><span>PDF hoặc ảnh scan công văn.</span></li>
+            <li><b>Preprocess</b><span>Tạo bản OpenCV để so sánh với ảnh gốc.</span></li>
+            <li><b>OCR</b><span>Chạy các engine đã chọn.</span></li>
+            <li><b>Đánh giá</b><span>Tính CER/WER, thời gian, độ dài text, confidence.</span></li>
+            <li><b>Trích xuất</b><span>LayoutLMv3 hoặc fallback rule lấy trường công văn.</span></li>
+          </ol>
+        </section>
+
+        <section class="panel">
+          <div class="section-title compact">
+            <h2>Dashboard sẽ có</h2>
+          </div>
+          <div class="feature-list">
+            <div><b>CER/WER</b><span>Lỗi ký tự và lỗi từ khi có text chuẩn.</span></div>
+            <div><b>Quality score</b><span>Điểm tổng hợp giúp chọn engine tốt nhất.</span></div>
+            <div><b>OpenCV impact</b><span>So sánh raw với ảnh đã tiền xử lý.</span></div>
+            <div><b>Status matrix</b><span>Nhìn nhanh engine chạy được, lỗi, hoặc thiếu cấu hình.</span></div>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="panel note-panel">
+      <div>
+        <h2>Lưu ý cài đặt</h2>
+        <p>Mặc định app chạy nhanh bằng Tesseract trên ảnh OpenCV. EasyOCR, PaddleOCR, VietOCR, PaddleOCR-VL là nhóm package nặng; PaddleOCR-VL có thể mất hàng chục phút nếu chạy cả raw và OpenCV trên file nhiều trang, nên chỉ bật khi cần benchmark sâu hoặc minh họa layout/VL.</p>
+      </div>
+      <a class="secondary-action" href="{{sample_truth}}">Tải text chuẩn mẫu</a>
+    </section>
+  </main>
+</body>
+</html>

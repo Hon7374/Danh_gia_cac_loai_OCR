@@ -1,0 +1,185 @@
+{
+  "dataset_type": "vietocr_line_recognition",
+  "source_engine": "tesseract",
+  "source_variant": "raw",
+  "sample_count": 2043,
+  "source_counts": {
+    "ground_truth_aligned": 1722,
+    "ocr_pseudo": 321
+  },
+  "skipped": 93,
+  "jobs": [
+    {
+      "job_id": "0200ba6304d0",
+      "status": "ok",
+      "line_count": 47,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "127e63f15dc7",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "164833c37c69",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "1b2be67c3887",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "1e093db72887",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "1ed72c483235",
+      "status": "missing_source_result"
+    },
+    {
+      "job_id": "29a6ff9432e7",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "2bbba632396d",
+      "status": "ok",
+      "line_count": 235,
+      "ground_truth": true,
+      "ground_truth_aligned": 226
+    },
+    {
+      "job_id": "3b198ee77c6b",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "49cae214d47b",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "4eb0cda1c107",
+      "status": "ok",
+      "line_count": 1312,
+      "ground_truth": true,
+      "ground_truth_aligned": 1270
+    },
+    {
+      "job_id": "5272abe89271",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "570fc6dc673c",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "683cdeed1cf7",
+      "status": "missing_source_result"
+    },
+    {
+      "job_id": "84c5b1ad34dd",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "92189c246949",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "a0ca12884c68",
+      "status": "missing_source_result"
+    },
+    {
+      "job_id": "b900fed40965",
+      "status": "ok",
+      "line_count": 235,
+      "ground_truth": true,
+      "ground_truth_aligned": 226
+    },
+    {
+      "job_id": "bea57eaa33ea",
+      "status": "missing_source_result"
+    },
+    {
+      "job_id": "c2ff930c08f7",
+      "status": "ok",
+      "line_count": 307,
+      "ground_truth": false,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "cb04ccd30a94",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "d704e3a52d57",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "dd17e0520998",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "e1eff61002aa",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "f263c8877f78",
+      "status": "ok",
+      "line_count": 0,
+      "ground_truth": true,
+      "ground_truth_aligned": 0
+    },
+    {
+      "job_id": "f6da2610ebf1",
+      "status": "missing_source_result"
+    }
+  ],
+  "output_dir": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\vietocr_finetune",
+  "train_count": 1737,
+  "val_count": 306,
+  "train_annotation": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\vietocr_finetune\\train.txt",
+  "val_annotation": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\vietocr_finetune\\val.txt"
+}

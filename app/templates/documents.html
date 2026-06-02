@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hệ thống quản lý công văn scan</title>
+  <link rel="stylesheet" href="/static/styles.css?v=utf8-20260531" />
+</head>
+<body>
+<main class="container wide">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Document management</p>
+      <h1>Hệ thống quản lý công văn scan</h1>
+      <p class="lead">Kho riêng để theo dõi hồ sơ đã scan: file đưa vào, ảnh từng trang, OCR output, metadata trích xuất và trạng thái xử lý.</p>
+    </div>
+    <nav class="header-actions" aria-label="Tác vụ kho công văn">
+      <a href="/">Chạy OCR mới</a>
+    </nav>
+  </header>
+
+  <section class="metric-grid">
+    <div class="metric-card">
+      <span>Tổng hồ sơ</span>
+      <b>{{stats.total_documents}}</b>
+      <small>công văn đã lưu</small>
+    </div>
+    <div class="metric-card success">
+      <span>Đã scan</span>
+      <b>{{stats.complete_documents}}</b>
+      <small>hồ sơ sẵn sàng xử lý</small>
+    </div>
+    <div class="metric-card">
+      <span>Tổng trang</span>
+      <b>{{stats.total_pages}}</b>
+      <small>ảnh scan trong kho</small>
+    </div>
+    <div class="metric-card">
+      <span>OCR outputs</span>
+      <b>{{stats.total_outputs}}</b>
+      <small>text/JSON theo engine</small>
+    </div>
+  </section>
+
+  <section class="panel registry-panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Storage root</p>
+        <h2>Kho lưu trữ vật lý</h2>
+      </div>
+    </div>
+    <div class="storage-path-box">
+      <span>Thư mục gốc</span>
+      <code>{{stats.storage_root}}</code>
+      <small>Mỗi hồ sơ nằm trong thư mục riêng theo năm/tháng/document ID, có đủ file gốc, ảnh raw, ảnh OpenCV, OCR text, OCR JSON và metadata vận hành.</small>
+    </div>
+    <div class="archive-structure">
+      <div><b>01_original</b><span>File PDF/ảnh người dùng đưa vào</span></div>
+      <div><b>02_pages/raw</b><span>Ảnh scan từng trang</span></div>
+      <div><b>02_pages/opencv_preprocessed</b><span>Ảnh sau tiền xử lý OpenCV</span></div>
+      <div><b>04_ocr_text</b><span>Text OCR theo từng engine</span></div>
+      <div><b>05_ocr_json</b><span>Kết quả OCR dạng JSON</span></div>
+      <div><b>06_metadata</b><span>Trường công văn và workflow manifest</span></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Registry</p>
+        <h2>Danh sách hồ sơ công văn</h2>
+      </div>
+      <input class="archive-search" id="documentSearch" type="search" placeholder="Tìm số ký hiệu, trích yếu, tên file..." />
+    </div>
+
+    {% if documents %}
+    <div class="document-grid" id="documentGrid">
+      {% for doc in documents %}
+      <article class="document-card" data-search="{{doc.document_id}} {{doc.source_filename}} {{doc.document_number}} {{doc.issued_date}} {{doc.document_type}} {{doc.issuing_agency}} {{doc.subject}}">
+        <div class="document-card-main">
+          <div>
+            <span class="status {{doc.status}}">{{doc.status}}</span>
+            <h3>{{doc.document_number or doc.source_filename or doc.document_id}}</h3>
+            <p>{{doc.subject or 'Chưa có trích yếu'}}</p>
+          </div>
+          <a class="secondary-action" href="{{doc.detail_url}}">Mở hồ sơ</a>
+        </div>
+        <dl class="document-meta">
+          <div><dt>Ngày ban hành</dt><dd>{{doc.issued_date or '-'}}</dd></div>
+          <div><dt>Loại văn bản</dt><dd>{{doc.document_type or '-'}}</dd></div>
+          <div><dt>Cơ quan</dt><dd>{{doc.issuing_agency or '-'}}</dd></div>
+          <div><dt>File</dt><dd>{{doc.source_filename or '-'}}</dd></div>
+          <div><dt>Trang scan</dt><dd>{{doc.page_count or 0}}</dd></div>
+          <div><dt>OCR outputs</dt><dd>{{doc.ocr_output_count or 0}}</dd></div>
+        </dl>
+        <code>{{doc.storage_root_absolute}}</code>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="empty-note">Chưa có hồ sơ nào trong kho. Chạy OCR một file để hệ thống tự tạo hồ sơ lưu trữ.</p>
+    {% endif %}
+  </section>
+</main>
+
+<script>
+  const search = document.getElementById("documentSearch");
+  const cards = Array.from(document.querySelectorAll(".document-card"));
+  if (search) {
+    search.addEventListener("input", () => {
+      const keyword = search.value.trim().toLowerCase();
+      cards.forEach((card) => {
+        card.hidden = keyword && !card.dataset.search.toLowerCase().includes(keyword);
+      });
+    });
+  }
+</script>
+</body>
+</html>

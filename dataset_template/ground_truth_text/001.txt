@@ -1,0 +1,1 @@
+Dán toàn văn chuẩn tại đây để tính CER/WER.

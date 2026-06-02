@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hồ sơ {{archive.document_id}}</title>
+  <link rel="stylesheet" href="/static/styles.css?v=utf8-20260531" />
+</head>
+<body>
+<main class="container wide">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Document dossier</p>
+      <h1>Hồ sơ công văn scan</h1>
+      <p class="lead">{{document.subject or archive.source_filename or archive.document_id}}</p>
+    </div>
+    <nav class="header-actions" aria-label="Tác vụ hồ sơ">
+      <a href="/documents">Kho công văn</a>
+      {% if document.job_id %}
+      <a href="/reports/{{document.job_id}}">Report OCR</a>
+      {% endif %}
+      <a href="{{archive.manifest_url}}" target="_blank">Manifest</a>
+    </nav>
+  </header>
+
+  <section class="panel dossier-hero">
+    <div>
+      <p class="eyebrow">Mã hồ sơ</p>
+      <h2>{{archive.document_id}}</h2>
+      <p class="muted">Tạo lúc {{archive.created_at}} · {{archive.page_count}} trang scan · {{archive.ocr_output_count}} OCR outputs</p>
+    </div>
+    <div class="storage-path-box">
+      <span>Thư mục hồ sơ</span>
+      <code>{{archive.storage_root_absolute}}</code>
+      <small>Đây là nơi lưu đầy đủ file gốc, file scan, OCR output và metadata để phục vụ quản lý vận hành.</small>
+    </div>
+  </section>
+
+  <section class="dossier-layout">
+    <aside class="panel dossier-sidebar">
+      <div class="section-title compact">
+        <h2>Thông tin công văn</h2>
+      </div>
+      <dl class="dossier-fields">
+        <div><dt>Số ký hiệu</dt><dd>{{fields.so_ky_hieu or workflow.document_number or '-'}}</dd></div>
+        <div><dt>Ngày ban hành</dt><dd>{{fields.ngay_ban_hanh or workflow.issued_date or '-'}}</dd></div>
+        <div><dt>Loại văn bản</dt><dd>{{fields.loai_van_ban or workflow.document_type or '-'}}</dd></div>
+        <div><dt>Cơ quan ban hành</dt><dd>{{fields.co_quan_ban_hanh or workflow.issuing_agency or '-'}}</dd></div>
+        <div><dt>Nơi gửi</dt><dd>{{fields.noi_gui or workflow.sender or '-'}}</dd></div>
+        <div><dt>Nơi nhận</dt><dd>{{fields.noi_nhan or workflow.receiver or '-'}}</dd></div>
+        <div><dt>Trạng thái duyệt</dt><dd>{{workflow.review_status or 'pending_review'}}</dd></div>
+      </dl>
+      <div class="archive-links stacked">
+        <a href="{{archive.workflow_manifest_url}}" target="_blank">workflow_manifest.json</a>
+        <a href="{{archive.extracted_fields_url}}" target="_blank">extracted_fields.json</a>
+        <a href="{{archive.index_url}}" target="_blank">index.jsonl</a>
+      </div>
+    </aside>
+
+    <section class="panel dossier-content">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Original file</p>
+          <h2>File đưa vào</h2>
+        </div>
+        {% if archive.original_file %}
+        <a class="secondary-action" href="{{archive.original_file.url}}" target="_blank">Mở file gốc</a>
+        {% endif %}
+      </div>
+      {% if archive.original_file %}
+      <div class="archive-file-meta">
+        <div><span>Tên file</span><b>{{archive.original_file.filename}}</b></div>
+        <div><span>Dung lượng</span><b>{{archive.original_file.size_label}}</b></div>
+        <div><span>SHA256</span><b>{{archive.original_file.sha256_short}}</b></div>
+        <div><span>Đường dẫn</span><code>{{archive.original_file.absolute_path}}</code></div>
+      </div>
+      <iframe class="archive-document-frame" src="{{archive.original_file.url}}" title="File gốc"></iframe>
+      {% else %}
+      <p class="empty-note">Không tìm thấy file gốc trong kho.</p>
+      {% endif %}
+
+      <div class="output-viewer-section">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Output file</p>
+            <h2>File đưa ra</h2>
+          </div>
+          {% if archive.ocr_outputs %}
+          <div class="output-actions">
+            <select class="output-select" id="outputSelect" aria-label="Chọn file output OCR">
+              {% for output in archive.ocr_outputs %}
+              <option value="{{loop.index0}}">{{output.engine}} / {{output.variant}} · {{output.status}}</option>
+              {% endfor %}
+            </select>
+            <a class="secondary-action" id="outputWordLink" href="{{archive.ocr_outputs[0].word_url}}" target="_blank">Mở file Word</a>
+            <a class="secondary-action" id="outputTextLink" href="{{archive.ocr_outputs[0].text_url}}" target="_blank">Xem text</a>
+            <a class="secondary-action" id="outputJsonLink" href="{{archive.ocr_outputs[0].json_url}}" target="_blank">Mở JSON</a>
+          </div>
+          {% endif %}
+        </div>
+        {% if archive.ocr_outputs %}
+        <div class="archive-file-meta output-meta">
+          <div><span>File Word</span><b id="outputWordName">{{archive.ocr_outputs[0].word_filename}}</b></div>
+          <div><span>Dung lượng</span><b id="outputWordSize">{{archive.ocr_outputs[0].word_size_label}}</b></div>
+          <div><span>Độ dài text</span><b id="outputLength">{{archive.ocr_outputs[0].text_length}} ký tự</b></div>
+          <div><span>Đường dẫn Word</span><code id="outputPath">{{archive.ocr_outputs[0].word_absolute_path}}</code></div>
+        </div>
+        <p class="hint">File Word (.docx) là văn bản OCR editable, có thể sửa trực tiếp trong Word. App mô phỏng bố cục theo dòng/trang OCR và không nhúng ảnh scan làm nội dung chính.</p>
+        <iframe class="archive-output-frame" id="outputFrame" src="{{archive.ocr_outputs[0].text_url}}" title="File output OCR"></iframe>
+        <script type="application/json" id="ocrOutputsData">{{archive.ocr_outputs|tojson}}</script>
+        {% else %}
+        <p class="empty-note">Chưa có file output OCR để xem.</p>
+        {% endif %}
+      </div>
+    </section>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Scanned pages</p>
+        <h2>File scan từng trang</h2>
+      </div>
+      <span class="pill">{{archive.page_count}} trang</span>
+    </div>
+    <div class="archive-page-grid management-pages">
+      {% for page in archive.preview_pages %}
+      <article class="archive-page-card">
+        <header>
+          <b>Trang {{page.page}}</b>
+          <small>{{page.raw.size_label}}</small>
+        </header>
+        <div class="archive-page-images">
+          <figure>
+            <figcaption>Scan gốc</figcaption>
+            <button
+              class="image-button page-open"
+              type="button"
+              data-page="{{page.page}}"
+              data-raw="{{page.raw.url}}"
+              data-opencv="{% if page.opencv %}{{page.opencv.url}}{% endif %}"
+              aria-label="Xem trang {{page.page}}"
+            >
+              <img src="{{page.raw.url}}" loading="lazy" alt="Trang {{page.page}} scan gốc" />
+            </button>
+          </figure>
+          {% if page.opencv %}
+          <figure>
+            <figcaption>OpenCV</figcaption>
+            <button
+              class="image-button page-open"
+              type="button"
+              data-page="{{page.page}}"
+              data-raw="{{page.raw.url}}"
+              data-opencv="{{page.opencv.url}}"
+              aria-label="Xem trang {{page.page}} sau OpenCV"
+            >
+              <img src="{{page.opencv.url}}" loading="lazy" alt="Trang {{page.page}} OpenCV" />
+            </button>
+          </figure>
+          {% endif %}
+        </div>
+        <div class="page-card-actions">
+          <button
+            class="secondary-action compact-action page-open"
+            type="button"
+            data-page="{{page.page}}"
+            data-raw="{{page.raw.url}}"
+            data-opencv="{% if page.opencv %}{{page.opencv.url}}{% endif %}"
+          >Xem lớn</button>
+          <a href="{{page.raw.url}}" target="_blank">Mở ảnh gốc</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="scan-viewer" id="scanViewer" hidden aria-hidden="true">
+    <div class="scan-viewer-backdrop" data-close-viewer></div>
+    <section class="scan-viewer-dialog" role="dialog" aria-modal="true" aria-labelledby="scanViewerTitle">
+      <header class="scan-viewer-header">
+        <div>
+          <p class="eyebrow">Scanned page viewer</p>
+          <h2 id="scanViewerTitle">Trang <span id="viewerPage">1</span></h2>
+        </div>
+        <div class="scan-viewer-actions">
+          <button class="secondary-action compact-action" type="button" id="viewerPrev">Trang trước</button>
+          <button class="secondary-action compact-action" type="button" id="viewerNext">Trang sau</button>
+          <button class="secondary-action compact-action" type="button" id="viewerZoomOut">Thu nhỏ</button>
+          <span class="zoom-indicator" id="viewerZoomLabel">100%</span>
+          <button class="secondary-action compact-action" type="button" id="viewerZoomIn">Phóng to</button>
+          <button class="secondary-action compact-action" type="button" id="viewerZoomFit">Vừa màn hình</button>
+          <button class="primary-close" type="button" data-close-viewer>Đóng</button>
+        </div>
+      </header>
+      <div class="scan-viewer-images">
+        <figure>
+          <figcaption>Scan gốc</figcaption>
+          <img id="viewerRaw" class="viewer-zoomable" alt="Trang scan gốc" />
+        </figure>
+        <figure id="viewerOpencvFigure">
+          <figcaption>OpenCV</figcaption>
+          <img id="viewerOpencv" class="viewer-zoomable" alt="Trang sau OpenCV" />
+        </figure>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">OCR outputs</p>
+        <h2>Text và JSON theo engine</h2>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="clean-table archive-table">
+        <thead>
+          <tr>
+            <th>Engine</th><th>Input</th><th>Status</th><th>Số trang</th><th>Độ dài text</th><th>File xem trực tiếp</th><th>Đường dẫn text</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for output in archive.ocr_outputs %}
+          <tr>
+            <td><b>{{output.engine}}</b></td>
+            <td>{{output.variant}}</td>
+            <td><span class="status {{output.status}}">{{output.status}}</span></td>
+            <td>{{output.page_count}}</td>
+            <td>{{output.text_length}} ký tự</td>
+            <td><a href="{{output.text_url}}" target="_blank">Xem text</a> <span class="muted">/</span> <a href="{{output.json_url}}" target="_blank">JSON</a></td>
+            <td><code>{{output.text_absolute_path}}</code></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% if archive.ocr_outputs %}
+    <details class="archive-fold text-fold" open>
+      <summary>Xem nhanh OCR text đầu tiên</summary>
+      <iframe class="archive-text-frame" src="{{archive.ocr_outputs[0].text_url}}" title="OCR text preview"></iframe>
+    </details>
+    {% endif %}
+  </section>
+</main>
+<script>
+  (() => {
+    const outputDataNode = document.getElementById("ocrOutputsData");
+    const outputSelect = document.getElementById("outputSelect");
+    if (outputDataNode && outputSelect) {
+      const outputs = JSON.parse(outputDataNode.textContent || "[]");
+      const outputFrame = document.getElementById("outputFrame");
+      const outputWordLink = document.getElementById("outputWordLink");
+      const outputTextLink = document.getElementById("outputTextLink");
+      const outputJsonLink = document.getElementById("outputJsonLink");
+      const outputWordName = document.getElementById("outputWordName");
+      const outputWordSize = document.getElementById("outputWordSize");
+      const outputLength = document.getElementById("outputLength");
+      const outputPath = document.getElementById("outputPath");
+
+      function showOutput(index) {
+        const output = outputs[index];
+        if (!output) return;
+        outputFrame.src = output.text_url || "";
+        outputWordLink.href = output.word_url || "#";
+        outputTextLink.href = output.text_url || "#";
+        outputJsonLink.href = output.json_url || "#";
+        outputWordName.textContent = output.word_filename || "-";
+        outputWordSize.textContent = output.word_size_label || "-";
+        outputLength.textContent = `${output.text_length || 0} ký tự`;
+        outputPath.textContent = output.word_absolute_path || "-";
+      }
+
+      outputSelect.addEventListener("change", () => showOutput(Number(outputSelect.value)));
+      showOutput(Number(outputSelect.value || 0));
+    }
+
+    const viewer = document.getElementById("scanViewer");
+    if (!viewer) return;
+
+    const rawImage = document.getElementById("viewerRaw");
+    const opencvImage = document.getElementById("viewerOpencv");
+    const opencvFigure = document.getElementById("viewerOpencvFigure");
+    const pageLabel = document.getElementById("viewerPage");
+    const prevButton = document.getElementById("viewerPrev");
+    const nextButton = document.getElementById("viewerNext");
+    const zoomOutButton = document.getElementById("viewerZoomOut");
+    const zoomInButton = document.getElementById("viewerZoomIn");
+    const zoomFitButton = document.getElementById("viewerZoomFit");
+    const zoomLabel = document.getElementById("viewerZoomLabel");
+    const imageStage = viewer.querySelector(".scan-viewer-images");
+    const closeButton = viewer.querySelector(".primary-close");
+    const openButtons = Array.from(document.querySelectorAll(".page-open"));
+    const zoomableImages = Array.from(viewer.querySelectorAll(".viewer-zoomable"));
+
+    const pageMap = new Map();
+    openButtons.forEach((button) => {
+      const page = button.dataset.page;
+      if (!pageMap.has(page)) {
+        pageMap.set(page, {
+          page,
+          raw: button.dataset.raw,
+          opencv: button.dataset.opencv || "",
+        });
+      }
+    });
+    const pages = Array.from(pageMap.values());
+    let currentIndex = 0;
+    let zoom = 1;
+
+    function clampZoom(value) {
+      return Math.max(0.5, Math.min(3, Math.round(value * 10) / 10));
+    }
+
+    function centerVisibleImages() {
+      viewer.querySelectorAll(".scan-viewer-images figure").forEach((figure) => {
+        figure.scrollLeft = Math.max(0, (figure.scrollWidth - figure.clientWidth) / 2);
+        figure.scrollTop = Math.max(0, (figure.scrollHeight - figure.clientHeight) / 2);
+      });
+    }
+
+    function setZoom(value, center = false) {
+      zoom = clampZoom(value);
+      imageStage.style.setProperty("--zoom", zoom);
+      zoomLabel.textContent = `${Math.round(zoom * 100)}%`;
+      zoomOutButton.disabled = zoom <= 0.5;
+      zoomInButton.disabled = zoom >= 3;
+      if (center) {
+        window.requestAnimationFrame(centerVisibleImages);
+      }
+    }
+
+    function showPage(index) {
+      currentIndex = Math.max(0, Math.min(index, pages.length - 1));
+      const page = pages[currentIndex];
+      pageLabel.textContent = page.page;
+      rawImage.src = page.raw;
+      opencvImage.src = page.opencv || "";
+      opencvFigure.hidden = !page.opencv;
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = currentIndex === pages.length - 1;
+      setZoom(1, true);
+    }
+
+    function openViewer(pageNumber) {
+      const index = pages.findIndex((page) => page.page === pageNumber);
+      showPage(index >= 0 ? index : 0);
+      viewer.hidden = false;
+      viewer.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      closeButton.focus();
+    }
+
+    function closeViewer() {
+      viewer.hidden = true;
+      viewer.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      rawImage.removeAttribute("src");
+      opencvImage.removeAttribute("src");
+    }
+
+    openButtons.forEach((button) => {
+      button.addEventListener("click", () => openViewer(button.dataset.page));
+    });
+    viewer.querySelectorAll("[data-close-viewer]").forEach((button) => {
+      button.addEventListener("click", closeViewer);
+    });
+    prevButton.addEventListener("click", () => showPage(currentIndex - 1));
+    nextButton.addEventListener("click", () => showPage(currentIndex + 1));
+    zoomOutButton.addEventListener("click", () => setZoom(zoom - 0.25, true));
+    zoomInButton.addEventListener("click", () => setZoom(zoom + 0.25, true));
+    zoomFitButton.addEventListener("click", () => setZoom(1, true));
+    zoomableImages.forEach((image) => {
+      image.addEventListener("click", () => {
+        setZoom(zoom >= 2 ? 1 : zoom + 0.5, true);
+      });
+    });
+    document.addEventListener("keydown", (event) => {
+      if (viewer.hidden) return;
+      if (event.key === "Escape") closeViewer();
+      if (event.key === "ArrowLeft") showPage(currentIndex - 1);
+      if (event.key === "ArrowRight") showPage(currentIndex + 1);
+      if (event.key === "+" || event.key === "=") setZoom(zoom + 0.25, true);
+      if (event.key === "-" || event.key === "_") setZoom(zoom - 0.25, true);
+      if (event.key === "0") setZoom(1, true);
+    });
+  })();
+</script>
+</body>
+</html>

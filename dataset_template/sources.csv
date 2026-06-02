@@ -1,0 +1,3 @@
+id,source_url,pdf_url,source_name,note
+001,https://vbpl.vn/...,https://vbpl.vn/...pdf,CSDL quốc gia về pháp luật,Có toàn văn HTML làm ground truth
+002,https://vanban.chinhphu.vn/...,https://...pdf,Hệ thống văn bản Chính phủ,Có metadata chuẩn để so field accuracy

@@ -1,0 +1,16 @@
+# Nếu requirements-optional-ocr.txt bị xung đột trên máy yếu, dùng bản ổn định hơn này.
+easyocr>=1.7.2
+paddleocr>=3.0.0
+paddlex[ocr]==3.5.2
+paddlepaddle==3.2.2
+torch>=2.3.0
+torchvision>=0.18.0
+vietocr>=0.3.13
+transformers>=4.45.0
+accelerate>=0.33.0
+datasets>=2.20.0
+onnxruntime>=1.17.0
+sentencepiece>=0.2.0
+safetensors>=0.4.5
+chardet<6
+# setup_latest_* installs einops>=0.8.1 after this file because VietOCR metadata pins einops==0.2.0.

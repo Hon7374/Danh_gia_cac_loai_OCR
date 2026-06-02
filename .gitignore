@@ -1,0 +1,37 @@
+# Local environment and secrets
+.env
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Docker files intentionally excluded from the GitHub repo
+docker/
+Dockerfile
+Dockerfile.*
+docker-compose*.yml
+START_DOCKER.bat
+
+# Local OCR/model artifacts that are too large for normal GitHub pushes
+models/
+cache/
+jobs/
+logs/
+tmp_preprocess_test/
+
+# Generated/local storage
+storage/
+output/
+outputs/
+results/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*.docx
+.vscode/
+.idea/

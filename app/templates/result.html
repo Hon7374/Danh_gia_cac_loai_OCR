@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kết quả OCR</title>
+  <link rel="stylesheet" href="/static/styles.css?v=utf8-20260531" />
+</head>
+<body>
+<main class="container wide">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Job {{job_id}}</p>
+      <h1>Kết quả benchmark OCR</h1>
+      <p class="lead">Dashboard tổng hợp trạng thái engine, chất lượng OCR, thời gian xử lý và tác động của tiền xử lý OpenCV.</p>
+    </div>
+    <nav class="header-actions" aria-label="Tác vụ kết quả">
+      <a href="/">Chạy file khác</a>
+      <a href="/documents">Kho công văn</a>
+      <a href="/reports/{{job_id}}?refresh_layout=1">Chạy lại LayoutLMv3</a>
+      <a href="{{csv_url}}">CSV</a>
+      <a href="{{json_url}}">Report JSON</a>
+      <a href="{{summary_url}}">Summary JSON</a>
+      {% if report.document_archive %}
+      <a href="/documents/{{report.document_archive.document_id}}">Mở hồ sơ lưu trữ</a>
+      {% endif %}
+    </nav>
+  </header>
+
+  <section class="metric-grid">
+    <div class="metric-card">
+      <span>Tổng lượt OCR</span>
+      <b>{{summary.total_runs}}</b>
+      <small>engine x biến thể ảnh</small>
+    </div>
+    <div class="metric-card">
+      <span>Số trang</span>
+      <b>{{report.page_count or 1}}</b>
+      <small>đã OCR toàn bộ file</small>
+    </div>
+    <div class="metric-card success">
+      <span>Thành công</span>
+      <b>{{summary.ok_runs}}</b>
+      <small>lượt có text output</small>
+    </div>
+    <div class="metric-card danger">
+      <span>Lỗi runtime</span>
+      <b>{{summary.error_runs}}</b>
+      <small>engine chạy lỗi cần xử lý</small>
+    </div>
+    <div class="metric-card warning">
+      <span>Bỏ qua</span>
+      <b>{{summary.skipped_runs or 0}}</b>
+      <small>thiếu key/package hoặc không chọn</small>
+    </div>
+    <div class="metric-card">
+      <span>Text chuẩn</span>
+      <b>{% if summary.has_ground_truth %}Có{% else %}Không{% endif %}</b>
+      <small>{{report.ground_truth_text_length or 0}} ký tự</small>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Tóm tắt tốt nhất</p>
+        <h2>Engine nổi bật</h2>
+      </div>
+      {% if report.ground_truth_file %}
+      <span class="pill">Ground truth: {{report.ground_truth_file.filename}}</span>
+      {% elif report.ground_truth_text_length and report.ground_truth_text_length > 0 %}
+      <span class="pill">Ground truth: dán nhanh</span>
+      {% else %}
+      <span class="pill muted-pill">Chưa có ground truth</span>
+      {% endif %}
+    </div>
+    {% if report.ground_truth_file and report.ground_truth_file.warning %}
+    <p class="empty-note">{{report.ground_truth_file.warning}}</p>
+    {% endif %}
+    <div class="best-grid">
+      <div class="best-card">
+        <span>CER thấp nhất</span>
+        <b>{% if summary.best_cer %}{{summary.best_cer.label}}{% else %}Chưa có{% endif %}</b>
+        <small>{% if summary.best_cer %}{{"%.2f"|format(summary.best_cer.cer_pct)}}%{% else %}Cần text chuẩn{% endif %}</small>
+      </div>
+      <div class="best-card">
+        <span>WER thấp nhất</span>
+        <b>{% if summary.best_wer %}{{summary.best_wer.label}}{% else %}Chưa có{% endif %}</b>
+        <small>{% if summary.best_wer %}{{"%.2f"|format(summary.best_wer.wer_pct)}}%{% else %}Cần text chuẩn{% endif %}</small>
+      </div>
+      <div class="best-card">
+        <span>Nhanh nhất</span>
+        <b>{% if summary.fastest %}{{summary.fastest.label}}{% else %}Chưa có{% endif %}</b>
+        <small>{% if summary.fastest %}{{"%.3f"|format(summary.fastest.elapsed_sec)}}s{% else %}-{% endif %}</small>
+      </div>
+      <div class="best-card">
+        <span>Quality score cao nhất</span>
+        <b>{% if summary.best_quality %}{{summary.best_quality.label}}{% else %}Chưa có{% endif %}</b>
+        <small>{% if summary.best_quality %}{{"%.2f"|format(summary.best_quality.quality_score)}}/100{% else %}Cần text chuẩn{% endif %}</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel image-panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Input comparison</p>
+        <h2>Ảnh gốc và ảnh sau OpenCV</h2>
+      </div>
+      <span class="pill muted-pill">Steps: {{ report.opencv_steps | join(' -> ') }}</span>
+    </div>
+    <div class="two-col">
+      <figure>
+        <figcaption>Ảnh gốc</figcaption>
+        <img class="preview" src="{{raw_image_url}}" loading="lazy" alt="Ảnh gốc" />
+      </figure>
+      <figure>
+        <figcaption>OpenCV preprocessed</figcaption>
+        <img class="preview" src="{{pre_image_url}}" loading="lazy" alt="Ảnh sau tiền xử lý OpenCV" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Accuracy</p>
+        <h2>CER/WER - lỗi OCR</h2>
+      </div>
+      <span class="legend"><i class="legend-bad"></i>Càng thấp càng tốt</span>
+    </div>
+    {% if summary.has_ground_truth %}
+    <div class="chart-grid two">
+      <div class="chart-panel">
+        <h3>CER - lỗi ký tự</h3>
+        {% for r in summary.rows %}
+        <div class="bar-row">
+          <div class="bar-label">{{r.label}}</div>
+          <div class="bar-track"><div class="bar bad" style="--w: {{r.cer_bar}}%"></div></div>
+          <div class="bar-value">{% if r.cer_pct is not none %}{{"%.2f"|format(r.cer_pct)}}%{% else %}-{% endif %}</div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="chart-panel">
+        <h3>WER - lỗi từ</h3>
+        {% for r in summary.rows %}
+        <div class="bar-row">
+          <div class="bar-label">{{r.label}}</div>
+          <div class="bar-track"><div class="bar warnbar" style="--w: {{r.wer_bar}}%"></div></div>
+          <div class="bar-value">{% if r.wer_pct is not none %}{{"%.2f"|format(r.wer_pct)}}%{% else %}-{% endif %}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% else %}
+    <p class="empty-note">Chưa có CER/WER vì lần chạy này không có text chuẩn. Upload file text chuẩn ở trang đầu để dashboard hiển thị biểu đồ lỗi và quality score.</p>
+    {% endif %}
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Performance</p>
+        <h2>Quality score và thời gian</h2>
+      </div>
+      <span class="legend"><i class="legend-good"></i>Quality cao hơn tốt hơn</span>
+    </div>
+    <div class="chart-grid two">
+      <div class="chart-panel">
+        <h3>Quality score</h3>
+        <p class="chart-note">
+          {% if summary.has_ground_truth %}
+          Tính từ CER/WER theo text chuẩn.
+          {% else %}
+          Chưa có text chuẩn: tạm tính từ confidence, độ dài text và hậu kiểm dấu tiếng Việt.
+          {% endif %}
+        </p>
+        {% for r in summary.rows %}
+        <div class="bar-row">
+          <div class="bar-label">{{r.label}}</div>
+          <div class="bar-track"><div class="bar good" style="--w: {{r.quality_bar}}%"></div></div>
+          <div class="bar-value" title="{{r.quality_source or ''}}">{% if r.quality_score is not none %}{{"%.2f"|format(r.quality_score)}}{% else %}-{% endif %}</div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="chart-panel">
+        <h3>Thời gian xử lý</h3>
+        {% for r in summary.rows %}
+        <div class="bar-row">
+          <div class="bar-label">{{r.label}}</div>
+          <div class="bar-track"><div class="bar time" style="--w: {{r.time_bar}}%"></div></div>
+          <div class="bar-value">{{"%.3f"|format(r.elapsed_sec)}}s</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Output signal</p>
+        <h2>Độ dài text và confidence</h2>
+      </div>
+    </div>
+    <div class="chart-grid two">
+      <div class="chart-panel">
+        <h3>Độ dài text OCR</h3>
+        {% for r in summary.rows %}
+        <div class="bar-row">
+          <div class="bar-label">{{r.label}}</div>
+          <div class="bar-track"><div class="bar textbar" style="--w: {{r.text_bar}}%"></div></div>
+          <div class="bar-value">{{r.text_len}} ký tự</div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="chart-panel">
+        <h3>Confidence trung bình</h3>
+        <p class="chart-note">Một số engine như PaddleOCR-VL trả text/markdown nhưng không trả confidence từng box, nên phần này hiển thị N/A.</p>
+        {% for r in summary.rows %}
+        <div class="bar-row">
+          <div class="bar-label">{{r.label}}</div>
+          {% if r.avg_confidence is not none %}
+          <div class="bar-track"><div class="bar conf" style="--w: {{r.confidence_bar}}%"></div></div>
+          <div class="bar-value">{{"%.2f"|format(r.avg_confidence)}}%</div>
+          {% else %}
+          <div class="bar-track unavailable"><span>Không có confidence</span></div>
+          <div class="bar-value muted">N/A</div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Preprocessing impact</p>
+        <h2>Tác động của OpenCV</h2>
+      </div>
+      <span class="pill muted-pill">Delta = OpenCV - raw</span>
+    </div>
+    {% if summary.preprocessing_effect %}
+    <div class="table-wrap">
+      <table class="clean-table">
+        <thead>
+          <tr>
+            <th>Engine</th><th>Raw</th><th>OpenCV</th><th>Delta CER</th><th>Delta WER</th><th>Delta time</th><th>Delta text</th><th>Khuyến nghị</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for p in summary.preprocessing_effect %}
+          <tr>
+            <td><b>{{p.engine}}</b></td>
+            <td><span class="status {{p.raw_status}}">{{p.raw_status}}</span></td>
+            <td><span class="status {{p.pre_status}}">{{p.pre_status}}</span></td>
+            <td class="{% if p.cer_delta is not none and p.cer_delta < 0 %}good-text{% elif p.cer_delta is not none and p.cer_delta > 0 %}bad-text{% endif %}">{% if p.cer_delta is not none %}{{"%.2f"|format(p.cer_delta)}} điểm %{% else %}-{% endif %}</td>
+            <td class="{% if p.wer_delta is not none and p.wer_delta < 0 %}good-text{% elif p.wer_delta is not none and p.wer_delta > 0 %}bad-text{% endif %}">{% if p.wer_delta is not none %}{{"%.2f"|format(p.wer_delta)}} điểm %{% else %}-{% endif %}</td>
+            <td>{{"%.3f"|format(p.time_delta or 0)}}s</td>
+            <td>{{p.text_len_delta}}</td>
+            <td>
+              <span class="pill {% if p.recommended_variant == 'opencv_preprocessed' %}ok-pill{% else %}muted-pill{% endif %}">
+                {% if p.recommended_variant == 'opencv_preprocessed' %}Dùng OpenCV{% else %}Dùng raw{% endif %}
+              </span>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="empty-note">Chưa có dữ liệu raw vs preprocessed. Tick lựa chọn so sánh raw và OpenCV ở trang đầu để xem phần này.</p>
+    {% endif %}
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Engine health</p>
+        <h2>Ma trận trạng thái engine</h2>
+      </div>
+    </div>
+    <div class="engine-status-grid">
+      {% for e in summary.engine_status %}
+      <div class="engine-status-card">
+        <div>
+          <b>{{e.engine}}</b>
+          <span>{{e.ok}}/{{e.total}} lượt OK</span>
+        </div>
+        <div class="mini-track"><div class="mini-ok" style="--w: {{(e.ok / e.total * 100) if e.total else 0}}%"></div></div>
+        {% if e.error > 0 %}
+        <small>{{e.error}} lỗi runtime</small>
+        {% elif e.skipped > 0 %}
+        <small>{{e.skipped}} lượt bỏ qua do thiếu cấu hình</small>
+        {% else %}
+        <small>Đủ điều kiện chạy</small>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Detailed rows</p>
+        <h2>Bảng so sánh OCR chi tiết</h2>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="clean-table result-table">
+        <thead>
+          <tr>
+            <th>Engine</th><th>Input</th><th>Status</th><th>Time</th><th>CER</th><th>WER</th><th>Ghi chú</th><th>Text preview</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for r in results %}
+          <tr>
+            <td><b>{{r.engine}}</b></td>
+            <td>{{r.variant}}</td>
+            <td><span class="status {{r.status}}">{{r.status}}</span></td>
+            <td>{{"%.2f"|format(r.elapsed_sec or 0)}}s</td>
+            <td>{% if r.cer is not none %}{{"%.2f"|format(r.cer*100)}}%{% else %}-{% endif %}</td>
+            <td>{% if r.wer is not none %}{{"%.2f"|format(r.wer*100)}}%{% else %}-{% endif %}</td>
+            <td class="status-note {{r.status}}">
+              {% if r.error %}
+                {{r.error}}
+              {% elif r.quality_guard and r.quality_guard.diacritic_loss %}
+                {{r.quality_guard.note}}
+              {% else %}
+                -
+              {% endif %}
+            </td>
+            <td>
+              {% if r.text %}
+              <details class="text-preview">
+                <summary>Xem text</summary>
+                <pre>{{(r.text or '')[:1200]}}</pre>
+              </details>
+              {% else %}
+              <span class="muted">Không có text</span>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Post-processing</p>
+        {% if layout_result and layout_result.extractor == "layoutlmv3" %}
+        <h2>LayoutLMv3 / trích xuất trường</h2>
+        {% else %}
+        <h2>Trích xuất trường tự động</h2>
+        {% endif %}
+      </div>
+    </div>
+    {% if layout_result %}
+      <p><b>Engine:</b> {{layout_result.extractor or layout_result.mode}}</p>
+      <p><b>Mode:</b> {{layout_result.mode}}</p>
+      {% if layout_result.model_path %}
+      <p><b>Model:</b> {{layout_result.model_path}}</p>
+      {% endif %}
+      {% if layout_result.model_ran is defined %}
+      <p><b>Model ran:</b> {{ "yes" if layout_result.model_ran else "no" }}</p>
+      {% endif %}
+      {% if layout_result.fields_source %}
+      <p><b>Field source:</b> {{layout_result.fields_source}}</p>
+      {% endif %}
+      {% if layout_result.model_ran and layout_result.field_label_compatible is defined %}
+      <p><b>Field label schema:</b> {{ "compatible" if layout_result.field_label_compatible else "not compatible" }}</p>
+      {% endif %}
+      <p class="muted">{{layout_result.note}}</p>
+      {% set field_labels = {
+        "so_ky_hieu": "Số ký hiệu",
+        "ngay_ban_hanh": "Ngày ban hành",
+        "trich_yeu": "Trích yếu",
+        "co_quan_ban_hanh": "Cơ quan ban hành",
+        "noi_gui": "Nơi gửi",
+        "noi_nhan": "Nơi nhận",
+        "loai_van_ban": "Loại văn bản",
+        "confidence_note": "Ghi chú độ tin cậy"
+      } %}
+      <div class="table-wrap">
+        <table class="clean-table fields">
+          <tbody>
+          {% for k, v in layout_result.fields.items() %}
+            <tr><th>{{field_labels.get(k, k|replace('_', ' ')|title)}}</th><td>{{v or '-'}}</td></tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% if layout_result.labels_preview_rows or layout_result.labels_preview %}
+      <details class="advanced-box">
+        <summary>Xem nhãn token LayoutLMv3</summary>
+        {% if layout_result.ocr_source %}
+        <p class="muted">
+          Nguồn token: {{layout_result.ocr_source.engine}} / {{layout_result.ocr_source.variant}},
+          trang {{layout_result.ocr_source.page or 1}}.
+        </p>
+        {% endif %}
+        {% if layout_result.labels_preview_note %}
+        <p class="muted">{{layout_result.labels_preview_note}}</p>
+        {% endif %}
+        {% if layout_result.labels_preview_rows %}
+        <div class="table-wrap compact-table-wrap">
+          <table class="clean-table token-table">
+            <thead>
+              <tr><th>#</th><th>Token OCR</th><th>Nhãn model</th><th>Trường</th></tr>
+            </thead>
+            <tbody>
+            {% for item in layout_result.labels_preview_rows %}
+              <tr>
+                <td>{{loop.index}}</td>
+                <td>{{item.token}}</td>
+                <td><code>{{item.label}}</code></td>
+                <td>{{item.field}}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% else %}
+        <pre>{{layout_result.labels_preview}}</pre>
+        {% endif %}
+      </details>
+      {% endif %}
+    {% else %}
+      <p class="empty-note">Không có OCR output hợp lệ để hậu xử lý.</p>
+    {% endif %}
+  </section>
+</main>
+</body>
+</html>

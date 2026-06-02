@@ -1,0 +1,18 @@
+# Optional OCR engines - các package cài ở chế độ latest bằng script setup_latest_*.
+# Cài trực tiếp: python -m pip install -U -r requirements-optional-ocr.txt
+
+easyocr
+paddleocr
+paddlex[ocr]==3.5.2
+paddlepaddle==3.2.2
+torch
+torchvision
+vietocr
+transformers
+accelerate
+datasets
+onnxruntime
+sentencepiece
+safetensors
+chardet<6
+# setup_latest_* installs einops>=0.8.1 after this file because VietOCR metadata pins einops==0.2.0.
