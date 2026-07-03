@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import inspect
 import json
+import os
 import re
 import unicodedata
 from pathlib import Path
@@ -114,6 +115,21 @@ def normalize_boxes(boxes: list[list[int]], width: int, height: int, already_nor
     return normalized
 
 
+def _jsonable(value: Any) -> Any:
+    if isinstance(value, Path):
+        return str(value)
+    if isinstance(value, dict):
+        return {str(key): _jsonable(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_jsonable(item) for item in value]
+    if hasattr(value, "item"):
+        try:
+            return value.item()
+        except Exception:
+            return str(value)
+    return value
+
+
 def make_training_args(args: argparse.Namespace, has_eval: bool):
     from transformers import TrainingArguments
 
@@ -124,12 +140,17 @@ def make_training_args(args: argparse.Namespace, has_eval: bool):
         "learning_rate": args.learning_rate,
         "per_device_train_batch_size": args.batch_size,
         "per_device_eval_batch_size": args.batch_size,
+        "gradient_accumulation_steps": args.gradient_accumulation_steps,
         "num_train_epochs": args.epochs,
         "weight_decay": args.weight_decay,
+        "warmup_ratio": args.warmup_ratio,
         "logging_steps": args.logging_steps,
         "save_strategy": "epoch",
+        "save_total_limit": args.save_total_limit,
         "report_to": [],
         "remove_unused_columns": False,
+        "fp16": args.fp16,
+        "dataloader_num_workers": args.dataloader_num_workers,
     }
     if "no_cuda" in params:
         kwargs["no_cuda"] = args.cpu
@@ -137,8 +158,45 @@ def make_training_args(args: argparse.Namespace, has_eval: bool):
         kwargs["use_cpu"] = args.cpu
     strategy_key = "eval_strategy" if "eval_strategy" in params else "evaluation_strategy"
     kwargs[strategy_key] = "epoch" if has_eval else "no"
+    if has_eval and "load_best_model_at_end" in params:
+        kwargs["load_best_model_at_end"] = True
+    if has_eval and "metric_for_best_model" in params:
+        kwargs["metric_for_best_model"] = "non_o_f1"
+    if has_eval and "greater_is_better" in params:
+        kwargs["greater_is_better"] = True
     kwargs = {key: value for key, value in kwargs.items() if key in params}
     return TrainingArguments(**kwargs)
+
+
+def compute_token_metrics(eval_pred: Any) -> dict[str, float]:
+    import numpy as np
+
+    if hasattr(eval_pred, "predictions"):
+        predictions = eval_pred.predictions
+        labels = eval_pred.label_ids
+    else:
+        predictions, labels = eval_pred
+    if isinstance(predictions, tuple):
+        predictions = predictions[0]
+    pred_ids = np.asarray(predictions).argmax(axis=-1)
+    label_ids = np.asarray(labels)
+    mask = label_ids != -100
+    if not mask.any():
+        return {"token_accuracy": 0.0, "non_o_precision": 0.0, "non_o_recall": 0.0, "non_o_f1": 0.0}
+
+    correct = (pred_ids == label_ids) & mask
+    non_o_gold = (label_ids != LABEL2ID["O"]) & mask
+    non_o_pred = (pred_ids != LABEL2ID["O"]) & mask
+    correct_non_o = correct & non_o_gold
+    precision = float(correct_non_o.sum() / max(1, non_o_pred.sum()))
+    recall = float(correct_non_o.sum() / max(1, non_o_gold.sum()))
+    f1 = 0.0 if precision + recall == 0 else (2 * precision * recall / (precision + recall))
+    return {
+        "token_accuracy": float(correct.sum() / max(1, mask.sum())),
+        "non_o_precision": precision,
+        "non_o_recall": recall,
+        "non_o_f1": f1,
+    }
 
 
 def main() -> None:
@@ -150,14 +208,22 @@ def main() -> None:
     parser.add_argument("--max-length", type=int, default=512)
     parser.add_argument("--epochs", type=float, default=8)
     parser.add_argument("--batch-size", type=int, default=1)
+    parser.add_argument("--gradient-accumulation-steps", type=int, default=1)
     parser.add_argument("--learning-rate", type=float, default=5e-5)
     parser.add_argument("--weight-decay", type=float, default=0.01)
+    parser.add_argument("--warmup-ratio", type=float, default=0.03)
     parser.add_argument("--eval-ratio", type=float, default=0.15)
     parser.add_argument("--logging-steps", type=int, default=10)
+    parser.add_argument("--save-total-limit", type=int, default=2)
+    parser.add_argument("--dataloader-num-workers", type=int, default=0)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--boxes-normalized", action="store_true")
+    parser.add_argument("--fp16", action="store_true")
     parser.add_argument("--cpu", action="store_true")
     args = parser.parse_args()
+
+    os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+    os.environ.setdefault("WANDB_DISABLED", "true")
 
     from datasets import Dataset
     from transformers import AutoModelForTokenClassification, AutoProcessor, Trainer, default_data_collator, set_seed
@@ -184,7 +250,8 @@ def main() -> None:
         image_path = Path(example["image"])
         if not image_path.is_absolute():
             image_path = Path(example["_base_dir"]) / image_path
-        image = Image.open(image_path).convert("RGB")
+        with Image.open(image_path) as image_file:
+            image = image_file.convert("RGB")
         words = [str(word) for word in example["words"]]
         boxes = normalize_boxes(example["boxes"], image.width, image.height, args.boxes_normalized)
         word_labels = [LABEL2ID[normalize_label(label)] for label in example["labels"]]
@@ -230,6 +297,7 @@ def main() -> None:
         "train_dataset": train_dataset,
         "eval_dataset": eval_dataset,
         "data_collator": default_data_collator,
+        "compute_metrics": compute_token_metrics if eval_dataset is not None else None,
     }
     trainer_params = inspect.signature(Trainer.__init__).parameters
     if "processing_class" in trainer_params:
@@ -237,7 +305,9 @@ def main() -> None:
     elif "tokenizer" in trainer_params:
         trainer_kwargs["tokenizer"] = processor
     trainer = WeightedTokenTrainer(**trainer_kwargs)
-    trainer.train()
+    train_result = trainer.train()
+    eval_metrics = trainer.evaluate() if eval_dataset is not None else {}
+
     args.output_dir.mkdir(parents=True, exist_ok=True)
     trainer.save_model(str(args.output_dir))
     processor.save_pretrained(str(args.output_dir))
@@ -245,7 +315,25 @@ def main() -> None:
         json.dumps({"labels": LABELS, "fields": FIELDS}, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+    summary = {
+        "base_model": args.base_model,
+        "output_dir": str(args.output_dir),
+        "train_jsonl": str(args.train_jsonl),
+        "eval_jsonl": str(args.eval_jsonl) if args.eval_jsonl else "",
+        "train_records": len(train_records),
+        "eval_records": len(eval_records) if eval_records else int(eval_dataset.num_rows if eval_dataset is not None else 0),
+        "labels": LABELS,
+        "fields": FIELDS,
+        "train_metrics": _jsonable(train_result.metrics),
+        "eval_metrics": _jsonable(eval_metrics),
+        "args": _jsonable(vars(args)),
+    }
+    (args.output_dir / "training_summary.json").write_text(
+        json.dumps(summary, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     print(f"Saved LayoutLMv3 field checkpoint to {args.output_dir}")
+    print(f"Saved training summary to {args.output_dir / 'training_summary.json'}")
     print(f"Set LAYOUTLMV3_MODEL_DIR={args.output_dir}")
 
 

@@ -1,192 +1,3659 @@
 {
   "dataset_dir": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training",
-  "source_dir": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages",
+  "source_dir": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR",
+  "truth_dir": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR",
   "rendered_dir": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages",
   "train_jsonl": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\train.jsonl",
   "eval_jsonl": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\eval.jsonl",
-  "record_count": 6,
-  "train_count": 6,
-  "eval_count": 0,
+  "source_count": 70,
+  "truth_file_count": 70,
+  "record_count": 70,
+  "train_count": 60,
+  "eval_count": 10,
+  "label_counts": {
+    "B-co_quan_ban_hanh": 66,
+    "B-loai_van_ban": 68,
+    "B-ngay_ban_hanh": 50,
+    "B-noi_nhan": 2,
+    "B-so_ky_hieu": 65,
+    "B-trich_yeu": 66,
+    "I-co_quan_ban_hanh": 406,
+    "I-loai_van_ban": 66,
+    "I-ngay_ban_hanh": 249,
+    "I-noi_nhan": 8,
+    "I-so_ky_hieu": 52,
+    "I-trich_yeu": 1481,
+    "O": 24567
+  },
+  "truth_matched_count": 41,
+  "labeled_page_count": 70,
   "processed": [
     {
-      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\nguyenthikimngan_QClientichbanhanh_from_word_page001.png",
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\06.2023.TT.BKHĐT (PDF)_level4.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\06.2023.TT.BKHĐT (Word).txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\06_2023_TT_BKH_T_PDF_level4_page001.png",
       "ocr_status": "ok",
       "error": "",
-      "word_count": 423,
-      "labeled_count": 22,
+      "word_count": 387,
+      "labeled_count": 7,
       "fields": {
-        "so_ky_hieu": "",
-        "ngay_ban_hanh": "01/04/2025",
-        "trich_yeu": "",
-        "co_quan_ban_hanh": "",
+        "so_ky_hieu": "06/2023/TT-BKHĐT",
+        "ngay_ban_hanh": "02/10/2023",
+        "loai_van_ban": "KẾ HOẠCH",
+        "co_quan_ban_hanh": "BỘ",
+        "trich_yeu": "VÀ ĐẦU TƯ Hà Nội, ngày 02 tháng 10 năm 2023 THÔNG TƯ Quy định hệ thống chỉ tiêu thống kê ngành Thống kê",
         "noi_gui": "",
-        "noi_nhan": "",
-        "loai_van_ban": "QUYẾT ĐỊNH",
-        "confidence_note": "rule_based"
+        "noi_nhan": "Thủ tướng Chính phủ (để",
+        "_doc_type_hint": "thongtu"
       },
-      "matched_fields": {
-        "so_ky_hieu": true,
-        "ngay_ban_hanh": true,
-        "loai_van_ban": true,
-        "co_quan_ban_hanh": false,
-        "trich_yeu": true,
-        "noi_gui": false,
-        "noi_nhan": false
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ KE HOẠCH VÀ ĐÂU TƯ",
+        "so_ky_hieu": "/2023/TT-BKHĐT"
       },
-      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\nguyenthikimngan_QClientichbanhanh_from_word.pdf"
-    },
-    {
-      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\VanBanGoc_135_2026_ND_CP_07042026_signed_1_page001.png",
-      "ocr_status": "ok",
-      "error": "",
-      "word_count": 306,
-      "labeled_count": 22,
-      "fields": {
-        "so_ky_hieu": "",
-        "ngay_ban_hanh": "07/04/2026",
-        "trich_yeu": "",
-        "co_quan_ban_hanh": "",
-        "noi_gui": "",
-        "noi_nhan": "",
-        "loai_van_ban": "NGHỊ ĐỊNH",
-        "confidence_note": "rule_based"
-      },
-      "matched_fields": {
-        "so_ky_hieu": true,
-        "ngay_ban_hanh": true,
-        "loai_van_ban": true,
-        "co_quan_ban_hanh": false,
-        "trich_yeu": true,
-        "noi_gui": false,
-        "noi_nhan": false
-      },
-      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\VanBanGoc_135_2026_ND-CP_07042026-signed_1.pdf"
-    },
-    {
-      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\VanBanGoc_2026_149_64_2026_N_CP_page001.png",
-      "ocr_status": "ok",
-      "error": "",
-      "word_count": 381,
-      "labeled_count": 15,
-      "fields": {
-        "so_ky_hieu": "",
-        "ngay_ban_hanh": "28/02/2026",
-        "trich_yeu": "",
-        "co_quan_ban_hanh": "",
-        "noi_gui": "",
-        "noi_nhan": "",
-        "loai_van_ban": "QUYẾT ĐỊNH",
-        "confidence_note": "rule_based"
-      },
-      "matched_fields": {
-        "so_ky_hieu": true,
-        "ngay_ban_hanh": true,
-        "loai_van_ban": true,
-        "co_quan_ban_hanh": false,
-        "trich_yeu": true,
-        "noi_gui": false,
-        "noi_nhan": false
-      },
-      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\VanBanGoc_2026_149_64_2026_NĐ-CP.pdf"
-    },
-    {
-      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\VanBanGoc_302_2025_ND_CP_19112025_signed_page001.png",
-      "ocr_status": "ok",
-      "error": "",
-      "word_count": 396,
-      "labeled_count": 82,
-      "fields": {
-        "so_ky_hieu": "",
-        "ngay_ban_hanh": "19/11/2025",
-        "trich_yeu": "",
-        "co_quan_ban_hanh": "",
-        "noi_gui": "",
-        "noi_nhan": "",
-        "loai_van_ban": "NGHỊ ĐỊNH",
-        "confidence_note": "rule_based"
-      },
-      "matched_fields": {
-        "so_ky_hieu": true,
-        "ngay_ban_hanh": true,
-        "loai_van_ban": true,
-        "co_quan_ban_hanh": false,
-        "trich_yeu": true,
-        "noi_gui": false,
-        "noi_nhan": false
-      },
-      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\VanBanGoc_302_2025_ND-CP_19112025-signed.pdf"
-    },
-    {
-      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\VanBanGoc_49_2025_QD_TTg_22122025_signed_1766546111229_1_page001.png",
-      "ocr_status": "ok",
-      "error": "",
-      "word_count": 333,
-      "labeled_count": 59,
-      "fields": {
-        "so_ky_hieu": "",
-        "ngay_ban_hanh": "22/12/2025",
-        "trich_yeu": "giải thé và cham đứt hoạt động của Quỹ Bảo hộ công dân và pháp nhân Việt Nam ở nước ngoài. Điều 1. Giải thể và chấm dứt hoạt động của Quỹ Bảo hộ công dân và pháp nhân Việt Nam ở nước ngoài trực thuộc Bộ Ngoại giao. Điều 2. Tổ chức thực hiện 1. Bộ Ngoại giao: a) Tiếp nhận các nhiệm vụ của Quỹ Bảo hộ công dân và pháp nhân Việt Nam ở nước ngoài, bảo đảm không dé gián đoạn nhiệm vu bảo hộ công dân và pháp nhân Việt Nam ở nước ngoài",
-        "co_quan_ban_hanh": "",
+      "ocr_fields": {
+        "so_ky_hieu": "06/2023/TT-BKHĐT",
+        "ngay_ban_hanh": "23/01/2015",
+        "trich_yeu": "ĐẾN, — THONG a en pen sn bie 1G... Chạy... OAD y định hệ thông chi tiêu thong kê ngành Thong? Kinh chuyển......... l “cứ Luật Thắng kê ngày 23 tháng 1! năm 2015; Luật sửa đổi, bd sung một số điều và Phụ lạc Danh mục chỉ tiêu thống kê quốc gia của Luật Thong kế ngày 12 tháng 1] năm 2021",
+        "co_quan_ban_hanh": "NEWS KY: CÔNG TT BT CEL SNAIL THONGTENCIS ~E A GRAE: VIE PHỦ EE K 1X 03:20 +0700 GHINHPHU YN 08T BỘ KE HOẠCH VÀ ĐÂU TƯ",
         "noi_gui": "",
         "noi_nhan": "",
         "loai_van_ban": "CÔNG VĂN",
         "confidence_note": "rule_based"
       },
+      "truth_fields": {
+        "so_ky_hieu": "06/2023/TT-BKHĐT",
+        "ngay_ban_hanh": "02/10/2023",
+        "trich_yeu": "VÀ ĐẦU TƯ Hà Nội, ngày 02 tháng 10 năm 2023 THÔNG TƯ Quy định hệ thống chỉ tiêu thống kê ngành Thống kê",
+        "co_quan_ban_hanh": "BỘ",
+        "noi_gui": "",
+        "noi_nhan": "Thủ tướng Chính phủ (để",
+        "loai_van_ban": "KẾ HOẠCH",
+        "confidence_note": "rule_based"
+      },
       "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": false,
+        "trich_yeu": false,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\07.2023.TT.BTP_level5.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\07.2023.TT.BTP.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\07_2023_TT_BTP_level5_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 407,
+      "labeled_count": 35,
+      "fields": {
+        "so_ky_hieu": "07/2023/TT-BTP",
+        "ngay_ban_hanh": "29/09/2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ TƯ PHÁP",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 10/2020/TT-BTP ngày 28 tháng 12 năm 2020 của Bộ trưởng Bộ Tư pháp ban hành, hướng dẫn việc ghi chép, sử dụng, quản lý và lưu trữ Sổ, mẫu giấy tờ, hồ sơ nuôi con nuôi",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "loai_van_ban": "THONG TƯ",
+        "trich_yeu": "thang 12 năm 3829 của Mộ trưởng Bộ Tư pháp ban Roak, uướng đến việc ght chén, sử dụng, quake: lý và lan trữ SA, mau giấy từ, hệ sơ naôi cow muối"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "23/02/2023",
+        "trich_yeu": "Nghị định số 19/4011/NĐ-CP ngày 3! thẳng 3 năm 2011 của Chính pit quy định chỉ tiết thi hành mot 26 điều của Luật Nuậi con nuôi",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "07/2023/TT-BTP",
+        "ngay_ban_hanh": "29/09/2023",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 10/2020/TT-BTP ngày 28 tháng 12 năm 2020 của Bộ trưởng Bộ Tư pháp ban hành, hướng dẫn việc ghi chép, sử dụng, quản lý và lưu trữ Sổ, mẫu giấy tờ, hồ sơ nuôi con nuôi",
+        "co_quan_ban_hanh": "BỘ TƯ PHÁP",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": false,
+        "so_ky_hieu": false,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\08.2023.TT.BKHĐT (PDF)_level4.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\08.2023.TT.BKHĐT (Word).txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\08_2023_TT_BKH_T_PDF_level4_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 448,
+      "labeled_count": 50,
+      "fields": {
+        "so_ky_hieu": "08/2023/TT-BKHĐT",
+        "ngay_ban_hanh": "02/10/2023",
+        "loai_van_ban": "KẾ HOẠCH",
+        "co_quan_ban_hanh": "BỘ",
+        "trich_yeu": "VÀ ĐẦU TƯ Hà Nội, ngày 02 tháng 10 năm 2023 THÔNG TƯ Quy định mã số, tiêu chuẩn chuyên môn, nghiệp vụ và xếp lương đối với các ngạch công chức chuyên ngành thống kê",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ KẾ HOẠCH VÀ ĐẦU TƯ",
+        "so_ky_hieu": "/2023/TT-BKHĐT",
+        "ngay_ban_hanh": "ngày C2 tháng 2Ô năm 2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "\" Quy định ma số, tiêu chuẩn chuyên môn, nghiện vụ và xếp lương đổi với {CONG niệNG Ti ĐỀN TỦ CHEM PHÙ các ngạch công chức chuyên ngành thống kê ĐẾN __ “v7... ...."
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "02/02/2023",
+        "trich_yeu": "Hà Nội, ngày C2 tháng 2Ô năm 2023 THÔNG TƯ \" Quy định ma số, tiêu chuẩn chuyên môn, nghiện vụ và xếp lương đổi với {CONG niệNG Ti ĐỀN TỦ CHEM PHÙ các ngạch công chức chuyên ngành thống kê ĐẾN __ “v7....... a cứ Lud Cán bộ, câng chức ngày 13 thang 11 năm 2008; Luật sửa đổi, bề sung một số điều của Luật Cán bộ, công chức và Luật Viên chức ngày 25 tháng 11 năm 2019",
+        "co_quan_ban_hanh": "|NGƯỜI KÝ: CÔNG THÔNG SA ĐIỆN TỬ CHÚAH PHÁ CHIRMPHTL NG EE GIAN KÝ AES 1163.31 700 BỘ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "KẾ HOẠCH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "08/2023/TT-BKHĐT",
+        "ngay_ban_hanh": "02/10/2023",
+        "trich_yeu": "VÀ ĐẦU TƯ Hà Nội, ngày 02 tháng 10 năm 2023 THÔNG TƯ Quy định mã số, tiêu chuẩn chuyên môn, nghiệp vụ và xếp lương đối với các ngạch công chức chuyên ngành thống kê",
+        "co_quan_ban_hanh": "BỘ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "KẾ HOẠCH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
         "so_ky_hieu": true,
         "ngay_ban_hanh": true,
         "loai_van_ban": true,
-        "co_quan_ban_hanh": false,
         "trich_yeu": true,
-        "noi_gui": false,
-        "noi_nhan": false
-      },
-      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\VanBanGoc_49_2025_QD-TTg_22122025-signed-1766546111229 (1).pdf"
+        "noi_nhan": false,
+        "noi_gui": false
+      }
     },
     {
-      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\VanBanGoc_50_2025_QD_TTg_25122025_signed_page001.png",
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\08_2023_TT_BXD_0001_20231013035339331330_level4.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.4786,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\08_2023_TT_BXD_0001_20231013035339331330_level4_page001.png",
       "ocr_status": "ok",
       "error": "",
-      "word_count": 418,
-      "labeled_count": 89,
+      "word_count": 468,
+      "labeled_count": 58,
       "fields": {
+        "so_ky_hieu": "08/2023/TT-BXD",
+        "ngay_ban_hanh": "20/11/2018",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ XÂY DỰNG BỘ XÂY ĐỰNG",
+        "trich_yeu": "Quy định danh mục và thời hee định kỳ chuyển đổi vị trí công tác đối với công chức không giữ chức vụ lãnh đạc, quản lý và viên chức trys tiếp tiếp xúc, giải quyết sông việc trong lĩnh vee xây đựng",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "Bộ Xây dựng BỘ XÂY ĐỰNG",
+        "so_ky_hieu": "/2023/TT-BXD",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định danh mục và thời hee định kỳ chuyển đổi vị trí công tác đối với công chức không giữ chức vụ lãnh đạc, quản lý và viên chức trys tiếp tiếp xúc, giải quyết sông việc trong lĩnh vee xây đựng",
+        "ngay_ban_hanh": "ngày 20 thang 11 năm 2018:"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "08/2023/TT-BXD",
+        "ngay_ban_hanh": "20/11/2018",
+        "trich_yeu": "Quy định danh mục và thời hee định kỳ chuyển đổi vị trí công tác đối với công chức không giữ chức vụ lãnh đạc, quản lý và viên chức trys tiếp tiếp xúc, giải quyết sông việc trong lĩnh vee xây đựng",
+        "co_quan_ban_hanh": "BỘ XÂY DỰNG BỘ XÂY ĐỰNG",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\09.2023.TT.BKHĐT (PDF)_level3.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\09.2023.TT.BKHĐT (Word).txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\09_2023_TT_BKH_T_PDF_level3_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 402,
+      "labeled_count": 16,
+      "fields": {
+        "so_ky_hieu": "09/2023/TT-BKHĐT",
+        "ngay_ban_hanh": "09/10/2023",
+        "loai_van_ban": "KẾ HOẠCH",
+        "co_quan_ban_hanh": "BỘ",
+        "trich_yeu": "VÀ ĐẦU TƯ Hà Nội, ngày 09 tháng 10 năm 2023 THÔNG TƯ Quy định hệ thống chỉ tiêu thống kê ngành Kế hoạch và Đầu tư",
+        "noi_gui": "",
+        "noi_nhan": "Thủ tướng Chính phủ (để",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ KẾ HOẠCH VADAUTU",
+        "so_ky_hieu": "/2023/TT-BKHĐT",
+        "ngay_ban_hanh": "ngày 23 tháng 11 năm 2015; mục chỉ tiêu thống kê"
+      },
+      "ocr_fields": {
         "so_ky_hieu": "",
-        "ngay_ban_hanh": "25/12/2025",
+        "ngay_ban_hanh": "09/04/2023",
+        "trich_yeu": "và Đầu tw",
+        "co_quan_ban_hanh": "CƠ QUAN V CHINHPMU VTI: EAN KY 16 10 2021 ¿4 %4 16 +02 90 BỘ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "KẾ HOẠCH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "09/2023/TT-BKHĐT",
+        "ngay_ban_hanh": "09/10/2023",
+        "trich_yeu": "VÀ ĐẦU TƯ Hà Nội, ngày 09 tháng 10 năm 2023 THÔNG TƯ Quy định hệ thống chỉ tiêu thống kê ngành Kế hoạch và Đầu tư",
+        "co_quan_ban_hanh": "BỘ",
+        "noi_gui": "",
+        "noi_nhan": "Thủ tướng Chính phủ (để",
+        "loai_van_ban": "KẾ HOẠCH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": false,
+        "trich_yeu": false,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\10.2023.TT-BLĐTBXH.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\10_2023_TT-BLDTBXH_583237.txt",
+      "truth_match_score": 0.9871,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\10_2023_TT_BL_TBXH_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 414,
+      "labeled_count": 54,
+      "fields": {
+        "so_ky_hieu": "10/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "17/10/2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ LAO ĐỘNG - THƯƠNG BINH VÀ XÃ HỘI",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm công chức nghiệp vụ chuyên ngành lao động, người có công và xã hội trong cơ quan, tổ chức thuộc ngành, lĩnh vực lao động, người có công và xã hội",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ LAO ĐỘNG - THƯƠNG BINH",
+        "so_ky_hieu": "/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "ngày 17 tháng 10 năm 2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm công chức nghiệp vụ - chuyên ngành lao động, người có công và xã hội trong cơ quan, tô chức thuộc ngành, lĩnh vực lao động, người có công và xã hội"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "10/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "17/10/2023",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm công chức nghiệp vụ - chuyên ngành lao động, người có công và xã hội trong cơ quan, tô chức thuộc ngành, lĩnh vực lao động, người có công và xã hội",
+        "co_quan_ban_hanh": "BỘ LAO ĐỘNG - THƯƠNG BINH",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "10/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "17/10/2023",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm công chức nghiệp vụ chuyên ngành lao động, người có công và xã hội trong cơ quan, tổ chức thuộc ngành, lĩnh vực lao động, người có công và xã hội",
+        "co_quan_ban_hanh": "BỘ LAO ĐỘNG - THƯƠNG BINH VÀ XÃ HỘI",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\10.2023.TT-BLĐTBXH_level3.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\10_2023_TT-BLDTBXH_583237.txt",
+      "truth_match_score": 0.9871,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\10_2023_TT_BL_TBXH_level3_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 412,
+      "labeled_count": 66,
+      "fields": {
+        "so_ky_hieu": "10/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "17/10/2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ LAO ĐỘNG - THƯƠNG BINH VÀ XÃ HỘI",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm công chức nghiệp vụ chuyên ngành lao động, người có công và xã hội trong cơ quan, tổ chức thuộc ngành, lĩnh vực lao động, người có công và xã hội",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "so_ky_hieu": "/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "ngày 17 tháng 10 năm 2023",
+        "loai_van_ban": "THONG TƯ",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm công chức nghiệp vụ chuyên ngành lao động, người có công và xã hội trong cơ quan, tố chức thuộc ngành, lĩnh vực lao động, người có công và xã hội",
+        "co_quan_ban_hanh": "nhiệm vụ, quyền hạn và cơ cau tổ chức của Bộ Lao động - Thương binh và Xã hội:"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "10/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "17/10/2023",
         "trich_yeu": "",
         "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "10/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "17/10/2023",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm công chức nghiệp vụ chuyên ngành lao động, người có công và xã hội trong cơ quan, tổ chức thuộc ngành, lĩnh vực lao động, người có công và xã hội",
+        "co_quan_ban_hanh": "BỘ LAO ĐỘNG - THƯƠNG BINH VÀ XÃ HỘI",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\11-bnnptnt.signed_level1.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.65,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\11_bnnptnt_signed_level1_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 456,
+      "labeled_count": 11,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "05/04/2023",
+        "loai_van_ban": "CÔNG VĂN",
+        "co_quan_ban_hanh": "CÔNG VĂN ĐẾM BỘ NÔNG NGHIỆP",
+        "trich_yeu": "Hà Nội, ngày A5 tháng 4{ năm 2023 n 1 Kính chuyển....TP Hướng d n vị trí việc làm lãnh đạo, quản lý và chức danh nghề nghiệp chuyên ngành, cơ cấu viên chức theo chức danh nghề nghiệp trong đơn vị sự nghiệp công lập thuộc ngành, lĩnh vực nông nghiệp và phát triển nông thôn",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": ""
+      },
+      "semantic_fields": {
+        "loai_van_ban": "CÔNG VĂN",
+        "co_quan_ban_hanh": "BỘ NÔNG NGHIỆP",
+        "ngay_ban_hanh": "ngày A5 tháng 4{ năm 2023"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "05/04/2023",
+        "trich_yeu": "Hà Nội, ngày A5 tháng 4{ năm 2023 n 1 Kính chuyển....TP Hướng d n vị trí việc làm lãnh đạo, quản lý và chức danh nghề nghiệp chuyên ngành, cơ cấu viên chức theo chức danh nghề nghiệp trong đơn vị sự nghiệp công lập thuộc ngành, lĩnh vực nông nghiệp và phát triển nông thôn",
+        "co_quan_ban_hanh": "CÔNG VĂN ĐẾM BỘ NÔNG NGHIỆP",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "CÔNG VĂN",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": false,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": false,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\16-2023-TT-BGDDT_level4.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\16-2023-TT-BGDĐT.CBCP.txt",
+      "truth_match_score": 0.9912,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\16_2023_TT_BGDDT_level4_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 475,
+      "labeled_count": 15,
+      "fields": {
+        "so_ky_hieu": "16/2023/TT-BGDĐT",
+        "ngay_ban_hanh": "03/10/2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 41/2020/TT-BGDĐT ngày 03 tháng 11 năm 2020 của Bộ trưởng Bộ Giáo dục và Đào tạo bãi bỏ một số văn bản quy phạm pháp luật do Bộ trưởng Bộ Giáo dục và Đào tạo ban hành trong lĩnh vực giáo dục",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BO GIÁO DỤC VA ĐÀO TẠO generate",
+        "ngay_ban_hanh": "ngày 03 tháng 10 năm 2023",
+        "loai_van_ban": "THÔNG TƯ"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "41/2020/TT-BGDĐT",
+        "ngay_ban_hanh": "03/10/2023",
+        "trich_yeu": "Sửa đổi, bd sung một số điều của Thông tư số 41/2020/TT-BGDĐT ngày 03 tháng It năm 2020 của Bộ trưởng Bộ Giáo dục và Đào tạo bãi bỏ một số văn bản quy phạm pháp luật do Bộ trưởng Bộ Giáo dục và Đào tạo ban hành trong lĩnh vực giáo đục",
+        "co_quan_ban_hanh": "BO GIÁO DỤC VA ĐÀO TẠO CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM GENERATE ĐỘC LẬP - TY DO - HẠNH PHÚC",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "16/2023/TT-BGDĐT",
+        "ngay_ban_hanh": "03/10/2023",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 41/2020/TT-BGDĐT ngày 03 tháng 11 năm 2020 của Bộ trưởng Bộ Giáo dục và Đào tạo bãi bỏ một số văn bản quy phạm pháp luật do Bộ trưởng Bộ Giáo dục và Đào tạo ban hành trong lĩnh vực giáo dục",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": false,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": false,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\18.2023.TT.BYT_level2.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\18_2023_TT-BYT_583999.txt",
+      "truth_match_score": 0.9818,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\18_2023_TT_BYT_level2_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 390,
+      "labeled_count": 20,
+      "fields": {
+        "so_ky_hieu": "18/2023/TT-BYT",
+        "ngay_ban_hanh": "25/10/2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "trich_yeu": "HƯỚNG DẪN THỰC HIỆN NHIỆM VỤ BẢO VỆ, CHĂM SÓC SỨC KHỎE CÁN BỘ TỈNH, THÀNH PHỐ TRỰC THUỘC TRUNG ƯƠNG",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "so_ky_hieu": "/2023/TT-BYT",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Hướng dẫn thực hiện nhiệm vụ bảo vệ, chăm sóc sức khỏe cán bộ"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "18/2023/TT-BYT",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "Hướng dẫn thực hiện nhiệm vụ bảo vệ, chăm sóc sức khỏe cán bộ tỉnh, thành phố trực thuộc Trung ương",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "18/2023/TT-BYT",
+        "ngay_ban_hanh": "25/10/2023",
+        "trich_yeu": "HƯỚNG DẪN THỰC HIỆN NHIỆM VỤ BẢO VỆ, CHĂM SÓC SỨC KHỎE CÁN BỘ TỈNH, THÀNH PHỐ TRỰC THUỘC TRUNG ƯƠNG",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\230927_Thongtu_07_Baibo_QCVN_TY_level5.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\Thongtu_Baibo_QCVN_TY.txt",
+      "truth_match_score": 0.8682,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\230927_Thongtu_07_Baibo_QCVN_TY_level5_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 470,
+      "labeled_count": 39,
+      "fields": {
+        "so_ky_hieu": "07/2023/TT-BNNPTNT",
+        "ngay_ban_hanh": "27/09/2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ NÔNG NGHIỆP",
+        "trich_yeu": "Bãi bỏ một phần Thông tư số 71/2011/TT-BNNPTNT ngày 25/10/2011 của Bộ trưởng Bộ Nông nghiệp và Phát triển nông thôn ban hành quy chuẩn kỹ thuật quốc gia lĩnh vực thú y ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "VẢ PHÁT TRIEN SÔNG THÔN Độc lận - Tự de - Hạnh nhắc",
+        "so_ky_hieu": "/2122TT-BNNFTNT",
+        "loai_van_ban": "THONG TỰ",
+        "trich_yeu": "cia Hệ trưởng Bộ Nôna nghiệp và Phát triển nâng thân ban bềnh quy chuẩn kỹ thuật chốc gia Hnh vực thú y"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "71/2911/1Y.BNNETNT",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "sí 195/2222/ND-CP ngày 32 tháng ?2 năm 2022 cua “ P + » eas 2 * 4 #4. Ẫ “ Chit phe auy dint chức nẵng, nhiệnt vu, quyển hạn và cơ cau íê chức của BG Nâng nahiện và Phát triển nông thân: Nghị định số 34/2016/NĐ-CP ngày 14 tháng S năm 2016 của Chính nhủ guy định chỉ tiết một xế điều uà biện pháp thi hành Ludt Ban nành văn bản quy phạm pháp luật; Thee Gé nghị cle Cục truởng Cục Thú v, Vu trưởng Vụ Khoa học, Công nghd và MGi tưỜNG; Bộ trưởng Bộ Nông nghiệp và Phát triển nông thôn ban hành Thông te bãi bỏ mội phan",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "07/2023/TT-BNNPTNT",
+        "ngay_ban_hanh": "27/09/2023",
+        "trich_yeu": "Bãi bỏ một phần Thông tư số 71/2011/TT-BNNPTNT ngày 25/10/2011 của Bộ trưởng Bộ Nông nghiệp và Phát triển nông thôn ban hành quy chuẩn kỹ thuật quốc gia lĩnh vực thú y ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬",
+        "co_quan_ban_hanh": "BỘ NÔNG NGHIỆP",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\25-bnn.signed_level1.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.5115,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\25_bnn_signed_level1_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 369,
+      "labeled_count": 35,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "22/12/2022",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGƯỜI KÝ: CÔNG THÔNG TIN ĐIỆN TU CHÍNH PHÚ VG P MAI: THOAGTUNCHINHPBUDFCHANHPHU VN CƠ QUAN: VĂN PHÒNG CHÍNH PHÚ CHINHPMU VNTHỚI GIAN KÝ 26.12 2023 0923041 +02 00 BỘ NÔNG NGHIỆP",
+        "trich_yeu": "Hưởng dẫn quy trình duy tu, bảo đưỡng đê điều và xử lý khẩn cấp (cấp bách) sự có đê điều",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": ""
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ NÔNG NGHIỆP",
+        "so_ky_hieu": "/2023/TT-BNNPTNT",
+        "trich_yeu": "xgy 2214212013 Hưởng dẫn quy trình duy tu, bảo đưỡng đê điều và xử lý khẩn cấp (cấp bách) sự có đê điều",
+        "loai_van_ban": "THÔNG TƯ",
+        "ngay_ban_hanh": "ngày 22 tháng 12 năm 2022"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "22/12/2022",
+        "trich_yeu": "Hưởng dẫn quy trình duy tu, bảo đưỡng đê điều và xử lý khẩn cấp (cấp bách) sự có đê điều",
+        "co_quan_ban_hanh": "NGƯỜI KÝ: CÔNG THÔNG TIN ĐIỆN TU CHÍNH PHÚ VG P MAI: THOAGTUNCHINHPBUDFCHANHPHU VN CƠ QUAN: VĂN PHÒNG CHÍNH PHÚ CHINHPMU VNTHỚI GIAN KÝ 26.12 2023 0923041 +02 00 BỘ NÔNG NGHIỆP",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\544090 (2)_level5.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\17_2023_TT-BYT_544090.txt",
+      "truth_match_score": 0.9582,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\544090_2_level5_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 413,
+      "labeled_count": 32,
+      "fields": {
+        "so_ky_hieu": "17/2023/TT-BYT",
+        "ngay_ban_hanh": "25/09/2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "trich_yeu": "SỬA ĐỔI, BỔ SUNG VÀ BÃI BỎ MỘT SỐ VĂN BẢN QUY PHẠM PHÁP LUẬT VỀ AN TOÀN THỰC PHẨM DO BỘ TRƯỞNG BỘ Y TẾ BAN HÀNH",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": ""
+      },
+      "semantic_fields": {
+        "so_ky_hieu": "/262⁄/TT-B6YT",
+        "loai_van_ban": "THONG TƯ",
+        "trich_yeu": "Ste đối, bê sung vA bối bó mệt số wae bên guy phạm phấp int vé an tuần thực phẩm do Hệ trường Bộ ¥ té hen sành wzw.ThzVierPhopLaaCvH"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "25/09/2033",
+        "trich_yeu": "Nghị định số 93/2022/NĐ-CP ngày 1% thắng i] nằm 2022 của Chink phủ quy định chúc năng, nhện: vụ, giun hen và cơ cầu té chức của Bộ V tế; Theo đ nghị của Cục trưởng Cue An toàn thực phẩm, Bá tưởng Bộ ¥ tê bạn bành Thông as sửa đổi, bố sung và bãi bẻ một sẽ văn bản guy phạn pip luật về an toàn thực pia do Bộ irwing Bộ ¥ tệ ban Điêu §. Sửa đôi, 63 sang rột số điều tại Thông tr số 24/2839/1T-HVT ngày 38 thẳng # she 2619 của Hộ trưởng Bộ V tế quy đình vide quân lý và sử dụng ply gia thực phẩm i. Sòa đổi khaáu 8 Đầu 3 ah sau: “3. Phụ gia thực phẩm bến bọn cô công dụng mới là phạt gia dase phẩm: có chữa tử bai (32; chất phụ gis trở lên vả có it nde miột (02) công dụng khác với tết cả công dung đã được quy định cho mili chất phụ gia đó.” 2. Sửa đãi, bê sung khoản 4 Điều Š di sau: “4, Hương liệu dùng trong thực phẩm bao gằm cáo hương liệu thuộc mệt trong cée dans mage sau: 4} Heong liệu đã được EEOFA đệnh giá, xác định an toân & các lượng En vàn du kiếp hoặc lượng äa véo hing nady chấp: nhậu được (ADE): bì Hương liệu được căng nhận ais eda (GRAS) ban hank bởi Hiệp hội các.⁄ 4ˆ D THU VIỆN PHAP LUAT® rat 494-48-5096 3279 2 wzw.ThzVierPhopLaaCvH",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "17/2023/TT-BYT",
+        "ngay_ban_hanh": "25/09/2023",
+        "trich_yeu": "SỬA ĐỔI, BỔ SUNG VÀ BÃI BỎ MỘT SỐ VĂN BẢN QUY PHẠM PHÁP LUẬT VỀ AN TOÀN THỰC PHẨM DO BỘ TRƯỞNG BỘ Y TẾ BAN HÀNH",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": false,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\583021_level2.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\26_2023_QD-TTg_583021.txt",
+      "truth_match_score": 0.9582,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\583021_level2_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 476,
+      "labeled_count": 47,
+      "fields": {
+        "so_ky_hieu": "26/2023/QĐ-TTG",
+        "ngay_ban_hanh": "19/10/2023",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "co_quan_ban_hanh": "THỦ TƯỚNG CHÍNH PHỦ",
+        "trich_yeu": "SỬA ĐỔI PHỤ LỤC QUY ĐỊNH THỜI GIAN Ủ BỆNH TRUNG BÌNH VÀ THỜI GIAN KHÔNG PHÁT HIỆN THÊM TRƯỜNG HỢP MẮC BỆNH TRUYỀN NHIỄM LÀM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": ""
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "THỦ TƯỚNG CHÍNH PHU",
+        "so_ky_hieu": "XÃ HOI CHỦ NGHĨA VIỆT NAM — Độc lập - Tự do - Hạnh phúc Số: 26/2023/QĐ-TTg",
+        "ngay_ban_hanh": "ngày 19 thang 10 năm 2023",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "trich_yeu": "của Thủ tướng Chính phủ vẻ việc quy định điều kiện công bố dịch, công bố hết dich"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "26/2023/QĐ-TTG",
+        "ngay_ban_hanh": "19/10/2023",
+        "trich_yeu": "Sửa đối Phụ lục quy định thời gian ủ bệnh trung bình và thời gian không phát hiện thêm trường hợp mắc bệnh nàng ð nhiễm làm",
+        "co_quan_ban_hanh": "THỦ TƯỚNG CHÍNH PHU",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "26/2023/QĐ-TTG",
+        "ngay_ban_hanh": "19/10/2023",
+        "trich_yeu": "SỬA ĐỔI PHỤ LỤC QUY ĐỊNH THỜI GIAN Ủ BỆNH TRUNG BÌNH VÀ THỜI GIAN KHÔNG PHÁT HIỆN THÊM TRƯỜNG HỢP MẮC BỆNH TRUYỀN NHIỄM LÀM",
+        "co_quan_ban_hanh": "THỦ TƯỚNG CHÍNH PHỦ",
         "noi_gui": "",
         "noi_nhan": "",
         "loai_van_ban": "QUYẾT ĐỊNH",
         "confidence_note": "rule_based"
       },
       "matched_fields": {
+        "co_quan_ban_hanh": true,
         "so_ky_hieu": true,
         "ngay_ban_hanh": true,
         "loai_van_ban": true,
-        "co_quan_ban_hanh": false,
         "trich_yeu": true,
-        "noi_gui": false,
-        "noi_nhan": false
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\thong-tu-09-2023-tt-bldtbxh-dao-tao-ngoai-ngu-cho-nld-vn-di-lam-viec-o-nuoc-ngoai_level5.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\thong-tu-09-2023-tt-bldtbxh-dao-tao-ngoai-ngu-cho-nld-vn-di-lam-viec-o-nuoc-ngoai.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\thong_tu_09_2023_tt_bldtbxh_dao_tao_ngoai_ngu_cho_nld_vn_di_lam_viec_o_nuoc_ngoai_level5_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 528,
+      "labeled_count": 32,
+      "fields": {
+        "so_ky_hieu": "09/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "29/09/2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ LAO ĐỘNG - THƯƠNG BINH VÀ XÃ HỘI",
+        "trich_yeu": "Ban hành định mức kinh tế - kỹ thuật về đào tạo ngoại ngữ cho người lao động Việt Nam đi làm việc ở nước ngoài theo hợp đồng ____________",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
       },
-      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\VanBanGoc_50_2025_QD-TTg_25122025-signed.pdf"
+      "semantic_fields": {
+        "so_ky_hieu": "99/2023/TT-RLĐTBXH",
+        "loai_van_ban": "THONG TƯ",
+        "trich_yeu": "Bán hàah định mức kink 26 - bo thuật về dae tac ngoại agi cho người lao động Việt Nem đi lãm vide ở ngớc ugoài theo hợp đồng"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "99/2023/TT-RLĐTBXH",
+        "ngay_ban_hanh": "12/09/7022",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "SỐ LAG ĐỒNG - PHƯƠNG BÌNH",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "09/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "29/09/2023",
+        "trich_yeu": "Ban hành định mức kinh tế - kỹ thuật về đào tạo ngoại ngữ cho người lao động Việt Nam đi làm việc ở nước ngoài theo hợp đồng ____________",
+        "co_quan_ban_hanh": "BỘ LAO ĐỘNG - THƯƠNG BINH VÀ XÃ HỘI",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": false,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\Thông tư 01.2023.TT.TTCP_level2.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\Thông tư 01.2023.TT.TTCP.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_01_2023_TT_TTCP_level2_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 390,
+      "labeled_count": 62,
+      "fields": {
+        "so_ky_hieu": "01/2023/TT-TTCP",
+        "ngay_ban_hanh": "01/11/2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "THANH TRA CHÍNH PHỦ",
+        "trich_yeu": "HƯỚNG DẪN VỀ VỊ TRÍ VIỆC LÀM CÔNG CHỨC NGHIỆP VỤ CHUYÊN NGÀNH THANH TRA",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "\\Người ký: Công Thông tin điện tử Chính pha > Email: thongtnchinhpbudichinhphu vn ` Cơ quan: Vẫn phòng Chính pha Tha ký: 10.11.2023 15:03:54 +07:00 CHINHPHU.VNẺ Banh THANH TRA CHÍNH PHỦ",
+        "so_ky_hieu": "01/2023/TT-TTCP",
+        "ngay_ban_hanh": "ngày 01 tháng 11 năm 2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm công chức nghiệp vụ chuyên ngành Thanh tra ee ARG EEA VERA DEN Ngày..40144412023... at"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "01/2023/TT-TTCP",
+        "ngay_ban_hanh": "01/11/2023",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm công chức nghiệp vụ chuyên ngành Thanh tra ee ARG EEA VERA DEN Ngày..40144412023... at ‘",
+        "co_quan_ban_hanh": "\\NGƯỜI KÝ: CÔNG THÔNG TIN ĐIỆN TỬ CHÍNH PHA > EMAIL: THONGTNCHINHPBUDICHINHPHU VN ` CƠ QUAN: VẪN PHÒNG CHÍNH PHA THA KÝ: 10.11.2023 15:03:54 +07:00 CHINHPHU.VNẺ BANH THANH TRA CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "01/2023/TT-TTCP",
+        "ngay_ban_hanh": "01/11/2023",
+        "trich_yeu": "HƯỚNG DẪN VỀ VỊ TRÍ VIỆC LÀM CÔNG CHỨC NGHIỆP VỤ CHUYÊN NGÀNH THANH TRA",
+        "co_quan_ban_hanh": "THANH TRA CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\Thông tư-11-2023-TT-BLĐTBXH_level3.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\Thông tư-11-2023-TT-BLĐTBXH.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_11_2023_TT_BL_TBXH_level3_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 453,
+      "labeled_count": 62,
+      "fields": {
+        "so_ky_hieu": "11/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "17/10/2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ LAO ĐỘNG -THƯƠNG BINH VÀ XÃ HỘI",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm lãnh đạo, quản lý và chức danh nghề nghiệp chuyên ngành, cơ cấu viên chức theo chức danh nghề nghiệp trong đơn vị sự nghiệp công lập thuộc ngành, lĩnh vực lao động, người có công và xã hội _____________________________",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ LAO DONG -THƯƠNG BÌNH — VÀ",
+        "so_ky_hieu": "11/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "ngày 17 tháng 10 năm 2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm lãnh đạo, quản lý và chức danh nghề nghiệp chuyên ngành, cơ cấu viên chức theo chức danh nghề nghiệp trong đơn vị sự nghiệp công lập thuộc ngành, lĩnh vực lao động, người có công và xã hội"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "11/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "17/10/2023",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm lãnh đạo, quản lý và chức danh nghề nghiệp chuyên ngành, cơ cấu viên chức theo chức danh nghề nghiệp trong đơn vị sự nghiệp công lập thuộc ngành, lĩnh vực lao động, người có công và xã hội",
+        "co_quan_ban_hanh": "BỘ LAO DONG -THƯƠNG BÌNH —",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "11/2023/TT-BLĐTBXH",
+        "ngay_ban_hanh": "17/10/2023",
+        "trich_yeu": "Hướng dẫn về vị trí việc làm lãnh đạo, quản lý và chức danh nghề nghiệp chuyên ngành, cơ cấu viên chức theo chức danh nghề nghiệp trong đơn vị sự nghiệp công lập thuộc ngành, lĩnh vực lao động, người có công và xã hội _____________________________",
+        "co_quan_ban_hanh": "BỘ LAO ĐỘNG -THƯƠNG BINH VÀ XÃ HỘI",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\TT 18-2023-bct.signed_level1.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.5833,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\TT_18_2023_bct_signed_level1_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 416,
+      "labeled_count": 57,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "25/06/2015",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "KY BỞI: BỘ CÔNG THƯƠNG (CP QUAN: BỘ CÔNG THƯƠNG ỜI GIAN KY: 02.11.2023 14:1: BỘ CÔNG THƯƠNG",
+        "trich_yeu": "Sửa đổi, bd sung và bãi bỏ một số điều của các Thông tư quy định hoạt động kiểm định kỹ thuật an toàn lao động thuộc thẩm quyền quản lý của Bộ Công Thương",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "KY bởi: Bộ Công Thương (Cp quan: Bộ Công thương BỘ CÔNG THƯƠNG",
+        "so_ky_hieu": "/2023/TT-BCT",
+        "ngay_ban_hanh": "ngày®% | tháng Jp năm 2023",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Sửa đổi, bd sung và bãi bỏ một số điều của các Thông tư quy định hoạt động kiểm định kỹ thuật an toàn lao động thuộc thẩm quyền quản lý của Bộ Công Thương"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "25/06/2015",
+        "trich_yeu": "Sửa đổi, bd sung và bãi bỏ một số điều của các Thông tư quy định hoạt động kiểm định kỹ thuật an toàn lao động thuộc thẩm quyền quản lý của Bộ Công Thương",
+        "co_quan_ban_hanh": "KY BỞI: BỘ CÔNG THƯƠNG (CP QUAN: BỘ CÔNG THƯƠNG ỜI GIAN KY: 02.11.2023 14:1: BỘ CÔNG THƯƠNG",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\TT 24.2023.BVMT BCT_daky_level1.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.6,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\TT_24_2023_BVMT_BCT_daky_level1_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 323,
+      "labeled_count": 46,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "17/11/2020",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "KY BỞI: BỘ CÔNG THƯƠNG BỘ CÔNG THƯƠNG",
+        "trich_yeu": "Quy định về quản lý, thực hiện các nhiệm vụ sử dụng nguồn kinh phí 4 sự nghiệp bảo vệ môi trường của Bộ Công Thương of",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "KY bởi: Bộ Công Thương BỘ CÔNG THƯƠNG Nos",
+        "trich_yeu": "Hà Nội, Quy định về quản lý, thực hiện các nhiệm vụ sử dụng nguồn kinh phí 4 sự nghiệp bảo vệ môi trường của Bộ Công Thương of",
+        "ngay_ban_hanh": "ngày (§ tháng 11 năm 2023",
+        "loai_van_ban": "THÔNG TƯ"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "17/11/2020",
+        "trich_yeu": "Quy định về quản lý, thực hiện các nhiệm vụ sử dụng nguồn kinh phí 4 sự nghiệp bảo vệ môi trường của Bộ Công Thương of",
+        "co_quan_ban_hanh": "KY BỞI: BỘ CÔNG THƯƠNG BỘ CÔNG THƯƠNG",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": false,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\Văn bản nhiễu\\TT21.2023.tt.bct_level1.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.75,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\TT21_2023_tt_bct_level1_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 389,
+      "labeled_count": 36,
+      "fields": {
+        "so_ky_hieu": "1/2023/TT-BCT",
+        "ngay_ban_hanh": "12/06/2017",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ CÔNG THƯƠNG",
+        "trich_yeu": "Quy định về việc tạm ngừng kinh doanh tạm nhập, tái xuất gỗ tròn, gỗ xẻ từ rừng tự nhiên từ Lào và Campuchia",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG THƯƠNG",
+        "so_ky_hieu": "1/2023/TT-BCT",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định về việc tạm ngừng kinh doanh tạm nhập, tái xuất gỗ tròn, gỗ xẻ từ rừng tự nhiên từ Lào và Campuchia",
+        "ngay_ban_hanh": "ngày 12 tháng 6 năm 2017;"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "1/2023/TT-BCT",
+        "ngay_ban_hanh": "12/06/2017",
+        "trich_yeu": "Quy định về việc tạm ngừng kinh doanh tạm nhập, tái xuất gỗ tròn, gỗ xẻ từ rừng tự nhiên từ Lào và Campuchia",
+        "co_quan_ban_hanh": "BỘ CÔNG THƯƠNG",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\1. NĐ 168_2026_ND-CP_15052026-signed (1)_1.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.55,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\1_N_168_2026_ND_CP_15052026_signed_1_1_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 442,
+      "labeled_count": 32,
+      "fields": {
+        "so_ky_hieu": "168/2026/NĐ-CP",
+        "ngay_ban_hanh": "15/05/2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "co_quan_ban_hanh": "® CƠ QUAN PHÁT HÀNH: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "trich_yeu": "Quy định chỉ tiết một số điều và biện pháp tô chức, _ hướng dẫn thi hành Luật Dân số",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "nghidinh"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "® Cơ quan phát hành: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "so_ky_hieu": "168/2026/NĐ-CP",
+        "ngay_ban_hanh": "ngày 15 tháng 5 năm 2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "trich_yeu": "Quy định chỉ tiết một số điều và biện pháp tô chức,"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "168/2026/NĐ-CP",
+        "ngay_ban_hanh": "15/05/2026",
+        "trich_yeu": "Quy định chỉ tiết một số điều và biện pháp tô chức, _ hướng dẫn thi hành Luật Dân số",
+        "co_quan_ban_hanh": "® CƠ QUAN PHÁT HÀNH: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\150_2026_ND-CP_13052026-signed.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.65,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\150_2026_ND_CP_13052026_signed_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 424,
+      "labeled_count": 42,
+      "fields": {
+        "so_ky_hieu": "150/2026/NĐ-CP",
+        "ngay_ban_hanh": "13/05/2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "co_quan_ban_hanh": "®Ắ CƠ QUAN PHÁT HÀNH: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "trich_yeu": "Quy định về tổ chức cán bộ và điều kiện bao đảm hoạt động của hệ thống thi hành án dân sự",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "nghidinh"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "®Ắ Cơ quan phát hành: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "so_ky_hieu": "150/2026/NĐ-CP",
+        "ngay_ban_hanh": "ngày 13 thang 5 năm 2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "trich_yeu": "Quy định về tổ chức cán bộ và điều kiện bao đảm hoạt động của hệ thống thi hành án dân sự"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "150/2026/NĐ-CP",
+        "ngay_ban_hanh": "13/05/2026",
+        "trich_yeu": "Quy định về tổ chức cán bộ và điều kiện bao đảm hoạt động của hệ thống thi hành án dân sự",
+        "co_quan_ban_hanh": "®Ắ CƠ QUAN PHÁT HÀNH: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\151_2026_ND-CP_13052026_1-signed.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.6306,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\151_2026_ND_CP_13052026_1_signed_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 301,
+      "labeled_count": 31,
+      "fields": {
+        "so_ky_hieu": "151/2026/NĐ-CP",
+        "ngay_ban_hanh": "13/05/2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "trich_yeu": "Quy định về tô chức và hoạt động của văn phòng thi hành án dân sự, Thừa hành viên",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "nghidinh"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "so_ky_hieu": "151/2026/NĐ-CP",
+        "ngay_ban_hanh": "ngày 13 tháng 5 năm 2026",
+        "trich_yeu": "- Quy định về tô chức và hoạt động của văn phòng thi hành án dân sự, Thừa hành viên",
+        "loai_van_ban": "NGHỊ ĐỊNH"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "151/2026/NĐ-CP",
+        "ngay_ban_hanh": "13/05/2026",
+        "trich_yeu": "Quy định về tô chức và hoạt động của văn phòng thi hành án dân sự, Thừa hành viên",
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\152_2026_ND-CP_13052026_2-signed.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.6306,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\152_2026_ND_CP_13052026_2_signed_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 446,
+      "labeled_count": 29,
+      "fields": {
+        "so_ky_hieu": "152/2026/NĐ-CP",
+        "ngay_ban_hanh": "13/05/2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "trich_yeu": "Quy định chi tiét một so điều và biện pháp thi hành Luật Thi hành án dân sự",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "nghidinh"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "so_ky_hieu": "152/2026/NĐ-CP",
+        "ngay_ban_hanh": "ngày 13 tháng 5 năm 2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "trich_yeu": "Quy định chi tiét một so điều và biện pháp thi hành Luật Thi hành án dân sự"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "152/2026/NĐ-CP",
+        "ngay_ban_hanh": "13/05/2026",
+        "trich_yeu": "Quy định chi tiét một so điều và biện pháp thi hành Luật Thi hành án dân sự",
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\158_2026_ND-CP_15052026-signed.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.65,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\158_2026_ND_CP_15052026_signed_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 285,
+      "labeled_count": 32,
+      "fields": {
+        "so_ky_hieu": "158/2026/NĐ-CP",
+        "ngay_ban_hanh": "15/05/2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "co_quan_ban_hanh": "® CƠ QUAN PHÁT HÀNH: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "trich_yeu": "Quy định chỉ tiết một số điều và biện pháp thi hành Luật Tương trợ tư pháp về dân sự",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "nghidinh"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "® Cơ quan phát hành: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "so_ky_hieu": "158/2026/NĐ-CP",
+        "ngay_ban_hanh": "ngày 15 tháng 5 năm 2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "trich_yeu": "Quy định chỉ tiết một số điều và biện pháp thi hành"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "158/2026/NĐ-CP",
+        "ngay_ban_hanh": "15/05/2026",
+        "trich_yeu": "Quy định chỉ tiết một số điều và biện pháp thi hành Luật Tương trợ tư pháp về dân sự",
+        "co_quan_ban_hanh": "® CƠ QUAN PHÁT HÀNH: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\196_2026_ND-CP.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\196_2026_ND-CP.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\196_2026_ND_CP_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 423,
+      "labeled_count": 38,
+      "fields": {
+        "so_ky_hieu": "196/2026/NĐ-CP",
+        "ngay_ban_hanh": "01/06/2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "trich_yeu": "Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Văn phòng Chính phủ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "nghidinh"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "® Cơ quan phát hành: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "so_ky_hieu": "196/2026/NĐ-CP",
+        "ngay_ban_hanh": "ngày 01 tháng 6 năm 2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "trich_yeu": "Quy định chức năng, nhiệm vụ, quyền hạn và cơ cầu té chức của Văn phòng Chính phủ"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "196/2026/NĐ-CP",
+        "ngay_ban_hanh": "01/06/2026",
+        "trich_yeu": "Quy định chức năng, nhiệm vụ, quyền hạn và cơ cầu té chức của Văn phòng Chính phủ",
+        "co_quan_ban_hanh": "® CƠ QUAN PHÁT HÀNH: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "196/2026/NĐ-CP",
+        "ngay_ban_hanh": "01/06/2026",
+        "trich_yeu": "Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Văn phòng Chính phủ",
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\2. Luật Thủ đô - Bản chuẩn.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.45,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\2_Luat_Thu_o_Ban_chuan_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 380,
+      "labeled_count": 6,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "",
+        "loai_van_ban": "",
+        "co_quan_ban_hanh": "QUOC HOI",
+        "trich_yeu": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "luat"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "QUOC HOI",
+        "so_ky_hieu": "02/2026/QH16",
+        "loai_van_ban": "LUẬT",
+        "trich_yeu": "THỦ ĐÔ"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "QUOC HOI",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\2. Thông tư ngày 16.5.2026 final_up.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\2. Thông tư ngày 16.5.2026 final_up.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\2_Thong_tu_ngay_16_5_2026_final_up_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 354,
+      "labeled_count": 23,
+      "fields": {
+        "so_ky_hieu": "15/2026/TT-BYT",
+        "ngay_ban_hanh": "27/02/2025",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "trich_yeu": "Quy định chi tiết một số điều của Luật Phòng bệnh _______________________________",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "so_ky_hieu": "/2026/TT-BYT",
+        "loai_van_ban": "THONG TƯ",
+        "trich_yeu": "Quy định chỉ tiết một số điều của Luật Phòng bệnh",
+        "ngay_ban_hanh": "ngày 27 tháng 02 năm 2025"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "15/2026/TT-BYT",
+        "ngay_ban_hanh": "17/05/2026",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "27/02/2025",
+        "trich_yeu": "Quy định chi tiết một số điều của Luật Phòng bệnh _______________________________",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\2026_276_24_2026_NQ-CP.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\2026_276_24_2026_NQ-CP(TH).txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\2026_276_24_2026_NQ_CP_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 435,
+      "labeled_count": 44,
+      "fields": {
+        "so_ky_hieu": "24/2026/NQ-CP",
+        "ngay_ban_hanh": "29/04/2026",
+        "loai_van_ban": "",
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "trich_yeu": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "nghiquyet"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "so_ky_hieu": "2026-05-15 276/Ngày 16-05-2026",
+        "ngay_ban_hanh": "ngày 29 tháng 4 năm 2026",
+        "loai_van_ban": "NGHỊ QUYẾT",
+        "trich_yeu": "Cắt giảm, phân cấp, đơn giản hóa thủ tục hành chính, điều kiện kinh doanh lĩnh vực quôc phòng, nội vụ, tài chính, xây dựng, ngoại giao, tư pháp, ngân hàng"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "24/2026/NQ-CP",
+        "ngay_ban_hanh": "29/04/2026",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "24/2026/NQ-CP",
+        "ngay_ban_hanh": "29/04/2026",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\2026_277_20_2026_QĐ-TTg.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\2026_277_20_2026_QĐ-TTg.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\2026_277_20_2026_Q_TTg_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 299,
+      "labeled_count": 48,
+      "fields": {
+        "so_ky_hieu": "20/2026/QĐ-TTG",
+        "ngay_ban_hanh": "29/04/2026",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "co_quan_ban_hanh": "THỦ TƯỚNG CHÍNH PHỦ",
+        "trich_yeu": "Ban hành Quy chế quản lý, vận hành và khai thác Hệ thống thông tin quản lý chương trình xây dựng văn bản quy phạm pháp luật",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "quyetdinh"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "Ký bởi: CONG BAO NƯỚC Coe 129706009000—",
+        "so_ky_hieu": "BAO/S6 277/Ngay 16-05-2026 2026-05-15",
+        "trich_yeu": "Hà Nội, Ban hành Quy chế quản lý, vận hành và khai thác Hệ thống thông tin quản lý chương trình xây dựng văn bản quy phạm pháp luật",
+        "ngay_ban_hanh": "ngày 29 tháng 4 năm 2026",
+        "loai_van_ban": "QUYÉT ĐỊNH"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "20/2026/QĐ-TTG",
+        "ngay_ban_hanh": "29/04/2026",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "20/2026/QĐ-TTG",
+        "ngay_ban_hanh": "29/04/2026",
+        "trich_yeu": "Ban hành Quy chế quản lý, vận hành và khai thác Hệ thống thông tin quản lý chương trình xây dựng văn bản quy phạm pháp luật",
+        "co_quan_ban_hanh": "THỦ TƯỚNG CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\21TT.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.45,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\21TT_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 467,
+      "labeled_count": 81,
+      "fields": {
+        "so_ky_hieu": "24/2026/TT-BKHCN",
+        "ngay_ban_hanh": "02/03/2025",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của các Thông tư để phân cấp, cắt giảm, đơn giản hóa thủ tục hành chính trong lĩnh vực viễn thông thuộc phạm vi quản lý nhà nước của Bộ Khoa học và Công nghệ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "SAO Y; Bộ Khoa học và Công nghệ: 27/05/2026; 14:44:08; +07:00 BỘ KHOA HỌC VÀ CÔNG NGHỆ",
+        "so_ky_hieu": "VIỆT NAM ===mevo Độc lập — Tự do - Hạnh phúc Số: 24 /2026/TT-BKHCN",
+        "ngay_ban_hanh": "ngày of tháng § năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của các Thông tư để phân cấp, cắt giảm, đơn giản hóa thủ tục hành chính trong lĩnh vực viễn thông thuộc phạm vi quản lý nhà nước của Bộ Khoa học và Công nghệ"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "24/2026/TT-BKHCN",
+        "ngay_ban_hanh": "02/03/2025",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của các Thông tư để phân cấp, cắt giảm, đơn giản hóa thủ tục hành chính trong lĩnh vực viễn thông thuộc phạm vi quản lý nhà nước của Bộ Khoa học và Công nghệ",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\22tt-1779504954037328197498.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.3721,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\22tt_1779504954037328197498_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 415,
+      "labeled_count": 51,
+      "fields": {
+        "so_ky_hieu": "7/2025/NQ-CP",
+        "ngay_ban_hanh": "26/09/2013",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "",
+        "trich_yeu": "Stra đối, bổ sung một số thông tư trong lĩnh vực tiêu chuẩn đo lường chất lượng để thực hiện cắt giảm, đơn giản hóa thú tục hành chính và phù hợp với pháp luật về đầu tư kinh doanh",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "SAO Y; Bộ Khoa học và Công nghệ; 22/05/2026; 17:28:37; +07:00",
+        "loai_van_ban": "THONG TU",
+        "trich_yeu": "Stra đối, bổ sung một số thông tư trong lĩnh vực tiêu chuẩn đo lường chất lượng để thực hiện cắt giảm, đơn giản hóa thú tục hành chính và phù hợp",
+        "ngay_ban_hanh": "ngày 26 tháng 9 năm 2013"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "7/2025/NQ-CP",
+        "ngay_ban_hanh": "26/09/2013",
+        "trich_yeu": "Stra đối, bổ sung một số thông tư trong lĩnh vực tiêu chuẩn đo lường chất lượng để thực hiện cắt giảm, đơn giản hóa thú tục hành chính và phù hợp với pháp luật về đầu tư kinh doanh",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": false,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\25_2026_QD-TTg.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\25_2026_ QD TTg.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\25_2026_QD_TTg_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 471,
+      "labeled_count": 59,
+      "fields": {
+        "so_ky_hieu": "25/2026/QĐ-TTG",
+        "ngay_ban_hanh": "18/05/2026",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "co_quan_ban_hanh": "THỦ TƯỚNG CHÍNH PHỦ",
+        "trich_yeu": "Bãi bỏ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "quyetdinh"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "®Ắ Cơ quan phát hành: VĂN PHÒNG CHÍNH PHỦ THỦ TƯỚNG CHÍNH PHỦ",
+        "so_ky_hieu": "XÃ HỘI CHỦ NGHĨA VIỆT NAM \" Độc lập - Tự do - Hạnh phúc Số: 25/2026/QĐ-TTg.",
+        "ngay_ban_hanh": "ngày 18 tháng 5 năm 2026",
+        "loai_van_ban": "QUYÉT ĐỊNH",
+        "trich_yeu": "của Thủ tướng Chính phủ về việc kiện toàn Đoàn đàm phán Chính phủ",
+        "noi_nhan": "- Ban Bi thư Trung ương Đảng;"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "25/2026/QĐ-TTG",
+        "ngay_ban_hanh": "18/05/2026",
+        "trich_yeu": "kiện toàn Đoàn đàm phán Chính phủ về kinh tế và thương mại quốc tế",
+        "co_quan_ban_hanh": "®Ắ CƠ QUAN PHÁT HÀNH: VĂN PHÒNG CHÍNH PHỦ THỦ TƯỚNG CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "25/2026/QĐ-TTG",
+        "ngay_ban_hanh": "18/05/2026",
+        "trich_yeu": "Bãi bỏ",
+        "co_quan_ban_hanh": "THỦ TƯỚNG CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": true,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\37-bgddt.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.5,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\37_bgddt_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 417,
+      "labeled_count": 35,
+      "fields": {
+        "so_ky_hieu": "37/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "29/04/2026",
+        "loai_van_ban": "",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "trich_yeu": "",
+        "noi_gui": "",
+        "noi_nhan": "điều 3 (dé thực hiện); - Cục kiểm tra VB&TCTHPL (Bộ Tư pháp); - Công báo; - UBND tỉnh, thành phố; - Cổng Thông tin điện tử Chính phủ; - Cổng Thông tin điện tử Bộ GDĐT. - Luu: VT, GDNNGDTX (15)",
+        "_doc_type_hint": ""
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "so_ky_hieu": "37/2026/TT-BGDĐT",
+        "trich_yeu": "_ - Ban hành danh mục ngành, nghê đặc thù thuộc lĩnh vực nghệ thuật, thê thao",
+        "loai_van_ban": "THONG TƯ",
+        "ngay_ban_hanh": "ngày 29 tháng 4.. năm 2026",
+        "noi_nhan": "KT. BỘ TRƯỞNG"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "37/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "29/04/2026",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "noi_gui": "",
+        "noi_nhan": "điều 3 (dé thực hiện); - Cục kiểm tra VB&TCTHPL (Bộ Tư pháp); - Công báo; - UBND tỉnh, thành phố; - Cổng Thông tin điện tử Chính phủ; - Cổng Thông tin điện tử Bộ GDĐT. - Luu: VT, GDNNGDTX (15)",
+        "loai_van_ban": "",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": true,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\38-bgddt.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.5,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\38_bgddt_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 408,
+      "labeled_count": 18,
+      "fields": {
+        "so_ky_hieu": "38/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "29/04/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "trich_yeu": "Ban hành chuẩn cơ sở giáo dục nghề nghiệp",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": ""
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "so_ky_hieu": "38/2026/TT-BGDĐT",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Ban hành chuẩn cơ sở giáo dục nghề nghiệp"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "38/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "29/04/2026",
+        "trich_yeu": "Ban hành chuẩn cơ sở giáo dục nghề nghiệp",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\39-bgddt.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.5,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\39_bgddt_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 381,
+      "labeled_count": 58,
+      "fields": {
+        "so_ky_hieu": "39/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "12/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "trich_yeu": "Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo dục quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, trung tâm giáo dục quốc phòng và an ninh",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": ""
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "so_ky_hieu": "39/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "ngày 12 tháng 05 năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo dục quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, trung tâm giáo dục quốc phòng và an ninh"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "39/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "12/05/2026",
+        "trich_yeu": "Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo dục quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, trung tâm giáo dục quốc phòng và an ninh",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\40-bgddt.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.5685,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\40_bgddt_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 286,
+      "labeled_count": 16,
+      "fields": {
+        "so_ky_hieu": "40/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "15/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "trich_yeu": "Quy định về công tác sinh viên",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": ""
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "so_ky_hieu": "/2026/TT-BGDĐT",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định về công tác sinh viên"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "40/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "15/05/2026",
+        "trich_yeu": "Quy định về công tác sinh viên",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\41-bgddt.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.5685,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\41_bgddt_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 427,
+      "labeled_count": 34,
+      "fields": {
+        "so_ky_hieu": "41/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "08/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "trich_yeu": "Quy định tiêu chuẩn, quy trình biên soạn, chỉnh sửa và thâm định tài liệu giáo dục địa phương",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": ""
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "so_ky_hieu": "/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "ngày I8 tháng 05 năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định tiêu chuẩn, quy trình biên soạn, chỉnh sửa và thâm định tài liệu giáo dục địa phương"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "41/2026/TT-BGDĐT",
+        "ngay_ban_hanh": "08/05/2026",
+        "trich_yeu": "Quy định tiêu chuẩn, quy trình biên soạn, chỉnh sửa và thâm định tài liệu giáo dục địa phương",
+        "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\5. Thong tu tài chính thi hành NĐ 37- CLSPHH (phát hành).pdf",
+      "truth_file": "",
+      "truth_match_score": 0.5763,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\5_Thong_tu_tai_chinh_thi_hanh_N_37_CLSPHH_phat_hanh_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 448,
+      "labeled_count": 46,
+      "fields": {
+        "so_ky_hieu": "24/2026/TT-BKHCN",
+        "ngay_ban_hanh": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ KHOA HỌC VÀ CÔNGNGHỆ",
+        "trich_yeu": "Quy định lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước lĩnh vực khoa học, công nghệ, đỗi mới sáng tao và chuyển đổi số để thi hành Nghị định số 37/2026/NĐ-CP ngày 23 tháng 01 năm 2026 của Chính phủ quy định chỉ tiết một số điều và biện pháp để tỗ chức, hướng dẫn thi hành Luật Chat lượng sản phẩm, hàng hóa",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ KHOA HỌC VÀ CÔNGNGHỆ",
+        "so_ky_hieu": "/2026/TT-BKHCN",
+        "ngay_ban_hanh": "ngày 32 tháng 25 năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước lĩnh vực khoa học, công nghệ, đỗi mới sáng tao và chuyển đổi số"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "24/2026/TT-BKHCN",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "Quy định lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước lĩnh vực khoa học, công nghệ, đỗi mới sáng tao và chuyển đổi số để thi hành Nghị định số 37/2026/NĐ-CP ngày 23 tháng 01 năm 2026 của Chính phủ quy định chỉ tiết một số điều và biện pháp để tỗ chức, hướng dẫn thi hành Luật Chat lượng sản phẩm, hàng hóa",
+        "co_quan_ban_hanh": "BỘ KHOA HỌC VÀ CÔNGNGHỆ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\65.2026.tt.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\65.2026.TT.BCA.txt",
+      "truth_match_score": 0.9882,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\65_2026_tt_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 442,
+      "labeled_count": 29,
+      "fields": {
+        "so_ky_hieu": "65/2026/TT-BCA",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ CÔNG AN CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM",
+        "trich_yeu": "Quy định về đồ vật cấm đưa vào nơi chấp hành án phạt tù và việc thu giữ, xử lý đồ vật cấm",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "so_ky_hieu": "/2026/TT-BCA",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định về đồ vật cấm đưa vào nơi chấp hành án phat tù và việc thu giữ, xử lý đồ vật cấm"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "65/2026/TT-BCA",
+        "ngay_ban_hanh": "03/05/2026",
+        "trich_yeu": "Quy định về đồ vật cấm đưa vào nơi chấp hành án phat tù và việc thu giữ, xử lý đồ vật cấm",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "65/2026/TT-BCA",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Quy định về đồ vật cấm đưa vào nơi chấp hành án phạt tù và việc thu giữ, xử lý đồ vật cấm",
+        "co_quan_ban_hanh": "BỘ CÔNG AN CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Luật tiếp cận thông tin_0001.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.6056,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Luat_tiep_can_thong_tin_0001_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 350,
+      "labeled_count": 21,
+      "fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "",
+        "loai_van_ban": "",
+        "co_quan_ban_hanh": "CHƯƠNG I NHỮNG QUY ĐỊNH CHUNG",
+        "trich_yeu": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "luat"
+      },
+      "semantic_fields": {
+        "so_ky_hieu": "01/2026/QH16",
+        "loai_van_ban": "LUẬT",
+        "trich_yeu": "TIẾP CẬN THÔNG TIN",
+        "co_quan_ban_hanh": "Quốc hội ban hành Luật Tiếp cận thông tin. Chương I NHỮNG QUY ĐỊNH CHUNG"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "CHƯƠNG I NHỮNG QUY ĐỊNH CHUNG",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Nghị định 175-2026-NĐ-CP.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Nghị định 175-2026-NĐ-CP.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Nghi_inh_175_2026_N_CP_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 359,
+      "labeled_count": 49,
+      "fields": {
+        "so_ky_hieu": "175/2026/NĐ-CP",
+        "ngay_ban_hanh": "15/05/2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Quy định về tổ chức, hoạt động của chương trình, dự án tài chính vi mô của tổ chức chính trị - xã hội, tổ chức phi chính phủ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "nghidinh"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "® Cơ quan phát hành: VĂN PHÒNG CHÍNH PHỦ CHÍNH PHỦ",
+        "so_ky_hieu": "175/2026/NĐ-CP",
+        "ngay_ban_hanh": "ngày 15 thang 5 năm 2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "trich_yeu": "Quy định về tổ chức, hoạt động của chương trình, dự án tài chính vi mô của tố chức chính trị - xã hội, tổ chức phi chính phủ"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "175/2026/NĐ-CP",
+        "ngay_ban_hanh": "15/05/2026",
+        "trich_yeu": "Quy định về tổ chức, hoạt động của chương trình, dự án tài chính vi mô của tố chức chính trị - xã hội, tổ chức phi chính phủ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "175/2026/NĐ-CP",
+        "ngay_ban_hanh": "15/05/2026",
+        "trich_yeu": "Quy định về tổ chức, hoạt động của chương trình, dự án tài chính vi mô của tổ chức chính trị - xã hội, tổ chức phi chính phủ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Nghị định 177_2026_NĐ-CP.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Nghị định 175-2026-NĐ-CP.txt",
+      "truth_match_score": 0.9974,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Nghi_inh_177_2026_N_CP_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 331,
+      "labeled_count": 15,
+      "fields": {
+        "so_ky_hieu": "175/2026/NĐ-CP",
+        "ngay_ban_hanh": "15/05/2026",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Quy định về tổ chức, hoạt động của chương trình, dự án tài chính vi mô của tổ chức chính trị - xã hội, tổ chức phi chính phủ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "nghidinh"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "so_ky_hieu": "177/2026/NĐ-CP",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "trich_yeu": "Quy định chỉ tiết một số điều và biện pháp"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "177/2026/NĐ-CP",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Quy định chỉ tiết một số điều và biện pháp thi hành Luật Giám định tư pháp",
+        "co_quan_ban_hanh": "CHÍNH PHỦ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "175/2026/NĐ-CP",
+        "ngay_ban_hanh": "15/05/2026",
+        "trich_yeu": "Quy định về tổ chức, hoạt động của chương trình, dự án tài chính vi mô của tổ chức chính trị - xã hội, tổ chức phi chính phủ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\thong tu 22_0001.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.7423,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\thong_tu_22_0001_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 379,
+      "labeled_count": 36,
+      "fields": {
+        "so_ky_hieu": "2/2026/TT-BCT",
+        "ngay_ban_hanh": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ CÔNG THUONG",
+        "trich_yeu": "Quy định về hoạt động xây dựng, áp dụng tiêu chuẩn quốc gia và quy chuẩn kỹ thuật quốc gia của Bộ Công Thuong",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG THUONG",
+        "so_ky_hieu": "/2026/TT-BCT",
+        "ngay_ban_hanh": "ngày 29 tháng h__ năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định về hoạt động xây dựng, áp dụng tiêu chuẩn quốc gia và quy chuẩn kỹ thuật quốc gia của Bộ Công Thuong"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "2/2026/TT-BCT",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "Quy định về hoạt động xây dựng, áp dụng tiêu chuẩn quốc gia và quy chuẩn kỹ thuật quốc gia của Bộ Công Thuong",
+        "co_quan_ban_hanh": "BỘ CÔNG THUONG",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thong tư 13-TT-2026.signed.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 13-TT-2026 da ky.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_13_TT_2026_signed_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 343,
+      "labeled_count": 19,
+      "fields": {
+        "so_ky_hieu": "13/2026/TT-BYT",
+        "ngay_ban_hanh": "16/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "trich_yeu": "Quy định về hoạt động tiêm chủng",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ Y TE",
+        "so_ky_hieu": "/2026/TT-BYT",
+        "ngay_ban_hanh": "ngày 16 thang 5 năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định về hoạt động tiêm chủng"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "13/2026/TT-BYT",
+        "ngay_ban_hanh": "16/05/2026",
+        "trich_yeu": "Quy định về hoạt động tiêm chủng Căn) cứ Luật Phòng bệnh số 1 14/2025/QH15",
+        "co_quan_ban_hanh": "BỘ Y TE",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "13/2026/TT-BYT",
+        "ngay_ban_hanh": "16/05/2026",
+        "trich_yeu": "Quy định về hoạt động tiêm chủng",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 07-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\THông tư 07-2026-TT-NHNN.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_07_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 371,
+      "labeled_count": 44,
+      "fields": {
+        "so_ky_hieu": "07/2026/TT-NHNN",
+        "ngay_ban_hanh": "06/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 17/2016/TT-NHNN quy định hoạt động môi giới tiền tệ của ngân hàng thương mại, chi nhánh ngân hàng nước ngoài",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "SAO Y; Ngân hàng Nhà nước Việt Nam; Thời gian ky: 2026-05-07T16:20:00+07:00 NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/2026/TT-NHNN",
+        "ngay_ban_hanh": "ngày ÔẾ tháng § năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "quy định hoạt động môi giới tiền tệ của ngân hàng thương mại, chỉ nhánh ngân hàng nước ngoài"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "Sửa đổi, bỗ sung một số điều của Thông tư số 17/2016/TT-NHNN quy định hoạt động môi giới tiền tệ của ngân hàng thương mại, chỉ nhánh ngân hàng nước ngoài",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "07/2026/TT-NHNN",
+        "ngay_ban_hanh": "06/05/2026",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 17/2016/TT-NHNN quy định hoạt động môi giới tiền tệ của ngân hàng thương mại, chi nhánh ngân hàng nước ngoài",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 08-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 08-2026-TT-NHNN.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_08_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 347,
+      "labeled_count": 30,
+      "fields": {
+        "so_ky_hieu": "08/2026/TT-NHNN",
+        "ngay_ban_hanh": "15/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Sửa đổi, bổ sung điểm a khoản 4",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/2026/TT-NHNN",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "quy định các giới hạn, tỷ lệ bảo đảm an toàn trong hoạt động của ngân hàng, chỉ nhánh ngân hàng nước ngoài"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "09/05/2026",
+        "trich_yeu": "Sửa đối, bổ sung điểm a khoản 4",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "08/2026/TT-NHNN",
+        "ngay_ban_hanh": "15/05/2026",
+        "trich_yeu": "Sửa đổi, bổ sung điểm a khoản 4",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 10-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 10-2026-TT-NHNN.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_10_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 386,
+      "labeled_count": 50,
+      "fields": {
+        "so_ky_hieu": "10/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 27/2024/TT-NHNN quy định về ngân hàng hợp tác xã, việc trích nộp, quản lý và sử dụng Quỹ bảo đảm an toàn hệ thống quỹ tín dụng nhân dân được sửa đổi, bổ sung bởi Thông tư số 28/2025/TT-NHNN",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "SAO Y; Ngân hang Nhà nước Việt Nam; Thời gian ky: 2026-05-22T14:12:30+07:00 NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "⁄/2026/TT-NHNN",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "quy định về ngân hàng hợp tác xã, việc trích nộp, quản lý và sử dụng Quỹ bảo đảm an toàn hệ thống quỹ tín dụng nhân dân được sửa đổi,"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "02/05/2026",
+        "trich_yeu": "Sửa đỗi, bỗ sung một số điều của Thông tư số 27/2024/TT-NHNN quy định về ngân hàng hợp tác xã, việc trích nộp, quản lý và sử dụng Quỹ bảo đảm an toàn hệ thống quỹ tín dụng nhân dân được sửa đổi, bỗ sung bởi Thông tư số 28/2025/TT-NHNN",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "10/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 27/2024/TT-NHNN quy định về ngân hàng hợp tác xã, việc trích nộp, quản lý và sử dụng Quỹ bảo đảm an toàn hệ thống quỹ tín dụng nhân dân được sửa đổi, bổ sung bởi Thông tư số 28/2025/TT-NHNN",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 11-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 11-2026-TT-NHNN (1).txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_11_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 383,
+      "labeled_count": 53,
+      "fields": {
+        "so_ky_hieu": "11/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa đổi, bổ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/2026/TT-NHNN",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa doi, bỗ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "09/05/2026",
+        "trich_yeu": "Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa doi, bỗ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "11/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Phân cấp thực hiện thủ tục hành chính trong lĩnh vực thông tin tín dụng và sửa đổi, bổ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 12-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 12 - 2026-TT-NHNN.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_12_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 344,
+      "labeled_count": 21,
+      "fields": {
+        "so_ky_hieu": "12/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/2026/TT-NHNN",
+        "trich_yeu": "Hà Nội, ngày 4§tháng£ năm 2026 Sửa đối, bo sung một số điều của",
+        "loai_van_ban": "THONG. TU"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "42/2026/TT-NHNN",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "ban hành Quy chế cấp, sử dụng và quản lý mã tô chức phát hành thẻ ngân hàng",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "QUYẾT ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "12/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 14 - 2026.signed.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 14-2026. FINAL.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_14_2026_signed_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 382,
+      "labeled_count": 25,
+      "fields": {
+        "so_ky_hieu": "14/2026/TT-BYT",
+        "ngay_ban_hanh": "15/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "trich_yeu": "Quy định tiêu chuẩn chẩn đoán và quy trình chuyên môn để xác định tình trạng nghiện ma túy",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ Y TE",
+        "so_ky_hieu": "/2026/TT-BYT",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định tiêu chuẩn chan đoán và quy trình chuyên môn để xác định tình trạng nghiện ma túy"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "14/2026/TT-BYT",
+        "ngay_ban_hanh": "16/05/2026",
+        "trich_yeu": "Quy định tiêu chuẩn chan đoán và quy trình chuyên môn để xác định tình trạng nghiện ma túy BỘ TRƯỞNG BỘ Y TE",
+        "co_quan_ban_hanh": "BỘ Y TE",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "15/05/2026",
+        "trich_yeu": "Quy định tiêu chuẩn chẩn đoán và quy trình chuyên môn để xác định tình trạng nghiện ma túy",
+        "co_quan_ban_hanh": "BỘ Y TẾ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 14-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư số 14-2026-TT-NHNN.txt",
+      "truth_match_score": 1.0,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_14_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 340,
+      "labeled_count": 40,
+      "fields": {
+        "so_ky_hieu": "14/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của các Thông tư về tổ chức tài chính vi mô liên quan đến cắt giảm, phân cấp, đơn giản hóa thủ tục hành chính",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/2026/TT-NHNN /9",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Sửa đổi, bé sung một số điều của các Thông tư về tổ chức tài chính vi mô liên quan đến cắt giảm, phân cấp, đơn giản hóa thủ tục hành chính"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "4/2026/TT-NHNN",
+        "ngay_ban_hanh": "09/05/2026",
+        "trich_yeu": "Sửa đổi, bé sung một số điều của các Thông tư về tổ chức tài chính vi mô liên quan đến cắt giảm, phân cấp, đơn giản hóa thủ tục hành chính",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "14/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của các Thông tư về tổ chức tài chính vi mô liên quan đến cắt giảm, phân cấp, đơn giản hóa thủ tục hành chính",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 15-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 15-2026-TT-NHNN.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_15_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 366,
+      "labeled_count": 57,
+      "fields": {
+        "so_ky_hieu": "15/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của một số Thông tư về tổ chức tín dụng là hợp tác xã liên quan đến cắt giảm, phân cấp, đơn giản hóa thủ tục hành chính",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/5 /2026/TT-NHNN",
+        "ngay_ban_hanh": "ngày Â tháng 5 năm 2026",
+        "loai_van_ban": "THONG TƯ",
+        "trich_yeu": "Sửa déi, bỗ sung một số điều của một số Thông tư Ak * a x z ~ pA _ về tô chức tin dụng là hợp tác xã liên quan đên cắt giảm, phân cấp, đơn giản hóa thủ tục hành chính"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "5/2026/TT-NHNN",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "Ak * a x z ~ pA _ về tô chức tin dụng là hợp tác xã liên quan đên cắt giảm, phân cấp, đơn giản hóa thủ tục hành chính",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "15/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của một số Thông tư về tổ chức tín dụng là hợp tác xã liên quan đến cắt giảm, phân cấp, đơn giản hóa thủ tục hành chính",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\THông tư 17-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 17-2026-TT-NHNN.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\THong_tu_17_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 347,
+      "labeled_count": 55,
+      "fields": {
+        "so_ky_hieu": "17/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của các Thông tư trong lĩnh vực quản lý ngoại hối liên quan đến phân cấp, đơn giản hóa thủ tục hành chính",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "SAO Y; Ngân hàng Nhà nước Việt Nam; Thời gian ký: 2026-05-22T16:56:54+07:00 NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/2026/TT-NHNN",
+        "ngay_ban_hanh": "ngày 4$ tháng § năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Sửa đổi, bỗ sung một số điều của các Thông tư trong lĩnh vực quản lý ngoại hối liên quan đến phân cấp, đơn giản hóa thủ tục hành chính"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "44/2026/TT-NHNN",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "Sửa đổi, bỗ sung một số điều của các Thông tư trong lĩnh vực quản lý ngoại hối liên quan đến phân cấp, đơn giản hóa thủ tục hành chính",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "17/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của các Thông tư trong lĩnh vực quản lý ngoại hối liên quan đến phân cấp, đơn giản hóa thủ tục hành chính",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 18-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 18-2026-TT-NHNN.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_18_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 334,
+      "labeled_count": 44,
+      "fields": {
+        "so_ky_hieu": "18/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 17/2015/TT-NHNN quy định về hệ thống mã ngân hàng dùng trong hoạt động, nghiệp vụ ngân hàng, được sửa đổi bổ sung bởi Thông tư số 18/2023/TT-NHNN và Thông tư số 11/2025/TT-NHNN",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "SAO Y; Ngân hàng Nhà nước Việt Nam; Thời gian ky: 2026-06-02T10:33:30+07:00 NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/2026/TT-NHNN",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "quy định về hệ thống mã ngân hàng dùng trong hoạt động, nghiệp vụ ngân hàng, được sửa đổi bé sung bởi Thông tư số"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "49/2026/TT-NHNN",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "Sửa đổi, bd sung một số điều của Thông tư số 17/2015/TT-NHNN quy định về hệ thống mã ngân hàng dùng trong hoạt động, nghiệp vụ ngân hàng, được sửa đổi bé sung bởi Thông tư số 18/2023/TT-NHNN và Thông tư số 11/2025/TT-NHNN",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "18/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 17/2015/TT-NHNN quy định về hệ thống mã ngân hàng dùng trong hoạt động, nghiệp vụ ngân hàng, được sửa đổi bổ sung bởi Thông tư số 18/2023/TT-NHNN và Thông tư số 11/2025/TT-NHNN",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 19-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 19-2026-TT-NHNN.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_19_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 276,
+      "labeled_count": 35,
+      "fields": {
+        "so_ky_hieu": "19/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Quy định về phân cấp trong thực hiện thủ tục hành chính quy định tại Nghị định số 94/2025/NĐ-CP của Chính phủ quy định về Cơ chế thử nghiệm có kiểm soát trong lĩnh vực ngân hàng",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/2026/TT-NHNN",
+        "ngay_ban_hanh": "ngày 4ô tháng năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định về phân cấp trong thực hiện thủ tục hành chính quy định tại Nghị kiểm soát trong lĩnh vực ngân hàng"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "49/2026/TT-NHNN",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "Quy định về phân cấp trong thực hiện thủ tục hành chính quy định tại Nghị định số 94/2025/NĐ-CP của Chính phủ quy định về Cơ chế thử nghiệm có kiểm soát trong lĩnh vực ngân hàng",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "19/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Quy định về phân cấp trong thực hiện thủ tục hành chính quy định tại Nghị định số 94/2025/NĐ-CP của Chính phủ quy định về Cơ chế thử nghiệm có kiểm soát trong lĩnh vực ngân hàng",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 20-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 20-2026-TT-NHNN.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_20_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 303,
+      "labeled_count": 17,
+      "fields": {
+        "so_ky_hieu": "20/2026/TT",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 22/2015/TT-NHNN quy định hoạt động cung ứng và sử dụng séc",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/2026/TT-",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "quy định hoạt động cung ứng và sử dụng séc"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "20/2026/TT",
+        "ngay_ban_hanh": "01/05/2026",
+        "trich_yeu": "Sửa đối, bỗ sung một số điều của Thông tư số 22/2015/TT-NHNN quy định hoạt động cung ứng và sử dụng séc",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "20/2026/TT",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 22/2015/TT-NHNN quy định hoạt động cung ứng và sử dụng séc",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": false,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 21-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 21-2026-TT-NHNN.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_21_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 322,
+      "labeled_count": 21,
+      "fields": {
+        "so_ky_hieu": "21/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Sửa đổi, bổ sung",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/2026/TT-NHNN",
+        "ngay_ban_hanh": "ngày 49 thang năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "ứng dịch vụ thanh toán không dùng tiền mặt"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "24/2026/TT-NHNN",
+        "ngay_ban_hanh": "15/05/2024",
+        "trich_yeu": "Sửa đổi, bé sung",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "21/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Sửa đổi, bổ sung",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 22-2026-TT-NHNN.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 22-2026-TT-NHNN.txt",
+      "truth_match_score": 1.05,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_22_2026_TT_NHNN_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 337,
+      "labeled_count": 25,
+      "fields": {
+        "so_ky_hieu": "22/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 40/2024/TT-NHNN quy định về hoạt động cung ứng dịch vụ trung gian thanh toán",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC",
+        "so_ky_hieu": "/2026/TT-NHNN",
+        "ngay_ban_hanh": "ngày 14 tháng năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "quy định về hoạt động cung ứng dịch vụ trung gian thanh toán"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "22/2026/TT-NHNN",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "Sửa đỗi, bé sung một số điều của Thông tư số 40/2024/TT-NHNN quy định về hoạt động cung ứng dịch vụ trung gian thanh toán",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "22/2026/TT-NHNN",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "Sửa đổi, bổ sung một số điều của Thông tư số 40/2024/TT-NHNN quy định về hoạt động cung ứng dịch vụ trung gian thanh toán",
+        "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 24_2026_TT_BCT_05_5_2026.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\24.2026.ttbct.txt",
+      "truth_match_score": 0.9652,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_24_2026_TT_BCT_05_5_2026_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 347,
+      "labeled_count": 40,
+      "fields": {
+        "so_ky_hieu": "24/2026/TT-BCT",
+        "ngay_ban_hanh": "05/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ CÔNG THƯƠNG",
+        "trich_yeu": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG THƯƠNG",
+        "so_ky_hieu": "/2026/TT-BCT",
+        "ngay_ban_hanh": "ngày 0C tháng 5 năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định Quy tắc xuất xứ hàng hóa trong Hiệp định Đối tác kinh tế toàn điện giữa và Chính phú Các Tiểu vương quốc Ả-rập thống nhất"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "BỘ CÔNG THƯƠNG",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "24/2026/TT-BCT",
+        "ngay_ban_hanh": "05/05/2026",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "BỘ CÔNG THƯƠNG",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 49_2026_TT_BCA.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\49.2026.TT.BCA.txt",
+      "truth_match_score": 0.9789,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_49_2026_TT_BCA_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 283,
+      "labeled_count": 28,
+      "fields": {
+        "so_ky_hieu": "49/2026/TT-BCA",
+        "ngay_ban_hanh": "13/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "trich_yeu": "Quy định chi tiết một số điều của Luật Dẫn độ trong Công an nhân dân",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "so_ky_hieu": "49/2026/TT-BCA",
+        "ngay_ban_hanh": "ngày 13 tháng 5 năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định chỉ tiết một số điều của Luật Dẫn độ trong Công an nhân dân"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "49/2026/TT-BCA",
+        "ngay_ban_hanh": "13/05/2026",
+        "trich_yeu": "Quy định chỉ tiết một số điều của Luật Dẫn độ trong Công an nhân dân",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "49/2026/TT-BCA",
+        "ngay_ban_hanh": "13/05/2026",
+        "trich_yeu": "Quy định chi tiết một số điều của Luật Dẫn độ trong Công an nhân dân",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư 50_2026_TT_BCA.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\50.2026.TT.BCA.txt",
+      "truth_match_score": 0.9789,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_50_2026_TT_BCA_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 361,
+      "labeled_count": 48,
+      "fields": {
+        "so_ky_hieu": "50/2026/TT-BCA",
+        "ngay_ban_hanh": "13/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "trich_yeu": "Quy định về các loại biểu mẫu giấy tờ, sổ sách trong công tác dẫn độ và công tác chuyển giao người đang chấp hành án phạt tù thuộc thẩm quyền của Công an nhân dân",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "so_ky_hieu": "50/2026/TT-BCA",
+        "ngay_ban_hanh": "ngày 13 tháng 5 năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định về các loại biểu mẫu giấy, tờ, số sách trong công tác dẫn độ và công tác chuyển giao người đang chấp hành án phạt tù thuộc thấm quyền của Công an nhân dân"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "50/2026/TT-BCA",
+        "ngay_ban_hanh": "13/05/2026",
+        "trich_yeu": "Quy định về các loại biểu mẫu giấy, tờ, số sách trong công tác dẫn độ và công tác chuyển giao người đang chấp hành án phạt tù thuộc thấm quyền của Công an nhân dân",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "50/2026/TT-BCA",
+        "ngay_ban_hanh": "13/05/2026",
+        "trich_yeu": "Quy định về các loại biểu mẫu giấy tờ, sổ sách trong công tác dẫn độ và công tác chuyển giao người đang chấp hành án phạt tù thuộc thẩm quyền của Công an nhân dân",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư số 47.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.7167,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_so_47_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 360,
+      "labeled_count": 42,
+      "fields": {
+        "so_ky_hieu": "44/2026/TT-BCA",
+        "ngay_ban_hanh": "16/01/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM BỘ CÔNG. A ĐỘC LAP - TỰ DO - HANH PHÚC",
+        "trich_yeu": "Ban hành Quy chuẩn kỹ thuật quốc gia về an ninh mạng cho hệ thống thông tin lưu trữ tài liệu điện tử trong các cơ quan Dang, Nhà nước __",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG a",
+        "so_ky_hieu": "44/2026/TT-BCA",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Ban hành Quy chuẩn kỹ thuật quốc gia về an ninh mạng cho hệ thống thông tin lưu trữ tài liệu điện tử trong các cơ quan Dang, Nhà nước",
+        "ngay_ban_hanh": "ngày 16 tháng 01 năm 2026"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "44/2026/TT-BCA",
+        "ngay_ban_hanh": "16/01/2026",
+        "trich_yeu": "Ban hành Quy chuẩn kỹ thuật quốc gia về an ninh mạng cho hệ thống thông tin lưu trữ tài liệu điện tử trong các cơ quan Dang, Nhà nước __",
+        "co_quan_ban_hanh": "CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM BỘ CÔNG. A ĐỘC LAP - TỰ DO - HANH PHÚC",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thông tư số 48.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.7167,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\Thong_tu_so_48_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 367,
+      "labeled_count": 37,
+      "fields": {
+        "so_ky_hieu": "48/2026/TT-BCA",
+        "ngay_ban_hanh": "16/01/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "",
+        "trich_yeu": "Ban hành Quy chuẩn kỹ thuật quốc gia về thiết bị camera giám sát sử dụng giao thức Internet - Các yêu cầu an ninh mạng cơ bản",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "so_ky_hieu": "/2026/TT-BCA",
+        "ngay_ban_hanh": "ngày 42 tháng Š năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Ban hành Quy chuẩn kỹ thuật quốc gia về thiết bị camera giám sát sử dụng giao thức Internet - Các yêu cầu an ninh mạng cơ bản"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "48/2026/TT-BCA",
+        "ngay_ban_hanh": "16/01/2026",
+        "trich_yeu": "Ban hành Quy chuẩn kỹ thuật quốc gia về thiết bị camera giám sát sử dụng giao thức Internet - Các yêu cầu an ninh mạng cơ bản",
+        "co_quan_ban_hanh": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": false,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\TT 23.2026.TT-BCT.pdf",
+      "truth_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\Thong tu 23.2026.TT-BCT ban phat hanh.txt",
+      "truth_match_score": 0.8887,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\TT_23_2026_TT_BCT_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 360,
+      "labeled_count": 38,
+      "fields": {
+        "so_ky_hieu": "23/2026/TT-BCT",
+        "ngay_ban_hanh": "29/04/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ CÔNG THƯƠNG",
+        "trich_yeu": "Quy định về giám định tư pháp trong lĩnh vực chuyên môn thuộc thẩm quyền quản lý của Bộ Công Thương",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "“>>. Ký bởi: Bộ Bens Thuong BỘ CONG THUONG",
+        "so_ky_hieu": "3/2026/TT-BCT",
+        "ngay_ban_hanh": "ngày df thang năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định về giám định tư pháp trong lĩnh vực chuyên môn thuộc thâm quyền quản lý của Bộ Công Thương"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "3/2026/TT-BCT",
+        "ngay_ban_hanh": "",
+        "trich_yeu": "Hà Nội, ngày df thang năm 2026 THÔNG TƯ Quy định về giám định tư pháp trong lĩnh vực chuyên môn thuộc thâm quyền quản lý của Bộ Công Thương",
+        "co_quan_ban_hanh": "NHIỆM VỤ, QUYÊN HẠN VÀ CƠ CẤU TÔ CHỨC CỦA BỘ CÔNG THƯƠNG ĐƯỢC SỬA ĐỔI, BỐ SUNG BỞI",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "NGHỊ ĐỊNH",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {
+        "so_ky_hieu": "23/2026/TT-BCT",
+        "ngay_ban_hanh": "29/04/2026",
+        "trich_yeu": "Quy định về giám định tư pháp trong lĩnh vực chuyên môn thuộc thẩm quyền quản lý của Bộ Công Thương",
+        "co_quan_ban_hanh": "BỘ CÔNG THƯƠNG",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\tt37.2026.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.6816,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\tt37_2026_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 430,
+      "labeled_count": 32,
+      "fields": {
+        "so_ky_hieu": "37/2026/TT-BCA",
+        "ngay_ban_hanh": "24/04/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "trich_yeu": "Sửa đối, bỗ sung một số điều của các Thông tư quy định về đăng ký, kiểm định phương tiện",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "so_ky_hieu": "37/2026/TT-BCA",
+        "ngay_ban_hanh": "ngày 24 tháng 4 năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Sửa đối, bỗ sung một số điều của các Thông tư quy định về đăng ký, kiểm định phương tiện"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "37/2026/TT-BCA",
+        "ngay_ban_hanh": "24/04/2026",
+        "trich_yeu": "Sửa đối, bỗ sung một số điều của các Thông tư quy định về đăng ký, kiểm định phương tiện",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\TT56.PDF",
+      "truth_file": "",
+      "truth_match_score": 0.4029,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\TT56_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 353,
+      "labeled_count": 26,
+      "fields": {
+        "so_ky_hieu": "56/2026/TT-BCA",
+        "ngay_ban_hanh": "18/02/2025",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "trich_yeu": "Quy định quản lý, theo dõi người bị cấm đi khỏi noi ew trú",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "so_ky_hieu": "/2026/TT-BCA",
+        "ngay_ban_hanh": "ngày AD thang Õ năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "Quy định quản lý, theo dõi người bị cấm đi khỏi noi ew trú"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "56/2026/TT-BCA",
+        "ngay_ban_hanh": "18/02/2025",
+        "trich_yeu": "Quy định quản lý, theo dõi người bị cấm đi khỏi noi ew trú",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\TT57.PDF",
+      "truth_file": "",
+      "truth_match_score": 0.32,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\TT57_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 409,
+      "labeled_count": 28,
+      "fields": {
+        "so_ky_hieu": "7/2026/TT-BCA",
+        "ngay_ban_hanh": "05/05/2026",
+        "loai_van_ban": "",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "trich_yeu": "",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "so_ky_hieu": "/2026/TT-BCA",
+        "ngay_ban_hanh": "ngày5 tháng 5 năm 2026",
+        "loai_van_ban": "‘THONG TƯ",
+        "trich_yeu": "Quy định về chê độ quan lý giam giữ người bị tạm giữ, người bị tạm giam"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "7/2026/TT-BCA",
+        "ngay_ban_hanh": "05/05/2026",
+        "trich_yeu": "",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\TT58.PDF",
+      "truth_file": "",
+      "truth_match_score": 0.381,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\TT58_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 424,
+      "labeled_count": 32,
+      "fields": {
+        "so_ky_hieu": "58/2026/TT-BCA",
+        "ngay_ban_hanh": "18/02/2025",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "trich_yeu": "l Quy định Nội quy cơ sở giam giữ và danh mục đồ vật cấm đưa vào khu vực giam giữ",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": "thongtu"
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "so_ky_hieu": "/2026/TT-BCA",
+        "ngay_ban_hanh": "ngày 42 thang năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "l Quy định Nội quy cơ sở giam giữ và danh mục đồ vật cấm đưa vào khu vực giam giữ"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "58/2026/TT-BCA",
+        "ngay_ban_hanh": "18/02/2025",
+        "trich_yeu": "l Quy định Nội quy cơ sở giam giữ và danh mục đồ vật cấm đưa vào khu vực giam giữ",
+        "co_quan_ban_hanh": "BỘ CÔNG AN",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
+    },
+    {
+      "source_file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\OCR\\văn bản\\TTTL so 04.2026 ve ky so, so hoa ho so vu an_0001.pdf",
+      "truth_file": "",
+      "truth_match_score": 0.7242,
+      "image": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\rendered_pages\\TTTL_so_04_2026_ve_ky_so_so_hoa_ho_so_vu_an_0001_page001.png",
+      "ocr_status": "ok",
+      "error": "",
+      "word_count": 415,
+      "labeled_count": 39,
+      "fields": {
+        "so_ky_hieu": "04/2026/TTLT-BCA-BQP",
+        "ngay_ban_hanh": "19/05/2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "co_quan_ban_hanh": "BỘ CÔNG AN - BỘ QUOC PHÒNG _",
+        "trich_yeu": "LIÊN TỊCH Quy định chỉ tiết thi hành khoản 5",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "_doc_type_hint": ""
+      },
+      "semantic_fields": {
+        "co_quan_ban_hanh": "BỘ CÔNG AN - BỘ QUOC PHÒNG _ - TÒA ÁN NHÂN DÂN TÓI CAO — ae P|",
+        "so_ky_hieu": "/2026/TTLT-BCA-BQP",
+        "ngay_ban_hanh": "ngày 19 tháng 5 năm 2026",
+        "loai_van_ban": "THÔNG TƯ",
+        "trich_yeu": "LIÊN TỊCH Quy định chỉ tiết thi hành khoản 5 Điều 131,"
+      },
+      "ocr_fields": {
+        "so_ky_hieu": "04/2026/TTLT-BCA-BQP",
+        "ngay_ban_hanh": "19/05/2026",
+        "trich_yeu": "LIÊN TỊCH Quy định chỉ tiết thi hành khoản 5",
+        "co_quan_ban_hanh": "BỘ CÔNG AN - BỘ QUOC PHÒNG _",
+        "noi_gui": "",
+        "noi_nhan": "",
+        "loai_van_ban": "THÔNG TƯ",
+        "confidence_note": "rule_based"
+      },
+      "truth_fields": {},
+      "matched_fields": {
+        "co_quan_ban_hanh": true,
+        "so_ky_hieu": true,
+        "ngay_ban_hanh": true,
+        "loai_van_ban": true,
+        "trich_yeu": true,
+        "noi_nhan": false,
+        "noi_gui": false
+      }
     }
   ],
-  "skipped": [
-    {
-      "file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\135 2026 ND-CP quy dinh Nghi dinh co che uu dai uu tien cho NSMO.docx",
-      "reason": "DOC/DOCX cần convert sang PDF hoặc ảnh để có bbox layout"
-    },
-    {
-      "file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\2026_149_64_2026_NĐ-CP.docx",
-      "reason": "DOC/DOCX cần convert sang PDF hoặc ảnh để có bbox layout"
-    },
-    {
-      "file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\nguyenthikimngan_QClientichbanhanh.docx",
-      "reason": "DOC/DOCX cần convert sang PDF hoặc ảnh để có bbox layout"
-    },
-    {
-      "file": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\dataset_template\\layoutlmv3_training\\pages\\Quyet dinh giai the Quy BHCD.doc",
-      "reason": "DOC/DOCX cần convert sang PDF hoặc ảnh để có bbox layout"
-    }
-  ]
+  "skipped": []
 }
