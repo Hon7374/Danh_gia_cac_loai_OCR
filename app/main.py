@@ -272,6 +272,11 @@ def _aggregate_page_rows(engine_key: str, variant_name: str, page_rows: list[dic
                     "text_len": len(row.get("text") or ""),
                     "boxes": len(row.get("boxes") or []),
                     "error": row.get("error") or "",
+                    "note": (row.get("raw") or {}).get("note"),
+                    "refine": (row.get("raw") or {}).get("refine"),
+                    "paddle_device": (row.get("raw") or {}).get("paddle_device"),
+                    "vietocr_device": (row.get("raw") or {}).get("vietocr_device"),
+                    "vietocr_model": (row.get("raw") or {}).get("vietocr_model"),
                 }
                 for row in page_rows
             ],
@@ -361,6 +366,34 @@ def read_ground_truth_upload(upload: UploadFile | None, job_dir: Path) -> tuple[
     }
 
 
+def _ocr_display_label(row: dict, quality_guard: dict | None = None) -> str:
+    engine = row.get("engine") or ""
+    variant = row.get("variant") or ""
+    if engine != "paddle_vietocr":
+        return f"{engine} / {variant}"
+
+    raw = row.get("raw") or {}
+    page_results = raw.get("page_results") or []
+    refine_notes = " ".join(
+        str(item.get("refine") or "")
+        for item in page_results
+        if isinstance(item, dict)
+    ).lower()
+    if not refine_notes:
+        refine_notes = str(raw.get("refine") or "").lower()
+
+    guard = quality_guard or row.get("quality_guard") or analyze_ocr_text_quality(row.get("text") or "")
+    if "refined each crop" in refine_notes:
+        engine_label = "paddle+vietocr"
+    elif "skipped" in refine_notes or "unavailable" in refine_notes or "timeout" in refine_notes:
+        engine_label = "paddleocr (vietocr fallback)"
+    elif guard.get("diacritic_loss") or guard.get("severe_diacritic_loss"):
+        engine_label = "paddleocr (mất dấu)"
+    else:
+        engine_label = "paddleocr"
+    return f"{engine_label} / {variant}"
+
+
 def build_comparison_summary(result_rows: list[dict]) -> dict:
     """Tạo dữ liệu dashboard biểu đồ để hiển thị ngay trên giao diện.
 
@@ -369,13 +402,13 @@ def build_comparison_summary(result_rows: list[dict]) -> dict:
     """
     rows = []
     for r in result_rows:
-        label = f"{r.get('engine')} / {r.get('variant')}"
         cer_pct = _pct(r.get("cer"))
         wer_pct = _pct(r.get("wer"))
         elapsed = _round(r.get("elapsed_sec") or 0, 3)
         text_len = len(r.get("text") or "")
         avg_conf = _round(_avg_confidence(r), 2)
         quality_guard = r.get("quality_guard") or analyze_ocr_text_quality(r.get("text") or "")
+        label = _ocr_display_label(r, quality_guard)
         quality_score = None
         quality_source = None
         if cer_pct is not None and wer_pct is not None:
@@ -546,10 +579,10 @@ def index(request: Request):
                 },
                 {
                     "key": "paddle_vietocr",
-                    "label": "PaddleOCR + VietOCR",
-                    "hint": "Mac dinh tat VietOCR refine de nhanh hon; van nang tren CPU.",
+                    "label": "PaddleOCR (+ VietOCR thử nghiệm)",
+                    "hint": "De rung dau voi tieng Viet; VietOCR refine co timeout va rat cham.",
                     "checked": False,
-                    "badge": "cham",
+                    "badge": "thu nghiem",
                 },
                 {
                     "key": "paddleocr_vl",

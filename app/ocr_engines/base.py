@@ -11,6 +11,7 @@ class OCRBox:
     confidence: float | None = None
     bbox: list[int] | None = None  # [x0, y0, x1, y1]
     label: str | None = None
+    polygon: list[list[int]] | None = None
 
 
 @dataclass

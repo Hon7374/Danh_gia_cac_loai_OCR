@@ -46,10 +46,19 @@ Trong `.env`:
 
 ```env
 PADDLE_VIETOCR_REFINE=1
+VIETOCR_MODEL_PROFILE=finetuned
 VIETOCR_CONFIG_PATH=D:\ocr_workspace\ocr_full_demo_v2_latest\models\vietocr-congvan\config.yml
 VIETOCR_WEIGHTS_PATH=D:\ocr_workspace\ocr_full_demo_v2_latest\models\vietocr-congvan\transformerocr.pth
 VIETOCR_BATCH_SIZE=48
 ```
+
+Nếu muốn dùng VietOCR pretrained chính chủ thay vì model fine-tune nội bộ, đặt:
+
+```env
+VIETOCR_MODEL_PROFILE=pretrained
+```
+
+Trong smoke test `demo_samples/sample_cong_van_scan.png`, profile `pretrained` đang cho WER tốt hơn model fine-tune ngắn hiện tại, nên demo local mặc định dùng `pretrained`.
 
 Sau khi sửa `.env`, restart server để app nhận model mới.
 

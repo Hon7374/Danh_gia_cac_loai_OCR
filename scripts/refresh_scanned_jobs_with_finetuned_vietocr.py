@@ -90,6 +90,7 @@ def boxes_for_page(row: dict[str, Any]) -> dict[int, list[OCRBox]]:
                 confidence=raw_box.get("confidence"),
                 bbox=clean_bbox,
                 label=raw_box.get("label"),
+                polygon=raw_box.get("polygon"),
             )
         )
     return pages
@@ -240,6 +241,7 @@ def refine_existing_boxes(job_dir: Path, report: dict[str, Any], row: dict[str, 
                 "confidence": box.confidence,
                 "bbox": box.bbox,
                 "label": box.label,
+                "polygon": box.polygon,
                 "page": page_no,
             }
             for box in refined

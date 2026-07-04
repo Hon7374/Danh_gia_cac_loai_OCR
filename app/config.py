@@ -77,12 +77,20 @@ OCR_GPU_WORKERS = _env_int("OCR_GPU_WORKERS", 1, 1, 2)
 PADDLE_VIETOCR_REFINE = os.getenv("PADDLE_VIETOCR_REFINE", "0").strip().lower() in {"1", "true", "yes", "on"}
 
 _DEFAULT_VIETOCR_MODEL_DIR = ROOT_DIR / "models" / "vietocr-congvan"
+VIETOCR_MODEL_PROFILE = os.getenv("VIETOCR_MODEL_PROFILE", "pretrained").strip().lower() or "pretrained"
+_USE_LOCAL_VIETOCR_DEFAULT = VIETOCR_MODEL_PROFILE in {"finetuned", "local", "congvan", "custom"}
 VIETOCR_CONFIG_PATH = os.getenv(
     "VIETOCR_CONFIG_PATH",
-    str(_DEFAULT_VIETOCR_MODEL_DIR / "config.yml") if (_DEFAULT_VIETOCR_MODEL_DIR / "config.yml").exists() else "",
+    str(_DEFAULT_VIETOCR_MODEL_DIR / "config.yml")
+    if _USE_LOCAL_VIETOCR_DEFAULT and (_DEFAULT_VIETOCR_MODEL_DIR / "config.yml").exists()
+    else "",
 ).strip()
 VIETOCR_WEIGHTS_PATH = os.getenv(
     "VIETOCR_WEIGHTS_PATH",
-    str(_DEFAULT_VIETOCR_MODEL_DIR / "transformerocr.pth") if (_DEFAULT_VIETOCR_MODEL_DIR / "transformerocr.pth").exists() else "",
+    str(_DEFAULT_VIETOCR_MODEL_DIR / "transformerocr.pth")
+    if _USE_LOCAL_VIETOCR_DEFAULT and (_DEFAULT_VIETOCR_MODEL_DIR / "transformerocr.pth").exists()
+    else "",
 ).strip()
 VIETOCR_BATCH_SIZE = _env_int("VIETOCR_BATCH_SIZE", 48, 1, 256)
+PADDLE_VIETOCR_REFINE_TIMEOUT_SEC = _env_int("PADDLE_VIETOCR_REFINE_TIMEOUT_SEC", 90, 10, 1800)
+PADDLE_VIETOCR_MAX_BOXES = _env_int("PADDLE_VIETOCR_MAX_BOXES", 80, 1, 1000)

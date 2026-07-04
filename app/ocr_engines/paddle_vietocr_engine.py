@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 import subprocess
 import sys
 import tempfile
@@ -13,9 +14,12 @@ from PIL import Image
 
 from app.config import (
     PADDLE_VIETOCR_REFINE,
+    PADDLE_VIETOCR_MAX_BOXES,
+    PADDLE_VIETOCR_REFINE_TIMEOUT_SEC,
     ROOT_DIR,
     VIETOCR_BATCH_SIZE,
     VIETOCR_CONFIG_PATH,
+    VIETOCR_MODEL_PROFILE,
     VIETOCR_WEIGHTS_PATH,
 )
 from app.services.devices import resolve_paddle_device, resolve_torch_device
@@ -27,6 +31,45 @@ _VIETOCR = None
 _VIETOCR_MODEL_INFO: dict[str, Any] = {}
 
 
+def _safe_float(value: Any) -> float | None:
+    if value is None:
+        return None
+    if hasattr(value, "item"):
+        try:
+            return float(value.item())
+        except Exception:
+            return None
+    if isinstance(value, (list, tuple)):
+        vals = [_safe_float(item) for item in value]
+        nums = [item for item in vals if item is not None and math.isfinite(item)]
+        return sum(nums) / len(nums) if nums else None
+    try:
+        number = float(value)
+        return number if math.isfinite(number) else None
+    except Exception:
+        return None
+
+
+def _normalize_polygon(poly: Any) -> list[list[int]] | None:
+    if poly is None:
+        return None
+    if hasattr(poly, "tolist"):
+        poly = poly.tolist()
+    try:
+        if len(poly) == 4 and all(isinstance(v, (int, float)) for v in poly):
+            return None
+        points: list[list[int]] = []
+        for point in poly[:4]:
+            if hasattr(point, "tolist"):
+                point = point.tolist()
+            if len(point) < 2:
+                return None
+            points.append([int(round(float(point[0]))), int(round(float(point[1])))])
+        return points if len(points) == 4 else None
+    except Exception:
+        return None
+
+
 def _bbox_from_poly(poly: Any) -> list[int] | None:
     if poly is None:
         return None
@@ -34,12 +77,28 @@ def _bbox_from_poly(poly: Any) -> list[int] | None:
         poly = poly.tolist()
     try:
         if len(poly) == 4 and all(isinstance(v, (int, float)) for v in poly):
-            return [int(v) for v in poly]
-        xs = [int(p[0]) for p in poly]
-        ys = [int(p[1]) for p in poly]
-        return [min(xs), min(ys), max(xs), max(ys)]
+            x0, y0, x1, y1 = [int(round(float(v))) for v in poly]
+            return [min(x0, x1), min(y0, y1), max(x0, x1), max(y0, y1)]
     except Exception:
         return None
+    polygon = _normalize_polygon(poly)
+    if not polygon:
+        return None
+    xs = [point[0] for point in polygon]
+    ys = [point[1] for point in polygon]
+    return [min(xs), min(ys), max(xs), max(ys)]
+
+
+def _make_box(text: Any, confidence: Any, poly: Any) -> OCRBox | None:
+    clean_text = str(text or "").strip()
+    if not clean_text:
+        return None
+    return OCRBox(
+        text=clean_text,
+        confidence=_safe_float(confidence),
+        bbox=_bbox_from_poly(poly),
+        polygon=_normalize_polygon(poly),
+    )
 
 
 def _normalize_paddle_result(result: Any) -> list[OCRBox]:
@@ -55,12 +114,10 @@ def _normalize_paddle_result(result: Any) -> list[OCRBox]:
             scores = page.get("rec_scores") or []
             polys = page.get("rec_polys") or page.get("dt_polys") or page.get("rec_boxes") or []
             for idx, text in enumerate(texts):
-                text = str(text).strip()
-                if not text:
-                    continue
                 conf = scores[idx] if idx < len(scores) else None
-                bbox = _bbox_from_poly(polys[idx] if idx < len(polys) else None)
-                boxes.append(OCRBox(text=text, confidence=float(conf) if conf is not None else None, bbox=bbox))
+                box = _make_box(text, conf, polys[idx] if idx < len(polys) else None)
+                if box:
+                    boxes.append(box)
         if boxes:
             return boxes
 
@@ -71,14 +128,86 @@ def _normalize_paddle_result(result: Any) -> list[OCRBox]:
         try:
             poly = item[0]
             rec = item[1]
-            text = str(rec[0]).strip()
-            conf = float(rec[1]) if len(rec) > 1 else None
-            bbox = _bbox_from_poly(poly)
-            if text:
-                boxes.append(OCRBox(text=text, confidence=conf, bbox=bbox))
+            box = _make_box(rec[0], rec[1] if len(rec) > 1 else None, poly)
+            if box:
+                boxes.append(box)
         except Exception:
             continue
     return boxes
+
+
+def _crop_by_bbox(image: Image.Image, bbox: list[int], pad: int = 2) -> Image.Image | None:
+    x0, y0, x1, y1 = bbox
+    crop = image.crop(
+        (
+            max(0, x0 - pad),
+            max(0, y0 - pad),
+            min(image.width, x1 + pad),
+            min(image.height, y1 + pad),
+        )
+    )
+    if crop.width <= 1 or crop.height <= 1:
+        return None
+    return crop.convert("RGB")
+
+
+def _crop_by_polygon(image: Image.Image, polygon: list[list[int]]) -> Image.Image | None:
+    try:
+        import cv2
+        import numpy as np
+
+        pts = np.array(polygon, dtype=np.float32)
+        crop_width = int(max(np.linalg.norm(pts[0] - pts[1]), np.linalg.norm(pts[2] - pts[3])))
+        crop_height = int(max(np.linalg.norm(pts[0] - pts[3]), np.linalg.norm(pts[1] - pts[2])))
+        if crop_width <= 1 or crop_height <= 1:
+            return None
+
+        dst = np.array(
+            [[0, 0], [crop_width - 1, 0], [crop_width - 1, crop_height - 1], [0, crop_height - 1]],
+            dtype=np.float32,
+        )
+        matrix = cv2.getPerspectiveTransform(pts, dst)
+        warped = cv2.warpPerspective(
+            np.array(image),
+            matrix,
+            (crop_width, crop_height),
+            flags=cv2.INTER_CUBIC,
+            borderMode=cv2.BORDER_REPLICATE,
+        )
+        if warped.shape[0] / max(1, warped.shape[1]) >= 1.5:
+            warped = np.rot90(warped)
+        return Image.fromarray(warped).convert("RGB")
+    except Exception:
+        return None
+
+
+def _crop_text_region(image: Image.Image, box: OCRBox) -> Image.Image | None:
+    if box.polygon:
+        crop = _crop_by_polygon(image, box.polygon)
+        if crop is not None:
+            return crop
+    if box.bbox:
+        return _crop_by_bbox(image, box.bbox)
+    return None
+
+
+def _predict_vietocr_batch(predictor: Any, batch: list[Image.Image]) -> list[tuple[str, float | None]]:
+    if hasattr(predictor, "predict_batch"):
+        try:
+            texts, probs = predictor.predict_batch(batch, return_prob=True)
+            return [(str(text).strip(), _safe_float(prob)) for text, prob in zip(texts or [], probs or [])]
+        except TypeError:
+            texts = predictor.predict_batch(batch)
+            return [(str(text).strip(), None) for text in texts or []]
+
+    predictions: list[tuple[str, float | None]] = []
+    for crop in batch:
+        try:
+            text, prob = predictor.predict(crop, return_prob=True)
+            predictions.append((str(text).strip(), _safe_float(prob)))
+        except TypeError:
+            predictions.append((str(predictor.predict(crop)).strip(), None))
+    return predictions
 
 
 def _load_vietocr_predictor():
@@ -91,19 +220,22 @@ def _load_vietocr_predictor():
 
     try:
         if _VIETOCR is None:
-            config_path = Path(VIETOCR_CONFIG_PATH).expanduser() if VIETOCR_CONFIG_PATH else None
-            weights_path = Path(VIETOCR_WEIGHTS_PATH).expanduser() if VIETOCR_WEIGHTS_PATH else None
-            if config_path and config_path.exists():
+            profile = (VIETOCR_MODEL_PROFILE or "pretrained").strip().lower()
+            use_pretrained = profile in {"pretrained", "official", "vgg_transformer", "default"}
+            config_path = Path(VIETOCR_CONFIG_PATH).expanduser() if VIETOCR_CONFIG_PATH and not use_pretrained else None
+            weights_path = Path(VIETOCR_WEIGHTS_PATH).expanduser() if VIETOCR_WEIGHTS_PATH and not use_pretrained else None
+            if not use_pretrained and config_path and config_path.exists():
                 config = Cfg.load_config_from_file(str(config_path))
                 config_source = str(config_path)
             else:
                 config = Cfg.load_config_from_name("vgg_transformer")
                 config_source = "vietocr:vgg_transformer"
-            if weights_path and weights_path.exists():
+            if not use_pretrained and weights_path and weights_path.exists():
                 config["weights"] = str(weights_path)
             config["device"] = resolve_torch_device()
             config["predictor"]["beamsearch"] = False
             _VIETOCR_MODEL_INFO = {
+                "profile": profile,
                 "config": config_source,
                 "weights": config.get("weights"),
                 "device": config["device"],
@@ -128,30 +260,29 @@ def _try_vietocr_recognize_local(image_path: Path, boxes: list[OCRBox]) -> list[
             crops: list[Image.Image] = []
             crop_indices: list[int] = []
             for box_index, b in enumerate(boxes):
-                if not b.bbox:
-                    continue
-                x0, y0, x1, y1 = b.bbox
-                pad = 2
-                crop = image.crop((max(0, x0 - pad), max(0, y0 - pad), min(image.width, x1 + pad), min(image.height, y1 + pad)))
-                if crop.width <= 1 or crop.height <= 1:
+                crop = _crop_text_region(image, b)
+                if crop is None:
                     continue
                 crops.append(crop.copy())
                 crop_indices.append(box_index)
             if not crops:
                 return new_boxes
 
-            predictions: list[str] = []
+            predictions: list[tuple[str, float | None]] = []
             batch_size = max(1, int(VIETOCR_BATCH_SIZE or 1))
             for start in range(0, len(crops), batch_size):
                 batch = crops[start:start + batch_size]
-                if hasattr(predictor, "predict_batch"):
-                    predictions.extend([str(x).strip() for x in predictor.predict_batch(batch)])
-                else:
-                    predictions.extend([str(predictor.predict(crop)).strip() for crop in batch])
+                predictions.extend(_predict_vietocr_batch(predictor, batch))
 
-            for idx, text in zip(crop_indices, predictions):
+            for idx, (text, confidence) in zip(crop_indices, predictions):
                 original = new_boxes[idx]
-                new_boxes[idx] = OCRBox(text=text or original.text, confidence=original.confidence, bbox=original.bbox)
+                new_boxes[idx] = OCRBox(
+                    text=text or original.text,
+                    confidence=confidence if confidence is not None else original.confidence,
+                    bbox=original.bbox,
+                    label=original.label,
+                    polygon=original.polygon,
+                )
             return new_boxes
     except Exception:
         return None
@@ -170,7 +301,13 @@ def _try_vietocr_recognize(image_path: Path, boxes: list[OCRBox]) -> tuple[list[
             boxes_json.write_text(
                 json.dumps(
                     [
-                        {"text": b.text, "confidence": b.confidence, "bbox": b.bbox, "label": b.label}
+                        {
+                            "text": b.text,
+                            "confidence": b.confidence,
+                            "bbox": b.bbox,
+                            "label": b.label,
+                            "polygon": b.polygon,
+                        }
                         for b in boxes
                     ],
                     ensure_ascii=False,
@@ -189,7 +326,7 @@ def _try_vietocr_recognize(image_path: Path, boxes: list[OCRBox]) -> tuple[list[
                 cwd=ROOT_DIR,
                 capture_output=True,
                 text=True,
-                timeout=900,
+                timeout=PADDLE_VIETOCR_REFINE_TIMEOUT_SEC,
                 check=False,
             )
             if completed.returncode != 0:
@@ -201,7 +338,13 @@ def _try_vietocr_recognize(image_path: Path, boxes: list[OCRBox]) -> tuple[list[
             if data.get("status") != "ok":
                 return None, data.get("model_info") or {}, data.get("error") or "VietOCR refine worker error"
             refined = [
-                OCRBox(text=b.get("text", ""), confidence=b.get("confidence"), bbox=b.get("bbox"), label=b.get("label"))
+                OCRBox(
+                    text=b.get("text", ""),
+                    confidence=b.get("confidence"),
+                    bbox=b.get("bbox"),
+                    label=b.get("label"),
+                    polygon=b.get("polygon"),
+                )
                 for b in data.get("boxes") or []
                 if isinstance(b, dict)
             ]
@@ -209,7 +352,7 @@ def _try_vietocr_recognize(image_path: Path, boxes: list[OCRBox]) -> tuple[list[
             _VIETOCR_MODEL_INFO = model_info
             return refined, model_info, ""
     except subprocess.TimeoutExpired:
-        return None, {}, "VietOCR refine quá thời gian 15 phút."
+        return None, {}, f"VietOCR refine qua thoi gian {PADDLE_VIETOCR_REFINE_TIMEOUT_SEC}s."
     except Exception as exc:
         return None, {}, str(exc)
 
@@ -226,6 +369,14 @@ def run_paddle_vietocr_direct(image_path: Path, variant: str = "preprocessed") -
             variant=variant,
             status="skipped",
             error="Chưa cài paddleocr/paddlepaddle. Chạy: pip install -r requirements-optional-ocr.txt",
+            elapsed_sec=time.perf_counter() - start,
+        )
+    except Exception as exc:
+        return OCRResult(
+            engine="paddle_vietocr",
+            variant=variant,
+            status="error",
+            error=f"PaddleOCR import failed: {exc}",
             elapsed_sec=time.perf_counter() - start,
         )
     try:
@@ -254,12 +405,18 @@ def run_paddle_vietocr_direct(image_path: Path, variant: str = "preprocessed") -
         refine_note = "VietOCR refine disabled"
         vietocr_model_info: dict[str, Any] | None = None
         if PADDLE_VIETOCR_REFINE:
-            viet_boxes, vietocr_model_info, refine_error = _try_vietocr_recognize(image_path, boxes)
-            if viet_boxes:
-                boxes = viet_boxes
-                refine_note = "VietOCR refined each crop"
+            if len(boxes) > PADDLE_VIETOCR_MAX_BOXES:
+                refine_note = (
+                    f"VietOCR refine skipped: {len(boxes)} text boxes exceeds "
+                    f"PADDLE_VIETOCR_MAX_BOXES={PADDLE_VIETOCR_MAX_BOXES}"
+                )
             else:
-                refine_note = f"VietOCR refine requested but unavailable: {refine_error}".strip()
+                viet_boxes, vietocr_model_info, refine_error = _try_vietocr_recognize(image_path, boxes)
+                if viet_boxes:
+                    boxes = viet_boxes
+                    refine_note = "VietOCR refined each crop"
+                else:
+                    refine_note = f"VietOCR refine requested but unavailable: {refine_error}".strip()
         text = "\n".join([b.text for b in boxes])
         return OCRResult(
             engine="paddle_vietocr",
@@ -270,14 +427,18 @@ def run_paddle_vietocr_direct(image_path: Path, variant: str = "preprocessed") -
             elapsed_sec=time.perf_counter() - start,
             raw={
                 "note": (
-                    "PaddleOCR detects text regions, then fine-tuned VietOCR recognizes each crop."
+                    "PaddleOCR detects text regions, then VietOCR recognizes each crop."
                     if PADDLE_VIETOCR_REFINE
                     else "PaddleOCR detect/recognize. VietOCR refinement is off by default because it is very slow on CPU."
                 ),
                 "refine": refine_note,
+                "crop_mode": "paddle_polygon_rotated_crop_then_vietocr_batch",
+                "integration_reference": "longvu358/VietnameseOCR and bmd1905/vietnamese-ocr; adapted to installed PaddleOCR/VietOCR APIs.",
                 "paddle_device": paddle_device,
                 "vietocr_device": resolve_torch_device() if PADDLE_VIETOCR_REFINE else None,
                 "vietocr_model": vietocr_model_info if PADDLE_VIETOCR_REFINE else None,
+                "vietocr_refine_timeout_sec": PADDLE_VIETOCR_REFINE_TIMEOUT_SEC if PADDLE_VIETOCR_REFINE else None,
+                "vietocr_max_boxes": PADDLE_VIETOCR_MAX_BOXES if PADDLE_VIETOCR_REFINE else None,
                 "worker": "subprocess",
             },
         )
@@ -293,7 +454,13 @@ def run_paddle_vietocr_direct(image_path: Path, variant: str = "preprocessed") -
 
 def _result_from_dict(data: dict[str, Any], fallback_variant: str, elapsed: float) -> OCRResult:
     boxes = [
-        OCRBox(text=b.get("text", ""), confidence=b.get("confidence"), bbox=b.get("bbox"))
+        OCRBox(
+            text=b.get("text", ""),
+            confidence=b.get("confidence"),
+            bbox=b.get("bbox"),
+            label=b.get("label"),
+            polygon=b.get("polygon"),
+        )
         for b in data.get("boxes") or []
         if isinstance(b, dict)
     ]

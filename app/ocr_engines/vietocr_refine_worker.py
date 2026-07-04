@@ -22,7 +22,13 @@ def main() -> int:
     try:
         raw_boxes = json.loads(boxes_json.read_text(encoding="utf-8"))
         boxes = [
-            OCRBox(text=b.get("text", ""), confidence=b.get("confidence"), bbox=b.get("bbox"), label=b.get("label"))
+            OCRBox(
+                text=b.get("text", ""),
+                confidence=b.get("confidence"),
+                bbox=b.get("bbox"),
+                label=b.get("label"),
+                polygon=b.get("polygon"),
+            )
             for b in raw_boxes
             if isinstance(b, dict)
         ]
@@ -40,7 +46,13 @@ def main() -> int:
                 "error": "",
                 "model_info": refine_engine._VIETOCR_MODEL_INFO,
                 "boxes": [
-                    {"text": b.text, "confidence": b.confidence, "bbox": b.bbox, "label": b.label}
+                    {
+                        "text": b.text,
+                        "confidence": b.confidence,
+                        "bbox": b.bbox,
+                        "label": b.label,
+                        "polygon": b.polygon,
+                    }
                     for b in refined
                 ],
             }
