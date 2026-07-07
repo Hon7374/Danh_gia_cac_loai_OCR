@@ -43,6 +43,22 @@ app = FastAPI(title="OCR Full Benchmark Demo", version="1.0.0")
 app.mount("/static", StaticFiles(directory=ROOT_DIR / "app" / "static"), name="static")
 templates = Jinja2Templates(directory=ROOT_DIR / "app" / "templates")
 
+GROUND_TRUTH_METRIC_VERSION = 2
+GROUND_TRUTH_LENGTH_RATIO_LIMIT = 3
+GROUND_TRUTH_LENGTH_ABSOLUTE_LIMIT = 6000
+
+
+def _append_warning(existing: str | None, extra: str | None) -> str | None:
+    extra = (extra or "").strip()
+    if not extra:
+        return existing
+    existing = (existing or "").strip()
+    if not existing:
+        return extra
+    if extra in existing:
+        return existing
+    return f"{existing} {extra}"
+
 
 @app.middleware("http")
 async def no_cache_html(request: Request, call_next):
@@ -182,33 +198,57 @@ def _read_ground_truth_file(path: Path, data: bytes | None = None) -> tuple[str,
     return _normalize_ground_truth_text(text), warning, reader
 
 
-def _truth_for_prediction(pred_text: str, truth_text: str) -> tuple[str, bool]:
+def _truth_for_prediction(pred_text: str, truth_text: str) -> tuple[str, bool, str | None]:
     truth = truth_text.strip()
     pred = pred_text.strip()
     if not truth or not pred:
-        return truth, False
-    if len(truth) <= max(6000, len(pred) * 3):
-        return truth, False
+        return truth, False, None
+    pred_len = len(pred)
+    truth_len = len(truth)
+    if pred_len > max(GROUND_TRUTH_LENGTH_ABSOLUTE_LIMIT, truth_len * GROUND_TRUTH_LENGTH_RATIO_LIMIT):
+        warning = (
+            f"Bo qua CER/WER: OCR co {pred_len} ky tu, text chuan chi {truth_len} ky tu. "
+            "Ground truth khong khop cung pham vi tai lieu/trang OCR."
+        )
+        return "", False, warning
+    if truth_len <= max(GROUND_TRUTH_LENGTH_ABSOLUTE_LIMIT, pred_len * GROUND_TRUTH_LENGTH_RATIO_LIMIT):
+        return truth, False, None
     compare_len = max(1000, int(len(pred) * 1.35))
     compare_len = min(compare_len, len(truth))
-    return truth[:compare_len], True
+    return truth[:compare_len], True, None
 
 
-def _apply_ground_truth_metrics(result_rows: list[dict], ground_truth: str) -> bool:
-    used_slice = False
+def _apply_ground_truth_metrics(result_rows: list[dict], ground_truth: str) -> dict:
+    stats = {
+        "used_slice": False,
+        "skipped_mismatch": False,
+        "warning": None,
+    }
     for row in result_rows:
         text = row.get("text") or ""
+        row["ground_truth_metric_version"] = GROUND_TRUTH_METRIC_VERSION
+        row.pop("ground_truth_metric_warning", None)
         if ground_truth.strip() and text:
-            compare_truth, sliced = _truth_for_prediction(text, ground_truth)
+            compare_truth, sliced, warning = _truth_for_prediction(text, ground_truth)
+            row["ground_truth_compare_length"] = len(compare_truth)
+            if warning:
+                row["cer"] = None
+                row["wer"] = None
+                row["ground_truth_metric_warning"] = warning
+                stats["skipped_mismatch"] = True
+                stats["warning"] = stats["warning"] or (
+                    "Bo qua CER/WER vi text chuan khong khop voi pham vi tai lieu OCR. "
+                    "Hay upload ground truth cua dung file hoac dung cac trang da OCR."
+                )
+                continue
             row["cer"] = cer(text, compare_truth)
             row["wer"] = wer(text, compare_truth)
-            row["ground_truth_compare_length"] = len(compare_truth)
-            used_slice = used_slice or sliced
+            stats["used_slice"] = bool(stats["used_slice"] or sliced)
         else:
             row["cer"] = None
             row["wer"] = None
             row["ground_truth_compare_length"] = 0
-    return used_slice
+    return stats
 
 
 def _aggregate_page_rows(engine_key: str, variant_name: str, page_rows: list[dict], elapsed_sec: float | None = None) -> dict:
@@ -436,6 +476,7 @@ def build_comparison_summary(result_rows: list[dict]) -> dict:
             "quality_source": quality_source,
             "quality_guard": quality_guard,
             "selection_score": ocr_selection_score(r),
+            "ground_truth_metric_warning": r.get("ground_truth_metric_warning"),
             "error": r.get("error"),
         })
 
@@ -1264,10 +1305,15 @@ def _refresh_report_ground_truth(job_dir: Path, report: dict) -> bool:
         return False
     metric_rows = [row for row in (report.get("results") or []) if row.get("status") == "ok" and row.get("text")]
     has_saved_text = bool(report.get("ground_truth_text_length") or meta.get("text_length"))
-    metrics_complete = bool(metric_rows) and all(
-        row.get("cer") is not None and row.get("wer") is not None for row in metric_rows
+    metrics_current = bool(metric_rows) and all(
+        row.get("ground_truth_metric_version") == GROUND_TRUTH_METRIC_VERSION
+        and (
+            (row.get("cer") is not None and row.get("wer") is not None)
+            or bool(row.get("ground_truth_metric_warning"))
+        )
+        for row in metric_rows
     )
-    if has_saved_text and metrics_complete:
+    if has_saved_text and metrics_current:
         report["comparison_summary"] = build_comparison_summary(report.get("results") or [])
         return False
 
@@ -1281,10 +1327,12 @@ def _refresh_report_ground_truth(job_dir: Path, report: dict) -> bool:
     meta["warning"] = warning
     meta["reader"] = reader
 
-    used_slice = _apply_ground_truth_metrics(report.get("results") or [], text)
-    if used_slice:
+    metric_stats = _apply_ground_truth_metrics(report.get("results") or [], text)
+    if metric_stats.get("used_slice"):
         extra = " Da dung phan dau file text chuan de khop voi do dai text OCR."
-        meta["warning"] = (meta.get("warning") or "").strip() + extra
+        meta["warning"] = _append_warning(meta.get("warning"), extra)
+    if metric_stats.get("skipped_mismatch"):
+        meta["warning"] = _append_warning(meta.get("warning"), metric_stats.get("warning"))
     report["comparison_summary"] = build_comparison_summary(report.get("results") or [])
     return bool(text)
 
@@ -1370,10 +1418,15 @@ def run_demo(
         for variant_name, image_paths in variants:
             result_rows.append(_run_engine_on_pages(engine_cls, engine_key, variant_name, image_paths))
 
-    used_ground_truth_slice = _apply_ground_truth_metrics(result_rows, ground_truth)
-    if ground_truth_meta and used_ground_truth_slice:
+    ground_truth_metric_stats = _apply_ground_truth_metrics(result_rows, ground_truth)
+    if ground_truth_meta and ground_truth_metric_stats.get("used_slice"):
         extra = " Da dung phan dau file text chuan de khop voi do dai text OCR."
-        ground_truth_meta["warning"] = (ground_truth_meta.get("warning") or "").strip() + extra
+        ground_truth_meta["warning"] = _append_warning(ground_truth_meta.get("warning"), extra)
+    if ground_truth_meta and ground_truth_metric_stats.get("skipped_mismatch"):
+        ground_truth_meta["warning"] = _append_warning(
+            ground_truth_meta.get("warning"),
+            ground_truth_metric_stats.get("warning"),
+        )
 
     # Chọn kết quả tốt nhất để hậu xử lý: ưu tiên CER thấp nếu có ground truth.
     # Khi không có ground truth, dùng quality guard để tránh chọn output rụng dấu
