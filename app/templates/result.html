@@ -29,14 +29,14 @@
 
   <section class="metric-grid">
     <div class="metric-card">
-      <span>Tổng lượt OCR</span>
+      <span>{% if report.input_mode == "text" %}Tổng lượt xử lý{% else %}Tổng lượt OCR{% endif %}</span>
       <b>{{summary.total_runs}}</b>
-      <small>engine x biến thể ảnh</small>
+      <small>{% if report.input_mode == "text" %}text input trực tiếp{% else %}engine x biến thể ảnh{% endif %}</small>
     </div>
     <div class="metric-card">
-      <span>Số trang</span>
+      <span>{% if report.input_mode == "text" %}Nguồn vào{% else %}Số trang{% endif %}</span>
       <b>{{report.page_count or 1}}</b>
-      <small>đã OCR toàn bộ file</small>
+      <small>{% if report.input_mode == "text" %}file text/Word{% else %}đã OCR toàn bộ file{% endif %}</small>
     </div>
     <div class="metric-card success">
       <span>Thành công</span>
@@ -109,6 +109,28 @@
     </div>
   </section>
 
+  {% if report.input_mode == "text" %}
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Text input</p>
+        <h2>Nội dung file text</h2>
+      </div>
+      <span class="pill muted-pill">Reader: {{report.uploaded_text.reader or 'text'}}</span>
+    </div>
+    {% if report.uploaded_text.warning %}
+    <p class="empty-note">{{report.uploaded_text.warning}}</p>
+    {% endif %}
+    {% if results and results[0].text %}
+    <details class="text-preview" open>
+      <summary>Xem text đầu vào</summary>
+      <pre>{{(results[0].text or '')[:4000]}}</pre>
+    </details>
+    {% else %}
+    <p class="empty-note">File text không có nội dung để nhận diện.</p>
+    {% endif %}
+  </section>
+  {% else %}
   <section class="panel image-panel">
     <div class="section-title">
       <div>
@@ -128,6 +150,7 @@
       </figure>
     </div>
   </section>
+  {% endif %}
 
   <section class="panel">
     <div class="section-title">

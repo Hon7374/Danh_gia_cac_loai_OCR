@@ -46,6 +46,7 @@ templates = Jinja2Templates(directory=ROOT_DIR / "app" / "templates")
 GROUND_TRUTH_METRIC_VERSION = 2
 GROUND_TRUTH_LENGTH_RATIO_LIMIT = 3
 GROUND_TRUTH_LENGTH_ABSOLUTE_LIMIT = 6000
+TEXT_INPUT_SUFFIXES = {".txt", ".md", ".csv", ".json", ".doc", ".docx"}
 
 
 def _append_warning(existing: str | None, extra: str | None) -> str | None:
@@ -58,6 +59,10 @@ def _append_warning(existing: str | None, extra: str | None) -> str | None:
     if extra in existing:
         return existing
     return f"{existing} {extra}"
+
+
+def _is_text_input_file(path: Path) -> bool:
+    return path.suffix.lower() in TEXT_INPUT_SUFFIXES
 
 
 @app.middleware("http")
@@ -360,6 +365,51 @@ def _run_engine_on_pages(engine_cls, engine_key: str, variant_name: str, image_p
     return _aggregate_page_rows(engine_key, variant_name, page_rows, time.perf_counter() - start)
 
 
+def _text_input_result_row(text: str, elapsed_sec: float, warning: str | None = None) -> dict:
+    status = "ok" if text.strip() else "error"
+    row = {
+        "engine": "text_input",
+        "variant": "direct_text",
+        "status": status,
+        "elapsed_sec": elapsed_sec,
+        "text": text,
+        "boxes": [],
+        "cer": None,
+        "wer": None,
+        "ground_truth_compare_length": 0,
+        "raw": {
+            "page_count": 1,
+            "first_page_text": text,
+            "note": "Text source uploaded directly; OCR image step skipped.",
+        },
+        "quality_guard": analyze_ocr_text_quality(text),
+    }
+    if warning:
+        row["warning"] = warning
+    if status != "ok":
+        row["error"] = warning or "File text khong co noi dung de nhan dien."
+    return row
+
+
+def _text_input_postprocess(text: str, reader: str, warning: str | None = None) -> dict:
+    fields = extract_fields_rule_based(text).to_dict()
+    fields["confidence_note"] = "text_input_rule"
+    note = "File đầu vào là text/Word nên hệ thống bỏ qua OCR ảnh và trích xuất trường trực tiếp từ nội dung text."
+    if warning:
+        note = f"{note} Cảnh báo đọc file: {warning}"
+    return {
+        "mode": "text_input_direct",
+        "extractor": "text_input",
+        "note": note,
+        "model_configured": False,
+        "model_ran": False,
+        "reader": reader,
+        "fields_source": "text_input_rule",
+        "fields": fields,
+        "labels_preview_rows": [],
+    }
+
+
 def read_ground_truth_upload(upload: UploadFile | None, job_dir: Path) -> tuple[str, dict | None]:
     """Lưu và đọc file ground truth upload.
 
@@ -409,6 +459,8 @@ def read_ground_truth_upload(upload: UploadFile | None, job_dir: Path) -> tuple[
 def _ocr_display_label(row: dict, quality_guard: dict | None = None) -> str:
     engine = row.get("engine") or ""
     variant = row.get("variant") or ""
+    if engine == "text_input":
+        return "text input / direct_text"
     if engine != "paddle_vietocr":
         return f"{engine} / {variant}"
 
@@ -1019,6 +1071,8 @@ def _annotate_layout_source(layout_result: dict | None, row: dict | None) -> dic
 
 
 def _layout_postprocess_needs_refresh(report: dict) -> bool:
+    if report.get("input_mode") == "text":
+        return False
     layout_result = report.get("layoutlmv3_postprocess")
     if not layout_result:
         return True
@@ -1200,6 +1254,8 @@ def _fill_fields_from_upload_name(layout_result: dict | None, uploaded_file: str
 
 
 def _refresh_layout_postprocess(job_dir: Path, report: dict) -> bool:
+    if report.get("input_mode") == "text":
+        return False
     best = _select_postprocess_row(report)
     if not best:
         return False
@@ -1243,6 +1299,8 @@ def render_result(request: Request, job_id: str, job_dir: Path, report: dict):
     report["comparison_summary"] = comparison_summary
     raw_image = Path(report.get("raw_image") or "")
     pre_img = Path(report.get("preprocessed_image") or "")
+    raw_image_url = f"/jobs/{job_id}/{raw_image.as_posix()}" if str(raw_image) not in {"", "."} else ""
+    pre_image_url = f"/jobs/{job_id}/{pre_img.as_posix()}" if str(pre_img) not in {"", "."} else ""
 
     return templates.TemplateResponse(
         "result.html",
@@ -1253,8 +1311,8 @@ def render_result(request: Request, job_id: str, job_dir: Path, report: dict):
             "results": result_rows,
             "layout_result": layout_result,
             "summary": comparison_summary,
-            "raw_image_url": f"/jobs/{job_id}/{raw_image.as_posix()}",
-            "pre_image_url": f"/jobs/{job_id}/{pre_img.as_posix()}",
+            "raw_image_url": raw_image_url,
+            "pre_image_url": pre_image_url,
             "csv_url": f"/jobs/{job_id}/benchmark_results.csv",
             "json_url": f"/jobs/{job_id}/report.json",
             "summary_url": f"/jobs/{job_id}/comparison_summary.json",
@@ -1383,6 +1441,57 @@ def run_demo(
     uploaded_ground_truth, ground_truth_meta = read_ground_truth_upload(ground_truth_file, job_dir)
     if uploaded_ground_truth:
         ground_truth = uploaded_ground_truth
+
+    if _is_text_input_file(uploaded_path):
+        start = time.perf_counter()
+        text, source_warning, reader = _read_ground_truth_file(uploaded_path)
+        result_rows = [_text_input_result_row(text, time.perf_counter() - start, source_warning)]
+        ground_truth_metric_stats = _apply_ground_truth_metrics(result_rows, ground_truth)
+        if ground_truth_meta and ground_truth_metric_stats.get("skipped_mismatch"):
+            ground_truth_meta["warning"] = _append_warning(
+                ground_truth_meta.get("warning"),
+                ground_truth_metric_stats.get("warning"),
+            )
+
+        layout_result = _text_input_postprocess(text, reader, source_warning)
+        layout_result = _merge_postprocess_fields_from_rows(layout_result, result_rows)
+        layout_result = _fill_fields_from_upload_name(layout_result, str(uploaded_path.relative_to(job_dir)))
+        comparison_summary = build_comparison_summary(result_rows)
+        report = {
+            "job_id": job_id,
+            "input_mode": "text",
+            "uploaded_file": str(uploaded_path.relative_to(job_dir)),
+            "uploaded_text": {
+                "filename": safe_name,
+                "reader": reader,
+                "text_length": len(text),
+                "warning": source_warning,
+            },
+            "page_count": 1,
+            "raw_images": [],
+            "preprocessed_images": [],
+            "raw_image": "",
+            "preprocessed_image": "",
+            "opencv_steps": ["text_input_no_ocr"],
+            "opencv_steps_by_page": [],
+            "runtime": {
+                "opencv_workers": 0,
+                "tesseract_workers": 0,
+                "gpu_workers": 0,
+            },
+            "ground_truth_file": ground_truth_meta,
+            "ground_truth_text_length": len(ground_truth.strip()),
+            "results": result_rows,
+            "comparison_summary": comparison_summary,
+            "layoutlmv3_postprocess": layout_result,
+            "best_engine": {"engine": "text_input", "variant": "direct_text"},
+        }
+        save_json(job_dir / "comparison_summary.json", comparison_summary)
+        save_results_csv(job_dir / "benchmark_results.csv", result_rows)
+        report["document_archive"] = archive_scan(job_dir, report)
+        _hydrate_document_archive(report)
+        save_json(job_dir / "report.json", report)
+        return RedirectResponse(url=f"/reports/{job_id}", status_code=303)
 
     image_dir = job_dir / "images"
     raw_images = ensure_images(uploaded_path, image_dir)
