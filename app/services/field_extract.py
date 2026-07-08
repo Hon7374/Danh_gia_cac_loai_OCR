@@ -60,6 +60,8 @@ TITLE_STOP_PREFIXES = (
     "quyet dinh",
     "noi nhan",
     "kinh gui",
+    "gio",
+    "ngay",
     "thong bao",
     "tong dat",
     "tng dt",
@@ -130,6 +132,20 @@ def _key(value: str) -> str:
     return value.lower().strip()
 
 
+def _line_has_ministry_plan_name(line_key: str) -> bool:
+    return "bo ke hoach" in line_key and ("dau tu" in line_key or "dau t" in line_key)
+
+
+def _is_stamp_or_issuer_doc_type_context(line_key: str, needle: str) -> bool:
+    if needle == "ke hoach" and _line_has_ministry_plan_name(line_key):
+        return True
+    if needle == "cong van" and ("cong van den" in line_key or "van den" in line_key):
+        return True
+    if any(part in line_key for part in ("van phong chinh phu", "cong thong tin", "cong thong tn")):
+        return True
+    return False
+
+
 def _split_logical_lines(text: str) -> list[str]:
     text = str(text or "").replace("\r\n", "\n").replace("\r", "\n")
     markers = (
@@ -173,7 +189,22 @@ def _split_logical_lines(text: str) -> list[str]:
         if not raw:
             continue
         lines.extend(part for part in marker_re.split(raw) if part)
-    return [_clean_line(line) for line in lines if _clean_line(line)]
+    cleaned = [_clean_line(line) for line in lines if _clean_line(line)]
+    merged: list[str] = []
+    idx = 0
+    while idx < len(cleaned):
+        current = cleaned[idx]
+        current_key = _key(current)
+        if idx + 1 < len(cleaned):
+            next_line = cleaned[idx + 1]
+            next_key = _key(next_line)
+            if current_key == "bo" and next_key.startswith("ke hoach") and "dau" in next_key:
+                merged.append(f"{current} {next_line}")
+                idx += 2
+                continue
+        merged.append(current)
+        idx += 1
+    return merged
 
 
 def _looks_like_serial_header(line_key: str) -> bool:
@@ -192,7 +223,7 @@ def _format_date(day: str, month: str, year: str) -> str:
 
 
 def _extract_so_ky_hieu(lines: list[str]) -> str:
-    for line in lines[:40]:
+    for idx, line in enumerate(lines[:40]):
         line_key = _key(line)
         marker = re.search(r"\b(?:so|s0|s6|s)\b\s*[:：.-]", line_key)
         starts_with_marker = _looks_like_serial_header(line_key)
@@ -202,6 +233,12 @@ def _extract_so_ky_hieu(lines: list[str]) -> str:
         match = SERIAL_RE.search(line)
         if match:
             return re.sub(r"\s+", "", match.group(0)).upper().strip(".,;")
+        number_match = re.search(r"\b(\d{1,5})\s*$", line)
+        if number_match and idx + 1 < len(lines):
+            next_match = re.match(r"\s*(\d{4}\s*/\s*[A-ZĐa-zđ0-9_.-]+(?:\s*/\s*[A-ZĐa-zđ0-9_.-]+)*)", lines[idx + 1])
+            if next_match:
+                suffix = re.sub(r"\s+", "", next_match.group(1)).upper().strip(".,;")
+                return f"{number_match.group(1)}/{suffix}"
 
     # Fallback: prefer document-number patterns near the header and avoid legal citations.
     for line in lines[:25]:
@@ -254,11 +291,15 @@ def _find_doc_type(lines: list[str]) -> tuple[str, int]:
     for idx, line in enumerate(lines[:search_limit]):
         line_key = _key(line)
         for needle, label in DOC_TYPES:
+            if _is_stamp_or_issuer_doc_type_context(line_key, needle):
+                continue
             if re.fullmatch(rf".{{0,12}}\b{re.escape(needle)}\b.{{0,12}}", line_key):
                 return label, idx
     for idx, line in enumerate(lines[:search_limit]):
         line_key = _key(line)
         for needle, label in DOC_TYPES:
+            if _is_stamp_or_issuer_doc_type_context(line_key, needle):
+                continue
             match = re.search(rf"\b{re.escape(needle)}\b", line_key)
             if not match:
                 continue
@@ -290,6 +331,9 @@ def _trim_title_stop(text: str) -> str:
         for needle in (
             "can cu",
             "can c",
+            "kinh chuyen",
+            "kinh chuyn",
+            "kinh gui",
             "chuong i",
             "dieu 1",
             "theo de nghi",
@@ -310,6 +354,25 @@ def _trim_title_stop(text: str) -> str:
     if not stop_positions:
         return text
     return text[: min(stop_positions)]
+
+
+def _trim_subject_noise(text: str) -> str:
+    text = _clean_value(_trim_title_stop(text))
+    words = text.split()
+    key_words = _key(text).split()
+    subject_starts = (
+        ("quy", "dinh"),
+        ("ve", "viec"),
+        ("sua", "doi"),
+        ("bo", "sung"),
+        ("ban", "hanh"),
+    )
+    for needle in subject_starts:
+        n = len(needle)
+        for idx in range(0, max(0, len(key_words) - n + 1)):
+            if tuple(key_words[idx : idx + n]) == needle:
+                return _clean_value(" ".join(words[idx:]))
+    return text
 
 
 def _extract_trich_yeu_from_label(lines: list[str]) -> str:
@@ -344,6 +407,8 @@ def _extract_trich_yeu_after_type(lines: list[str], type_idx: int) -> str:
         line_key = _key(line)
         if not line_key:
             continue
+        if line_key.startswith(("ngay", "gio")) or "cong van den" in line_key or "van den" in line_key:
+            continue
         if any(line_key.startswith(prefix) for prefix in TITLE_STOP_PREFIXES):
             break
         if _looks_like_serial_header(line_key):
@@ -355,10 +420,14 @@ def _extract_trich_yeu_after_type(lines: list[str], type_idx: int) -> str:
         title_lines.append(line.rstrip(";"))
         if len(" ".join(title_lines)) >= 320:
             break
-    return _clean_value(" ".join(title_lines))
+    return _trim_subject_noise(" ".join(title_lines))
 
 
 def _extract_co_quan_ban_hanh(lines: list[str]) -> str:
+    for line in lines[:25]:
+        if _line_has_ministry_plan_name(_key(line)):
+            return "BỘ KẾ HOẠCH VÀ ĐẦU TƯ"
+
     for line in lines[:20]:
         line_key = _key(line)
         if (

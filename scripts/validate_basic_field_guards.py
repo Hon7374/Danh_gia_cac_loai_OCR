@@ -106,6 +106,76 @@ def test_layoutlmv3_stabilizer_corrects_bad_model_with_ocr_candidates() -> None:
     )
 
 
+def test_ministry_plan_name_is_not_document_type() -> None:
+    text = (
+        "BỘ\n"
+        "KẾ HOẠCH VÀ ĐẦU TƯ\n"
+        "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\n"
+        "Số: 06\n"
+        "2023/TT-BKHĐT\n"
+        "Hà Nội, ngày 02 tháng 10 năm 2023\n"
+        "VĂN PHÒNG CHÍNH PHỦ\n"
+        "THÔNG TƯ\n"
+        "CÔNG VĂN ĐẾN\n"
+        "Ngày 03/10/2023\n"
+        "Quy định hệ thống chỉ tiêu thống kê ngành Thống kê\n"
+        "Giờ.... Ngày\n"
+        "Kinh chuyển\n"
+        "Căn cứ Luật Thống kê ngày 23 tháng 11 năm 2015"
+    )
+    fields = extract_fields_rule_based(text).to_dict()
+    _assert_equal(fields["co_quan_ban_hanh"], "BỘ KẾ HOẠCH VÀ ĐẦU TƯ", "ministry issuer")
+    _assert_equal(fields["loai_van_ban"], "THÔNG TƯ", "ministry doc type")
+    _assert_equal(fields["so_ky_hieu"], "06/2023/TT-BKHĐT", "split document number")
+    _assert_equal(fields["ngay_ban_hanh"], "02/10/2023", "ministry issued date")
+    _assert_equal(fields["trich_yeu"], "Quy định hệ thống chỉ tiêu thống kê ngành Thống kê", "ministry subject")
+
+
+def test_layout_stabilizer_prefers_clean_ministry_header() -> None:
+    layout_result = {
+        "fields": {
+            "co_quan_ban_hanh": "#################, BỘ KẾ HOẠCH VÀ ĐẦU TỪ",
+            "loai_van_ban": "KẾ HOẠCH",
+            "ngay_ban_hanh": "01/10/2023",
+            "so_ky_hieu": "06/2023/TT-BKHĐT",
+            "trich_yeu": "ĐẾN, THONG y định hệ thông chi tiêu thong kê ngành Thong? Kinh chuyển Căn cứ Luật Thống kê ngày 23 tháng 11 năm 2015",
+        }
+    }
+    rows = [
+        {
+            "engine": "paddle_vietocr",
+            "variant": "raw",
+            "status": "ok",
+            "raw": {
+                "first_page_text": (
+                    "BỘ\nKẾ HOẠCH VÀ ĐẦU TƯ\nSố: 06\n2023/TT-BKHĐT\n"
+                    "Hà Nội, ngày 02 tháng 10 năm 2023\nTHÔNG TƯ\nCÔNG VĂN ĐẾN\n"
+                    "Quy định hệ thống chỉ tiêu thống kê ngành Thống kê\nKinh chuyển"
+                )
+            },
+            "text": "unused",
+        },
+        {
+            "engine": "paddleocr_vl",
+            "variant": "raw",
+            "status": "ok",
+            "raw": {
+                "first_page_text": (
+                    "BỘ\nKẾ HOẠCH VÀ ĐẦU TỪ\nSố: 05/2023/TT-BKHDT\n"
+                    "Hà Nội, ngày 01 tháng 10 năm 2023\nTHÔNG TỪ"
+                )
+            },
+            "text": "unused",
+        },
+    ]
+    fields = stabilize_layout_fields_from_rows(layout_result, rows)["fields"]
+    _assert_equal(fields["co_quan_ban_hanh"], "BỘ KẾ HOẠCH VÀ ĐẦU TƯ", "clean stabilized issuer")
+    _assert_equal(fields["loai_van_ban"], "THÔNG TƯ", "clean stabilized doc type")
+    _assert_equal(fields["ngay_ban_hanh"], "02/10/2023", "clean stabilized date")
+    _assert_equal(fields["so_ky_hieu"], "06/2023/TT-BKHĐT", "clean stabilized number")
+    _assert_equal(fields["trich_yeu"], "Quy định hệ thống chỉ tiêu thống kê ngành Thống kê", "clean stabilized subject")
+
+
 def test_real_regression_job_if_present() -> None:
     report_path = Path("jobs/4eb0cda1c107/report.json")
     if not report_path.exists():
@@ -124,6 +194,8 @@ def main() -> None:
         test_damaged_ocr_still_does_not_pick_body_thong_bao,
         test_layoutlmv3_model_fields_are_fail_closed_without_rule_support,
         test_layoutlmv3_stabilizer_corrects_bad_model_with_ocr_candidates,
+        test_ministry_plan_name_is_not_document_type,
+        test_layout_stabilizer_prefers_clean_ministry_header,
         test_real_regression_job_if_present,
     ]
     for test in tests:

@@ -96,12 +96,42 @@ def _diacritic_score(value: str) -> float:
     return 80 * vietnamese / len(letters)
 
 
-def _field_score(key: str, value: str, source: dict[str, Any] | None = None) -> float:
+def _clean_field_value(key: str, value: str) -> str:
     value = " ".join(str(value or "").split()).strip()
+    if not value:
+        return ""
+    value = re.sub(r"#{2,}", " ", value)
+    value = re.sub(r"\s+", " ", value).strip(" \t\r\n#*•,.;:-")
+    text_key = _key_text(value)
+
+    if key == "co_quan_ban_hanh" and "bo ke hoach" in text_key and ("dau tu" in text_key or "dau t" in text_key):
+        return "BỘ KẾ HOẠCH VÀ ĐẦU TƯ"
+
+    if key == "trich_yeu":
+        words = value.split()
+        key_words = _key_text(value).split()
+        for needle in (("quy", "dinh"), ("qay", "dinh"), ("ve", "viec"), ("sua", "doi"), ("bo", "sung")):
+            n = len(needle)
+            for idx in range(0, max(0, len(key_words) - n + 1)):
+                if tuple(key_words[idx : idx + n]) == needle:
+                    value = " ".join(words[idx:])
+                    break
+            else:
+                continue
+            break
+        value = re.split(r"\b(?:Giờ|Gio|Kinh|Căn cứ|Can cu)\b", value, maxsplit=1, flags=re.I)[0]
+        value = re.sub(r"\s+", " ", value).strip(" \t\r\n#*•,.;:-")
+
+    return value
+
+
+def _field_score(key: str, value: str, source: dict[str, Any] | None = None) -> float:
+    value = _clean_field_value(key, value)
     if not value:
         return -1
     text_key = _key_text(value)
     bonus = _source_bonus(source)
+    engine = str((source or {}).get("engine") or (source or {}).get("_engine") or "")
 
     if key == "so_ky_hieu":
         if not re.search(r"\d{1,5}/\d{4}/", value):
@@ -109,7 +139,16 @@ def _field_score(key: str, value: str, source: dict[str, Any] | None = None) -> 
         return 200 + bonus + (45 if "Đ" in value.upper() else 0) - (20 if "ND-" in value.upper() else 0)
 
     if key == "ngay_ban_hanh":
-        return 200 + bonus if re.fullmatch(r"\d{2}/\d{2}/\d{4}", value) else 20 + bonus
+        if not re.fullmatch(r"\d{2}/\d{2}/\d{4}", value):
+            return 20 + bonus
+        score = 200 + bonus
+        if engine == "paddle_vietocr":
+            score += 70
+        elif engine == "paddleocr_vl":
+            score -= 55
+        elif engine == "tesseract":
+            score -= 20
+        return score
 
     if key == "co_quan_ban_hanh":
         if len(value) > 120 or re.search(r"\d{2,}/\d{4}", value) or text_key.startswith(("so:", "so ")):
@@ -162,6 +201,19 @@ def _field_score(key: str, value: str, source: dict[str, Any] | None = None) -> 
             score -= 420
         if text_key.startswith(("thong bao,", "thong bao ", "1.", "2.")):
             score -= 500
+        if any(
+            marker in text_key
+            for marker in (
+                "kinh chuyen",
+                "cong van den",
+                "van phong chinh phu",
+                "luat thong ke ngay",
+                "ha noi, ngay",
+                "ngay:",
+                "gio",
+            )
+        ):
+            score -= 320
         if any(candidate_type in text_key for candidate_type in ("quy dinh", "ve viec", "phan cap", "sua doi", "bo sung")):
             score += 160
         return score
@@ -171,21 +223,25 @@ def _field_score(key: str, value: str, source: dict[str, Any] | None = None) -> 
     return len(value) + bonus + _diacritic_score(value)
 
 
-def _best_value(key: str, candidates: list[dict[str, Any]]) -> str:
+def _best_scored_value(key: str, candidates: list[dict[str, Any]]) -> tuple[str, float]:
     scored = [
-        ((candidate.get(key) or "").strip(), _field_score(key, (candidate.get(key) or "").strip(), candidate))
+        (_clean_field_value(key, candidate.get(key) or ""), _field_score(key, candidate.get(key) or "", candidate))
         for candidate in candidates
     ]
     scored = [(value, score) for value, score in scored if score >= 0]
     if not scored:
-        return ""
-    return max(scored, key=lambda item: item[1])[0]
+        return "", -1
+    return max(scored, key=lambda item: item[1])
+
+
+def _best_value(key: str, candidates: list[dict[str, Any]]) -> str:
+    return _best_scored_value(key, candidates)[0]
 
 
 def _sanitize_fields(fields: dict[str, str], source: dict[str, Any] | None = None) -> dict[str, str]:
     clean: dict[str, str] = {}
     for key in EXPECTED_FIELDS:
-        value = str(fields.get(key) or "").strip()
+        value = _clean_field_value(key, fields.get(key) or "")
         clean[key] = value if _field_score(key, value, source) >= 0 else ""
     return clean
 
@@ -267,7 +323,7 @@ def _merge_model_fields(fallback: dict[str, str], model_fields: dict[str, str]) 
 
 
 def _clean_model_field_value(key: str, value: str) -> str:
-    value = " ".join(str(value or "").split())
+    value = _clean_field_value(key, value)
     if not value:
         return value
     if key == "so_ky_hieu":
@@ -395,8 +451,9 @@ def stabilize_layout_fields_from_rows(layout_result: dict | None, rows: list[dic
         return layout_result
 
     for key in ("so_ky_hieu", "ngay_ban_hanh", "co_quan_ban_hanh", "trich_yeu"):
-        best = _best_value(key, candidates)
-        if best and _field_score(key, best) >= _field_score(key, fields.get(key, ""), {"engine": "layoutlmv3"}):
+        best, best_score = _best_scored_value(key, candidates)
+        current_score = _field_score(key, fields.get(key, ""), {"engine": "layoutlmv3"})
+        if best and best_score >= current_score:
             fields[key] = best
 
     doc_type_values = [
