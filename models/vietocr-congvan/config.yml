@@ -31,7 +31,7 @@ dataloader:
   num_workers: 0
   pin_memory: true
 dataset:
-  data_root: D:\ocr_workspace\ocr_full_demo_v2_latest\dataset_template\vietocr_finetune
+  data_root: ./dataset_template/vietocr_finetune
   image_height: 32
   image_max_width: 768
   image_min_width: 32
@@ -49,10 +49,10 @@ quiet: false
 seq_modeling: transformer
 trainer:
   batch_size: 8
-  checkpoint: D:\ocr_workspace\ocr_full_demo_v2_latest\models\vietocr-congvan\checkpoint.pth
-  export: D:\ocr_workspace\ocr_full_demo_v2_latest\models\vietocr-congvan\transformerocr.pth
+  checkpoint: ./models/vietocr-congvan/checkpoint.pth
+  export: ./models/vietocr-congvan/transformerocr.pth
   iters: 120
-  log: D:\ocr_workspace\ocr_full_demo_v2_latest\models\vietocr-congvan\train.log
+  log: ./models/vietocr-congvan/train.log
   metrics: 128
   print_every: 10
   valid_every: 60
@@ -66,4 +66,4 @@ transformer:
   pos_dropout: 0.1
   trans_dropout: 0.1
 vocab: 'aAàÀảẢãÃáÁạẠăĂằẰẳẲẵẴắẮặẶâÂầẦẩẨẫẪấẤậẬbBcCdDđĐeEèÈẻẺẽẼéÉẹẸêÊềỀểỂễỄếẾệỆfFgGhHiIìÌỉỈĩĨíÍịỊjJkKlLmMnNoOòÒỏỎõÕóÓọỌôÔồỒổỔỗỖốỐộỘơƠờỜởỞỡỠớỚợỢpPqQrRsStTuUùÙủỦũŨúÚụỤưƯừỪửỬữỮứỨựỰvVwWxXyYỳỲỷỶỹỸýÝỵỴzZ0123456789!"#$%&''()*+,-./:;<=>?@[\]^_`{|}~ '
-weights: D:\ocr_workspace\ocr_full_demo_v2_latest\models\vietocr-congvan\transformerocr.pth
+weights: ./models/vietocr-congvan/transformerocr.pth

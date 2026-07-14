@@ -1,0 +1,7 @@
+﻿engine,variant,status,elapsed_sec,cer,wer,error,text_preview
+tesseract,raw,ok,0.2782389000058174,,,,"CONG VAN SO 123 TRANG MOT Ngay 11 thang 7 nam 2026 - page 1
+
+NOI NHAN: PHONG HANH CHINH TRANG HAI Ngay 11 thang 7 nam 2026 - page 2"
+tesseract,opencv_preprocessed,ok,0.2786767999641597,,,,"CONG VAN SO 123 TRANG MOT Ngay 11 thang 7 nam 2026 - page 1
+
+NOI NHAN: PHONG HANH CHINH TRANG HAI Ngay 11 thang 7 nam 2026 - page 2"

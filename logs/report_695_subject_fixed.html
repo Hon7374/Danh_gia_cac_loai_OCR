@@ -1,0 +1,1181 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kết quả OCR</title>
+  <link rel="stylesheet" href="/static/styles.css?v=utf8-20260531" />
+</head>
+<body>
+<main class="container wide">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Job 695292828457</p>
+      <h1>Kết quả benchmark OCR</h1>
+      <p class="lead">Dashboard tổng hợp trạng thái engine, chất lượng OCR, thời gian xử lý và tác động của tiền xử lý OpenCV.</p>
+    </div>
+    <nav class="header-actions" aria-label="Tác vụ kết quả">
+      <a href="/">Chạy file khác</a>
+      <a href="/documents">Kho công văn</a>
+      <a href="/reports/695292828457?refresh_layout=1">Chạy lại LayoutLMv3</a>
+      <a href="/jobs/695292828457/benchmark_results.csv">CSV</a>
+      <a href="/jobs/695292828457/report.json">Report JSON</a>
+      <a href="/jobs/695292828457/comparison_summary.json">Summary JSON</a>
+      
+      <a href="/documents/695292828457">Mở hồ sơ lưu trữ</a>
+      
+    </nav>
+  </header>
+
+  <section class="metric-grid">
+    <div class="metric-card">
+      <span>Tổng lượt OCR</span>
+      <b>8</b>
+      <small>engine x biến thể ảnh</small>
+    </div>
+    <div class="metric-card">
+      <span>Số trang</span>
+      <b>2</b>
+      <small>đã OCR toàn bộ file</small>
+    </div>
+    <div class="metric-card success">
+      <span>Thành công</span>
+      <b>8</b>
+      <small>lượt có text output</small>
+    </div>
+    <div class="metric-card danger">
+      <span>Lỗi runtime</span>
+      <b>0</b>
+      <small>engine chạy lỗi cần xử lý</small>
+    </div>
+    <div class="metric-card warning">
+      <span>Bỏ qua</span>
+      <b>0</b>
+      <small>thiếu key/package hoặc không chọn</small>
+    </div>
+    <div class="metric-card">
+      <span>Text chuẩn</span>
+      <b>
+        
+          Có
+        
+      </b>
+      <small>3372 ký tự</small>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Tóm tắt tốt nhất</p>
+        <h2>Engine nổi bật</h2>
+      </div>
+      
+      <span class="pill">Ground truth: Thongtu_Baibo_QCVN_TY.txt</span>
+      
+    </div>
+    
+    <div class="best-grid">
+      <div class="best-card">
+        <span>CER thấp nhất</span>
+        <b>paddle+vietocr hybrid / raw</b>
+        <small>6.68%</small>
+      </div>
+      <div class="best-card">
+        <span>WER thấp nhất</span>
+        <b>paddle+vietocr hybrid / raw</b>
+        <small>16.43%</small>
+      </div>
+      <div class="best-card">
+        <span>Nhanh nhất</span>
+        <b>tesseract / opencv_preprocessed</b>
+        <small>2.472s</small>
+      </div>
+      <div class="best-card">
+        <span>Quality score cao nhất</span>
+        <b>paddle+vietocr hybrid / raw</b>
+        <small>89.91/100</small>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="panel image-panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Input comparison</p>
+        <h2>Ảnh gốc và ảnh sau OpenCV</h2>
+      </div>
+      <span class="pill muted-pill">Steps: adaptive_safe_preprocess -&gt; grayscale -&gt; denoise_fastNlMeans -&gt; deskew_minAreaRect -&gt; CLAHE_contrast -&gt; adaptive_threshold_safe -&gt; morph_close</span>
+    </div>
+    <div class="two-col">
+      <figure>
+        <figcaption>Ảnh gốc</figcaption>
+        <img class="preview" src="/jobs/695292828457/images/230927_Thongtu_07_Baibo_QCVN_TY_level5_page1.png" loading="lazy" alt="Ảnh gốc" />
+      </figure>
+      <figure>
+        <figcaption>OpenCV preprocessed</figcaption>
+        <img class="preview" src="/jobs/695292828457/images/230927_Thongtu_07_Baibo_QCVN_TY_level5_page1_opencv_preprocessed.png" loading="lazy" alt="Ảnh sau tiền xử lý OpenCV" />
+      </figure>
+    </div>
+  </section>
+  
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Accuracy</p>
+        <h2>CER/WER - lỗi OCR</h2>
+      </div>
+      <span class="legend"><i class="legend-bad"></i>Càng thấp càng tốt</span>
+    </div>
+    
+    
+    <div class="chart-grid two">
+      <div class="chart-panel">
+        <h3>CER - lỗi ký tự</h3>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / raw</div>
+          <div class="bar-track"><div class="bar bad" style="--w: 20.18%"></div></div>
+          <div class="bar-value">20.18%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar bad" style="--w: 14.41%"></div></div>
+          <div class="bar-value">14.41%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / raw</div>
+          <div class="bar-track"><div class="bar bad" style="--w: 50.17%"></div></div>
+          <div class="bar-value">50.17%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar bad" style="--w: 45.35%"></div></div>
+          <div class="bar-value">45.35%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / raw</div>
+          <div class="bar-track"><div class="bar bad" style="--w: 6.68%"></div></div>
+          <div class="bar-value">6.68%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar bad" style="--w: 8.21%"></div></div>
+          <div class="bar-value">8.21%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / raw</div>
+          <div class="bar-track"><div class="bar bad" style="--w: 14.02%"></div></div>
+          <div class="bar-value">14.02%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar bad" style="--w: 17.71%"></div></div>
+          <div class="bar-value">17.71%</div>
+        </div>
+        
+      </div>
+      <div class="chart-panel">
+        <h3>WER - lỗi từ</h3>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / raw</div>
+          <div class="bar-track"><div class="bar warnbar" style="--w: 48.88%"></div></div>
+          <div class="bar-value">48.88%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar warnbar" style="--w: 37.36%"></div></div>
+          <div class="bar-value">37.36%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / raw</div>
+          <div class="bar-track"><div class="bar warnbar" style="--w: 92.84%"></div></div>
+          <div class="bar-value">92.84%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar warnbar" style="--w: 86.94%"></div></div>
+          <div class="bar-value">86.94%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / raw</div>
+          <div class="bar-track"><div class="bar warnbar" style="--w: 16.43%"></div></div>
+          <div class="bar-value">16.43%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar warnbar" style="--w: 25.14%"></div></div>
+          <div class="bar-value">25.14%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / raw</div>
+          <div class="bar-track"><div class="bar warnbar" style="--w: 16.71%"></div></div>
+          <div class="bar-value">16.71%</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar warnbar" style="--w: 23.6%"></div></div>
+          <div class="bar-value">23.60%</div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Performance</p>
+        <h2>Quality score và thời gian</h2>
+      </div>
+      <span class="legend"><i class="legend-good"></i>Quality cao hơn tốt hơn</span>
+    </div>
+    <div class="chart-grid two">
+      <div class="chart-panel">
+        <h3>Quality score</h3>
+        <p class="chart-note">
+          
+          Tính từ CER/WER theo text chuẩn.
+          
+        </p>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / raw</div>
+          <div class="bar-track"><div class="bar good" style="--w: 69.78%"></div></div>
+          <div class="bar-value" title="CER/WER">69.78</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar good" style="--w: 77.56%"></div></div>
+          <div class="bar-value" title="CER/WER">77.56</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / raw</div>
+          <div class="bar-track"><div class="bar good" style="--w: 34.9%"></div></div>
+          <div class="bar-value" title="CER/WER">34.90</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar good" style="--w: 40.09%"></div></div>
+          <div class="bar-value" title="CER/WER">40.09</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / raw</div>
+          <div class="bar-track"><div class="bar good" style="--w: 89.91%"></div></div>
+          <div class="bar-value" title="CER/WER">89.91</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar good" style="--w: 85.86%"></div></div>
+          <div class="bar-value" title="CER/WER">85.86</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / raw</div>
+          <div class="bar-track"><div class="bar good" style="--w: 85.04%"></div></div>
+          <div class="bar-value" title="CER/WER">85.04</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar good" style="--w: 80.23%"></div></div>
+          <div class="bar-value" title="CER/WER">80.23</div>
+        </div>
+        
+      </div>
+      <div class="chart-panel">
+        <h3>Thời gian xử lý</h3>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / raw</div>
+          <div class="bar-track"><div class="bar time" style="--w: 0.57%"></div></div>
+          <div class="bar-value">3.864s</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar time" style="--w: 0.37%"></div></div>
+          <div class="bar-value">2.472s</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / raw</div>
+          <div class="bar-track"><div class="bar time" style="--w: 10.04%"></div></div>
+          <div class="bar-value">67.907s</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar time" style="--w: 8.72%"></div></div>
+          <div class="bar-value">58.959s</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / raw</div>
+          <div class="bar-track"><div class="bar time" style="--w: 23.6%"></div></div>
+          <div class="bar-value">159.618s</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar time" style="--w: 24.47%"></div></div>
+          <div class="bar-value">165.510s</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / raw</div>
+          <div class="bar-track"><div class="bar time" style="--w: 38.49%"></div></div>
+          <div class="bar-value">260.392s</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar time" style="--w: 100.0%"></div></div>
+          <div class="bar-value">676.431s</div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Output signal</p>
+        <h2>Độ dài text và confidence</h2>
+      </div>
+    </div>
+    <div class="chart-grid two">
+      <div class="chart-panel">
+        <h3>Độ dài text OCR</h3>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / raw</div>
+          <div class="bar-track"><div class="bar textbar" style="--w: 95.03%"></div></div>
+          <div class="bar-value">3311 ký tự</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar textbar" style="--w: 95.21%"></div></div>
+          <div class="bar-value">3317 ký tự</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / raw</div>
+          <div class="bar-track"><div class="bar textbar" style="--w: 95.24%"></div></div>
+          <div class="bar-value">3318 ký tự</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar textbar" style="--w: 93.05%"></div></div>
+          <div class="bar-value">3242 ký tự</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / raw</div>
+          <div class="bar-track"><div class="bar textbar" style="--w: 96.35%"></div></div>
+          <div class="bar-value">3357 ký tự</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar textbar" style="--w: 93.46%"></div></div>
+          <div class="bar-value">3256 ký tự</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / raw</div>
+          <div class="bar-track"><div class="bar textbar" style="--w: 100.0%"></div></div>
+          <div class="bar-value">3484 ký tự</div>
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / opencv_preprocessed</div>
+          <div class="bar-track"><div class="bar textbar" style="--w: 98.85%"></div></div>
+          <div class="bar-value">3444 ký tự</div>
+        </div>
+        
+      </div>
+      <div class="chart-panel">
+        <h3>Confidence trung bình</h3>
+        <p class="chart-note">Một số engine như PaddleOCR-VL trả text/markdown nhưng không trả confidence từng box, nên phần này hiển thị N/A.</p>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / raw</div>
+          
+          <div class="bar-track"><div class="bar conf" style="--w: 77.24%"></div></div>
+          <div class="bar-value">77.24%</div>
+          
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">tesseract / opencv_preprocessed</div>
+          
+          <div class="bar-track"><div class="bar conf" style="--w: 82.35%"></div></div>
+          <div class="bar-value">82.35%</div>
+          
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / raw</div>
+          
+          <div class="bar-track"><div class="bar conf" style="--w: 10.14%"></div></div>
+          <div class="bar-value">10.14%</div>
+          
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">easyocr / opencv_preprocessed</div>
+          
+          <div class="bar-track"><div class="bar conf" style="--w: 12.15%"></div></div>
+          <div class="bar-value">12.15%</div>
+          
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / raw</div>
+          
+          <div class="bar-track"><div class="bar conf" style="--w: 86.92%"></div></div>
+          <div class="bar-value">86.92%</div>
+          
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddle+vietocr hybrid / opencv_preprocessed</div>
+          
+          <div class="bar-track"><div class="bar conf" style="--w: 86.83%"></div></div>
+          <div class="bar-value">86.83%</div>
+          
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / raw</div>
+          
+          <div class="bar-track unavailable"><span>Không có confidence</span></div>
+          <div class="bar-value muted">N/A</div>
+          
+        </div>
+        
+        <div class="bar-row">
+          <div class="bar-label">paddleocr_vl / opencv_preprocessed</div>
+          
+          <div class="bar-track unavailable"><span>Không có confidence</span></div>
+          <div class="bar-value muted">N/A</div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Preprocessing impact</p>
+        <h2>Tác động của OpenCV</h2>
+      </div>
+      <span class="pill muted-pill">Delta = OpenCV - raw</span>
+    </div>
+    
+    <div class="table-wrap">
+      <table class="clean-table">
+        <thead>
+          <tr>
+            <th>Engine</th><th>Raw</th><th>OpenCV</th><th>Delta CER</th><th>Delta WER</th><th>Delta time</th><th>Delta text</th><th>Khuyến nghị</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <td><b>tesseract</b></td>
+            <td><span class="status ok">ok</span></td>
+            <td><span class="status ok">ok</span></td>
+            <td class="good-text">-5.77 điểm %</td>
+            <td class="good-text">-11.52 điểm %</td>
+            <td>-1.392s</td>
+            <td>6</td>
+            <td>
+              <span class="pill ok-pill">
+                Dùng OpenCV
+              </span>
+            </td>
+          </tr>
+        
+          <tr>
+            <td><b>easyocr</b></td>
+            <td><span class="status ok">ok</span></td>
+            <td><span class="status ok">ok</span></td>
+            <td class="good-text">-4.82 điểm %</td>
+            <td class="good-text">-5.90 điểm %</td>
+            <td>-8.948s</td>
+            <td>-76</td>
+            <td>
+              <span class="pill ok-pill">
+                Dùng OpenCV
+              </span>
+            </td>
+          </tr>
+        
+          <tr>
+            <td><b>paddle_vietocr</b></td>
+            <td><span class="status ok">ok</span></td>
+            <td><span class="status ok">ok</span></td>
+            <td class="bad-text">1.53 điểm %</td>
+            <td class="bad-text">8.71 điểm %</td>
+            <td>5.892s</td>
+            <td>-101</td>
+            <td>
+              <span class="pill muted-pill">
+                Dùng raw
+              </span>
+            </td>
+          </tr>
+        
+          <tr>
+            <td><b>paddleocr_vl</b></td>
+            <td><span class="status ok">ok</span></td>
+            <td><span class="status ok">ok</span></td>
+            <td class="bad-text">3.69 điểm %</td>
+            <td class="bad-text">6.89 điểm %</td>
+            <td>416.039s</td>
+            <td>-40</td>
+            <td>
+              <span class="pill muted-pill">
+                Dùng raw
+              </span>
+            </td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+    
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Engine health</p>
+        <h2>Ma trận trạng thái engine</h2>
+      </div>
+    </div>
+    <div class="engine-status-grid">
+      
+      <div class="engine-status-card">
+        <div>
+          <b>tesseract</b>
+          <span>2/2 lượt OK</span>
+        </div>
+        <div class="mini-track"><div class="mini-ok" style="--w: 100.0%"></div></div>
+        
+        <small>Đủ điều kiện chạy</small>
+        
+      </div>
+      
+      <div class="engine-status-card">
+        <div>
+          <b>easyocr</b>
+          <span>2/2 lượt OK</span>
+        </div>
+        <div class="mini-track"><div class="mini-ok" style="--w: 100.0%"></div></div>
+        
+        <small>Đủ điều kiện chạy</small>
+        
+      </div>
+      
+      <div class="engine-status-card">
+        <div>
+          <b>paddle_vietocr</b>
+          <span>2/2 lượt OK</span>
+        </div>
+        <div class="mini-track"><div class="mini-ok" style="--w: 100.0%"></div></div>
+        
+        <small>Đủ điều kiện chạy</small>
+        
+      </div>
+      
+      <div class="engine-status-card">
+        <div>
+          <b>paddleocr_vl</b>
+          <span>2/2 lượt OK</span>
+        </div>
+        <div class="mini-track"><div class="mini-ok" style="--w: 100.0%"></div></div>
+        
+        <small>Đủ điều kiện chạy</small>
+        
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Detailed rows</p>
+        <h2>Bảng so sánh OCR chi tiết</h2>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="clean-table result-table">
+        <thead>
+          <tr>
+            <th>Engine</th><th>Input</th><th>Status</th><th>Time</th><th>CER</th><th>WER</th><th>Ghi chú</th><th>Text preview</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <td><b>tesseract</b></td>
+            <td>raw</td>
+            <td><span class="status ok">ok</span></td>
+            <td>3.86s</td>
+            <td>20.18%</td>
+            <td>48.88%</td>
+            <td class="status-note ok">
+              
+                -
+              
+            </td>
+            <td>
+              
+              <details class="text-preview">
+                <summary>Xem text</summary>
+                <pre>HO} NGNG NGHI CONG HOA XÃ HỘI CHỦ ROHES VIỆT NAM VẢ PHÁT TRIEN SÔNG THÔN Độc lận - Tự de - Hạnh nhắc Số. 97 /2122TT-BNNFTNT Ha Nai, ngàu 27 thông 3 năm 2623 THONG TỰ Bài bỏ wi phân Thông tw số 71/2911/1Y.BNNETNT ngày 25/08/2011 cia Hệ trưởng Bộ Nôna nghiệp và Phát triển nâng thân ban bềnh quy chuẩn kỹ thuật chốc gia Hnh vực thú y Can cứ Nghị định sí 195/2222/ND-CP ngày 32 tháng ?2 năm 2022 cua “ P + » eas 2 * 4 #4 . Ẫ “ Chit phe auy dint chức nẵng, nhiệnt vu, quyển hạn và cơ cau íê chức của BG Nâng nahiện và Phát triển nông thân: Can cứ Luật Tiêu chuân va Quv choân RỂ thuật ngày 29 tháng 5 nắn 20016; Cân cu Luật Ben nành văn ban quy prem nhập luật ngày 23 tháng 6 Cén cử Luật sta đối, bã sung nhật số điều của Luật Ban hành văn bản Gus Bram phap luật ngày Í6 thông 6 năm 2820; radia Can on Nighi định sé [27/20G7/CP-NE ngáy O2 thắng &amp; năm 2007 của Chink phủ quy định chỉ tiết thi hank một số điều của Ludt Tiêu chuẩn và Cup chuẩn kỹ thuar; Nghị dink: số 78/2016/NB.CP ngày ?6 thẩng 3 xăm 2878 của Chink nhủ tủa đội, b2 sung mei 36 điều của Nghi định số 127/2007/CF-NĐồ ngày OF tháng &amp; nằm 2007 của Chink phủ guy định chi tiết th¿ bành một số điều của Luật Tiêu thuận và Quy chuẩn if thuật; Cầ</pre>
+              </details>
+              
+            </td>
+          </tr>
+        
+          <tr>
+            <td><b>tesseract</b></td>
+            <td>opencv_preprocessed</td>
+            <td><span class="status ok">ok</span></td>
+            <td>2.47s</td>
+            <td>14.41%</td>
+            <td>37.36%</td>
+            <td class="status-note ok">
+              
+                -
+              
+            </td>
+            <td>
+              
+              <details class="text-preview">
+                <summary>Xem text</summary>
+                <pre>BỘ NÔNG NGHIỆP CONG HOA XÃ HỘI CHỦ NGHĨA VIỆT NAM VA PRAT TRIEN NGNG THON Độc lận - Tự de - Hạnh nhức Số: 97 /202VTF-BNNFTNT Ha Nội, ngày 27 thẳng 8 năm 2023 THÔNG TƯ Bài bỗ một nhẫn Thông tư số 7L/2911/TX-BNNFTNT ngày 25/19/2011 của Bộ trưởng BG Mông nghiệp và Phát triỀn nâng thân bạn hành quy chuẩn kỹ thuật quấc gia nh vực thú y Cần cử Nghị định số 105/2022/NĐ-CP ngày 22 thẳng 1 nam 2022 của Chink phủ quy định chức, năng, nhiệm vụ, quyền hen và cơ câu tễ chức của Độ Nâng nghiệp và Phát triển nông thân; Cần cũ Luật Tiêu chuẩn và Quy chuẩn AP thuật ngày 29 tháng 6 năm 2006; Căn cứ Lugt Ban hành văn bản quy phạm pháa luật ngày 22 tháng &amp; năm 2015; Căn cứ Ludt sửa đối, bố sung một số điều của Luật Ban hành vấn bản quy phạm pháp luột ngày 18 thông 6 năm 2020; Can cứ Nght định số 127/200/CP-NĐ ngây | a thang &amp; sam 2007 của Chính phú quy định chỉ tiết thi hành một số điều của Luật Tiêu chuẩn và Quy chuẩn kỹ thuật; Nghị aj ¿nh số 78/20/8. ND-CP ngày i6 thông 3 năm 2018 của Chisk phủ sua đối, ag sung một sé điều của Nghị đủnh số 72 2007/CP- NE nga y ol théng &amp; nam 2007 của Chính ghủ guy định chi tiết thi hành một sẽ điều của Luật Tiên chuẩn và Quy chuẩn kỹ thuật; Can củ Nghị dink số 34/20</pre>
+              </details>
+              
+            </td>
+          </tr>
+        
+          <tr>
+            <td><b>easyocr</b></td>
+            <td>raw</td>
+            <td><span class="status ok">ok</span></td>
+            <td>67.91s</td>
+            <td>50.17%</td>
+            <td>92.84%</td>
+            <td class="status-note ok">
+              
+                Nghi ngờ rụng dấu tiếng Việt.
+              
+            </td>
+            <td>
+              
+              <details class="text-preview">
+                <summary>Xem text</summary>
+                <pre>KÀRtgNGWAT
+C9WG Hịí4 xe JiỢl CWf RGMfs Vift nAw
+Va f}ẨT THrHen NÒxe; 7#04
+ĐÙg Iẻ#
+Fudu
+Na0h uhá€
+s
+07 /202:fFe-BNNFTNT
+Hlà Nêi
+27   {ẵ1ê#s $
+R65;? 262/
+THMNG FƯ
+[sậj 673 àwzổ9 phếz Thâng fư $  71/791p/1 7 -#NN#TwĨ agèy 2ẽ/Ắ|ị2đ[ !
+cúa Bệ {{09}ng Rậ Môpg #ìghiệp và Phit trỉỄt fut8j&#39; th;Ẹ Bal} {èuah &amp;0}
+chaln #ỹ ibaet
+#i2 Fỹnh yy€ ỉha $
+Cần cỉ Nghi ạịnh % !O5f20224NĐ-CP #sày 22
+12 &#34;ane 2022 chíứ
+Chni
+#&#34;y aun&#39;ì chtr€
+&#34;kiệBt vU, Quyề-t hậ# và c6 €yl fẩ chứt cia Bộ
+vgínép và Phẳf trìề#
+ịhu:
+Cặn €i LtẬt Fỉểu chuẩtì về Qui ch#ần Ỉỹ thv[ị &#34;gằy 29 #áng $ nẻmn 2fỉ}ể;
+Cãt €is Luêt Bar hàwh
+vằ#ì Đảtỉ qìy ghRRỀ phẩ# {uềt &#34;gàỷ 22 thán8 6
+!ignl
+20i5:
+CWt €ú Luậi s#a ảổi, bỗ sung mrật sỗ ậiẻu ?ta Luật Bủn hatih vặt ịả# qWy
+Phạmt phảp {uật
+18 fhàng # #ặn 2020;
+Cẫ&#34; c@ Wsuị dịnỈ: s I27/cí?ỊCP-NĐ Fgầy 0
+8 ;ẫn: 2007 cva
+Chínỉs phtủ quỷ ềịnh chi tịể1 thi hànỈì #ộ} 58 ẩiễu Cúa Luật Tịê# chuẩi và Qwy
+cÌiéẩn  4ỹ fhuuật; Nghj #ịnỈ: $ 78/2{gNĐCF ngùy ỈÓ ịỉẩ#Ẹ $ ớẵt 2418 cúa
+Chính phẻc v#ủ d6l, b 3e#g mộ: $ồ #iề# c#@ Wghj ấ;nh 8 127/2(7iCP-N4
+ngày M} [hẻ&#34;g 8 tỉắt 200? cus ChỂnh ?htủ &amp;8}7 ậjnh chi tiế: thRi hènh? một 38 &amp;iều
+cta Luẩi Tỉêu chu{u và {iỴ cỈỉlêản: Ỉỷ ỉhuàt;
+Cầ# ci NgỈị ẩịnẩ 3ỏ 34/20Ịé/NĐ-CP &#34;gèy 1</pre>
+              </details>
+              
+            </td>
+          </tr>
+        
+          <tr>
+            <td><b>easyocr</b></td>
+            <td>opencv_preprocessed</td>
+            <td><span class="status ok">ok</span></td>
+            <td>58.96s</td>
+            <td>45.35%</td>
+            <td>86.94%</td>
+            <td class="status-note ok">
+              
+                Nghi ngờ rụng dấu/mất nguyên âm tiếng Việt nghiêm trọng.
+              
+            </td>
+            <td>
+              
+              <details class="text-preview">
+                <summary>Xem text</summary>
+                <pre>MấwG NG IỆR
+COnG Ha X} HIỢỉ CIi  WGHlk VĨBT NAỈf
+va FHXT TIRIEN NỞNG F#MR
+Úie Mf#
+Tvdo
+[hamh phfe
+ss:
+01 {2W2MPF-BNNFINT
+Hà Nệi #gày 27   {hâzs 9
+@ẳt# 2023
+THONG TW
+BậỈ 6ỏ #it ph8z
+tu $ 7142918/TT BNNPTNT 0gy 25104281!
+cia Bậ #rưJng B# Nt#g ughíệp và Phfi &amp;rỉễu
+thà)# {an &amp;èuh Quj
+sbusn kỹ 3b08t
+gla Bu# yực
+Că ci Nghi @nh $ 1OSH2Q22/NĐ-CP #sày 22
+12 nẵm 2022 củt
+Chif phù gu ápnÀ chúr ,.
+nkilmf vý
+hQt và co cấu 8 chửc cua Bộ
+nghíềp và Phát triền
+tia;
+Căn € Lsỉột Tiêu ciuẳn và Quy chuần #đ tv(t #gày 29 :áng $ nắm 2u6;
+Cãa cú Luệt Bav Bành văn bàt quy p#Gnt Phá$ luật #gày 22 tháng 6
+hẵs 2913;
+Cẵt €ử Luệt 8*0 ắỗì bẩ sung frjt s8 ắiẻ&#34; cua Euật Ban hàmh văn bá# quy
+pbạm phảp luật ngày 18 fàng 8 #ẳ 2020;
+Că# cú Ngid djni: s I27f007CP-NĐ #sằy 01
+8 #ãs 2007 cùa
+Chínỉ; phú qưý Ginh chi tié} thi hànỈ một :8 4iểu cia Luật Tìê# chuyn +à Quy
+chisẳn kỹ fhuật; Nghl âin} 88 78/2018NĐ.CF ngdy }6
+3 vảm 2048 cua
+Chbnk
+Su2 88i, &amp;} sung Mộ: s8 diÀu cua Hgh{ Ếpnh s8 127/2007iCP-NĐ
+ngày 01
+8 nẫt 200? cia Chlnh phà 9853p đjuh ch} tié4 thi hdnk một s{ |iều
+cina Luật Tiêw chuấn và Quy chkẫm ỉỹ ihuật;
+Cân c# NgỈl đjn; s8 34/20|{/ND-CP rgờy }4 :á&#34;g 3 mằm 2016 cia
+Chinh phi; quy địnk chi &amp;iéi #ột s8 diều và bijn</pre>
+              </details>
+              
+            </td>
+          </tr>
+        
+          <tr>
+            <td><b>paddle_vietocr</b></td>
+            <td>raw</td>
+            <td><span class="status ok">ok</span></td>
+            <td>159.62s</td>
+            <td>6.68%</td>
+            <td>16.43%</td>
+            <td class="status-note ok">
+              
+                -
+              
+            </td>
+            <td>
+              
+              <details class="text-preview">
+                <summary>Xem text</summary>
+                <pre>BỘ NÔNG NGHIỆP
+VÀ PHÁT TRIỂN NÔNG THÔNG
+CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập - Tự dõ - Hạnh phúc
+Số 07/2023/TT-BNNPTNT
+Hà Nội, ngày 27 tháng 9 năm 2023 năm
+THÔNG TƯ
+Bài bỏ một phần Thông tư SỐ 71/2013/TE-BNNPTNT NGÀY 25/10/2011
+của Bộ trưởng Bộ Nông nghiệp và Phát triển nắng thôn ban hành quy
+chuẩn kỹ thuật quốc gia lĩnh vực thú y
+Căn cử Nghị định số 105/2022/NĐ-CP ngày 22 tháng 12 năm 2022 của
+Chính phủ quy định chức năng nhiệm vụ, quyền hạn và cơ cấu tổ chức của Bộ
+Nông nghiệp và Phát triển nông thôn;
+Căn có Luật Tiêu chuẩn và Quy Thuận chuẩn kỹ thuật ngày 29 tháng 6 năm 2006;
+Căn cứ Luật Ban hành văn bản guy phạm pháp luật ngày 22 tháng 6
+năm 2015;
+Căn cứ Luật sủa đổi, bổ sung một số điều của Luật Ban hành văn bản quy
+thế phạm pháp luật ngày 18 tháng 6 năm 2020;
+Căn cứ Nghị định số 127/2007/CP-NĐ ngày 06 tháng 8 năm 2007 của 1990
+Chính phủ quy định chỉ tiển thi trị hành một số điều của Luật Tiêu chuẩn và Quy
+chuẩn kỹ thuật: Nghị định sổ 78/2018/NĐ CP ngày 16 tháng 3 năm 2018 của
+Chính phủ sửa đổi, bổ sung một SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 127/2007/CP-NĐ
+ngày 01 tháng 8 năm 2007 của Chính phủ quy định chỉ tiết thì hành một số điều
+của Luật Tiêu chuẩn và Quy chuẩn kỹ thuật;
+Căn c</pre>
+              </details>
+              
+            </td>
+          </tr>
+        
+          <tr>
+            <td><b>paddle_vietocr</b></td>
+            <td>opencv_preprocessed</td>
+            <td><span class="status ok">ok</span></td>
+            <td>165.51s</td>
+            <td>8.21%</td>
+            <td>25.14%</td>
+            <td class="status-note ok">
+              
+                -
+              
+            </td>
+            <td>
+              
+              <details class="text-preview">
+                <summary>Xem text</summary>
+                <pre>số nông ngiệp
+VÀ FRÁT TRIỂN NÔNG THÒN
+CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lận - Ty do - Hạnh phte
+Số: 0T 2023/TT-BNNPINT
+Hà Nội, ngày 27 tháng 9 năm 2023
+THÔNG TƯ
+Bài bỏ một phần Thống tư SỐ 71/2015/TT-BNNPINT NGÀY 25/10/2015
+của Bộ trưởng Bộ Nông nghiệp và Phái triển náng thôn ban hành quy
+chuẩn kỹ thuật quốc gia ônh vực thú y
+Căn cử Nghị định số 105/2022/NĐ-CP ngày 22 tháng 12 năm 2022 của
+Chính phủ quy định chức năng nhiệm v4, quyền hạn và cơ cấu tổ chức của Bộ
+Nông nghiệp và Phát triển nông thôn;
+Căn cử Luật Tiêu chuẩn và Quy chuẩn kỹ thuật ngày 29 tháng 6 năm 2006;
+Căn cử Luật Ben hành văn bản quy phạm pháp luật ngày 22 tháng 6
+năm 2015;
+Còn cử Luật sủa đổi, bổ sung một số điều của Luật Bơn hành văn bản quy
+phạm pháp luật ngày 18 tháng 6 năm 2020:
+Căn cứ Nghị định số 127/2007/CP-NĐ ngày 06 tháng 8 năm 2007 của
+Chính phủ quy định chỉ tiến thi hành một số điều của Luật Tiêu chuẩn và Quy
+chuẩn kỹ thuật; nghị định số 78/2018 NĐ CP ngày 16 tháng 3 năm 2018 của
+Chính phủ xửa đổi, đổ sung một số điều của Nghị định số 327/2007/CP.ND
+ngày 01 tháng 8 năm 2007 của Chính phủ quy định chỉ tiết thì hành một số siêu
+của Luật Tiêu chuẩn và Quychuẩn kỳ thuật:
+Căn cứ Nghị định số 34/2016/NĐ-</pre>
+              </details>
+              
+            </td>
+          </tr>
+        
+          <tr>
+            <td><b>paddleocr_vl</b></td>
+            <td>raw</td>
+            <td><span class="status ok">ok</span></td>
+            <td>260.39s</td>
+            <td>14.02%</td>
+            <td>16.71%</td>
+            <td class="status-note ok">
+              
+                -
+              
+            </td>
+            <td>
+              
+              <details class="text-preview">
+                <summary>Xem text</summary>
+                <pre>Số: 07 /2023/TT-BNNPTNT
+
+Hà Nội, ngày 27 tháng 9 năm 2023
+
+
+
+# THÔNG TỪ
+
+# Bài bó mọi phần Thông tư số 71/2011/TT-BNNPTNT ngày 25/10/2011 của Bộ trưởng Bộ Nông nghiệp và Phát triển nông thôn ban hành quy chuẩn kỹ thuật quốc gia lĩnh vực tín y
+
+Căn cứ Nehi định số 105/2022/ND-CP ngày 22 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Bộ Nông nghiệp và Phát triển nông thôn;
+
+Căn cứ Luật Tiêu chuẩn và Quy chuẩn kỹ thuật ngày 29 tháng 6 năm 2006;
+
+Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 22 tháng 6 năm 2015;
+
+Căn cứ Luật sủa đổi, bổ sung một số điều của Luật Ban hành văn bản quy phạm pháp luật ngày 18 tháng 6 năm 2020;
+
+Căn cứ Nghi định số 127/2007/CP-ND ngày 01 tháng 8 năm 2007 của Chính phủ quy định chỉ tiết thi hành một số điều của Luật Tiêu chuẩn và Quy chuẩn kỹ thuật; Nghị định số 78/2018/ND-CP ngày 16 tháng 5 năm 2018 của Chính phủ xưa đối, bổ sung một số điều của Nghị định số 127/2007/CP-ND ngày 01 tháng 8 năm 2007 của Chính phủ quy định chỉ tiết thi hành một số điều của Luật Tiêu chuẩn và Quy chuẩn kỹ thuật;
+
+Căn cứ Nghi định số 34/2016/ND-CP ngày 14 tháng 5 năm 2016 của Chính phủ quy định chỉ tiết một số điều và biện ph</pre>
+              </details>
+              
+            </td>
+          </tr>
+        
+          <tr>
+            <td><b>paddleocr_vl</b></td>
+            <td>opencv_preprocessed</td>
+            <td><span class="status ok">ok</span></td>
+            <td>676.43s</td>
+            <td>17.71%</td>
+            <td>23.60%</td>
+            <td class="status-note ok">
+              
+                -
+              
+            </td>
+            <td>
+              
+              <details class="text-preview">
+                <summary>Xem text</summary>
+                <pre>SỐ: 07 2023/TT-BNN/TNT
+
+Hà Nội, ngày 27 tháng 9 năm 2023
+
+# THÔNG TỪ
+
+Bài bó mọi phần Thống tư số 71/2011/TT-BNNPRINT ngày 25/10/2011 của Bộ trưởng Kỹ Nông nghiệp và Phật triển nông thôn ban hành quy chuẩn kỹ thuật quốc gia lĩnh vực tín y
+
+Căn cứ Nghị định số 105/2022/ND-CP ngày 22 tháng 12 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Bộ Nông nghiệp và Phát triển nông thôn;
+
+Căn cứ Luật Tiêu chuẩn và Quy chuẩn kỹ thuật ngày 29 tháng 6 năm 2005;
+
+Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 22 tháng 6 năm 2015;
+
+Căn cứ Luật sủa đổi, bổ sung một số điều của Luật Bản hành văn bản quy phạm pháp luật ngày 18 tháng 6 năm 2020;
+
+Căn cứ Nghi định số 127/2007/CP-ND ngày 01 tháng 8 năm 2007 của Chính phủ quy định chỉ tiết thi hành một số điều của Luật Tiệu chuẩn và Quy chuẩn kỹ thuật; Nghị định số 78/2018/ND-CP ngày 16 tháng 5 năm 2018 của Chính phủ xử đổi, bổ sung một số điều của Nghị định số 127/2007/CP-ND ngày 01 tháng 8 năm 2007 của Chính phủ quy định chỉ tiết thi hành một số điều của Luật Tiệu chuẩn và Quy chuẩn kỹ thuật;
+
+Căn cứ Nghi định số 34/2016/ND-CP ngày 14 tháng 5 năm 2016 của Chính phủ quy định chỉ tiết một số điều và biện pháp th</pre>
+              </details>
+              
+            </td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">Post-processing</p>
+        
+        <h2>LayoutLMv3 / trích xuất trường</h2>
+        
+      </div>
+    </div>
+    
+      <p><b>Engine:</b> layoutlmv3</p>
+      <p><b>Mode:</b> layoutlmv3_model</p>
+      
+      <p><b>Model:</b> D:\ocr_full_demo_v2_latest\ocr_full_demo_v2_latest\models\layoutlmv3-congvan-token-classification</p>
+      
+      
+      <p><b>Model ran:</b> yes</p>
+      
+      
+      <p><b>Field source:</b> layoutlmv3+best_ocr_rule</p>
+      
+      
+      <p><b>Field label schema:</b> compatible</p>
+      
+      <p class="muted">Đã chạy LayoutLMv3 thật bằng transformers từ model D:\ocr_full_demo_v2_latest\ocr_full_demo_v2_latest\models\layoutlmv3-congvan-token-classification. Field từ model được kiểm định theo từng trường rồi mới merge với rule fallback.</p>
+      
+      <div class="table-wrap">
+        <table class="clean-table fields">
+          <tbody>
+          
+            <tr><th>Cơ quan ban hành</th><td>BỘ NÔNG NGHIỆP</td></tr>
+          
+            <tr><th>Loại văn bản</th><td>THÔNG TƯ</td></tr>
+          
+            <tr><th>Ngày ban hành</th><td>27/09/2023</td></tr>
+          
+            <tr><th>Nơi gửi</th><td>-</td></tr>
+          
+            <tr><th>Nơi nhận</th><td>-</td></tr>
+          
+            <tr><th>Số ký hiệu</th><td>07/2023/TT-BNNPTNT</td></tr>
+          
+            <tr><th>Trích yếu</th><td>Bãi bỏ một phần Thông tư số 71/2011/TT-BNNPTNT ngày 25/10/2011 của Bộ trưởng Bộ Nông nghiệp và Phát triển nông thôn ban hành quy chuẩn kỹ thuật quốc gia lĩnh vực thú y</td></tr>
+          
+            <tr><th>Ghi chú độ tin cậy</th><td>layoutlmv3+best_ocr_rule</td></tr>
+          
+          </tbody>
+        </table>
+      </div>
+      
+      <details class="advanced-box">
+        <summary>Xem nhãn token LayoutLMv3</summary>
+        
+        <p class="muted">
+          Nguồn token: paddle_vietocr / raw,
+          trang 1.
+        </p>
+        
+        
+        <p class="muted">Token preview lấy từ paddle_vietocr / raw trang 1. Nếu OCR nguồn rụng chữ thì token LayoutLMv3 cũng rụng theo; field cuối vẫn được hậu kiểm bằng best-OCR/rule.</p>
+        
+        
+        <div class="table-wrap compact-table-wrap">
+          <table class="clean-table token-table">
+            <thead>
+              <tr><th>#</th><th>Token OCR</th><th>Nhãn model</th><th>Trường</th></tr>
+            </thead>
+            <tbody>
+            
+              <tr>
+                <td>1</td>
+                <td>BỘ NÔNG NGHIỆP</td>
+                <td><code>B-co_quan_ban_hanh</code></td>
+                <td>co_quan_ban_hanh</td>
+              </tr>
+            
+              <tr>
+                <td>2</td>
+                <td>VÀ PHÁT TRIỂN NÔNG THÔNG</td>
+                <td><code>I-co_quan_ban_hanh</code></td>
+                <td>co_quan_ban_hanh</td>
+              </tr>
+            
+              <tr>
+                <td>3</td>
+                <td>CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</td>
+                <td><code>O</code></td>
+                <td>outside</td>
+              </tr>
+            
+              <tr>
+                <td>4</td>
+                <td>Độc lập - Tự dõ - Hạnh phúc</td>
+                <td><code>O</code></td>
+                <td>outside</td>
+              </tr>
+            
+              <tr>
+                <td>5</td>
+                <td>Số 07/2023/TT-BNNPTNT</td>
+                <td><code>O</code></td>
+                <td>outside</td>
+              </tr>
+            
+              <tr>
+                <td>6</td>
+                <td>Hà Nội, ngày 27 tháng 9 năm 2023 năm</td>
+                <td><code>B-trich_yeu</code></td>
+                <td>trich_yeu</td>
+              </tr>
+            
+              <tr>
+                <td>7</td>
+                <td>THÔNG TƯ</td>
+                <td><code>B-loai_van_ban</code></td>
+                <td>loai_van_ban</td>
+              </tr>
+            
+              <tr>
+                <td>8</td>
+                <td>Bài bỏ một phần Thông tư SỐ 71/2013/TE-BNNPTNT NGÀY 25/10/2011</td>
+                <td><code>B-trich_yeu</code></td>
+                <td>trich_yeu</td>
+              </tr>
+            
+              <tr>
+                <td>9</td>
+                <td>của Bộ trưởng Bộ Nông nghiệp và Phát triển nắng thôn ban hành quy</td>
+                <td><code>I-trich_yeu</code></td>
+                <td>trich_yeu</td>
+              </tr>
+            
+              <tr>
+                <td>10</td>
+                <td>chuẩn kỹ thuật quốc gia lĩnh vực thú y</td>
+                <td><code>I-trich_yeu</code></td>
+                <td>trich_yeu</td>
+              </tr>
+            
+              <tr>
+                <td>11</td>
+                <td>Căn cử Nghị định số 105/2022/NĐ-CP ngày 22 tháng 12 năm 2022 của</td>
+                <td><code>O</code></td>
+                <td>outside</td>
+              </tr>
+            
+              <tr>
+                <td>12</td>
+                <td>Chính phủ quy định chức năng nhiệm vụ, quyền hạn và cơ cấu tổ chức của Bộ</td>
+                <td><code>O</code></td>
+                <td>outside</td>
+              </tr>
+            
+              <tr>
+                <td>13</td>
+                <td>Nông nghiệp và Phát triển nông thôn;</td>
+                <td><code>O</code></td>
+                <td>outside</td>
+              </tr>
+            
+              <tr>
+                <td>14</td>
+                <td>Căn có Luật Tiêu chuẩn và Quy Thuận chuẩn kỹ thuật ngày 29 tháng 6 năm 2006;</td>
+                <td><code>O</code></td>
+                <td>outside</td>
+              </tr>
+            
+              <tr>
+                <td>15</td>
+                <td>Căn cứ Luật Ban hành văn bản guy phạm pháp luật ngày 22 tháng 6</td>
+                <td><code>O</code></td>
+                <td>outside</td>
+              </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        
+      </details>
+      
+    
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,6739 @@
+{
+  "job_id": "d6090a528967",
+  "uploaded_file": "upload\\hai_trang.pdf",
+  "page_count": 2,
+  "raw_images": [
+    "images\\hai_trang_page1.png",
+    "images\\hai_trang_page2.png"
+  ],
+  "preprocessed_images": [
+    "images\\hai_trang_page1_opencv_preprocessed.png",
+    "images\\hai_trang_page2_opencv_preprocessed.png"
+  ],
+  "raw_image": "images\\hai_trang_page1.png",
+  "preprocessed_image": "images\\hai_trang_page1_opencv_preprocessed.png",
+  "opencv_steps": [
+    "adaptive_safe_preprocess",
+    "grayscale",
+    "denoise_fastNlMeans",
+    "deskew_minAreaRect",
+    "CLAHE_contrast",
+    "adaptive_threshold_safe",
+    "morph_close"
+  ],
+  "opencv_steps_by_page": [
+    {
+      "page": 1,
+      "steps": [
+        "grayscale",
+        "denoise_fastNlMeans",
+        "deskew_minAreaRect",
+        "CLAHE_contrast",
+        "adaptive_threshold_safe",
+        "morph_close"
+      ]
+    },
+    {
+      "page": 2,
+      "steps": [
+        "grayscale",
+        "denoise_fastNlMeans",
+        "deskew_minAreaRect",
+        "CLAHE_contrast",
+        "adaptive_threshold_safe",
+        "morph_close"
+      ]
+    }
+  ],
+  "runtime": {
+    "opencv_workers": 4,
+    "tesseract_workers": 4,
+    "gpu_workers": 1
+  },
+  "ground_truth_file": null,
+  "ground_truth_text_length": 0,
+  "results": [
+    {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "status": "ok",
+      "text": "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM KHOA CÔNG NGHỆ THÔNG TIN Độc lập - Tự do - Hạnh phúc Số: 123/CV-CNTT Hà Nội, ngày 15 tháng 05 năm 2026 CÔNG VĂN V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số Kính gửi: Phòng Quản lý khoa học và Hợp tác quốc tế Nhằm phục vụ công tác nghiên cứu khoa học sinh viên năm 2026, Khoa Công nghệ thông tin đề nghị nhóm nghiên cứu triển khai thử nghiệm hệ thống hỗ trợ quản lý công văn đi và đến. Hệ thống cần có chức năng tiếp nhận văn bản scan, nhận diện ký tự quang học OCR, trích xuất các trường thông tin chính như số ký hiệu, ngày ban hành, trích yếu, nơi gửi, nơi nhận; đồng thời hỗ trợ ký số và kiểm tra tính toàn vẹn của văn bản điện tử. Nhóm nghiên cứu có trách nhiệm chuẩn bị dữ liệu thử nghiệm, báo cáo kết quả so sánh các công nghệ OCR và đề xuất phương án phù hợp với điều kiện triển khai tại đơn vị. Nơi nhận: - Như trên; - Lưu: VT, CNTT.\n\nTRƯỜNG ĐẠI HỌC ĐIỆN LỰC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM KHOA CÔNG NGHỆ THÔNG TIN Độc lập - Tự do - Hạnh phúc Số: 123/CV-CNTT Hà Nội, ngày 15 tháng 05 năm 2026 CÔNG VĂN V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số Kính gửi: Phòng Quản lý khoa học và Hợp tác quốc tế Nhằm phục vụ công tác nghiên cứu khoa học sinh viên năm 2026, Khoa Công nghệ thông tin đề nghị nhóm nghiên cứu triển khai thử nghiệm hệ thống hỗ trợ quản lý công văn đi và đến. Hệ thống cần có chức năng tiếp nhận văn bản scan, nhận diện ký tự quang học OCR, trích xuất các trường thông tin chính như số ký hiệu, ngày ban hành, trích yếu, nơi gửi, nơi nhận; đồng thời hỗ trợ ký số và kiểm tra tính toàn vẹn của văn bản điện tử. Nhóm nghiên cứu có trách nhiệm chuẩn bị dữ liệu thử nghiệm, báo cáo kết quả so sánh các công nghệ OCR và đề xuất phương án phù hợp với điều kiện triển khai tại đơn vị. Nơi nhận: - Như trên; - Lưu: VT, CNTT.",
+      "boxes": [
+        {
+          "text": "TRƯỜNG",
+          "confidence": 96.0,
+          "bbox": [
+            128,
+            109,
+            239,
+            134
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "ĐẠI",
+          "confidence": 95.0,
+          "bbox": [
+            248,
+            115,
+            292,
+            140
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "HỌC",
+          "confidence": 96.0,
+          "bbox": [
+            301,
+            115,
+            354,
+            140
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "ĐIỆN",
+          "confidence": 96.0,
+          "bbox": [
+            361,
+            110,
+            422,
+            140
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "LỰC",
+          "confidence": 96.0,
+          "bbox": [
+            432,
+            114,
+            482,
+            140
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "CỘNG",
+          "confidence": 96.0,
+          "bbox": [
+            939,
+            111,
+            1010,
+            141
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "HÒA",
+          "confidence": 95.0,
+          "bbox": [
+            1020,
+            111,
+            1075,
+            136
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "XÃ",
+          "confidence": 96.0,
+          "bbox": [
+            1082,
+            111,
+            1115,
+            136
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "HỘI",
+          "confidence": 96.0,
+          "bbox": [
+            1124,
+            112,
+            1171,
+            142
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "CHỦ",
+          "confidence": 96.0,
+          "bbox": [
+            1179,
+            109,
+            1230,
+            137
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "NGHĨA",
+          "confidence": 96.0,
+          "bbox": [
+            1240,
+            112,
+            1324,
+            137
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "VIỆT",
+          "confidence": 97.0,
+          "bbox": [
+            1330,
+            112,
+            1385,
+            142
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "NAM",
+          "confidence": 96.0,
+          "bbox": [
+            1394,
+            117,
+            1452,
+            137
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "KHOA",
+          "confidence": 91.0,
+          "bbox": [
+            197,
+            151,
+            260,
+            169
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "CÔNG",
+          "confidence": 96.0,
+          "bbox": [
+            267,
+            145,
+            333,
+            169
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "NGHỆ",
+          "confidence": 93.0,
+          "bbox": [
+            341,
+            145,
+            404,
+            173
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "THÔNG",
+          "confidence": 91.0,
+          "bbox": [
+            410,
+            145,
+            493,
+            169
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "TIN",
+          "confidence": 92.0,
+          "bbox": [
+            500,
+            152,
+            537,
+            169
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Độc",
+          "confidence": 95.0,
+          "bbox": [
+            1014,
+            151,
+            1056,
+            174
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "lập",
+          "confidence": 93.0,
+          "bbox": [
+            1064,
+            151,
+            1144,
+            176
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 93.0,
+          "bbox": [
+            1099,
+            143,
+            1112,
+            180
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Tự",
+          "confidence": 96.0,
+          "bbox": [
+            1121,
+            143,
+            1143,
+            180
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "do",
+          "confidence": 93.0,
+          "bbox": [
+            1151,
+            152,
+            1191,
+            171
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 93.0,
+          "bbox": [
+            1185,
+            143,
+            1195,
+            180
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Hạnh",
+          "confidence": 96.0,
+          "bbox": [
+            1199,
+            153,
+            1256,
+            174
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "phúc",
+          "confidence": 96.0,
+          "bbox": [
+            1265,
+            152,
+            1317,
+            176
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Số:",
+          "confidence": 93.0,
+          "bbox": [
+            137,
+            256,
+            169,
+            277
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "123/CV-CNTT",
+          "confidence": 92.0,
+          "bbox": [
+            178,
+            259,
+            321,
+            277
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Hà",
+          "confidence": 96.0,
+          "bbox": [
+            912,
+            259,
+            939,
+            278
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Nội,",
+          "confidence": 96.0,
+          "bbox": [
+            949,
+            259,
+            990,
+            282
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "ngày",
+          "confidence": 97.0,
+          "bbox": [
+            999,
+            259,
+            1051,
+            284
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "15",
+          "confidence": 97.0,
+          "bbox": [
+            1059,
+            261,
+            1083,
+            279
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tháng",
+          "confidence": 96.0,
+          "bbox": [
+            1090,
+            259,
+            1154,
+            284
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "05",
+          "confidence": 96.0,
+          "bbox": [
+            1162,
+            261,
+            1186,
+            279
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "năm",
+          "confidence": 96.0,
+          "bbox": [
+            1195,
+            260,
+            1242,
+            279
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "2026",
+          "confidence": 96.0,
+          "bbox": [
+            1250,
+            261,
+            1302,
+            279
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "CÔNG",
+          "confidence": 96.0,
+          "bbox": [
+            623,
+            373,
+            705,
+            401
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "VĂN",
+          "confidence": 96.0,
+          "bbox": [
+            714,
+            372,
+            773,
+            401
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "V/v",
+          "confidence": 95.0,
+          "bbox": [
+            424,
+            430,
+            466,
+            450
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "triển",
+          "confidence": 96.0,
+          "bbox": [
+            472,
+            426,
+            532,
+            450
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "khai",
+          "confidence": 96.0,
+          "bbox": [
+            541,
+            429,
+            593,
+            450
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "thử",
+          "confidence": 96.0,
+          "bbox": [
+            602,
+            427,
+            650,
+            450
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nghiệm",
+          "confidence": 96.0,
+          "bbox": [
+            656,
+            430,
+            750,
+            456
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "hệ",
+          "confidence": 97.0,
+          "bbox": [
+            759,
+            430,
+            788,
+            456
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "thống",
+          "confidence": 97.0,
+          "bbox": [
+            796,
+            428,
+            869,
+            457
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "quản",
+          "confidence": 97.0,
+          "bbox": [
+            878,
+            428,
+            940,
+            457
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "lý",
+          "confidence": 96.0,
+          "bbox": [
+            950,
+            430,
+            970,
+            457
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "công",
+          "confidence": 96.0,
+          "bbox": [
+            978,
+            431,
+            1037,
+            457
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "văn",
+          "confidence": 96.0,
+          "bbox": [
+            1045,
+            430,
+            1089,
+            451
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tích",
+          "confidence": 96.0,
+          "bbox": [
+            1097,
+            430,
+            1144,
+            451
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "hợp",
+          "confidence": 92.0,
+          "bbox": [
+            1153,
+            431,
+            1200,
+            458
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "OCR",
+          "confidence": 92.0,
+          "bbox": [
+            1209,
+            432,
+            1260,
+            452
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "và",
+          "confidence": 96.0,
+          "bbox": [
+            1267,
+            431,
+            1295,
+            452
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "chữ",
+          "confidence": 96.0,
+          "bbox": [
+            1304,
+            431,
+            1353,
+            452
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "ký",
+          "confidence": 97.0,
+          "bbox": [
+            1360,
+            431,
+            1389,
+            458
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 96.0,
+          "bbox": [
+            1395,
+            429,
+            1423,
+            452
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Kính",
+          "confidence": 93.0,
+          "bbox": [
+            156,
+            536,
+            202,
+            556
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "gửi:",
+          "confidence": 97.0,
+          "bbox": [
+            211,
+            535,
+            251,
+            561
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Phòng",
+          "confidence": 96.0,
+          "bbox": [
+            260,
+            537,
+            328,
+            561
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Quản",
+          "confidence": 96.0,
+          "bbox": [
+            337,
+            535,
+            395,
+            560
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "lý",
+          "confidence": 96.0,
+          "bbox": [
+            404,
+            537,
+            420,
+            561
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "khoa",
+          "confidence": 96.0,
+          "bbox": [
+            428,
+            538,
+            479,
+            556
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "học",
+          "confidence": 96.0,
+          "bbox": [
+            488,
+            538,
+            526,
+            560
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "và",
+          "confidence": 97.0,
+          "bbox": [
+            532,
+            537,
+            556,
+            556
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Hợp",
+          "confidence": 96.0,
+          "bbox": [
+            565,
+            539,
+            609,
+            562
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tác",
+          "confidence": 96.0,
+          "bbox": [
+            616,
+            537,
+            648,
+            557
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "quốc",
+          "confidence": 97.0,
+          "bbox": [
+            655,
+            536,
+            708,
+            562
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tế",
+          "confidence": 97.0,
+          "bbox": [
+            715,
+            537,
+            737,
+            557
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Nhằm",
+          "confidence": 95.0,
+          "bbox": [
+            155,
+            634,
+            219,
+            655
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "phục",
+          "confidence": 96.0,
+          "bbox": [
+            229,
+            636,
+            282,
+            660
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "vụ",
+          "confidence": 96.0,
+          "bbox": [
+            287,
+            641,
+            313,
+            658
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "công",
+          "confidence": 97.0,
+          "bbox": [
+            321,
+            636,
+            373,
+            660
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tác",
+          "confidence": 96.0,
+          "bbox": [
+            381,
+            636,
+            413,
+            655
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nghiên",
+          "confidence": 96.0,
+          "bbox": [
+            420,
+            636,
+            495,
+            660
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "cứu",
+          "confidence": 96.0,
+          "bbox": [
+            503,
+            636,
+            542,
+            655
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "khoa",
+          "confidence": 96.0,
+          "bbox": [
+            551,
+            637,
+            603,
+            655
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "học",
+          "confidence": 96.0,
+          "bbox": [
+            611,
+            637,
+            650,
+            659
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "sinh",
+          "confidence": 96.0,
+          "bbox": [
+            656,
+            637,
+            701,
+            656
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "viên",
+          "confidence": 95.0,
+          "bbox": [
+            708,
+            637,
+            753,
+            656
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "năm",
+          "confidence": 97.0,
+          "bbox": [
+            761,
+            637,
+            808,
+            656
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "2026,",
+          "confidence": 96.0,
+          "bbox": [
+            816,
+            639,
+            874,
+            659
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Khoa",
+          "confidence": 97.0,
+          "bbox": [
+            883,
+            638,
+            937,
+            656
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Công",
+          "confidence": 96.0,
+          "bbox": [
+            945,
+            637,
+            1000,
+            662
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nghệ",
+          "confidence": 96.0,
+          "bbox": [
+            1009,
+            637,
+            1063,
+            662
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "thông",
+          "confidence": 96.0,
+          "bbox": [
+            1071,
+            637,
+            1135,
+            662
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tin",
+          "confidence": 95.0,
+          "bbox": [
+            1143,
+            638,
+            1170,
+            657
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "đề",
+          "confidence": 96.0,
+          "bbox": [
+            154,
+            678,
+            181,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nghị",
+          "confidence": 96.0,
+          "bbox": [
+            188,
+            680,
+            236,
+            703
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nhóm",
+          "confidence": 97.0,
+          "bbox": [
+            244,
+            679,
+            307,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nghiên",
+          "confidence": 96.0,
+          "bbox": [
+            315,
+            679,
+            389,
+            703
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "cứu",
+          "confidence": 96.0,
+          "bbox": [
+            397,
+            679,
+            437,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "triển",
+          "confidence": 96.0,
+          "bbox": [
+            444,
+            676,
+            495,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "khai",
+          "confidence": 96.0,
+          "bbox": [
+            503,
+            680,
+            547,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "thử",
+          "confidence": 96.0,
+          "bbox": [
+            554,
+            678,
+            594,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nghiệm",
+          "confidence": 96.0,
+          "bbox": [
+            600,
+            680,
+            683,
+            704
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "hệ",
+          "confidence": 96.0,
+          "bbox": [
+            691,
+            679,
+            717,
+            702
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "thống",
+          "confidence": 96.0,
+          "bbox": [
+            723,
+            679,
+            788,
+            705
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "hỗ",
+          "confidence": 97.0,
+          "bbox": [
+            796,
+            677,
+            823,
+            699
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "trợ",
+          "confidence": 96.0,
+          "bbox": [
+            830,
+            683,
+            863,
+            703
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "quản",
+          "confidence": 96.0,
+          "bbox": [
+            869,
+            678,
+            924,
+            705
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "lý",
+          "confidence": 96.0,
+          "bbox": [
+            932,
+            680,
+            949,
+            705
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "công",
+          "confidence": 96.0,
+          "bbox": [
+            955,
+            680,
+            1008,
+            705
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "văn",
+          "confidence": 95.0,
+          "bbox": [
+            1014,
+            681,
+            1053,
+            700
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "đi",
+          "confidence": 96.0,
+          "bbox": [
+            1061,
+            682,
+            1080,
+            700
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "và",
+          "confidence": 96.0,
+          "bbox": [
+            1087,
+            681,
+            1111,
+            700
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "đến.",
+          "confidence": 96.0,
+          "bbox": [
+            1119,
+            680,
+            1166,
+            700
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Hệ",
+          "confidence": 97.0,
+          "bbox": [
+            155,
+            722,
+            183,
+            745
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "thống",
+          "confidence": 97.0,
+          "bbox": [
+            191,
+            721,
+            255,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "cần",
+          "confidence": 96.0,
+          "bbox": [
+            263,
+            721,
+            300,
+            741
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "có",
+          "confidence": 96.0,
+          "bbox": [
+            308,
+            722,
+            332,
+            741
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "chức",
+          "confidence": 96.0,
+          "bbox": [
+            340,
+            722,
+            391,
+            741
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "năng",
+          "confidence": 96.0,
+          "bbox": [
+            399,
+            723,
+            453,
+            747
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tiếp",
+          "confidence": 97.0,
+          "bbox": [
+            460,
+            721,
+            501,
+            747
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nhận",
+          "confidence": 96.0,
+          "bbox": [
+            509,
+            722,
+            564,
+            745
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "văn",
+          "confidence": 96.0,
+          "bbox": [
+            570,
+            723,
+            609,
+            742
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "bản",
+          "confidence": 93.0,
+          "bbox": [
+            617,
+            721,
+            657,
+            742
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "scan,",
+          "confidence": 93.0,
+          "bbox": [
+            664,
+            728,
+            719,
+            745
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nhận",
+          "confidence": 96.0,
+          "bbox": [
+            728,
+            723,
+            782,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "diện",
+          "confidence": 96.0,
+          "bbox": [
+            789,
+            723,
+            836,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "ký",
+          "confidence": 96.0,
+          "bbox": [
+            845,
+            717,
+            866,
+            752
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tự",
+          "confidence": 96.0,
+          "bbox": [
+            877,
+            726,
+            898,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "quang",
+          "confidence": 96.0,
+          "bbox": [
+            905,
+            729,
+            974,
+            748
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "học",
+          "confidence": 93.0,
+          "bbox": [
+            983,
+            724,
+            1020,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "OCR,",
+          "confidence": 93.0,
+          "bbox": [
+            1028,
+            725,
+            1080,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "trích",
+          "confidence": 96.0,
+          "bbox": [
+            153,
+            765,
+            202,
+            784
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "xuất",
+          "confidence": 97.0,
+          "bbox": [
+            210,
+            764,
+            258,
+            784
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "các",
+          "confidence": 97.0,
+          "bbox": [
+            265,
+            765,
+            299,
+            784
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "trường",
+          "confidence": 96.0,
+          "bbox": [
+            305,
+            765,
+            382,
+            790
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "thông",
+          "confidence": 96.0,
+          "bbox": [
+            389,
+            765,
+            454,
+            790
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tin",
+          "confidence": 96.0,
+          "bbox": [
+            461,
+            766,
+            489,
+            785
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "chính",
+          "confidence": 96.0,
+          "bbox": [
+            496,
+            766,
+            555,
+            785
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "như",
+          "confidence": 96.0,
+          "bbox": [
+            566,
+            760,
+            599,
+            795
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 96.0,
+          "bbox": [
+            609,
+            765,
+            634,
+            785
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "ký",
+          "confidence": 97.0,
+          "bbox": [
+            646,
+            766,
+            670,
+            790
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "hiệu,",
+          "confidence": 96.0,
+          "bbox": [
+            677,
+            766,
+            728,
+            789
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "ngày",
+          "confidence": 96.0,
+          "bbox": [
+            737,
+            766,
+            790,
+            791
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "ban",
+          "confidence": 96.0,
+          "bbox": [
+            797,
+            767,
+            836,
+            785
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "hành,",
+          "confidence": 96.0,
+          "bbox": [
+            845,
+            766,
+            905,
+            788
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "trích",
+          "confidence": 96.0,
+          "bbox": [
+            913,
+            767,
+            961,
+            786
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "yếu,",
+          "confidence": 96.0,
+          "bbox": [
+            968,
+            766,
+            1013,
+            791
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nơi",
+          "confidence": 96.0,
+          "bbox": [
+            1022,
+            768,
+            1054,
+            786
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "gửi,",
+          "confidence": 96.0,
+          "bbox": [
+            1062,
+            765,
+            1102,
+            791
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nơi",
+          "confidence": 96.0,
+          "bbox": [
+            155,
+            809,
+            187,
+            827
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nhận;",
+          "confidence": 96.0,
+          "bbox": [
+            196,
+            808,
+            256,
+            831
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "đồng",
+          "confidence": 96.0,
+          "bbox": [
+            264,
+            807,
+            319,
+            833
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "thời",
+          "confidence": 96.0,
+          "bbox": [
+            327,
+            808,
+            369,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "hỗ",
+          "confidence": 97.0,
+          "bbox": [
+            378,
+            806,
+            404,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "trợ",
+          "confidence": 95.0,
+          "bbox": [
+            411,
+            811,
+            444,
+            831
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "ký",
+          "confidence": 88.0,
+          "bbox": [
+            451,
+            809,
+            473,
+            833
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 94.0,
+          "bbox": [
+            480,
+            808,
+            504,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "và",
+          "confidence": 97.0,
+          "bbox": [
+            510,
+            809,
+            535,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "kiểm",
+          "confidence": 95.0,
+          "bbox": [
+            543,
+            806,
+            594,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tra",
+          "confidence": 96.0,
+          "bbox": [
+            601,
+            812,
+            631,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tính",
+          "confidence": 96.0,
+          "bbox": [
+            638,
+            809,
+            680,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "toàn",
+          "confidence": 96.0,
+          "bbox": [
+            688,
+            809,
+            737,
+            829
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "vẹn",
+          "confidence": 96.0,
+          "bbox": [
+            744,
+            815,
+            783,
+            832
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "của",
+          "confidence": 96.0,
+          "bbox": [
+            791,
+            808,
+            827,
+            829
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "văn",
+          "confidence": 97.0,
+          "bbox": [
+            834,
+            810,
+            873,
+            829
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "bản",
+          "confidence": 97.0,
+          "bbox": [
+            882,
+            808,
+            921,
+            829
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "điện",
+          "confidence": 96.0,
+          "bbox": [
+            929,
+            810,
+            975,
+            833
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tử.",
+          "confidence": 96.0,
+          "bbox": [
+            983,
+            808,
+            1012,
+            829
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Nhóm",
+          "confidence": 96.0,
+          "bbox": [
+            155,
+            895,
+            221,
+            914
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nghiên",
+          "confidence": 96.0,
+          "bbox": [
+            229,
+            895,
+            303,
+            919
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "cứu",
+          "confidence": 96.0,
+          "bbox": [
+            311,
+            895,
+            351,
+            914
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "có",
+          "confidence": 96.0,
+          "bbox": [
+            359,
+            895,
+            383,
+            914
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "trách",
+          "confidence": 96.0,
+          "bbox": [
+            390,
+            895,
+            445,
+            914
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nhiệm",
+          "confidence": 96.0,
+          "bbox": [
+            453,
+            895,
+            521,
+            918
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "chuẩn",
+          "confidence": 96.0,
+          "bbox": [
+            529,
+            893,
+            595,
+            915
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "bị",
+          "confidence": 97.0,
+          "bbox": [
+            604,
+            896,
+            621,
+            918
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "dữ",
+          "confidence": 96.0,
+          "bbox": [
+            629,
+            896,
+            660,
+            915
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "liệu",
+          "confidence": 96.0,
+          "bbox": [
+            667,
+            896,
+            703,
+            918
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "thử",
+          "confidence": 96.0,
+          "bbox": [
+            715,
+            889,
+            748,
+            925
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nghiệm,",
+          "confidence": 96.0,
+          "bbox": [
+            756,
+            896,
+            845,
+            921
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "báo",
+          "confidence": 96.0,
+          "bbox": [
+            854,
+            896,
+            893,
+            915
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "cáo",
+          "confidence": 96.0,
+          "bbox": [
+            901,
+            896,
+            938,
+            915
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "kết",
+          "confidence": 96.0,
+          "bbox": [
+            945,
+            895,
+            978,
+            915
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "quả",
+          "confidence": 97.0,
+          "bbox": [
+            985,
+            895,
+            1025,
+            921
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "so",
+          "confidence": 96.0,
+          "bbox": [
+            1034,
+            902,
+            1057,
+            916
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "sánh",
+          "confidence": 96.0,
+          "bbox": [
+            1064,
+            897,
+            1117,
+            916
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "các",
+          "confidence": 96.0,
+          "bbox": [
+            154,
+            938,
+            188,
+            957
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "công",
+          "confidence": 96.0,
+          "bbox": [
+            195,
+            938,
+            248,
+            962
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nghệ",
+          "confidence": 93.0,
+          "bbox": [
+            256,
+            938,
+            311,
+            963
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "OCR",
+          "confidence": 91.0,
+          "bbox": [
+            319,
+            940,
+            365,
+            957
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "và",
+          "confidence": 96.0,
+          "bbox": [
+            371,
+            938,
+            395,
+            957
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "đề",
+          "confidence": 96.0,
+          "bbox": [
+            403,
+            937,
+            429,
+            957
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "xuất",
+          "confidence": 96.0,
+          "bbox": [
+            437,
+            937,
+            484,
+            957
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "phương",
+          "confidence": 96.0,
+          "bbox": [
+            492,
+            939,
+            577,
+            963
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "án",
+          "confidence": 96.0,
+          "bbox": [
+            586,
+            939,
+            611,
+            958
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "phù",
+          "confidence": 96.0,
+          "bbox": [
+            620,
+            939,
+            660,
+            963
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "hợp",
+          "confidence": 96.0,
+          "bbox": [
+            669,
+            940,
+            710,
+            964
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "với",
+          "confidence": 97.0,
+          "bbox": [
+            717,
+            939,
+            748,
+            958
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "điều",
+          "confidence": 96.0,
+          "bbox": [
+            756,
+            938,
+            802,
+            958
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "kiện",
+          "confidence": 97.0,
+          "bbox": [
+            811,
+            939,
+            855,
+            962
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "triển",
+          "confidence": 96.0,
+          "bbox": [
+            862,
+            937,
+            912,
+            958
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "khai",
+          "confidence": 96.0,
+          "bbox": [
+            921,
+            940,
+            965,
+            959
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "tại",
+          "confidence": 96.0,
+          "bbox": [
+            972,
+            941,
+            998,
+            962
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "đơn",
+          "confidence": 96.0,
+          "bbox": [
+            1006,
+            941,
+            1048,
+            959
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "vị.",
+          "confidence": 96.0,
+          "bbox": [
+            1054,
+            941,
+            1078,
+            962
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Nơi",
+          "confidence": 96.0,
+          "bbox": [
+            155,
+            1025,
+            190,
+            1043
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nhận:",
+          "confidence": 96.0,
+          "bbox": [
+            199,
+            1024,
+            259,
+            1047
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 93.0,
+          "bbox": [
+            153,
+            1078,
+            160,
+            1081
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Như",
+          "confidence": 82.0,
+          "bbox": [
+            171,
+            1063,
+            203,
+            1097
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "trên;",
+          "confidence": 96.0,
+          "bbox": [
+            214,
+            1063,
+            271,
+            1097
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 91.0,
+          "bbox": [
+            153,
+            1121,
+            160,
+            1124
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Lưu:",
+          "confidence": 93.0,
+          "bbox": [
+            168,
+            1112,
+            213,
+            1130
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "VT,",
+          "confidence": 92.0,
+          "bbox": [
+            221,
+            1112,
+            252,
+            1133
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "CNTT.",
+          "confidence": 92.0,
+          "bbox": [
+            260,
+            1112,
+            321,
+            1130
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "TRƯỜNG",
+          "confidence": 96.0,
+          "bbox": [
+            128,
+            109,
+            239,
+            134
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "ĐẠI",
+          "confidence": 95.0,
+          "bbox": [
+            248,
+            115,
+            292,
+            140
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "HỌC",
+          "confidence": 96.0,
+          "bbox": [
+            301,
+            115,
+            354,
+            140
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "ĐIỆN",
+          "confidence": 96.0,
+          "bbox": [
+            361,
+            110,
+            422,
+            140
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "LỰC",
+          "confidence": 96.0,
+          "bbox": [
+            432,
+            114,
+            482,
+            140
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "CỘNG",
+          "confidence": 96.0,
+          "bbox": [
+            939,
+            111,
+            1010,
+            141
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "HÒA",
+          "confidence": 95.0,
+          "bbox": [
+            1020,
+            111,
+            1075,
+            136
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "XÃ",
+          "confidence": 96.0,
+          "bbox": [
+            1082,
+            111,
+            1115,
+            136
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "HỘI",
+          "confidence": 96.0,
+          "bbox": [
+            1124,
+            112,
+            1171,
+            142
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "CHỦ",
+          "confidence": 96.0,
+          "bbox": [
+            1179,
+            109,
+            1230,
+            137
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "NGHĨA",
+          "confidence": 96.0,
+          "bbox": [
+            1240,
+            112,
+            1324,
+            137
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "VIỆT",
+          "confidence": 97.0,
+          "bbox": [
+            1330,
+            112,
+            1385,
+            142
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "NAM",
+          "confidence": 96.0,
+          "bbox": [
+            1394,
+            117,
+            1452,
+            137
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "KHOA",
+          "confidence": 91.0,
+          "bbox": [
+            197,
+            151,
+            260,
+            169
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "CÔNG",
+          "confidence": 96.0,
+          "bbox": [
+            267,
+            145,
+            333,
+            169
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "NGHỆ",
+          "confidence": 93.0,
+          "bbox": [
+            341,
+            145,
+            404,
+            173
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "THÔNG",
+          "confidence": 91.0,
+          "bbox": [
+            410,
+            145,
+            493,
+            169
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "TIN",
+          "confidence": 92.0,
+          "bbox": [
+            500,
+            152,
+            537,
+            169
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Độc",
+          "confidence": 95.0,
+          "bbox": [
+            1014,
+            151,
+            1056,
+            174
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "lập",
+          "confidence": 93.0,
+          "bbox": [
+            1064,
+            151,
+            1144,
+            176
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "-",
+          "confidence": 93.0,
+          "bbox": [
+            1099,
+            143,
+            1112,
+            180
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Tự",
+          "confidence": 96.0,
+          "bbox": [
+            1121,
+            143,
+            1143,
+            180
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "do",
+          "confidence": 93.0,
+          "bbox": [
+            1151,
+            152,
+            1191,
+            171
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "-",
+          "confidence": 93.0,
+          "bbox": [
+            1185,
+            143,
+            1195,
+            180
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Hạnh",
+          "confidence": 96.0,
+          "bbox": [
+            1199,
+            153,
+            1256,
+            174
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "phúc",
+          "confidence": 96.0,
+          "bbox": [
+            1265,
+            152,
+            1317,
+            176
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Số:",
+          "confidence": 93.0,
+          "bbox": [
+            137,
+            256,
+            169,
+            277
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "123/CV-CNTT",
+          "confidence": 92.0,
+          "bbox": [
+            178,
+            259,
+            321,
+            277
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Hà",
+          "confidence": 96.0,
+          "bbox": [
+            912,
+            259,
+            939,
+            278
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Nội,",
+          "confidence": 96.0,
+          "bbox": [
+            949,
+            259,
+            990,
+            282
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "ngày",
+          "confidence": 97.0,
+          "bbox": [
+            999,
+            259,
+            1051,
+            284
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "15",
+          "confidence": 97.0,
+          "bbox": [
+            1059,
+            261,
+            1083,
+            279
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tháng",
+          "confidence": 96.0,
+          "bbox": [
+            1090,
+            259,
+            1154,
+            284
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "05",
+          "confidence": 96.0,
+          "bbox": [
+            1162,
+            261,
+            1186,
+            279
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "năm",
+          "confidence": 96.0,
+          "bbox": [
+            1195,
+            260,
+            1242,
+            279
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "2026",
+          "confidence": 96.0,
+          "bbox": [
+            1250,
+            261,
+            1302,
+            279
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "CÔNG",
+          "confidence": 96.0,
+          "bbox": [
+            623,
+            373,
+            705,
+            401
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "VĂN",
+          "confidence": 96.0,
+          "bbox": [
+            714,
+            372,
+            773,
+            401
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "V/v",
+          "confidence": 95.0,
+          "bbox": [
+            424,
+            430,
+            466,
+            450
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "triển",
+          "confidence": 96.0,
+          "bbox": [
+            472,
+            426,
+            532,
+            450
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "khai",
+          "confidence": 96.0,
+          "bbox": [
+            541,
+            429,
+            593,
+            450
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "thử",
+          "confidence": 96.0,
+          "bbox": [
+            602,
+            427,
+            650,
+            450
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nghiệm",
+          "confidence": 96.0,
+          "bbox": [
+            656,
+            430,
+            750,
+            456
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "hệ",
+          "confidence": 97.0,
+          "bbox": [
+            759,
+            430,
+            788,
+            456
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "thống",
+          "confidence": 97.0,
+          "bbox": [
+            796,
+            428,
+            869,
+            457
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "quản",
+          "confidence": 97.0,
+          "bbox": [
+            878,
+            428,
+            940,
+            457
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "lý",
+          "confidence": 96.0,
+          "bbox": [
+            950,
+            430,
+            970,
+            457
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "công",
+          "confidence": 96.0,
+          "bbox": [
+            978,
+            431,
+            1037,
+            457
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "văn",
+          "confidence": 96.0,
+          "bbox": [
+            1045,
+            430,
+            1089,
+            451
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tích",
+          "confidence": 96.0,
+          "bbox": [
+            1097,
+            430,
+            1144,
+            451
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "hợp",
+          "confidence": 92.0,
+          "bbox": [
+            1153,
+            431,
+            1200,
+            458
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "OCR",
+          "confidence": 92.0,
+          "bbox": [
+            1209,
+            432,
+            1260,
+            452
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "và",
+          "confidence": 96.0,
+          "bbox": [
+            1267,
+            431,
+            1295,
+            452
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "chữ",
+          "confidence": 96.0,
+          "bbox": [
+            1304,
+            431,
+            1353,
+            452
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "ký",
+          "confidence": 97.0,
+          "bbox": [
+            1360,
+            431,
+            1389,
+            458
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "số",
+          "confidence": 96.0,
+          "bbox": [
+            1395,
+            429,
+            1423,
+            452
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Kính",
+          "confidence": 93.0,
+          "bbox": [
+            156,
+            536,
+            202,
+            556
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "gửi:",
+          "confidence": 97.0,
+          "bbox": [
+            211,
+            535,
+            251,
+            561
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Phòng",
+          "confidence": 96.0,
+          "bbox": [
+            260,
+            537,
+            328,
+            561
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Quản",
+          "confidence": 96.0,
+          "bbox": [
+            337,
+            535,
+            395,
+            560
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "lý",
+          "confidence": 96.0,
+          "bbox": [
+            404,
+            537,
+            420,
+            561
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "khoa",
+          "confidence": 96.0,
+          "bbox": [
+            428,
+            538,
+            479,
+            556
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "học",
+          "confidence": 96.0,
+          "bbox": [
+            488,
+            538,
+            526,
+            560
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "và",
+          "confidence": 97.0,
+          "bbox": [
+            532,
+            537,
+            556,
+            556
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Hợp",
+          "confidence": 96.0,
+          "bbox": [
+            565,
+            539,
+            609,
+            562
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tác",
+          "confidence": 96.0,
+          "bbox": [
+            616,
+            537,
+            648,
+            557
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "quốc",
+          "confidence": 97.0,
+          "bbox": [
+            655,
+            536,
+            708,
+            562
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tế",
+          "confidence": 97.0,
+          "bbox": [
+            715,
+            537,
+            737,
+            557
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Nhằm",
+          "confidence": 95.0,
+          "bbox": [
+            155,
+            634,
+            219,
+            655
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "phục",
+          "confidence": 96.0,
+          "bbox": [
+            229,
+            636,
+            282,
+            660
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "vụ",
+          "confidence": 96.0,
+          "bbox": [
+            287,
+            641,
+            313,
+            658
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "công",
+          "confidence": 97.0,
+          "bbox": [
+            321,
+            636,
+            373,
+            660
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tác",
+          "confidence": 96.0,
+          "bbox": [
+            381,
+            636,
+            413,
+            655
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nghiên",
+          "confidence": 96.0,
+          "bbox": [
+            420,
+            636,
+            495,
+            660
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "cứu",
+          "confidence": 96.0,
+          "bbox": [
+            503,
+            636,
+            542,
+            655
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "khoa",
+          "confidence": 96.0,
+          "bbox": [
+            551,
+            637,
+            603,
+            655
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "học",
+          "confidence": 96.0,
+          "bbox": [
+            611,
+            637,
+            650,
+            659
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "sinh",
+          "confidence": 96.0,
+          "bbox": [
+            656,
+            637,
+            701,
+            656
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "viên",
+          "confidence": 95.0,
+          "bbox": [
+            708,
+            637,
+            753,
+            656
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "năm",
+          "confidence": 97.0,
+          "bbox": [
+            761,
+            637,
+            808,
+            656
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "2026,",
+          "confidence": 96.0,
+          "bbox": [
+            816,
+            639,
+            874,
+            659
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Khoa",
+          "confidence": 97.0,
+          "bbox": [
+            883,
+            638,
+            937,
+            656
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Công",
+          "confidence": 96.0,
+          "bbox": [
+            945,
+            637,
+            1000,
+            662
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nghệ",
+          "confidence": 96.0,
+          "bbox": [
+            1009,
+            637,
+            1063,
+            662
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "thông",
+          "confidence": 96.0,
+          "bbox": [
+            1071,
+            637,
+            1135,
+            662
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tin",
+          "confidence": 95.0,
+          "bbox": [
+            1143,
+            638,
+            1170,
+            657
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "đề",
+          "confidence": 96.0,
+          "bbox": [
+            154,
+            678,
+            181,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nghị",
+          "confidence": 96.0,
+          "bbox": [
+            188,
+            680,
+            236,
+            703
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nhóm",
+          "confidence": 97.0,
+          "bbox": [
+            244,
+            679,
+            307,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nghiên",
+          "confidence": 96.0,
+          "bbox": [
+            315,
+            679,
+            389,
+            703
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "cứu",
+          "confidence": 96.0,
+          "bbox": [
+            397,
+            679,
+            437,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "triển",
+          "confidence": 96.0,
+          "bbox": [
+            444,
+            676,
+            495,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "khai",
+          "confidence": 96.0,
+          "bbox": [
+            503,
+            680,
+            547,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "thử",
+          "confidence": 96.0,
+          "bbox": [
+            554,
+            678,
+            594,
+            698
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nghiệm",
+          "confidence": 96.0,
+          "bbox": [
+            600,
+            680,
+            683,
+            704
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "hệ",
+          "confidence": 96.0,
+          "bbox": [
+            691,
+            679,
+            717,
+            702
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "thống",
+          "confidence": 96.0,
+          "bbox": [
+            723,
+            679,
+            788,
+            705
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "hỗ",
+          "confidence": 97.0,
+          "bbox": [
+            796,
+            677,
+            823,
+            699
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "trợ",
+          "confidence": 96.0,
+          "bbox": [
+            830,
+            683,
+            863,
+            703
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "quản",
+          "confidence": 96.0,
+          "bbox": [
+            869,
+            678,
+            924,
+            705
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "lý",
+          "confidence": 96.0,
+          "bbox": [
+            932,
+            680,
+            949,
+            705
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "công",
+          "confidence": 96.0,
+          "bbox": [
+            955,
+            680,
+            1008,
+            705
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "văn",
+          "confidence": 95.0,
+          "bbox": [
+            1014,
+            681,
+            1053,
+            700
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "đi",
+          "confidence": 96.0,
+          "bbox": [
+            1061,
+            682,
+            1080,
+            700
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "và",
+          "confidence": 96.0,
+          "bbox": [
+            1087,
+            681,
+            1111,
+            700
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "đến.",
+          "confidence": 96.0,
+          "bbox": [
+            1119,
+            680,
+            1166,
+            700
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Hệ",
+          "confidence": 97.0,
+          "bbox": [
+            155,
+            722,
+            183,
+            745
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "thống",
+          "confidence": 97.0,
+          "bbox": [
+            191,
+            721,
+            255,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "cần",
+          "confidence": 96.0,
+          "bbox": [
+            263,
+            721,
+            300,
+            741
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "có",
+          "confidence": 96.0,
+          "bbox": [
+            308,
+            722,
+            332,
+            741
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "chức",
+          "confidence": 96.0,
+          "bbox": [
+            340,
+            722,
+            391,
+            741
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "năng",
+          "confidence": 96.0,
+          "bbox": [
+            399,
+            723,
+            453,
+            747
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tiếp",
+          "confidence": 97.0,
+          "bbox": [
+            460,
+            721,
+            501,
+            747
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nhận",
+          "confidence": 96.0,
+          "bbox": [
+            509,
+            722,
+            564,
+            745
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "văn",
+          "confidence": 96.0,
+          "bbox": [
+            570,
+            723,
+            609,
+            742
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "bản",
+          "confidence": 93.0,
+          "bbox": [
+            617,
+            721,
+            657,
+            742
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "scan,",
+          "confidence": 93.0,
+          "bbox": [
+            664,
+            728,
+            719,
+            745
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nhận",
+          "confidence": 96.0,
+          "bbox": [
+            728,
+            723,
+            782,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "diện",
+          "confidence": 96.0,
+          "bbox": [
+            789,
+            723,
+            836,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "ký",
+          "confidence": 96.0,
+          "bbox": [
+            845,
+            717,
+            866,
+            752
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tự",
+          "confidence": 96.0,
+          "bbox": [
+            877,
+            726,
+            898,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "quang",
+          "confidence": 96.0,
+          "bbox": [
+            905,
+            729,
+            974,
+            748
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "học",
+          "confidence": 93.0,
+          "bbox": [
+            983,
+            724,
+            1020,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "OCR,",
+          "confidence": 93.0,
+          "bbox": [
+            1028,
+            725,
+            1080,
+            746
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "trích",
+          "confidence": 96.0,
+          "bbox": [
+            153,
+            765,
+            202,
+            784
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "xuất",
+          "confidence": 97.0,
+          "bbox": [
+            210,
+            764,
+            258,
+            784
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "các",
+          "confidence": 97.0,
+          "bbox": [
+            265,
+            765,
+            299,
+            784
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "trường",
+          "confidence": 96.0,
+          "bbox": [
+            305,
+            765,
+            382,
+            790
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "thông",
+          "confidence": 96.0,
+          "bbox": [
+            389,
+            765,
+            454,
+            790
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tin",
+          "confidence": 96.0,
+          "bbox": [
+            461,
+            766,
+            489,
+            785
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "chính",
+          "confidence": 96.0,
+          "bbox": [
+            496,
+            766,
+            555,
+            785
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "như",
+          "confidence": 96.0,
+          "bbox": [
+            566,
+            760,
+            599,
+            795
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "số",
+          "confidence": 96.0,
+          "bbox": [
+            609,
+            765,
+            634,
+            785
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "ký",
+          "confidence": 97.0,
+          "bbox": [
+            646,
+            766,
+            670,
+            790
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "hiệu,",
+          "confidence": 96.0,
+          "bbox": [
+            677,
+            766,
+            728,
+            789
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "ngày",
+          "confidence": 96.0,
+          "bbox": [
+            737,
+            766,
+            790,
+            791
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "ban",
+          "confidence": 96.0,
+          "bbox": [
+            797,
+            767,
+            836,
+            785
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "hành,",
+          "confidence": 96.0,
+          "bbox": [
+            845,
+            766,
+            905,
+            788
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "trích",
+          "confidence": 96.0,
+          "bbox": [
+            913,
+            767,
+            961,
+            786
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "yếu,",
+          "confidence": 96.0,
+          "bbox": [
+            968,
+            766,
+            1013,
+            791
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nơi",
+          "confidence": 96.0,
+          "bbox": [
+            1022,
+            768,
+            1054,
+            786
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "gửi,",
+          "confidence": 96.0,
+          "bbox": [
+            1062,
+            765,
+            1102,
+            791
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nơi",
+          "confidence": 96.0,
+          "bbox": [
+            155,
+            809,
+            187,
+            827
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nhận;",
+          "confidence": 96.0,
+          "bbox": [
+            196,
+            808,
+            256,
+            831
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "đồng",
+          "confidence": 96.0,
+          "bbox": [
+            264,
+            807,
+            319,
+            833
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "thời",
+          "confidence": 96.0,
+          "bbox": [
+            327,
+            808,
+            369,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "hỗ",
+          "confidence": 97.0,
+          "bbox": [
+            378,
+            806,
+            404,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "trợ",
+          "confidence": 95.0,
+          "bbox": [
+            411,
+            811,
+            444,
+            831
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "ký",
+          "confidence": 88.0,
+          "bbox": [
+            451,
+            809,
+            473,
+            833
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "số",
+          "confidence": 94.0,
+          "bbox": [
+            480,
+            808,
+            504,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "và",
+          "confidence": 97.0,
+          "bbox": [
+            510,
+            809,
+            535,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "kiểm",
+          "confidence": 95.0,
+          "bbox": [
+            543,
+            806,
+            594,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tra",
+          "confidence": 96.0,
+          "bbox": [
+            601,
+            812,
+            631,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tính",
+          "confidence": 96.0,
+          "bbox": [
+            638,
+            809,
+            680,
+            828
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "toàn",
+          "confidence": 96.0,
+          "bbox": [
+            688,
+            809,
+            737,
+            829
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "vẹn",
+          "confidence": 96.0,
+          "bbox": [
+            744,
+            815,
+            783,
+            832
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "của",
+          "confidence": 96.0,
+          "bbox": [
+            791,
+            808,
+            827,
+            829
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "văn",
+          "confidence": 97.0,
+          "bbox": [
+            834,
+            810,
+            873,
+            829
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "bản",
+          "confidence": 97.0,
+          "bbox": [
+            882,
+            808,
+            921,
+            829
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "điện",
+          "confidence": 96.0,
+          "bbox": [
+            929,
+            810,
+            975,
+            833
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tử.",
+          "confidence": 96.0,
+          "bbox": [
+            983,
+            808,
+            1012,
+            829
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Nhóm",
+          "confidence": 96.0,
+          "bbox": [
+            155,
+            895,
+            221,
+            914
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nghiên",
+          "confidence": 96.0,
+          "bbox": [
+            229,
+            895,
+            303,
+            919
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "cứu",
+          "confidence": 96.0,
+          "bbox": [
+            311,
+            895,
+            351,
+            914
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "có",
+          "confidence": 96.0,
+          "bbox": [
+            359,
+            895,
+            383,
+            914
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "trách",
+          "confidence": 96.0,
+          "bbox": [
+            390,
+            895,
+            445,
+            914
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nhiệm",
+          "confidence": 96.0,
+          "bbox": [
+            453,
+            895,
+            521,
+            918
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "chuẩn",
+          "confidence": 96.0,
+          "bbox": [
+            529,
+            893,
+            595,
+            915
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "bị",
+          "confidence": 97.0,
+          "bbox": [
+            604,
+            896,
+            621,
+            918
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "dữ",
+          "confidence": 96.0,
+          "bbox": [
+            629,
+            896,
+            660,
+            915
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "liệu",
+          "confidence": 96.0,
+          "bbox": [
+            667,
+            896,
+            703,
+            918
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "thử",
+          "confidence": 96.0,
+          "bbox": [
+            715,
+            889,
+            748,
+            925
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nghiệm,",
+          "confidence": 96.0,
+          "bbox": [
+            756,
+            896,
+            845,
+            921
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "báo",
+          "confidence": 96.0,
+          "bbox": [
+            854,
+            896,
+            893,
+            915
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "cáo",
+          "confidence": 96.0,
+          "bbox": [
+            901,
+            896,
+            938,
+            915
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "kết",
+          "confidence": 96.0,
+          "bbox": [
+            945,
+            895,
+            978,
+            915
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "quả",
+          "confidence": 97.0,
+          "bbox": [
+            985,
+            895,
+            1025,
+            921
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "so",
+          "confidence": 96.0,
+          "bbox": [
+            1034,
+            902,
+            1057,
+            916
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "sánh",
+          "confidence": 96.0,
+          "bbox": [
+            1064,
+            897,
+            1117,
+            916
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "các",
+          "confidence": 96.0,
+          "bbox": [
+            154,
+            938,
+            188,
+            957
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "công",
+          "confidence": 96.0,
+          "bbox": [
+            195,
+            938,
+            248,
+            962
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nghệ",
+          "confidence": 93.0,
+          "bbox": [
+            256,
+            938,
+            311,
+            963
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "OCR",
+          "confidence": 91.0,
+          "bbox": [
+            319,
+            940,
+            365,
+            957
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "và",
+          "confidence": 96.0,
+          "bbox": [
+            371,
+            938,
+            395,
+            957
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "đề",
+          "confidence": 96.0,
+          "bbox": [
+            403,
+            937,
+            429,
+            957
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "xuất",
+          "confidence": 96.0,
+          "bbox": [
+            437,
+            937,
+            484,
+            957
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "phương",
+          "confidence": 96.0,
+          "bbox": [
+            492,
+            939,
+            577,
+            963
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "án",
+          "confidence": 96.0,
+          "bbox": [
+            586,
+            939,
+            611,
+            958
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "phù",
+          "confidence": 96.0,
+          "bbox": [
+            620,
+            939,
+            660,
+            963
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "hợp",
+          "confidence": 96.0,
+          "bbox": [
+            669,
+            940,
+            710,
+            964
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "với",
+          "confidence": 97.0,
+          "bbox": [
+            717,
+            939,
+            748,
+            958
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "điều",
+          "confidence": 96.0,
+          "bbox": [
+            756,
+            938,
+            802,
+            958
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "kiện",
+          "confidence": 97.0,
+          "bbox": [
+            811,
+            939,
+            855,
+            962
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "triển",
+          "confidence": 96.0,
+          "bbox": [
+            862,
+            937,
+            912,
+            958
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "khai",
+          "confidence": 96.0,
+          "bbox": [
+            921,
+            940,
+            965,
+            959
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "tại",
+          "confidence": 96.0,
+          "bbox": [
+            972,
+            941,
+            998,
+            962
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "đơn",
+          "confidence": 96.0,
+          "bbox": [
+            1006,
+            941,
+            1048,
+            959
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "vị.",
+          "confidence": 96.0,
+          "bbox": [
+            1054,
+            941,
+            1078,
+            962
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Nơi",
+          "confidence": 96.0,
+          "bbox": [
+            155,
+            1025,
+            190,
+            1043
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nhận:",
+          "confidence": 96.0,
+          "bbox": [
+            199,
+            1024,
+            259,
+            1047
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "-",
+          "confidence": 93.0,
+          "bbox": [
+            153,
+            1078,
+            160,
+            1081
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Như",
+          "confidence": 82.0,
+          "bbox": [
+            171,
+            1063,
+            203,
+            1097
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "trên;",
+          "confidence": 96.0,
+          "bbox": [
+            214,
+            1063,
+            271,
+            1097
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "-",
+          "confidence": 91.0,
+          "bbox": [
+            153,
+            1121,
+            160,
+            1124
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Lưu:",
+          "confidence": 93.0,
+          "bbox": [
+            168,
+            1112,
+            213,
+            1130
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "VT,",
+          "confidence": 92.0,
+          "bbox": [
+            221,
+            1112,
+            252,
+            1133
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "CNTT.",
+          "confidence": 92.0,
+          "bbox": [
+            260,
+            1112,
+            321,
+            1130
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        }
+      ],
+      "elapsed_sec": 1.0321444000583142,
+      "error": "",
+      "quality_guard": {
+        "token_count": 402,
+        "letter_count": 1372,
+        "marked_letter_ratio": 0.2726,
+        "marked_token_ratio": 0.8657,
+        "admin_keyword_hits": 92,
+        "admin_keyword_ratio": 0.2289,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "raw": {
+        "page_count": 2,
+        "ok_pages": 2,
+        "error_pages": 0,
+        "skipped_pages": 0,
+        "first_page_text": "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM KHOA CÔNG NGHỆ THÔNG TIN Độc lập - Tự do - Hạnh phúc Số: 123/CV-CNTT Hà Nội, ngày 15 tháng 05 năm 2026 CÔNG VĂN V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số Kính gửi: Phòng Quản lý khoa học và Hợp tác quốc tế Nhằm phục vụ công tác nghiên cứu khoa học sinh viên năm 2026, Khoa Công nghệ thông tin đề nghị nhóm nghiên cứu triển khai thử nghiệm hệ thống hỗ trợ quản lý công văn đi và đến. Hệ thống cần có chức năng tiếp nhận văn bản scan, nhận diện ký tự quang học OCR, trích xuất các trường thông tin chính như số ký hiệu, ngày ban hành, trích yếu, nơi gửi, nơi nhận; đồng thời hỗ trợ ký số và kiểm tra tính toàn vẹn của văn bản điện tử. Nhóm nghiên cứu có trách nhiệm chuẩn bị dữ liệu thử nghiệm, báo cáo kết quả so sánh các công nghệ OCR và đề xuất phương án phù hợp với điều kiện triển khai tại đơn vị. Nơi nhận: - Như trên; - Lưu: VT, CNTT.",
+        "page_elapsed_total": 2.0394776000175625,
+        "wall_elapsed_sec": 1.0321444000583142,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "ok",
+            "elapsed_sec": 1.0291715000057593,
+            "text_len": 934,
+            "boxes": 207,
+            "error": "",
+            "note": null,
+            "refine": null,
+            "paddle_device": null,
+            "vietocr_device": null,
+            "vietocr_model": null
+          },
+          {
+            "page": 2,
+            "status": "ok",
+            "elapsed_sec": 1.0103061000118032,
+            "text_len": 934,
+            "boxes": 207,
+            "error": "",
+            "note": null,
+            "refine": null,
+            "paddle_device": null,
+            "vietocr_device": null,
+            "vietocr_model": null
+          }
+        ]
+      },
+      "ground_truth_metric_version": 2,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    }
+  ],
+  "comparison_summary": {
+    "total_runs": 1,
+    "ok_runs": 1,
+    "error_runs": 0,
+    "skipped_runs": 0,
+    "issue_runs": 0,
+    "has_ground_truth": false,
+    "best_cer": null,
+    "best_wer": null,
+    "fastest": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "label": "tesseract / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 1.032,
+      "text_len": 1870,
+      "avg_confidence": 95.57,
+      "quality_score": 98.01,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 402,
+        "letter_count": 1372,
+        "marked_letter_ratio": 0.2726,
+        "marked_token_ratio": 0.8657,
+        "admin_keyword_hits": 92,
+        "admin_keyword_ratio": 0.2289,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 100.0,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 98.01,
+      "confidence_bar": 95.57
+    },
+    "best_quality": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "label": "tesseract / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 1.032,
+      "text_len": 1870,
+      "avg_confidence": 95.57,
+      "quality_score": 98.01,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 402,
+        "letter_count": 1372,
+        "marked_letter_ratio": 0.2726,
+        "marked_token_ratio": 0.8657,
+        "admin_keyword_hits": 92,
+        "admin_keyword_ratio": 0.2289,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 100.0,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 98.01,
+      "confidence_bar": 95.57
+    },
+    "best_confidence": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "label": "tesseract / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 1.032,
+      "text_len": 1870,
+      "avg_confidence": 95.57,
+      "quality_score": 98.01,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 402,
+        "letter_count": 1372,
+        "marked_letter_ratio": 0.2726,
+        "marked_token_ratio": 0.8657,
+        "admin_keyword_hits": 92,
+        "admin_keyword_ratio": 0.2289,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 100.0,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 98.01,
+      "confidence_bar": 95.57
+    },
+    "rows": [
+      {
+        "engine": "tesseract",
+        "variant": "opencv_preprocessed",
+        "label": "tesseract / opencv_preprocessed",
+        "status": "ok",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 1.032,
+        "text_len": 1870,
+        "avg_confidence": 95.57,
+        "quality_score": 98.01,
+        "quality_source": "confidence + text length + Vietnamese guard",
+        "quality_guard": {
+          "token_count": 402,
+          "letter_count": 1372,
+          "marked_letter_ratio": 0.2726,
+          "marked_token_ratio": 0.8657,
+          "admin_keyword_hits": 92,
+          "admin_keyword_ratio": 0.2289,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 100.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 100.0,
+        "ground_truth_metric_warning": null,
+        "error": "",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 100.0,
+        "text_bar": 100.0,
+        "quality_bar": 98.01,
+        "confidence_bar": 95.57
+      }
+    ],
+    "preprocessing_effect": [],
+    "engine_status": [
+      {
+        "engine": "tesseract",
+        "ok": 1,
+        "skipped": 0,
+        "error": 0,
+        "total": 1
+      }
+    ]
+  },
+  "layoutlmv3_postprocess": {
+    "mode": "layoutlmv3_model",
+    "extractor": "layoutlmv3",
+    "note": "Đã chạy LayoutLMv3 thật bằng transformers từ model D:\\ocr_full_demo_v2_latest\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification. Field từ model được kiểm định theo từng trường rồi mới merge với rule fallback.",
+    "model_configured": true,
+    "model_ran": true,
+    "model_path": "D:\\ocr_full_demo_v2_latest\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification",
+    "processor_path": "D:\\ocr_full_demo_v2_latest\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification",
+    "runtime": "transformers",
+    "model_word_count": 129,
+    "field_label_compatible": true,
+    "compatible_fields": [
+      "co_quan_ban_hanh",
+      "loai_van_ban",
+      "ngay_ban_hanh",
+      "noi_gui",
+      "noi_nhan",
+      "so_ky_hieu",
+      "trich_yeu"
+    ],
+    "expected_fields": [
+      "co_quan_ban_hanh",
+      "loai_van_ban",
+      "ngay_ban_hanh",
+      "noi_gui",
+      "noi_nhan",
+      "so_ky_hieu",
+      "trich_yeu"
+    ],
+    "fields_source": "layoutlmv3+best_ocr_rule",
+    "model_fields": {
+      "co_quan_ban_hanh": "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC THÔNG TIN",
+      "so_ky_hieu": "123/CV-CNTT",
+      "ngay_ban_hanh": "15/05/2026",
+      "loai_van_ban": "CÔNG VĂN",
+      "trich_yeu": "V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số"
+    },
+    "accepted_model_fields": {
+      "ngay_ban_hanh": "15/05/2026",
+      "loai_van_ban": "CÔNG VĂN",
+      "trich_yeu": "V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số"
+    },
+    "rejected_model_fields": {
+      "co_quan_ban_hanh": "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC THÔNG TIN",
+      "so_ky_hieu": "123/CV-CNTT"
+    },
+    "fields": {
+      "co_quan_ban_hanh": "",
+      "loai_van_ban": "CÔNG VĂN",
+      "ngay_ban_hanh": "15/05/2026",
+      "noi_gui": "",
+      "noi_nhan": "Phòng Quản lý khoa học và Hợp tác quốc tế Nhằm phục vụ công tác nghiên cứu khoa học sinh viên năm 2026, Khoa Công nghệ thông tin đề nghị nhóm nghiên cứu triển khai thử nghiệm hệ thống hỗ trợ quản lý",
+      "so_ky_hieu": "",
+      "trich_yeu": "V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số",
+      "confidence_note": "layoutlmv3+best_ocr_rule"
+    },
+    "labels_preview": [
+      [
+        "TRƯỜNG",
+        "B-co_quan_ban_hanh"
+      ],
+      [
+        "ĐẠI",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "HỌC",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "ĐIỆN",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "LỰC",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "CỘNG",
+        "O"
+      ],
+      [
+        "HÒA",
+        "O"
+      ],
+      [
+        "XÃ",
+        "O"
+      ],
+      [
+        "HỘI",
+        "O"
+      ],
+      [
+        "CHỦ",
+        "O"
+      ],
+      [
+        "NGHĨA",
+        "O"
+      ],
+      [
+        "VIỆT",
+        "O"
+      ],
+      [
+        "NAM",
+        "O"
+      ],
+      [
+        "KHOA",
+        "O"
+      ],
+      [
+        "CÔNG",
+        "O"
+      ],
+      [
+        "NGHỆ",
+        "O"
+      ],
+      [
+        "THÔNG",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "TIN",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "Độc",
+        "O"
+      ],
+      [
+        "lập",
+        "O"
+      ],
+      [
+        "-",
+        "O"
+      ],
+      [
+        "Tự",
+        "O"
+      ],
+      [
+        "do",
+        "O"
+      ],
+      [
+        "-",
+        "O"
+      ],
+      [
+        "Hạnh",
+        "O"
+      ],
+      [
+        "phúc",
+        "O"
+      ],
+      [
+        "Số:",
+        "O"
+      ],
+      [
+        "123/CV-CNTT",
+        "B-so_ky_hieu"
+      ],
+      [
+        "Hà",
+        "O"
+      ],
+      [
+        "Nội,",
+        "O"
+      ],
+      [
+        "ngày",
+        "B-ngay_ban_hanh"
+      ],
+      [
+        "15",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "tháng",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "05",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "năm",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "2026",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "CÔNG",
+        "B-loai_van_ban"
+      ],
+      [
+        "VĂN",
+        "I-loai_van_ban"
+      ],
+      [
+        "V/v",
+        "B-trich_yeu"
+      ],
+      [
+        "triển",
+        "I-trich_yeu"
+      ],
+      [
+        "khai",
+        "I-trich_yeu"
+      ],
+      [
+        "thử",
+        "I-trich_yeu"
+      ],
+      [
+        "nghiệm",
+        "I-trich_yeu"
+      ],
+      [
+        "hệ",
+        "I-trich_yeu"
+      ],
+      [
+        "thống",
+        "I-trich_yeu"
+      ],
+      [
+        "quản",
+        "I-trich_yeu"
+      ],
+      [
+        "lý",
+        "I-trich_yeu"
+      ],
+      [
+        "công",
+        "I-trich_yeu"
+      ],
+      [
+        "văn",
+        "I-trich_yeu"
+      ],
+      [
+        "tích",
+        "I-trich_yeu"
+      ],
+      [
+        "hợp",
+        "I-trich_yeu"
+      ],
+      [
+        "OCR",
+        "I-trich_yeu"
+      ],
+      [
+        "và",
+        "I-trich_yeu"
+      ],
+      [
+        "chữ",
+        "I-trich_yeu"
+      ],
+      [
+        "ký",
+        "I-trich_yeu"
+      ],
+      [
+        "số",
+        "I-trich_yeu"
+      ],
+      [
+        "Kính",
+        "O"
+      ],
+      [
+        "gửi:",
+        "O"
+      ],
+      [
+        "Phòng",
+        "O"
+      ],
+      [
+        "Quản",
+        "O"
+      ],
+      [
+        "lý",
+        "O"
+      ],
+      [
+        "khoa",
+        "O"
+      ],
+      [
+        "học",
+        "O"
+      ],
+      [
+        "và",
+        "O"
+      ],
+      [
+        "Hợp",
+        "O"
+      ],
+      [
+        "tác",
+        "O"
+      ],
+      [
+        "quốc",
+        "O"
+      ],
+      [
+        "tế",
+        "O"
+      ],
+      [
+        "Nhằm",
+        "O"
+      ],
+      [
+        "phục",
+        "O"
+      ],
+      [
+        "vụ",
+        "O"
+      ],
+      [
+        "công",
+        "O"
+      ],
+      [
+        "tác",
+        "O"
+      ],
+      [
+        "nghiên",
+        "O"
+      ],
+      [
+        "cứu",
+        "O"
+      ],
+      [
+        "khoa",
+        "O"
+      ],
+      [
+        "học",
+        "O"
+      ],
+      [
+        "sinh",
+        "O"
+      ],
+      [
+        "viên",
+        "O"
+      ],
+      [
+        "năm",
+        "O"
+      ]
+    ],
+    "labels_preview_rows": [
+      {
+        "token": "TRƯỜNG",
+        "label": "B-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "ĐẠI",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "HỌC",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "ĐIỆN",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "LỰC",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "CỘNG",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "HÒA",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "XÃ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "HỘI",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "CHỦ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NGHĨA",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "VIỆT",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NAM",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "KHOA",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "CÔNG",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NGHỆ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "THÔNG",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "TIN",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "Độc",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "lập",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "-",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Tự",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "do",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "-",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Hạnh",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "phúc",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Số:",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "123/CV-CNTT",
+        "label": "B-so_ky_hieu",
+        "field": "so_ky_hieu"
+      },
+      {
+        "token": "Hà",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Nội,",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "ngày",
+        "label": "B-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "15",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "tháng",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "05",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "năm",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "2026",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "CÔNG",
+        "label": "B-loai_van_ban",
+        "field": "loai_van_ban"
+      },
+      {
+        "token": "VĂN",
+        "label": "I-loai_van_ban",
+        "field": "loai_van_ban"
+      },
+      {
+        "token": "V/v",
+        "label": "B-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "triển",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "khai",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "thử",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "nghiệm",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "hệ",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "thống",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "quản",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "lý",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "công",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "văn",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "tích",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "hợp",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "OCR",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "và",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "chữ",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "ký",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "số",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Kính",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "gửi:",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Phòng",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Quản",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "lý",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "khoa",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "học",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "và",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Hợp",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "tác",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "quốc",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "tế",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Nhằm",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "phục",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "vụ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "công",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "tác",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "nghiên",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "cứu",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "khoa",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "học",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "sinh",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "viên",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "năm",
+        "label": "O",
+        "field": "outside"
+      }
+    ],
+    "torch_device": "cuda",
+    "ocr_source": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "page": 1,
+      "note": "Token LayoutLMv3 lấy từ OCR/bbox trang 1 của engine được chọn."
+    },
+    "ocr_source_quality": {
+      "diacritic_loss": false,
+      "severe_diacritic_loss": false,
+      "vietnamese_quality_score": 100.0
+    },
+    "labels_preview_note": "Token preview lấy từ tesseract / opencv_preprocessed trang 1. Nếu OCR nguồn rụng chữ thì token LayoutLMv3 cũng rụng theo; field cuối vẫn được hậu kiểm bằng best-OCR/rule."
+  },
+  "best_engine": {
+    "engine": "tesseract",
+    "variant": "opencv_preprocessed"
+  },
+  "document_archive": {
+    "document_id": "d6090a528967",
+    "status": "scanned",
+    "storage_root": "documents/2026/07/d6090a528967",
+    "manifest_path": "documents/2026/07/d6090a528967/manifest.json",
+    "index_path": "documents/index.jsonl",
+    "workflow_manifest_path": "documents/2026/07/d6090a528967/06_metadata/workflow_manifest.json",
+    "extracted_fields_path": "documents/2026/07/d6090a528967/06_metadata/extracted_fields.json",
+    "ocr_output_count": 1,
+    "created_at": "2026-07-11T14:25:42+07:00",
+    "manifest": {
+      "document_id": "d6090a528967",
+      "job_id": "d6090a528967",
+      "created_at": "2026-07-11T14:25:42+07:00",
+      "source_filename": "hai_trang.pdf",
+      "page_count": 2,
+      "status": "scanned",
+      "storage_root": "documents/2026/07/d6090a528967",
+      "original_file": {
+        "path": "documents/2026/07/d6090a528967/01_original/hai_trang.pdf",
+        "filename": "hai_trang.pdf",
+        "size_bytes": 377758,
+        "sha256": "06590c0404566e8b0e15b87f898df22165a62bf434b4371a5bd0f7921d988331"
+      },
+      "pages": {
+        "raw": [
+          {
+            "path": "documents/2026/07/d6090a528967/02_pages/raw/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 446280,
+            "sha256": "16b7711c6158924595ae03c39596b93d5693c23048c7862988d29d321eb0774b",
+            "page": 1
+          },
+          {
+            "path": "documents/2026/07/d6090a528967/02_pages/raw/page_002.png",
+            "filename": "page_002.png",
+            "size_bytes": 446280,
+            "sha256": "16b7711c6158924595ae03c39596b93d5693c23048c7862988d29d321eb0774b",
+            "page": 2
+          }
+        ],
+        "opencv_preprocessed": [
+          {
+            "path": "documents/2026/07/d6090a528967/02_pages/opencv_preprocessed/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 50013,
+            "sha256": "fe23127bfe2b4c750bc2062d61d89d667023044a8bda06142e3b1743da6d6a2c",
+            "page": 1
+          },
+          {
+            "path": "documents/2026/07/d6090a528967/02_pages/opencv_preprocessed/page_002.png",
+            "filename": "page_002.png",
+            "size_bytes": 50013,
+            "sha256": "fe23127bfe2b4c750bc2062d61d89d667023044a8bda06142e3b1743da6d6a2c",
+            "page": 2
+          }
+        ]
+      },
+      "ground_truth": null,
+      "extracted_fields_path": "documents/2026/07/d6090a528967/06_metadata/extracted_fields.json",
+      "workflow_manifest_path": "documents/2026/07/d6090a528967/06_metadata/workflow_manifest.json",
+      "ocr_outputs": [
+        {
+          "engine": "tesseract",
+          "variant": "opencv_preprocessed",
+          "status": "ok",
+          "elapsed_sec": 1.0321444000583142,
+          "text_length": 1870,
+          "text_path": "documents/2026/07/d6090a528967/04_ocr_text/tesseract__opencv_preprocessed.txt",
+          "json_path": "documents/2026/07/d6090a528967/05_ocr_json/tesseract__opencv_preprocessed.json",
+          "word_path": "documents/2026/07/d6090a528967/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "word_file": {
+            "path": "documents/2026/07/d6090a528967/08_word_outputs/tesseract__opencv_preprocessed.docx",
+            "filename": "tesseract__opencv_preprocessed.docx",
+            "size_bytes": 2238,
+            "sha256": "9fbebca937dc6b16b204aa9656c27008cb4b980e4a1a8f35ecd4b82478eb2070"
+          },
+          "word_kind": "editable_ocr_layout",
+          "word_layout_version": "2026-05-26-structured-v2",
+          "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+          "page_count": 2
+        }
+      ],
+      "exports": {
+        "benchmark_csv": "documents/2026/07/d6090a528967/07_exports/benchmark_results.csv",
+        "comparison_summary": "documents/2026/07/d6090a528967/07_exports/comparison_summary.json",
+        "report_snapshot": "documents/2026/07/d6090a528967/07_exports/report_snapshot.json"
+      }
+    },
+    "source_filename": "hai_trang.pdf",
+    "page_count": 2,
+    "storage_root_absolute": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967",
+    "manifest_url": "/storage/documents/2026/07/d6090a528967/manifest.json",
+    "index_url": "/storage/documents/index.jsonl",
+    "original_file": {
+      "path": "documents/2026/07/d6090a528967/01_original/hai_trang.pdf",
+      "filename": "hai_trang.pdf",
+      "size_bytes": 377758,
+      "sha256": "06590c0404566e8b0e15b87f898df22165a62bf434b4371a5bd0f7921d988331",
+      "url": "/storage/documents/2026/07/d6090a528967/01_original/hai_trang.pdf",
+      "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\01_original\\hai_trang.pdf",
+      "size_label": "368.9 KB",
+      "sha256_short": "06590c040456"
+    },
+    "ground_truth": null,
+    "pages": {
+      "raw": [
+        {
+          "path": "documents/2026/07/d6090a528967/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 446280,
+          "sha256": "16b7711c6158924595ae03c39596b93d5693c23048c7862988d29d321eb0774b",
+          "page": 1,
+          "url": "/storage/documents/2026/07/d6090a528967/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\02_pages\\raw\\page_001.png",
+          "size_label": "435.8 KB",
+          "sha256_short": "16b7711c6158"
+        },
+        {
+          "path": "documents/2026/07/d6090a528967/02_pages/raw/page_002.png",
+          "filename": "page_002.png",
+          "size_bytes": 446280,
+          "sha256": "16b7711c6158924595ae03c39596b93d5693c23048c7862988d29d321eb0774b",
+          "page": 2,
+          "url": "/storage/documents/2026/07/d6090a528967/02_pages/raw/page_002.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\02_pages\\raw\\page_002.png",
+          "size_label": "435.8 KB",
+          "sha256_short": "16b7711c6158"
+        }
+      ],
+      "opencv_preprocessed": [
+        {
+          "path": "documents/2026/07/d6090a528967/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 50013,
+          "sha256": "fe23127bfe2b4c750bc2062d61d89d667023044a8bda06142e3b1743da6d6a2c",
+          "page": 1,
+          "url": "/storage/documents/2026/07/d6090a528967/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "48.8 KB",
+          "sha256_short": "fe23127bfe2b"
+        },
+        {
+          "path": "documents/2026/07/d6090a528967/02_pages/opencv_preprocessed/page_002.png",
+          "filename": "page_002.png",
+          "size_bytes": 50013,
+          "sha256": "fe23127bfe2b4c750bc2062d61d89d667023044a8bda06142e3b1743da6d6a2c",
+          "page": 2,
+          "url": "/storage/documents/2026/07/d6090a528967/02_pages/opencv_preprocessed/page_002.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\02_pages\\opencv_preprocessed\\page_002.png",
+          "size_label": "48.8 KB",
+          "sha256_short": "fe23127bfe2b"
+        }
+      ]
+    },
+    "preview_pages": [
+      {
+        "page": 1,
+        "raw": {
+          "path": "documents/2026/07/d6090a528967/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 446280,
+          "sha256": "16b7711c6158924595ae03c39596b93d5693c23048c7862988d29d321eb0774b",
+          "page": 1,
+          "url": "/storage/documents/2026/07/d6090a528967/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\02_pages\\raw\\page_001.png",
+          "size_label": "435.8 KB",
+          "sha256_short": "16b7711c6158"
+        },
+        "opencv": {
+          "path": "documents/2026/07/d6090a528967/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 50013,
+          "sha256": "fe23127bfe2b4c750bc2062d61d89d667023044a8bda06142e3b1743da6d6a2c",
+          "page": 1,
+          "url": "/storage/documents/2026/07/d6090a528967/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "48.8 KB",
+          "sha256_short": "fe23127bfe2b"
+        }
+      },
+      {
+        "page": 2,
+        "raw": {
+          "path": "documents/2026/07/d6090a528967/02_pages/raw/page_002.png",
+          "filename": "page_002.png",
+          "size_bytes": 446280,
+          "sha256": "16b7711c6158924595ae03c39596b93d5693c23048c7862988d29d321eb0774b",
+          "page": 2,
+          "url": "/storage/documents/2026/07/d6090a528967/02_pages/raw/page_002.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\02_pages\\raw\\page_002.png",
+          "size_label": "435.8 KB",
+          "sha256_short": "16b7711c6158"
+        },
+        "opencv": {
+          "path": "documents/2026/07/d6090a528967/02_pages/opencv_preprocessed/page_002.png",
+          "filename": "page_002.png",
+          "size_bytes": 50013,
+          "sha256": "fe23127bfe2b4c750bc2062d61d89d667023044a8bda06142e3b1743da6d6a2c",
+          "page": 2,
+          "url": "/storage/documents/2026/07/d6090a528967/02_pages/opencv_preprocessed/page_002.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\02_pages\\opencv_preprocessed\\page_002.png",
+          "size_label": "48.8 KB",
+          "sha256_short": "fe23127bfe2b"
+        }
+      }
+    ],
+    "ocr_outputs": [
+      {
+        "engine": "tesseract",
+        "variant": "opencv_preprocessed",
+        "status": "ok",
+        "elapsed_sec": 1.0321444000583142,
+        "text_length": 1870,
+        "text_path": "documents/2026/07/d6090a528967/04_ocr_text/tesseract__opencv_preprocessed.txt",
+        "json_path": "documents/2026/07/d6090a528967/05_ocr_json/tesseract__opencv_preprocessed.json",
+        "word_path": "documents/2026/07/d6090a528967/08_word_outputs/tesseract__opencv_preprocessed.docx",
+        "word_file": {
+          "path": "documents/2026/07/d6090a528967/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "filename": "tesseract__opencv_preprocessed.docx",
+          "size_bytes": 2238,
+          "sha256": "9fbebca937dc6b16b204aa9656c27008cb4b980e4a1a8f35ecd4b82478eb2070",
+          "url": "/storage/documents/2026/07/d6090a528967/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\08_word_outputs\\tesseract__opencv_preprocessed.docx",
+          "size_label": "2.2 KB",
+          "sha256_short": "9fbebca937dc"
+        },
+        "word_kind": "editable_ocr_layout",
+        "word_layout_version": "2026-05-26-structured-v2",
+        "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+        "page_count": 2,
+        "text_url": "/storage/documents/2026/07/d6090a528967/04_ocr_text/tesseract__opencv_preprocessed.txt",
+        "text_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\04_ocr_text\\tesseract__opencv_preprocessed.txt",
+        "json_url": "/storage/documents/2026/07/d6090a528967/05_ocr_json/tesseract__opencv_preprocessed.json",
+        "json_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\05_ocr_json\\tesseract__opencv_preprocessed.json",
+        "word_url": "/storage/documents/2026/07/d6090a528967/08_word_outputs/tesseract__opencv_preprocessed.docx",
+        "word_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\08_word_outputs\\tesseract__opencv_preprocessed.docx",
+        "word_filename": "tesseract__opencv_preprocessed.docx",
+        "word_size_label": "2.2 KB"
+      }
+    ],
+    "exports": {
+      "benchmark_csv": {
+        "path": "documents/2026/07/d6090a528967/07_exports/benchmark_results.csv",
+        "url": "/storage/documents/2026/07/d6090a528967/07_exports/benchmark_results.csv",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\07_exports\\benchmark_results.csv"
+      },
+      "comparison_summary": {
+        "path": "documents/2026/07/d6090a528967/07_exports/comparison_summary.json",
+        "url": "/storage/documents/2026/07/d6090a528967/07_exports/comparison_summary.json",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\07_exports\\comparison_summary.json"
+      },
+      "report_snapshot": {
+        "path": "documents/2026/07/d6090a528967/07_exports/report_snapshot.json",
+        "url": "/storage/documents/2026/07/d6090a528967/07_exports/report_snapshot.json",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\d6090a528967\\07_exports\\report_snapshot.json"
+      }
+    },
+    "workflow_manifest_url": "/storage/documents/2026/07/d6090a528967/06_metadata/workflow_manifest.json",
+    "extracted_fields_url": "/storage/documents/2026/07/d6090a528967/06_metadata/extracted_fields.json"
+  }
+}

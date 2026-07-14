@@ -1,0 +1,11 @@
+INFO:     127.0.0.1:55926 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58042 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58042 - "GET /static/styles.css?v=utf8-20260531 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:58042 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59661 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59661 - "GET /documents/8278ce54d0ca HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59661 - "GET /storage/documents/2026/07/8278ce54d0ca/01_original/06.2023.TT.BKH%C4%90T%20%28PDF%29_level4.pdf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60657 - "GET /storage/documents/2026/07/8278ce54d0ca/04_ocr_text/tesseract__raw.txt HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59661 - "GET /reports/8278ce54d0ca HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60657 - "GET /jobs/8278ce54d0ca/images/06.2023.TT.BKH%C4%90T%20%28PDF%29_level4_page1_opencv_preprocessed.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59661 - "GET /jobs/8278ce54d0ca/images/06.2023.TT.BKH%C4%90T%20%28PDF%29_level4_page1.png HTTP/1.1" 200 OK

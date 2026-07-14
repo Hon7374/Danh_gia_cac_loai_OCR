@@ -1,6 +1,8 @@
 # Báo cáo kỹ thuật thực nghiệm OCR và trích xuất metadata công văn tiếng Việt
 
 **Đề tài:** Ứng dụng OCR kết hợp chữ ký số trong quản lý công văn điện tử tiếng Việt  
+
+> Trạng thái triển khai: bản demo hiện tại chưa có module xác minh chữ ký số/PAdES. Các sơ đồ và mục chữ ký số trong báo cáo là kiến trúc đề xuất, không phải kết quả chạy thực nghiệm.
 **Dữ liệu phân tích:** toàn bộ kết quả đã scan trong thư mục `jobs/`, phân tích sâu job mới nhất `2bbba632396d`  
 **File scan mới nhất:** `upload\39-bgddt.pdf`  
 **Thời điểm cập nhật số liệu:** 2026-06-02 05:05:32  
@@ -216,7 +218,7 @@ OCR và LayoutLMv3 có vai trò khác nhau. OCR nhận dạng chữ từ ảnh; 
 | Mode | `layoutlmv3_model` |
 | Extractor | `layoutlmv3` |
 | Runtime | `transformers` |
-| Model path | `D:\ocr_workspace\ocr_full_demo_v2_latest\models\layoutlmv3-congvan-token-classification` |
+| Model path | `models/layoutlmv3-congvan-token-classification` |
 | Model ran | `True` |
 | Torch device | `cuda` |
 | Field label schema | `True` |
@@ -280,7 +282,7 @@ Dựa trên dữ liệu CER/WER đã tính từ các file ground-truth trong pro
 2. Cần tách rõ job thử nghiệm partial và job benchmark chuẩn trong dashboard.
 3. Cần mở rộng fine-tune PaddleOCR + VietOCR bằng nhiều mẫu công văn hơn nếu muốn dùng engine này làm production.
 4. Cần huấn luyện thêm LayoutLMv3 trên tập công văn gán nhãn thật để giảm phụ thuộc rule fallback.
-5. Cần lưu Docker log theo từng job để bảo đảm khả năng tái lập môi trường chạy.
+5. Cần lưu phiên bản Python, package và model theo từng job để tái lập môi trường local.
 
 ## 18. Phụ lục: toàn bộ job đã scan
 

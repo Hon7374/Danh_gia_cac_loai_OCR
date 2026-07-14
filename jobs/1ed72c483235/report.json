@@ -177208,7 +177208,7 @@
   "layoutlmv3_postprocess": {
     "mode": "layoutlmv3_model",
     "extractor": "layoutlmv3",
-    "note": "Đã chạy LayoutLMv3 thật bằng transformers từ model D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification. Nhãn model khớp schema công văn nên field từ model được merge với rule fallback.",
+    "note": "Đã chạy LayoutLMv3 thật bằng transformers từ model D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification. Field từ model được kiểm định theo từng trường rồi mới merge với rule fallback.",
     "model_configured": true,
     "model_ran": true,
     "model_path": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification",
@@ -177234,38 +177234,49 @@
       "so_ky_hieu",
       "trich_yeu"
     ],
-    "fields_source": "layoutlmv3+rule",
+    "fields_source": "layoutlmv3+best_ocr_rule",
     "model_fields": {
+      "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC",
+      "so_ky_hieu": "/2026/TT-NHNN",
+      "trich_yeu": "Hà Phân ca thực hiện thủ tực hành chính trong lĩnh vực thông tin tín dụng và sửa đôi, bỗ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng",
+      "ngay_ban_hanh": "thang 5 năm 2026",
+      "loai_van_ban": "THONG TƯ"
+    },
+    "accepted_model_fields": {
+      "trich_yeu": "Hà Phân ca thực hiện thủ tực hành chính trong lĩnh vực thông tin tín dụng và sửa đôi, bỗ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng"
+    },
+    "rejected_model_fields": {
+      "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC",
       "so_ky_hieu": "/2026/TT-NHNN",
       "ngay_ban_hanh": "thang 5 năm 2026",
-      "trich_yeu": "ĐỊNH ADA Sib wd OLS THONG TƯ Phân ca thực hiện thủ tực hành chính trong lĩnh vực thông tin tín dụng và sửa đôi, bỗ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành"
+      "loai_van_ban": "THONG TƯ"
     },
     "fields": {
-      "so_ky_hieu": "/2026/TT-NHNN",
-      "ngay_ban_hanh": "19/05/2026",
-      "trich_yeu": "Phân ca thực hiện thủ tực hành chính trong lĩnh vực thông tin tín dụng và sửa đôi, bỗ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng",
       "co_quan_ban_hanh": "NGÂN HÀNG NHÀ NƯỚC VIỆT NAM",
+      "loai_van_ban": "THÔNG TƯ",
+      "ngay_ban_hanh": "19/05/2026",
       "noi_gui": "",
       "noi_nhan": "",
-      "loai_van_ban": "THÔNG TƯ",
-      "confidence_note": "layoutlmv3+rule"
+      "so_ky_hieu": "11/2026/TT-NHNN",
+      "trich_yeu": "Hà Phân ca thực hiện thủ tực hành chính trong lĩnh vực thông tin tín dụng và sửa đôi, bỗ sung một số điều của các Thông tư liên quan đến cắt giảm, đơn giản hóa, phân cấp thực hiện thủ tục hành chính trong lĩnh vực thành lập và hoạt động ngân hàng",
+      "confidence_note": "layoutlmv3+best_ocr_rule"
     },
     "labels_preview": [
       [
         "NGÂN",
-        "O"
+        "B-co_quan_ban_hanh"
       ],
       [
         "HÀNG",
-        "O"
+        "I-co_quan_ban_hanh"
       ],
       [
         "NHÀ",
-        "O"
+        "I-co_quan_ban_hanh"
       ],
       [
         "NƯỚC",
-        "O"
+        "I-co_quan_ban_hanh"
       ],
       [
         "CỘNG",
@@ -177349,7 +177360,7 @@
       ],
       [
         "Hà",
-        "O"
+        "B-trich_yeu"
       ],
       [
         "Nội,",
@@ -177421,35 +177432,35 @@
       ],
       [
         "ĐỊNH",
-        "I-trich_yeu"
+        "O"
       ],
       [
         "ADA",
-        "I-trich_yeu"
+        "O"
       ],
       [
         "Sib",
-        "I-trich_yeu"
+        "O"
       ],
       [
         "wd",
-        "I-trich_yeu"
+        "O"
       ],
       [
         "OLS",
-        "I-trich_yeu"
+        "O"
       ],
       [
         "THONG",
-        "I-trich_yeu"
+        "B-loai_van_ban"
       ],
       [
         "TƯ",
-        "I-trich_yeu"
+        "I-loai_van_ban"
       ],
       [
         "Phân",
-        "I-trich_yeu"
+        "B-trich_yeu"
       ],
       [
         "ca",
@@ -177572,7 +177583,421 @@
         "I-trich_yeu"
       ]
     ],
-    "torch_device": "cuda"
+    "labels_preview_rows": [
+      {
+        "token": "NGÂN",
+        "label": "B-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "HÀNG",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "NHÀ",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "NƯỚC",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "CỘNG",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "HÒA",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "XÃ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "HỘI",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "CHỦ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NGHĨA",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "VIỆT",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NAM",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "VIỆT",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NAM",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Độc",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "lập",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "-",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Tự",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "do",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "-",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Hạnh",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "phúc",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Số:",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "/2026/TT-NHNN",
+        "label": "B-so_ky_hieu",
+        "field": "so_ky_hieu"
+      },
+      {
+        "token": "Hà",
+        "label": "B-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Nội,",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "ngay49",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "thang",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "5",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "năm",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "2026",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "*s:N",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "HANG",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NHÀ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NƯỚC",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "VIỆT",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NAM",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "VỤ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "PHAP",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "CHẾ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "ĐÃ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "THẤM",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "ĐỊNH",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "ADA",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Sib",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "wd",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "OLS",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "THONG",
+        "label": "B-loai_van_ban",
+        "field": "loai_van_ban"
+      },
+      {
+        "token": "TƯ",
+        "label": "I-loai_van_ban",
+        "field": "loai_van_ban"
+      },
+      {
+        "token": "Phân",
+        "label": "B-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "ca",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "thực",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "hiện",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "thủ",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "tực",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "hành",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "chính",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "trong",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "lĩnh",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "vực",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "thông",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "tin",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "tín",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "dụng",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "và",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "sửa",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "đôi,",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "bỗ",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "sung",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "một",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "số",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "điều",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "của",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "các",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Thông",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "tư",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "liên",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "quan",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "đến",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "cắt",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      }
+    ],
+    "torch_device": "cuda",
+    "ocr_source": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "page": 1,
+      "note": "Token LayoutLMv3 lấy từ OCR/bbox trang 1 của engine được chọn."
+    },
+    "ocr_source_quality": {
+      "diacritic_loss": false,
+      "severe_diacritic_loss": false,
+      "vietnamese_quality_score": 99.96
+    },
+    "labels_preview_note": "Token preview lấy từ tesseract / opencv_preprocessed trang 1. Nếu OCR nguồn rụng chữ thì token LayoutLMv3 cũng rụng theo; field cuối vẫn được hậu kiểm bằng best-OCR/rule."
   },
   "best_engine": {
     "engine": "tesseract",

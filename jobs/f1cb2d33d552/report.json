@@ -1,0 +1,207 @@
+{
+  "job_id": "f1cb2d33d552",
+  "uploaded_file": "upload\\sample.png",
+  "page_count": 1,
+  "raw_images": [
+    "images\\sample_page1.png"
+  ],
+  "preprocessed_images": [
+    "images\\sample_page1_opencv_preprocessed.png"
+  ],
+  "raw_image": "images\\sample_page1.png",
+  "preprocessed_image": "images\\sample_page1_opencv_preprocessed.png",
+  "opencv_steps": [
+    "adaptive_safe_preprocess",
+    "grayscale",
+    "denoise_fastNlMeans",
+    "deskew_minAreaRect",
+    "CLAHE_contrast",
+    "adaptive_threshold_safe",
+    "morph_close"
+  ],
+  "opencv_steps_by_page": [
+    {
+      "page": 1,
+      "steps": [
+        "grayscale",
+        "denoise_fastNlMeans",
+        "deskew_minAreaRect",
+        "CLAHE_contrast",
+        "adaptive_threshold_safe",
+        "morph_close"
+      ]
+    }
+  ],
+  "runtime": {
+    "opencv_workers": 4,
+    "tesseract_workers": 4,
+    "gpu_workers": 1
+  },
+  "ground_truth_file": null,
+  "ground_truth_text_length": 0,
+  "results": [],
+  "comparison_summary": {
+    "total_runs": 0,
+    "ok_runs": 0,
+    "error_runs": 0,
+    "skipped_runs": 0,
+    "issue_runs": 0,
+    "has_ground_truth": false,
+    "best_cer": null,
+    "best_wer": null,
+    "fastest": null,
+    "best_quality": null,
+    "best_confidence": null,
+    "rows": [],
+    "preprocessing_effect": [],
+    "engine_status": []
+  },
+  "layoutlmv3_postprocess": null,
+  "best_engine": null,
+  "document_archive": {
+    "document_id": "f1cb2d33d552",
+    "status": "scanned",
+    "storage_root": "documents/2026/07/f1cb2d33d552",
+    "manifest_path": "documents/2026/07/f1cb2d33d552/manifest.json",
+    "index_path": "documents/index.jsonl",
+    "workflow_manifest_path": "documents/2026/07/f1cb2d33d552/06_metadata/workflow_manifest.json",
+    "extracted_fields_path": "documents/2026/07/f1cb2d33d552/06_metadata/extracted_fields.json",
+    "ocr_output_count": 0,
+    "created_at": "2026-07-11T19:07:46+07:00",
+    "manifest": {
+      "document_id": "f1cb2d33d552",
+      "job_id": "f1cb2d33d552",
+      "created_at": "2026-07-11T19:07:46+07:00",
+      "source_filename": "sample.png",
+      "page_count": 1,
+      "status": "scanned",
+      "storage_root": "documents/2026/07/f1cb2d33d552",
+      "original_file": {
+        "path": "documents/2026/07/f1cb2d33d552/01_original/sample.png",
+        "filename": "sample.png",
+        "size_bytes": 482161,
+        "sha256": "d32fc5475c14c9310ac7611a47acf775f148641292998511241505567183b70f"
+      },
+      "pages": {
+        "raw": [
+          {
+            "path": "documents/2026/07/f1cb2d33d552/02_pages/raw/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 491015,
+            "sha256": "fb5674123336f6a59068842675c115a6b574ee5eb438ceac895be5a1fbcace67",
+            "page": 1
+          }
+        ],
+        "opencv_preprocessed": [
+          {
+            "path": "documents/2026/07/f1cb2d33d552/02_pages/opencv_preprocessed/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 53006,
+            "sha256": "8f846b90c941dca3334af332038e09a3270e8e290a7d33b7ee385ad58bf525f9",
+            "page": 1
+          }
+        ]
+      },
+      "ground_truth": null,
+      "extracted_fields_path": "documents/2026/07/f1cb2d33d552/06_metadata/extracted_fields.json",
+      "workflow_manifest_path": "documents/2026/07/f1cb2d33d552/06_metadata/workflow_manifest.json",
+      "ocr_outputs": [],
+      "exports": {
+        "benchmark_csv": "documents/2026/07/f1cb2d33d552/07_exports/benchmark_results.csv",
+        "comparison_summary": "documents/2026/07/f1cb2d33d552/07_exports/comparison_summary.json",
+        "report_snapshot": "documents/2026/07/f1cb2d33d552/07_exports/report_snapshot.json"
+      }
+    },
+    "source_filename": "sample.png",
+    "page_count": 1,
+    "storage_root_absolute": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\f1cb2d33d552",
+    "manifest_url": "/storage/documents/2026/07/f1cb2d33d552/manifest.json",
+    "index_url": "/storage/documents/index.jsonl",
+    "original_file": {
+      "path": "documents/2026/07/f1cb2d33d552/01_original/sample.png",
+      "filename": "sample.png",
+      "size_bytes": 482161,
+      "sha256": "d32fc5475c14c9310ac7611a47acf775f148641292998511241505567183b70f",
+      "url": "/storage/documents/2026/07/f1cb2d33d552/01_original/sample.png",
+      "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\f1cb2d33d552\\01_original\\sample.png",
+      "size_label": "470.9 KB",
+      "sha256_short": "d32fc5475c14"
+    },
+    "ground_truth": null,
+    "pages": {
+      "raw": [
+        {
+          "path": "documents/2026/07/f1cb2d33d552/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 491015,
+          "sha256": "fb5674123336f6a59068842675c115a6b574ee5eb438ceac895be5a1fbcace67",
+          "page": 1,
+          "url": "/storage/documents/2026/07/f1cb2d33d552/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\f1cb2d33d552\\02_pages\\raw\\page_001.png",
+          "size_label": "479.5 KB",
+          "sha256_short": "fb5674123336"
+        }
+      ],
+      "opencv_preprocessed": [
+        {
+          "path": "documents/2026/07/f1cb2d33d552/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 53006,
+          "sha256": "8f846b90c941dca3334af332038e09a3270e8e290a7d33b7ee385ad58bf525f9",
+          "page": 1,
+          "url": "/storage/documents/2026/07/f1cb2d33d552/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\f1cb2d33d552\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "51.8 KB",
+          "sha256_short": "8f846b90c941"
+        }
+      ]
+    },
+    "preview_pages": [
+      {
+        "page": 1,
+        "raw": {
+          "path": "documents/2026/07/f1cb2d33d552/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 491015,
+          "sha256": "fb5674123336f6a59068842675c115a6b574ee5eb438ceac895be5a1fbcace67",
+          "page": 1,
+          "url": "/storage/documents/2026/07/f1cb2d33d552/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\f1cb2d33d552\\02_pages\\raw\\page_001.png",
+          "size_label": "479.5 KB",
+          "sha256_short": "fb5674123336"
+        },
+        "opencv": {
+          "path": "documents/2026/07/f1cb2d33d552/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 53006,
+          "sha256": "8f846b90c941dca3334af332038e09a3270e8e290a7d33b7ee385ad58bf525f9",
+          "page": 1,
+          "url": "/storage/documents/2026/07/f1cb2d33d552/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\f1cb2d33d552\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "51.8 KB",
+          "sha256_short": "8f846b90c941"
+        }
+      }
+    ],
+    "ocr_outputs": [],
+    "exports": {
+      "benchmark_csv": {
+        "path": "documents/2026/07/f1cb2d33d552/07_exports/benchmark_results.csv",
+        "url": "/storage/documents/2026/07/f1cb2d33d552/07_exports/benchmark_results.csv",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\f1cb2d33d552\\07_exports\\benchmark_results.csv"
+      },
+      "comparison_summary": {
+        "path": "documents/2026/07/f1cb2d33d552/07_exports/comparison_summary.json",
+        "url": "/storage/documents/2026/07/f1cb2d33d552/07_exports/comparison_summary.json",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\f1cb2d33d552\\07_exports\\comparison_summary.json"
+      },
+      "report_snapshot": {
+        "path": "documents/2026/07/f1cb2d33d552/07_exports/report_snapshot.json",
+        "url": "/storage/documents/2026/07/f1cb2d33d552/07_exports/report_snapshot.json",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\f1cb2d33d552\\07_exports\\report_snapshot.json"
+      }
+    },
+    "workflow_manifest_url": "/storage/documents/2026/07/f1cb2d33d552/06_metadata/workflow_manifest.json",
+    "extracted_fields_url": "/storage/documents/2026/07/f1cb2d33d552/06_metadata/extracted_fields.json"
+  }
+}

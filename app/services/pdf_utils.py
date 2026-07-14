@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageSequence
 import fitz  # PyMuPDF
 
 from app.config import OCR_MAX_IMAGE_SIDE, OCR_PDF_DPI
@@ -35,8 +35,14 @@ def ensure_images(input_path: Path, output_dir: Path, dpi: int | None = None) ->
     suffix = input_path.suffix.lower()
     output_dir.mkdir(parents=True, exist_ok=True)
     if suffix in IMAGE_EXTS:
-        out = output_dir / f"{input_path.stem}_page1.png"
         with Image.open(input_path) as img:
+            if suffix in {".tif", ".tiff"} and int(getattr(img, "n_frames", 1) or 1) > 1:
+                images: list[Path] = []
+                for idx, frame in enumerate(ImageSequence.Iterator(img), start=1):
+                    out = output_dir / f"{input_path.stem}_page{idx}.png"
+                    images.append(_save_png(frame.copy().convert("RGB"), out))
+                return images
+            out = output_dir / f"{input_path.stem}_page1.png"
             return [_save_png(img.convert("RGB"), out)]
     if suffix in PDF_EXTS:
         images: list[Path] = []

@@ -179,7 +179,14 @@ def train(args: argparse.Namespace) -> dict[str, Any]:
                     shutil.rmtree(path)
         trainer = Trainer(config, pretrained=True)
         trainer.train()
-        trainer.save_weights(config["trainer"]["export"])
+        # VietOCR's Trainer writes the best validation checkpoint to
+        # ``trainer.export``. Preserve it instead of overwriting it with the
+        # final iteration, which may already have regressed/overfit.
+        best_weights = Path(config["trainer"]["export"])
+        last_weights = output_dir / "transformerocr_last.pth"
+        trainer.save_weights(str(last_weights))
+        if not best_weights.exists():
+            shutil.copy2(last_weights, best_weights)
     finally:
         os.chdir(cwd)
 
@@ -199,6 +206,7 @@ def train(args: argparse.Namespace) -> dict[str, Any]:
     summary = {
         "model_dir": str(output_dir),
         "weights": inference_config["weights"],
+        "last_weights": str((output_dir / "transformerocr_last.pth").resolve()),
         "config": str(inference_config_path),
         "dataset_dir": str(dataset_dir),
         "device": inference_config["device"],
@@ -234,7 +242,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--resume-existing", action="store_true")
     parser.add_argument("--rebuild-lmdb", action="store_true")
     parser.add_argument("--image-aug", action="store_true")
-    parser.add_argument("--masked-language-model", action="store_true", default=True)
+    parser.add_argument(
+        "--masked-language-model",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Enable masked-language-model augmentation (use --no-masked-language-model to disable).",
+    )
     return parser.parse_args()
 
 

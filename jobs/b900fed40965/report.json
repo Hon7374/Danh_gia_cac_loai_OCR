@@ -90532,7 +90532,9 @@
         "cer_delta": 20.19,
         "wer_delta": 21.25,
         "time_delta": -1.29,
-        "text_len_delta": -2649
+        "text_len_delta": -2649,
+        "recommended_variant": "raw",
+        "recommendation_note": "Use raw for this engine; OpenCV is only a fallback."
       },
       {
         "engine": "easyocr",
@@ -90541,7 +90543,9 @@
         "cer_delta": 8.56,
         "wer_delta": 18.03,
         "time_delta": 0.457,
-        "text_len_delta": -54
+        "text_len_delta": -54,
+        "recommended_variant": "raw",
+        "recommendation_note": "Use raw for this engine; OpenCV is only a fallback."
       },
       {
         "engine": "paddle_vietocr",
@@ -90550,7 +90554,9 @@
         "cer_delta": 12.72,
         "wer_delta": 21.01,
         "time_delta": -7.601,
-        "text_len_delta": -185
+        "text_len_delta": -185,
+        "recommended_variant": "raw",
+        "recommendation_note": "Use raw for this engine; OpenCV is only a fallback."
       },
       {
         "engine": "paddleocr_vl",
@@ -90559,7 +90565,9 @@
         "cer_delta": 0.12,
         "wer_delta": 0.69,
         "time_delta": -139.063,
-        "text_len_delta": -2
+        "text_len_delta": -2,
+        "recommended_variant": "raw",
+        "recommendation_note": "Use raw for this engine; OpenCV is only a fallback."
       }
     ],
     "engine_status": [
@@ -90624,17 +90632,20 @@
     ],
     "fields_source": "layoutlmv3+best_ocr_rule",
     "model_fields": {
+      "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
       "so_ky_hieu": "39/2026/TT-BGDĐT",
       "ngay_ban_hanh": "12/05/2026",
-      "trich_yeu": "Quy Quy biên soạn, định và ban hành Giáo trình Giáo dục quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, và an ninh Căn cứ Luật số ngày tháng năm sửa đổi, bổ sung một"
+      "loai_van_ban": "THÔNG TƯ",
+      "trich_yeu": "Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo dục quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, trung tâm giáo dục quốc phòng và an ninh"
     },
     "accepted_model_fields": {
+      "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
       "so_ky_hieu": "39/2026/TT-BGDĐT",
-      "ngay_ban_hanh": "12/05/2026"
+      "ngay_ban_hanh": "12/05/2026",
+      "loai_van_ban": "THÔNG TƯ",
+      "trich_yeu": "Quy định Quy trình biên soạn, thẩm định và ban hành Giáo trình Giáo dục quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, trung tâm giáo dục quốc phòng và an ninh"
     },
-    "rejected_model_fields": {
-      "trich_yeu": "Quy Quy biên soạn, định và ban hành Giáo trình Giáo dục quốc phòng và an ninh trong các cơ sở giáo dục nghề nghiệp, cơ sở giáo dục đại học, và an ninh Căn cứ Luật số ngày tháng năm sửa đổi, bổ sung một"
-    },
+    "rejected_model_fields": {},
     "fields": {
       "co_quan_ban_hanh": "BỘ GIÁO DỤC VÀ ĐÀO TẠO",
       "loai_van_ban": "THÔNG TƯ",
@@ -90648,27 +90659,27 @@
     "labels_preview": [
       [
         "BỘ",
-        "O"
+        "B-co_quan_ban_hanh"
       ],
       [
         "GIÁO",
-        "O"
+        "I-co_quan_ban_hanh"
       ],
       [
         "DỤC",
-        "O"
+        "I-co_quan_ban_hanh"
       ],
       [
         "VÀ",
-        "O"
+        "I-co_quan_ban_hanh"
       ],
       [
         "ĐÀO",
-        "O"
+        "I-co_quan_ban_hanh"
       ],
       [
         "TẠO",
-        "O"
+        "I-co_quan_ban_hanh"
       ],
       [
         "CỘNG",
@@ -90776,11 +90787,11 @@
       ],
       [
         "THÔNG",
-        "O"
+        "B-loai_van_ban"
       ],
       [
         "TƯ",
-        "O"
+        "I-loai_van_ban"
       ],
       [
         "Quy",
@@ -90788,15 +90799,15 @@
       ],
       [
         "định",
-        "O"
+        "I-trich_yeu"
       ],
       [
         "Quy",
-        "B-trich_yeu"
+        "I-trich_yeu"
       ],
       [
         "trình",
-        "O"
+        "I-trich_yeu"
       ],
       [
         "biên",
@@ -90808,7 +90819,7 @@
       ],
       [
         "thẩm",
-        "O"
+        "I-trich_yeu"
       ],
       [
         "định",
@@ -90920,27 +90931,27 @@
       ],
       [
         "trung",
-        "O"
+        "I-trich_yeu"
       ],
       [
         "tâm",
-        "O"
+        "I-trich_yeu"
       ],
       [
         "giáo",
-        "O"
+        "I-trich_yeu"
       ],
       [
         "dục",
-        "O"
+        "I-trich_yeu"
       ],
       [
         "quốc",
-        "O"
+        "I-trich_yeu"
       ],
       [
         "phòng",
-        "O"
+        "I-trich_yeu"
       ],
       [
         "và",
@@ -90956,18 +90967,432 @@
       ],
       [
         "Căn",
-        "I-trich_yeu"
+        "O"
       ],
       [
         "cứ",
-        "I-trich_yeu"
+        "O"
       ],
       [
         "Luật",
-        "I-trich_yeu"
+        "O"
       ]
     ],
-    "torch_device": "cuda"
+    "labels_preview_rows": [
+      {
+        "token": "BỘ",
+        "label": "B-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "GIÁO",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "DỤC",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "VÀ",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "ĐÀO",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "TẠO",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "CỘNG",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "HOA",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "XA",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "HOI",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "CHỦ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NGHĨA",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "VIỆT",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NAM",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Độc",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "lập",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "-",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Tự",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "do",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "-",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Hạnh",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "phúc",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Số:",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "39/2026/TT-BGDĐT",
+        "label": "B-so_ky_hieu",
+        "field": "so_ky_hieu"
+      },
+      {
+        "token": "Hà",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Nội,",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "ngày",
+        "label": "B-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "12",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "tháng",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "05",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "năm",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "2026",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "THÔNG",
+        "label": "B-loai_van_ban",
+        "field": "loai_van_ban"
+      },
+      {
+        "token": "TƯ",
+        "label": "I-loai_van_ban",
+        "field": "loai_van_ban"
+      },
+      {
+        "token": "Quy",
+        "label": "B-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "định",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Quy",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "trình",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "biên",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "soạn,",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "thẩm",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "định",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "và",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "ban",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "hành",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Giáo",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "trình",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Giáo",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "dục",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "quốc",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "phòng",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "và",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "an",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "ninh",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "trong",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "các",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "cơ",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "sở",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "giáo",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "dục",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "nghề",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "nghiệp,",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "cơ",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "sở",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "giáo",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "dục",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "đại",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "học,",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "trung",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "tâm",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "giáo",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "dục",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "quốc",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "phòng",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "và",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "an",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "ninh",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Căn",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "cứ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Luật",
+        "label": "O",
+        "field": "outside"
+      }
+    ],
+    "torch_device": "cuda",
+    "ocr_source": {
+      "engine": "tesseract",
+      "variant": "raw",
+      "page": 1,
+      "note": "Token LayoutLMv3 lấy từ OCR/bbox trang 1 của engine được chọn."
+    },
+    "ocr_source_quality": {
+      "diacritic_loss": false,
+      "severe_diacritic_loss": false,
+      "vietnamese_quality_score": 100.0
+    },
+    "labels_preview_note": "Token preview lấy từ tesseract / raw trang 1. Nếu OCR nguồn rụng chữ thì token LayoutLMv3 cũng rụng theo; field cuối vẫn được hậu kiểm bằng best-OCR/rule."
   },
   "best_engine": {
     "engine": "tesseract",

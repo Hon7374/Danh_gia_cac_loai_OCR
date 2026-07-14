@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import importlib.metadata as md
 import os
 import shutil
@@ -17,26 +18,30 @@ except Exception:
     pass
 
 PACKAGES = [
-    ("fastapi", "FastAPI web app"),
-    ("opencv-python", "OpenCV preprocessing"),
-    ("pytesseract", "Python wrapper for Tesseract"),
-    ("easyocr", "EasyOCR"),
-    ("paddleocr", "PaddleOCR/PaddleOCR-VL"),
-    ("paddlex", "PaddleX pipeline extras"),
-    ("paddlepaddle", "PaddlePaddle runtime"),
-    ("vietocr", "VietOCR"),
-    ("torch", "PyTorch"),
-    ("transformers", "LayoutLMv3/Transformers"),
-    ("onnxruntime", "LayoutLMv3 ONNX runtime"),
-    ("einops", "PaddleOCR-VL tensor ops"),
+    (("fastapi",), "FastAPI web app"),
+    (("opencv-python-headless", "opencv-python"), "OpenCV preprocessing"),
+    (("pytesseract",), "Python wrapper for Tesseract"),
+    (("easyocr",), "EasyOCR"),
+    (("paddleocr",), "PaddleOCR/PaddleOCR-VL"),
+    (("paddlex",), "PaddleX pipeline extras"),
+    (("paddlepaddle-gpu", "paddlepaddle"), "PaddlePaddle runtime"),
+    (("vietocr",), "VietOCR"),
+    (("torch",), "PyTorch"),
+    (("transformers",), "LayoutLMv3/Transformers"),
+    (("onnxruntime-gpu", "onnxruntime"), "LayoutLMv3 ONNX runtime"),
+    (("einops",), "PaddleOCR-VL tensor ops"),
+    (("matplotlib",), "Benchmark report charts"),
+    (("python-docx",), "Editable Word/report export"),
 ]
 
 
-def version(pkg: str) -> str:
-    try:
-        return md.version(pkg)
-    except md.PackageNotFoundError:
-        return "NOT INSTALLED"
+def version(packages: tuple[str, ...]) -> str:
+    for pkg in packages:
+        try:
+            return f"{md.version(pkg)} ({pkg})"
+        except md.PackageNotFoundError:
+            continue
+    return "NOT INSTALLED"
 
 
 def find_tessdata_dir(tess: str | None) -> str | None:
@@ -100,15 +105,18 @@ def main() -> int:
         print("Fix: Windows chạy scripts/setup_latest_windows.ps1; Linux chạy scripts/setup_latest_linux.sh")
 
     print("\nPython packages:")
-    for pkg, desc in PACKAGES:
-        print(f"- {pkg:18s} {version(pkg):15s}  # {desc}")
+    for packages, desc in PACKAGES:
+        label = "/".join(packages)
+        print(f"- {label:32s} {version(packages):34s}  # {desc}")
 
     print("\nAPI/model env:")
     for key in [
         "TESSERACT_TESSDATA_DIR",
-        "GLM_OCR_API_KEY",
-        "ZAI_API_KEY",
-        "GLM_OCR_ENDPOINT",
+        "OCR_TEMP_DIR",
+        "PADDLE_VIETOCR_REFINE",
+        "VIETOCR_MODEL_PROFILE",
+        "VIETOCR_CONFIG_PATH",
+        "VIETOCR_WEIGHTS_PATH",
         "PADDLEOCR_VL_CMD",
         "LAYOUTLMV3_MODEL_DIR",
         "LAYOUTLMV3_MODEL_NAME",
@@ -118,7 +126,20 @@ def main() -> int:
         if "KEY" in key and val:
             val = val[:6] + "..." + val[-4:]
         print(f"- {key}={val or '(empty)'}")
+    weights_value = os.environ.get("VIETOCR_WEIGHTS_PATH", "").strip()
+    if weights_value:
+        weights_path = Path(weights_value).expanduser()
+        if not weights_path.is_absolute():
+            weights_path = ROOT / weights_path
+        weights_path = weights_path.resolve()
+        if weights_path.exists() and weights_path.is_file():
+            digest = hashlib.sha256(weights_path.read_bytes()).hexdigest()
+            print(f"- VietOCR weights: FOUND ({weights_path.stat().st_size} bytes, sha256={digest})")
+        else:
+            print(f"- VietOCR weights: NOT FOUND -> {weights_path}")
     print("==================================\n")
+    print("Note: this command checks installation metadata and the Tesseract executable;")
+    print("model inference is verified by running an OCR job through the application.\n")
     return 0
 
 

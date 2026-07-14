@@ -6,7 +6,7 @@ import time
 import traceback
 from pathlib import Path
 
-from app.config import OCR_DEVICE, TORCH_DEVICE
+from app.config import CACHE_ROOT, OCR_DEVICE, TORCH_DEVICE
 from app.ocr_engines.base import OCRBox, OCRResult
 
 
@@ -41,7 +41,17 @@ def run(image_path: Path, variant: str) -> OCRResult:
         import easyocr
 
         gpu, device = _torch_gpu_enabled()
-        reader = easyocr.Reader(["vi", "en"], gpu=gpu)
+        easyocr_root = CACHE_ROOT / "easyocr"
+        model_dir = easyocr_root / "model"
+        user_network_dir = easyocr_root / "user_network"
+        model_dir.mkdir(parents=True, exist_ok=True)
+        user_network_dir.mkdir(parents=True, exist_ok=True)
+        reader = easyocr.Reader(
+            ["vi", "en"],
+            gpu=gpu,
+            model_storage_directory=str(model_dir),
+            user_network_directory=str(user_network_dir),
+        )
         image = _read_image_unicode(image_path)
         results = reader.readtext(image, detail=1, paragraph=False)
         boxes: list[OCRBox] = []
@@ -62,7 +72,12 @@ def run(image_path: Path, variant: str) -> OCRResult:
             text="\n".join(texts),
             boxes=boxes,
             elapsed_sec=time.perf_counter() - start,
-            raw={"device": device, "gpu": gpu, "worker": "subprocess"},
+            raw={
+                "device": device,
+                "gpu": gpu,
+                "worker": "subprocess",
+                "model_storage_directory": str(model_dir),
+            },
         )
     except ModuleNotFoundError:
         return OCRResult(

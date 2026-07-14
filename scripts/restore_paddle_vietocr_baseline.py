@@ -5,7 +5,6 @@ import json
 import os
 import subprocess
 import sys
-import tempfile
 import time
 from pathlib import Path
 from typing import Any
@@ -24,6 +23,7 @@ from app.config import JOBS_DIR
 from app.main import _aggregate_page_rows, _apply_ground_truth_metrics, _read_ground_truth_file, build_comparison_summary
 from app.services.ocr_quality import ocr_selection_score
 from app.services.storage import save_json, save_results_csv
+from app.services.tempdirs import workspace_temporary_directory
 from scripts.refresh_scanned_jobs_with_finetuned_vietocr import variant_images
 
 
@@ -54,7 +54,7 @@ def ground_truth_text(job_dir: Path, report: dict[str, Any]) -> str:
 def run_worker_unrefined(image_path: Path, variant: str, page_no: int) -> dict[str, Any]:
     env = dict(os.environ)
     env["PADDLE_VIETOCR_REFINE"] = "0"
-    with tempfile.TemporaryDirectory(prefix="paddle_baseline_restore_") as tmp:
+    with workspace_temporary_directory(prefix="paddle_baseline_restore_") as tmp:
         out_json = Path(tmp) / "result.json"
         start = time.perf_counter()
         completed = subprocess.run(

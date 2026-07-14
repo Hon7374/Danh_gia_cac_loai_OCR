@@ -1,0 +1,73 @@
+{
+  "started_at_unix": 1783874098.4978356,
+  "jobs_total": 1,
+  "jobs": [
+    {
+      "job_id": "695292828457",
+      "changed": true,
+      "best_engine": {
+        "engine": "paddle_vietocr",
+        "variant": "raw"
+      },
+      "has_ground_truth": true,
+      "rows": [
+        {
+          "variant": "raw",
+          "mode": "rerun_detection_hybrid",
+          "old": {
+            "status": "ok",
+            "text_len": 3383,
+            "elapsed_sec": 79.6877550999634,
+            "cer": 0.1206015037593985,
+            "wer": 0.22893258426966293,
+            "quality_guard": {
+              "token_count": 668,
+              "letter_count": 2294,
+              "marked_letter_ratio": 0.2576,
+              "marked_token_ratio": 0.8039,
+              "admin_keyword_hits": 228,
+              "admin_keyword_ratio": 0.3413,
+              "broken_token_hits": 2,
+              "broken_token_ratio": 0.003,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 99.46,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "new": {
+            "status": "ok",
+            "text_len": 3357,
+            "elapsed_sec": 159.61792170000263,
+            "cer": 0.06676691729323309,
+            "wer": 0.16432584269662923,
+            "quality_guard": {
+              "token_count": 666,
+              "letter_count": 2289,
+              "marked_letter_ratio": 0.2578,
+              "marked_token_ratio": 0.8093,
+              "admin_keyword_hits": 235,
+              "admin_keyword_ratio": 0.3529,
+              "broken_token_hits": 2,
+              "broken_token_ratio": 0.003,
+              "likely_vietnamese": true,
+              "diacritic_loss": false,
+              "severe_diacritic_loss": false,
+              "vietnamese_quality_score": 99.46,
+              "quality_penalty": 0.0,
+              "note": "Chất lượng dấu tiếng Việt ổn."
+            }
+          },
+          "refreshed_pages": 2,
+          "failed_pages": 0,
+          "accepted": true,
+          "decision": "CER/WER tốt hơn hoặc tương đương bản cũ."
+        }
+      ]
+    }
+  ],
+  "finished_at_unix": 1783874258.2210305,
+  "changed_jobs": 1
+}

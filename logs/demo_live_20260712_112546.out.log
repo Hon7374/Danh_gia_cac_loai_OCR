@@ -1,0 +1,83 @@
+
+=== OCR demo environment check ===
+Python: 3.12.5 at D:\ocr_full_demo_v2_latest\ocr_full_demo_v2_latest\.venv\Scripts\python.exe
+Project: D:\ocr_full_demo_v2_latest\ocr_full_demo_v2_latest
+Tesseract binary: FOUND -> C:\Program Files\Tesseract-OCR\tesseract.exe
+Tesseract tessdata: D:\ocr_full_demo_v2_latest\ocr_full_demo_v2_latest\models\tessdata
+tesseract v5.4.0.20240606
+Languages: eng, vie
+
+Python packages:
+- fastapi                          0.115.6 (fastapi)                   # FastAPI web app
+- opencv-python-headless/opencv-python 4.10.0.84 (opencv-python-headless)  # OpenCV preprocessing
+- pytesseract                      0.3.13 (pytesseract)                # Python wrapper for Tesseract
+- easyocr                          1.7.2 (easyocr)                     # EasyOCR
+- paddleocr                        3.5.0 (paddleocr)                   # PaddleOCR/PaddleOCR-VL
+- paddlex                          3.5.2 (paddlex)                     # PaddleX pipeline extras
+- paddlepaddle-gpu/paddlepaddle    3.2.2 (paddlepaddle-gpu)            # PaddlePaddle runtime
+- vietocr                          0.3.13 (vietocr)                    # VietOCR
+- torch                            2.12.0+cu126 (torch)                # PyTorch
+- transformers                     5.9.0 (transformers)                # LayoutLMv3/Transformers
+- onnxruntime-gpu/onnxruntime      1.26.0 (onnxruntime)                # LayoutLMv3 ONNX runtime
+- einops                           0.8.2 (einops)                      # PaddleOCR-VL tensor ops
+- matplotlib                       3.10.9 (matplotlib)                 # Benchmark report charts
+- python-docx                      1.2.0 (python-docx)                 # Editable Word/report export
+
+API/model env:
+- TESSERACT_TESSDATA_DIR=(empty)
+- GLM_OCR_API_KEY=(empty)
+- ZAI_API_KEY=(empty)
+- GLM_OCR_ENDPOINT=https://api.z.ai/api/paas/v4/layout_parsing
+- PADDLEOCR_VL_CMD=(empty)
+- LAYOUTLMV3_MODEL_DIR=./models/layoutlmv3-congvan-token-classification
+- LAYOUTLMV3_MODEL_NAME=(empty)
+- LAYOUTLMV3_PROCESSOR_NAME=./models/layoutlmv3-congvan-token-classification
+==================================
+
+Note: this command checks installation metadata and the Tesseract executable;
+model inference is verified by running an OCR job through the application.
+
+INFO:     127.0.0.1:50854 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50858 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50858 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50862 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52880 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52880 - "GET /static/styles.css?v=utf8-20260531 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52880 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56256 - "POST /run HTTP/1.1" 303 See Other
+INFO:     127.0.0.1:56256 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56256 - "GET /jobs/695292828457/images/230927_Thongtu_07_Baibo_QCVN_TY_level5_page1.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54122 - "GET /jobs/695292828457/images/230927_Thongtu_07_Baibo_QCVN_TY_level5_page1_opencv_preprocessed.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53360 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53360 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64832 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53594 - "GET /jobs/695292828457/images/230927_Thongtu_07_Baibo_QCVN_TY_level5_page1_opencv_preprocessed.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64832 - "GET /jobs/695292828457/images/230927_Thongtu_07_Baibo_QCVN_TY_level5_page1.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63416 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54202 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54219 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54642 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54642 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62412 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62412 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63176 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63182 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58603 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50912 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50916 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55582 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57649 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61160 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55723 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55723 - "GET /static/styles.css?v=utf8-20260531 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52441 - "GET /jobs/695292828457/images/230927_Thongtu_07_Baibo_QCVN_TY_level5_page1.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59770 - "GET /jobs/695292828457/images/230927_Thongtu_07_Baibo_QCVN_TY_level5_page1_opencv_preprocessed.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63588 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59380 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59381 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51576 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51585 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60621 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60623 - "GET /reports/695292828457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60624 - "GET /documents HTTP/1.1" 200 OK
+Terminate batch job (Y/N)? 

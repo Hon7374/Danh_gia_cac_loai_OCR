@@ -1,0 +1,630 @@
+{
+  "job_id": "026eb6034eb9",
+  "uploaded_file": "upload\\status.png",
+  "page_count": 1,
+  "raw_images": [
+    "images\\status_page1.png"
+  ],
+  "preprocessed_images": [
+    "images\\status_page1_opencv_preprocessed.png"
+  ],
+  "raw_image": "images\\status_page1.png",
+  "preprocessed_image": "images\\status_page1_opencv_preprocessed.png",
+  "opencv_steps": [
+    "adaptive_safe_preprocess",
+    "grayscale",
+    "denoise_fastNlMeans",
+    "deskew_minAreaRect",
+    "CLAHE_contrast",
+    "adaptive_threshold_safe",
+    "morph_close"
+  ],
+  "opencv_steps_by_page": [
+    {
+      "page": 1,
+      "steps": [
+        "grayscale",
+        "denoise_fastNlMeans",
+        "deskew_minAreaRect",
+        "CLAHE_contrast",
+        "adaptive_threshold_safe",
+        "morph_close"
+      ]
+    }
+  ],
+  "runtime": {
+    "opencv_workers": 4,
+    "tesseract_workers": 4,
+    "gpu_workers": 1
+  },
+  "ground_truth_file": null,
+  "ground_truth_text_length": 0,
+  "results": [
+    {
+      "engine": "fake_ok",
+      "variant": "opencv_preprocessed",
+      "status": "ok",
+      "text": "CÔNG VĂN Số: 1/2026/TEST",
+      "boxes": [
+        {
+          "text": "CÔNG VĂN",
+          "confidence": null,
+          "bbox": [
+            1,
+            1,
+            20,
+            20
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        }
+      ],
+      "elapsed_sec": 5.219993181526661e-05,
+      "error": "",
+      "quality_guard": {
+        "token_count": 4,
+        "letter_count": 13,
+        "marked_letter_ratio": 0.2308,
+        "marked_token_ratio": 0.75,
+        "admin_keyword_hits": 2,
+        "admin_keyword_ratio": 0.5,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 96.15,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "raw": {
+        "page_count": 1,
+        "ok_pages": 1,
+        "error_pages": 0,
+        "skipped_pages": 0,
+        "first_page_text": "CÔNG VĂN Số: 1/2026/TEST",
+        "page_elapsed_total": 0.0,
+        "wall_elapsed_sec": 5.219993181526661e-05,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "ok",
+            "elapsed_sec": 0.0,
+            "text_len": 24,
+            "boxes": 1,
+            "error": "",
+            "note": null,
+            "refine": null,
+            "paddle_device": null,
+            "vietocr_device": null,
+            "vietocr_model": null
+          }
+        ]
+      },
+      "ground_truth_metric_version": 2,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    },
+    {
+      "engine": "fake_error",
+      "variant": "opencv_preprocessed",
+      "status": "error",
+      "text": "",
+      "boxes": [],
+      "elapsed_sec": 1.3900105841457844e-05,
+      "error": "Trang 1: expected smoke failure",
+      "quality_guard": {
+        "token_count": 0,
+        "letter_count": 0,
+        "marked_letter_ratio": 0.0,
+        "marked_token_ratio": 0.0,
+        "admin_keyword_hits": 0,
+        "broken_token_hits": 0,
+        "likely_vietnamese": false,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 0.0,
+        "quality_penalty": 0.0,
+        "note": "Không đủ text để đánh giá chất lượng tiếng Việt."
+      },
+      "raw": {
+        "page_count": 1,
+        "ok_pages": 0,
+        "error_pages": 1,
+        "skipped_pages": 0,
+        "first_page_text": "",
+        "page_elapsed_total": 0.0,
+        "wall_elapsed_sec": 1.3900105841457844e-05,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "error",
+            "elapsed_sec": 0.0,
+            "text_len": 0,
+            "boxes": 0,
+            "error": "expected smoke failure",
+            "note": null,
+            "refine": null,
+            "paddle_device": null,
+            "vietocr_device": null,
+            "vietocr_model": null
+          }
+        ]
+      },
+      "ground_truth_metric_version": 2,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    }
+  ],
+  "comparison_summary": {
+    "total_runs": 2,
+    "ok_runs": 1,
+    "error_runs": 1,
+    "skipped_runs": 0,
+    "issue_runs": 1,
+    "has_ground_truth": false,
+    "best_cer": null,
+    "best_wer": null,
+    "fastest": {
+      "engine": "fake_ok",
+      "variant": "opencv_preprocessed",
+      "label": "fake_ok / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.0,
+      "text_len": 24,
+      "avg_confidence": null,
+      "quality_score": 98.27,
+      "quality_source": "relative text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 4,
+        "letter_count": 13,
+        "marked_letter_ratio": 0.2308,
+        "marked_token_ratio": 0.75,
+        "admin_keyword_hits": 2,
+        "admin_keyword_ratio": 0.5,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 96.15,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 98.268,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 0,
+      "text_bar": 100.0,
+      "quality_bar": 98.27,
+      "confidence_bar": 0
+    },
+    "best_quality": {
+      "engine": "fake_ok",
+      "variant": "opencv_preprocessed",
+      "label": "fake_ok / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.0,
+      "text_len": 24,
+      "avg_confidence": null,
+      "quality_score": 98.27,
+      "quality_source": "relative text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 4,
+        "letter_count": 13,
+        "marked_letter_ratio": 0.2308,
+        "marked_token_ratio": 0.75,
+        "admin_keyword_hits": 2,
+        "admin_keyword_ratio": 0.5,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 96.15,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 98.268,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 0,
+      "text_bar": 100.0,
+      "quality_bar": 98.27,
+      "confidence_bar": 0
+    },
+    "best_confidence": null,
+    "rows": [
+      {
+        "engine": "fake_ok",
+        "variant": "opencv_preprocessed",
+        "label": "fake_ok / opencv_preprocessed",
+        "status": "ok",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.0,
+        "text_len": 24,
+        "avg_confidence": null,
+        "quality_score": 98.27,
+        "quality_source": "relative text length + Vietnamese guard",
+        "quality_guard": {
+          "token_count": 4,
+          "letter_count": 13,
+          "marked_letter_ratio": 0.2308,
+          "marked_token_ratio": 0.75,
+          "admin_keyword_hits": 2,
+          "admin_keyword_ratio": 0.5,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 96.15,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 98.268,
+        "ground_truth_metric_warning": null,
+        "error": "",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 0,
+        "text_bar": 100.0,
+        "quality_bar": 98.27,
+        "confidence_bar": 0
+      },
+      {
+        "engine": "fake_error",
+        "variant": "opencv_preprocessed",
+        "label": "fake_error / opencv_preprocessed",
+        "status": "error",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.0,
+        "text_len": 0,
+        "avg_confidence": null,
+        "quality_score": null,
+        "quality_source": null,
+        "quality_guard": {
+          "token_count": 0,
+          "letter_count": 0,
+          "marked_letter_ratio": 0.0,
+          "marked_token_ratio": 0.0,
+          "admin_keyword_hits": 0,
+          "broken_token_hits": 0,
+          "likely_vietnamese": false,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 0.0,
+          "quality_penalty": 0.0,
+          "note": "Không đủ text để đánh giá chất lượng tiếng Việt."
+        },
+        "selection_score": -1.0,
+        "ground_truth_metric_warning": null,
+        "error": "Trang 1: expected smoke failure",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 0,
+        "text_bar": 0.0,
+        "quality_bar": 0,
+        "confidence_bar": 0
+      }
+    ],
+    "preprocessing_effect": [],
+    "engine_status": [
+      {
+        "engine": "fake_ok",
+        "ok": 1,
+        "skipped": 0,
+        "error": 0,
+        "total": 1
+      },
+      {
+        "engine": "fake_error",
+        "ok": 0,
+        "skipped": 0,
+        "error": 1,
+        "total": 1
+      }
+    ]
+  },
+  "layoutlmv3_postprocess": {
+    "mode": "test",
+    "extractor": "test",
+    "model_ran": true,
+    "fields": {
+      "co_quan_ban_hanh": "CÔNG VĂN",
+      "loai_van_ban": "CÔNG VĂN",
+      "ngay_ban_hanh": "",
+      "noi_gui": "",
+      "noi_nhan": "",
+      "so_ky_hieu": "1/2026/TEST",
+      "trich_yeu": "",
+      "confidence_note": "layoutlmv3+best_ocr_rule"
+    },
+    "fields_source": "layoutlmv3+best_ocr_rule",
+    "ocr_source": {
+      "engine": "fake_ok",
+      "variant": "opencv_preprocessed",
+      "page": 1,
+      "note": "Token LayoutLMv3 lấy từ OCR/bbox trang 1 của engine được chọn."
+    },
+    "ocr_source_quality": {
+      "diacritic_loss": false,
+      "severe_diacritic_loss": false,
+      "vietnamese_quality_score": 96.15
+    },
+    "labels_preview_note": "Token preview lấy từ fake_ok / opencv_preprocessed trang 1. Nếu OCR nguồn rụng chữ thì token LayoutLMv3 cũng rụng theo; field cuối vẫn được hậu kiểm bằng best-OCR/rule."
+  },
+  "best_engine": {
+    "engine": "fake_ok",
+    "variant": "opencv_preprocessed"
+  },
+  "document_archive": {
+    "document_id": "026eb6034eb9",
+    "status": "partial",
+    "storage_root": "documents/2026/07/026eb6034eb9",
+    "manifest_path": "documents/2026/07/026eb6034eb9/manifest.json",
+    "index_path": "documents/index.jsonl",
+    "workflow_manifest_path": "documents/2026/07/026eb6034eb9/06_metadata/workflow_manifest.json",
+    "extracted_fields_path": "documents/2026/07/026eb6034eb9/06_metadata/extracted_fields.json",
+    "ocr_output_count": 2,
+    "successful_ocr_output_count": 1,
+    "issue_ocr_output_count": 1,
+    "created_at": "2026-07-11T19:17:55+07:00",
+    "manifest": {
+      "document_id": "026eb6034eb9",
+      "job_id": "026eb6034eb9",
+      "created_at": "2026-07-11T19:17:55+07:00",
+      "source_filename": "status.png",
+      "page_count": 1,
+      "status": "partial",
+      "storage_root": "documents/2026/07/026eb6034eb9",
+      "original_file": {
+        "path": "documents/2026/07/026eb6034eb9/01_original/status.png",
+        "filename": "status.png",
+        "size_bytes": 482161,
+        "sha256": "d32fc5475c14c9310ac7611a47acf775f148641292998511241505567183b70f"
+      },
+      "pages": {
+        "raw": [
+          {
+            "path": "documents/2026/07/026eb6034eb9/02_pages/raw/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 491015,
+            "sha256": "fb5674123336f6a59068842675c115a6b574ee5eb438ceac895be5a1fbcace67",
+            "page": 1
+          }
+        ],
+        "opencv_preprocessed": [
+          {
+            "path": "documents/2026/07/026eb6034eb9/02_pages/opencv_preprocessed/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 53006,
+            "sha256": "8f846b90c941dca3334af332038e09a3270e8e290a7d33b7ee385ad58bf525f9",
+            "page": 1
+          }
+        ]
+      },
+      "ground_truth": null,
+      "extracted_fields_path": "documents/2026/07/026eb6034eb9/06_metadata/extracted_fields.json",
+      "workflow_manifest_path": "documents/2026/07/026eb6034eb9/06_metadata/workflow_manifest.json",
+      "ocr_outputs": [
+        {
+          "engine": "fake_ok",
+          "variant": "opencv_preprocessed",
+          "status": "ok",
+          "elapsed_sec": 5.219993181526661e-05,
+          "text_length": 24,
+          "text_path": "documents/2026/07/026eb6034eb9/04_ocr_text/fake_ok__opencv_preprocessed.txt",
+          "json_path": "documents/2026/07/026eb6034eb9/05_ocr_json/fake_ok__opencv_preprocessed.json",
+          "word_path": "documents/2026/07/026eb6034eb9/08_word_outputs/fake_ok__opencv_preprocessed.docx",
+          "word_file": {
+            "path": "documents/2026/07/026eb6034eb9/08_word_outputs/fake_ok__opencv_preprocessed.docx",
+            "filename": "fake_ok__opencv_preprocessed.docx",
+            "size_bytes": 1131,
+            "sha256": "a241606bed39d6423bac6c17270199c54d578d16d6591180e87470bcffdd7a55"
+          },
+          "word_kind": "editable_ocr_layout",
+          "word_layout_version": "2026-05-26-structured-v2",
+          "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+          "page_count": 1
+        },
+        {
+          "engine": "fake_error",
+          "variant": "opencv_preprocessed",
+          "status": "error",
+          "elapsed_sec": 1.3900105841457844e-05,
+          "text_length": 0,
+          "text_path": "documents/2026/07/026eb6034eb9/04_ocr_text/fake_error__opencv_preprocessed.txt",
+          "json_path": "documents/2026/07/026eb6034eb9/05_ocr_json/fake_error__opencv_preprocessed.json",
+          "word_path": "documents/2026/07/026eb6034eb9/08_word_outputs/fake_error__opencv_preprocessed.docx",
+          "word_file": {
+            "path": "documents/2026/07/026eb6034eb9/08_word_outputs/fake_error__opencv_preprocessed.docx",
+            "filename": "fake_error__opencv_preprocessed.docx",
+            "size_bytes": 1165,
+            "sha256": "10975dd412555c0fc102b074049ce0683d6c6ab16b89c9e0c1e07f6e83caa427"
+          },
+          "word_kind": "editable_ocr_layout",
+          "word_layout_version": "2026-05-26-structured-v2",
+          "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+          "page_count": 1
+        }
+      ],
+      "successful_ocr_output_count": 1,
+      "issue_ocr_output_count": 1,
+      "exports": {
+        "benchmark_csv": "documents/2026/07/026eb6034eb9/07_exports/benchmark_results.csv",
+        "comparison_summary": "documents/2026/07/026eb6034eb9/07_exports/comparison_summary.json",
+        "report_snapshot": "documents/2026/07/026eb6034eb9/07_exports/report_snapshot.json"
+      }
+    },
+    "source_filename": "status.png",
+    "page_count": 1,
+    "storage_root_absolute": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9",
+    "manifest_url": "/storage/documents/2026/07/026eb6034eb9/manifest.json",
+    "index_url": "/storage/documents/index.jsonl",
+    "original_file": {
+      "path": "documents/2026/07/026eb6034eb9/01_original/status.png",
+      "filename": "status.png",
+      "size_bytes": 482161,
+      "sha256": "d32fc5475c14c9310ac7611a47acf775f148641292998511241505567183b70f",
+      "url": "/storage/documents/2026/07/026eb6034eb9/01_original/status.png",
+      "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\01_original\\status.png",
+      "size_label": "470.9 KB",
+      "sha256_short": "d32fc5475c14"
+    },
+    "ground_truth": null,
+    "pages": {
+      "raw": [
+        {
+          "path": "documents/2026/07/026eb6034eb9/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 491015,
+          "sha256": "fb5674123336f6a59068842675c115a6b574ee5eb438ceac895be5a1fbcace67",
+          "page": 1,
+          "url": "/storage/documents/2026/07/026eb6034eb9/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\02_pages\\raw\\page_001.png",
+          "size_label": "479.5 KB",
+          "sha256_short": "fb5674123336"
+        }
+      ],
+      "opencv_preprocessed": [
+        {
+          "path": "documents/2026/07/026eb6034eb9/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 53006,
+          "sha256": "8f846b90c941dca3334af332038e09a3270e8e290a7d33b7ee385ad58bf525f9",
+          "page": 1,
+          "url": "/storage/documents/2026/07/026eb6034eb9/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "51.8 KB",
+          "sha256_short": "8f846b90c941"
+        }
+      ]
+    },
+    "preview_pages": [
+      {
+        "page": 1,
+        "raw": {
+          "path": "documents/2026/07/026eb6034eb9/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 491015,
+          "sha256": "fb5674123336f6a59068842675c115a6b574ee5eb438ceac895be5a1fbcace67",
+          "page": 1,
+          "url": "/storage/documents/2026/07/026eb6034eb9/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\02_pages\\raw\\page_001.png",
+          "size_label": "479.5 KB",
+          "sha256_short": "fb5674123336"
+        },
+        "opencv": {
+          "path": "documents/2026/07/026eb6034eb9/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 53006,
+          "sha256": "8f846b90c941dca3334af332038e09a3270e8e290a7d33b7ee385ad58bf525f9",
+          "page": 1,
+          "url": "/storage/documents/2026/07/026eb6034eb9/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "51.8 KB",
+          "sha256_short": "8f846b90c941"
+        }
+      }
+    ],
+    "ocr_outputs": [
+      {
+        "engine": "fake_ok",
+        "variant": "opencv_preprocessed",
+        "status": "ok",
+        "elapsed_sec": 5.219993181526661e-05,
+        "text_length": 24,
+        "text_path": "documents/2026/07/026eb6034eb9/04_ocr_text/fake_ok__opencv_preprocessed.txt",
+        "json_path": "documents/2026/07/026eb6034eb9/05_ocr_json/fake_ok__opencv_preprocessed.json",
+        "word_path": "documents/2026/07/026eb6034eb9/08_word_outputs/fake_ok__opencv_preprocessed.docx",
+        "word_file": {
+          "path": "documents/2026/07/026eb6034eb9/08_word_outputs/fake_ok__opencv_preprocessed.docx",
+          "filename": "fake_ok__opencv_preprocessed.docx",
+          "size_bytes": 1131,
+          "sha256": "a241606bed39d6423bac6c17270199c54d578d16d6591180e87470bcffdd7a55",
+          "url": "/storage/documents/2026/07/026eb6034eb9/08_word_outputs/fake_ok__opencv_preprocessed.docx",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\08_word_outputs\\fake_ok__opencv_preprocessed.docx",
+          "size_label": "1.1 KB",
+          "sha256_short": "a241606bed39"
+        },
+        "word_kind": "editable_ocr_layout",
+        "word_layout_version": "2026-05-26-structured-v2",
+        "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+        "page_count": 1,
+        "text_url": "/storage/documents/2026/07/026eb6034eb9/04_ocr_text/fake_ok__opencv_preprocessed.txt",
+        "text_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\04_ocr_text\\fake_ok__opencv_preprocessed.txt",
+        "json_url": "/storage/documents/2026/07/026eb6034eb9/05_ocr_json/fake_ok__opencv_preprocessed.json",
+        "json_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\05_ocr_json\\fake_ok__opencv_preprocessed.json",
+        "word_url": "/storage/documents/2026/07/026eb6034eb9/08_word_outputs/fake_ok__opencv_preprocessed.docx",
+        "word_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\08_word_outputs\\fake_ok__opencv_preprocessed.docx",
+        "word_filename": "fake_ok__opencv_preprocessed.docx",
+        "word_size_label": "1.1 KB"
+      },
+      {
+        "engine": "fake_error",
+        "variant": "opencv_preprocessed",
+        "status": "error",
+        "elapsed_sec": 1.3900105841457844e-05,
+        "text_length": 0,
+        "text_path": "documents/2026/07/026eb6034eb9/04_ocr_text/fake_error__opencv_preprocessed.txt",
+        "json_path": "documents/2026/07/026eb6034eb9/05_ocr_json/fake_error__opencv_preprocessed.json",
+        "word_path": "documents/2026/07/026eb6034eb9/08_word_outputs/fake_error__opencv_preprocessed.docx",
+        "word_file": {
+          "path": "documents/2026/07/026eb6034eb9/08_word_outputs/fake_error__opencv_preprocessed.docx",
+          "filename": "fake_error__opencv_preprocessed.docx",
+          "size_bytes": 1165,
+          "sha256": "10975dd412555c0fc102b074049ce0683d6c6ab16b89c9e0c1e07f6e83caa427",
+          "url": "/storage/documents/2026/07/026eb6034eb9/08_word_outputs/fake_error__opencv_preprocessed.docx",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\08_word_outputs\\fake_error__opencv_preprocessed.docx",
+          "size_label": "1.1 KB",
+          "sha256_short": "10975dd41255"
+        },
+        "word_kind": "editable_ocr_layout",
+        "word_layout_version": "2026-05-26-structured-v2",
+        "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+        "page_count": 1,
+        "text_url": "/storage/documents/2026/07/026eb6034eb9/04_ocr_text/fake_error__opencv_preprocessed.txt",
+        "text_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\04_ocr_text\\fake_error__opencv_preprocessed.txt",
+        "json_url": "/storage/documents/2026/07/026eb6034eb9/05_ocr_json/fake_error__opencv_preprocessed.json",
+        "json_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\05_ocr_json\\fake_error__opencv_preprocessed.json",
+        "word_url": "/storage/documents/2026/07/026eb6034eb9/08_word_outputs/fake_error__opencv_preprocessed.docx",
+        "word_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\08_word_outputs\\fake_error__opencv_preprocessed.docx",
+        "word_filename": "fake_error__opencv_preprocessed.docx",
+        "word_size_label": "1.1 KB"
+      }
+    ],
+    "exports": {
+      "benchmark_csv": {
+        "path": "documents/2026/07/026eb6034eb9/07_exports/benchmark_results.csv",
+        "url": "/storage/documents/2026/07/026eb6034eb9/07_exports/benchmark_results.csv",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\07_exports\\benchmark_results.csv"
+      },
+      "comparison_summary": {
+        "path": "documents/2026/07/026eb6034eb9/07_exports/comparison_summary.json",
+        "url": "/storage/documents/2026/07/026eb6034eb9/07_exports/comparison_summary.json",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\07_exports\\comparison_summary.json"
+      },
+      "report_snapshot": {
+        "path": "documents/2026/07/026eb6034eb9/07_exports/report_snapshot.json",
+        "url": "/storage/documents/2026/07/026eb6034eb9/07_exports/report_snapshot.json",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\026eb6034eb9\\07_exports\\report_snapshot.json"
+      }
+    },
+    "workflow_manifest_url": "/storage/documents/2026/07/026eb6034eb9/06_metadata/workflow_manifest.json",
+    "extracted_fields_url": "/storage/documents/2026/07/026eb6034eb9/06_metadata/extracted_fields.json"
+  }
+}

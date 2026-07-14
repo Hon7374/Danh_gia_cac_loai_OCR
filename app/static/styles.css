@@ -1127,6 +1127,9 @@ figcaption {
 .status.ok { color: #05603a; background: var(--good-soft); }
 .status.error { color: var(--bad); background: var(--bad-soft); }
 .status.skipped { color: #8a5a00; background: var(--warn-soft); }
+.status.scanned { color: #05603a; background: var(--good-soft); }
+.status.partial { color: #8a5a00; background: var(--warn-soft); }
+.status.failed { color: var(--bad); background: var(--bad-soft); }
 .err {
   max-width: 320px;
   color: var(--bad);

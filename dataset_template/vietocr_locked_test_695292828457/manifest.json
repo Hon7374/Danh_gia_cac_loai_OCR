@@ -1,0 +1,89 @@
+{
+  "dataset_type": "vietocr_line_recognition",
+  "source_engine": "tesseract",
+  "source_variant": "raw",
+  "sample_count": 40,
+  "source_counts": {
+    "ground_truth_aligned": 40
+  },
+  "unique_source_document_count": 1,
+  "skipped": 46,
+  "skipped_by_reason": {
+    "pseudo_label_excluded": 43,
+    "invalid_label": 3
+  },
+  "pseudo_labels": {
+    "included": false,
+    "default_policy": "excluded",
+    "minimum_confidence_when_included": 88.0
+  },
+  "duplicates": {
+    "exact_image_and_label": 0,
+    "conflicting_label_images": 0,
+    "blocked_conflict_samples": 0,
+    "removed_samples": 0,
+    "unique_image_hashes": 40,
+    "unique_content_hashes": 40
+  },
+  "sampling": {
+    "before_balancing": 40,
+    "after_balancing": 40,
+    "global_limit": 0,
+    "per_document_limit": 0,
+    "removed_by_document_cap": 0,
+    "removed_by_global_limit": 0,
+    "removed_per_document": {},
+    "selected_per_document": {
+      "sha256:15adfabdd45b5cd121f6fe3a996a63e834910c2ae288c6eb4050cfa9aa5fc3f0": 40
+    }
+  },
+  "test_document_lock": {
+    "requested_job_ids": [],
+    "locked_source_document_ids": [],
+    "excluded_job_ids": []
+  },
+  "jobs": [
+    {
+      "job_id": "695292828457",
+      "status": "ok",
+      "line_count": 86,
+      "ground_truth": true,
+      "ground_truth_aligned": 41,
+      "source_document_id": "sha256:15adfabdd45b5cd121f6fe3a996a63e834910c2ae288c6eb4050cfa9aa5fc3f0",
+      "source_document_id_basis": "uploaded_file_sha256"
+    }
+  ],
+  "output_dir": "D:\\ocr_full_demo_v2_latest\\ocr_full_demo_v2_latest\\dataset_template\\vietocr_locked_test_695292828457",
+  "train_count": 40,
+  "val_count": 0,
+  "train_annotation": "D:\\ocr_full_demo_v2_latest\\ocr_full_demo_v2_latest\\dataset_template\\vietocr_locked_test_695292828457\\train.txt",
+  "val_annotation": "D:\\ocr_full_demo_v2_latest\\ocr_full_demo_v2_latest\\dataset_template\\vietocr_locked_test_695292828457\\val.txt",
+  "requested_val_ratio": 0.0,
+  "actual_val_ratio": 0.0,
+  "split_jobs": {
+    "train": [
+      "695292828457"
+    ],
+    "validation": []
+  },
+  "split_source_documents": {
+    "train": [
+      "sha256:15adfabdd45b5cd121f6fe3a996a63e834910c2ae288c6eb4050cfa9aa5fc3f0"
+    ],
+    "validation": []
+  },
+  "split_source_counts": {
+    "train": {
+      "ground_truth_aligned": 40
+    },
+    "validation": {}
+  },
+  "split_integrity": {
+    "job_overlap_count": 0,
+    "source_document_overlap_count": 0,
+    "image_hash_overlap_count": 0,
+    "content_hash_overlap_count": 0,
+    "passed": true
+  },
+  "split_warnings": []
+}

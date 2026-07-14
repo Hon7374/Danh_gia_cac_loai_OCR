@@ -20,6 +20,12 @@ python -m pip install -U easyocr
 
 ## 3. PaddleOCR + VietOCR
 
+- Demo mặc định dùng checkpoint official được lưu cục bộ tại `models/vietocr-pretrained/vgg_transformer.pth`.
+- Checkpoint fine-tune 120 iteration cũ đã bị loại khỏi mặc định sau khi thua trên validation sạch và tài liệu test khóa; số liệu gate nằm ở `reports/vietocr_model_gate_20260712.json`.
+- Runtime là hybrid theo từng crop: VietOCR chỉ được nhận khi output hợp lệ; decoder loop, lặp bệnh lý, rỗng hoặc tăng/co độ dài bất thường sẽ giữ lại Paddle.
+- Crop có tỷ lệ rộng/cao từ 18 trở lên được tách tại valley khoảng trắng trước khi nhận dạng để tránh co cả dòng vào 512 px; thứ tự text dùng recursive XY-cut theo bbox cho header/footer nhiều cột.
+- Config và checkpoint official đều nằm trong `models/vietocr-pretrained/`; quá trình inference không cần tải config/backbone/model từ Internet.
+
 - PaddleOCR latest stable:
 
 ```bash
@@ -32,7 +38,7 @@ python -m pip install -U paddleocr paddlepaddle
 python -m pip install -U vietocr torch torchvision
 ```
 
-## 4. GLM-OCR
+## 4. GLM-OCR (adapter legacy, không kích hoạt trong demo)
 
 - Chạy qua API/key trong `.env`:
 

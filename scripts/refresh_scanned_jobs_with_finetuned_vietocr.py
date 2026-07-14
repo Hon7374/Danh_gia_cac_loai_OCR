@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import sys
 import time
@@ -22,6 +23,7 @@ from app.config import JOBS_DIR
 from app.main import (
     _aggregate_page_rows,
     _apply_ground_truth_metrics,
+    _is_active_demo_result,
     _read_ground_truth_file,
     build_comparison_summary,
 )
@@ -186,6 +188,10 @@ def refine_existing_boxes(job_dir: Path, report: dict[str, Any], row: dict[str, 
     refresh_start = time.perf_counter()
     refreshed_pages = 0
     failed_pages = 0
+    hybrid_total_boxes = 0
+    hybrid_accepted = 0
+    hybrid_fallback = 0
+    hybrid_reason_counts: dict[str, int] = defaultdict(int)
 
     for page_no, rel_image in enumerate(images, start=1):
         image_path = job_dir / rel_image
@@ -218,9 +224,9 @@ def refine_existing_boxes(job_dir: Path, report: dict[str, Any], row: dict[str, 
             )
             continue
 
-        refined = refine_engine._try_vietocr_recognize_local(image_path, source_boxes)
+        vietocr_candidates = refine_engine._try_vietocr_recognize_local(image_path, source_boxes)
         elapsed = time.perf_counter() - page_start
-        if not refined:
+        if vietocr_candidates is None:
             failed_pages += 1
             page_rows.append(
                 {
@@ -234,7 +240,22 @@ def refine_existing_boxes(job_dir: Path, report: dict[str, Any], row: dict[str, 
             )
             continue
 
+        refined, hybrid_stats = refine_engine._apply_hybrid_refinement(
+            source_boxes,
+            vietocr_candidates,
+            model_info=dict(refine_engine._VIETOCR_MODEL_INFO),
+        )
         refreshed_pages += 1
+        hybrid_total_boxes += int(hybrid_stats.get("total_paddle_boxes") or 0)
+        hybrid_accepted += int(hybrid_stats.get("accepted_refinements") or 0)
+        hybrid_fallback += int(hybrid_stats.get("fallback_to_paddle") or 0)
+        for reason, count in (hybrid_stats.get("fallback_reason_counts") or {}).items():
+            hybrid_reason_counts[str(reason)] += int(count or 0)
+        refine_note = (
+            f"VietOCR hybrid accepted {hybrid_stats.get('accepted_refinements', 0)}/"
+            f"{hybrid_stats.get('total_paddle_boxes', len(source_boxes))} crops; "
+            f"Paddle fallback for {hybrid_stats.get('fallback_to_paddle', 0)} crops"
+        )
         boxes = [
             {
                 "text": box.text,
@@ -254,6 +275,12 @@ def refine_existing_boxes(job_dir: Path, report: dict[str, Any], row: dict[str, 
                 "boxes": boxes,
                 "elapsed_sec": elapsed,
                 "error": "",
+                "raw": {
+                    "note": "PaddleOCR geometry with guarded VietOCR recognition and per-crop Paddle fallback.",
+                    "refine": refine_note,
+                    "vietocr_model": dict(refine_engine._VIETOCR_MODEL_INFO),
+                    "hybrid_refinement": hybrid_stats,
+                },
             }
         )
 
@@ -264,20 +291,45 @@ def refine_existing_boxes(job_dir: Path, report: dict[str, Any], row: dict[str, 
         elapsed_sec=time.perf_counter() - refresh_start,
     )
     refreshed_row["previous_eval"] = row_metric_snapshot(row)
+    refreshed_row["raw"]["engine_display_name"] = "PaddleOCR + VietOCR hybrid"
+    refreshed_row["raw"]["note"] = (
+        "Existing PaddleOCR detections were recognized with guarded VietOCR; "
+        "every rejected/invalid VietOCR candidate retained the original Paddle text."
+    )
+    refreshed_row["raw"]["refine"] = (
+        f"VietOCR hybrid accepted {hybrid_accepted}/{hybrid_total_boxes} crops; "
+        f"Paddle fallback for {hybrid_fallback} crops"
+    )
+    refreshed_row["raw"]["hybrid_refinement"] = {
+        "policy": getattr(refine_engine, "_HYBRID_POLICY_VERSION", "paddle-vietocr-hybrid"),
+        "status": "completed" if refreshed_pages else "unavailable",
+        "total_paddle_boxes": hybrid_total_boxes,
+        "accepted_refinements": hybrid_accepted,
+        "fallback_to_paddle": hybrid_fallback,
+        "fallback_reason_counts": dict(hybrid_reason_counts),
+        "paddle_geometry_preserved": True,
+        "model": dict(refine_engine._VIETOCR_MODEL_INFO),
+    }
     refreshed_row["raw"]["refresh"] = {
-        "mode": "existing_paddle_boxes_finetuned_vietocr",
+        "mode": "existing_paddle_boxes_guarded_vietocr_hybrid",
         "refreshed_at_unix": time.time(),
         "refreshed_pages": refreshed_pages,
         "failed_pages": failed_pages,
         "vietocr_model": dict(refine_engine._VIETOCR_MODEL_INFO),
-        "note": "Refined old PaddleOCR detected boxes with the fine-tuned VietOCR recognizer; no new detection was run.",
+        "note": (
+            "Reused old PaddleOCR detections and applied guarded VietOCR recognition per crop; "
+            "unsafe candidates fell back to the original Paddle text. No new detection was run."
+        ),
     }
     status = {
         "variant": variant,
+        "mode": "existing_boxes_hybrid",
         "old": refreshed_row["previous_eval"],
         "new": row_metric_snapshot(refreshed_row),
         "refreshed_pages": refreshed_pages,
         "failed_pages": failed_pages,
+        "hybrid_accepted": hybrid_accepted,
+        "hybrid_fallback": hybrid_fallback,
     }
     return refreshed_row, status
 
@@ -301,14 +353,24 @@ def rerun_detection(job_dir: Path, report: dict[str, Any], row: dict[str, Any]) 
 
     refreshed_row = _run_engine_on_pages(engine_cls, "paddle_vietocr", variant, images)
     refreshed_row["previous_eval"] = row_metric_snapshot(row)
-    refreshed_row["raw"]["refresh"] = {
-        "mode": "rerun_paddle_detection_and_finetuned_vietocr",
+    refreshed_raw = refreshed_row.setdefault("raw", {})
+    refreshed_raw["engine_display_name"] = "PaddleOCR + VietOCR hybrid"
+    refreshed_raw["note"] = (
+        "PaddleOCR detection/recognition reran from the page image, followed by guarded "
+        "VietOCR recognition with per-crop Paddle fallback."
+    )
+    refreshed_raw["refresh"] = {
+        "mode": "rerun_paddle_detection_and_guarded_vietocr_hybrid",
         "refreshed_at_unix": time.time(),
-        "vietocr_model": refreshed_row.get("raw", {}).get("vietocr_model"),
-        "note": "Reran PaddleOCR detection and fine-tuned VietOCR recognition.",
+        "vietocr_model": refreshed_raw.get("vietocr_model"),
+        "note": (
+            "Reran full PaddleOCR detection/recognition and applied the guarded VietOCR hybrid; "
+            "invalid or runaway VietOCR crops retained Paddle text."
+        ),
     }
     return refreshed_row, {
         "variant": variant,
+        "mode": "rerun_detection_hybrid",
         "old": refreshed_row["previous_eval"],
         "new": row_metric_snapshot(refreshed_row),
         "refreshed_pages": refreshed_row.get("raw", {}).get("ok_pages"),
@@ -317,11 +379,45 @@ def rerun_detection(job_dir: Path, report: dict[str, Any], row: dict[str, Any]) 
 
 
 def choose_best_engine(report: dict[str, Any]) -> dict[str, str] | None:
-    ok_rows = [row for row in report.get("results") or [] if row.get("status") == "ok" and row.get("text")]
+    ok_rows = [
+        row
+        for row in report.get("results") or []
+        if _is_active_demo_result(row) and row.get("status") == "ok" and row.get("text")
+    ]
     if not ok_rows:
         return None
     best = max(ok_rows, key=ocr_selection_score)
     return {"engine": best.get("engine"), "variant": best.get("variant")}
+
+
+def preserve_result_history(
+    report: dict[str, Any],
+    row: dict[str, Any],
+    *,
+    replacement_mode: str,
+    reason: str = "replaced_by_vietocr_refresh",
+) -> None:
+    """Archive the complete JSON row immediately before replacing it."""
+    history = report.get("result_history")
+    if not isinstance(history, list):
+        history = [] if history is None else [copy.deepcopy(history)]
+        report["result_history"] = history
+    history_index = len(history)
+    history.append(copy.deepcopy(row))
+    metadata = report.get("result_history_metadata")
+    if not isinstance(metadata, list):
+        metadata = [] if metadata is None else [copy.deepcopy(metadata)]
+        report["result_history_metadata"] = metadata
+    metadata.append(
+        {
+            "archived_at_unix": time.time(),
+            "reason": reason,
+            "replacement_mode": replacement_mode,
+            "result_history_index": history_index,
+            "engine": row.get("engine"),
+            "variant": row.get("variant"),
+        }
+    )
 
 
 def refresh_report(job_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
@@ -338,7 +434,9 @@ def refresh_report(job_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
         variant = row.get("variant") or "raw"
         if args.variant and variant not in set(args.variant):
             continue
-        if row.get("status") == "ok" and row.get("boxes"):
+        if bool(getattr(args, "rerun_detection", False)):
+            refreshed_row, status = rerun_detection(job_dir, report, row)
+        elif row.get("status") == "ok" and row.get("boxes"):
             refreshed_row, status = refine_existing_boxes(job_dir, report, row)
         elif args.rerun_missing_detection:
             refreshed_row, status = rerun_detection(job_dir, report, row)
@@ -364,6 +462,11 @@ def refresh_report(job_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
         if not accepted:
             statuses.append(status)
             continue
+        preserve_result_history(
+            report,
+            row,
+            replacement_mode=str(status.get("mode") or "vietocr_refresh"),
+        )
         result_rows[idx] = refreshed_row
         statuses.append(status)
         changed = True
@@ -383,7 +486,8 @@ def refresh_report(job_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
             variant = status.get("variant")
             if variant in refreshed_by_variant and status.get("new") is not None:
                 status["new"] = row_metric_snapshot(refreshed_by_variant[variant])
-    report["comparison_summary"] = build_comparison_summary(result_rows)
+    active_result_rows = [row for row in result_rows if _is_active_demo_result(row)]
+    report["comparison_summary"] = build_comparison_summary(active_result_rows)
     report["best_engine"] = choose_best_engine(report)
     report.setdefault("refresh_history", []).append(
         {
@@ -424,12 +528,30 @@ def report_paths(args: argparse.Namespace) -> list[Path]:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Refresh old scanned OCR jobs with fine-tuned VietOCR and recompute evaluation metrics.")
+    parser = argparse.ArgumentParser(
+        description=(
+            "Refresh scanned OCR jobs with the guarded PaddleOCR + VietOCR hybrid "
+            "and recompute evaluation metrics."
+        )
+    )
     parser.add_argument("--jobs-dir", type=Path, default=JOBS_DIR)
     parser.add_argument("--job-id", action="append", help="Refresh only this job id. Repeat for multiple jobs.")
     parser.add_argument("--variant", action="append", choices=["raw", "opencv_preprocessed"], help="Refresh only one variant. Repeat for both.")
-    parser.add_argument("--only-with-paddle-vietocr", action="store_true", default=True)
+    parser.add_argument(
+        "--only-with-paddle-vietocr",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Limit refresh to jobs that already contain Paddle+VietOCR (use --no-only-with-paddle-vietocr for all jobs).",
+    )
     parser.add_argument("--rerun-missing-detection", action="store_true", help="Run PaddleOCR detection again for skipped/error rows that have no boxes.")
+    parser.add_argument(
+        "--rerun-detection",
+        action="store_true",
+        help=(
+            "Force full PaddleOCR detection plus guarded VietOCR hybrid recognition, "
+            "even when the existing row already has boxes."
+        ),
+    )
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--summary-path", type=Path, default=ROOT / "jobs" / "_vietocr_finetune_refresh_summary.json")
     return parser.parse_args()

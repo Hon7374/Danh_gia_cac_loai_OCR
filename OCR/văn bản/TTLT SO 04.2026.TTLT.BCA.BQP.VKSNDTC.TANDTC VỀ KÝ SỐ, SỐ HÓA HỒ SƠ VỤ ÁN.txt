@@ -1,0 +1,272 @@
+
+xathư
+  BỘ CÔNG AN - BỘ QUỐC PHÒNG 
+- VIỆN KIỂM SÁT NHÂN DÂN TỐI CAO
+- TÒA ÁN NHÂN DÂN TỐI CAO
+
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập - Tự do - Hạnh phúc 
+Số:  04/2026/TTLT-BCA-BQP 
+-VKSNDTC-TANDTC	Hà Nội, ngày 15 tháng 5 năm 2026
+
+THÔNG TƯ LIÊN TỊCH
+Quy định chi tiết thi hành khoản 5 Điều 131, 
+khoản 3 Điều 132, Điều 141 Bộ luật Tố tụng hình sự
+  
+
+Căn cứ Bộ luật Tố tụng hình sự số 101/2015/QH13; đã được sửa đổi, bổ sung một số điều theo Luật số 02/2021/QH15, Luật số 34/2024/QH15, Luật số 59/2024/QH15 và Luật số 99/2025/QH15;
+Căn cứ Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15 đã được sửa đổi, bổ sung một số điều theo Luật số 87/2025/QH15;
+Căn cứ Luật Dữ liệu số 60/2024/QH15;
+Căn cứ Luật Giao dịch điện tử số 20/2023/QH15;
+Căn cứ Luật Chuyển đổi số số 148/2025/QH15;
+Bộ trưởng Bộ Công an, Bộ trưởng Bộ Quốc phòng, Viện trưởng Viện kiểm sát nhân dân tối cao, Chánh án Tòa án nhân dân tối cao ban hành Thông tư liên tịch quy định chi tiết thi hành khoản 5 Điều 131, khoản 3 Điều 132, Điều 141 Bộ luật Tố tụng hình sự.
+Chương I
+NHỮNG QUY ĐỊNH CHUNG
+Điều 1. Phạm vi điều chỉnh
+Thông tư liên tịch này quy định các nội dung sau:
+1. Việc ký số văn bản tố tụng, số hóa hồ sơ vụ án; yêu cầu của phần mềm chuyên dụng và cơ sở dữ liệu hồ sơ vụ án; thông báo văn bản tố tụng trên phương tiện thông tin đại chúng, qua nền tảng số, phần mềm ứng dụng dùng chung triển khai tại Trung tâm dữ liệu quốc gia, cổng thông tin hoặc trang thông tin điện tử của cơ quan có thẩm quyền tiến hành tố tụng theo quy định tại khoản 5 Điều 131, khoản 3 Điều 132, Điều 141 Bộ luật Tố tụng hình sự.
+2. Việc ký số văn bản tố tụng và số hóa hồ sơ vụ án (gồm hồ sơ vụ việc và vụ án) được thực hiện trong tiếp nhận, kiểm tra xác minh sơ bộ tố giác, tin báo về tội phạm, giải quyết nguồn tin về tội phạm, điều tra, truy tố, xét xử vụ án hình sự (sau đây gọi là giai đoạn khởi tố, điều tra, truy tố, xét xử). 
+3. Việc giao, chuyển, nhận, gửi, thông báo, thi hành văn bản tố tụng sử dụng chữ ký số và hồ sơ vụ án điện tử trên môi trường số được thực hiện trong giai đoạn khởi tố, điều tra, truy tố, xét xử và thi hành án hình sự.
+Điều 2. Đối tượng áp dụng	
+1. Cơ quan có thẩm quyền tiến hành tố tụng. 
+2. Công an xã, phường, đặc khu (sau đây gọi là Công an cấp xã), Đồn Công an.
+3. Người có thẩm quyền của các cơ quan quy định tại khoản 1, khoản 2 Điều này (sau đây gọi là người có thẩm quyền).
+4. Người tham gia tố tụng, người thân thích của người tham gia tố tụng (sau đây gọi là người tham gia tố tụng).
+5. Cơ quan quản lý, thi hành tạm giữ, tạm giam và cơ quan quản lý, thi hành án hình sự.
+6. Cơ quan, tổ chức, cá nhân có liên quan.
+Điều 3. Giải thích từ ngữ
+1. Nền tảng số được sử dụng để thông báo văn bản tố tụng theo quy định tại Thông tư liên tịch này gồm: 
+a) Cổng thông tin điện tử, trang thông tin điện tử của cơ quan tiến hành tố tụng;
+b) Cổng dịch vụ công và hệ thống thông tin giải quyết thủ tục hành chính của cơ quan nhà nước; của các bộ, ngành;
+c) Ứng dụng định danh điện tử quốc gia (VneID);
+d) Nền tảng số khác theo quy định đáp ứng đầy đủ yêu cầu về bảo vệ bí mật nhà nước, an ninh mạng, an toàn thông tin và bảo vệ dữ liệu cá nhân;
+2. Phần mềm chuyên dụng là phần mềm điện tử do các bộ, ngành thiết kế, xây dựng, quản lý, sử dụng độc lập được tích hợp trên cơ sở dữ liệu về hồ sơ vụ án phục vụ hoạt động ký số, số hóa hồ sơ vụ án, sử dụng xuyên suốt từ giai đoạn khởi tố, điều tra, truy tố, xét xử và thi hành án hình sự. Phần mềm chuyên dụng được kết nối, chia sẻ, liên thông dữ liệu giữa Công an cấp xã, Đồn Công an, cơ quan có thẩm quyền tiến hành tố tụng, cơ quan quản lý, thi hành tạm giữ, tạm giam và thi hành án hình sự.
+3. Cơ sở dữ liệu về hồ sơ vụ án là hệ thống tập hợp các thông tin, tài liệu, dữ liệu được xây dựng theo cấu trúc dữ liệu, chuẩn dữ liệu, chuẩn dữ liệu dùng chung, để quản lý, truy xuất, kết nối liên thông, khai thác dữ liệu giữa các cơ sở dữ liệu quốc gia, cơ sở dữ liệu chuyên ngành và hệ thống thông tin và Trung tâm dữ liệu quốc gia. Cơ sở dữ liệu về hồ sơ vụ án được khởi tạo, chuyển đổi, tích hợp trên phần mềm chuyên dụng, do người có thẩm quyền thực hiện theo quy định tại Điều 18 Thông tư liên tịch này.
+4. Số hóa hồ sơ vụ án là việc lập hồ sơ vụ án điện tử ngay từ đầu trên phần mềm chuyên dụng; chuyển đổi văn bản tố tụng, tài liệu chứng cứ khác đã lập bằng văn bản giấy trong quá trình lập hồ sơ vụ án điện tử sang dữ liệu điện tử; chuyển đổi hồ sơ vụ án đã được lập từ văn bản giấy sang hồ sơ vụ án điện tử.
+5. Hồ sơ vụ án điện tử là tập hợp dữ liệu điện tử được thể hiện dưới dạng văn bản tố tụng điện tử, thông tin, dữ liệu, tài liệu, chứng cứ điện tử được thu thập, lập, lưu trữ và ký số theo quy định, có giá trị pháp lý như hồ sơ giấy. Hồ sơ vụ án điện tử bao gồm: Hồ sơ vụ việc và vụ án được lập trong kiểm tra, xác minh sơ bộ tố giác, tin báo về tội phạm, giải quyết nguồn tin về tội phạm và giai đoạn khởi tố, điều tra.
+6. Phần mềm ứng dụng dùng chung triển khai tại Trung tâm dữ liệu quốc gia là hệ thống phần mềm, nền tảng số do cơ quan nhà nước có thẩm quyền xây dựng, quản lý và vận hành thống nhất trên hạ tầng của Trung tâm dữ liệu quốc gia, nhằm cung cấp các chức năng, dịch vụ số phục vụ hoạt động của các cơ quan trong hệ thống chính trị; bảo đảm kết nối, chia sẻ, xử lý dữ liệu, quản lý hồ sơ vụ án và hỗ trợ hoạt động tố tụng hình sự.
+7. Việc niêm yết công khai không có kết quả là trường hợp người có thẩm quyền đã thực hiện việc niêm yết theo quy định nhưng hết thời hạn niêm yết mà người được thông báo không đến liên hệ hoặc không phản hồi.
+Điều 4. Nguyên tắc thực hiện
+1. Việc thực hiện ký số văn bản tố tụng, hình thức xác nhận khác không phải là chữ ký điện tử của người tham gia tố tụng và số hóa hồ sơ vụ án trong giai đoạn khởi tố, điều tra, truy tố, xét xử vụ án hình sự phải bảo đảm đúng thẩm quyền, xác thực, toàn vẹn, đầy đủ, chính xác, lưu vết hoạt động; bảo đảm tính chống chối bỏ; được gắn mã số định danh với từng hồ sơ vụ án để quản lý thống nhất, xuyên suốt trong hoạt động tố tụng hình sự; bảo đảm tuân thủ các quy định của pháp luật về chữ ký số, lưu trữ tài liệu số và quy định của thông tư liên tịch này.
+2. Việc cấp, giao, chuyển, nhận, gửi, thi hành, thông báo văn bản tố tụng sử dụng chữ ký số, hồ sơ vụ án điện tử và dữ liệu điện tử giữa các phần mềm chuyên dụng tích hợp trên cơ sở dữ liệu về hồ sơ vụ án phải được thực hiện đúng quy định về thẩm quyền, quy trình thực hiện, quy định của pháp luật về giao dịch điện tử và quy định tại thông tư liên tịch này.
+3. Việc kết nối, chia sẻ và liên thông dữ liệu phải bảo đảm thống nhất về định dạng, tiêu chuẩn dữ liệu, giao thức kết nối; bảo đảm khả năng đọc, hiểu, xử lý giữa các hệ thống khác nhau; bảo đảm quy trình thực hiện, tính toàn vẹn, giá trị pháp lý của dữ liệu, văn bản tố tụng, hồ sơ vụ án điện tử trong quá trình truyền nhận, phân định rõ trách nhiệm và không làm ảnh hưởng đến tính độc lập trong hoạt động của các cơ quan.
+4. Việc khai thác, sử dụng dữ liệu phải đúng thẩm quyền, đúng mục đích, được định danh, xác thực, phân quyền và ghi nhận đầy đủ vào nhật ký hệ thống, bảo đảm an toàn thông tin, an ninh mạng và bảo vệ dữ liệu; tuân thủ các quy chuẩn kỹ thuật về an toàn thông tin và các quy định về bảo vệ dữ liệu cá nhân. Không được tự ý sao chép, cung cấp dữ liệu ngoài phạm vi phục vụ hoạt động tố tụng, trường hợp trích xuất, chia sẻ phải được cấp có thẩm quyền cho phép và được lưu vết đầy đủ trong hệ thống.
+5. Việc thông báo văn bản tố tụng trên phương tiện thông tin đại chúng, qua nền tảng số, phần mềm ứng dụng dùng chung triển khai tại Trung tâm dữ liệu quốc gia, cổng thông tin hoặc trang thông tin điện tử của cơ quan có thẩm quyền tiến hành tố tụng phải bảo đảm hợp pháp, chính xác, rõ ràng, minh bạch, công khai có kiểm soát, đúng thẩm quyền, thời hạn.
+6. Việc xây dựng, quản lý, khai thác, vận hành cơ sở dữ liệu về hồ sơ vụ án phải bảo đảm an toàn thông tin, an ninh mạng, thực hiện theo tiêu chuẩn, quy chuẩn kỹ thuật và quy trình nghiệp vụ. 
+ Bảo đảm bí mật điều tra, bí mật công tác trong hoạt động tố tụng hình sự theo quy định của pháp luật, quy định về mức độ bảo mật và giải mật; có sự phân cấp, phân quyền truy cập trên cơ sở dữ liệu về hồ sơ vụ án.
+Chương II
+KÝ SỐ VĂN BẢN TỐ TỤNG
+Điều 5. Ký số văn bản tố tụng
+1. Người có thẩm quyền sử dụng chữ ký số chuyên dùng công vụ quy định tại điểm c khoản 1 Điều 22 Luật Giao dịch điện tử trong các văn bản tố tụng quy định tại khoản 1 Điều 132 Bộ luật Tố tụng hình sự.
+2. Người tham gia tố tụng ký số văn bản tố tụng bằng chữ ký điện tử chuyên dùng, chữ ký số công cộng quy định tại điểm a, b khoản 1 Điều 22 Luật Giao dịch điện tử trong quá trình lập hồ sơ vụ án điện tử.
+3. Văn bản tố tụng đã ký số thì không phải ký trực tiếp và có giá trị như văn bản tố tụng ký trực tiếp. Việc ký số văn bản tố tụng được thực hiện theo quy định tại Điều 22 Thông tư liên tịch này.
+Điều 6. Hình thức xác nhận khác của người tham gia tố tụng trong quá trình lập hồ sơ vụ án điện tử
+1. Hình thức xác nhận khác không phải là chữ ký điện tử gồm: Sử dụng chức năng xác nhận bằng vân tay thông qua thiết bị điện tử hoặc ký trên màn hình thiết bị điện tử tích hợp trên phần mềm chuyên dụng hoặc tiến hành xác thực nhiều lớp khi điều kiện thực hiện được bảo đảm.
+2. Sử dụng hình thức xác nhận khác quy định tại khoản 1 Điều này trong trường hợp người tham gia tố tụng không thực hiện được việc ký số. Cơ quan có thẩm quyền tiến hành tố tụng căn cứ vào điều kiện hạ tầng, kỹ thuật quyết định lựa chọn và thống nhất với người tham gia tố tụng để thực hiện.
+Điều 7. Giá trị pháp lý của văn bản tố tụng sử dụng chữ ký số, chữ ký điện tử và hình thức xác nhận khác của người tham gia tố tụng
+Văn bản tố tụng sử dụng chữ ký số của người có thẩm quyền, chữ ký điện tử và phương thức xác nhận khác của người tham gia tố tụng có giá trị pháp lý khi bảo đảm nội dung:
+1. Được lập trên phần mềm chuyên dụng tích hợp trên cơ sở dữ liệu về hồ sơ vụ án và được ký số của người có thẩm quyền, người tham gia tố tụng hoặc sử dụng hình thức xác nhận khác của người tham gia tố tụng đúng quy định.
+2. Sử dụng chứng thư chữ ký số còn hiệu lực tại thời điểm ký.
+3. Nội dung văn bản tố tụng điện tử bảo đảm tính toàn vẹn, không bị thay đổi sau khi ký hoặc xác nhận.
+4. Bảo đảm xác định thống nhất về chủ thể thực hiện và ý chí xác nhận đối với nội dung văn bản tố tụng, tài liệu, chứng cứ khác.
+5. Văn bản tố tụng sử dụng chữ ký số phải lập đúng thể thức, theo mẫu thống nhất, được cấp số, đóng dấu điện tử theo quy định.
+6. Việc sử dụng hình thức xác nhận khác của người tham gia tố tụng phải bảo đảm:
+a) Phần mềm chuyên dụng phải hiển thị đầy đủ nội dung văn bản tố tụng để người tham gia tố tụng kiểm tra trước khi thực hiện xác nhận; Việc xác nhận của người tham gia tố tụng phải được gắn với tính toàn vẹn của văn bản tố tụng;
+b) Việc thực hiện hình thức xác nhận khác của người tham gia tố tụng phải được ghi nhận nhật ký điện tử, lưu trữ thông tin về thời điểm xác nhận, hình thức xác nhận và các thông tin kỹ thuật, trường hợp cần thiết có thể ghi hình để phục vụ việc kiểm tra, đối chiếu khi cần thiết;
+c) Việc thu thập, xử lý, lưu trữ và bảo vệ dữ liệu sinh trắc học của người tham gia tố tụng phải tuân thủ quy định của pháp luật về bảo vệ dữ liệu cá nhân và pháp luật có liên quan.
+Điều 8. Trường hợp ký trực tiếp văn bản tố tụng, lập văn bản tố tụng, tài liệu, chứng cứ khác bằng văn bản giấy trong quá trình lập hồ sơ vụ án điện tử
+1. Lập văn bản tố tụng, tài liệu, chứng cứ khác bằng văn bản giấy sử dụng chữ ký trực tiếp trong quá trình lập hồ sơ vụ án điện tử trong trường hợp sau:
+a) Khi lập các văn bản tố tụng có nội dung thuộc phạm vi bí mật nhà nước ở mức độ “tuyệt mật” mà phần mềm chuyên dụng chưa được chứng nhận, phê duyệt các giải pháp bảo mật đáp ứng yêu cầu bảo mật ở cấp độ tương ứng theo quy định về bảo vệ bí mật nhà nước hoặc khi cần thiết theo yêu cầu nghiệp vụ của cơ quan có thẩm quyền tiến hành tố tụng;
+b) Tại thời điểm lập hồ sơ vụ án, cơ sở dữ liệu hồ sơ vụ án, hệ thống kỹ thuật, đường truyền mạng hoặc phần mềm chuyên dụng bị sự cố, gián đoạn, hoặc chưa bảo đảm an ninh, an toàn thông tin mạng; 
+c) Địa điểm thực hiện các hoạt động tố tụng không có điều kiện kỹ thuật, phương tiện hoặc đường truyền mạng;
+d) Người có thẩm quyền chưa được cấp chứng thư chữ ký số chuyên dùng công vụ, chứng thư chữ ký số chuyên dùng công vụ đã hết hiệu lực, bị thu hồi hoặc không bảo đảm an toàn, không thể sử dụng được tại thời điểm ký;
+đ) Người tham gia tố tụng chưa đăng ký chữ ký điện tử hoặc chứng thư chữ ký số của người tham gia tố tụng hết thời hạn, bị thu hồi hoặc tạm dừng hiệu lực; Không có thiết bị hoặc thiết bị điện tử phục vụ xác nhận bằng hình thức điện tử khác bị sự cố, không sử dụng được;
+e) Trường hợp do tình trạng khẩn cấp, lý do bất khả kháng hoặc trở ngại khách quan;
+g) Hoạt động hợp tác quốc tế trong tố tụng hình sự phục vụ yêu cầu điều tra, truy tố, xét xử và thi hành án hình sự cần phải gửi văn bản giấy.
+2. Người có thẩm quyền lập văn bản tố tụng, tài liệu, chứng cứ trong hồ sơ vụ án điện tử bằng văn bản giấy sử dụng chữ ký trực tiếp đối với các trường hợp quy định tại điểm b, d, đ khoản 1 Điều này sau khi đã tiến hành các biện pháp khắc phục nhưng không có kết quả và có văn bản hoặc tài liệu có liên quan xác nhận lý do không thực hiện được việc ký số.
+3. Người có thẩm quyền đã lập, ký văn bản tố tụng trong trường hợp quy định tại khoản 1 Điều này có trách nhiệm kịp thời chuyển đổi từ văn bản giấy sang dữ liệu điện tử và lưu trữ sau khi các lý do quy định tại khoản 1 Điều này đã được khắc phục, bảo đảm điều kiện thực hiện.
+Điều 9. Việc cấp, giao, chuyển, nhận, gửi, thông báo, thi hành văn bản tố tụng điện tử sử dụng chữ ký số 
+1. Việc giao, chuyển, nhận, gửi, thông báo, thi hành văn bản tố tụng điện tử sử dụng chữ ký số giữa các cơ quan có thẩm quyền tiến hành tố tụng, giữa các cơ quan có thẩm quyền tiến hành tố tụng với cơ quan quản lý, cơ quan thi hành tạm giữ, tạm giam và thi hành án hình sự trong giai đoạn khởi tố, điều tra, truy tố, xét xử và thi hành án hình sự được thực hiện trên phần mềm chuyên dụng tích hợp trên cơ sở dữ liệu về hồ sơ vụ án, có biên bản giao, nhận điện tử thể hiện thời gian, nhật ký truy xuất bảo đảm đúng trình tự, thủ tục và thời hạn theo quy định của Bộ luật Tố tụng hình sự.
+2. Việc giao, chuyển, nhận, gửi văn bản tố tụng điện tử sử dụng chữ ký số giữa cơ quan có thẩm quyền tiến hành tố tụng với tổ chức giám định, hội đồng định giá tài sản và cơ quan, tổ chức có liên quan qua môi trường điện tử phù hợp khi hạ tầng kỹ thuật và các điều kiện đảm bảo khác đáp ứng yêu cầu để thực hiện. Việc giao, gửi và tiếp nhận văn bản tố tụng phải được ghi nhận bằng ký nhận, biên bản giao nhận, xác nhận điện tử, nhật ký hệ thống hoặc hình thức xác nhận khác có giá trị chứng minh.
+Đối với đối tượng cần giám định, định giá, tài liệu, đồ vật, mẫu vật có liên quan không giao, nhận được qua môi trường điện tử thì giao, nhận trực tiếp hoặc qua đường bưu chính và phải được ghi nhận bằng phương thức điện tử, bảo đảm xác định được thời điểm giao, nhận, tình trạng niêm phong và chủ thể thực hiện.
+3. Cơ quan nhận văn bản tố tụng điện tử sử dụng chữ ký số phải kịp thời tiếp nhận, kiểm tra tính hợp pháp của văn bản, cập nhật, xác nhận và phản hồi về việc tiếp nhận trên phần mềm chuyên dụng tích hợp trên cơ sở dữ liệu về hồ sơ vụ án. Trường hợp cần thiết có thể phối hợp tiến hành chứng thực thông qua dịch vụ chứng thực chữ ký số chuyên dùng công vụ.
+4. Việc cấp, thông báo, giao văn bản tố tụng điện tử sử dụng chữ ký số cho người tham gia tố tụng thực hiện như sau:
+a) Thực hiện việc cấp, thông báo, giao văn bản tố tụng điện tử đến người tham gia tố tụng thông qua tài khoản giao dịch điện tử của cá nhân, cơ quan, tổ chức qua nền tảng số; sử dụng phần mềm ứng dụng dùng chung triển khai tại Trung tâm dữ liệu quốc gia để thông báo qua các nền tảng số liên kết đến tài khoản giao dịch điện tử của cá nhân, cơ quan, tổ chức.
+	Trường hợp do tình trạng khẩn cấp, lý do bất khả kháng, trở ngại khách quan, do sự cố của hệ thống phần mềm, hạ tầng kỹ thuật mà không thực hiện được việc thông báo, giao văn bản tố tụng điện tử thì cơ quan có thẩm quyền tiến hành tố tụng có trách nhiệm thông báo cho người tham gia tố tụng biết và tiếp tục thực hiện thông báo, giao khi tình trạng khẩn cấp, bất khả kháng hoặc trở ngại khách quan không còn, đã khắc phục được sự cố của hệ thống phần mềm, hạ tầng kỹ thuật;
+b) Trường hợp thi hành văn bản tố tụng, do yêu cầu nghiệp vụ, đáp ứng thời hạn tố tụng hoặc người tham gia tố tụng không có, không thể sử dụng tài khoản giao dịch điện tử do đang bị tạm giữ, tạm giam, thi hành án hình sự, tài khoản giao dịch điện tử bị khóa, đình chỉ; không có điều kiện kỹ thuật, thiết bị, kết nối mạng; do tình trạng khẩn cấp, lý do bất khả kháng, trở ngại khách quan thì sao y từ văn bản điện tử sang văn bản giấy hoặc chuyển đổi văn bản tố tụng điện tử sang văn bản giấy để thực hiện thông báo, giao trực tiếp;
+c) Trường hợp không rõ địa chỉ hoặc không rõ người được cấp, giao đang ở đâu thì sao y văn bản tố tụng điện tử sang văn bản giấy hoặc chuyển đổi sang văn bản giấy để thực hiện niêm yết công khai theo quy định tại Điều 140 Bộ luật Tố tụng hình sự;
+d) Khi việc niêm yết công khai không có kết quả hoặc các trường hợp khác theo quy định của pháp luật thì thực hiện theo quy định tại Điều 19, Điều 20 Thông tư liên tịch này.	
+5. Việc cấp, giao, chuyển, nhận, gửi, thông báo, thi hành văn bản tố tụng điện tử sử dụng chữ ký số phải đúng đối tượng, đúng thời hạn, đúng phân cấp, phân quyền theo quy định.
+6. Trường hợp việc cấp, giao, chuyển, nhận, gửi văn bản tố tụng điện tử sử dụng chữ ký số quy định tại khoản 1, khoản 2 Điều này nếu chưa thực hiện được qua môi trường điện tử thì sao y từ văn bản điện tử sang văn bản giấy hoặc chuyển đổi văn bản tố tụng điện tử sang văn bản giấy để giao, chuyển, nhận, gửi.
+7. Việc sao y hoặc chuyển đổi văn bản quy định tại điểm c khoản 4 và khoản 6 Điều này phải thực hiện đúng quy định về sao y văn bản điện tử sang văn bản giấy, quy định về chuyển đổi hình thức từ thông điệp dữ liệu sang văn bản giấy.
+Chương III
+SỐ HÓA HỒ SƠ VỤ ÁN
+Điều 10. Thực hiện số hóa hồ sơ vụ án
+1. Thực hiện số hóa đối với toàn bộ hồ sơ vụ án quy định tại khoản 2 Điều 131 Bộ luật Tố tụng hình sự. Trong giai đoạn thực hiện thí điểm, trường hợp đã lập hồ sơ vụ án điện tử thì việc tiếp tục lập hồ sơ vụ án bằng văn bản giấy do cơ quan có thẩm quyền tiến hành tố tụng quyết định. Việc số hóa hồ sơ vụ án được thực hiện theo quy định tại Điều 22 Thông tư liên tịch này.
+2. Người có thẩm quyền quy định tại khoản 3 Điều 2 Thông tư liên tịch này, trong phạm vi nhiệm vụ được giao chịu trách nhiệm về việc khởi tạo dữ liệu, số hóa, số hóa bổ sung hồ sơ vụ án; kiểm tra và bảo đảm tính chính xác, đầy đủ, kịp thời của dữ liệu về hồ sơ vụ án được khởi tạo, bổ sung, cập nhật.
+3. Hồ sơ vụ án điện tử được lập, đăng ký, quản lý theo quy định, gắn một mã hồ sơ điện tử duy nhất ngay từ khi lập; đánh số, gắn dấu bút lục điện tử, sử dụng xuyên suốt trong mọi giai đoạn của hoạt động tố tụng và có thống kê tài liệu trong hồ sơ. Trường hợp có bổ sung tài liệu vào hồ sơ vụ án thì phải đánh dấu bút lục và có thống kê tài liệu bổ sung và báo diễn biến theo quy định.
+Điều 11. Phương thức số hóa hồ sơ vụ án
+1. Lập hồ sơ vụ án điện tử ngay từ đầu trên phần mềm chuyên dụng là việc lập văn bản tố tụng, tài liệu chứng cứ khác trong hồ sơ vụ án thông qua việc khởi tạo dữ liệu về hồ sơ vụ án trên phần mềm chuyên dụng theo cấu trúc dữ liệu, chuẩn dữ liệu, chuẩn dữ liệu dùng chung; sao chụp, chuyển đổi tài liệu, chứng cứ dạng vật lý sang định dạng dữ liệu điện tử có thể xem, đọc được trên thiết bị điện tử; tích hợp thông tin, tài liệu, dữ liệu điện tử đã thu thập được vào hồ sơ vụ án điện tử có xác thực dữ liệu.
+Việc khởi tạo, cập nhật dữ liệu phải tuân thủ trình tự, thủ tục tố tụng. Việc khởi tạo dữ liệu về người tham gia tố tụng phải được truy xuất tự động các thông tin cơ bản trong Cơ sở dữ liệu quốc gia về dân cư (chỉ nhập thủ công trong trường hợp không có thông tin trong Cơ sở dữ liệu quốc gia về dân cư).
+2. Chuyển đổi văn bản tố tụng, tài liệu chứng cứ khác đã lập bằng văn bản giấy trong quá trình lập hồ sơ vụ án điện tử sang dữ liệu điện tử được thực hiện bằng việc khởi tạo dữ liệu về hồ sơ vụ án trên phần mềm chuyên dụng theo cấu trúc dữ liệu, chuẩn dữ liệu, chuẩn dữ liệu dùng chung của cơ sở dữ liệu về hồ sơ vụ án, có xác thực dữ liệu.
+Việc chuyển đổi phải đáp ứng các yêu cầu quy định tại Điều 4 Nghị định số 137/2024/NĐ-CP ngày 23/10/2024 của Chính phủ quy định về giao dịch điện tử của cơ quan nhà nước và hệ thống thông tin phục vụ giao dịch điện tử, thực hiện xác thực dữ liệu theo quy định.
+3. Việc số hóa hồ sơ vụ án đã được lập từ văn bản giấy trước thời điểm liên ngành công bố thống nhất triển khai đồng bộ việc ký số, số hóa hồ sơ vụ án do cơ quan có thẩm quyền tiến hành tố tụng quyết định.
+Điều 12. Tài liệu, vật chứng, đồ vật không tích hợp trực tiếp vào hồ sơ vụ án điện tử
+1. Tài liệu, vật chứng gốc dạng vật lý không thể sao chụp, quét hoặc chuyển đổi sang định dạng điện tử, bao gồm: Đồ vật, mẫu vật, dữ liệu điện tử được niêm phong; vật chứng là tiền, vàng, bạc, kim khí quý, đá quý, đồ cổ, chất nổ, chất cháy, chất độc, chất phóng xạ, vũ khí quân dụng phải giám định; vật chứng là vi khuẩn nguy hại, bộ phận cơ thể người, mẫu mô, mẫu máu và các mẫu vật khác của cơ thể người; vật chứng thuộc loại mau hỏng hoặc khó bảo quản; vật chứng là tài liệu, hình ảnh, bản in, bản vẽ, sơ đồ hiện trường, vật chứng có yêu cầu giám định trực tiếp trên bản gốc.
+2. Tài liệu, vật chứng có đặc thù vật lý hoặc kỹ thuật mà việc chuyển đổi sang định dạng điện tử có nguy cơ làm mất, biến dạng hoặc làm giảm giá trị chứng minh, như: tài liệu viết tay bằng mực đặc biệt, tài liệu xuống cấp, bản đồ, bản vẽ kỹ thuật, dấu vân tay, mẫu sinh học, mẫu hóa chất, vật liệu.
+3. Đối với các tài liệu, vật chứng, đồ vật quy định tại khoản 1, khoản 2 Điều này không thể tích hợp trực tiếp vào hồ sơ vụ án điện tử thì người có thẩm quyền thể hiện trong hồ sơ vụ án điện tử thông qua văn bản tố tụng, biên bản, hình ảnh, dữ liệu số hoặc tài liệu mô tả kèm theo; việc quản lý, bảo quản các tài liệu, vật chứng gốc thực hiện theo quy định của pháp luật về quản lý vật chứng.
+Điều 13. Giá trị pháp lý của hồ sơ vụ án điện tử
+Hồ sơ vụ án điện tử có giá trị pháp lý khi bảo đảm các nội dung:
+1. Được lập, thu thập, chuyển đổi, gắn mã hồ sơ điện tử, mã bút lục và dấu bút lục điện tử đúng quy định. 
+2. Văn bản tố tụng điện tử trong hồ sơ vụ án điện tử phải bảo đảm thống nhất về mẫu, thể thức trình bày văn bản.
+3. Tất cả tài liệu được ký số bằng chứng thư chữ ký số chuyên dùng công vụ còn hiệu lực và đóng dấu điện tử theo quy định, được ký số hoặc sử dụng hình thức xác nhận khác của người tham gia tố tụng theo quy định tại Thông tư liên tịch này.
+4. Được lưu trữ, quản lý theo quy định tại Điều 16 Thông tư liên tịch này.
+Điều 14. Bảo đảm an ninh, an toàn thông tin, dữ liệu hồ sơ vụ án điện tử 
+1. Hồ sơ vụ án điện tử chứa bí mật nhà nước phải được quản lý, sử dụng theo đúng quy định của pháp luật về bảo vệ bí mật nhà nước, an ninh, an toàn thông tin trên môi trường mạng.
+2. Các cơ quan có thẩm quyền tiến hành tố tụng thực hiện việc phân quyền truy cập và bảo đảm việc truy cập đúng thẩm quyền, phân quyền và mọi hoạt động truy cập, đọc, ghi chép, sao chụp, chỉnh sửa phải được ghi nhận vào nhật ký hệ thống.
+3. Việc cấp, giao, chuyển, nhận, gửi, thông báo, thi hành, lưu trữ văn bản tố tụng điện tử, hồ sơ vụ án điện tử, dữ liệu thuộc danh mục bí mật nhà nước phải thực hiện theo quy định của pháp luật về bảo vệ bí mật nhà nước và pháp luật về cơ yếu.
+4. Mọi hoạt động kết nối, chia sẻ, liên thông dữ liệu phải sẵn sàng phương án sao lưu, dự phòng đảm bảo an toàn hệ thống, kế hoạch ứng phó, khắc phục sự cố và khôi phục dữ liệu đầy đủ, toàn vẹn, liên tục, tuân thủ chặt chẽ quy định pháp luật về an toàn thông tin, an ninh mạng, bảo vệ dữ liệu.
+Điều 15. Giao, chuyển, nhận, đọc, ghi chép, sao chụp hồ sơ vụ án điện tử
+1. Việc giao, chuyển, nhận hồ sơ vụ án điện tử được thực hiện trên phần mềm chuyên dụng tích hợp trên cơ sở dữ liệu về hồ sơ vụ án, có biên bản giao, nhận điện tử thể hiện thời gian, nhật ký truy xuất bảo đảm đúng thẩm quyền, trình tự, thủ tục và thời hạn theo quy định của Bộ luật Tố tụng hình sự.
+Cơ quan nhận phải kịp thời kiểm tra tính hợp pháp của hồ sơ vụ án điện tử, xác nhận việc tiếp nhận trên phần mềm chuyên dụng tích hợp trên cơ sở dữ liệu về hồ sơ vụ án. 
+2. Việc đọc, ghi chép và sao chụp tài liệu trong hồ sơ vụ án điện tử của người tham gia tố tụng được thực hiện thông qua tài khoản định danh điện tử, tài khoản giao dịch điện tử hoặc tài khoản do cơ quan tiến hành tố tụng cấp, tiến hành theo hình thức truy cập từ xa hoặc bố trí địa điểm, thiết bị tại trụ sở cơ quan có thẩm quyền tiến hành tố tụng. 
+Việc đọc, ghi chép và sao chụp tài liệu trong hồ sơ vụ án điện tử phải được người có thẩm quyền giám sát chặt chẽ, bảo đảm quy định về bảo vệ bí mật nhà nước, bí mật điều tra, bảo vệ dữ liệu cá nhân, được lập biên bản ghi nhận, có bản thống kê kèm theo.
+Điều 16. Lưu trữ, quản lý hồ sơ vụ án điện tử
+1. Hồ sơ vụ án điện tử phải được lưu trữ, quản lý tập trung trên cơ sở dữ liệu về hồ sơ vụ án của từng bộ, ngành, bảo đảm đầy đủ, đúng thời hạn theo quy định của pháp luật và quy định về chế độ lưu trữ hồ sơ, có lưu trữ dự phòng, cơ chế phục hồi nhanh khi xảy ra sự cố để bảo đảm dự phòng an toàn dữ liệu và đáp ứng yêu cầu quản lý tập trung trong phạm vi mỗi bộ, ngành, cho phép lưu trữ có tổ chức dữ liệu điều tra, truy tố, xét xử đồng bộ, cho phép thông báo diễn biến thay đổi bổ sung, cập nhật thông tin theo hồ sơ vụ án.
+2 . Tài liệu lập bằng văn bản giấy và tài liệu, chứng cứ dạng vật lý, dữ liệu điện tử sau khi thực hiện số hóa phải lưu trữ, quản lý theo quy định của pháp luật về quản lý vật chứng và chế độ lưu trữ hồ sơ vụ án.
+Chương IV
+YÊU CẦU CỦA PHẦN MỀM CHUYÊN DỤNG
+VÀ CƠ SỞ DỮ LIỆU HỒ SƠ VỤ ÁN
+Điều 17. Yêu cầu của phần mềm chuyên dụng
+Phần mềm chuyên dụng phải phù hợp với khung kiến trúc tổng thể, bảo đảm yêu cầu về pháp lý, kỹ thuật, nghiệp vụ và bảo mật theo quy định của pháp luật về dữ liệu, giao dịch điện tử, bảo đảm an toàn thông tin, an ninh mạng, lưu trữ, định danh điện tử như sau:
+1. Các chức năng nghiệp vụ
+a) Ký số, xác thực điện tử, thực hiện hình thức xác nhận khác không phải là chữ ký điện tử của người tham gia tố tụng: 
+Ký số đối với văn bản tố tụng, hồ sơ vụ án và tài liệu điện tử theo đúng định dạng, chuẩn ký số do cơ quan có thẩm quyền ban hành; cho phép kiểm tra chứng thư số, ghi nhận nhật ký điện tử về thời điểm ký, người ký, loại văn bản ký và xác thực chữ ký số tự động; có khả năng xác minh tính toàn vẹn dữ liệu bằng công cụ kiểm tra chữ ký số và mã băm.
+Cho phép thực hiện hình thức xác nhận khác không phải là chữ ký điện tử của người tham gia tố tụng trong quá trình lập hồ sơ vụ án điện tử. Việc thực hiện phải bảo đảm xác thực danh tính chủ thể thực hiện, khả năng chống chối bỏ, tính toàn vẹn của dữ liệu;
+b) Số hóa hồ sơ vụ án: Cho phép lập, quét, nhận dạng, lưu trữ, gắn mã số hồ sơ và định danh điện tử cho từng tài liệu trong hồ sơ vụ án (có chức năng hỗ trợ dữ liệu đa phương tiện: ảnh, video, âm thanh), gắn mã bút lục và dấu bút lục điện tử chống giả mạo; bảo đảm tính toàn vẹn, không bị chỉnh sửa, thay đổi hoặc thất lạc trong quá trình xử lý; có khả năng ghi nhận lịch sử thao tác trên hồ sơ, người thực hiện số hóa, người truy cập và các thay đổi để phục vụ kiểm tra, giám sát;
+c) Quản lý hồ sơ vụ án điện tử: Cho phép sắp xếp, tìm kiếm, trích xuất, in ấn, sao lưu hồ sơ vụ án điện tử; theo dõi tiến độ từng giai đoạn của vụ án; tự động nhắc thời hạn tố tụng; bảo đảm khả năng đồng bộ với hồ sơ giấy (nếu có), đáp ứng yêu cầu thống kê, phân tích, đánh giá phục vụ chỉ đạo điều hành của cơ quan, người có thẩm quyền.
+d) Cấp, gửi, chuyển, nhận, thông báo, thi hành văn bản tố tụng điện tử và hồ sơ vụ án điện tử: Cho phép thực hiện việc cấp, chuyển, gửi, nhận, thông báo, thi hành, xác nhận và theo dõi tình trạng văn bản, tài liệu, hồ sơ vụ án điện tử giữa các cơ quan có thẩm quyền tiến hành tố tụng giữa cơ quan tiến hành tố tụng với cơ quan thi hành tạm giữ, tạm giam và thi hành án hình sự thông qua cơ sở dữ liệu về hồ sơ vụ án và có biên bản điện tử ghi nhận việc cấp, chuyển, gửi, nhận, thông báo, thi hành;
+đ) Lưu vết và giám sát hệ thống: Ghi nhận toàn bộ hoạt động truy cập, ký số, gửi, nhận, chỉnh sửa, đọc, sao chụp dữ liệu; bảo đảm khả năng kiểm tra, truy xuất và đối chiếu khi cần thiết;
+e) Bảo đảm khả năng kết nối, liên thông
+Có tính năng kết nối, liên thông, chia sẻ, đồng bộ dữ liệu với phần mềm chuyên dụng của các bộ, ngành; với phần mềm quản lý tạm giữ, tạm giam và thi hành án hình sự của Bộ Công an, Bộ Quốc phòng, khả năng liên kết, truy xuất tự động các thông tin cơ bản của người tham gia tố tụng từ Cơ sở dữ liệu quốc gia về dân cư; Trung tâm dữ liệu quốc gia; hệ thống lý lịch tư pháp, hộ tịch, cơ sở dữ liệu về thi hành tạm giữ, tạm giam và thi hành án hình sự để hỗ trợ tự động hóa quy trình tố tụng. Cho phép phần mềm quản lý, thi hành tạm giữ, tạm giam và thi hành án hình sự truy xuất tự động các thông tin cơ bản có liên quan từ phần mềm chuyên dụng để khởi tạo dữ liệu về người bị tạm giữ, tạm giam và người chấp hành án.
+Đảm bảo khả năng kết nối, liên thông theo quy định tại Nghị định số 278/2025/NQ-CP ngày 22/10/2025 của Chính phủ về quy định về kết nối, chia sẻ dữ liệu bắt buộc giữa các cơ quan thuộc hệ thống chính trị;
+g) Được thiết kế phần mềm theo kiến trúc mở, dễ tích hợp, có khả năng mở rộng tính năng trong tương lai. 
+2. Đáp ứng các yêu cầu kỹ thuật, an ninh, an toàn thông tin và bảo mật
+a) Phần mềm chuyên dụng phải được sử dụng các giải pháp công nghệ hiện đại, phù hợp với hạ tầng kỹ thuật hiện có của từng bộ, ngành; ưu tiên tận dụng và nâng cấp phần mềm của các bộ, ngành được triển khai trên hạ tầng kỹ thuật đáp ứng yêu cầu an toàn hệ thống thông tin tối thiểu mức 4 theo quy định;
+b) Hỗ trợ đa người dùng, phân quyền truy cập chi tiết theo thẩm quyền, giai đoạn tố tụng;
+c) Có cơ chế xác thực người dùng đa lớp (định danh điện tử, OTP, sử dụng chứng thư chữ ký số);
+d) Có khả năng sao lưu, phục hồi dữ liệu, bảo đảm hoạt động liên tục không gián đoạn;
+đ) Bảo đảm tương thích với tiêu chuẩn kỹ thuật quốc gia về định dạng dữ liệu, chữ ký số, giao tiếp dịch vụ và kiến trúc Chính phủ số; tương thích với tiêu chuẩn kỹ thuật quốc gia về Khung kiến trúc tổng thể dữ liệu quốc gia số; Khung quản trị, quản lý dữ liệu quốc gia; 
+e) Có cơ chế giám sát, phát hiện, tự động thông báo, cảnh báo và báo cáo sự cố, tấn công mạng, khóa truy cập khi phát hiện truy cập trái phép hoặc vi phạm phân quyền, có khả năng ứng phó, khắc phục sự cố khi xảy ra mất an toàn thông tin; cảnh báo vi phạm thời hạn giao, nhận hoặc chưa được xác nhận việc nhận hồ sơ vụ án điện tử, văn bản tố tụng sử dụng chữ ký số;
+g) Ghi nhận phản hồi của người dùng và trợ giúp trực tuyến từ phần mềm chuyên dụng;
+h) Cập nhật bản vá lỗi kỹ thuật tự động. 
+3. Phần mềm chuyên dụng có thể được nâng cấp, bổ sung các chức năng nghiệp vụ và yêu cầu kỹ thuật, an ninh, an toàn thông tin, bảo mật cho phù hợp với tiến bộ khoa học kỹ thuật, đáp ứng yêu cầu thực tiễn.
+4. Phần mềm chuyên dụng chỉ được đưa vào sử dụng chính thức khi được kiểm thử, nghiệm thu, kiểm tra, đánh giá điều kiện về chức năng nghiệp vụ, hiệu năng, an toàn, an ninh mạng, bảo mật; được cơ quan có thẩm quyền xác nhận đáp ứng yêu cầu quy định tại các khoản 1 và 2 Điều này và được giám sát, kiểm tra định kỳ, đột xuất trong quá trình vận hành.
+Điều 18. Yêu cầu của cơ sở dữ liệu hồ sơ vụ án
+1. Cơ sở dữ liệu hồ sơ vụ án được thiết kế theo khung quản trị, quản lý dữ liệu quốc gia, theo mô hình phân tán - kết nối tập trung, bảo đảm tính chủ động, bảo mật và liên thông giữa các bộ, ngành. Việc xây dựng cơ sở dữ liệu hồ sơ vụ án phải bảo đảm cấu trúc dữ liệu, chuẩn dữ liệu, chuẩn dữ liệu dùng chung, đáp ứng yêu cầu thống kê, phân tích, đánh giá phục vụ chỉ đạo điều hành của cơ quan, người có thẩm quyền, lưu trữ, chia sẻ, liên thông, giao, nhận tài liệu phù hợp với thực tế. 
+2. Mỗi bộ, ngành xây dựng, quản lý, sử dụng cơ sở dữ liệu hồ sơ vụ án riêng để lưu trữ, quản lý toàn bộ văn bản tố tụng, tài liệu, chứng cứ, dữ liệu điện tử được số hoá, ký số và quản lý thống nhất theo mã hồ sơ điện tử duy nhất cho mỗi vụ án theo cấu trúc dữ liệu, chuẩn dữ liệu, chuẩn dữ liệu dùng chung. Có cơ chế đồng bộ dữ liệu tự động hoặc bán tự động, bảo đảm khi một cơ quan lập, sửa đổi, bổ sung hồ sơ số hóa thì các cơ quan liên quan cập nhật tự động kịp thời.
+3. Thực hiện kết nối cơ sở dữ liệu về hồ sơ vụ án của các bộ, ngành với cơ sở dữ liệu dùng chung đặt tại Trung tâm dữ liệu quốc gia, với cơ sở dữ liệu về thi hành tạm giữ, tạm giam và thi hành án hình sự, các cơ sở dữ liệu chuyên ngành khác và hệ thống thông tin thông qua nền tảng chia sẻ, điều phối dữ liệu bảo đảm tuân thủ tiêu chuẩn kỹ thuật, quy định về định danh, xác thực và mã hóa dữ liệu, ghi nhật ký giao dịch, báo diễn biến và tự động đồng bộ khi phát sinh thay đổi. Kết nối từ cấp cơ sở đến trung ương đảm bảo đường truyền riêng biệt, tốc độ cao, an toàn. Trang bị hệ thống sao lưu đa lớp định kỳ, phục hồi nhanh khi có sự cố, có lưu trữ dự phòng tài liệu tại Trung tâm dữ liệu của từng ngành.
+4. Thiết lập cơ sở dữ liệu dùng chung đóng vai trò trung gian điều phối, quản lý danh mục và trạng thái các hồ sơ, quyết định, bản án được phép chia sẻ giữa các cơ quan. Cơ sở dữ liệu không lưu toàn bộ nội dung chi tiết hồ sơ, mà chỉ lưu thông tin định danh và bản ghi trạng thái, bảo đảm nguyên tắc chia sẻ có chọn lọc, đúng thẩm quyền, phục vụ việc đồng bộ, cảnh báo, nhắc việc tự động giữa các phần mềm của các cơ quan.
+Chương V
+THÔNG BÁO VĂN BẢN TỐ TỤNG TRÊN PHƯƠNG TIỆN THÔNG TIN ĐẠI CHÚNG, QUA NỀN TẢNG SỐ, PHẦN MỀM ỨNG DỤNG DÙNG CHUNG TRIỂN KHAI TẠI TRUNG TÂM DỮ LIỆU QUỐC GIA, CỔNG THÔNG TIN HOẶC TRANG THÔNG TIN ĐIỆN TỬ CỦA CƠ QUAN CÓ THẨM QUYỀN TIẾN HÀNH TỐ TỤNG
+Điều 19. Trường hợp thông báo văn bản tố tụng theo quy định tại Điều 141 Bộ luật Tố tụng hình sự
+1. Khi việc niêm yết công khai không có kết quả.
+2. Trường hợp không xác định được nơi cư trú, nơi làm việc của người cần thông báo.
+3. Người cần thông báo đang ở nước ngoài hoặc không có mặt tại nơi cư trú.
+4. Trường hợp pháp luật quy định phải công khai thông tin (thông báo công khai quyết định truy nã, quyết định truy tìm; thông báo tìm người có quyền và nghĩa vụ liên quan).
+5. Trường hợp cần thông báo rộng rãi để bảo đảm quyền, lợi ích của người liên quan (thông báo để người có quyền, nghĩa vụ liên quan đến vụ án biết và liên hệ với cơ quan tiến hành tố tụng).
+6. Các trường hợp khác theo quy định của pháp luật.
+Điều 20. Hình thức và nội dung thông báo văn bản tố tụng
+1. Cơ quan có thẩm quyền tiến hành tố tụng, người có thẩm quyền căn cứ trường hợp cụ thể để yêu cầu hoặc đề nghị cơ quan, tổ chức có liên quan thực hiện thông báo văn bản tố tụng bằng một hoặc một số hình thức, phương tiện sau:
+a) Trên phương tiện thông tin đại chúng, gồm: Đăng trên báo hàng ngày của trung ương (là báo do cơ quan, tổ chức ở trung ương quản lý, có phạm vi phát hành toàn quốc và có số ra hàng ngày) 03 số liên tiếp (báo in hoặc báo điện tử) và phát 03 lần trong 03 ngày liên tiếp trên đài phát thanh hoặc đài truyền hình trung ương;
+b) Thông báo đến tài khoản giao dịch điện tử của cá nhân, cơ quan, tổ chức qua nền tảng số 03 lần trong 03 ngày liên tục;
+c) Sử dụng phần mềm ứng dụng dùng chung triển khai tại Trung tâm dữ liệu quốc gia để thông báo qua các nền tảng số liên kết đến tài khoản giao dịch điện tử của cá nhân, cơ quan, tổ chức 03 lần trong 03 ngày liên tục;
+d) Ngoài các hình thức quy định tại điểm a, b và c khoản này, Cơ quan có thẩm quyền tiến hành tố tụng phải đồng thời thực hiện việc thông báo trên cổng thông tin hoặc trang thông tin điện tử của cơ quan mình 03 ngày liên tục (nếu có);
+đ) Thời điểm kết thúc việc thông báo theo quy định tại điểm a, d khoản 1 Điều này là khi hết ngày thông báo thứ 3. Trường hợp do tình trạng khẩn cấp, lý do bất khả kháng, trở ngại khách quan làm gián đoạn việc thông báo thì ngay sau khi kết thúc phải tiến hành thông báo đủ số lần theo quy định.
+Thời điểm kết thúc việc thông báo theo quy định tại điểm b, c khoản 1 Điều này là khi hết ngày thông báo thứ 3 hoặc tính từ thời điểm hệ thống xác nhận văn bản tố tụng đã được gửi đến tài khoản giao dịch điện tử của người nhận thành công và có thể truy cập được hoặc hệ thống xác nhận đã xem.
+2. Nội dung thông báo gồm:
+a) Tên cơ quan ban hành văn bản tố tụng;
+b) Họ tên, năm sinh, nơi cư trú của đối tượng thông báo;
+c) Loại văn bản tố tụng, số, ngày ban hành văn bản và nội dung toàn văn hoặc một phần của văn bản tố tụng;
+d) Thời gian, thời hạn, địa điểm thực hiện nghĩa vụ tố tụng;
+đ) Trách nhiệm pháp lý khi không chấp hành;
+e) Thời điểm đăng tải và kết thúc việc thông báo.
+3. Tài liệu thể hiện việc thông báo phải đưa vào hồ sơ vụ án, gồm:
+a) Văn bản của cơ quan có thẩm quyền tiến hành tố tụng về việc yêu cầu hoặc đề nghị cơ quan, tổ chức có liên quan đăng tải, phát sóng nội dung thông báo trên phương tiện thông tin đại chúng, nền tảng số, phần mềm ứng dụng dùng chung triển khai tại Trung tâm dữ liệu quốc gia, cổng thông tin điện tử, trang thông tin điện tử;
+b) Bản sao số báo đăng thông báo; bản ghi âm chương trình phát thanh hoặc bản ghi hình chương trình truyền hình; bản in hoặc ảnh chụp màn hình nội dung thông báo trên cổng thông tin điện tử, trang thông tin điện tử, nền tảng số, phần mềm ứng dụng dùng chung tại Trung tâm dữ liệu quốc gia; hoặc văn bản xác nhận của cơ quan, tổ chức cung cấp dịch vụ về việc đã đăng tải, phát sóng nội dung thông báo, trong đó ghi rõ số báo, thời gian đăng, thời điểm phát sóng, đường dẫn truy cập (nếu có).
+Chương VI
+TỔ CHỨC THỰC HIỆN
+Điều 21. Hiệu lực thi hành
+1. Thông tư liên tịch này có hiệu lực kể từ ngày ký.
+2. Các văn bản quy phạm pháp luật được dẫn chiếu, áp dụng thực hiện trong Thông tư liên tịch khi được sửa đổi, bổ sung, thay thế thì những nội dung dẫn chiếu trong Thông tư liên tịch này sẽ được thay đổi, áp dụng theo các văn bản quy phạm pháp luật được sửa đổi, bổ sung, thay thế.
+Điều 22. Thực hiện thí điểm ký số và số hóa hồ sơ vụ án
+1. Việc thực hiện thí điểm ký số và số hóa hồ sơ vụ án được thực hiện tại một số địa phương trên toàn quốc do các cơ quan ban hành Thông tư liên tịch lựa chọn và quyết định phạm vi, nội dung, thời gian thực hiện.
+2. Kết thúc thời gian thực hiện thí điểm, Bộ Công an chủ trì, phối hợp với các cơ quan thực hiện thí điểm đánh giá việc thực hiện, công bố thời điểm liên ngành thống nhất triển khai đồng bộ việc ký số, số hóa hồ sơ vụ án và kết nối, chia sẻ, liên thông dữ liệu theo quy định tại Thông tư liên tịch này.
+Việc ký số văn bản tố tụng và số hóa hồ sơ vụ án trước thời điểm liên ngành công bố thống nhất triển khai đồng bộ do các các cơ quan có thẩm quyền quyết định nếu đáp ứng điều kiện về hạ tầng kỹ thuật và các điều kiện bảo đảm khác.
+Điều 23. Tổ chức thực hiện
+1. Bộ Công an, Bộ Quốc phòng, Viện kiểm sát nhân dân tối cao, Tòa án nhân dân tối cao trong phạm vi nhiệm vụ, quyền hạn của mình có trách nhiệm: 
+a) Xây dựng, nâng cấp, hoàn thiện, quản lý phần mềm chuyên dụng, cơ sở dữ liệu về hồ sơ vụ án, hạ tầng kỹ thuật và các điều kiện đảm bảo khác phục vụ việc ký số văn bản tố tụng và số hóa hồ sơ vụ án bảo đảm an toàn, bảo mật dữ liệu; thống nhất nội dung thông tin, tài liệu, dữ liệu được phép chia sẻ; 
+b) Xây dựng, ban hành các danh mục/chuẩn dữ liệu dùng chung (mã định danh vụ việc/vụ án; mã tài liệu, mã bút lục; mã vật chứng; mã chủ thể tố tụng và các danh mục tiêu chuẩn liên quan); quy trình kết nối, kiểm thử, liên thông giữa các hệ thống bảo đảm duy trì hoạt động ổn định, liên tục của hệ thống kết nối; thực hiện giám sát, kiểm tra, ghi nhật ký hoạt động kết nối, phát hiện, ngăn chặn và xử lý các sự cố mất an toàn thông tin, an ninh mạng trong quá trình trao đổi, liên thông dữ liệu;
+c) Ban hành quy trình, hướng dẫn các cơ quan thuộc quyền quản lý thực hiện ký số, số hóa hồ sơ vụ án, tạo lập mới, số hóa bổ sung văn bản tố tụng, dữ liệu; quy trình thực hiện hình thức xác nhận khác không phải là chữ ký điện tử của người tham gia tố tụng;
+d) Ban hành quy trình, hướng dẫn thực hiện giao, chuyển, nhận, gửi, thông báo, thi hành văn bản tố tụng điện tử và hồ sơ vụ án điện tử; hướng dẫn quy trình thông báo văn bản tố tụng qua nền tảng số, phần mềm ứng dụng dùng chung triển khai tại Trung tâm dữ liệu quốc gia theo chức năng của các bộ, ngành;
+đ) Phối hợp liên ngành thống nhất bổ sung chức năng nghiệp vụ, yêu cầu kỹ thuật, an ninh, an toàn thông tin, bảo mật của phần mềm chuyên dụng; thực hiện giám sát việc kết nối, đồng bộ dữ liệu, xử lý sự cố kỹ thuật và bảo đảm toàn vẹn dữ liệu trong quá trình vận hành.
+2. Bộ Công an có trách nhiệm xây dựng khung kiến trúc kỹ thuật và khung kiến trúc dữ liệu chung, Cơ sở dữ liệu dùng chung tại Trung tâm dữ liệu quốc gia; bảo đảm hạ tầng kỹ thuật, không gian lưu trữ, điện toán đám mây, sao lưu, phục hồi dữ liệu hồ sơ vụ án; thiết lập và duy trì kết nối liên thông, bảo đảm an toàn, ổn định giữa cơ sở dữ liệu về hồ sơ vụ án; phối hợp với cơ quan có thẩm quyền trong việc kiểm tra, giám sát, bảo đảm an toàn thông tin, an ninh mạng, phòng ngừa rủi ro hoặc rò rỉ dữ liệu tại Trung tâm dữ liệu quốc gia. Chủ trì, phối hợp với các bộ, ngành thực hiện thí điểm.
+3. Viện kiểm sát nhân dân tối cao chủ trì, phối hợp với các Bộ, ngành xây dựng, ban hành quy trình liên ngành trong chia sẻ, liên thông, kết nối dữ liệu; xây dựng, ban hành danh mục dữ liệu dùng chung.
+4. Cơ quan có thẩm quyền hướng dẫn, cung cấp giải pháp, sản phẩm bảo mật, dịch vụ chứng thực chữ ký số chuyên dùng công vụ cho các cơ quan tiến hành tố tụng và người có thẩm quyền phục vụ ký số văn bản tố tụng, số hóa hồ sơ vụ án, truyền nhận, lưu trữ, xử lý hồ sơ vụ án điện tử theo quy định của pháp luật về cơ yếu và chữ ký số chuyên dùng công vụ.
+5. Các bộ, ngành, cơ quan ngang bộ theo chức năng, nhiệm vụ được giao và lĩnh vực quản lý nhà nước có trách nhiệm tổ chức thực hiện Thông tư liên tịch này.  Tiến hành kiểm tra, giám sát, tổ chức sơ kết, tổng kết việc thực hiện và kịp thời kiến nghị sửa đổi, bổ sung cho phù hợp, phối hợp với Bộ Công an tổ chức thực hiện thí điểm Thông tư liên tịch này.
+6. Người tham gia tố tụng trong quá trình tham gia hoạt động tố tụng có trách nhiệm 
+a) Đăng ký, cung cấp và sử dụng tài khoản giao dịch điện tử, chữ ký điện tử theo quy định của pháp luật và hướng dẫn của cơ quan có thẩm quyền tiến hành tố tụng;
+b) Chịu trách nhiệm về tính chính xác, hợp pháp của thông tin, địa chỉ liên hệ, dữ liệu điện tử và các giao dịch được thực hiện thông qua tài khoản giao dịch điện tử đã đăng ký; phải chịu trách nhiệm theo quy định của pháp luật về mọi hậu quả pháp lý phát sinh do việc cung cấp thông tin không đầy đủ, không chính xác hoặc không kịp thời;
+c) Thường xuyên kiểm tra hòm thư điện tử, tài khoản giao dịch điện tử, tài khoản định danh đã đăng ký; kịp thời tiếp nhận, phản hồi thông báo, văn bản tố tụng do cơ quan tiến hành tố tụng gửi đến. Việc không sử dụng hoặc không kiểm tra hòm thư điện tử, tài khoản giao dịch điện tử, tài khoản định danh đã đăng ký đã được thông báo hợp lệ không được coi là lý do chính đáng để khiếu nại, kiến nghị về việc không nhận được văn bản tố tụng, trừ trường hợp do tình trạng khẩn cấp, vì lý do bất khả kháng hoặc trở ngại khách quan;
+d) Trường hợp thay đổi, chấm dứt việc sử dụng hoặc phát sinh sự cố liên quan đến tài khoản giao dịch điện tử (bao gồm việc bị khóa, mất quyền truy cập, thay đổi thông tin định danh), chữ ký điện tử, người tham gia tố tụng có trách nhiệm thông báo kịp thời cho cơ quan tiến hành tố tụng để được cập nhật, xử lý theo quy định.
+7. Quá trình thực hiện, nếu có khó khăn, vướng mắc hoặc phát sinh vấn đề cần phải bổ sung các cơ quan kịp thời phản ánh về Bộ Công an, Bộ Quốc phòng, Viện kiểm sát nhân dân tối cao, Tòa án nhân dân tối cao để xem xét, hướng dẫn thực hiện hoặc sửa đổi, bổ sung cho phù hợp./.
+
+KT. BỘ TRƯỞNG 
+BỘ QUỐC PHÒNG
+THỨ TRƯỞNG
+
+
+
+
+
+Thượng tướng Nguyễn Văn Gấu	KT. BỘ TRƯỞNG
+BỘ CÔNG AN
+THỨ TRƯỞNG
+
+
+
+
+
+Thượng tướng Nguyễn Văn Long
+
+KT. CHÁNH ÁN
+TÒA ÁN NHÂN DÂN TỐI CAO
+PHÓ CHÁNH ÁN
+
+
+
+
+
+
+Nguyễn Hải Trâm	KT. VIỆN TRƯỞNG
+VIỆN  KIỂM  SÁT  NHÂN  DÂN  TỐI  CAO
+PHÓ VIỆN TRƯỞNG
+
+
+
+
+
+
+Nguyễn Đức Thái
+
+Nơi nhận:
+- Ủy ban Thường vụ Quốc hội;
+- Ủy ban Pháp luật, Ủy ban Tư pháp của Quốc hội;
+- Ban Nội chính Trung ương;
+- Văn phòng Chủ tịch nước;
+- Văn phòng Chính phủ;
+- Văn phòng Quốc hội;
+- Bộ Công an; Bộ Quốc phòng, Viện kiểm sát nhân dân tối cao, Tòa án nhân dân tối cao;
+- Công báo;
+- Cổng thông tin điện tử các bộ, ngành: Bộ Công an; Bộ Quốc phòng, Viện kiểm sát nhân dân tối cao, Tòa án nhân dân tối cao;
+ - Lưu: VT (BCA, BQP, VKSNDTC, TANDTC).

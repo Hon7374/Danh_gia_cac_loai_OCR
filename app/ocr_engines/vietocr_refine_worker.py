@@ -38,6 +38,7 @@ def main() -> int:
                 "status": "error",
                 "error": "VietOCR local recognizer unavailable",
                 "model_info": refine_engine._VIETOCR_MODEL_INFO,
+                "recognition_info": refine_engine._VIETOCR_RECOGNITION_INFO,
                 "boxes": [],
             }
         else:
@@ -45,6 +46,7 @@ def main() -> int:
                 "status": "ok",
                 "error": "",
                 "model_info": refine_engine._VIETOCR_MODEL_INFO,
+                "recognition_info": refine_engine._VIETOCR_RECOGNITION_INFO,
                 "boxes": [
                     {
                         "text": b.text,
@@ -63,6 +65,7 @@ def main() -> int:
             "status": "error",
             "error": f"{exc}\n{traceback.format_exc()}",
             "model_info": refine_engine._VIETOCR_MODEL_INFO,
+            "recognition_info": refine_engine._VIETOCR_RECOGNITION_INFO,
             "boxes": [],
         }
         out_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")

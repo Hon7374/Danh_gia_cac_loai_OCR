@@ -1,0 +1,27 @@
+{
+  "evaluated_at": "2026-07-12",
+  "decision": "official_pretrained",
+  "reason": "The legacy 120-iteration fine-tune is worse on both leak-free validation and the locked problem document.",
+  "models": {
+    "legacy_finetuned": {
+      "weights": "models/vietocr-congvan/transformerocr.pth",
+      "sha256": "b14cac5acc9f7800fce26cf777ccadd1f2c981df917e26e9524f17cddc6aafd3",
+      "leak_free_validation": {"samples": 226, "cer": 0.017105162230574518, "wer": 0.028371278458844133},
+      "locked_problem_document": {"samples": 40, "cer": 0.1548872180451128, "wer": 0.27906976744186046}
+    },
+    "official_pretrained": {
+      "weights": "models/vietocr-pretrained/vgg_transformer.pth",
+      "sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59",
+      "leak_free_validation": {"samples": 226, "cer": 0.010125028764286262, "wer": 0.023117338003502626},
+      "locked_problem_document": {"samples": 40, "cer": 0.11428571428571428, "wer": 0.17940199335548174}
+    }
+  },
+  "dataset_integrity": {
+    "dataset": "dataset_template/vietocr_finetune_v2",
+    "samples": 1475,
+    "source_documents": 6,
+    "pseudo_labels": 0,
+    "train_validation_overlap": 0,
+    "locked_job_id": "695292828457"
+  }
+}

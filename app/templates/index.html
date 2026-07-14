@@ -39,7 +39,7 @@
         </p>
 
         <label class="field">
-          <span>File công văn PDF/ảnh scan</span>
+          <span>File công văn PDF/ảnh scan hoặc văn bản</span>
           <input class="input" type="file" name="file" accept=".pdf,.png,.jpg,.jpeg,.tif,.tiff,.bmp,.webp,.txt,.md,.csv,.json,.doc,.docx" required />
         </label>
 
@@ -60,7 +60,7 @@
         </div>
 
         <label class="toggle-row">
-          <input type="checkbox" name="compare_raw_preprocessed" value="1" />
+          <input type="checkbox" name="compare_raw_preprocessed" value="1" checked />
           <span>
             <b>So sánh raw và OpenCV</b>
             <small>Tùy chọn này chạy mỗi engine 2 lần nên thời gian gần như nhân đôi. Chỉ bật khi cần phân tích preprocessing.</small>
@@ -87,7 +87,7 @@
             <h2>Luồng xử lý</h2>
           </div>
           <ol class="timeline">
-            <li><b>Upload</b><span>PDF hoặc ảnh scan công văn.</span></li>
+            <li><b>Upload</b><span>PDF, ảnh scan hoặc file văn bản công văn.</span></li>
             <li><b>Preprocess</b><span>Tạo bản OpenCV để so sánh với ảnh gốc.</span></li>
             <li><b>OCR</b><span>Chạy các engine đã chọn.</span></li>
             <li><b>Đánh giá</b><span>Tính CER/WER, thời gian, độ dài text, confidence.</span></li>
@@ -112,7 +112,7 @@
     <section class="panel note-panel">
       <div>
         <h2>Lưu ý cài đặt</h2>
-        <p>Mặc định app chạy nhanh bằng Tesseract trên ảnh OpenCV. EasyOCR, PaddleOCR, VietOCR, PaddleOCR-VL là nhóm package nặng; PaddleOCR-VL có thể mất hàng chục phút nếu chạy cả raw và OpenCV trên file nhiều trang, nên chỉ bật khi cần benchmark sâu hoặc minh họa layout/VL.</p>
+        <p>Mặc định app bật đối chiếu ảnh raw và OpenCV cho mọi engine đã chọn. EasyOCR, PaddleOCR, VietOCR và PaddleOCR-VL là nhóm model nặng; bỏ chọn đối chiếu nếu chỉ cần chạy một nhánh OpenCV nhanh hơn.</p>
       </div>
       <a class="secondary-action" href="{{sample_truth}}">Tải text chuẩn mẫu</a>
     </section>
