@@ -1,0 +1,357 @@
+{
+  "job_id": "91a081dcfa66",
+  "input_mode": "text",
+  "uploaded_file": "upload\\sample_text_input_utf8.txt",
+  "uploaded_text": {
+    "filename": "sample_text_input_utf8.txt",
+    "reader": "text",
+    "text_length": 247,
+    "warning": null
+  },
+  "page_count": 1,
+  "raw_images": [],
+  "preprocessed_images": [],
+  "raw_image": "",
+  "preprocessed_image": "",
+  "opencv_steps": [
+    "text_input_no_ocr"
+  ],
+  "opencv_steps_by_page": [],
+  "runtime": {
+    "opencv_workers": 0,
+    "tesseract_workers": 0,
+    "gpu_workers": 0
+  },
+  "ground_truth_file": null,
+  "ground_truth_text_length": 0,
+  "results": [
+    {
+      "engine": "text_input",
+      "variant": "direct_text",
+      "status": "ok",
+      "elapsed_sec": 0.020172999938949943,
+      "text": "BỘ KẾ HOẠCH VÀ ĐẦU TƯ\nCỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập - Tự do - Hạnh phúc\nSố: 06/2023/TT-BKHĐT\nHà Nội, ngày 02 tháng 10 năm 2023\nTHÔNG TƯ\nQuy định hệ thống chỉ tiêu thống kê ngành Thống kê\nCăn cứ Luật Thống kê ngày 23 tháng 11 năm 2015;",
+      "boxes": [],
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0,
+      "raw": {
+        "page_count": 1,
+        "first_page_text": "BỘ KẾ HOẠCH VÀ ĐẦU TƯ\nCỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập - Tự do - Hạnh phúc\nSố: 06/2023/TT-BKHĐT\nHà Nội, ngày 02 tháng 10 năm 2023\nTHÔNG TƯ\nQuy định hệ thống chỉ tiêu thống kê ngành Thống kê\nCăn cứ Luật Thống kê ngày 23 tháng 11 năm 2015;",
+        "note": "Text source uploaded directly; OCR image step skipped."
+      },
+      "quality_guard": {
+        "token_count": 49,
+        "letter_count": 162,
+        "marked_letter_ratio": 0.2963,
+        "marked_token_ratio": 0.9184,
+        "admin_keyword_hits": 31,
+        "admin_keyword_ratio": 0.6327,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "ground_truth_metric_version": 2
+    }
+  ],
+  "comparison_summary": {
+    "total_runs": 1,
+    "ok_runs": 1,
+    "error_runs": 0,
+    "skipped_runs": 0,
+    "issue_runs": 0,
+    "has_ground_truth": false,
+    "best_cer": null,
+    "best_wer": null,
+    "fastest": {
+      "engine": "text_input",
+      "variant": "direct_text",
+      "label": "text input / direct_text",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.02,
+      "text_len": 247,
+      "avg_confidence": null,
+      "quality_score": 100.0,
+      "quality_source": "relative text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 49,
+        "letter_count": 162,
+        "marked_letter_ratio": 0.2963,
+        "marked_token_ratio": 0.9184,
+        "admin_keyword_hits": 31,
+        "admin_keyword_ratio": 0.6327,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 100.0,
+      "ground_truth_metric_warning": null,
+      "error": null,
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 100,
+      "confidence_bar": 0
+    },
+    "best_quality": {
+      "engine": "text_input",
+      "variant": "direct_text",
+      "label": "text input / direct_text",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.02,
+      "text_len": 247,
+      "avg_confidence": null,
+      "quality_score": 100.0,
+      "quality_source": "relative text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 49,
+        "letter_count": 162,
+        "marked_letter_ratio": 0.2963,
+        "marked_token_ratio": 0.9184,
+        "admin_keyword_hits": 31,
+        "admin_keyword_ratio": 0.6327,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 100.0,
+      "ground_truth_metric_warning": null,
+      "error": null,
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 100,
+      "confidence_bar": 0
+    },
+    "best_confidence": null,
+    "rows": [
+      {
+        "engine": "text_input",
+        "variant": "direct_text",
+        "label": "text input / direct_text",
+        "status": "ok",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.02,
+        "text_len": 247,
+        "avg_confidence": null,
+        "quality_score": 100.0,
+        "quality_source": "relative text length + Vietnamese guard",
+        "quality_guard": {
+          "token_count": 49,
+          "letter_count": 162,
+          "marked_letter_ratio": 0.2963,
+          "marked_token_ratio": 0.9184,
+          "admin_keyword_hits": 31,
+          "admin_keyword_ratio": 0.6327,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 100.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 100.0,
+        "ground_truth_metric_warning": null,
+        "error": null,
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 100.0,
+        "text_bar": 100.0,
+        "quality_bar": 100,
+        "confidence_bar": 0
+      }
+    ],
+    "preprocessing_effect": [],
+    "engine_status": [
+      {
+        "engine": "text_input",
+        "ok": 1,
+        "skipped": 0,
+        "error": 0,
+        "total": 1
+      }
+    ]
+  },
+  "layoutlmv3_postprocess": {
+    "mode": "text_input_direct",
+    "extractor": "text_input",
+    "note": "File đầu vào là text/Word nên hệ thống bỏ qua OCR ảnh và trích xuất trường trực tiếp từ nội dung text.",
+    "model_configured": false,
+    "model_ran": false,
+    "reader": "text",
+    "fields_source": "layoutlmv3+best_ocr_rule",
+    "fields": {
+      "co_quan_ban_hanh": "BỘ KẾ HOẠCH VÀ ĐẦU TƯ",
+      "loai_van_ban": "THÔNG TƯ",
+      "ngay_ban_hanh": "02/10/2023",
+      "noi_gui": "",
+      "noi_nhan": "",
+      "so_ky_hieu": "06/2023/TT-BKHĐT",
+      "trich_yeu": "Quy định hệ thống chỉ tiêu thống kê ngành Thống kê",
+      "confidence_note": "layoutlmv3+best_ocr_rule"
+    },
+    "labels_preview_rows": []
+  },
+  "best_engine": {
+    "engine": "text_input",
+    "variant": "direct_text"
+  },
+  "document_archive": {
+    "document_id": "91a081dcfa66",
+    "status": "scanned",
+    "storage_root": "documents/2026/07/91a081dcfa66",
+    "manifest_path": "documents/2026/07/91a081dcfa66/manifest.json",
+    "index_path": "documents/index.jsonl",
+    "workflow_manifest_path": "documents/2026/07/91a081dcfa66/06_metadata/workflow_manifest.json",
+    "extracted_fields_path": "documents/2026/07/91a081dcfa66/06_metadata/extracted_fields.json",
+    "ocr_output_count": 1,
+    "created_at": "2026-07-08T19:31:12+07:00",
+    "manifest": {
+      "document_id": "91a081dcfa66",
+      "job_id": "91a081dcfa66",
+      "created_at": "2026-07-08T19:31:12+07:00",
+      "source_filename": "sample_text_input_utf8.txt",
+      "page_count": 1,
+      "status": "scanned",
+      "storage_root": "documents/2026/07/91a081dcfa66",
+      "original_file": {
+        "path": "documents/2026/07/91a081dcfa66/01_original/sample_text_input_utf8.txt",
+        "filename": "sample_text_input_utf8.txt",
+        "size_bytes": 319,
+        "sha256": "07d5200cb9d4077e3e7fb1bf777f0f0fe5d7f6624f757291d90a2fb20fa58514"
+      },
+      "pages": {
+        "raw": [],
+        "opencv_preprocessed": []
+      },
+      "ground_truth": null,
+      "extracted_fields_path": "documents/2026/07/91a081dcfa66/06_metadata/extracted_fields.json",
+      "workflow_manifest_path": "documents/2026/07/91a081dcfa66/06_metadata/workflow_manifest.json",
+      "ocr_outputs": [
+        {
+          "engine": "text_input",
+          "variant": "direct_text",
+          "status": "ok",
+          "elapsed_sec": 0.020172999938949943,
+          "text_length": 247,
+          "text_path": "documents/2026/07/91a081dcfa66/04_ocr_text/text_input__direct_text.txt",
+          "json_path": "documents/2026/07/91a081dcfa66/05_ocr_json/text_input__direct_text.json",
+          "word_path": "documents/2026/07/91a081dcfa66/08_word_outputs/text_input__direct_text.docx",
+          "word_file": {
+            "path": "documents/2026/07/91a081dcfa66/08_word_outputs/text_input__direct_text.docx",
+            "filename": "text_input__direct_text.docx",
+            "size_bytes": 1439,
+            "sha256": "3757f18e7a5fb5ee65a0e8a69dd35b4e49487216b0b17cf9fe5e09a57d97d377"
+          },
+          "word_kind": "editable_ocr_layout",
+          "word_layout_version": "2026-05-26-structured-v2",
+          "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+          "page_count": 1
+        }
+      ],
+      "exports": {
+        "benchmark_csv": "documents/2026/07/91a081dcfa66/07_exports/benchmark_results.csv",
+        "comparison_summary": "documents/2026/07/91a081dcfa66/07_exports/comparison_summary.json",
+        "report_snapshot": "documents/2026/07/91a081dcfa66/07_exports/report_snapshot.json"
+      }
+    },
+    "source_filename": "sample_text_input_utf8.txt",
+    "page_count": 1,
+    "storage_root_absolute": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\91a081dcfa66",
+    "manifest_url": "/storage/documents/2026/07/91a081dcfa66/manifest.json",
+    "index_url": "/storage/documents/index.jsonl",
+    "original_file": {
+      "path": "documents/2026/07/91a081dcfa66/01_original/sample_text_input_utf8.txt",
+      "filename": "sample_text_input_utf8.txt",
+      "size_bytes": 319,
+      "sha256": "07d5200cb9d4077e3e7fb1bf777f0f0fe5d7f6624f757291d90a2fb20fa58514",
+      "url": "/storage/documents/2026/07/91a081dcfa66/01_original/sample_text_input_utf8.txt",
+      "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\91a081dcfa66\\01_original\\sample_text_input_utf8.txt",
+      "size_label": "319 B",
+      "sha256_short": "07d5200cb9d4"
+    },
+    "ground_truth": null,
+    "pages": {
+      "raw": [],
+      "opencv_preprocessed": []
+    },
+    "preview_pages": [],
+    "ocr_outputs": [
+      {
+        "engine": "text_input",
+        "variant": "direct_text",
+        "status": "ok",
+        "elapsed_sec": 0.020172999938949943,
+        "text_length": 247,
+        "text_path": "documents/2026/07/91a081dcfa66/04_ocr_text/text_input__direct_text.txt",
+        "json_path": "documents/2026/07/91a081dcfa66/05_ocr_json/text_input__direct_text.json",
+        "word_path": "documents/2026/07/91a081dcfa66/08_word_outputs/text_input__direct_text.docx",
+        "word_file": {
+          "path": "documents/2026/07/91a081dcfa66/08_word_outputs/text_input__direct_text.docx",
+          "filename": "text_input__direct_text.docx",
+          "size_bytes": 1439,
+          "sha256": "3757f18e7a5fb5ee65a0e8a69dd35b4e49487216b0b17cf9fe5e09a57d97d377",
+          "url": "/storage/documents/2026/07/91a081dcfa66/08_word_outputs/text_input__direct_text.docx",
+          "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\91a081dcfa66\\08_word_outputs\\text_input__direct_text.docx",
+          "size_label": "1.4 KB",
+          "sha256_short": "3757f18e7a5f"
+        },
+        "word_kind": "editable_ocr_layout",
+        "word_layout_version": "2026-05-26-structured-v2",
+        "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+        "page_count": 1,
+        "text_url": "/storage/documents/2026/07/91a081dcfa66/04_ocr_text/text_input__direct_text.txt",
+        "text_absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\91a081dcfa66\\04_ocr_text\\text_input__direct_text.txt",
+        "json_url": "/storage/documents/2026/07/91a081dcfa66/05_ocr_json/text_input__direct_text.json",
+        "json_absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\91a081dcfa66\\05_ocr_json\\text_input__direct_text.json",
+        "word_url": "/storage/documents/2026/07/91a081dcfa66/08_word_outputs/text_input__direct_text.docx",
+        "word_absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\91a081dcfa66\\08_word_outputs\\text_input__direct_text.docx",
+        "word_filename": "text_input__direct_text.docx",
+        "word_size_label": "1.4 KB"
+      }
+    ],
+    "exports": {
+      "benchmark_csv": {
+        "path": "documents/2026/07/91a081dcfa66/07_exports/benchmark_results.csv",
+        "url": "/storage/documents/2026/07/91a081dcfa66/07_exports/benchmark_results.csv",
+        "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\91a081dcfa66\\07_exports\\benchmark_results.csv"
+      },
+      "comparison_summary": {
+        "path": "documents/2026/07/91a081dcfa66/07_exports/comparison_summary.json",
+        "url": "/storage/documents/2026/07/91a081dcfa66/07_exports/comparison_summary.json",
+        "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\91a081dcfa66\\07_exports\\comparison_summary.json"
+      },
+      "report_snapshot": {
+        "path": "documents/2026/07/91a081dcfa66/07_exports/report_snapshot.json",
+        "url": "/storage/documents/2026/07/91a081dcfa66/07_exports/report_snapshot.json",
+        "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\91a081dcfa66\\07_exports\\report_snapshot.json"
+      }
+    },
+    "workflow_manifest_url": "/storage/documents/2026/07/91a081dcfa66/06_metadata/workflow_manifest.json",
+    "extracted_fields_url": "/storage/documents/2026/07/91a081dcfa66/06_metadata/extracted_fields.json"
+  }
+}

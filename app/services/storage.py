@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import uuid
 from pathlib import Path
 from typing import Any
@@ -18,7 +19,20 @@ def new_job_dir() -> tuple[str, Path]:
 
 
 def save_json(path: Path, data: Any) -> None:
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.{uuid.uuid4().hex}.tmp")
+    payload = json.dumps(data, ensure_ascii=False, indent=2)
+    try:
+        with temporary.open("w", encoding="utf-8", newline="\n") as handle:
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    finally:
+        try:
+            temporary.unlink(missing_ok=True)
+        except OSError:
+            pass
 
 
 def save_results_csv(path: Path, rows: list[dict[str, Any]]) -> None:

@@ -1,0 +1,1417 @@
+{
+  "job_id": "09739d9fda34",
+  "uploaded_file": "upload\\sample_cong_van_scan.png",
+  "page_count": 1,
+  "raw_images": [
+    "images\\sample_cong_van_scan_page1.png"
+  ],
+  "preprocessed_images": [
+    "images\\sample_cong_van_scan_page1_opencv_preprocessed.png"
+  ],
+  "raw_image": "images\\sample_cong_van_scan_page1.png",
+  "preprocessed_image": "images\\sample_cong_van_scan_page1_opencv_preprocessed.png",
+  "opencv_steps": [
+    "adaptive_safe_preprocess",
+    "grayscale",
+    "denoise_fastNlMeans",
+    "deskew_minAreaRect",
+    "CLAHE_contrast",
+    "adaptive_threshold_safe",
+    "morph_close"
+  ],
+  "opencv_steps_by_page": [
+    {
+      "page": 1,
+      "steps": [
+        "grayscale",
+        "denoise_fastNlMeans",
+        "deskew_minAreaRect",
+        "CLAHE_contrast",
+        "adaptive_threshold_safe",
+        "morph_close"
+      ]
+    }
+  ],
+  "runtime": {
+    "opencv_workers": 4,
+    "tesseract_workers": 4,
+    "gpu_workers": 1
+  },
+  "ground_truth_file": {
+    "filename": "sample_cong_van.txt",
+    "relative_path": "ground_truth\\sample_cong_van.txt",
+    "size_bytes": 1266,
+    "text_length": 973,
+    "warning": null,
+    "reader": "text"
+  },
+  "ground_truth_text_length": 973,
+  "results": [
+    {
+      "engine": "paddle_vietocr",
+      "variant": "opencv_preprocessed",
+      "status": "ok",
+      "text": "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC\nCỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nKHOA CÔNG NGHỆ THÔNG TIN\nĐộc lập - Tự do - Hạnh phúc\nSố: 123/CV-CNTT\nHà Nội, ngày 15 tháng 05 năm 2026\nCÔNG VĂN\nV/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số thế trước\nKính gửi: Phòng Quản lý khoa học và Hợp tác quốc tế\nNhằm phục vụ công tác nghiên cứu khoa học sinh viên năm 2026, Khoa Công nghệ thông tin\nđề nghị nhóm nghiên cứu triển khai thử nghiệm hệ thống hỗ trợ quản lý công văn đi và đến.\nHệ thống cần có chức năng tiếp nhận văn bản scan, nhận diện ký tự quang học OCR,\ntrích xuất các trường thông tin chính như số ký hiệu, ngày ban hành, trích yếu, nơi gửi,\nnơi nhận; đồng thời hỗ trợ ký số và kiểm tra tính toàn vẹn của văn bản điện tử.\nNhóm nghiên cứu có trách nhiệm chuẩn bị dữ liệu thử nghiệm, báo cáo kết quả so sánh thế nhật\ncác công nghệ OCR và đề xuất phương án phù hợp với điều kiện triển khai tại đơn vị\nNơi nhận:\n- Như trên;\n- Lưu: VT, CNTT.\nTRƯỜNG KHOA\nREPUT\nPCS TS Hà Hải Nam",
+      "boxes": [
+        {
+          "text": "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC",
+          "confidence": 0.9375095108281011,
+          "bbox": [
+            129,
+            109,
+            507,
+            148
+          ],
+          "label": null,
+          "polygon": [
+            [
+              129,
+              109
+            ],
+            [
+              507,
+              111
+            ],
+            [
+              507,
+              148
+            ],
+            [
+              129,
+              145
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM",
+          "confidence": 0.932201203177957,
+          "bbox": [
+            977,
+            109,
+            1519,
+            149
+          ],
+          "label": null,
+          "polygon": [
+            [
+              977,
+              109
+            ],
+            [
+              1519,
+              111
+            ],
+            [
+              1519,
+              149
+            ],
+            [
+              977,
+              146
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "KHOA CÔNG NGHỆ THÔNG TIN",
+          "confidence": 0.9299429059028625,
+          "bbox": [
+            201,
+            149,
+            563,
+            180
+          ],
+          "label": null,
+          "polygon": [
+            [
+              201,
+              149
+            ],
+            [
+              563,
+              149
+            ],
+            [
+              563,
+              180
+            ],
+            [
+              201,
+              180
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "Độc lập - Tự do - Hạnh phúc",
+          "confidence": 0.9275983572006226,
+          "bbox": [
+            1056,
+            152,
+            1378,
+            183
+          ],
+          "label": null,
+          "polygon": [
+            [
+              1056,
+              152
+            ],
+            [
+              1378,
+              152
+            ],
+            [
+              1378,
+              183
+            ],
+            [
+              1056,
+              183
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "Số: 123/CV-CNTT",
+          "confidence": 0.9276903351147969,
+          "bbox": [
+            140,
+            264,
+            336,
+            292
+          ],
+          "label": null,
+          "polygon": [
+            [
+              140,
+              264
+            ],
+            [
+              336,
+              264
+            ],
+            [
+              336,
+              292
+            ],
+            [
+              140,
+              292
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "Hà Nội, ngày 15 tháng 05 năm 2026",
+          "confidence": 0.9266649737502589,
+          "bbox": [
+            949,
+            265,
+            1362,
+            295
+          ],
+          "label": null,
+          "polygon": [
+            [
+              949,
+              265
+            ],
+            [
+              1362,
+              265
+            ],
+            [
+              1362,
+              295
+            ],
+            [
+              949,
+              295
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "CÔNG VĂN",
+          "confidence": 0.9381012544035912,
+          "bbox": [
+            646,
+            383,
+            812,
+            424
+          ],
+          "label": null,
+          "polygon": [
+            [
+              646,
+              383
+            ],
+            [
+              812,
+              383
+            ],
+            [
+              812,
+              424
+            ],
+            [
+              646,
+              424
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số thế trước",
+          "confidence": 0.8770366460084915,
+          "bbox": [
+            438,
+            441,
+            1489,
+            478
+          ],
+          "label": null,
+          "polygon": [
+            [
+              438,
+              441
+            ],
+            [
+              1489,
+              444
+            ],
+            [
+              1488,
+              478
+            ],
+            [
+              438,
+              475
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "Kính gửi: Phòng Quản lý khoa học và Hợp tác quốc tế",
+          "confidence": 0.8858212519775738,
+          "bbox": [
+            159,
+            555,
+            772,
+            587
+          ],
+          "label": null,
+          "polygon": [
+            [
+              159,
+              555
+            ],
+            [
+              772,
+              556
+            ],
+            [
+              772,
+              587
+            ],
+            [
+              159,
+              586
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "Nhằm phục vụ công tác nghiên cứu khoa học sinh viên năm 2026, Khoa Công nghệ thông tin",
+          "confidence": 0.9101512435409758,
+          "bbox": [
+            159,
+            660,
+            1224,
+            692
+          ],
+          "label": null,
+          "polygon": [
+            [
+              159,
+              660
+            ],
+            [
+              1224,
+              662
+            ],
+            [
+              1224,
+              692
+            ],
+            [
+              159,
+              689
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "đề nghị nhóm nghiên cứu triển khai thử nghiệm hệ thống hỗ trợ quản lý công văn đi và đến.",
+          "confidence": 0.8977039195597172,
+          "bbox": [
+            159,
+            705,
+            1219,
+            735
+          ],
+          "label": null,
+          "polygon": [
+            [
+              159,
+              705
+            ],
+            [
+              1219,
+              705
+            ],
+            [
+              1219,
+              735
+            ],
+            [
+              159,
+              735
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "Hệ thống cần có chức năng tiếp nhận văn bản scan, nhận diện ký tự quang học OCR,",
+          "confidence": 0.8681801713249656,
+          "bbox": [
+            158,
+            749,
+            1130,
+            782
+          ],
+          "label": null,
+          "polygon": [
+            [
+              158,
+              749
+            ],
+            [
+              1130,
+              752
+            ],
+            [
+              1129,
+              782
+            ],
+            [
+              158,
+              779
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "trích xuất các trường thông tin chính như số ký hiệu, ngày ban hành, trích yếu, nơi gửi,",
+          "confidence": 0.9312898503108458,
+          "bbox": [
+            157,
+            795,
+            1152,
+            827
+          ],
+          "label": null,
+          "polygon": [
+            [
+              157,
+              795
+            ],
+            [
+              1152,
+              796
+            ],
+            [
+              1152,
+              827
+            ],
+            [
+              157,
+              826
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "nơi nhận; đồng thời hỗ trợ ký số và kiểm tra tính toàn vẹn của văn bản điện tử.",
+          "confidence": 0.9271648511101928,
+          "bbox": [
+            159,
+            841,
+            1059,
+            871
+          ],
+          "label": null,
+          "polygon": [
+            [
+              159,
+              841
+            ],
+            [
+              1059,
+              841
+            ],
+            [
+              1059,
+              871
+            ],
+            [
+              159,
+              871
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "Nhóm nghiên cứu có trách nhiệm chuẩn bị dữ liệu thử nghiệm, báo cáo kết quả so sánh thế nhật",
+          "confidence": 0.8736253232573685,
+          "bbox": [
+            158,
+            930,
+            1168,
+            962
+          ],
+          "label": null,
+          "polygon": [
+            [
+              158,
+              930
+            ],
+            [
+              1168,
+              932
+            ],
+            [
+              1168,
+              962
+            ],
+            [
+              158,
+              959
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "các công nghệ OCR và đề xuất phương án phù hợp với điều kiện triển khai tại đơn vị",
+          "confidence": 0.8950905376270916,
+          "bbox": [
+            158,
+            975,
+            1127,
+            1007
+          ],
+          "label": null,
+          "polygon": [
+            [
+              158,
+              975
+            ],
+            [
+              1127,
+              977
+            ],
+            [
+              1127,
+              1007
+            ],
+            [
+              158,
+              1005
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "Nơi nhận:",
+          "confidence": 0.8943581581115723,
+          "bbox": [
+            157,
+            1066,
+            275,
+            1098
+          ],
+          "label": null,
+          "polygon": [
+            [
+              157,
+              1066
+            ],
+            [
+              275,
+              1066
+            ],
+            [
+              275,
+              1098
+            ],
+            [
+              157,
+              1098
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "- Như trên;",
+          "confidence": 0.9234625372019681,
+          "bbox": [
+            155,
+            1109,
+            288,
+            1143
+          ],
+          "label": null,
+          "polygon": [
+            [
+              155,
+              1109
+            ],
+            [
+              288,
+              1111
+            ],
+            [
+              287,
+              1143
+            ],
+            [
+              155,
+              1141
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "- Lưu: VT, CNTT.",
+          "confidence": 0.884363790974021,
+          "bbox": [
+            157,
+            1158,
+            338,
+            1186
+          ],
+          "label": null,
+          "polygon": [
+            [
+              157,
+              1158
+            ],
+            [
+              338,
+              1158
+            ],
+            [
+              338,
+              1186
+            ],
+            [
+              157,
+              1186
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "TRƯỜNG KHOA",
+          "confidence": 0.9298770861192183,
+          "bbox": [
+            1062,
+            1337,
+            1271,
+            1371
+          ],
+          "label": null,
+          "polygon": [
+            [
+              1062,
+              1337
+            ],
+            [
+              1271,
+              1337
+            ],
+            [
+              1271,
+              1371
+            ],
+            [
+              1062,
+              1371
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "REPUT",
+          "confidence": 0.8372893929481506,
+          "bbox": [
+            1039,
+            1381,
+            1229,
+            1507
+          ],
+          "label": null,
+          "polygon": [
+            [
+              1039,
+              1398
+            ],
+            [
+              1219,
+              1381
+            ],
+            [
+              1229,
+              1490
+            ],
+            [
+              1049,
+              1507
+            ]
+          ],
+          "page": 1
+        },
+        {
+          "text": "PCS TS Hà Hải Nam",
+          "confidence": 0.8385196661247927,
+          "bbox": [
+            1056,
+            1525,
+            1300,
+            1555
+          ],
+          "label": null,
+          "polygon": [
+            [
+              1056,
+              1525
+            ],
+            [
+              1300,
+              1525
+            ],
+            [
+              1300,
+              1555
+            ],
+            [
+              1056,
+              1555
+            ]
+          ],
+          "page": 1
+        }
+      ],
+      "elapsed_sec": 84.38116739998804,
+      "error": "",
+      "quality_guard": {
+        "token_count": 213,
+        "letter_count": 729,
+        "marked_letter_ratio": 0.2689,
+        "marked_token_ratio": 0.8498,
+        "admin_keyword_hits": 47,
+        "admin_keyword_ratio": 0.2207,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "raw": {
+        "page_count": 1,
+        "ok_pages": 1,
+        "error_pages": 0,
+        "skipped_pages": 0,
+        "first_page_text": "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC\nCỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nKHOA CÔNG NGHỆ THÔNG TIN\nĐộc lập - Tự do - Hạnh phúc\nSố: 123/CV-CNTT\nHà Nội, ngày 15 tháng 05 năm 2026\nCÔNG VĂN\nV/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số thế trước\nKính gửi: Phòng Quản lý khoa học và Hợp tác quốc tế\nNhằm phục vụ công tác nghiên cứu khoa học sinh viên năm 2026, Khoa Công nghệ thông tin\nđề nghị nhóm nghiên cứu triển khai thử nghiệm hệ thống hỗ trợ quản lý công văn đi và đến.\nHệ thống cần có chức năng tiếp nhận văn bản scan, nhận diện ký tự quang học OCR,\ntrích xuất các trường thông tin chính như số ký hiệu, ngày ban hành, trích yếu, nơi gửi,\nnơi nhận; đồng thời hỗ trợ ký số và kiểm tra tính toàn vẹn của văn bản điện tử.\nNhóm nghiên cứu có trách nhiệm chuẩn bị dữ liệu thử nghiệm, báo cáo kết quả so sánh thế nhật\ncác công nghệ OCR và đề xuất phương án phù hợp với điều kiện triển khai tại đơn vị\nNơi nhận:\n- Như trên;\n- Lưu: VT, CNTT.\nTRƯỜNG KHOA\nREPUT\nPCS TS Hà Hải Nam",
+        "page_elapsed_total": 84.37194149999414,
+        "wall_elapsed_sec": 84.38116739998804,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "ok",
+            "elapsed_sec": 84.37194149999414,
+            "text_len": 988,
+            "boxes": 22,
+            "error": "",
+            "note": "PaddleOCR detects text regions, then VietOCR recognizes each crop.",
+            "refine": "VietOCR refined each crop",
+            "paddle_device": "gpu:0",
+            "vietocr_device": "cuda:0",
+            "vietocr_model": {
+              "profile": "pretrained",
+              "config": "vietocr:vgg_transformer",
+              "weights": "https://vocr.vn/data/vietocr/vgg_transformer.pth",
+              "device": "cuda:0",
+              "batch_size": 48
+            }
+          }
+        ]
+      },
+      "cer": 0.07763975155279502,
+      "wer": 0.08878504672897196,
+      "ground_truth_compare_length": 973
+    }
+  ],
+  "comparison_summary": {
+    "total_runs": 1,
+    "ok_runs": 1,
+    "error_runs": 0,
+    "skipped_runs": 0,
+    "issue_runs": 0,
+    "has_ground_truth": true,
+    "best_cer": {
+      "engine": "paddle_vietocr",
+      "variant": "opencv_preprocessed",
+      "label": "paddle+vietocr / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": 7.76,
+      "wer_pct": 8.88,
+      "elapsed_sec": 84.381,
+      "text_len": 988,
+      "avg_confidence": 90.43,
+      "quality_score": 91.85,
+      "quality_source": "CER/WER",
+      "quality_guard": {
+        "token_count": 213,
+        "letter_count": 729,
+        "marked_letter_ratio": 0.2689,
+        "marked_token_ratio": 0.8498,
+        "admin_keyword_hits": 47,
+        "admin_keyword_ratio": 0.2207,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 91.8459395135543,
+      "error": "",
+      "cer_bar": 7.76,
+      "wer_bar": 8.88,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 91.85,
+      "confidence_bar": 90.43
+    },
+    "best_wer": {
+      "engine": "paddle_vietocr",
+      "variant": "opencv_preprocessed",
+      "label": "paddle+vietocr / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": 7.76,
+      "wer_pct": 8.88,
+      "elapsed_sec": 84.381,
+      "text_len": 988,
+      "avg_confidence": 90.43,
+      "quality_score": 91.85,
+      "quality_source": "CER/WER",
+      "quality_guard": {
+        "token_count": 213,
+        "letter_count": 729,
+        "marked_letter_ratio": 0.2689,
+        "marked_token_ratio": 0.8498,
+        "admin_keyword_hits": 47,
+        "admin_keyword_ratio": 0.2207,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 91.8459395135543,
+      "error": "",
+      "cer_bar": 7.76,
+      "wer_bar": 8.88,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 91.85,
+      "confidence_bar": 90.43
+    },
+    "fastest": {
+      "engine": "paddle_vietocr",
+      "variant": "opencv_preprocessed",
+      "label": "paddle+vietocr / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": 7.76,
+      "wer_pct": 8.88,
+      "elapsed_sec": 84.381,
+      "text_len": 988,
+      "avg_confidence": 90.43,
+      "quality_score": 91.85,
+      "quality_source": "CER/WER",
+      "quality_guard": {
+        "token_count": 213,
+        "letter_count": 729,
+        "marked_letter_ratio": 0.2689,
+        "marked_token_ratio": 0.8498,
+        "admin_keyword_hits": 47,
+        "admin_keyword_ratio": 0.2207,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 91.8459395135543,
+      "error": "",
+      "cer_bar": 7.76,
+      "wer_bar": 8.88,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 91.85,
+      "confidence_bar": 90.43
+    },
+    "best_quality": {
+      "engine": "paddle_vietocr",
+      "variant": "opencv_preprocessed",
+      "label": "paddle+vietocr / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": 7.76,
+      "wer_pct": 8.88,
+      "elapsed_sec": 84.381,
+      "text_len": 988,
+      "avg_confidence": 90.43,
+      "quality_score": 91.85,
+      "quality_source": "CER/WER",
+      "quality_guard": {
+        "token_count": 213,
+        "letter_count": 729,
+        "marked_letter_ratio": 0.2689,
+        "marked_token_ratio": 0.8498,
+        "admin_keyword_hits": 47,
+        "admin_keyword_ratio": 0.2207,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 91.8459395135543,
+      "error": "",
+      "cer_bar": 7.76,
+      "wer_bar": 8.88,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 91.85,
+      "confidence_bar": 90.43
+    },
+    "best_confidence": {
+      "engine": "paddle_vietocr",
+      "variant": "opencv_preprocessed",
+      "label": "paddle+vietocr / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": 7.76,
+      "wer_pct": 8.88,
+      "elapsed_sec": 84.381,
+      "text_len": 988,
+      "avg_confidence": 90.43,
+      "quality_score": 91.85,
+      "quality_source": "CER/WER",
+      "quality_guard": {
+        "token_count": 213,
+        "letter_count": 729,
+        "marked_letter_ratio": 0.2689,
+        "marked_token_ratio": 0.8498,
+        "admin_keyword_hits": 47,
+        "admin_keyword_ratio": 0.2207,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 91.8459395135543,
+      "error": "",
+      "cer_bar": 7.76,
+      "wer_bar": 8.88,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 91.85,
+      "confidence_bar": 90.43
+    },
+    "rows": [
+      {
+        "engine": "paddle_vietocr",
+        "variant": "opencv_preprocessed",
+        "label": "paddle+vietocr / opencv_preprocessed",
+        "status": "ok",
+        "cer_pct": 7.76,
+        "wer_pct": 8.88,
+        "elapsed_sec": 84.381,
+        "text_len": 988,
+        "avg_confidence": 90.43,
+        "quality_score": 91.85,
+        "quality_source": "CER/WER",
+        "quality_guard": {
+          "token_count": 213,
+          "letter_count": 729,
+          "marked_letter_ratio": 0.2689,
+          "marked_token_ratio": 0.8498,
+          "admin_keyword_hits": 47,
+          "admin_keyword_ratio": 0.2207,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 100.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 91.8459395135543,
+        "error": "",
+        "cer_bar": 7.76,
+        "wer_bar": 8.88,
+        "time_bar": 100.0,
+        "text_bar": 100.0,
+        "quality_bar": 91.85,
+        "confidence_bar": 90.43
+      }
+    ],
+    "preprocessing_effect": [],
+    "engine_status": [
+      {
+        "engine": "paddle_vietocr",
+        "ok": 1,
+        "skipped": 0,
+        "error": 0,
+        "total": 1
+      }
+    ]
+  },
+  "layoutlmv3_postprocess": {
+    "mode": "layoutlmv3_model",
+    "extractor": "layoutlmv3",
+    "note": "Đã chạy LayoutLMv3 thật bằng transformers từ model D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification. Field từ model được kiểm định theo từng trường rồi mới merge với rule fallback.",
+    "model_configured": true,
+    "model_ran": true,
+    "model_path": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification",
+    "processor_path": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification",
+    "runtime": "transformers",
+    "model_word_count": 13,
+    "field_label_compatible": true,
+    "compatible_fields": [
+      "co_quan_ban_hanh",
+      "loai_van_ban",
+      "ngay_ban_hanh",
+      "noi_gui",
+      "noi_nhan",
+      "so_ky_hieu",
+      "trich_yeu"
+    ],
+    "expected_fields": [
+      "co_quan_ban_hanh",
+      "loai_van_ban",
+      "ngay_ban_hanh",
+      "noi_gui",
+      "noi_nhan",
+      "so_ky_hieu",
+      "trich_yeu"
+    ],
+    "fields_source": "layoutlmv3+best_ocr_rule",
+    "model_fields": {
+      "co_quan_ban_hanh": "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC",
+      "trich_yeu": "Hà Nội, ngày 15 tháng 05 năm 2026 V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số thế trước",
+      "loai_van_ban": "CÔNG VĂN"
+    },
+    "accepted_model_fields": {
+      "co_quan_ban_hanh": "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC",
+      "loai_van_ban": "CÔNG VĂN"
+    },
+    "rejected_model_fields": {
+      "trich_yeu": "Hà Nội, ngày 15 tháng 05 năm 2026 V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số thế trước"
+    },
+    "fields": {
+      "co_quan_ban_hanh": "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC",
+      "loai_van_ban": "CÔNG VĂN",
+      "ngay_ban_hanh": "15/05/2026",
+      "noi_gui": "",
+      "noi_nhan": "Phòng Quản lý khoa học và Hợp tác quốc tế",
+      "so_ky_hieu": "",
+      "trich_yeu": "V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số thế trước",
+      "confidence_note": "layoutlmv3+best_ocr_rule"
+    },
+    "labels_preview": [
+      [
+        "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC",
+        "B-co_quan_ban_hanh"
+      ],
+      [
+        "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM",
+        "O"
+      ],
+      [
+        "KHOA CÔNG NGHỆ THÔNG TIN",
+        "O"
+      ],
+      [
+        "Độc lập - Tự do - Hạnh phúc",
+        "O"
+      ],
+      [
+        "Số: 123/CV-CNTT",
+        "O"
+      ],
+      [
+        "Hà Nội, ngày 15 tháng 05 năm 2026",
+        "B-trich_yeu"
+      ],
+      [
+        "CÔNG VĂN",
+        "B-loai_van_ban"
+      ],
+      [
+        "V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số thế trước",
+        "B-trich_yeu"
+      ],
+      [
+        "Kính gửi: Phòng Quản lý khoa học và Hợp tác quốc tế",
+        "O"
+      ],
+      [
+        "Nhằm phục vụ công tác nghiên cứu khoa học sinh viên năm 2026, Khoa Công nghệ thông tin",
+        "O"
+      ],
+      [
+        "đề nghị nhóm nghiên cứu triển khai thử nghiệm hệ thống hỗ trợ quản lý công văn đi và đến.",
+        "O"
+      ],
+      [
+        "Hệ thống cần có chức năng tiếp nhận văn bản scan, nhận diện ký tự quang học OCR,",
+        "O"
+      ],
+      [
+        "trích xuất các trường thông tin chính như số ký hiệu, ngày ban hành, trích yếu, nơi gửi,",
+        "O"
+      ]
+    ],
+    "labels_preview_rows": [
+      {
+        "token": "TRƯỜNG ĐẠI HỌC ĐIỆN LỰC",
+        "label": "B-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "KHOA CÔNG NGHỆ THÔNG TIN",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Độc lập - Tự do - Hạnh phúc",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Số: 123/CV-CNTT",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Hà Nội, ngày 15 tháng 05 năm 2026",
+        "label": "B-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "CÔNG VĂN",
+        "label": "B-loai_van_ban",
+        "field": "loai_van_ban"
+      },
+      {
+        "token": "V/v triển khai thử nghiệm hệ thống quản lý công văn tích hợp OCR và chữ ký số thế trước",
+        "label": "B-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Kính gửi: Phòng Quản lý khoa học và Hợp tác quốc tế",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Nhằm phục vụ công tác nghiên cứu khoa học sinh viên năm 2026, Khoa Công nghệ thông tin",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "đề nghị nhóm nghiên cứu triển khai thử nghiệm hệ thống hỗ trợ quản lý công văn đi và đến.",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Hệ thống cần có chức năng tiếp nhận văn bản scan, nhận diện ký tự quang học OCR,",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "trích xuất các trường thông tin chính như số ký hiệu, ngày ban hành, trích yếu, nơi gửi,",
+        "label": "O",
+        "field": "outside"
+      }
+    ],
+    "torch_device": "cuda",
+    "ocr_source": {
+      "engine": "paddle_vietocr",
+      "variant": "opencv_preprocessed",
+      "page": 1,
+      "note": "Token LayoutLMv3 lấy từ OCR/bbox trang 1 của engine được chọn."
+    },
+    "ocr_source_quality": {
+      "diacritic_loss": false,
+      "severe_diacritic_loss": false,
+      "vietnamese_quality_score": 100.0
+    },
+    "labels_preview_note": "Token preview lấy từ paddle_vietocr / opencv_preprocessed trang 1. Nếu OCR nguồn rụng chữ thì token LayoutLMv3 cũng rụng theo; field cuối vẫn được hậu kiểm bằng best-OCR/rule."
+  },
+  "best_engine": {
+    "engine": "paddle_vietocr",
+    "variant": "opencv_preprocessed"
+  },
+  "document_archive": {
+    "document_id": "09739d9fda34",
+    "status": "scanned",
+    "storage_root": "documents/2026/07/09739d9fda34",
+    "manifest_path": "documents/2026/07/09739d9fda34/manifest.json",
+    "index_path": "documents/index.jsonl",
+    "workflow_manifest_path": "documents/2026/07/09739d9fda34/06_metadata/workflow_manifest.json",
+    "extracted_fields_path": "documents/2026/07/09739d9fda34/06_metadata/extracted_fields.json",
+    "ocr_output_count": 1,
+    "created_at": "2026-07-04T18:34:47+07:00",
+    "manifest": {
+      "document_id": "09739d9fda34",
+      "job_id": "09739d9fda34",
+      "created_at": "2026-07-04T18:34:47+07:00",
+      "source_filename": "sample_cong_van_scan.png",
+      "page_count": 1,
+      "status": "scanned",
+      "storage_root": "documents/2026/07/09739d9fda34",
+      "original_file": {
+        "path": "documents/2026/07/09739d9fda34/01_original/sample_cong_van_scan.png",
+        "filename": "sample_cong_van_scan.png",
+        "size_bytes": 482161,
+        "sha256": "d32fc5475c14c9310ac7611a47acf775f148641292998511241505567183b70f"
+      },
+      "pages": {
+        "raw": [
+          {
+            "path": "documents/2026/07/09739d9fda34/02_pages/raw/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 491015,
+            "sha256": "fb5674123336f6a59068842675c115a6b574ee5eb438ceac895be5a1fbcace67",
+            "page": 1
+          }
+        ],
+        "opencv_preprocessed": [
+          {
+            "path": "documents/2026/07/09739d9fda34/02_pages/opencv_preprocessed/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 53006,
+            "sha256": "8f846b90c941dca3334af332038e09a3270e8e290a7d33b7ee385ad58bf525f9",
+            "page": 1
+          }
+        ]
+      },
+      "ground_truth": {
+        "path": "documents/2026/07/09739d9fda34/03_ground_truth/sample_cong_van.txt",
+        "filename": "sample_cong_van.txt",
+        "size_bytes": 1266,
+        "sha256": "b120a257a3e060bd389e9a77d611af1ecbe7e19ab865b358186b96a16bd60acd"
+      },
+      "extracted_fields_path": "documents/2026/07/09739d9fda34/06_metadata/extracted_fields.json",
+      "workflow_manifest_path": "documents/2026/07/09739d9fda34/06_metadata/workflow_manifest.json",
+      "ocr_outputs": [
+        {
+          "engine": "paddle_vietocr",
+          "variant": "opencv_preprocessed",
+          "status": "ok",
+          "elapsed_sec": 84.38116739998804,
+          "text_length": 988,
+          "text_path": "documents/2026/07/09739d9fda34/04_ocr_text/paddle_vietocr__opencv_preprocessed.txt",
+          "json_path": "documents/2026/07/09739d9fda34/05_ocr_json/paddle_vietocr__opencv_preprocessed.json",
+          "word_path": "documents/2026/07/09739d9fda34/08_word_outputs/paddle_vietocr__opencv_preprocessed.docx",
+          "word_file": {
+            "path": "documents/2026/07/09739d9fda34/08_word_outputs/paddle_vietocr__opencv_preprocessed.docx",
+            "filename": "paddle_vietocr__opencv_preprocessed.docx",
+            "size_bytes": 2176,
+            "sha256": "f0e88205e84e48bf866a8c68e33592d4e1df622ad7b89a3b526a9ccd96791013"
+          },
+          "word_kind": "editable_ocr_layout",
+          "word_layout_version": "2026-05-26-structured-v2",
+          "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+          "page_count": 1
+        }
+      ],
+      "exports": {
+        "benchmark_csv": "documents/2026/07/09739d9fda34/07_exports/benchmark_results.csv",
+        "comparison_summary": "documents/2026/07/09739d9fda34/07_exports/comparison_summary.json",
+        "report_snapshot": "documents/2026/07/09739d9fda34/07_exports/report_snapshot.json"
+      }
+    },
+    "source_filename": "sample_cong_van_scan.png",
+    "page_count": 1,
+    "storage_root_absolute": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34",
+    "manifest_url": "/storage/documents/2026/07/09739d9fda34/manifest.json",
+    "index_url": "/storage/documents/index.jsonl",
+    "original_file": {
+      "path": "documents/2026/07/09739d9fda34/01_original/sample_cong_van_scan.png",
+      "filename": "sample_cong_van_scan.png",
+      "size_bytes": 482161,
+      "sha256": "d32fc5475c14c9310ac7611a47acf775f148641292998511241505567183b70f",
+      "url": "/storage/documents/2026/07/09739d9fda34/01_original/sample_cong_van_scan.png",
+      "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\01_original\\sample_cong_van_scan.png",
+      "size_label": "470.9 KB",
+      "sha256_short": "d32fc5475c14"
+    },
+    "ground_truth": {
+      "path": "documents/2026/07/09739d9fda34/03_ground_truth/sample_cong_van.txt",
+      "filename": "sample_cong_van.txt",
+      "size_bytes": 1266,
+      "sha256": "b120a257a3e060bd389e9a77d611af1ecbe7e19ab865b358186b96a16bd60acd",
+      "url": "/storage/documents/2026/07/09739d9fda34/03_ground_truth/sample_cong_van.txt",
+      "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\03_ground_truth\\sample_cong_van.txt",
+      "size_label": "1.2 KB",
+      "sha256_short": "b120a257a3e0"
+    },
+    "pages": {
+      "raw": [
+        {
+          "path": "documents/2026/07/09739d9fda34/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 491015,
+          "sha256": "fb5674123336f6a59068842675c115a6b574ee5eb438ceac895be5a1fbcace67",
+          "page": 1,
+          "url": "/storage/documents/2026/07/09739d9fda34/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\02_pages\\raw\\page_001.png",
+          "size_label": "479.5 KB",
+          "sha256_short": "fb5674123336"
+        }
+      ],
+      "opencv_preprocessed": [
+        {
+          "path": "documents/2026/07/09739d9fda34/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 53006,
+          "sha256": "8f846b90c941dca3334af332038e09a3270e8e290a7d33b7ee385ad58bf525f9",
+          "page": 1,
+          "url": "/storage/documents/2026/07/09739d9fda34/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "51.8 KB",
+          "sha256_short": "8f846b90c941"
+        }
+      ]
+    },
+    "preview_pages": [
+      {
+        "page": 1,
+        "raw": {
+          "path": "documents/2026/07/09739d9fda34/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 491015,
+          "sha256": "fb5674123336f6a59068842675c115a6b574ee5eb438ceac895be5a1fbcace67",
+          "page": 1,
+          "url": "/storage/documents/2026/07/09739d9fda34/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\02_pages\\raw\\page_001.png",
+          "size_label": "479.5 KB",
+          "sha256_short": "fb5674123336"
+        },
+        "opencv": {
+          "path": "documents/2026/07/09739d9fda34/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 53006,
+          "sha256": "8f846b90c941dca3334af332038e09a3270e8e290a7d33b7ee385ad58bf525f9",
+          "page": 1,
+          "url": "/storage/documents/2026/07/09739d9fda34/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "51.8 KB",
+          "sha256_short": "8f846b90c941"
+        }
+      }
+    ],
+    "ocr_outputs": [
+      {
+        "engine": "paddle_vietocr",
+        "variant": "opencv_preprocessed",
+        "status": "ok",
+        "elapsed_sec": 84.38116739998804,
+        "text_length": 988,
+        "text_path": "documents/2026/07/09739d9fda34/04_ocr_text/paddle_vietocr__opencv_preprocessed.txt",
+        "json_path": "documents/2026/07/09739d9fda34/05_ocr_json/paddle_vietocr__opencv_preprocessed.json",
+        "word_path": "documents/2026/07/09739d9fda34/08_word_outputs/paddle_vietocr__opencv_preprocessed.docx",
+        "word_file": {
+          "path": "documents/2026/07/09739d9fda34/08_word_outputs/paddle_vietocr__opencv_preprocessed.docx",
+          "filename": "paddle_vietocr__opencv_preprocessed.docx",
+          "size_bytes": 2176,
+          "sha256": "f0e88205e84e48bf866a8c68e33592d4e1df622ad7b89a3b526a9ccd96791013",
+          "url": "/storage/documents/2026/07/09739d9fda34/08_word_outputs/paddle_vietocr__opencv_preprocessed.docx",
+          "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\08_word_outputs\\paddle_vietocr__opencv_preprocessed.docx",
+          "size_label": "2.1 KB",
+          "sha256_short": "f0e88205e84e"
+        },
+        "word_kind": "editable_ocr_layout",
+        "word_layout_version": "2026-05-26-structured-v2",
+        "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+        "page_count": 1,
+        "text_url": "/storage/documents/2026/07/09739d9fda34/04_ocr_text/paddle_vietocr__opencv_preprocessed.txt",
+        "text_absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\04_ocr_text\\paddle_vietocr__opencv_preprocessed.txt",
+        "json_url": "/storage/documents/2026/07/09739d9fda34/05_ocr_json/paddle_vietocr__opencv_preprocessed.json",
+        "json_absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\05_ocr_json\\paddle_vietocr__opencv_preprocessed.json",
+        "word_url": "/storage/documents/2026/07/09739d9fda34/08_word_outputs/paddle_vietocr__opencv_preprocessed.docx",
+        "word_absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\08_word_outputs\\paddle_vietocr__opencv_preprocessed.docx",
+        "word_filename": "paddle_vietocr__opencv_preprocessed.docx",
+        "word_size_label": "2.1 KB"
+      }
+    ],
+    "exports": {
+      "benchmark_csv": {
+        "path": "documents/2026/07/09739d9fda34/07_exports/benchmark_results.csv",
+        "url": "/storage/documents/2026/07/09739d9fda34/07_exports/benchmark_results.csv",
+        "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\07_exports\\benchmark_results.csv"
+      },
+      "comparison_summary": {
+        "path": "documents/2026/07/09739d9fda34/07_exports/comparison_summary.json",
+        "url": "/storage/documents/2026/07/09739d9fda34/07_exports/comparison_summary.json",
+        "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\07_exports\\comparison_summary.json"
+      },
+      "report_snapshot": {
+        "path": "documents/2026/07/09739d9fda34/07_exports/report_snapshot.json",
+        "url": "/storage/documents/2026/07/09739d9fda34/07_exports/report_snapshot.json",
+        "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\07\\09739d9fda34\\07_exports\\report_snapshot.json"
+      }
+    },
+    "workflow_manifest_url": "/storage/documents/2026/07/09739d9fda34/06_metadata/workflow_manifest.json",
+    "extracted_fields_url": "/storage/documents/2026/07/09739d9fda34/06_metadata/extracted_fields.json"
+  }
+}

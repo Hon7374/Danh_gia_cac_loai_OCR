@@ -82,7 +82,7 @@ def create_architecture_image() -> Path:
         ((1195, 150, 1485, 285), "Chọn OCR tốt nhất", "So runtime, text length, confidence, quality", "#F6EDFF"),
         ((1560, 150, 1850, 285), "LayoutLMv3", "Document understanding, metadata extraction", "#EAF2FF"),
         ((445, 430, 735, 565), "Metadata", "Số ký hiệu, ngày, cơ quan, trích yếu", "#EAFBF3"),
-        ((820, 430, 1110, 565), "Chữ ký số", "Kiểm tra chứng thư, toàn vẹn file", "#FFF4E6"),
+        ((820, 430, 1110, 565), "Chữ ký số (định hướng)", "Chưa triển khai xác minh PAdES", "#FFF4E6"),
         ((1195, 430, 1485, 565), "Kho dữ liệu", "DB, file gốc, OCR output, metadata", "#F6EDFF"),
         ((1560, 430, 1850, 565), "Dashboard", "Tra cứu, benchmark, đánh giá", "#EAF2FF"),
     ]

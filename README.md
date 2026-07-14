@@ -9,7 +9,6 @@ Bản v2 đã sửa theo yêu cầu:
 - Không bắt buộc máy đã cài sẵn Tesseract binary; có script tự kiểm tra/cài hoặc chạy bằng Docker.
 - Không ghim cứng version cũ của EasyOCR/PaddleOCR/VietOCR/Transformers; riêng PaddlePaddle/einops có pin tương thích để PaddleOCR-VL chạy ổn trên Windows CPU.
 - Cập nhật adapter PaddleOCR-VL theo hướng `from paddleocr import PaddleOCRVL` và CLI `paddleocr doc_parser`.
-- Cập nhật endpoint mặc định GLM-OCR/Z.ai layout parsing.
 - Có `scripts/check_environment.py` để kiểm tra model/package/binary trước khi demo.
 
 ## 1. Các OCR engine có trong demo
@@ -18,8 +17,7 @@ Bản v2 đã sửa theo yêu cầu:
 |---|---|---|
 | Tesseract OCR | Local/offline hoặc Docker | Nếu máy chưa có binary, script có thể cài qua winget; Docker thì có sẵn |
 | EasyOCR | Optional local/offline | Cài bằng `pip install -U easyocr` |
-| PaddleOCR + VietOCR | Optional local/offline | PaddleOCR detect/recognize; VietOCR hỗ trợ tiếng Việt |
-| GLM-OCR | API/cloud hoặc endpoint riêng | Cấu hình `ZAI_API_KEY` hoặc `GLM_OCR_API_KEY` trong `.env` |
+| PaddleOCR + VietOCR hybrid | Local/offline | Paddle detect; dòng dài được tách tại khoảng trắng; VietOCR official refine; XY-cut sắp thứ tự đọc; output bất thường tự fallback Paddle |
 | PaddleOCR-VL | Optional local/API/CLI | Hỗ trợ Python API hoặc `PADDLEOCR_VL_CMD` |
 | LayoutLMv3 | Optional post-processing | Có model fine-tuned thì chạy thật, chưa có thì fallback rule/regex |
 
@@ -100,30 +98,9 @@ Script sẽ kiểm tra:
 - Tesseract binary có hay chưa
 - Language data `vie`, `eng`
 - Version các package: EasyOCR, PaddleOCR, VietOCR, Torch, Transformers
-- Biến môi trường GLM-OCR, PaddleOCR-VL, LayoutLMv3
+- Biến môi trường PaddleOCR-VL và LayoutLMv3
 
-## 6. Cấu hình GLM-OCR
-
-Copy file môi trường:
-
-```bash
-cp .env.example .env
-```
-
-Điền:
-
-```env
-ZAI_API_KEY=your_key_here
-GLM_OCR_ENDPOINT=https://api.z.ai/api/paas/v4/layout_parsing
-```
-
-Hoặc dùng biến cũ:
-
-```env
-GLM_OCR_API_KEY=your_key_here
-```
-
-## 7. Cấu hình PaddleOCR-VL
+## 6. Cấu hình PaddleOCR-VL
 
 ### Cách 1: để app tự import Python API
 
@@ -143,7 +120,7 @@ PADDLEOCR_VL_CMD=paddleocr doc_parser -i "{input}" --device cpu --save_path "{ou
 
 `{input}` và `{output_dir}` sẽ được app tự thay.
 
-## 8. Hậu xử lý LayoutLMv3
+## 7. Hậu xử lý LayoutLMv3
 
 LayoutLMv3 không tự biết trường công văn nếu chưa fine-tune. Muốn chạy thật cần model token classification đã huấn luyện trên nhãn như:
 
@@ -161,7 +138,7 @@ LAYOUTLMV3_MODEL_DIR=./models/layoutlmv3-congvan-token-classification
 
 Nếu chưa có, demo tự fallback rule/regex để vẫn có kết quả.
 
-## 9. File mẫu
+## 8. File mẫu
 
 ```text
 demo_samples/
@@ -173,7 +150,7 @@ demo_samples/
 
 Upload `sample_cong_van_scan.png` hoặc `sample_cong_van_scan.pdf`, rồi copy nội dung `ground_truth_text/sample_cong_van.txt` vào ô Ground Truth để tính CER/WER.
 
-## 10. Kết quả đầu ra
+## 9. Kết quả đầu ra
 
 Mỗi lần chạy tạo một job trong:
 
@@ -195,11 +172,10 @@ CSV dùng để đưa vào báo cáo/Excel:
 | engine | variant | status | elapsed_sec | cer | wer | error | text_preview |
 |---|---|---|---:|---:|---:|---|---|
 
-## 11. Giới hạn cần nói thật khi bảo vệ
+## 10. Giới hạn cần nói thật khi bảo vệ
 
 - Tesseract cần binary ngoài Python; bản v2 đã có script cài/check và Docker để tránh lỗi máy chưa cài.
 - EasyOCR/PaddleOCR/VietOCR/Transformers là gói nặng, nên không ép cài trong lần chạy cơ bản.
-- GLM-OCR cần API key hoặc môi trường triển khai riêng.
 - PaddleOCR-VL model nặng; nên demo qua CLI/API adapter hoặc máy có GPU/RAM đủ.
 - LayoutLMv3 muốn chính xác phải fine-tune bằng dữ liệu công văn đã gán nhãn; fallback rule-based chỉ dùng cho MVP.
 

@@ -39,6 +39,8 @@ if (-not (Test-Path ".env")) {
     Copy-Item ".env.example" ".env"
 }
 
+& .\.venv\Scripts\python.exe scripts\repair_venv_launchers.py
+
 Write-Host "\nEnvironment check:" -ForegroundColor Cyan
 & .\.venv\Scripts\python.exe scripts\check_environment.py
 Write-Host "Done. Run: .\run_windows.bat" -ForegroundColor Green

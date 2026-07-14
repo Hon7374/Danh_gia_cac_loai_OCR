@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 import os
+import hashlib
+import copy
+import math
 import re
 import subprocess
 import shutil
@@ -12,6 +15,7 @@ import unicodedata
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from threading import Lock
 from typing import Annotated
 from urllib.parse import quote
 
@@ -31,10 +35,16 @@ from app.config import (
 from app.ocr_engines import ENGINE_REGISTRY
 from app.services.metrics import cer, wer
 from app.services.ocr_quality import analyze_ocr_text_quality, ocr_selection_score
-from app.services.pdf_utils import ensure_images
+from app.services.pdf_utils import IMAGE_EXTS, PDF_EXTS, ensure_images
 from app.services.preprocess import preprocess_image
 from app.services.storage import new_job_dir, save_json, save_results_csv
-from app.services.layoutlmv3_postprocess import layoutlmv3_postprocess, stabilize_layout_fields_from_rows
+from app.services.layoutlmv3_postprocess import (
+    POSTPROCESS_VERSION,
+    finalize_layout_result,
+    layout_pipeline_fingerprint,
+    layoutlmv3_postprocess,
+    stabilize_layout_fields_from_rows,
+)
 from app.services.devices import device_summary
 from app.services.field_extract import extract_fields_rule_based
 from app.services.document_archive import archive_scan, ensure_archive_word_outputs, sync_archive_metadata
@@ -47,6 +57,20 @@ GROUND_TRUTH_METRIC_VERSION = 2
 GROUND_TRUTH_LENGTH_RATIO_LIMIT = 3
 GROUND_TRUTH_LENGTH_ABSOLUTE_LIMIT = 6000
 TEXT_INPUT_SUFFIXES = {".txt", ".md", ".csv", ".json", ".doc", ".docx"}
+SUPPORTED_INPUT_SUFFIXES = IMAGE_EXTS | PDF_EXTS | TEXT_INPUT_SUFFIXES
+GROUND_TRUTH_SUFFIXES = {".txt", ".md", ".csv", ".json", ".doc", ".docx"}
+_REPORT_LOCKS: dict[str, Lock] = {}
+_REPORT_LOCKS_GUARD = Lock()
+
+
+def _report_lock(job_id: str) -> Lock:
+    with _REPORT_LOCKS_GUARD:
+        return _REPORT_LOCKS.setdefault(job_id, Lock())
+
+
+def _is_active_demo_result(row: dict) -> bool:
+    """Keep GLM history on disk while excluding it from the active demo."""
+    return row.get("engine") != "glm_ocr"
 
 
 def _append_warning(existing: str | None, extra: str | None) -> str | None:
@@ -292,6 +316,35 @@ def _aggregate_page_rows(engine_key: str, variant_name: str, page_rows: list[dic
     page_elapsed_total = sum(float(row.get("elapsed_sec") or 0) for row in page_rows)
     elapsed = float(elapsed_sec if elapsed_sec is not None else page_elapsed_total)
     quality_guard = analyze_ocr_text_quality(text)
+    page_raws = [row.get("raw") or {} for row in page_rows]
+    vietocr_models = [raw.get("vietocr_model") for raw in page_raws if raw.get("vietocr_model")]
+    hybrid_pages = [raw.get("hybrid_refinement") for raw in page_raws if raw.get("hybrid_refinement")]
+    vl_guard_pages = [raw.get("hallucination_guard") for raw in page_raws if raw.get("hallucination_guard")]
+    hybrid_reason_counts: dict[str, int] = {}
+    for hybrid in hybrid_pages:
+        for reason, count in (hybrid.get("fallback_reason_counts") or {}).items():
+            hybrid_reason_counts[str(reason)] = hybrid_reason_counts.get(str(reason), 0) + int(count or 0)
+    hybrid_summary = None
+    if hybrid_pages:
+        hybrid_summary = {
+            "policy": hybrid_pages[0].get("policy"),
+            "page_count": len(hybrid_pages),
+            "total_paddle_boxes": sum(int(item.get("total_paddle_boxes") or 0) for item in hybrid_pages),
+            "vietocr_candidates_received": sum(int(item.get("vietocr_candidates_received") or 0) for item in hybrid_pages),
+            "accepted_refinements": sum(int(item.get("accepted_refinements") or 0) for item in hybrid_pages),
+            "fallback_to_paddle": sum(int(item.get("fallback_to_paddle") or 0) for item in hybrid_pages),
+            "fallback_reason_counts": hybrid_reason_counts,
+            "paddle_geometry_preserved": all(bool(item.get("paddle_geometry_preserved")) for item in hybrid_pages),
+        }
+    vl_guard_summary = None
+    if vl_guard_pages:
+        vl_guard_summary = {
+            "policy": vl_guard_pages[0].get("policy"),
+            "page_count": len(vl_guard_pages),
+            "removed_box_count": sum(int(item.get("removed_box_count") or 0) for item in vl_guard_pages),
+            "removed_text_characters": sum(int(item.get("removed_text_characters") or 0) for item in vl_guard_pages),
+            "removed_sequence_count": sum(int(item.get("removed_sequence_count") or 0) for item in vl_guard_pages),
+        }
     return {
         "engine": engine_key,
         "variant": variant_name,
@@ -309,6 +362,9 @@ def _aggregate_page_rows(engine_key: str, variant_name: str, page_rows: list[dic
             "first_page_text": page_rows[0].get("text") if page_rows else "",
             "page_elapsed_total": page_elapsed_total,
             "wall_elapsed_sec": elapsed,
+            "vietocr_model": vietocr_models[0] if vietocr_models else None,
+            "hybrid_refinement_summary": hybrid_summary,
+            "paddleocr_vl_hallucination_guard": vl_guard_summary,
             "page_results": [
                 {
                     "page": row.get("page"),
@@ -322,6 +378,9 @@ def _aggregate_page_rows(engine_key: str, variant_name: str, page_rows: list[dic
                     "paddle_device": (row.get("raw") or {}).get("paddle_device"),
                     "vietocr_device": (row.get("raw") or {}).get("vietocr_device"),
                     "vietocr_model": (row.get("raw") or {}).get("vietocr_model"),
+                    "hybrid_refinement": (row.get("raw") or {}).get("hybrid_refinement"),
+                    "reading_order": (row.get("raw") or {}).get("reading_order"),
+                    "hallucination_guard": (row.get("raw") or {}).get("hallucination_guard"),
                 }
                 for row in page_rows
             ],
@@ -392,18 +451,32 @@ def _text_input_result_row(text: str, elapsed_sec: float, warning: str | None = 
 
 
 def _text_input_postprocess(text: str, reader: str, warning: str | None = None) -> dict:
-    fields = extract_fields_rule_based(text).to_dict()
+    try:
+        fields = extract_fields_rule_based(str(text or "")).to_dict()
+    except Exception:
+        fields = {
+            "so_ky_hieu": "",
+            "ngay_ban_hanh": "",
+            "trich_yeu": "",
+            "co_quan_ban_hanh": "",
+            "noi_gui": "",
+            "noi_nhan": "",
+            "loai_van_ban": "",
+        }
     fields["confidence_note"] = "text_input_rule"
     note = "File đầu vào là text/Word nên hệ thống bỏ qua OCR ảnh và trích xuất trường trực tiếp từ nội dung text."
     if warning:
         note = f"{note} Cảnh báo đọc file: {warning}"
     return {
+        "postprocess_version": POSTPROCESS_VERSION,
+        "pipeline_fingerprint": layout_pipeline_fingerprint(),
         "mode": "text_input_direct",
         "extractor": "text_input",
         "note": note,
         "model_configured": False,
         "model_ran": False,
         "reader": reader,
+        "input_fingerprint": hashlib.sha256(str(text or "").encode("utf-8", errors="replace")).hexdigest(),
         "fields_source": "text_input_rule",
         "fields": fields,
         "labels_preview_rows": [],
@@ -435,26 +508,6 @@ def read_ground_truth_upload(upload: UploadFile | None, job_dir: Path) -> tuple[
         "reader": reader,
     }
 
-    suffix = gt_path.suffix.lower()
-    warning = None
-    if suffix == ".docx":
-        text = _extract_docx_text(gt_path)
-    elif suffix == ".doc":
-        text = ""
-        warning = "File .doc nhị phân cũ chưa được đọc trực tiếp. Hãy chuyển sang .docx hoặc xuất .txt để tính CER/WER."
-    else:
-        text = _decode_uploaded_text(data)
-
-    # Chuẩn hóa nhẹ để so CER/WER ổn hơn, không sửa nội dung có nghĩa.
-    text = text.replace("\r\n", "\n").replace("\r", "\n").strip()
-    return text, {
-        "filename": safe_name,
-        "relative_path": str(gt_path.relative_to(job_dir)),
-        "size_bytes": len(data),
-        "text_length": len(text),
-        "warning": warning,
-    }
-
 
 def _ocr_display_label(row: dict, quality_guard: dict | None = None) -> str:
     engine = row.get("engine") or ""
@@ -475,7 +528,9 @@ def _ocr_display_label(row: dict, quality_guard: dict | None = None) -> str:
         refine_notes = str(raw.get("refine") or "").lower()
 
     guard = quality_guard or row.get("quality_guard") or analyze_ocr_text_quality(row.get("text") or "")
-    if "refined each crop" in refine_notes:
+    if "vietocr hybrid accepted" in refine_notes:
+        engine_label = "paddle+vietocr hybrid"
+    elif "refined each crop" in refine_notes:
         engine_label = "paddle+vietocr"
     elif "skipped" in refine_notes or "unavailable" in refine_notes or "timeout" in refine_notes:
         engine_label = "paddleocr (vietocr fallback)"
@@ -501,6 +556,13 @@ def build_comparison_summary(result_rows: list[dict]) -> dict:
         avg_conf = _round(_avg_confidence(r), 2)
         quality_guard = r.get("quality_guard") or analyze_ocr_text_quality(r.get("text") or "")
         label = _ocr_display_label(r, quality_guard)
+        reference_len = int(r.get("ground_truth_compare_length") or 0)
+        output_reference_ratio = round(text_len / reference_len, 2) if reference_len else None
+        metric_anomaly = bool(
+            (cer_pct is not None and cer_pct > 100)
+            or (wer_pct is not None and wer_pct > 100)
+            or (output_reference_ratio is not None and output_reference_ratio > 2.0)
+        )
         quality_score = None
         quality_source = None
         if cer_pct is not None and wer_pct is not None:
@@ -528,6 +590,13 @@ def build_comparison_summary(result_rows: list[dict]) -> dict:
             "quality_source": quality_source,
             "quality_guard": quality_guard,
             "selection_score": ocr_selection_score(r),
+            "output_reference_ratio": output_reference_ratio,
+            "metric_anomaly": metric_anomaly,
+            "metric_anomaly_note": (
+                "OCR sinh dư/lặp nhiều nội dung; CER/WER có thể vượt 100% do số lỗi chèn lớn hơn độ dài text chuẩn."
+                if metric_anomaly
+                else None
+            ),
             "ground_truth_metric_warning": r.get("ground_truth_metric_warning"),
             "error": r.get("error"),
         })
@@ -644,6 +713,7 @@ def build_comparison_summary(result_rows: list[dict]) -> dict:
         "best_quality": max_by("quality_score"),
         "best_confidence": max_by("avg_confidence"),
         "rows": rows,
+        "metric_anomalies": [x for x in rows if x.get("metric_anomaly")],
         "preprocessing_effect": preprocessing_effect,
         "engine_status": engine_status,
     }
@@ -673,9 +743,9 @@ def index(request: Request):
                 {
                     "key": "paddle_vietocr",
                     "label": "PaddleOCR (+ VietOCR thử nghiệm)",
-                    "hint": "De rung dau voi tieng Viet; VietOCR refine co timeout va rat cham.",
+                    "hint": "Hybrid theo từng crop; hỗ trợ đối chiếu raw/OpenCV và tự fallback khi VietOCR bất thường.",
                     "checked": False,
-                    "badge": "thu nghiem",
+                    "badge": "hybrid",
                 },
                 {
                     "key": "paddleocr_vl",
@@ -695,7 +765,12 @@ def index(request: Request):
 
 @app.get("/download_sample/{file_path:path}")
 def download_sample(file_path: str):
-    p = ROOT_DIR / "demo_samples" / file_path
+    root = (ROOT_DIR / "demo_samples").resolve()
+    p = (root / file_path).resolve()
+    try:
+        p.relative_to(root)
+    except ValueError:
+        return HTMLResponse("Không tìm thấy file mẫu", status_code=404)
     if not p.exists() or not p.is_file():
         return HTMLResponse("Không tìm thấy file mẫu", status_code=404)
     return FileResponse(p)
@@ -703,7 +778,15 @@ def download_sample(file_path: str):
 
 @app.get("/jobs/{job_id}/{filename:path}")
 def download_job_file(job_id: str, filename: str):
-    p = JOBS_DIR / job_id / filename
+    safe_job_id = Path(job_id).name
+    if safe_job_id != job_id:
+        return HTMLResponse("Không tìm thấy file", status_code=404)
+    root = (JOBS_DIR / safe_job_id).resolve()
+    p = (root / filename).resolve()
+    try:
+        p.relative_to(root)
+    except ValueError:
+        return HTMLResponse("Không tìm thấy file", status_code=404)
     if not p.exists() or not p.is_file():
         return HTMLResponse("Không tìm thấy file", status_code=404)
     return FileResponse(p)
@@ -800,7 +883,7 @@ def _decorate_archive_exports(exports: dict | None) -> dict:
     return decorated
 
 
-def _hydrate_document_archive(report: dict) -> bool:
+def _hydrate_document_archive(report: dict, *, backfill_word_outputs: bool = True) -> bool:
     archive = report.get("document_archive")
     if not isinstance(archive, dict):
         return False
@@ -817,7 +900,7 @@ def _hydrate_document_archive(report: dict) -> bool:
     except (OSError, json.JSONDecodeError):
         return False
 
-    if ensure_archive_word_outputs(manifest_file):
+    if backfill_word_outputs and ensure_archive_word_outputs(manifest_file):
         try:
             manifest = json.loads(manifest_file.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
@@ -894,7 +977,12 @@ def _find_document_manifest(document_id: str) -> Path | None:
     return matches[0] if matches else None
 
 
-def _archive_from_manifest_path(manifest_path: Path) -> dict | None:
+def _archive_from_manifest_path(
+    manifest_path: Path,
+    *,
+    sync_latest: bool = True,
+    backfill_word_outputs: bool = True,
+) -> dict | None:
     if not manifest_path.exists() or not manifest_path.is_file():
         return None
     try:
@@ -903,7 +991,7 @@ def _archive_from_manifest_path(manifest_path: Path) -> dict | None:
         manifest = {}
     job_id = manifest.get("job_id")
     report_path = JOBS_DIR / str(job_id) / "report.json" if job_id else None
-    if report_path and report_path.exists():
+    if sync_latest and report_path and report_path.exists():
         try:
             latest_report = json.loads(report_path.read_text(encoding="utf-8"))
             sync_archive_metadata(manifest_path, latest_report)
@@ -915,7 +1003,7 @@ def _archive_from_manifest_path(manifest_path: Path) -> dict | None:
             "index_path": "documents/index.jsonl",
         }
     }
-    _hydrate_document_archive(report)
+    _hydrate_document_archive(report, backfill_word_outputs=backfill_word_outputs)
     archive = report["document_archive"]
     return archive if archive.get("manifest") else None
 
@@ -935,7 +1023,19 @@ def _read_document_archive_rows() -> list[dict]:
                 continue
             manifest_rel = item.get("manifest_path")
             manifest_path = STORAGE_DIR / str(manifest_rel) if manifest_rel else None
-            archive = _archive_from_manifest_path(manifest_path) if manifest_path else None
+            # The index page is read-only and may contain many large reports.
+            # Synchronizing/rebuilding every dossier here made `/documents`
+            # take tens of seconds.  Refresh happens when a report or document
+            # detail is opened, so the list only hydrates existing manifests.
+            archive = (
+                _archive_from_manifest_path(
+                    manifest_path,
+                    sync_latest=False,
+                    backfill_word_outputs=False,
+                )
+                if manifest_path
+                else None
+            )
             if archive:
                 item = {**item, **_document_row_from_archive(archive)}
             else:
@@ -946,7 +1046,11 @@ def _read_document_archive_rows() -> list[dict]:
                 rows.append(item)
 
     for manifest_path in (STORAGE_DIR / "documents").glob("*/*/*/manifest.json"):
-        archive = _archive_from_manifest_path(manifest_path)
+        archive = _archive_from_manifest_path(
+            manifest_path,
+            sync_latest=False,
+            backfill_word_outputs=False,
+        )
         if not archive or archive.get("document_id") in seen:
             continue
         rows.append(_document_row_from_archive(archive))
@@ -1019,14 +1123,29 @@ def _read_storage_json(rel_path: str | None) -> dict:
 def _select_postprocess_row(report: dict) -> dict | None:
     rows = [
         row
-        for row in (report.get("results") or [])
-        if row.get("engine") != "glm_ocr" and row.get("status") == "ok" and row.get("text")
+        for row in ((report.get("results") or []) if isinstance(report, dict) else [])
+        if isinstance(row, dict)
+        and row.get("engine") != "glm_ocr"
+        and row.get("status") == "ok"
+        and isinstance(row.get("text"), str)
+        and row.get("text", "").strip()
     ]
     if not rows:
         return None
 
     max_text_len = max(len(row.get("text") or "") for row in rows)
-    return sorted(rows, key=lambda row: ocr_selection_score(row, max_text_len), reverse=True)[0]
+    # Prefer the best row which can actually feed LayoutLMv3. If no engine has
+    # a usable first-page box, retain the best text row and fall back to rules.
+    layout_rows = [row for row in rows if _layout_boxes_from_row(row)]
+    candidates = layout_rows or rows
+
+    def score(row: dict) -> float:
+        try:
+            return ocr_selection_score(row, max_text_len)
+        except Exception:
+            return -1.0
+
+    return sorted(candidates, key=score, reverse=True)[0]
 
 
 def _layout_image_rel(report: dict, row: dict) -> str | None:
@@ -1034,28 +1153,116 @@ def _layout_image_rel(report: dict, row: dict) -> str | None:
     return report.get(key)
 
 
+def _job_scoped_path(job_dir: Path, relative_path: object) -> Path | None:
+    if not isinstance(relative_path, (str, Path)) or not str(relative_path).strip():
+        return None
+    try:
+        root = job_dir.resolve()
+        candidate = (root / Path(relative_path)).resolve()
+    except (OSError, RuntimeError, TypeError, ValueError):
+        return None
+    return candidate if candidate == root or root in candidate.parents else None
+
+
 def _layout_boxes_from_row(row: dict) -> list:
     from app.ocr_engines.base import OCRBox
 
+    if not isinstance(row, dict):
+        return []
     raw_boxes = [box for box in (row.get("boxes") or []) if isinstance(box, dict)]
     has_page_numbers = any(box.get("page") is not None for box in raw_boxes)
-    if has_page_numbers:
-        raw_boxes = [box for box in raw_boxes if int(box.get("page") or 1) == 1]
-    return [
-        OCRBox(text=box.get("text", ""), confidence=box.get("confidence"), bbox=box.get("bbox"))
-        for box in raw_boxes
-        if box.get("text") and box.get("bbox")
-    ]
+    output: list[OCRBox] = []
+    for box in raw_boxes:
+        if has_page_numbers:
+            page = box.get("page")
+            try:
+                if page is not None and int(page) != 1:
+                    continue
+            except (TypeError, ValueError, OverflowError):
+                continue
+        text = box.get("text")
+        bbox = box.get("bbox")
+        if not isinstance(text, str) or not text.strip():
+            continue
+        if not isinstance(bbox, (list, tuple)) or len(bbox) != 4:
+            continue
+        try:
+            coords = [float(value) for value in bbox]
+        except (TypeError, ValueError, OverflowError):
+            continue
+        if not all(math.isfinite(value) for value in coords):
+            continue
+        x0, y0, x1, y1 = coords
+        if x0 == x1 or y0 == y1:
+            continue
+        cleaned_bbox = [int(value) if value.is_integer() else value for value in coords]
+        output.append(
+            OCRBox(
+                text=text.strip(),
+                confidence=box.get("confidence"),
+                bbox=cleaned_bbox,
+                polygon=box.get("polygon"),
+            )
+        )
+    return output
+
+
+def _layout_input_fingerprint(row: dict | None) -> str:
+    if not isinstance(row, dict) or not row:
+        return ""
+    raw = row.get("raw") if isinstance(row.get("raw"), dict) else {}
+    first_page_text = raw.get("first_page_text") or row.get("text") or ""
+    first_page_boxes: list[dict] = []
+    for box in (row.get("boxes") or []):
+        if not isinstance(box, dict):
+            continue
+        try:
+            page = int(box.get("page") or 1)
+        except (TypeError, ValueError, OverflowError):
+            continue
+        if page != 1:
+            continue
+        first_page_boxes.append(
+            {
+                "text": box.get("text"),
+                "bbox": box.get("bbox"),
+                "confidence": box.get("confidence"),
+            }
+        )
+    payload = {
+        "engine": row.get("engine"),
+        "variant": row.get("variant"),
+        "first_page_text": first_page_text,
+        "first_page_boxes": first_page_boxes,
+    }
+    encoded = json.dumps(
+        payload,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+        default=str,
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def _annotate_layout_source(layout_result: dict | None, row: dict | None) -> dict | None:
-    if not layout_result or not row:
+    if not isinstance(layout_result, dict) or not isinstance(row, dict):
         return layout_result
     guard = row.get("quality_guard") or {}
+    layout_result["postprocess_version"] = POSTPROCESS_VERSION
+    layout_result["pipeline_fingerprint"] = layout_pipeline_fingerprint()
+    try:
+        source_selection_score = ocr_selection_score(row)
+    except Exception:
+        source_selection_score = 0.0
     layout_result["ocr_source"] = {
         "engine": row.get("engine"),
         "variant": row.get("variant"),
         "page": 1,
+        "input_fingerprint": _layout_input_fingerprint(row),
+        "selection_score": source_selection_score,
+        "cer": row.get("cer"),
+        "wer": row.get("wer"),
         "note": "Token LayoutLMv3 lấy từ OCR/bbox trang 1 của engine được chọn.",
     }
     layout_result["ocr_source_quality"] = {
@@ -1071,16 +1278,31 @@ def _annotate_layout_source(layout_result: dict | None, row: dict | None) -> dic
 
 
 def _layout_postprocess_needs_refresh(report: dict) -> bool:
-    if report.get("input_mode") == "text":
+    if not isinstance(report, dict):
         return False
     layout_result = report.get("layoutlmv3_postprocess")
-    if not layout_result:
+    if not isinstance(layout_result, dict) or not layout_result:
+        return True
+    if not isinstance(layout_result.get("fields"), dict):
+        return True
+    if layout_result.get("postprocess_version") != POSTPROCESS_VERSION:
+        return True
+    if layout_result.get("pipeline_fingerprint") != layout_pipeline_fingerprint():
         return True
     best = _select_postprocess_row(report)
     if not best:
         return False
-    source = layout_result.get("ocr_source") or {}
+    if report.get("input_mode") == "text":
+        expected = hashlib.sha256(
+            str(best.get("text") or "").encode("utf-8", errors="replace")
+        ).hexdigest()
+        return layout_result.get("input_fingerprint") != expected
+    source = layout_result.get("ocr_source")
+    if not isinstance(source, dict):
+        return True
     if source.get("engine") != best.get("engine") or source.get("variant") != best.get("variant"):
+        return True
+    if source.get("input_fingerprint") != _layout_input_fingerprint(best):
         return True
     if layout_result.get("model_ran") and layout_result.get("labels_preview") and not layout_result.get("labels_preview_rows"):
         return True
@@ -1088,7 +1310,7 @@ def _layout_postprocess_needs_refresh(report: dict) -> bool:
 
 
 def _merge_postprocess_fields_from_rows(layout_result: dict | None, rows: list[dict]) -> dict | None:
-    return stabilize_layout_fields_from_rows(layout_result, rows)
+    return finalize_layout_result(stabilize_layout_fields_from_rows(layout_result, rows))
 
     if not layout_result or not isinstance(layout_result.get("fields"), dict):
         return layout_result
@@ -1239,41 +1461,121 @@ def _merge_postprocess_fields_from_rows(layout_result: dict | None, rows: list[d
     return layout_result
 
 
-def _fill_fields_from_upload_name(layout_result: dict | None, uploaded_file: str | None) -> dict | None:
+def _fill_fields_from_upload_name(
+    layout_result: dict | None,
+    uploaded_file: str | None,
+    rows: list[dict] | None = None,
+) -> dict | None:
     if not layout_result or not isinstance(layout_result.get("fields"), dict) or not uploaded_file:
-        return layout_result
+        return finalize_layout_result(layout_result)
     fields = layout_result["fields"]
-    if fields.get("so_ky_hieu"):
-        return layout_result
     stem = Path(uploaded_file).stem
     match = re.search(r"\b(\d{1,5})[-_/](\d{4})[-_/]([A-Za-zĐđ]+(?:[-_][A-Za-zĐđ0-9]+)+)\b", stem)
     if match:
         suffix = match.group(3).replace("_", "-").upper()
-        fields["so_ky_hieu"] = f"{match.group(1)}/{match.group(2)}/{suffix}"
-    return layout_result
+        filename_number = f"{match.group(1)}/{match.group(2)}/{suffix}"
+        existing = str(fields.get("so_ky_hieu") or "")
+        corroborating_engines: set[str] = set()
+        for row in rows or []:
+            if not isinstance(row, dict) or row.get("engine") == "glm_ocr" or row.get("status") != "ok":
+                continue
+            raw = row.get("raw") if isinstance(row.get("raw"), dict) else {}
+            source_text = raw.get("first_page_text") or row.get("text") or ""
+            try:
+                value = extract_fields_rule_based(str(source_text)).so_ky_hieu
+            except Exception:
+                continue
+            if re.sub(r"\s+", "", value).upper() == filename_number:
+                corroborating_engines.add(str(row.get("engine") or "unknown"))
+        year_misread_as_number = bool(re.fullmatch(r"(?:19|20|21)\d{2}/[A-ZĐ].*", existing.upper()))
+        stem_key = unicodedata.normalize("NFD", stem)
+        stem_key = "".join(ch for ch in stem_key if unicodedata.category(ch) != "Mn").lower()
+        stem_key = stem_key.replace("đ", "d")
+        strong_legal_filename = any(
+            marker in stem_key
+            for marker in (
+                "thong tu",
+                "nghi dinh",
+                "quyet dinh",
+                "nghi quyet",
+                "chi thi",
+                "cong van",
+            )
+        )
+        if not existing or year_misread_as_number or corroborating_engines or strong_legal_filename:
+            fields["so_ky_hieu"] = filename_number
+            stabilization = layout_result.setdefault("stabilization", {})
+            if isinstance(stabilization, dict):
+                field_sources = stabilization.setdefault("field_sources", {})
+                if isinstance(field_sources, dict):
+                    field_sources["so_ky_hieu"] = {
+                        "source": "upload_filename_corroborated",
+                        "corroborating_engines": sorted(corroborating_engines),
+                    }
+    return finalize_layout_result(layout_result)
 
 
 def _refresh_layout_postprocess(job_dir: Path, report: dict) -> bool:
-    if report.get("input_mode") == "text":
-        return False
     best = _select_postprocess_row(report)
     if not best:
         return False
+    previous_layout = copy.deepcopy(report.get("layoutlmv3_postprocess"))
+
+    if report.get("input_mode") == "text":
+        uploaded_text = report.get("uploaded_text") if isinstance(report.get("uploaded_text"), dict) else {}
+        text = best.get("text") if isinstance(best.get("text"), str) else ""
+        layout_result = _text_input_postprocess(
+            text,
+            str(uploaded_text.get("reader") or "text"),
+            uploaded_text.get("warning"),
+        )
+        layout_result = _merge_postprocess_fields_from_rows(layout_result, report.get("results") or [])
+        layout_result = _fill_fields_from_upload_name(
+            layout_result,
+            report.get("uploaded_file"),
+            report.get("results") or [],
+        )
+        changed = layout_result != report.get("layoutlmv3_postprocess")
+        if changed and previous_layout:
+            report.setdefault("layoutlmv3_postprocess_history", []).append(
+                {
+                    "archived_at_unix": time.time(),
+                    "reason": "text_postprocess_refresh",
+                    "postprocess": previous_layout,
+                }
+            )
+        report["layoutlmv3_postprocess"] = layout_result
+        return changed
 
     image_rel = _layout_image_rel(report, best)
     if not image_rel:
         return False
-    image_path = job_dir / Path(image_rel)
+    image_path = _job_scoped_path(job_dir, image_rel)
+    if image_path is None:
+        return False
 
     boxes = _layout_boxes_from_row(best)
-    postprocess_text = ((best.get("raw") or {}).get("first_page_text") or best.get("text", ""))
+    raw = best.get("raw") if isinstance(best.get("raw"), dict) else {}
+    postprocess_text = raw.get("first_page_text") or best.get("text", "")
     layout_result = layoutlmv3_postprocess(image_path, postprocess_text, boxes)
-    layout_result = _merge_postprocess_fields_from_rows(layout_result, report.get("results") or [])
-    layout_result = _fill_fields_from_upload_name(layout_result, report.get("uploaded_file"))
     layout_result = _annotate_layout_source(layout_result, best)
+    layout_result = _merge_postprocess_fields_from_rows(layout_result, report.get("results") or [])
+    layout_result = _fill_fields_from_upload_name(
+        layout_result,
+        report.get("uploaded_file"),
+        report.get("results") or [],
+    )
     changed = layout_result != report.get("layoutlmv3_postprocess")
+    if changed and previous_layout:
+        report.setdefault("layoutlmv3_postprocess_history", []).append(
+            {
+                "archived_at_unix": time.time(),
+                "reason": "layout_postprocess_refresh",
+                "postprocess": previous_layout,
+            }
+        )
     report["layoutlmv3_postprocess"] = layout_result
-    report["best_engine"] = {"engine": best.get("engine"), "variant": best.get("variant")}
+    report["layout_source_engine"] = {"engine": best.get("engine"), "variant": best.get("variant")}
     return changed
 
 
@@ -1291,7 +1593,7 @@ def _refresh_document_archive(job_dir: Path, report: dict) -> bool:
 
 
 def render_result(request: Request, job_id: str, job_dir: Path, report: dict):
-    result_rows = [row for row in (report.get("results") or []) if row.get("engine") != "glm_ocr"]
+    result_rows = [row for row in (report.get("results") or []) if _is_active_demo_result(row)]
     report["results"] = result_rows
     _hydrate_document_archive(report)
     layout_result = report.get("layoutlmv3_postprocess")
@@ -1372,7 +1674,9 @@ def _refresh_report_ground_truth(job_dir: Path, report: dict) -> bool:
         for row in metric_rows
     )
     if has_saved_text and metrics_current:
-        report["comparison_summary"] = build_comparison_summary(report.get("results") or [])
+        report["comparison_summary"] = build_comparison_summary(
+            [row for row in (report.get("results") or []) if _is_active_demo_result(row)]
+        )
         return False
 
     gt_path = job_dir / meta["relative_path"]
@@ -1391,7 +1695,9 @@ def _refresh_report_ground_truth(job_dir: Path, report: dict) -> bool:
         meta["warning"] = _append_warning(meta.get("warning"), extra)
     if metric_stats.get("skipped_mismatch"):
         meta["warning"] = _append_warning(meta.get("warning"), metric_stats.get("warning"))
-    report["comparison_summary"] = build_comparison_summary(report.get("results") or [])
+    report["comparison_summary"] = build_comparison_summary(
+        [row for row in (report.get("results") or []) if _is_active_demo_result(row)]
+    )
     return bool(text)
 
 
@@ -1402,18 +1708,34 @@ def view_report(request: Request, job_id: str):
     report_path = job_dir / "report.json"
     if not report_path.exists() or not report_path.is_file():
         return HTMLResponse("Không tìm thấy report", status_code=404)
-    report = json.loads(report_path.read_text(encoding="utf-8"))
-    changed = _refresh_report_ground_truth(job_dir, report)
-    refresh_layout = (request.query_params.get("refresh_layout") or "").strip().lower() in {"1", "true", "yes"}
-    if refresh_layout or _layout_postprocess_needs_refresh(report):
-        changed = _refresh_layout_postprocess(job_dir, report) or changed
-    if changed:
-        save_json(report_path, report)
-        save_json(job_dir / "comparison_summary.json", report["comparison_summary"])
-        save_results_csv(job_dir / "benchmark_results.csv", report.get("results") or [])
-    archive_changed = _refresh_document_archive(job_dir, report)
-    if archive_changed:
-        save_json(report_path, report)
+    with _report_lock(safe_job_id):
+        try:
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return HTMLResponse("Report đang hỏng hoặc chưa ghi xong", status_code=500)
+        changed = _refresh_report_ground_truth(job_dir, report)
+        refresh_layout = (request.query_params.get("refresh_layout") or "").strip().lower() in {
+            "1",
+            "true",
+            "yes",
+        }
+        if refresh_layout or _layout_postprocess_needs_refresh(report):
+            changed = _refresh_layout_postprocess(job_dir, report) or changed
+        if changed:
+            if not isinstance(report.get("comparison_summary"), dict):
+                report["comparison_summary"] = build_comparison_summary(
+                    [
+                        row
+                        for row in (report.get("results") or [])
+                        if isinstance(row, dict) and _is_active_demo_result(row)
+                    ]
+                )
+            save_json(report_path, report)
+            save_json(job_dir / "comparison_summary.json", report["comparison_summary"])
+            save_results_csv(job_dir / "benchmark_results.csv", report.get("results") or [])
+        archive_changed = _refresh_document_archive(job_dir, report)
+        if archive_changed:
+            save_json(report_path, report)
     return render_result(request, safe_job_id, job_dir, report)
 
 
@@ -1427,24 +1749,61 @@ def run_demo(
     ground_truth: Annotated[str, Form()] = "",
 ):
     selected = engines or ["tesseract"]
+    valid_selected = [key for key in selected if key in ENGINE_REGISTRY]
+    if not valid_selected:
+        return HTMLResponse("Không có OCR engine hợp lệ được chọn.", status_code=400)
+    selected = valid_selected
+
+    safe_name = Path(file.filename or "input.bin").name
+    input_suffix = Path(safe_name).suffix.lower()
+    if input_suffix not in SUPPORTED_INPUT_SUFFIXES:
+        return HTMLResponse("Định dạng file đầu vào không được hỗ trợ.", status_code=400)
+    if file.size is not None and file.size <= 0:
+        return HTMLResponse("File đầu vào đang rỗng.", status_code=400)
+
+    if ground_truth_file and ground_truth_file.filename:
+        truth_suffix = Path(ground_truth_file.filename).suffix.lower()
+        if truth_suffix not in GROUND_TRUTH_SUFFIXES:
+            return HTMLResponse("Định dạng file text chuẩn không được hỗ trợ.", status_code=400)
+        if ground_truth_file.size is not None and ground_truth_file.size <= 0:
+            return HTMLResponse("File text chuẩn đang rỗng.", status_code=400)
 
     job_id, job_dir = new_job_dir()
 
     upload_dir = job_dir / "upload"
     upload_dir.mkdir(exist_ok=True)
-    safe_name = Path(file.filename or "input.bin").name
     uploaded_path = upload_dir / safe_name
     with uploaded_path.open("wb") as f:
         shutil.copyfileobj(file.file, f)
 
     # Ưu tiên file ground truth upload. Ô nhập text chỉ là fallback nếu cần dán nhanh.
-    uploaded_ground_truth, ground_truth_meta = read_ground_truth_upload(ground_truth_file, job_dir)
+    try:
+        uploaded_ground_truth, ground_truth_meta = read_ground_truth_upload(ground_truth_file, job_dir)
+    except Exception as exc:
+        save_json(
+            job_dir / "input_error.json",
+            {"job_id": job_id, "filename": safe_name, "error": str(exc)},
+        )
+        return HTMLResponse("Không đọc được file text chuẩn; file có thể bị hỏng.", status_code=400)
     if uploaded_ground_truth:
         ground_truth = uploaded_ground_truth
 
     if _is_text_input_file(uploaded_path):
         start = time.perf_counter()
-        text, source_warning, reader = _read_ground_truth_file(uploaded_path)
+        try:
+            text, source_warning, reader = _read_ground_truth_file(uploaded_path)
+        except Exception as exc:
+            save_json(
+                job_dir / "input_error.json",
+                {"job_id": job_id, "filename": safe_name, "error": str(exc)},
+            )
+            return HTMLResponse("Không đọc được file văn bản; file có thể bị hỏng.", status_code=400)
+        if not text.strip():
+            save_json(
+                job_dir / "input_error.json",
+                {"job_id": job_id, "filename": safe_name, "error": source_warning or "empty text"},
+            )
+            return HTMLResponse("File văn bản không có nội dung đọc được.", status_code=400)
         result_rows = [_text_input_result_row(text, time.perf_counter() - start, source_warning)]
         ground_truth_metric_stats = _apply_ground_truth_metrics(result_rows, ground_truth)
         if ground_truth_meta and ground_truth_metric_stats.get("skipped_mismatch"):
@@ -1455,7 +1814,11 @@ def run_demo(
 
         layout_result = _text_input_postprocess(text, reader, source_warning)
         layout_result = _merge_postprocess_fields_from_rows(layout_result, result_rows)
-        layout_result = _fill_fields_from_upload_name(layout_result, str(uploaded_path.relative_to(job_dir)))
+        layout_result = _fill_fields_from_upload_name(
+            layout_result,
+            str(uploaded_path.relative_to(job_dir)),
+            result_rows,
+        )
         comparison_summary = build_comparison_summary(result_rows)
         report = {
             "job_id": job_id,
@@ -1494,7 +1857,14 @@ def run_demo(
         return RedirectResponse(url=f"/reports/{job_id}", status_code=303)
 
     image_dir = job_dir / "images"
-    raw_images = ensure_images(uploaded_path, image_dir)
+    try:
+        raw_images = ensure_images(uploaded_path, image_dir)
+    except Exception as exc:
+        save_json(
+            job_dir / "input_error.json",
+            {"job_id": job_id, "filename": safe_name, "error": str(exc)},
+        )
+        return HTMLResponse("Không đọc được PDF/ảnh đầu vào; file có thể bị hỏng.", status_code=400)
     opencv_workers = min(max(1, OCR_OPENCV_WORKERS), max(1, len(raw_images)))
     if opencv_workers > 1:
         with ThreadPoolExecutor(max_workers=opencv_workers, thread_name_prefix="opencv") as executor:
@@ -1545,15 +1915,21 @@ def run_demo(
     best = sorted(ok_rows, key=lambda r: ocr_selection_score(r, max_text_len), reverse=True)[0] if ok_rows else None
 
     layout_result = None
-    if best:
+    layout_best = _select_postprocess_row({"results": result_rows})
+    if layout_best:
         # LayoutLMv3 cần bbox, nên dùng image biến thể tương ứng.
-        best_img = pre_img if best.get("variant") == "opencv_preprocessed" else raw_image
-        boxes = _layout_boxes_from_row(best)
-        postprocess_text = ((best.get("raw") or {}).get("first_page_text") or best.get("text", ""))
+        best_img = pre_img if layout_best.get("variant") == "opencv_preprocessed" else raw_image
+        boxes = _layout_boxes_from_row(layout_best)
+        layout_raw = layout_best.get("raw") if isinstance(layout_best.get("raw"), dict) else {}
+        postprocess_text = layout_raw.get("first_page_text") or layout_best.get("text", "")
         layout_result = layoutlmv3_postprocess(best_img, postprocess_text, boxes)
+        layout_result = _annotate_layout_source(layout_result, layout_best)
         layout_result = _merge_postprocess_fields_from_rows(layout_result, result_rows)
-        layout_result = _fill_fields_from_upload_name(layout_result, str(uploaded_path.relative_to(job_dir)))
-        layout_result = _annotate_layout_source(layout_result, best)
+        layout_result = _fill_fields_from_upload_name(
+            layout_result,
+            str(uploaded_path.relative_to(job_dir)),
+            result_rows,
+        )
 
     comparison_summary = build_comparison_summary(result_rows)
 

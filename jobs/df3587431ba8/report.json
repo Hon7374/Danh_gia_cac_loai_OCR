@@ -1,0 +1,417 @@
+{
+  "job_id": "df3587431ba8",
+  "uploaded_file": "upload\\sample.png",
+  "page_count": 1,
+  "raw_images": [
+    "images\\sample_page1.png"
+  ],
+  "preprocessed_images": [
+    "images\\sample_page1_opencv_preprocessed.png"
+  ],
+  "raw_image": "images\\sample_page1.png",
+  "preprocessed_image": "images\\sample_page1_opencv_preprocessed.png",
+  "opencv_steps": [
+    "adaptive_safe_preprocess",
+    "grayscale",
+    "denoise_fastNlMeans",
+    "deskew_minAreaRect",
+    "CLAHE_contrast",
+    "adaptive_threshold_safe",
+    "morph_close"
+  ],
+  "opencv_steps_by_page": [
+    {
+      "page": 1,
+      "steps": [
+        "grayscale",
+        "denoise_fastNlMeans",
+        "deskew_minAreaRect",
+        "CLAHE_contrast",
+        "adaptive_threshold_safe",
+        "morph_close"
+      ]
+    }
+  ],
+  "runtime": {
+    "opencv_workers": 4,
+    "tesseract_workers": 4,
+    "gpu_workers": 1
+  },
+  "ground_truth_file": null,
+  "ground_truth_text_length": 0,
+  "results": [
+    {
+      "engine": "fake_no_boxes",
+      "variant": "opencv_preprocessed",
+      "status": "ok",
+      "text": "Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ.",
+      "boxes": [],
+      "elapsed_sec": 3.999995533376932e-05,
+      "error": "",
+      "quality_guard": {
+        "token_count": 700,
+        "letter_count": 2000,
+        "marked_letter_ratio": 0.4,
+        "marked_token_ratio": 0.8571,
+        "admin_keyword_hits": 0,
+        "admin_keyword_ratio": 0.0,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "raw": {
+        "page_count": 1,
+        "ok_pages": 1,
+        "error_pages": 0,
+        "skipped_pages": 0,
+        "first_page_text": "Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. Nội dung rất dài và đầy đủ. ",
+        "page_elapsed_total": 0.01,
+        "wall_elapsed_sec": 3.999995533376932e-05,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "ok",
+            "elapsed_sec": 0.01,
+            "text_len": 2800,
+            "boxes": 0,
+            "error": "",
+            "note": null,
+            "refine": null,
+            "paddle_device": null,
+            "vietocr_device": null,
+            "vietocr_model": null
+          }
+        ]
+      },
+      "ground_truth_metric_version": 2,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    },
+    {
+      "engine": "fake_boxes",
+      "variant": "opencv_preprocessed",
+      "status": "ok",
+      "text": "CÔNG VĂN Số 1/2026/TEST",
+      "boxes": [
+        {
+          "text": "CÔNG VĂN",
+          "confidence": 0.9,
+          "bbox": [
+            10,
+            10,
+            100,
+            40
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        }
+      ],
+      "elapsed_sec": 3.250001464039087e-05,
+      "error": "",
+      "quality_guard": {
+        "token_count": 4,
+        "letter_count": 13,
+        "marked_letter_ratio": 0.2308,
+        "marked_token_ratio": 0.75,
+        "admin_keyword_hits": 2,
+        "admin_keyword_ratio": 0.5,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 96.15,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "raw": {
+        "page_count": 1,
+        "ok_pages": 1,
+        "error_pages": 0,
+        "skipped_pages": 0,
+        "first_page_text": "CÔNG VĂN Số 1/2026/TEST",
+        "page_elapsed_total": 0.01,
+        "wall_elapsed_sec": 3.250001464039087e-05,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "ok",
+            "elapsed_sec": 0.01,
+            "text_len": 23,
+            "boxes": 1,
+            "error": "",
+            "note": null,
+            "refine": null,
+            "paddle_device": null,
+            "vietocr_device": null,
+            "vietocr_model": null
+          }
+        ]
+      },
+      "ground_truth_metric_version": 2,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    }
+  ],
+  "comparison_summary": {
+    "total_runs": 2,
+    "ok_runs": 2,
+    "error_runs": 0,
+    "skipped_runs": 0,
+    "issue_runs": 0,
+    "has_ground_truth": false,
+    "best_cer": null,
+    "best_wer": null,
+    "fastest": {
+      "engine": "fake_no_boxes",
+      "variant": "opencv_preprocessed",
+      "label": "fake_no_boxes / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.0,
+      "text_len": 2799,
+      "avg_confidence": null,
+      "quality_score": 100.0,
+      "quality_source": "relative text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 700,
+        "letter_count": 2000,
+        "marked_letter_ratio": 0.4,
+        "marked_token_ratio": 0.8571,
+        "admin_keyword_hits": 0,
+        "admin_keyword_ratio": 0.0,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 100.0,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 0,
+      "text_bar": 100.0,
+      "quality_bar": 100,
+      "confidence_bar": 0
+    },
+    "best_quality": {
+      "engine": "fake_no_boxes",
+      "variant": "opencv_preprocessed",
+      "label": "fake_no_boxes / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.0,
+      "text_len": 2799,
+      "avg_confidence": null,
+      "quality_score": 100.0,
+      "quality_source": "relative text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 700,
+        "letter_count": 2000,
+        "marked_letter_ratio": 0.4,
+        "marked_token_ratio": 0.8571,
+        "admin_keyword_hits": 0,
+        "admin_keyword_ratio": 0.0,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 100.0,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 0,
+      "text_bar": 100.0,
+      "quality_bar": 100,
+      "confidence_bar": 0
+    },
+    "best_confidence": {
+      "engine": "fake_boxes",
+      "variant": "opencv_preprocessed",
+      "label": "fake_boxes / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.0,
+      "text_len": 23,
+      "avg_confidence": 90.0,
+      "quality_score": 74.32,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 4,
+        "letter_count": 13,
+        "marked_letter_ratio": 0.2308,
+        "marked_token_ratio": 0.75,
+        "admin_keyword_hits": 2,
+        "admin_keyword_ratio": 0.5,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 96.15,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 94.153,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 0,
+      "text_bar": 0.82,
+      "quality_bar": 74.32,
+      "confidence_bar": 90.0
+    },
+    "rows": [
+      {
+        "engine": "fake_no_boxes",
+        "variant": "opencv_preprocessed",
+        "label": "fake_no_boxes / opencv_preprocessed",
+        "status": "ok",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.0,
+        "text_len": 2799,
+        "avg_confidence": null,
+        "quality_score": 100.0,
+        "quality_source": "relative text length + Vietnamese guard",
+        "quality_guard": {
+          "token_count": 700,
+          "letter_count": 2000,
+          "marked_letter_ratio": 0.4,
+          "marked_token_ratio": 0.8571,
+          "admin_keyword_hits": 0,
+          "admin_keyword_ratio": 0.0,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 100.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 100.0,
+        "ground_truth_metric_warning": null,
+        "error": "",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 0,
+        "text_bar": 100.0,
+        "quality_bar": 100,
+        "confidence_bar": 0
+      },
+      {
+        "engine": "fake_boxes",
+        "variant": "opencv_preprocessed",
+        "label": "fake_boxes / opencv_preprocessed",
+        "status": "ok",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.0,
+        "text_len": 23,
+        "avg_confidence": 90.0,
+        "quality_score": 74.32,
+        "quality_source": "confidence + text length + Vietnamese guard",
+        "quality_guard": {
+          "token_count": 4,
+          "letter_count": 13,
+          "marked_letter_ratio": 0.2308,
+          "marked_token_ratio": 0.75,
+          "admin_keyword_hits": 2,
+          "admin_keyword_ratio": 0.5,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 96.15,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 94.153,
+        "ground_truth_metric_warning": null,
+        "error": "",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 0,
+        "text_bar": 0.82,
+        "quality_bar": 74.32,
+        "confidence_bar": 90.0
+      }
+    ],
+    "preprocessing_effect": [],
+    "engine_status": [
+      {
+        "engine": "fake_no_boxes",
+        "ok": 1,
+        "skipped": 0,
+        "error": 0,
+        "total": 1
+      },
+      {
+        "engine": "fake_boxes",
+        "ok": 1,
+        "skipped": 0,
+        "error": 0,
+        "total": 1
+      }
+    ]
+  },
+  "layoutlmv3_postprocess": {
+    "mode": "test",
+    "extractor": "test",
+    "model_ran": true,
+    "fields": {
+      "co_quan_ban_hanh": "CÔNG VĂN SỐ 1/2026/TEST",
+      "loai_van_ban": "CÔNG VĂN",
+      "ngay_ban_hanh": "",
+      "noi_gui": "",
+      "noi_nhan": "",
+      "so_ky_hieu": "1/2026/TEST",
+      "trich_yeu": "",
+      "confidence_note": "layoutlmv3+best_ocr_rule"
+    },
+    "captured_boxes": 1,
+    "fields_source": "layoutlmv3+best_ocr_rule",
+    "ocr_source": {
+      "engine": "fake_boxes",
+      "variant": "opencv_preprocessed",
+      "page": 1,
+      "note": "Token LayoutLMv3 lấy từ OCR/bbox trang 1 của engine được chọn."
+    },
+    "ocr_source_quality": {
+      "diacritic_loss": false,
+      "severe_diacritic_loss": false,
+      "vietnamese_quality_score": 96.15
+    },
+    "labels_preview_note": "Token preview lấy từ fake_boxes / opencv_preprocessed trang 1. Nếu OCR nguồn rụng chữ thì token LayoutLMv3 cũng rụng theo; field cuối vẫn được hậu kiểm bằng best-OCR/rule."
+  },
+  "best_engine": {
+    "engine": "fake_no_boxes",
+    "variant": "opencv_preprocessed"
+  },
+  "document_archive": {}
+}

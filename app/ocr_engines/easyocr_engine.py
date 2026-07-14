@@ -3,11 +3,11 @@ from __future__ import annotations
 import json
 import subprocess
 import sys
-import tempfile
 import time
 from pathlib import Path
 
 from app.config import ROOT_DIR
+from app.services.tempdirs import workspace_temporary_directory
 from .base import BaseOCREngine, OCRBox, OCRResult
 
 
@@ -17,7 +17,7 @@ class EasyOCREngine(BaseOCREngine):
     def run(self, image_path: Path, variant: str = "preprocessed") -> OCRResult:
         start = time.perf_counter()
         try:
-            with tempfile.TemporaryDirectory(prefix="easyocr_worker_") as tmp:
+            with workspace_temporary_directory(prefix="easyocr_worker_") as tmp:
                 out_json = Path(tmp) / "result.json"
                 completed = subprocess.run(
                     [

@@ -23,6 +23,7 @@ models/vietocr-congvan/valid_congvan/
 
 # Generated/local scratch cache
 cache/
+tmp_preprocess_test/archive_sync_test_*/
 
 # OS/editor noise
 .DS_Store

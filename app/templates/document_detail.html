@@ -54,6 +54,9 @@
         <a href="{{archive.workflow_manifest_url}}" target="_blank">workflow_manifest.json</a>
         <a href="{{archive.extracted_fields_url}}" target="_blank">extracted_fields.json</a>
         <a href="{{archive.index_url}}" target="_blank">index.jsonl</a>
+        {% if archive.exports.benchmark_csv %}<a href="{{archive.exports.benchmark_csv.url}}" target="_blank">benchmark_results.csv</a>{% endif %}
+        {% if archive.exports.comparison_summary %}<a href="{{archive.exports.comparison_summary.url}}" target="_blank">comparison_summary.json</a>{% endif %}
+        {% if archive.exports.report_snapshot %}<a href="{{archive.exports.report_snapshot.url}}" target="_blank">report_snapshot.json</a>{% endif %}
       </div>
     </aside>
 

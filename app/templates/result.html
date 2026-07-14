@@ -160,6 +160,14 @@
       </div>
       <span class="legend"><i class="legend-bad"></i>Càng thấp càng tốt</span>
     </div>
+    {% if summary.metric_anomalies %}
+    <p class="empty-note"><b>Cảnh báo output bất thường:</b>
+      {% for row in summary.metric_anomalies %}
+      <code>{{row.label}}</code>{% if not loop.last %}, {% endif %}
+      {% endfor %}
+      sinh dư hoặc lặp nhiều nội dung. CER/WER được giữ theo giá trị thật và có thể vượt 100% khi số lỗi chèn lớn hơn độ dài text chuẩn.
+    </p>
+    {% endif %}
     {% if summary.has_ground_truth %}
     <div class="chart-grid two">
       <div class="chart-panel">
@@ -416,6 +424,12 @@
       <p><b>Field label schema:</b> {{ "compatible" if layout_result.field_label_compatible else "not compatible" }}</p>
       {% endif %}
       <p class="muted">{{layout_result.note}}</p>
+      {% if layout_result.review_required %}
+      <p class="empty-note">
+        <b>Cần kiểm tra thủ công:</b> hệ thống đã để trống/không tin cậy một số trường thay vì đoán sai
+        ({{layout_result.review_reasons|join(', ')}}).
+      </p>
+      {% endif %}
       {% set field_labels = {
         "so_ky_hieu": "Số ký hiệu",
         "ngay_ban_hanh": "Ngày ban hành",
@@ -446,6 +460,13 @@
         {% endif %}
         {% if layout_result.labels_preview_note %}
         <p class="muted">{{layout_result.labels_preview_note}}</p>
+        {% endif %}
+        {% if layout_result.prediction_diagnostics %}
+        <p class="muted">
+          Phủ token: {{layout_result.prediction_diagnostics.covered_word_count or layout_result.prediction_diagnostics.selected_word_count or 0}}
+          / {{layout_result.layout_input_diagnostics.accepted_word_count or 0}} word,
+          {{layout_result.prediction_diagnostics.inference_window_count or 1}} cửa sổ.
+        </p>
         {% endif %}
         {% if layout_result.labels_preview_rows %}
         <div class="table-wrap compact-table-wrap">

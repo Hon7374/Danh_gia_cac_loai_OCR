@@ -1,0 +1,1742 @@
+{
+  "job_id": "84ddbe1ff7ea",
+  "uploaded_file": "upload\\two_pages.tiff",
+  "page_count": 2,
+  "raw_images": [
+    "images\\two_pages_page1.png",
+    "images\\two_pages_page2.png"
+  ],
+  "preprocessed_images": [
+    "images\\two_pages_page1_opencv_preprocessed.png",
+    "images\\two_pages_page2_opencv_preprocessed.png"
+  ],
+  "raw_image": "images\\two_pages_page1.png",
+  "preprocessed_image": "images\\two_pages_page1_opencv_preprocessed.png",
+  "opencv_steps": [
+    "adaptive_safe_preprocess",
+    "grayscale",
+    "denoise_fastNlMeans",
+    "deskew_minAreaRect",
+    "CLAHE_contrast",
+    "adaptive_threshold_safe",
+    "morph_close"
+  ],
+  "opencv_steps_by_page": [
+    {
+      "page": 1,
+      "steps": [
+        "grayscale",
+        "denoise_fastNlMeans",
+        "deskew_minAreaRect",
+        "CLAHE_contrast",
+        "adaptive_threshold_safe",
+        "morph_close"
+      ]
+    },
+    {
+      "page": 2,
+      "steps": [
+        "grayscale",
+        "denoise_fastNlMeans",
+        "deskew_minAreaRect",
+        "CLAHE_contrast",
+        "adaptive_threshold_safe",
+        "morph_close"
+      ]
+    }
+  ],
+  "runtime": {
+    "opencv_workers": 4,
+    "tesseract_workers": 4,
+    "gpu_workers": 1
+  },
+  "ground_truth_file": null,
+  "ground_truth_text_length": 0,
+  "results": [
+    {
+      "engine": "tesseract",
+      "variant": "raw",
+      "status": "ok",
+      "text": "CONG VAN SO 123 TRANG MOT Ngay 11 thang 7 nam 2026 - page 1\n\nNOI NHAN: PHONG HANH CHINH TRANG HAI Ngay 11 thang 7 nam 2026 - page 2",
+      "boxes": [
+        {
+          "text": "CONG",
+          "confidence": 92.0,
+          "bbox": [
+            72,
+            127,
+            176,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "VAN",
+          "confidence": 93.0,
+          "bbox": [
+            188,
+            127,
+            259,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "SO",
+          "confidence": 92.0,
+          "bbox": [
+            274,
+            127,
+            322,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "123",
+          "confidence": 96.0,
+          "bbox": [
+            338,
+            127,
+            392,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "TRANG",
+          "confidence": 93.0,
+          "bbox": [
+            405,
+            127,
+            528,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "MOT",
+          "confidence": 91.0,
+          "bbox": [
+            543,
+            127,
+            619,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Ngay",
+          "confidence": 96.0,
+          "bbox": [
+            73,
+            217,
+            154,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "11",
+          "confidence": 96.0,
+          "bbox": [
+            168,
+            217,
+            197,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "thang",
+          "confidence": 96.0,
+          "bbox": [
+            215,
+            217,
+            302,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "7",
+          "confidence": 96.0,
+          "bbox": [
+            316,
+            217,
+            332,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nam",
+          "confidence": 96.0,
+          "bbox": [
+            346,
+            224,
+            412,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "2026",
+          "confidence": 93.0,
+          "bbox": [
+            425,
+            217,
+            502,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 93.0,
+          "bbox": [
+            515,
+            232,
+            525,
+            235
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "page",
+          "confidence": 96.0,
+          "bbox": [
+            538,
+            224,
+            615,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "1",
+          "confidence": 95.0,
+          "bbox": [
+            630,
+            217,
+            639,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "NOI",
+          "confidence": 89.0,
+          "bbox": [
+            73,
+            127,
+            131,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "NHAN:",
+          "confidence": 96.0,
+          "bbox": [
+            147,
+            127,
+            253,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "PHONG",
+          "confidence": 96.0,
+          "bbox": [
+            269,
+            127,
+            396,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "HANH",
+          "confidence": 92.0,
+          "bbox": [
+            411,
+            127,
+            507,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "CHINH",
+          "confidence": 90.0,
+          "bbox": [
+            522,
+            127,
+            631,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "TRANG",
+          "confidence": 96.0,
+          "bbox": [
+            645,
+            127,
+            768,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "HAI",
+          "confidence": 96.0,
+          "bbox": [
+            783,
+            127,
+            837,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Ngay",
+          "confidence": 96.0,
+          "bbox": [
+            73,
+            217,
+            154,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "11",
+          "confidence": 95.0,
+          "bbox": [
+            168,
+            217,
+            197,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "thang",
+          "confidence": 96.0,
+          "bbox": [
+            215,
+            217,
+            302,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "7",
+          "confidence": 96.0,
+          "bbox": [
+            316,
+            217,
+            332,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nam",
+          "confidence": 96.0,
+          "bbox": [
+            346,
+            224,
+            412,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "2026",
+          "confidence": 93.0,
+          "bbox": [
+            425,
+            217,
+            502,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "-",
+          "confidence": 93.0,
+          "bbox": [
+            515,
+            232,
+            525,
+            235
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "page",
+          "confidence": 96.0,
+          "bbox": [
+            538,
+            224,
+            615,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "2",
+          "confidence": 96.0,
+          "bbox": [
+            627,
+            217,
+            644,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        }
+      ],
+      "elapsed_sec": 0.2782389000058174,
+      "error": "",
+      "quality_guard": {
+        "token_count": 20,
+        "letter_count": 78,
+        "marked_letter_ratio": 0.0,
+        "marked_token_ratio": 0.0,
+        "admin_keyword_hits": 10,
+        "admin_keyword_ratio": 0.5,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 0.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "raw": {
+        "page_count": 2,
+        "ok_pages": 2,
+        "error_pages": 0,
+        "skipped_pages": 0,
+        "first_page_text": "CONG VAN SO 123 TRANG MOT Ngay 11 thang 7 nam 2026 - page 1",
+        "page_elapsed_total": 0.5515125000383705,
+        "wall_elapsed_sec": 0.2782389000058174,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "ok",
+            "elapsed_sec": 0.2743870000122115,
+            "text_len": 59,
+            "boxes": 15,
+            "error": "",
+            "note": null,
+            "refine": null,
+            "paddle_device": null,
+            "vietocr_device": null,
+            "vietocr_model": null
+          },
+          {
+            "page": 2,
+            "status": "ok",
+            "elapsed_sec": 0.277125500026159,
+            "text_len": 70,
+            "boxes": 16,
+            "error": "",
+            "note": null,
+            "refine": null,
+            "paddle_device": null,
+            "vietocr_device": null,
+            "vietocr_model": null
+          }
+        ]
+      },
+      "ground_truth_metric_version": 2,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    },
+    {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "status": "ok",
+      "text": "CONG VAN SO 123 TRANG MOT Ngay 11 thang 7 nam 2026 - page 1\n\nNOI NHAN: PHONG HANH CHINH TRANG HAI Ngay 11 thang 7 nam 2026 - page 2",
+      "boxes": [
+        {
+          "text": "CONG",
+          "confidence": 90.0,
+          "bbox": [
+            72,
+            127,
+            176,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "VAN",
+          "confidence": 93.0,
+          "bbox": [
+            188,
+            127,
+            259,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "SO",
+          "confidence": 91.0,
+          "bbox": [
+            273,
+            127,
+            323,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "123",
+          "confidence": 96.0,
+          "bbox": [
+            338,
+            127,
+            393,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "TRANG",
+          "confidence": 92.0,
+          "bbox": [
+            405,
+            127,
+            528,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "MOT",
+          "confidence": 92.0,
+          "bbox": [
+            542,
+            127,
+            620,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "Ngay",
+          "confidence": 96.0,
+          "bbox": [
+            72,
+            217,
+            154,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "11",
+          "confidence": 96.0,
+          "bbox": [
+            168,
+            217,
+            198,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "thang",
+          "confidence": 96.0,
+          "bbox": [
+            214,
+            217,
+            302,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "7",
+          "confidence": 96.0,
+          "bbox": [
+            315,
+            217,
+            333,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "nam",
+          "confidence": 96.0,
+          "bbox": [
+            346,
+            224,
+            412,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "2026",
+          "confidence": 93.0,
+          "bbox": [
+            425,
+            217,
+            503,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 92.0,
+          "bbox": [
+            515,
+            232,
+            525,
+            235
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "page",
+          "confidence": 96.0,
+          "bbox": [
+            538,
+            224,
+            615,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "1",
+          "confidence": 96.0,
+          "bbox": [
+            630,
+            217,
+            640,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "NOI",
+          "confidence": 92.0,
+          "bbox": [
+            72,
+            127,
+            131,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "NHAN:",
+          "confidence": 96.0,
+          "bbox": [
+            146,
+            127,
+            253,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "PHONG",
+          "confidence": 93.0,
+          "bbox": [
+            268,
+            127,
+            396,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "HANH",
+          "confidence": 90.0,
+          "bbox": [
+            411,
+            127,
+            507,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "CHINH",
+          "confidence": 90.0,
+          "bbox": [
+            522,
+            127,
+            631,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "TRANG",
+          "confidence": 94.0,
+          "bbox": [
+            645,
+            127,
+            768,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "HAI",
+          "confidence": 94.0,
+          "bbox": [
+            783,
+            127,
+            837,
+            153
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "Ngay",
+          "confidence": 96.0,
+          "bbox": [
+            72,
+            217,
+            154,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "11",
+          "confidence": 96.0,
+          "bbox": [
+            168,
+            217,
+            198,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "thang",
+          "confidence": 95.0,
+          "bbox": [
+            214,
+            217,
+            302,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "7",
+          "confidence": 95.0,
+          "bbox": [
+            315,
+            217,
+            333,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "nam",
+          "confidence": 96.0,
+          "bbox": [
+            346,
+            224,
+            412,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "2026",
+          "confidence": 93.0,
+          "bbox": [
+            425,
+            217,
+            503,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "-",
+          "confidence": 92.0,
+          "bbox": [
+            515,
+            232,
+            525,
+            235
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "page",
+          "confidence": 96.0,
+          "bbox": [
+            538,
+            224,
+            615,
+            250
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        },
+        {
+          "text": "2",
+          "confidence": 96.0,
+          "bbox": [
+            627,
+            217,
+            644,
+            243
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 2
+        }
+      ],
+      "elapsed_sec": 0.2786767999641597,
+      "error": "",
+      "quality_guard": {
+        "token_count": 20,
+        "letter_count": 78,
+        "marked_letter_ratio": 0.0,
+        "marked_token_ratio": 0.0,
+        "admin_keyword_hits": 10,
+        "admin_keyword_ratio": 0.5,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 0.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "raw": {
+        "page_count": 2,
+        "ok_pages": 2,
+        "error_pages": 0,
+        "skipped_pages": 0,
+        "first_page_text": "CONG VAN SO 123 TRANG MOT Ngay 11 thang 7 nam 2026 - page 1",
+        "page_elapsed_total": 0.5494272001087666,
+        "wall_elapsed_sec": 0.2786767999641597,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "ok",
+            "elapsed_sec": 0.2781307001132518,
+            "text_len": 59,
+            "boxes": 15,
+            "error": "",
+            "note": null,
+            "refine": null,
+            "paddle_device": null,
+            "vietocr_device": null,
+            "vietocr_model": null
+          },
+          {
+            "page": 2,
+            "status": "ok",
+            "elapsed_sec": 0.27129649999551475,
+            "text_len": 70,
+            "boxes": 16,
+            "error": "",
+            "note": null,
+            "refine": null,
+            "paddle_device": null,
+            "vietocr_device": null,
+            "vietocr_model": null
+          }
+        ]
+      },
+      "ground_truth_metric_version": 2,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    }
+  ],
+  "comparison_summary": {
+    "total_runs": 2,
+    "ok_runs": 2,
+    "error_runs": 0,
+    "skipped_runs": 0,
+    "issue_runs": 0,
+    "has_ground_truth": false,
+    "best_cer": null,
+    "best_wer": null,
+    "fastest": {
+      "engine": "tesseract",
+      "variant": "raw",
+      "label": "tesseract / raw",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.278,
+      "text_len": 131,
+      "avg_confidence": 94.39,
+      "quality_score": 62.48,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 20,
+        "letter_count": 78,
+        "marked_letter_ratio": 0.0,
+        "marked_token_ratio": 0.0,
+        "admin_keyword_hits": 10,
+        "admin_keyword_ratio": 0.5,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 0.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 67.474,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 99.64,
+      "text_bar": 100.0,
+      "quality_bar": 62.48,
+      "confidence_bar": 94.39
+    },
+    "best_quality": {
+      "engine": "tesseract",
+      "variant": "raw",
+      "label": "tesseract / raw",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.278,
+      "text_len": 131,
+      "avg_confidence": 94.39,
+      "quality_score": 62.48,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 20,
+        "letter_count": 78,
+        "marked_letter_ratio": 0.0,
+        "marked_token_ratio": 0.0,
+        "admin_keyword_hits": 10,
+        "admin_keyword_ratio": 0.5,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 0.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 67.474,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 99.64,
+      "text_bar": 100.0,
+      "quality_bar": 62.48,
+      "confidence_bar": 94.39
+    },
+    "best_confidence": {
+      "engine": "tesseract",
+      "variant": "raw",
+      "label": "tesseract / raw",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.278,
+      "text_len": 131,
+      "avg_confidence": 94.39,
+      "quality_score": 62.48,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 20,
+        "letter_count": 78,
+        "marked_letter_ratio": 0.0,
+        "marked_token_ratio": 0.0,
+        "admin_keyword_hits": 10,
+        "admin_keyword_ratio": 0.5,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 0.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 67.474,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 99.64,
+      "text_bar": 100.0,
+      "quality_bar": 62.48,
+      "confidence_bar": 94.39
+    },
+    "rows": [
+      {
+        "engine": "tesseract",
+        "variant": "raw",
+        "label": "tesseract / raw",
+        "status": "ok",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.278,
+        "text_len": 131,
+        "avg_confidence": 94.39,
+        "quality_score": 62.48,
+        "quality_source": "confidence + text length + Vietnamese guard",
+        "quality_guard": {
+          "token_count": 20,
+          "letter_count": 78,
+          "marked_letter_ratio": 0.0,
+          "marked_token_ratio": 0.0,
+          "admin_keyword_hits": 10,
+          "admin_keyword_ratio": 0.5,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 0.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 67.474,
+        "ground_truth_metric_warning": null,
+        "error": "",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 99.64,
+        "text_bar": 100.0,
+        "quality_bar": 62.48,
+        "confidence_bar": 94.39
+      },
+      {
+        "engine": "tesseract",
+        "variant": "opencv_preprocessed",
+        "label": "tesseract / opencv_preprocessed",
+        "status": "ok",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.279,
+        "text_len": 131,
+        "avg_confidence": 94.03,
+        "quality_score": 62.31,
+        "quality_source": "confidence + text length + Vietnamese guard",
+        "quality_guard": {
+          "token_count": 20,
+          "letter_count": 78,
+          "marked_letter_ratio": 0.0,
+          "marked_token_ratio": 0.0,
+          "admin_keyword_hits": 10,
+          "admin_keyword_ratio": 0.5,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 0.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 64.315,
+        "ground_truth_metric_warning": null,
+        "error": "",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 100.0,
+        "text_bar": 100.0,
+        "quality_bar": 62.31,
+        "confidence_bar": 94.03
+      }
+    ],
+    "preprocessing_effect": [
+      {
+        "engine": "tesseract",
+        "raw_status": "ok",
+        "pre_status": "ok",
+        "cer_delta": null,
+        "wer_delta": null,
+        "time_delta": 0.001,
+        "text_len_delta": 0,
+        "recommended_variant": "raw",
+        "recommendation_note": "Use raw for this engine; OpenCV is only a fallback."
+      }
+    ],
+    "engine_status": [
+      {
+        "engine": "tesseract",
+        "ok": 2,
+        "skipped": 0,
+        "error": 0,
+        "total": 2
+      }
+    ]
+  },
+  "layoutlmv3_postprocess": {
+    "mode": "layoutlmv3_model",
+    "extractor": "layoutlmv3",
+    "note": "Đã chạy LayoutLMv3 thật bằng transformers từ model D:\\ocr_full_demo_v2_latest\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification. Field từ model được kiểm định theo từng trường rồi mới merge với rule fallback.",
+    "model_configured": true,
+    "model_ran": true,
+    "model_path": "D:\\ocr_full_demo_v2_latest\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification",
+    "processor_path": "D:\\ocr_full_demo_v2_latest\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification",
+    "runtime": "transformers",
+    "model_word_count": 15,
+    "field_label_compatible": true,
+    "compatible_fields": [
+      "co_quan_ban_hanh",
+      "loai_van_ban",
+      "ngay_ban_hanh",
+      "noi_gui",
+      "noi_nhan",
+      "so_ky_hieu",
+      "trich_yeu"
+    ],
+    "expected_fields": [
+      "co_quan_ban_hanh",
+      "loai_van_ban",
+      "ngay_ban_hanh",
+      "noi_gui",
+      "noi_nhan",
+      "so_ky_hieu",
+      "trich_yeu"
+    ],
+    "fields_source": "layoutlmv3+best_ocr_rule",
+    "model_fields": {
+      "trich_yeu": "VAN MOT"
+    },
+    "accepted_model_fields": {},
+    "rejected_model_fields": {
+      "trich_yeu": "VAN MOT"
+    },
+    "fields": {
+      "co_quan_ban_hanh": "CONG VAN SO 123 TRANG MOT NGAY 11 THANG 7 NAM 2026 - PAGE 1",
+      "loai_van_ban": "CÔNG VĂN",
+      "ngay_ban_hanh": "11/07/2026",
+      "noi_gui": "",
+      "noi_nhan": "PHONG HANH CHINH TRANG HAI Ngay 11 thang 7 nam 2026 - page 2",
+      "so_ky_hieu": "",
+      "trich_yeu": "",
+      "confidence_note": "layoutlmv3+best_ocr_rule"
+    },
+    "labels_preview": [
+      [
+        "CONG",
+        "O"
+      ],
+      [
+        "VAN",
+        "B-trich_yeu"
+      ],
+      [
+        "SO",
+        "O"
+      ],
+      [
+        "123",
+        "O"
+      ],
+      [
+        "TRANG",
+        "O"
+      ],
+      [
+        "MOT",
+        "B-trich_yeu"
+      ],
+      [
+        "Ngay",
+        "O"
+      ],
+      [
+        "11",
+        "O"
+      ],
+      [
+        "thang",
+        "O"
+      ],
+      [
+        "7",
+        "O"
+      ],
+      [
+        "nam",
+        "O"
+      ],
+      [
+        "2026",
+        "O"
+      ],
+      [
+        "-",
+        "O"
+      ],
+      [
+        "page",
+        "O"
+      ],
+      [
+        "1",
+        "O"
+      ]
+    ],
+    "labels_preview_rows": [
+      {
+        "token": "CONG",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "VAN",
+        "label": "B-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "SO",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "123",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "TRANG",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "MOT",
+        "label": "B-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Ngay",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "11",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "thang",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "7",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "nam",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "2026",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "-",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "page",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "1",
+        "label": "O",
+        "field": "outside"
+      }
+    ],
+    "torch_device": "cuda",
+    "ocr_source": {
+      "engine": "tesseract",
+      "variant": "raw",
+      "page": 1,
+      "note": "Token LayoutLMv3 lấy từ OCR/bbox trang 1 của engine được chọn."
+    },
+    "ocr_source_quality": {
+      "diacritic_loss": false,
+      "severe_diacritic_loss": false,
+      "vietnamese_quality_score": 0.0
+    },
+    "labels_preview_note": "Token preview lấy từ tesseract / raw trang 1. Nếu OCR nguồn rụng chữ thì token LayoutLMv3 cũng rụng theo; field cuối vẫn được hậu kiểm bằng best-OCR/rule."
+  },
+  "best_engine": {
+    "engine": "tesseract",
+    "variant": "raw"
+  },
+  "document_archive": {
+    "document_id": "84ddbe1ff7ea",
+    "status": "scanned",
+    "storage_root": "documents/2026/07/84ddbe1ff7ea",
+    "manifest_path": "documents/2026/07/84ddbe1ff7ea/manifest.json",
+    "index_path": "documents/index.jsonl",
+    "workflow_manifest_path": "documents/2026/07/84ddbe1ff7ea/06_metadata/workflow_manifest.json",
+    "extracted_fields_path": "documents/2026/07/84ddbe1ff7ea/06_metadata/extracted_fields.json",
+    "ocr_output_count": 2,
+    "successful_ocr_output_count": 2,
+    "issue_ocr_output_count": 0,
+    "created_at": "2026-07-11T19:30:48+07:00",
+    "manifest": {
+      "document_id": "84ddbe1ff7ea",
+      "job_id": "84ddbe1ff7ea",
+      "created_at": "2026-07-11T19:30:48+07:00",
+      "source_filename": "two_pages.tiff",
+      "page_count": 2,
+      "status": "scanned",
+      "storage_root": "documents/2026/07/84ddbe1ff7ea",
+      "original_file": {
+        "path": "documents/2026/07/84ddbe1ff7ea/01_original/two_pages.tiff",
+        "filename": "two_pages.tiff",
+        "size_bytes": 3600288,
+        "sha256": "813a835d4be9a03e84224bda801b3a512892012950871023da798540c54fee75"
+      },
+      "pages": {
+        "raw": [
+          {
+            "path": "documents/2026/07/84ddbe1ff7ea/02_pages/raw/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 16886,
+            "sha256": "7d108e417b4c781bdcc6dae8d455aef45f26916b56de121d89a93ff16796af75",
+            "page": 1
+          },
+          {
+            "path": "documents/2026/07/84ddbe1ff7ea/02_pages/raw/page_002.png",
+            "filename": "page_002.png",
+            "size_bytes": 15137,
+            "sha256": "2c155c4c4b67a6c3976532e308a049c2a007fd65053e049444be2076ae6de548",
+            "page": 2
+          }
+        ],
+        "opencv_preprocessed": [
+          {
+            "path": "documents/2026/07/84ddbe1ff7ea/02_pages/opencv_preprocessed/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 6674,
+            "sha256": "2c6731307ff20aba8ae656288dee86459cc4bf95b8ea836284e0bd5972141105",
+            "page": 1
+          },
+          {
+            "path": "documents/2026/07/84ddbe1ff7ea/02_pages/opencv_preprocessed/page_002.png",
+            "filename": "page_002.png",
+            "size_bytes": 7315,
+            "sha256": "e8ac85124aa6bcac340690b098472c34e1a6ae11e38f3094ed702f68d4eb729d",
+            "page": 2
+          }
+        ]
+      },
+      "ground_truth": null,
+      "extracted_fields_path": "documents/2026/07/84ddbe1ff7ea/06_metadata/extracted_fields.json",
+      "workflow_manifest_path": "documents/2026/07/84ddbe1ff7ea/06_metadata/workflow_manifest.json",
+      "ocr_outputs": [
+        {
+          "engine": "tesseract",
+          "variant": "raw",
+          "status": "ok",
+          "elapsed_sec": 0.2782389000058174,
+          "text_length": 131,
+          "text_path": "documents/2026/07/84ddbe1ff7ea/04_ocr_text/tesseract__raw.txt",
+          "json_path": "documents/2026/07/84ddbe1ff7ea/05_ocr_json/tesseract__raw.json",
+          "word_path": "documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__raw.docx",
+          "word_file": {
+            "path": "documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__raw.docx",
+            "filename": "tesseract__raw.docx",
+            "size_bytes": 1236,
+            "sha256": "7cf26f77134959472acc6a7b398a86ada76089711533e61b823a064fc2af7d90"
+          },
+          "word_kind": "editable_ocr_layout",
+          "word_layout_version": "2026-05-26-structured-v2",
+          "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+          "page_count": 2
+        },
+        {
+          "engine": "tesseract",
+          "variant": "opencv_preprocessed",
+          "status": "ok",
+          "elapsed_sec": 0.2786767999641597,
+          "text_length": 131,
+          "text_path": "documents/2026/07/84ddbe1ff7ea/04_ocr_text/tesseract__opencv_preprocessed.txt",
+          "json_path": "documents/2026/07/84ddbe1ff7ea/05_ocr_json/tesseract__opencv_preprocessed.json",
+          "word_path": "documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "word_file": {
+            "path": "documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__opencv_preprocessed.docx",
+            "filename": "tesseract__opencv_preprocessed.docx",
+            "size_bytes": 1236,
+            "sha256": "7cf26f77134959472acc6a7b398a86ada76089711533e61b823a064fc2af7d90"
+          },
+          "word_kind": "editable_ocr_layout",
+          "word_layout_version": "2026-05-26-structured-v2",
+          "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+          "page_count": 2
+        }
+      ],
+      "successful_ocr_output_count": 2,
+      "issue_ocr_output_count": 0,
+      "exports": {
+        "benchmark_csv": "documents/2026/07/84ddbe1ff7ea/07_exports/benchmark_results.csv",
+        "comparison_summary": "documents/2026/07/84ddbe1ff7ea/07_exports/comparison_summary.json",
+        "report_snapshot": "documents/2026/07/84ddbe1ff7ea/07_exports/report_snapshot.json"
+      }
+    },
+    "source_filename": "two_pages.tiff",
+    "page_count": 2,
+    "storage_root_absolute": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea",
+    "manifest_url": "/storage/documents/2026/07/84ddbe1ff7ea/manifest.json",
+    "index_url": "/storage/documents/index.jsonl",
+    "original_file": {
+      "path": "documents/2026/07/84ddbe1ff7ea/01_original/two_pages.tiff",
+      "filename": "two_pages.tiff",
+      "size_bytes": 3600288,
+      "sha256": "813a835d4be9a03e84224bda801b3a512892012950871023da798540c54fee75",
+      "url": "/storage/documents/2026/07/84ddbe1ff7ea/01_original/two_pages.tiff",
+      "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\01_original\\two_pages.tiff",
+      "size_label": "3.4 MB",
+      "sha256_short": "813a835d4be9"
+    },
+    "ground_truth": null,
+    "pages": {
+      "raw": [
+        {
+          "path": "documents/2026/07/84ddbe1ff7ea/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 16886,
+          "sha256": "7d108e417b4c781bdcc6dae8d455aef45f26916b56de121d89a93ff16796af75",
+          "page": 1,
+          "url": "/storage/documents/2026/07/84ddbe1ff7ea/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\02_pages\\raw\\page_001.png",
+          "size_label": "16.5 KB",
+          "sha256_short": "7d108e417b4c"
+        },
+        {
+          "path": "documents/2026/07/84ddbe1ff7ea/02_pages/raw/page_002.png",
+          "filename": "page_002.png",
+          "size_bytes": 15137,
+          "sha256": "2c155c4c4b67a6c3976532e308a049c2a007fd65053e049444be2076ae6de548",
+          "page": 2,
+          "url": "/storage/documents/2026/07/84ddbe1ff7ea/02_pages/raw/page_002.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\02_pages\\raw\\page_002.png",
+          "size_label": "14.8 KB",
+          "sha256_short": "2c155c4c4b67"
+        }
+      ],
+      "opencv_preprocessed": [
+        {
+          "path": "documents/2026/07/84ddbe1ff7ea/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 6674,
+          "sha256": "2c6731307ff20aba8ae656288dee86459cc4bf95b8ea836284e0bd5972141105",
+          "page": 1,
+          "url": "/storage/documents/2026/07/84ddbe1ff7ea/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "6.5 KB",
+          "sha256_short": "2c6731307ff2"
+        },
+        {
+          "path": "documents/2026/07/84ddbe1ff7ea/02_pages/opencv_preprocessed/page_002.png",
+          "filename": "page_002.png",
+          "size_bytes": 7315,
+          "sha256": "e8ac85124aa6bcac340690b098472c34e1a6ae11e38f3094ed702f68d4eb729d",
+          "page": 2,
+          "url": "/storage/documents/2026/07/84ddbe1ff7ea/02_pages/opencv_preprocessed/page_002.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\02_pages\\opencv_preprocessed\\page_002.png",
+          "size_label": "7.1 KB",
+          "sha256_short": "e8ac85124aa6"
+        }
+      ]
+    },
+    "preview_pages": [
+      {
+        "page": 1,
+        "raw": {
+          "path": "documents/2026/07/84ddbe1ff7ea/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 16886,
+          "sha256": "7d108e417b4c781bdcc6dae8d455aef45f26916b56de121d89a93ff16796af75",
+          "page": 1,
+          "url": "/storage/documents/2026/07/84ddbe1ff7ea/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\02_pages\\raw\\page_001.png",
+          "size_label": "16.5 KB",
+          "sha256_short": "7d108e417b4c"
+        },
+        "opencv": {
+          "path": "documents/2026/07/84ddbe1ff7ea/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 6674,
+          "sha256": "2c6731307ff20aba8ae656288dee86459cc4bf95b8ea836284e0bd5972141105",
+          "page": 1,
+          "url": "/storage/documents/2026/07/84ddbe1ff7ea/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "6.5 KB",
+          "sha256_short": "2c6731307ff2"
+        }
+      },
+      {
+        "page": 2,
+        "raw": {
+          "path": "documents/2026/07/84ddbe1ff7ea/02_pages/raw/page_002.png",
+          "filename": "page_002.png",
+          "size_bytes": 15137,
+          "sha256": "2c155c4c4b67a6c3976532e308a049c2a007fd65053e049444be2076ae6de548",
+          "page": 2,
+          "url": "/storage/documents/2026/07/84ddbe1ff7ea/02_pages/raw/page_002.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\02_pages\\raw\\page_002.png",
+          "size_label": "14.8 KB",
+          "sha256_short": "2c155c4c4b67"
+        },
+        "opencv": {
+          "path": "documents/2026/07/84ddbe1ff7ea/02_pages/opencv_preprocessed/page_002.png",
+          "filename": "page_002.png",
+          "size_bytes": 7315,
+          "sha256": "e8ac85124aa6bcac340690b098472c34e1a6ae11e38f3094ed702f68d4eb729d",
+          "page": 2,
+          "url": "/storage/documents/2026/07/84ddbe1ff7ea/02_pages/opencv_preprocessed/page_002.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\02_pages\\opencv_preprocessed\\page_002.png",
+          "size_label": "7.1 KB",
+          "sha256_short": "e8ac85124aa6"
+        }
+      }
+    ],
+    "ocr_outputs": [
+      {
+        "engine": "tesseract",
+        "variant": "raw",
+        "status": "ok",
+        "elapsed_sec": 0.2782389000058174,
+        "text_length": 131,
+        "text_path": "documents/2026/07/84ddbe1ff7ea/04_ocr_text/tesseract__raw.txt",
+        "json_path": "documents/2026/07/84ddbe1ff7ea/05_ocr_json/tesseract__raw.json",
+        "word_path": "documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__raw.docx",
+        "word_file": {
+          "path": "documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__raw.docx",
+          "filename": "tesseract__raw.docx",
+          "size_bytes": 1236,
+          "sha256": "7cf26f77134959472acc6a7b398a86ada76089711533e61b823a064fc2af7d90",
+          "url": "/storage/documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__raw.docx",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\08_word_outputs\\tesseract__raw.docx",
+          "size_label": "1.2 KB",
+          "sha256_short": "7cf26f771349"
+        },
+        "word_kind": "editable_ocr_layout",
+        "word_layout_version": "2026-05-26-structured-v2",
+        "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+        "page_count": 2,
+        "text_url": "/storage/documents/2026/07/84ddbe1ff7ea/04_ocr_text/tesseract__raw.txt",
+        "text_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\04_ocr_text\\tesseract__raw.txt",
+        "json_url": "/storage/documents/2026/07/84ddbe1ff7ea/05_ocr_json/tesseract__raw.json",
+        "json_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\05_ocr_json\\tesseract__raw.json",
+        "word_url": "/storage/documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__raw.docx",
+        "word_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\08_word_outputs\\tesseract__raw.docx",
+        "word_filename": "tesseract__raw.docx",
+        "word_size_label": "1.2 KB"
+      },
+      {
+        "engine": "tesseract",
+        "variant": "opencv_preprocessed",
+        "status": "ok",
+        "elapsed_sec": 0.2786767999641597,
+        "text_length": 131,
+        "text_path": "documents/2026/07/84ddbe1ff7ea/04_ocr_text/tesseract__opencv_preprocessed.txt",
+        "json_path": "documents/2026/07/84ddbe1ff7ea/05_ocr_json/tesseract__opencv_preprocessed.json",
+        "word_path": "documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__opencv_preprocessed.docx",
+        "word_file": {
+          "path": "documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "filename": "tesseract__opencv_preprocessed.docx",
+          "size_bytes": 1236,
+          "sha256": "7cf26f77134959472acc6a7b398a86ada76089711533e61b823a064fc2af7d90",
+          "url": "/storage/documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\08_word_outputs\\tesseract__opencv_preprocessed.docx",
+          "size_label": "1.2 KB",
+          "sha256_short": "7cf26f771349"
+        },
+        "word_kind": "editable_ocr_layout",
+        "word_layout_version": "2026-05-26-structured-v2",
+        "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+        "page_count": 2,
+        "text_url": "/storage/documents/2026/07/84ddbe1ff7ea/04_ocr_text/tesseract__opencv_preprocessed.txt",
+        "text_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\04_ocr_text\\tesseract__opencv_preprocessed.txt",
+        "json_url": "/storage/documents/2026/07/84ddbe1ff7ea/05_ocr_json/tesseract__opencv_preprocessed.json",
+        "json_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\05_ocr_json\\tesseract__opencv_preprocessed.json",
+        "word_url": "/storage/documents/2026/07/84ddbe1ff7ea/08_word_outputs/tesseract__opencv_preprocessed.docx",
+        "word_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\08_word_outputs\\tesseract__opencv_preprocessed.docx",
+        "word_filename": "tesseract__opencv_preprocessed.docx",
+        "word_size_label": "1.2 KB"
+      }
+    ],
+    "exports": {
+      "benchmark_csv": {
+        "path": "documents/2026/07/84ddbe1ff7ea/07_exports/benchmark_results.csv",
+        "url": "/storage/documents/2026/07/84ddbe1ff7ea/07_exports/benchmark_results.csv",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\07_exports\\benchmark_results.csv"
+      },
+      "comparison_summary": {
+        "path": "documents/2026/07/84ddbe1ff7ea/07_exports/comparison_summary.json",
+        "url": "/storage/documents/2026/07/84ddbe1ff7ea/07_exports/comparison_summary.json",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\07_exports\\comparison_summary.json"
+      },
+      "report_snapshot": {
+        "path": "documents/2026/07/84ddbe1ff7ea/07_exports/report_snapshot.json",
+        "url": "/storage/documents/2026/07/84ddbe1ff7ea/07_exports/report_snapshot.json",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\84ddbe1ff7ea\\07_exports\\report_snapshot.json"
+      }
+    },
+    "workflow_manifest_url": "/storage/documents/2026/07/84ddbe1ff7ea/06_metadata/workflow_manifest.json",
+    "extracted_fields_url": "/storage/documents/2026/07/84ddbe1ff7ea/06_metadata/extracted_fields.json"
+  }
+}

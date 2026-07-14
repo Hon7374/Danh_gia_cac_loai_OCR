@@ -833,6 +833,7 @@ def build_record(
 
 
 def write_jsonl(path: Path, records: list[dict[str, Any]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         "\n".join(json.dumps(record, ensure_ascii=False) for record in records) + ("\n" if records else ""),
         encoding="utf-8",

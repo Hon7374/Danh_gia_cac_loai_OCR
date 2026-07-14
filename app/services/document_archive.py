@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 import shutil
+import uuid
 import zipfile
 from datetime import datetime
 from pathlib import Path
@@ -12,13 +13,24 @@ from xml.sax.saxutils import escape
 
 from PIL import Image
 
-from app.config import STORAGE_DIR
+from app.config import JOBS_DIR, STORAGE_DIR
 
 WORD_LAYOUT_VERSION = "2026-05-26-structured-v2"
 
 
 def _now_iso() -> str:
     return datetime.now().astimezone().isoformat(timespec="seconds")
+
+
+def _processing_status(rows: list[dict[str, Any]]) -> str:
+    statuses = [str(row.get("status") or "error") for row in rows]
+    ok_count = sum(status == "ok" for status in statuses)
+    issue_count = sum(status != "ok" for status in statuses)
+    if ok_count and issue_count:
+        return "partial"
+    if ok_count:
+        return "scanned"
+    return "failed"
 
 
 def _rel(path: Path) -> str:
@@ -603,9 +615,10 @@ def _write_layout_docx(path: Path, page_paths: list[Path], title: str) -> dict[s
     }
 
 
-def _upsert_index(index_path: Path, item: dict[str, Any]) -> None:
+def _upsert_index(index_path: Path, item: dict[str, Any]) -> bool:
     index_path.parent.mkdir(parents=True, exist_ok=True)
     rows: list[dict[str, Any]] = []
+    replaced = False
     if index_path.exists():
         for line in index_path.read_text(encoding="utf-8", errors="ignore").splitlines():
             if not line.strip():
@@ -614,40 +627,328 @@ def _upsert_index(index_path: Path, item: dict[str, Any]) -> None:
                 row = json.loads(line)
             except json.JSONDecodeError:
                 continue
-            if row.get("document_id") != item.get("document_id"):
-                rows.append(row)
-    rows.append(item)
-    index_path.write_text(
-        "\n".join(json.dumps(row, ensure_ascii=False) for row in rows) + "\n",
-        encoding="utf-8",
-    )
+            if row.get("document_id") == item.get("document_id"):
+                if not replaced:
+                    rows.append(item)
+                    replaced = True
+                continue
+            rows.append(row)
+    if not replaced:
+        rows.append(item)
+    content = "\n".join(json.dumps(row, ensure_ascii=False) for row in rows) + "\n"
+    current = index_path.read_text(encoding="utf-8", errors="ignore") if index_path.exists() else ""
+    if current == content:
+        return False
+    index_path.write_text(content, encoding="utf-8")
+    return True
+
+
+def _atomic_write_text(path: Path, content: str) -> None:
+    """Write beside the destination, then atomically replace it."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.{uuid.uuid4().hex}.tmp")
+    try:
+        temporary.write_text(content, encoding="utf-8")
+        temporary.replace(path)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
+
+
+def _atomic_write_json(path: Path, data: Any) -> None:
+    _atomic_write_text(path, json.dumps(data, ensure_ascii=False, indent=2))
+
+
+def _file_record(path: Path) -> dict[str, Any]:
+    return {
+        "path": _rel(path),
+        "filename": path.name,
+        "size_bytes": path.stat().st_size,
+        "sha256": _sha256(path),
+    }
+
+
+def _load_json_dict(path: Path) -> dict[str, Any] | None:
+    if not path.exists() or not path.is_file():
+        return None
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    return value if isinstance(value, dict) else None
+
+
+def _canonical_json(value: Any) -> str:
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+
+def _history_timestamp() -> str:
+    # Microseconds plus a short nonce make concurrent refreshes collision-safe
+    # while keeping history folders naturally sortable by time.
+    now = datetime.now().astimezone()
+    return f"{now:%Y%m%dT%H%M%S.%f%z}_{uuid.uuid4().hex[:8]}"
+
+
+def _snapshot_ocr_output(
+    archive_root: Path,
+    base_name: str,
+    targets: dict[str, Path],
+    previous_output: dict[str, Any],
+    previous_row: dict[str, Any] | None,
+    reason: str,
+) -> dict[str, Any]:
+    """Copy the complete old OCR artifact set before any replacement."""
+    history_id = _history_timestamp()
+    history_root = archive_root / "09_history" / history_id / base_name
+    copied: dict[str, dict[str, Any]] = {}
+    for category, source in targets.items():
+        if not source.exists() or not source.is_file():
+            continue
+        destination = history_root / category / source.name
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+        copied[category] = _file_record(destination)
+
+    history_manifest = {
+        "history_id": history_id,
+        "archived_at": _now_iso(),
+        "event": "ocr_output_replaced",
+        "reason": reason,
+        "engine": previous_output.get("engine"),
+        "variant": previous_output.get("variant"),
+        "previous_output_metadata": previous_output,
+        "previous_row_sha256": (
+            hashlib.sha256(_canonical_json(previous_row).encode("utf-8")).hexdigest()
+            if previous_row is not None
+            else None
+        ),
+        "artifacts": copied,
+    }
+    history_manifest_path = history_root / "history_manifest.json"
+    _atomic_write_json(history_manifest_path, history_manifest)
+    return {
+        "history_id": history_id,
+        "archived_at": history_manifest["archived_at"],
+        "engine": history_manifest["engine"],
+        "variant": history_manifest["variant"],
+        "reason": reason,
+        "history_root": _rel(history_root),
+        "history_manifest_path": _rel(history_manifest_path),
+        "artifacts": copied,
+    }
+
+
+def _replace_ocr_artifacts(
+    targets: dict[str, Path],
+    row: dict[str, Any],
+    title: str,
+) -> dict[str, dict[str, Any]]:
+    """Prepare all three artifacts first and only then replace destinations."""
+    for target in targets.values():
+        target.parent.mkdir(parents=True, exist_ok=True)
+    temporary = {
+        category: target.with_name(f".{target.name}.{uuid.uuid4().hex}.tmp")
+        for category, target in targets.items()
+    }
+    try:
+        temporary["04_ocr_text"].write_text(str(row.get("text") or ""), encoding="utf-8")
+        temporary["05_ocr_json"].write_text(
+            json.dumps(row, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        _write_editable_ocr_docx(
+            temporary["08_word_outputs"],
+            title=title,
+            row=row,
+            body_text=str(row.get("text") or ""),
+        )
+        for category in ("04_ocr_text", "05_ocr_json", "08_word_outputs"):
+            temporary[category].replace(targets[category])
+    finally:
+        for temp_path in temporary.values():
+            if temp_path.exists():
+                temp_path.unlink()
+    return {category: _file_record(target) for category, target in targets.items()}
+
+
+def _sync_archive_ocr_outputs(
+    archive_root: Path,
+    manifest: dict[str, Any],
+    report: dict[str, Any],
+) -> bool:
+    """Refresh OCR artifacts without discarding any previous on-disk version."""
+    report_rows = [row for row in (report.get("results") or []) if isinstance(row, dict)]
+    if not report_rows:
+        return False
+
+    outputs = [output for output in (manifest.get("ocr_outputs") or []) if isinstance(output, dict)]
+    output_by_key: dict[tuple[str, str], dict[str, Any]] = {}
+    for output in outputs:
+        key = (str(output.get("engine") or ""), str(output.get("variant") or ""))
+        output_by_key.setdefault(key, output)
+
+    changed = False
+    history_records = list(manifest.get("ocr_history") or [])
+    seen_rows: set[tuple[str, str]] = set()
+    for row in report_rows:
+        engine_value = str(row.get("engine") or "engine")
+        variant_value = str(row.get("variant") or "variant")
+        key = (engine_value, variant_value)
+        if key in seen_rows:
+            continue
+        seen_rows.add(key)
+
+        engine = _safe_part(engine_value)
+        variant = _safe_part(variant_value)
+        base_name = f"{engine}__{variant}"
+        targets = {
+            "04_ocr_text": archive_root / "04_ocr_text" / f"{base_name}.txt",
+            "05_ocr_json": archive_root / "05_ocr_json" / f"{base_name}.json",
+            "08_word_outputs": archive_root / "08_word_outputs" / f"{base_name}.docx",
+        }
+        output = output_by_key.get(key)
+        previous_output = dict(output or {})
+        previous_row = _load_json_dict(targets["05_ocr_json"])
+        has_previous_artifact = any(path.exists() and path.is_file() for path in targets.values())
+        has_previous_version = output is not None or has_previous_artifact
+        row_changed = previous_row is not None and _canonical_json(previous_row) != _canonical_json(row)
+        unreadable_previous_json = (
+            targets["05_ocr_json"].exists() and previous_row is None
+        )
+        text_value = str(row.get("text") or "")
+        text_matches = False
+        if targets["04_ocr_text"].exists():
+            try:
+                text_matches = targets["04_ocr_text"].read_text(encoding="utf-8") == text_value
+            except OSError:
+                text_matches = False
+        word_record = previous_output.get("word_file") or {}
+        word_hash_matches = (
+            targets["08_word_outputs"].exists()
+            and isinstance(word_record, dict)
+            and word_record.get("sha256") == _sha256(targets["08_word_outputs"])
+        )
+        artifact_drift = (
+            previous_row is None
+            or not text_matches
+            or not word_hash_matches
+            or previous_output.get("word_layout_version") != WORD_LAYOUT_VERSION
+        )
+        needs_refresh = not has_previous_version or row_changed or unreadable_previous_json or artifact_drift
+
+        history_record = None
+        if needs_refresh and has_previous_version:
+            reason = "row_changed" if row_changed else "artifact_repair"
+            history_record = _snapshot_ocr_output(
+                archive_root,
+                base_name,
+                targets,
+                previous_output,
+                previous_row,
+                reason,
+            )
+
+        if needs_refresh:
+            records = _replace_ocr_artifacts(
+                targets,
+                row,
+                title=f"Văn bản OCR editable - {row.get('engine')} / {row.get('variant')}",
+            )
+            changed = True
+        else:
+            records = {category: _file_record(path) for category, path in targets.items()}
+
+        raw = row.get("raw") if isinstance(row.get("raw"), dict) else {}
+        page_count = raw.get("page_count") or row.get("page_count") or report.get("page_count") or 1
+        updated_output = dict(previous_output)
+        updated_output.update(
+            {
+                "engine": row.get("engine"),
+                "variant": row.get("variant"),
+                "status": row.get("status"),
+                "elapsed_sec": row.get("elapsed_sec"),
+                "text_length": len(text_value),
+                "text_path": records["04_ocr_text"]["path"],
+                "text_file": records["04_ocr_text"],
+                "json_path": records["05_ocr_json"]["path"],
+                "json_file": records["05_ocr_json"],
+                "word_path": records["08_word_outputs"]["path"],
+                "word_file": records["08_word_outputs"],
+                "word_kind": "editable_ocr_layout",
+                "word_layout_version": WORD_LAYOUT_VERSION,
+                "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+                "page_count": page_count,
+            }
+        )
+        if history_record:
+            versions = list(updated_output.get("history_versions") or [])
+            versions.append(history_record)
+            updated_output["history_versions"] = versions
+            history_records.append(history_record)
+        if needs_refresh:
+            updated_output["updated_at"] = _now_iso()
+
+        if output is None:
+            outputs.append(updated_output)
+            output_by_key[key] = updated_output
+            changed = True
+        elif output != updated_output:
+            output.clear()
+            output.update(updated_output)
+            changed = True
+
+    if manifest.get("ocr_outputs") != outputs:
+        manifest["ocr_outputs"] = outputs
+        changed = True
+    if history_records != list(manifest.get("ocr_history") or []):
+        manifest["ocr_history"] = history_records
+        changed = True
+
+    successful_count = sum(output.get("status") == "ok" for output in outputs)
+    issue_count = sum(output.get("status") != "ok" for output in outputs)
+    if manifest.get("successful_ocr_output_count") != successful_count:
+        manifest["successful_ocr_output_count"] = successful_count
+        changed = True
+    if manifest.get("issue_ocr_output_count") != issue_count:
+        manifest["issue_ocr_output_count"] = issue_count
+        changed = True
+    current_status = _processing_status(report_rows)
+    if manifest.get("status") != current_status:
+        manifest["status"] = current_status
+        changed = True
+    if changed:
+        manifest["ocr_outputs_updated_at"] = _now_iso()
+    return changed
 
 
 def sync_archive_metadata(manifest_path: Path, report: dict[str, Any]) -> bool:
     """Sync stored dossier metadata from the latest validated OCR report fields."""
     if not manifest_path.exists() or not manifest_path.is_file():
         return False
-    fields = ((report.get("layoutlmv3_postprocess") or {}).get("fields") or {})
-    if not isinstance(fields, dict) or not fields:
-        return False
-
     try:
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return False
 
-    changed = False
+    changed = _sync_archive_ocr_outputs(manifest_path.parent, manifest, report)
+
+    fields = ((report.get("layoutlmv3_postprocess") or {}).get("fields") or {})
+    fields = fields if isinstance(fields, dict) else {}
     extracted_rel = manifest.get("extracted_fields_path")
+    stored_fields: dict[str, Any] = {}
     if extracted_rel:
         extracted_path = STORAGE_DIR / str(extracted_rel)
         try:
-            current_fields = json.loads(extracted_path.read_text(encoding="utf-8")) if extracted_path.exists() else {}
+            loaded_fields = json.loads(extracted_path.read_text(encoding="utf-8")) if extracted_path.exists() else {}
+            stored_fields = loaded_fields if isinstance(loaded_fields, dict) else {}
         except (OSError, json.JSONDecodeError):
-            current_fields = {}
-        if current_fields != fields:
+            stored_fields = {}
+        if fields and stored_fields != fields:
             extracted_path.parent.mkdir(parents=True, exist_ok=True)
             extracted_path.write_text(json.dumps(fields, ensure_ascii=False, indent=2), encoding="utf-8")
+            stored_fields = fields
             changed = True
+    effective_fields = fields or stored_fields
 
     workflow_rel = manifest.get("workflow_manifest_path")
     workflow = {}
@@ -657,19 +958,20 @@ def sync_archive_metadata(manifest_path: Path, report: dict[str, Any]) -> bool:
             workflow = json.loads(workflow_path.read_text(encoding="utf-8")) if workflow_path.exists() else {}
         except (OSError, json.JSONDecodeError):
             workflow = {}
-        updates = {
-            "document_type": fields.get("loai_van_ban") or "",
-            "document_number": fields.get("so_ky_hieu") or "",
-            "issued_date": fields.get("ngay_ban_hanh") or "",
-            "issuing_agency": fields.get("co_quan_ban_hanh") or "",
-            "sender": fields.get("noi_gui") or "",
-            "receiver": fields.get("noi_nhan") or "",
-        }
         before = dict(workflow)
-        workflow.update(updates)
-        audit_events = workflow.setdefault("audit_events", [])
+        if effective_fields:
+            workflow.update(
+                {
+                    "document_type": effective_fields.get("loai_van_ban") or "",
+                    "document_number": effective_fields.get("so_ky_hieu") or "",
+                    "issued_date": effective_fields.get("ngay_ban_hanh") or "",
+                    "issuing_agency": effective_fields.get("co_quan_ban_hanh") or "",
+                    "sender": effective_fields.get("noi_gui") or "",
+                    "receiver": effective_fields.get("noi_nhan") or "",
+                }
+            )
         if workflow != before:
-            audit_events.append(
+            workflow.setdefault("audit_events", []).append(
                 {
                     "at": _now_iso(),
                     "event": "metadata_synced",
@@ -688,17 +990,50 @@ def sync_archive_metadata(manifest_path: Path, report: dict[str, Any]) -> bool:
         "source_filename": manifest.get("source_filename"),
         "page_count": manifest.get("page_count"),
         "status": manifest.get("status"),
-        "document_number": fields.get("so_ky_hieu") or "",
-        "issued_date": fields.get("ngay_ban_hanh") or "",
-        "document_type": fields.get("loai_van_ban") or "",
-        "issuing_agency": fields.get("co_quan_ban_hanh") or "",
-        "subject": fields.get("trich_yeu") or "",
+        "document_number": effective_fields.get("so_ky_hieu") or workflow.get("document_number") or "",
+        "issued_date": effective_fields.get("ngay_ban_hanh") or workflow.get("issued_date") or "",
+        "document_type": effective_fields.get("loai_van_ban") or workflow.get("document_type") or "",
+        "issuing_agency": effective_fields.get("co_quan_ban_hanh") or workflow.get("issuing_agency") or "",
+        "subject": effective_fields.get("trich_yeu") or "",
         "manifest_path": _rel(manifest_path),
         "storage_root": manifest.get("storage_root"),
     }
     if index_item.get("document_id"):
-        _upsert_index(STORAGE_DIR / "documents" / "index.jsonl", index_item)
+        changed = _upsert_index(STORAGE_DIR / "documents" / "index.jsonl", index_item) or changed
+
+    archive_root = manifest_path.parent
+    exports = dict(manifest.get("exports") or {})
+    snapshot_path = archive_root / "07_exports" / "report_snapshot.json"
+    snapshot_content = json.dumps(report, ensure_ascii=False, indent=2)
+    current_snapshot = snapshot_path.read_text(encoding="utf-8", errors="ignore") if snapshot_path.exists() else ""
+    if current_snapshot != snapshot_content:
+        snapshot_path.parent.mkdir(parents=True, exist_ok=True)
+        snapshot_path.write_text(snapshot_content, encoding="utf-8")
         changed = True
+    exports["report_snapshot"] = _rel(snapshot_path)
+
+    job_id = str(manifest.get("job_id") or report.get("job_id") or "")
+    job_dir = JOBS_DIR / job_id if job_id else None
+    for key, filename in (
+        ("benchmark_csv", "benchmark_results.csv"),
+        ("comparison_summary", "comparison_summary.json"),
+    ):
+        source = job_dir / filename if job_dir else None
+        target = archive_root / "07_exports" / filename
+        if source and source.exists() and source.is_file():
+            source_hash = _sha256(source)
+            target_hash = _sha256(target) if target.exists() and target.is_file() else ""
+            if source_hash != target_hash:
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(source, target)
+                changed = True
+            exports[key] = _rel(target)
+
+    if manifest.get("exports") != exports:
+        manifest["exports"] = exports
+        changed = True
+    if changed:
+        _atomic_write_json(manifest_path, manifest)
 
     return changed
 
@@ -788,6 +1123,8 @@ def archive_scan(job_dir: Path, report: dict[str, Any]) -> dict[str, Any]:
     document_id = _safe_part(str(job_id), "document")
     archive_root = STORAGE_DIR / "documents" / f"{created:%Y}" / f"{created:%m}" / document_id
 
+    result_rows = list(report.get("results") or [])
+    processing_status = _processing_status(result_rows)
     fields = ((report.get("layoutlmv3_postprocess") or {}).get("fields") or {})
     source_rel = report.get("uploaded_file") or ""
     source_path = job_dir / source_rel if source_rel else None
@@ -816,7 +1153,7 @@ def archive_scan(job_dir: Path, report: dict[str, Any]) -> dict[str, Any]:
         ground_truth = _copy_file(gt_src, archive_root / "03_ground_truth" / Path(gt_meta["relative_path"]).name)
 
     ocr_outputs = []
-    for row in report.get("results") or []:
+    for row in result_rows:
         engine = _safe_part(str(row.get("engine") or "engine"))
         variant = _safe_part(str(row.get("variant") or "variant"))
         base_name = f"{engine}__{variant}"
@@ -852,7 +1189,7 @@ def archive_scan(job_dir: Path, report: dict[str, Any]) -> dict[str, Any]:
     workflow = {
         "document_id": document_id,
         "job_id": job_id,
-        "status": "scanned",
+        "status": processing_status,
         "direction": "unclassified",
         "document_type": fields.get("loai_van_ban") or "",
         "document_number": fields.get("so_ky_hieu") or "",
@@ -862,7 +1199,11 @@ def archive_scan(job_dir: Path, report: dict[str, Any]) -> dict[str, Any]:
         "receiver": fields.get("noi_nhan") or "",
         "owning_unit": "",
         "current_handler": "",
-        "review_status": "pending_review",
+        "review_status": (
+            "pending_review"
+            if processing_status == "scanned"
+            else ("needs_review" if processing_status == "partial" else "needs_retry")
+        ),
         "retention_policy": "local_demo",
         "audit_events": [
             {
@@ -893,7 +1234,7 @@ def archive_scan(job_dir: Path, report: dict[str, Any]) -> dict[str, Any]:
         "created_at": created_at,
         "source_filename": source_name,
         "page_count": report.get("page_count") or len(raw_pages) or 1,
-        "status": "scanned",
+        "status": processing_status,
         "storage_root": _rel(archive_root),
         "original_file": original,
         "pages": {
@@ -904,6 +1245,8 @@ def archive_scan(job_dir: Path, report: dict[str, Any]) -> dict[str, Any]:
         "extracted_fields_path": fields_path,
         "workflow_manifest_path": workflow_path,
         "ocr_outputs": ocr_outputs,
+        "successful_ocr_output_count": sum(output.get("status") == "ok" for output in ocr_outputs),
+        "issue_ocr_output_count": sum(output.get("status") != "ok" for output in ocr_outputs),
         "exports": exports,
     }
     manifest_path = _write_json(archive_root / "manifest.json", manifest)
@@ -927,12 +1270,14 @@ def archive_scan(job_dir: Path, report: dict[str, Any]) -> dict[str, Any]:
 
     return {
         "document_id": document_id,
-        "status": "scanned",
+        "status": processing_status,
         "storage_root": manifest["storage_root"],
         "manifest_path": manifest_path,
         "index_path": "documents/index.jsonl",
         "workflow_manifest_path": workflow_path,
         "extracted_fields_path": fields_path,
         "ocr_output_count": len(ocr_outputs),
+        "successful_ocr_output_count": manifest["successful_ocr_output_count"],
+        "issue_ocr_output_count": manifest["issue_ocr_output_count"],
         "created_at": created_at,
     }

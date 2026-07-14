@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,6 +13,7 @@ if str(ROOT) not in sys.path:
 from app.config import JOBS_DIR
 from app.main import (
     _apply_ground_truth_metrics,
+    _is_active_demo_result,
     _read_ground_truth_file,
     _refresh_document_archive,
     _refresh_layout_postprocess,
@@ -22,6 +24,11 @@ from app.ocr_engines import ENGINE_REGISTRY
 from app.services.ocr_quality import ocr_selection_score
 from app.services.preprocess import preprocess_image
 from app.services.storage import save_json, save_results_csv
+from scripts.refresh_scanned_jobs_with_finetuned_vietocr import (
+    preserve_result_history,
+    row_metric_snapshot,
+    should_accept_candidate,
+)
 
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -89,8 +96,10 @@ def refresh_job(job_id: str, engines: set[str] | None = None, refresh_layout: bo
         if row.get("variant") == "opencv_preprocessed" and row.get("engine") in ENGINE_REGISTRY
     }
     target_engines = engines or set(available_opencv_engines)
+    truth = _ground_truth_text(job_dir, report)
 
     changed_rows = []
+    attempts = []
     for idx, row in enumerate(list(results)):
         engine_key = row.get("engine")
         if row.get("variant") != "opencv_preprocessed" or engine_key not in target_engines:
@@ -98,34 +107,86 @@ def refresh_job(job_id: str, engines: set[str] | None = None, refresh_layout: bo
         engine_cls = ENGINE_REGISTRY.get(engine_key)
         if not engine_cls:
             continue
-        new_row = _run_engine_on_pages(engine_cls, engine_key, "opencv_preprocessed", preprocessed_images)
+        try:
+            evaluated_old = dict(row)
+            if truth:
+                _apply_ground_truth_metrics([evaluated_old], truth)
+            new_row = _run_engine_on_pages(engine_cls, engine_key, "opencv_preprocessed", preprocessed_images)
+            if truth:
+                _apply_ground_truth_metrics([new_row], truth)
+            accepted, decision = should_accept_candidate(evaluated_old, new_row, bool(truth))
+        except Exception as exc:
+            attempts.append(
+                {
+                    "engine": engine_key,
+                    "variant": "opencv_preprocessed",
+                    "accepted": False,
+                    "decision": f"Candidate refresh failed: {exc}",
+                    "old": row_metric_snapshot(row),
+                    "new": None,
+                }
+            )
+            continue
+
+        attempt = {
+            "engine": engine_key,
+            "variant": "opencv_preprocessed",
+            "accepted": accepted,
+            "decision": decision,
+            "old": row_metric_snapshot(evaluated_old),
+            "new": row_metric_snapshot(new_row),
+        }
+        attempts.append(attempt)
+        if not accepted:
+            continue
+
+        preserve_result_history(
+            report,
+            row,
+            replacement_mode="opencv_safe_preprocessing_refresh",
+            reason="replaced_by_opencv_safe_preprocessing_refresh",
+        )
         results[idx] = new_row
         changed_rows.append(engine_key)
 
-    truth = _ground_truth_text(job_dir, report)
     if truth:
         _apply_ground_truth_metrics(results, truth)
 
     report["results"] = results
-    report["comparison_summary"] = build_comparison_summary(results)
+    active_results = [row for row in results if _is_active_demo_result(row)]
+    report["comparison_summary"] = build_comparison_summary(active_results)
 
-    ok_rows = [row for row in results if row.get("status") == "ok" and row.get("text")]
+    ok_rows = [row for row in active_results if row.get("status") == "ok" and row.get("text")]
     max_text_len = max([len(row.get("text") or "") for row in ok_rows] or [1])
     if ok_rows:
         best = max(ok_rows, key=lambda row: ocr_selection_score(row, max_text_len))
         report["best_engine"] = {"engine": best.get("engine"), "variant": best.get("variant")}
 
+    report.setdefault("refresh_history", []).append(
+        {
+            "type": "opencv_safe_preprocessing_refresh",
+            "timestamp_unix": time.time(),
+            "ground_truth_recomputed": bool(truth),
+            "rows": attempts,
+        }
+    )
+
     if refresh_layout:
         _refresh_layout_postprocess(job_dir, report)
-    _refresh_document_archive(job_dir, report)
 
-    save_json(report_path, report)
     save_json(job_dir / "comparison_summary.json", report["comparison_summary"])
     save_results_csv(job_dir / "benchmark_results.csv", results)
+    # Persist the accepted row and its complete result_history entry before the
+    # archive sync. If archive repair fails, a later report view can safely
+    # retry it without losing the replacement audit trail.
+    save_json(report_path, report)
+    _refresh_document_archive(job_dir, report)
+    save_json(report_path, report)
 
     return {
         "job_id": safe_job_id,
         "engines": changed_rows,
+        "attempts": attempts,
         "opencv_steps": steps,
         "best_engine": report.get("best_engine"),
         "summary": report.get("comparison_summary"),

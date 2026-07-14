@@ -1,0 +1,666 @@
+{
+  "job_id": "6f5272e32537",
+  "uploaded_file": "upload\\kiem_thu_anh.tiff",
+  "page_count": 1,
+  "raw_images": [
+    "images\\kiem_thu_anh_page1.png"
+  ],
+  "preprocessed_images": [
+    "images\\kiem_thu_anh_page1_opencv_preprocessed.png"
+  ],
+  "raw_image": "images\\kiem_thu_anh_page1.png",
+  "preprocessed_image": "images\\kiem_thu_anh_page1_opencv_preprocessed.png",
+  "opencv_steps": [
+    "adaptive_safe_preprocess",
+    "grayscale",
+    "denoise_fastNlMeans",
+    "deskew_minAreaRect",
+    "CLAHE_contrast",
+    "adaptive_threshold_safe",
+    "morph_close"
+  ],
+  "opencv_steps_by_page": [
+    {
+      "page": 1,
+      "steps": [
+        "grayscale",
+        "denoise_fastNlMeans",
+        "deskew_minAreaRect",
+        "CLAHE_contrast",
+        "adaptive_threshold_safe",
+        "morph_close"
+      ]
+    }
+  ],
+  "runtime": {
+    "opencv_workers": 4,
+    "tesseract_workers": 4,
+    "gpu_workers": 1
+  },
+  "ground_truth_file": null,
+  "ground_truth_text_length": 0,
+  "results": [
+    {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "status": "ok",
+      "text": "OCR FORMAT ROUTE TEST DOCUMENT NO 789 TEST DATE 11 JULY 2026",
+      "boxes": [
+        {
+          "text": "OCR",
+          "confidence": 95.0,
+          "bbox": [
+            57,
+            65,
+            166,
+            101
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "FORMAT",
+          "confidence": 96.0,
+          "bbox": [
+            184,
+            65,
+            391,
+            101
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "ROUTE",
+          "confidence": 94.0,
+          "bbox": [
+            410,
+            65,
+            579,
+            101
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "TEST",
+          "confidence": 95.0,
+          "bbox": [
+            596,
+            65,
+            722,
+            101
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "DOCUMENT",
+          "confidence": 96.0,
+          "bbox": [
+            59,
+            170,
+            343,
+            206
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "NO",
+          "confidence": 96.0,
+          "bbox": [
+            361,
+            170,
+            431,
+            206
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "789",
+          "confidence": 96.0,
+          "bbox": [
+            449,
+            170,
+            529,
+            206
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "TEST",
+          "confidence": 96.0,
+          "bbox": [
+            546,
+            170,
+            672,
+            206
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "DATE",
+          "confidence": 95.0,
+          "bbox": [
+            59,
+            275,
+            186,
+            311
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "11",
+          "confidence": 95.0,
+          "bbox": [
+            207,
+            275,
+            249,
+            311
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "JULY",
+          "confidence": 96.0,
+          "bbox": [
+            273,
+            275,
+            394,
+            311
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        },
+        {
+          "text": "2026",
+          "confidence": 96.0,
+          "bbox": [
+            409,
+            275,
+            518,
+            311
+          ],
+          "label": null,
+          "polygon": null,
+          "page": 1
+        }
+      ],
+      "elapsed_sec": 0.2476645999122411,
+      "error": "",
+      "quality_guard": {
+        "token_count": 9,
+        "letter_count": 40,
+        "marked_letter_ratio": 0.0,
+        "marked_token_ratio": 0.0,
+        "admin_keyword_hits": 0,
+        "admin_keyword_ratio": 0.0,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": false,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 0.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "raw": {
+        "page_count": 1,
+        "ok_pages": 1,
+        "error_pages": 0,
+        "skipped_pages": 0,
+        "first_page_text": "OCR FORMAT ROUTE TEST DOCUMENT NO 789 TEST DATE 11 JULY 2026",
+        "page_elapsed_total": 0.24746990005951375,
+        "wall_elapsed_sec": 0.2476645999122411,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "ok",
+            "elapsed_sec": 0.24746990005951375,
+            "text_len": 60,
+            "boxes": 12,
+            "error": "",
+            "note": null,
+            "refine": null,
+            "paddle_device": null,
+            "vietocr_device": null,
+            "vietocr_model": null
+          }
+        ]
+      },
+      "ground_truth_metric_version": 2,
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    }
+  ],
+  "comparison_summary": {
+    "total_runs": 1,
+    "ok_runs": 1,
+    "error_runs": 0,
+    "skipped_runs": 0,
+    "issue_runs": 0,
+    "has_ground_truth": false,
+    "best_cer": null,
+    "best_wer": null,
+    "fastest": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "label": "tesseract / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.248,
+      "text_len": 60,
+      "avg_confidence": 95.5,
+      "quality_score": 62.98,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 9,
+        "letter_count": 40,
+        "marked_letter_ratio": 0.0,
+        "marked_token_ratio": 0.0,
+        "admin_keyword_hits": 0,
+        "admin_keyword_ratio": 0.0,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": false,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 0.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 64.975,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 62.98,
+      "confidence_bar": 95.5
+    },
+    "best_quality": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "label": "tesseract / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.248,
+      "text_len": 60,
+      "avg_confidence": 95.5,
+      "quality_score": 62.98,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 9,
+        "letter_count": 40,
+        "marked_letter_ratio": 0.0,
+        "marked_token_ratio": 0.0,
+        "admin_keyword_hits": 0,
+        "admin_keyword_ratio": 0.0,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": false,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 0.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 64.975,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 62.98,
+      "confidence_bar": 95.5
+    },
+    "best_confidence": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "label": "tesseract / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.248,
+      "text_len": 60,
+      "avg_confidence": 95.5,
+      "quality_score": 62.98,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 9,
+        "letter_count": 40,
+        "marked_letter_ratio": 0.0,
+        "marked_token_ratio": 0.0,
+        "admin_keyword_hits": 0,
+        "admin_keyword_ratio": 0.0,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": false,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 0.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 64.975,
+      "ground_truth_metric_warning": null,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 62.98,
+      "confidence_bar": 95.5
+    },
+    "rows": [
+      {
+        "engine": "tesseract",
+        "variant": "opencv_preprocessed",
+        "label": "tesseract / opencv_preprocessed",
+        "status": "ok",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 0.248,
+        "text_len": 60,
+        "avg_confidence": 95.5,
+        "quality_score": 62.98,
+        "quality_source": "confidence + text length + Vietnamese guard",
+        "quality_guard": {
+          "token_count": 9,
+          "letter_count": 40,
+          "marked_letter_ratio": 0.0,
+          "marked_token_ratio": 0.0,
+          "admin_keyword_hits": 0,
+          "admin_keyword_ratio": 0.0,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": false,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 0.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 64.975,
+        "ground_truth_metric_warning": null,
+        "error": "",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 100.0,
+        "text_bar": 100.0,
+        "quality_bar": 62.98,
+        "confidence_bar": 95.5
+      }
+    ],
+    "preprocessing_effect": [],
+    "engine_status": [
+      {
+        "engine": "tesseract",
+        "ok": 1,
+        "skipped": 0,
+        "error": 0,
+        "total": 1
+      }
+    ]
+  },
+  "layoutlmv3_postprocess": {
+    "mode": "format_export_validation_rule_based",
+    "extractor": "rule_based",
+    "note": "LayoutLMv3 intentionally skipped in this format/export validation pass.",
+    "model_configured": true,
+    "model_ran": false,
+    "field_label_compatible": false,
+    "compatible_fields": [],
+    "expected_fields": [],
+    "fields_source": "layoutlmv3+best_ocr_rule",
+    "fields": {
+      "co_quan_ban_hanh": "OCR FORMAT ROUTE TEST DOCUMENT NO 789 TEST DATE 11 JULY 2026",
+      "loai_van_ban": "",
+      "ngay_ban_hanh": "",
+      "noi_gui": "",
+      "noi_nhan": "",
+      "so_ky_hieu": "",
+      "trich_yeu": "",
+      "confidence_note": "layoutlmv3+best_ocr_rule"
+    },
+    "labels_preview_rows": [],
+    "ocr_source": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "page": 1,
+      "note": "Token LayoutLMv3 lấy từ OCR/bbox trang 1 của engine được chọn."
+    },
+    "ocr_source_quality": {
+      "diacritic_loss": false,
+      "severe_diacritic_loss": false,
+      "vietnamese_quality_score": 0.0
+    },
+    "labels_preview_note": "Token preview lấy từ tesseract / opencv_preprocessed trang 1. Nếu OCR nguồn rụng chữ thì token LayoutLMv3 cũng rụng theo; field cuối vẫn được hậu kiểm bằng best-OCR/rule."
+  },
+  "best_engine": {
+    "engine": "tesseract",
+    "variant": "opencv_preprocessed"
+  },
+  "document_archive": {
+    "document_id": "6f5272e32537",
+    "status": "scanned",
+    "storage_root": "documents/2026/07/6f5272e32537",
+    "manifest_path": "documents/2026/07/6f5272e32537/manifest.json",
+    "index_path": "documents/index.jsonl",
+    "workflow_manifest_path": "documents/2026/07/6f5272e32537/06_metadata/workflow_manifest.json",
+    "extracted_fields_path": "documents/2026/07/6f5272e32537/06_metadata/extracted_fields.json",
+    "ocr_output_count": 1,
+    "created_at": "2026-07-11T19:10:54+07:00",
+    "manifest": {
+      "document_id": "6f5272e32537",
+      "job_id": "6f5272e32537",
+      "created_at": "2026-07-11T19:10:54+07:00",
+      "source_filename": "kiem_thu_anh.tiff",
+      "page_count": 1,
+      "status": "scanned",
+      "storage_root": "documents/2026/07/6f5272e32537",
+      "original_file": {
+        "path": "documents/2026/07/6f5272e32537/01_original/kiem_thu_anh.tiff",
+        "filename": "kiem_thu_anh.tiff",
+        "size_bytes": 32048,
+        "sha256": "62d5ef9f3aa950c1266371049fd5d6f21cc6e301dcd7b1872c80e26ec271d3fe"
+      },
+      "pages": {
+        "raw": [
+          {
+            "path": "documents/2026/07/6f5272e32537/02_pages/raw/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 24454,
+            "sha256": "33a88ccf7325353ecaa5c39ecb9cf15f0b865c0c02924e0a4405c7877f880180",
+            "page": 1
+          }
+        ],
+        "opencv_preprocessed": [
+          {
+            "path": "documents/2026/07/6f5272e32537/02_pages/opencv_preprocessed/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 9558,
+            "sha256": "627c02b26fb57341dfc76740e5e22497c58f9bed231dc2aa75f97b536f408ca5",
+            "page": 1
+          }
+        ]
+      },
+      "ground_truth": null,
+      "extracted_fields_path": "documents/2026/07/6f5272e32537/06_metadata/extracted_fields.json",
+      "workflow_manifest_path": "documents/2026/07/6f5272e32537/06_metadata/workflow_manifest.json",
+      "ocr_outputs": [
+        {
+          "engine": "tesseract",
+          "variant": "opencv_preprocessed",
+          "status": "ok",
+          "elapsed_sec": 0.2476645999122411,
+          "text_length": 60,
+          "text_path": "documents/2026/07/6f5272e32537/04_ocr_text/tesseract__opencv_preprocessed.txt",
+          "json_path": "documents/2026/07/6f5272e32537/05_ocr_json/tesseract__opencv_preprocessed.json",
+          "word_path": "documents/2026/07/6f5272e32537/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "word_file": {
+            "path": "documents/2026/07/6f5272e32537/08_word_outputs/tesseract__opencv_preprocessed.docx",
+            "filename": "tesseract__opencv_preprocessed.docx",
+            "size_bytes": 1184,
+            "sha256": "cd624b7656e1df95fbae84a7455ef73ae77593c0c3bac5ec18d199a5d7d5a9d0"
+          },
+          "word_kind": "editable_ocr_layout",
+          "word_layout_version": "2026-05-26-structured-v2",
+          "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+          "page_count": 1
+        }
+      ],
+      "exports": {
+        "benchmark_csv": "documents/2026/07/6f5272e32537/07_exports/benchmark_results.csv",
+        "comparison_summary": "documents/2026/07/6f5272e32537/07_exports/comparison_summary.json",
+        "report_snapshot": "documents/2026/07/6f5272e32537/07_exports/report_snapshot.json"
+      }
+    },
+    "source_filename": "kiem_thu_anh.tiff",
+    "page_count": 1,
+    "storage_root_absolute": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537",
+    "manifest_url": "/storage/documents/2026/07/6f5272e32537/manifest.json",
+    "index_url": "/storage/documents/index.jsonl",
+    "original_file": {
+      "path": "documents/2026/07/6f5272e32537/01_original/kiem_thu_anh.tiff",
+      "filename": "kiem_thu_anh.tiff",
+      "size_bytes": 32048,
+      "sha256": "62d5ef9f3aa950c1266371049fd5d6f21cc6e301dcd7b1872c80e26ec271d3fe",
+      "url": "/storage/documents/2026/07/6f5272e32537/01_original/kiem_thu_anh.tiff",
+      "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\01_original\\kiem_thu_anh.tiff",
+      "size_label": "31.3 KB",
+      "sha256_short": "62d5ef9f3aa9"
+    },
+    "ground_truth": null,
+    "pages": {
+      "raw": [
+        {
+          "path": "documents/2026/07/6f5272e32537/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 24454,
+          "sha256": "33a88ccf7325353ecaa5c39ecb9cf15f0b865c0c02924e0a4405c7877f880180",
+          "page": 1,
+          "url": "/storage/documents/2026/07/6f5272e32537/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\02_pages\\raw\\page_001.png",
+          "size_label": "23.9 KB",
+          "sha256_short": "33a88ccf7325"
+        }
+      ],
+      "opencv_preprocessed": [
+        {
+          "path": "documents/2026/07/6f5272e32537/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 9558,
+          "sha256": "627c02b26fb57341dfc76740e5e22497c58f9bed231dc2aa75f97b536f408ca5",
+          "page": 1,
+          "url": "/storage/documents/2026/07/6f5272e32537/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "9.3 KB",
+          "sha256_short": "627c02b26fb5"
+        }
+      ]
+    },
+    "preview_pages": [
+      {
+        "page": 1,
+        "raw": {
+          "path": "documents/2026/07/6f5272e32537/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 24454,
+          "sha256": "33a88ccf7325353ecaa5c39ecb9cf15f0b865c0c02924e0a4405c7877f880180",
+          "page": 1,
+          "url": "/storage/documents/2026/07/6f5272e32537/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\02_pages\\raw\\page_001.png",
+          "size_label": "23.9 KB",
+          "sha256_short": "33a88ccf7325"
+        },
+        "opencv": {
+          "path": "documents/2026/07/6f5272e32537/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 9558,
+          "sha256": "627c02b26fb57341dfc76740e5e22497c58f9bed231dc2aa75f97b536f408ca5",
+          "page": 1,
+          "url": "/storage/documents/2026/07/6f5272e32537/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "9.3 KB",
+          "sha256_short": "627c02b26fb5"
+        }
+      }
+    ],
+    "ocr_outputs": [
+      {
+        "engine": "tesseract",
+        "variant": "opencv_preprocessed",
+        "status": "ok",
+        "elapsed_sec": 0.2476645999122411,
+        "text_length": 60,
+        "text_path": "documents/2026/07/6f5272e32537/04_ocr_text/tesseract__opencv_preprocessed.txt",
+        "json_path": "documents/2026/07/6f5272e32537/05_ocr_json/tesseract__opencv_preprocessed.json",
+        "word_path": "documents/2026/07/6f5272e32537/08_word_outputs/tesseract__opencv_preprocessed.docx",
+        "word_file": {
+          "path": "documents/2026/07/6f5272e32537/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "filename": "tesseract__opencv_preprocessed.docx",
+          "size_bytes": 1184,
+          "sha256": "cd624b7656e1df95fbae84a7455ef73ae77593c0c3bac5ec18d199a5d7d5a9d0",
+          "url": "/storage/documents/2026/07/6f5272e32537/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\08_word_outputs\\tesseract__opencv_preprocessed.docx",
+          "size_label": "1.2 KB",
+          "sha256_short": "cd624b7656e1"
+        },
+        "word_kind": "editable_ocr_layout",
+        "word_layout_version": "2026-05-26-structured-v2",
+        "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+        "page_count": 1,
+        "text_url": "/storage/documents/2026/07/6f5272e32537/04_ocr_text/tesseract__opencv_preprocessed.txt",
+        "text_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\04_ocr_text\\tesseract__opencv_preprocessed.txt",
+        "json_url": "/storage/documents/2026/07/6f5272e32537/05_ocr_json/tesseract__opencv_preprocessed.json",
+        "json_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\05_ocr_json\\tesseract__opencv_preprocessed.json",
+        "word_url": "/storage/documents/2026/07/6f5272e32537/08_word_outputs/tesseract__opencv_preprocessed.docx",
+        "word_absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\08_word_outputs\\tesseract__opencv_preprocessed.docx",
+        "word_filename": "tesseract__opencv_preprocessed.docx",
+        "word_size_label": "1.2 KB"
+      }
+    ],
+    "exports": {
+      "benchmark_csv": {
+        "path": "documents/2026/07/6f5272e32537/07_exports/benchmark_results.csv",
+        "url": "/storage/documents/2026/07/6f5272e32537/07_exports/benchmark_results.csv",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\07_exports\\benchmark_results.csv"
+      },
+      "comparison_summary": {
+        "path": "documents/2026/07/6f5272e32537/07_exports/comparison_summary.json",
+        "url": "/storage/documents/2026/07/6f5272e32537/07_exports/comparison_summary.json",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\07_exports\\comparison_summary.json"
+      },
+      "report_snapshot": {
+        "path": "documents/2026/07/6f5272e32537/07_exports/report_snapshot.json",
+        "url": "/storage/documents/2026/07/6f5272e32537/07_exports/report_snapshot.json",
+        "absolute_path": "D:\\ocr_full_demo_v2_latest\\storage\\documents\\2026\\07\\6f5272e32537\\07_exports\\report_snapshot.json"
+      }
+    },
+    "workflow_manifest_url": "/storage/documents/2026/07/6f5272e32537/06_metadata/workflow_manifest.json",
+    "extracted_fields_url": "/storage/documents/2026/07/6f5272e32537/06_metadata/extracted_fields.json"
+  }
+}

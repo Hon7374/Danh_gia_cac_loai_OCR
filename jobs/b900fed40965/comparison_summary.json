@@ -496,7 +496,9 @@
       "cer_delta": 20.19,
       "wer_delta": 21.25,
       "time_delta": -1.29,
-      "text_len_delta": -2649
+      "text_len_delta": -2649,
+      "recommended_variant": "raw",
+      "recommendation_note": "Use raw for this engine; OpenCV is only a fallback."
     },
     {
       "engine": "easyocr",
@@ -505,7 +507,9 @@
       "cer_delta": 8.56,
       "wer_delta": 18.03,
       "time_delta": 0.457,
-      "text_len_delta": -54
+      "text_len_delta": -54,
+      "recommended_variant": "raw",
+      "recommendation_note": "Use raw for this engine; OpenCV is only a fallback."
     },
     {
       "engine": "paddle_vietocr",
@@ -514,7 +518,9 @@
       "cer_delta": 12.72,
       "wer_delta": 21.01,
       "time_delta": -7.601,
-      "text_len_delta": -185
+      "text_len_delta": -185,
+      "recommended_variant": "raw",
+      "recommendation_note": "Use raw for this engine; OpenCV is only a fallback."
     },
     {
       "engine": "paddleocr_vl",
@@ -523,7 +529,9 @@
       "cer_delta": 0.12,
       "wer_delta": 0.69,
       "time_delta": -139.063,
-      "text_len_delta": -2
+      "text_len_delta": -2,
+      "recommended_variant": "raw",
+      "recommendation_note": "Use raw for this engine; OpenCV is only a fallback."
     }
   ],
   "engine_status": [

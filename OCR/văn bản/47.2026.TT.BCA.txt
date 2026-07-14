@@ -1,0 +1,47 @@
+BỘ CÔNG AN
+CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập - Tự do - Hạnh phúc
+
+Số: 47/2026/TT-BCA	Hà Nội, ngày 12 tháng 5  năm 2026
+
+THÔNG TƯ
+Ban hành Quy chuẩn kỹ thuật quốc gia về an ninh mạng cho hệ thống
+thông tin lưu trữ tài liệu điện tử trong các cơ quan Đảng, Nhà nước
+
+Căn cứ Luật Tiêu chuẩn và quy chuẩn kỹ thuật số 68/2006/QH11 được sửa đổi, bổ sung bởi Luật số 35/2018/QH14 và Luật số 70/2025/QH15;
+Căn cứ Luật Lưu trữ số 33/2024/QH15;
+Căn cứ Luật Dữ liệu số 60/2024/QH15;
+Căn cứ Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15;
+Căn cứ Luật An ninh mạng số 116/2025/QH15;
+Căn cứ Nghị định số 22/2026/NĐ-CP ngày 16 tháng 01 năm 2026 của Chính phủ quy định chi tiết một số điều và biện pháp để tổ chức, hướng dẫn thi hành Luật Tiêu chuẩn và quy chuẩn kỹ thuật;
+Căn cứ Nghị định số 02/2025/NĐ-CP ngày 18 tháng 02 năm 2025 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Bộ Công an được sửa đổi, bổ sung bởi Nghị định số 11/2025/NĐ-CP;
+Theo đề nghị của Cục trưởng Cục An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao;
+Bộ trưởng Bộ Công an ban hành Thông tư ban hành Quy chuẩn kỹ thuật quốc gia về an ninh mạng cho hệ thống thông tin lưu trữ tài liệu điện tử trong các cơ quan Đảng, Nhà nước.
+Điều 1. Ban hành kèm theo Thông tư này Quy chuẩn kỹ thuật quốc gia về an ninh mạng cho hệ thống thông tin lưu trữ tài liệu điện tử trong các cơ quan Đảng, Nhà nước - QCVN 12:2026/BCA.
+Điều 2. Hiệu lực thi hành 
+Thông tư này có hiệu lực thi hành kể từ ngày 01 tháng 7 năm 2026.
+Điều 3. Điều khoản thi hành 
+1. Cục trưởng Cục An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao có trách nhiệm theo dõi, kiểm tra, đôn đốc việc thực hiện Thông tư này.
+2. Thủ trưởng các đơn vị thuộc cơ quan Bộ, Giám đốc Công an tỉnh, thành phố và các tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Thông tư này.
+Trong quá trình thực hiện Thông tư, nếu có khó khăn, vướng mắc Công an các đơn vị, địa phương, tổ chức, cá nhân có liên quan báo cáo về Bộ Công an (qua Cục An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao) để kịp thời hướng dẫn./.
+Nơi nhận:
+- Các đồng chí Thứ trưởng Bộ Công an;
+- Văn phòng Chính phủ;
+- Các Bộ, cơ quan ngang Bộ, cơ quan thuộc Chính phủ;
+- UBND các tỉnh, thành phố; 
+- Cục Kiểm tra văn bản và Tổ chức thi hành pháp luật Bộ Tư pháp; 
+- Các đơn vị thuộc cơ quan Bộ Công an;
+- Công an các tỉnh, thành phố;
+- Công báo; 
+- Cổng TTĐT Chính phủ;
+- Cổng TTĐT Bộ Công an; 
+- Lưu: VT, A05.	BỘ TRƯỞNG
+
+
+
+
+
+
+
+Đại tướng Lương Tam Quang
+

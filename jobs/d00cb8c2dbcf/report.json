@@ -1,0 +1,6904 @@
+{
+  "job_id": "d00cb8c2dbcf",
+  "uploaded_file": "upload\\25_2026_QD-TTg.pdf",
+  "page_count": 1,
+  "raw_images": [
+    "images\\25_2026_QD-TTg_page1.png"
+  ],
+  "preprocessed_images": [
+    "images\\25_2026_QD-TTg_page1_opencv_preprocessed.png"
+  ],
+  "raw_image": "images\\25_2026_QD-TTg_page1.png",
+  "preprocessed_image": "images\\25_2026_QD-TTg_page1_opencv_preprocessed.png",
+  "opencv_steps": [
+    "adaptive_safe_preprocess",
+    "grayscale",
+    "quality_gate_clean_raw_passthrough"
+  ],
+  "opencv_steps_by_page": [
+    {
+      "page": 1,
+      "steps": [
+        "grayscale",
+        "quality_gate_clean_raw_passthrough"
+      ]
+    }
+  ],
+  "runtime": {
+    "opencv_workers": 4,
+    "tesseract_workers": 4,
+    "gpu_workers": 1
+  },
+  "ground_truth_file": null,
+  "ground_truth_text_length": 0,
+  "results": [
+    {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "status": "ok",
+      "text": "®Ắ Cơ quan phát hành: VĂN PHÒNG CHÍNH PHỦ THỦ TƯỚNG CHÍNH PHỦ CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM \" Độc lập - Tự do - Hạnh phúc Số: 25/2026/QĐ-TTg. Hà Nội, ngày 18 tháng 5 năm 2026 QUYÉT ĐỊNH Bãi bỏ Quyết định số 182/2007/QĐ-TTE ngày 26 tháng 11 năm 2007 của Thủ tướng Chính phủ về việc kiện toàn Đoàn đàm phán Chính phủ về kinh tế và thương mại quốc tế Căn cứ Luật Tổ chức Chính phủ số 63/2025/QH15; Căn cứ Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15 được sửa đổi, bồ sung một số điều bởi Luật số 87/2025/QH15; Căn cứ Nghị định số 78/2025/NĐ-CP của Chính phủ quy định chỉ tiết một số điều và biện pháp dé tổ chức, hướng dẫn thi hành Luật Ban hành văn bản quy phạm pháp luật được sửa đổi, bồ sung một số điều bởi Nghị định số 187/2025/NĐ-CP; Theo dé nghị của Bộ trưởng Bộ Công Thương; Thủ tướng Chính phủ ban hành Quyết định bãi bỏ Quyết định số 182/2007/QĐ- TTg ngày 26 tháng 11 năm 2007 của Thủ tướng Chính phủ. Điều 1. Bãi bỏ toàn bộ Quyết định của Thủ tướng Chính phủ Bãi bỏ toàn bộ Quyết định số 182/2007/QD-TTg ngày 26 tháng 11 năm 2007 của Thủ tướng Chính phủ về việc kiện toàn Đoàn đàm phán Chính phủ về kinh tế và thương mại quốc tế. Điều 2. Điều khoản thi hành 1. Quyết định này có hiệu lực thi hành kể từ ngày ký ban hành. 2. Các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Chủ tịch Hội đồng nhân dân, Ủy ban nhân dân các tỉnh, thành phó trực thuộc trung ương và các đơn vị có liên quan chịu trách nhiệm thi hành Quyết định này. KT. THỦ TƯỚNG Noi nhận: - Ban Bi thư Trung ương Đảng; - Thủ tướng, các Phó Thủ tướng Chính phủ; - Các bộ, cơ quan ngang bộ;; - HĐND, UBND các tỉnh, thành phố trực thuộc trung ương; - Văn phòng Trung ương và các Ban của Đảng; - Văn phòng Tông Bi thư; - Văn phòng Chủ tịch nước; - Hội đồng Dân tộc và các Ủy ban của Quốc hội; - Văn phòng Quốc hội; ~ Tòa án nhân dân tối cao; : - Viện kiểm sát nhân dân tối cao; a > - Kiểm toán nhà nước; Phạm Gia Túc - Ủy ban Trung ương Mặt tran Tổ quốc Việt Nam; - Cơ quan trung ương của các tổ chức chính trị - xã hội; - Ban Chỉ đạo liên ngành HNQT về kinh tế; - VPCP: BTCN, các PCN, Trợ lý TTg, TGD Cổng TTĐT, các Vụ, Cục, đơn vị trực thuộc, Công báo; - Lưu: VT, QHQT (2b). 6g",
+      "boxes": [
+        {
+          "text": "®Ắ",
+          "confidence": 26.0,
+          "bbox": [
+            3,
+            9,
+            55,
+            66
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Cơ",
+          "confidence": 96.0,
+          "bbox": [
+            65,
+            31,
+            89,
+            45
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "quan",
+          "confidence": 95.0,
+          "bbox": [
+            95,
+            35,
+            134,
+            50
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phát",
+          "confidence": 95.0,
+          "bbox": [
+            140,
+            30,
+            176,
+            50
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hành:",
+          "confidence": 96.0,
+          "bbox": [
+            181,
+            31,
+            226,
+            45
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "VĂN",
+          "confidence": 96.0,
+          "bbox": [
+            233,
+            27,
+            277,
+            45
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "PHÒNG",
+          "confidence": 96.0,
+          "bbox": [
+            284,
+            27,
+            354,
+            45
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "CHÍNH",
+          "confidence": 96.0,
+          "bbox": [
+            361,
+            27,
+            425,
+            45
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "PHỦ",
+          "confidence": 95.0,
+          "bbox": [
+            432,
+            26,
+            472,
+            45
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "THỦ",
+          "confidence": 93.0,
+          "bbox": [
+            199,
+            104,
+            265,
+            133
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "TƯỚNG",
+          "confidence": 92.0,
+          "bbox": [
+            275,
+            103,
+            394,
+            132
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "CHÍNH",
+          "confidence": 96.0,
+          "bbox": [
+            405,
+            102,
+            514,
+            131
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "PHỦ",
+          "confidence": 96.0,
+          "bbox": [
+            525,
+            101,
+            590,
+            130
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "CỘNG",
+          "confidence": 95.0,
+          "bbox": [
+            667,
+            103,
+            761,
+            135
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "HÒA",
+          "confidence": 96.0,
+          "bbox": [
+            772,
+            98,
+            844,
+            128
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "XÃ",
+          "confidence": 96.0,
+          "bbox": [
+            854,
+            99,
+            899,
+            127
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "HỘI",
+          "confidence": 87.0,
+          "bbox": [
+            909,
+            101,
+            971,
+            133
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "CHỦ",
+          "confidence": 96.0,
+          "bbox": [
+            981,
+            97,
+            1050,
+            126
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "NGHĨA",
+          "confidence": 96.0,
+          "bbox": [
+            1061,
+            97,
+            1169,
+            126
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "VIỆT",
+          "confidence": 95.0,
+          "bbox": [
+            1179,
+            99,
+            1257,
+            131
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "NAM",
+          "confidence": 96.0,
+          "bbox": [
+            1267,
+            102,
+            1342,
+            124
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "\"",
+          "confidence": 44.0,
+          "bbox": [
+            334,
+            149,
+            357,
+            151
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Độc",
+          "confidence": 96.0,
+          "bbox": [
+            791,
+            142,
+            848,
+            174
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "lập",
+          "confidence": 93.0,
+          "bbox": [
+            859,
+            141,
+            903,
+            174
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 93.0,
+          "bbox": [
+            914,
+            156,
+            924,
+            160
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Tự",
+          "confidence": 96.0,
+          "bbox": [
+            935,
+            142,
+            979,
+            173
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "do",
+          "confidence": 93.0,
+          "bbox": [
+            988,
+            142,
+            1023,
+            166
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 92.0,
+          "bbox": [
+            1033,
+            155,
+            1044,
+            159
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Hạnh",
+          "confidence": 96.0,
+          "bbox": [
+            1054,
+            140,
+            1136,
+            172
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phúc",
+          "confidence": 96.0,
+          "bbox": [
+            1148,
+            139,
+            1218,
+            172
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Số:",
+          "confidence": 96.0,
+          "bbox": [
+            293,
+            219,
+            333,
+            249
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "25/2026/QĐ-TTg.",
+          "confidence": 56.0,
+          "bbox": [
+            345,
+            224,
+            594,
+            253
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Hà",
+          "confidence": 68.0,
+          "bbox": [
+            803,
+            223,
+            840,
+            245
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Nội,",
+          "confidence": 96.0,
+          "bbox": [
+            848,
+            222,
+            899,
+            249
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ngày",
+          "confidence": 95.0,
+          "bbox": [
+            912,
+            221,
+            975,
+            251
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "18",
+          "confidence": 96.0,
+          "bbox": [
+            996,
+            221,
+            1025,
+            244
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tháng",
+          "confidence": 93.0,
+          "bbox": [
+            1041,
+            220,
+            1115,
+            250
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "5",
+          "confidence": 61.0,
+          "bbox": [
+            1140,
+            218,
+            1154,
+            240
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "năm",
+          "confidence": 96.0,
+          "bbox": [
+            1182,
+            219,
+            1236,
+            240
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "2026",
+          "confidence": 96.0,
+          "bbox": [
+            1252,
+            219,
+            1316,
+            242
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "QUYÉT",
+          "confidence": 92.0,
+          "bbox": [
+            670,
+            319,
+            788,
+            356
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ĐỊNH",
+          "confidence": 95.0,
+          "bbox": [
+            797,
+            326,
+            884,
+            356
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Bãi",
+          "confidence": 96.0,
+          "bbox": [
+            291,
+            369,
+            339,
+            393
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bỏ",
+          "confidence": 96.0,
+          "bbox": [
+            350,
+            369,
+            382,
+            393
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Quyết",
+          "confidence": 96.0,
+          "bbox": [
+            393,
+            361,
+            481,
+            399
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "định",
+          "confidence": 96.0,
+          "bbox": [
+            491,
+            367,
+            554,
+            398
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 96.0,
+          "bbox": [
+            565,
+            360,
+            592,
+            391
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "182/2007/QĐ-TTE",
+          "confidence": 80.0,
+          "bbox": [
+            604,
+            365,
+            861,
+            411
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ngày",
+          "confidence": 96.0,
+          "bbox": [
+            871,
+            364,
+            939,
+            395
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "26",
+          "confidence": 96.0,
+          "bbox": [
+            949,
+            364,
+            981,
+            388
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tháng",
+          "confidence": 96.0,
+          "bbox": [
+            991,
+            363,
+            1073,
+            394
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "11",
+          "confidence": 96.0,
+          "bbox": [
+            1085,
+            363,
+            1112,
+            387
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "năm",
+          "confidence": 96.0,
+          "bbox": [
+            1126,
+            363,
+            1186,
+            386
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "2007",
+          "confidence": 96.0,
+          "bbox": [
+            1196,
+            362,
+            1262,
+            386
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "của",
+          "confidence": 96.0,
+          "bbox": [
+            265,
+            408,
+            313,
+            432
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Thủ",
+          "confidence": 88.0,
+          "bbox": [
+            324,
+            408,
+            381,
+            431
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tướng",
+          "confidence": 95.0,
+          "bbox": [
+            392,
+            407,
+            478,
+            437
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chính",
+          "confidence": 96.0,
+          "bbox": [
+            488,
+            406,
+            575,
+            450
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phủ",
+          "confidence": 96.0,
+          "bbox": [
+            586,
+            405,
+            639,
+            436
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "về",
+          "confidence": 96.0,
+          "bbox": [
+            649,
+            398,
+            682,
+            450
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "việc",
+          "confidence": 96.0,
+          "bbox": [
+            689,
+            404,
+            744,
+            435
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "kiện",
+          "confidence": 96.0,
+          "bbox": [
+            755,
+            403,
+            815,
+            435
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "toàn",
+          "confidence": 96.0,
+          "bbox": [
+            825,
+            403,
+            886,
+            428
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Đoàn",
+          "confidence": 96.0,
+          "bbox": [
+            896,
+            403,
+            972,
+            448
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "đàm",
+          "confidence": 96.0,
+          "bbox": [
+            983,
+            403,
+            1044,
+            447
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phán",
+          "confidence": 96.0,
+          "bbox": [
+            1056,
+            402,
+            1127,
+            433
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chính",
+          "confidence": 96.0,
+          "bbox": [
+            1137,
+            401,
+            1224,
+            425
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phủ",
+          "confidence": 67.0,
+          "bbox": [
+            1235,
+            401,
+            1289,
+            432
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "về",
+          "confidence": 96.0,
+          "bbox": [
+            544,
+            437,
+            574,
+            468
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "kinh",
+          "confidence": 96.0,
+          "bbox": [
+            585,
+            444,
+            647,
+            467
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tế",
+          "confidence": 96.0,
+          "bbox": [
+            658,
+            436,
+            682,
+            467
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "và",
+          "confidence": 97.0,
+          "bbox": [
+            691,
+            443,
+            724,
+            467
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thương",
+          "confidence": 96.0,
+          "bbox": [
+            734,
+            443,
+            837,
+            472
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "mại",
+          "confidence": 96.0,
+          "bbox": [
+            848,
+            442,
+            900,
+            472
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "quốc",
+          "confidence": 96.0,
+          "bbox": [
+            910,
+            430,
+            978,
+            476
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tế",
+          "confidence": 96.0,
+          "bbox": [
+            988,
+            434,
+            1013,
+            465
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Căn",
+          "confidence": 96.0,
+          "bbox": [
+            284,
+            554,
+            338,
+            577
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "cứ",
+          "confidence": 96.0,
+          "bbox": [
+            348,
+            553,
+            381,
+            576
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Luật",
+          "confidence": 96.0,
+          "bbox": [
+            388,
+            553,
+            452,
+            581
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Tổ",
+          "confidence": 94.0,
+          "bbox": [
+            463,
+            545,
+            496,
+            576
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "chức",
+          "confidence": 94.0,
+          "bbox": [
+            505,
+            551,
+            569,
+            575
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chính",
+          "confidence": 96.0,
+          "bbox": [
+            579,
+            550,
+            659,
+            575
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phủ",
+          "confidence": 91.0,
+          "bbox": [
+            665,
+            550,
+            718,
+            581
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 96.0,
+          "bbox": [
+            726,
+            543,
+            758,
+            574
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "63/2025/QH15;",
+          "confidence": 94.0,
+          "bbox": [
+            767,
+            549,
+            977,
+            579
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Căn",
+          "confidence": 96.0,
+          "bbox": [
+            284,
+            600,
+            338,
+            624
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "cứ",
+          "confidence": 96.0,
+          "bbox": [
+            351,
+            599,
+            385,
+            623
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Luật",
+          "confidence": 96.0,
+          "bbox": [
+            394,
+            599,
+            458,
+            628
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Ban",
+          "confidence": 96.0,
+          "bbox": [
+            469,
+            599,
+            523,
+            622
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hành",
+          "confidence": 96.0,
+          "bbox": [
+            535,
+            597,
+            601,
+            622
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "văn",
+          "confidence": 96.0,
+          "bbox": [
+            614,
+            598,
+            661,
+            621
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bản",
+          "confidence": 96.0,
+          "bbox": [
+            674,
+            596,
+            722,
+            621
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "quy",
+          "confidence": 95.0,
+          "bbox": [
+            734,
+            604,
+            783,
+            627
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phạm",
+          "confidence": 96.0,
+          "bbox": [
+            791,
+            595,
+            868,
+            627
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "pháp",
+          "confidence": 96.0,
+          "bbox": [
+            876,
+            595,
+            948,
+            626
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "luật",
+          "confidence": 96.0,
+          "bbox": [
+            960,
+            594,
+            1012,
+            623
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 93.0,
+          "bbox": [
+            1023,
+            587,
+            1054,
+            619
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "64/2025/QH15",
+          "confidence": 83.0,
+          "bbox": [
+            1066,
+            593,
+            1266,
+            625
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "được",
+          "confidence": 96.0,
+          "bbox": [
+            1278,
+            592,
+            1345,
+            622
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "sửa",
+          "confidence": 96.0,
+          "bbox": [
+            213,
+            647,
+            260,
+            671
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "đổi,",
+          "confidence": 93.0,
+          "bbox": [
+            270,
+            640,
+            316,
+            674
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bồ",
+          "confidence": 85.0,
+          "bbox": [
+            331,
+            639,
+            363,
+            670
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "sung",
+          "confidence": 96.0,
+          "bbox": [
+            371,
+            653,
+            436,
+            676
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "một",
+          "confidence": 94.0,
+          "bbox": [
+            444,
+            646,
+            495,
+            674
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 96.0,
+          "bbox": [
+            503,
+            638,
+            535,
+            669
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "điều",
+          "confidence": 96.0,
+          "bbox": [
+            543,
+            637,
+            599,
+            668
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bởi",
+          "confidence": 97.0,
+          "bbox": [
+            609,
+            644,
+            652,
+            668
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Luật",
+          "confidence": 96.0,
+          "bbox": [
+            660,
+            644,
+            722,
+            672
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 94.0,
+          "bbox": [
+            730,
+            636,
+            762,
+            667
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "87/2025/QH15;",
+          "confidence": 96.0,
+          "bbox": [
+            770,
+            642,
+            981,
+            673
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Căn",
+          "confidence": 96.0,
+          "bbox": [
+            285,
+            694,
+            339,
+            717
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "cứ",
+          "confidence": 96.0,
+          "bbox": [
+            351,
+            692,
+            384,
+            716
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Nghị",
+          "confidence": 96.0,
+          "bbox": [
+            392,
+            691,
+            459,
+            723
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "định",
+          "confidence": 96.0,
+          "bbox": [
+            470,
+            691,
+            529,
+            720
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 95.0,
+          "bbox": [
+            540,
+            684,
+            571,
+            715
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "78/2025/NĐ-CP",
+          "confidence": 69.0,
+          "bbox": [
+            583,
+            690,
+            801,
+            714
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "của",
+          "confidence": 96.0,
+          "bbox": [
+            811,
+            689,
+            859,
+            713
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chính",
+          "confidence": 96.0,
+          "bbox": [
+            870,
+            688,
+            951,
+            713
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phủ",
+          "confidence": 95.0,
+          "bbox": [
+            959,
+            687,
+            1012,
+            719
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "quy",
+          "confidence": 96.0,
+          "bbox": [
+            1023,
+            696,
+            1072,
+            718
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "định",
+          "confidence": 96.0,
+          "bbox": [
+            1082,
+            686,
+            1141,
+            716
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "chỉ",
+          "confidence": 95.0,
+          "bbox": [
+            1153,
+            686,
+            1193,
+            710
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tiết",
+          "confidence": 96.0,
+          "bbox": [
+            1204,
+            679,
+            1246,
+            710
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "một",
+          "confidence": 96.0,
+          "bbox": [
+            1256,
+            687,
+            1306,
+            715
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 96.0,
+          "bbox": [
+            1315,
+            679,
+            1346,
+            710
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "điều",
+          "confidence": 94.0,
+          "bbox": [
+            214,
+            733,
+            271,
+            764
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "và",
+          "confidence": 96.0,
+          "bbox": [
+            280,
+            739,
+            310,
+            763
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "biện",
+          "confidence": 96.0,
+          "bbox": [
+            320,
+            739,
+            376,
+            768
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "pháp",
+          "confidence": 96.0,
+          "bbox": [
+            381,
+            738,
+            453,
+            769
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "dé",
+          "confidence": 92.0,
+          "bbox": [
+            462,
+            731,
+            495,
+            762
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tổ",
+          "confidence": 93.0,
+          "bbox": [
+            503,
+            731,
+            529,
+            761
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "chức,",
+          "confidence": 96.0,
+          "bbox": [
+            537,
+            737,
+            606,
+            765
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hướng",
+          "confidence": 95.0,
+          "bbox": [
+            618,
+            736,
+            705,
+            767
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "dẫn",
+          "confidence": 96.0,
+          "bbox": [
+            712,
+            729,
+            763,
+            760
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thi",
+          "confidence": 95.0,
+          "bbox": [
+            773,
+            735,
+            807,
+            760
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hành",
+          "confidence": 96.0,
+          "bbox": [
+            816,
+            735,
+            882,
+            759
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Luật",
+          "confidence": 96.0,
+          "bbox": [
+            890,
+            735,
+            954,
+            763
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Ban",
+          "confidence": 96.0,
+          "bbox": [
+            960,
+            735,
+            1015,
+            758
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hành",
+          "confidence": 97.0,
+          "bbox": [
+            1024,
+            733,
+            1091,
+            758
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "văn",
+          "confidence": 96.0,
+          "bbox": [
+            1100,
+            735,
+            1148,
+            757
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bản",
+          "confidence": 97.0,
+          "bbox": [
+            1158,
+            732,
+            1206,
+            757
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "quy",
+          "confidence": 96.0,
+          "bbox": [
+            1215,
+            741,
+            1264,
+            764
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phạm",
+          "confidence": 96.0,
+          "bbox": [
+            1268,
+            732,
+            1344,
+            764
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "pháp",
+          "confidence": 96.0,
+          "bbox": [
+            211,
+            786,
+            280,
+            818
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "luật",
+          "confidence": 96.0,
+          "bbox": [
+            290,
+            786,
+            342,
+            815
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "được",
+          "confidence": 95.0,
+          "bbox": [
+            351,
+            785,
+            418,
+            814
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "sửa",
+          "confidence": 96.0,
+          "bbox": [
+            427,
+            785,
+            476,
+            809
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "đổi,",
+          "confidence": 87.0,
+          "bbox": [
+            485,
+            777,
+            532,
+            812
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bồ",
+          "confidence": 71.0,
+          "bbox": [
+            546,
+            777,
+            579,
+            808
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "sung",
+          "confidence": 96.0,
+          "bbox": [
+            586,
+            791,
+            651,
+            814
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "một",
+          "confidence": 96.0,
+          "bbox": [
+            659,
+            783,
+            709,
+            812
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 94.0,
+          "bbox": [
+            717,
+            775,
+            748,
+            807
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "điều",
+          "confidence": 96.0,
+          "bbox": [
+            756,
+            775,
+            814,
+            807
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bởi",
+          "confidence": 96.0,
+          "bbox": [
+            824,
+            781,
+            866,
+            806
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Nghị",
+          "confidence": 95.0,
+          "bbox": [
+            874,
+            780,
+            941,
+            813
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "định",
+          "confidence": 96.0,
+          "bbox": [
+            949,
+            780,
+            1008,
+            810
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 96.0,
+          "bbox": [
+            1017,
+            773,
+            1049,
+            805
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "187/2025/NĐ-CP;",
+          "confidence": 94.0,
+          "bbox": [
+            1059,
+            779,
+            1302,
+            807
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Theo",
+          "confidence": 96.0,
+          "bbox": [
+            288,
+            832,
+            351,
+            857
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "dé",
+          "confidence": 93.0,
+          "bbox": [
+            360,
+            825,
+            392,
+            856
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "nghị",
+          "confidence": 96.0,
+          "bbox": [
+            401,
+            831,
+            461,
+            863
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "của",
+          "confidence": 95.0,
+          "bbox": [
+            470,
+            831,
+            519,
+            855
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Bộ",
+          "confidence": 96.0,
+          "bbox": [
+            527,
+            831,
+            564,
+            860
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "trưởng",
+          "confidence": 96.0,
+          "bbox": [
+            574,
+            830,
+            666,
+            861
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Bộ",
+          "confidence": 96.0,
+          "bbox": [
+            674,
+            830,
+            710,
+            859
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Công",
+          "confidence": 96.0,
+          "bbox": [
+            721,
+            830,
+            794,
+            860
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Thương;",
+          "confidence": 96.0,
+          "bbox": [
+            804,
+            828,
+            916,
+            859
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Thủ",
+          "confidence": 95.0,
+          "bbox": [
+            288,
+            879,
+            337,
+            903
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tướng",
+          "confidence": 96.0,
+          "bbox": [
+            346,
+            878,
+            425,
+            909
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chính",
+          "confidence": 96.0,
+          "bbox": [
+            434,
+            877,
+            514,
+            902
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phủ",
+          "confidence": 96.0,
+          "bbox": [
+            519,
+            877,
+            572,
+            908
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ban",
+          "confidence": 96.0,
+          "bbox": [
+            581,
+            876,
+            630,
+            901
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hành",
+          "confidence": 96.0,
+          "bbox": [
+            638,
+            876,
+            704,
+            900
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Quyết",
+          "confidence": 96.0,
+          "bbox": [
+            713,
+            868,
+            794,
+            907
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "định",
+          "confidence": 96.0,
+          "bbox": [
+            800,
+            875,
+            859,
+            904
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bãi",
+          "confidence": 96.0,
+          "bbox": [
+            868,
+            874,
+            910,
+            899
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bỏ",
+          "confidence": 96.0,
+          "bbox": [
+            918,
+            874,
+            951,
+            899
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Quyết",
+          "confidence": 96.0,
+          "bbox": [
+            960,
+            867,
+            1040,
+            905
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "định",
+          "confidence": 96.0,
+          "bbox": [
+            1047,
+            873,
+            1107,
+            903
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 72.0,
+          "bbox": [
+            1115,
+            866,
+            1146,
+            897
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "182/2007/QĐ-",
+          "confidence": 77.0,
+          "bbox": [
+            1155,
+            872,
+            1346,
+            904
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "TTg",
+          "confidence": 92.0,
+          "bbox": [
+            218,
+            926,
+            270,
+            957
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ngày",
+          "confidence": 96.0,
+          "bbox": [
+            278,
+            925,
+            343,
+            956
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "26",
+          "confidence": 96.0,
+          "bbox": [
+            353,
+            925,
+            385,
+            949
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tháng",
+          "confidence": 96.0,
+          "bbox": [
+            394,
+            924,
+            472,
+            955
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "11",
+          "confidence": 92.0,
+          "bbox": [
+            483,
+            924,
+            511,
+            948
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "năm",
+          "confidence": 96.0,
+          "bbox": [
+            523,
+            925,
+            579,
+            947
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "2007",
+          "confidence": 96.0,
+          "bbox": [
+            589,
+            923,
+            656,
+            947
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "của",
+          "confidence": 96.0,
+          "bbox": [
+            665,
+            923,
+            712,
+            947
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Thủ",
+          "confidence": 96.0,
+          "bbox": [
+            724,
+            922,
+            773,
+            946
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tướng",
+          "confidence": 96.0,
+          "bbox": [
+            784,
+            922,
+            862,
+            952
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chính",
+          "confidence": 96.0,
+          "bbox": [
+            871,
+            921,
+            952,
+            945
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phủ.",
+          "confidence": 80.0,
+          "bbox": [
+            957,
+            920,
+            1016,
+            952
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Điều",
+          "confidence": 93.0,
+          "bbox": [
+            286,
+            1012,
+            349,
+            1042
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "1.",
+          "confidence": 95.0,
+          "bbox": [
+            360,
+            1019,
+            379,
+            1042
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Bãi",
+          "confidence": 96.0,
+          "bbox": [
+            388,
+            1018,
+            433,
+            1042
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bỏ",
+          "confidence": 96.0,
+          "bbox": [
+            443,
+            1017,
+            475,
+            1041
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "toàn",
+          "confidence": 97.0,
+          "bbox": [
+            483,
+            1017,
+            542,
+            1041
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bộ",
+          "confidence": 96.0,
+          "bbox": [
+            552,
+            1016,
+            584,
+            1047
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Quyết",
+          "confidence": 96.0,
+          "bbox": [
+            591,
+            1009,
+            674,
+            1047
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "định",
+          "confidence": 96.0,
+          "bbox": [
+            682,
+            1016,
+            742,
+            1047
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "của",
+          "confidence": 96.0,
+          "bbox": [
+            751,
+            1015,
+            798,
+            1039
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Thủ",
+          "confidence": 96.0,
+          "bbox": [
+            806,
+            1015,
+            862,
+            1039
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tướng",
+          "confidence": 96.0,
+          "bbox": [
+            870,
+            1014,
+            951,
+            1045
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chính",
+          "confidence": 96.0,
+          "bbox": [
+            959,
+            1014,
+            1043,
+            1038
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phủ",
+          "confidence": 96.0,
+          "bbox": [
+            1052,
+            1013,
+            1104,
+            1044
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Bãi",
+          "confidence": 96.0,
+          "bbox": [
+            287,
+            1064,
+            332,
+            1089
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bỏ",
+          "confidence": 96.0,
+          "bbox": [
+            344,
+            1065,
+            375,
+            1088
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "toàn",
+          "confidence": 96.0,
+          "bbox": [
+            387,
+            1064,
+            444,
+            1088
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bộ",
+          "confidence": 96.0,
+          "bbox": [
+            456,
+            1063,
+            489,
+            1093
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Quyết",
+          "confidence": 96.0,
+          "bbox": [
+            500,
+            1056,
+            581,
+            1094
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "định",
+          "confidence": 97.0,
+          "bbox": [
+            592,
+            1062,
+            651,
+            1092
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "số",
+          "confidence": 93.0,
+          "bbox": [
+            663,
+            1056,
+            690,
+            1086
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "182/2007/QD-TTg",
+          "confidence": 87.0,
+          "bbox": [
+            705,
+            1061,
+            956,
+            1091
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ngày",
+          "confidence": 96.0,
+          "bbox": [
+            967,
+            1061,
+            1032,
+            1091
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "26",
+          "confidence": 96.0,
+          "bbox": [
+            1043,
+            1060,
+            1075,
+            1084
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tháng",
+          "confidence": 96.0,
+          "bbox": [
+            1086,
+            1059,
+            1161,
+            1090
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "11",
+          "confidence": 96.0,
+          "bbox": [
+            1175,
+            1060,
+            1200,
+            1083
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "năm",
+          "confidence": 97.0,
+          "bbox": [
+            1214,
+            1061,
+            1271,
+            1083
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "2007",
+          "confidence": 96.0,
+          "bbox": [
+            1282,
+            1060,
+            1347,
+            1083
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "của",
+          "confidence": 96.0,
+          "bbox": [
+            217,
+            1112,
+            262,
+            1136
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Thủ",
+          "confidence": 96.0,
+          "bbox": [
+            271,
+            1111,
+            323,
+            1135
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tướng",
+          "confidence": 96.0,
+          "bbox": [
+            333,
+            1111,
+            412,
+            1141
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chính",
+          "confidence": 97.0,
+          "bbox": [
+            421,
+            1109,
+            503,
+            1134
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phủ",
+          "confidence": 97.0,
+          "bbox": [
+            512,
+            1109,
+            562,
+            1140
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "về",
+          "confidence": 95.0,
+          "bbox": [
+            571,
+            1102,
+            602,
+            1133
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "việc",
+          "confidence": 95.0,
+          "bbox": [
+            611,
+            1109,
+            666,
+            1138
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "kiện",
+          "confidence": 96.0,
+          "bbox": [
+            676,
+            1108,
+            732,
+            1138
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "toàn",
+          "confidence": 96.0,
+          "bbox": [
+            741,
+            1108,
+            799,
+            1132
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Đoàn",
+          "confidence": 95.0,
+          "bbox": [
+            808,
+            1108,
+            879,
+            1131
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "đàm",
+          "confidence": 96.0,
+          "bbox": [
+            888,
+            1107,
+            945,
+            1131
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phán",
+          "confidence": 97.0,
+          "bbox": [
+            954,
+            1106,
+            1020,
+            1138
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chính",
+          "confidence": 96.0,
+          "bbox": [
+            1029,
+            1105,
+            1111,
+            1130
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phủ",
+          "confidence": 96.0,
+          "bbox": [
+            1119,
+            1105,
+            1170,
+            1137
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "về",
+          "confidence": 96.0,
+          "bbox": [
+            1179,
+            1098,
+            1209,
+            1129
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "kinh",
+          "confidence": 96.0,
+          "bbox": [
+            1217,
+            1105,
+            1277,
+            1129
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tế",
+          "confidence": 97.0,
+          "bbox": [
+            1285,
+            1099,
+            1308,
+            1129
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "và",
+          "confidence": 97.0,
+          "bbox": [
+            1317,
+            1106,
+            1349,
+            1129
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thương",
+          "confidence": 96.0,
+          "bbox": [
+            217,
+            1158,
+            311,
+            1188
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "mại",
+          "confidence": 96.0,
+          "bbox": [
+            321,
+            1156,
+            370,
+            1186
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "quốc",
+          "confidence": 95.0,
+          "bbox": [
+            380,
+            1149,
+            444,
+            1187
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tế.",
+          "confidence": 95.0,
+          "bbox": [
+            454,
+            1149,
+            485,
+            1180
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Điều",
+          "confidence": 96.0,
+          "bbox": [
+            287,
+            1197,
+            353,
+            1228
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "2.",
+          "confidence": 96.0,
+          "bbox": [
+            363,
+            1204,
+            386,
+            1227
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Điều",
+          "confidence": 94.0,
+          "bbox": [
+            396,
+            1196,
+            463,
+            1227
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "khoản",
+          "confidence": 96.0,
+          "bbox": [
+            475,
+            1202,
+            563,
+            1226
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thi",
+          "confidence": 96.0,
+          "bbox": [
+            573,
+            1202,
+            611,
+            1226
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hành",
+          "confidence": 96.0,
+          "bbox": [
+            621,
+            1201,
+            691,
+            1225
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "1.",
+          "confidence": 96.0,
+          "bbox": [
+            291,
+            1251,
+            310,
+            1274
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Quyết",
+          "confidence": 97.0,
+          "bbox": [
+            322,
+            1242,
+            403,
+            1281
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "định",
+          "confidence": 96.0,
+          "bbox": [
+            413,
+            1248,
+            473,
+            1279
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "này",
+          "confidence": 97.0,
+          "bbox": [
+            482,
+            1249,
+            530,
+            1279
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "có",
+          "confidence": 97.0,
+          "bbox": [
+            540,
+            1248,
+            570,
+            1272
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hiệu",
+          "confidence": 96.0,
+          "bbox": [
+            579,
+            1247,
+            637,
+            1277
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "lực",
+          "confidence": 97.0,
+          "bbox": [
+            647,
+            1247,
+            687,
+            1277
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thi",
+          "confidence": 96.0,
+          "bbox": [
+            697,
+            1247,
+            731,
+            1271
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hành",
+          "confidence": 96.0,
+          "bbox": [
+            741,
+            1246,
+            806,
+            1271
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "kể",
+          "confidence": 78.0,
+          "bbox": [
+            815,
+            1240,
+            845,
+            1270
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "từ",
+          "confidence": 95.0,
+          "bbox": [
+            855,
+            1247,
+            882,
+            1270
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ngày",
+          "confidence": 96.0,
+          "bbox": [
+            890,
+            1246,
+            956,
+            1277
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ký",
+          "confidence": 97.0,
+          "bbox": [
+            965,
+            1245,
+            998,
+            1276
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ban",
+          "confidence": 96.0,
+          "bbox": [
+            1007,
+            1245,
+            1056,
+            1269
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hành.",
+          "confidence": 96.0,
+          "bbox": [
+            1065,
+            1245,
+            1137,
+            1269
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "2.",
+          "confidence": 96.0,
+          "bbox": [
+            289,
+            1297,
+            311,
+            1321
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Các",
+          "confidence": 97.0,
+          "bbox": [
+            322,
+            1296,
+            373,
+            1320
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Bộ",
+          "confidence": 97.0,
+          "bbox": [
+            383,
+            1296,
+            422,
+            1325
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "trưởng,",
+          "confidence": 97.0,
+          "bbox": [
+            432,
+            1295,
+            530,
+            1326
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Thủ",
+          "confidence": 96.0,
+          "bbox": [
+            541,
+            1294,
+            594,
+            1318
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "trưởng",
+          "confidence": 97.0,
+          "bbox": [
+            603,
+            1294,
+            693,
+            1325
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "cơ",
+          "confidence": 96.0,
+          "bbox": [
+            703,
+            1301,
+            735,
+            1318
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "quan",
+          "confidence": 96.0,
+          "bbox": [
+            744,
+            1301,
+            809,
+            1324
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ngang",
+          "confidence": 96.0,
+          "bbox": [
+            818,
+            1300,
+            899,
+            1324
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bộ,",
+          "confidence": 97.0,
+          "bbox": [
+            909,
+            1292,
+            949,
+            1322
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chủ",
+          "confidence": 96.0,
+          "bbox": [
+            960,
+            1291,
+            1016,
+            1316
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tịch",
+          "confidence": 96.0,
+          "bbox": [
+            1025,
+            1291,
+            1075,
+            1321
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Hội",
+          "confidence": 96.0,
+          "bbox": [
+            1085,
+            1291,
+            1134,
+            1321
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "đồng",
+          "confidence": 95.0,
+          "bbox": [
+            1145,
+            1284,
+            1210,
+            1322
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "nhân",
+          "confidence": 96.0,
+          "bbox": [
+            1220,
+            1290,
+            1284,
+            1314
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "dân,",
+          "confidence": 96.0,
+          "bbox": [
+            1294,
+            1290,
+            1347,
+            1319
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Ủy",
+          "confidence": 96.0,
+          "bbox": [
+            219,
+            1337,
+            259,
+            1375
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ban",
+          "confidence": 96.0,
+          "bbox": [
+            270,
+            1343,
+            318,
+            1368
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "nhân",
+          "confidence": 96.0,
+          "bbox": [
+            330,
+            1343,
+            394,
+            1367
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "dân",
+          "confidence": 95.0,
+          "bbox": [
+            407,
+            1342,
+            456,
+            1366
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "các",
+          "confidence": 95.0,
+          "bbox": [
+            468,
+            1342,
+            512,
+            1366
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tỉnh,",
+          "confidence": 96.0,
+          "bbox": [
+            524,
+            1341,
+            583,
+            1370
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thành",
+          "confidence": 97.0,
+          "bbox": [
+            596,
+            1340,
+            671,
+            1365
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phó",
+          "confidence": 88.0,
+          "bbox": [
+            682,
+            1333,
+            732,
+            1372
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "trực",
+          "confidence": 95.0,
+          "bbox": [
+            744,
+            1343,
+            797,
+            1370
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thuộc",
+          "confidence": 95.0,
+          "bbox": [
+            809,
+            1339,
+            883,
+            1369
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "trung",
+          "confidence": 96.0,
+          "bbox": [
+            895,
+            1342,
+            966,
+            1370
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ương",
+          "confidence": 96.0,
+          "bbox": [
+            978,
+            1345,
+            1047,
+            1369
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "và",
+          "confidence": 96.0,
+          "bbox": [
+            1059,
+            1338,
+            1092,
+            1362
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "các",
+          "confidence": 97.0,
+          "bbox": [
+            1103,
+            1338,
+            1146,
+            1362
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "đơn",
+          "confidence": 97.0,
+          "bbox": [
+            1159,
+            1337,
+            1209,
+            1362
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "vị",
+          "confidence": 96.0,
+          "bbox": [
+            1221,
+            1337,
+            1246,
+            1367
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "có",
+          "confidence": 96.0,
+          "bbox": [
+            1258,
+            1337,
+            1288,
+            1361
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "liên",
+          "confidence": 96.0,
+          "bbox": [
+            1301,
+            1337,
+            1350,
+            1361
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "quan",
+          "confidence": 97.0,
+          "bbox": [
+            219,
+            1398,
+            283,
+            1422
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "chịu",
+          "confidence": 97.0,
+          "bbox": [
+            293,
+            1390,
+            350,
+            1420
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "trách",
+          "confidence": 96.0,
+          "bbox": [
+            359,
+            1389,
+            425,
+            1414
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "nhiệm",
+          "confidence": 96.0,
+          "bbox": [
+            435,
+            1388,
+            519,
+            1418
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thi",
+          "confidence": 94.0,
+          "bbox": [
+            528,
+            1388,
+            562,
+            1412
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hành",
+          "confidence": 97.0,
+          "bbox": [
+            573,
+            1387,
+            638,
+            1412
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Quyết",
+          "confidence": 95.0,
+          "bbox": [
+            647,
+            1380,
+            728,
+            1418
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "định",
+          "confidence": 96.0,
+          "bbox": [
+            737,
+            1386,
+            797,
+            1417
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "này.",
+          "confidence": 96.0,
+          "bbox": [
+            806,
+            1387,
+            860,
+            1417
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "KT.",
+          "confidence": 96.0,
+          "bbox": [
+            967,
+            1448,
+            1027,
+            1495
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "THỦ",
+          "confidence": 96.0,
+          "bbox": [
+            1035,
+            1440,
+            1109,
+            1494
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "TƯỚNG",
+          "confidence": 92.0,
+          "bbox": [
+            1117,
+            1443,
+            1242,
+            1490
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Noi",
+          "confidence": 92.0,
+          "bbox": [
+            223,
+            1489,
+            265,
+            1509
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "nhận:",
+          "confidence": 96.0,
+          "bbox": [
+            272,
+            1489,
+            339,
+            1513
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 89.0,
+          "bbox": [
+            220,
+            1530,
+            227,
+            1533
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Ban",
+          "confidence": 96.0,
+          "bbox": [
+            235,
+            1521,
+            272,
+            1538
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Bi",
+          "confidence": 92.0,
+          "bbox": [
+            281,
+            1520,
+            302,
+            1537
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thư",
+          "confidence": 96.0,
+          "bbox": [
+            309,
+            1519,
+            342,
+            1537
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Trung",
+          "confidence": 96.0,
+          "bbox": [
+            349,
+            1520,
+            409,
+            1541
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ương",
+          "confidence": 96.0,
+          "bbox": [
+            417,
+            1524,
+            468,
+            1541
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Đảng;",
+          "confidence": 96.0,
+          "bbox": [
+            477,
+            1518,
+            535,
+            1541
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 90.0,
+          "bbox": [
+            221,
+            1559,
+            227,
+            1562
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Thủ",
+          "confidence": 96.0,
+          "bbox": [
+            235,
+            1549,
+            273,
+            1566
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tướng,",
+          "confidence": 96.0,
+          "bbox": [
+            281,
+            1549,
+            344,
+            1571
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "các",
+          "confidence": 96.0,
+          "bbox": [
+            352,
+            1548,
+            383,
+            1566
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Phó",
+          "confidence": 97.0,
+          "bbox": [
+            391,
+            1547,
+            429,
+            1565
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Thủ",
+          "confidence": 96.0,
+          "bbox": [
+            437,
+            1547,
+            476,
+            1565
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tướng",
+          "confidence": 96.0,
+          "bbox": [
+            484,
+            1547,
+            542,
+            1569
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chính",
+          "confidence": 97.0,
+          "bbox": [
+            550,
+            1546,
+            609,
+            1564
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phủ;",
+          "confidence": 96.0,
+          "bbox": [
+            617,
+            1546,
+            659,
+            1569
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 92.0,
+          "bbox": [
+            221,
+            1588,
+            227,
+            1590
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Các",
+          "confidence": 96.0,
+          "bbox": [
+            235,
+            1578,
+            272,
+            1595
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bộ,",
+          "confidence": 96.0,
+          "bbox": [
+            280,
+            1577,
+            308,
+            1598
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "cơ",
+          "confidence": 96.0,
+          "bbox": [
+            317,
+            1582,
+            341,
+            1594
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "quan",
+          "confidence": 96.0,
+          "bbox": [
+            348,
+            1581,
+            394,
+            1599
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ngang",
+          "confidence": 93.0,
+          "bbox": [
+            402,
+            1581,
+            463,
+            1599
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "bộ;;",
+          "confidence": 80.0,
+          "bbox": [
+            470,
+            1575,
+            508,
+            1597
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 92.0,
+          "bbox": [
+            221,
+            1616,
+            227,
+            1619
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "HĐND,",
+          "confidence": 93.0,
+          "bbox": [
+            237,
+            1606,
+            310,
+            1626
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "UBND",
+          "confidence": 92.0,
+          "bbox": [
+            320,
+            1605,
+            387,
+            1623
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "các",
+          "confidence": 96.0,
+          "bbox": [
+            395,
+            1605,
+            428,
+            1622
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tỉnh,",
+          "confidence": 95.0,
+          "bbox": [
+            435,
+            1604,
+            480,
+            1625
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thành",
+          "confidence": 96.0,
+          "bbox": [
+            489,
+            1604,
+            542,
+            1622
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phố",
+          "confidence": 79.0,
+          "bbox": [
+            551,
+            1599,
+            586,
+            1627
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "trực",
+          "confidence": 97.0,
+          "bbox": [
+            594,
+            1606,
+            633,
+            1625
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thuộc",
+          "confidence": 97.0,
+          "bbox": [
+            640,
+            1603,
+            694,
+            1624
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "trung",
+          "confidence": 96.0,
+          "bbox": [
+            702,
+            1606,
+            754,
+            1625
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ương;",
+          "confidence": 96.0,
+          "bbox": [
+            761,
+            1607,
+            818,
+            1625
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 90.0,
+          "bbox": [
+            221,
+            1645,
+            227,
+            1648
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Văn",
+          "confidence": 97.0,
+          "bbox": [
+            236,
+            1635,
+            275,
+            1652
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phòng",
+          "confidence": 96.0,
+          "bbox": [
+            283,
+            1634,
+            344,
+            1657
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Trung",
+          "confidence": 96.0,
+          "bbox": [
+            351,
+            1634,
+            411,
+            1661
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ương",
+          "confidence": 97.0,
+          "bbox": [
+            419,
+            1638,
+            471,
+            1656
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "và",
+          "confidence": 97.0,
+          "bbox": [
+            478,
+            1633,
+            501,
+            1650
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "các",
+          "confidence": 96.0,
+          "bbox": [
+            508,
+            1633,
+            539,
+            1650
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Ban",
+          "confidence": 96.0,
+          "bbox": [
+            548,
+            1633,
+            585,
+            1650
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "của",
+          "confidence": 96.0,
+          "bbox": [
+            594,
+            1632,
+            628,
+            1650
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Đảng;",
+          "confidence": 96.0,
+          "bbox": [
+            635,
+            1632,
+            694,
+            1654
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 91.0,
+          "bbox": [
+            221,
+            1674,
+            228,
+            1677
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Văn",
+          "confidence": 96.0,
+          "bbox": [
+            236,
+            1664,
+            275,
+            1681
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phòng",
+          "confidence": 96.0,
+          "bbox": [
+            283,
+            1663,
+            344,
+            1687
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Tông",
+          "confidence": 96.0,
+          "bbox": [
+            352,
+            1663,
+            403,
+            1685
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Bi",
+          "confidence": 96.0,
+          "bbox": [
+            411,
+            1662,
+            432,
+            1680
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thư;",
+          "confidence": 96.0,
+          "bbox": [
+            440,
+            1662,
+            479,
+            1683
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 91.0,
+          "bbox": [
+            222,
+            1703,
+            228,
+            1706
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Văn",
+          "confidence": 96.0,
+          "bbox": [
+            236,
+            1693,
+            275,
+            1710
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phòng",
+          "confidence": 96.0,
+          "bbox": [
+            284,
+            1692,
+            345,
+            1720
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chủ",
+          "confidence": 96.0,
+          "bbox": [
+            352,
+            1691,
+            391,
+            1710
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tịch",
+          "confidence": 97.0,
+          "bbox": [
+            399,
+            1690,
+            435,
+            1713
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "nước;",
+          "confidence": 96.0,
+          "bbox": [
+            444,
+            1691,
+            500,
+            1712
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 92.0,
+          "bbox": [
+            222,
+            1732,
+            228,
+            1734
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Hội",
+          "confidence": 97.0,
+          "bbox": [
+            237,
+            1721,
+            272,
+            1743
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "đồng",
+          "confidence": 96.0,
+          "bbox": [
+            279,
+            1716,
+            328,
+            1744
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Dân",
+          "confidence": 94.0,
+          "bbox": [
+            336,
+            1721,
+            375,
+            1738
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tộc",
+          "confidence": 97.0,
+          "bbox": [
+            383,
+            1720,
+            412,
+            1742
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "và",
+          "confidence": 97.0,
+          "bbox": [
+            420,
+            1720,
+            443,
+            1738
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "các",
+          "confidence": 97.0,
+          "bbox": [
+            450,
+            1720,
+            483,
+            1738
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Ủy",
+          "confidence": 96.0,
+          "bbox": [
+            491,
+            1714,
+            520,
+            1742
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ban",
+          "confidence": 97.0,
+          "bbox": [
+            528,
+            1719,
+            562,
+            1737
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "của",
+          "confidence": 96.0,
+          "bbox": [
+            570,
+            1719,
+            604,
+            1737
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Quốc",
+          "confidence": 96.0,
+          "bbox": [
+            611,
+            1714,
+            664,
+            1741
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hội;",
+          "confidence": 96.0,
+          "bbox": [
+            671,
+            1718,
+            708,
+            1740
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 92.0,
+          "bbox": [
+            223,
+            1761,
+            229,
+            1763
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Văn",
+          "confidence": 96.0,
+          "bbox": [
+            237,
+            1751,
+            276,
+            1768
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "phòng",
+          "confidence": 96.0,
+          "bbox": [
+            284,
+            1750,
+            345,
+            1773
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Quốc",
+          "confidence": 96.0,
+          "bbox": [
+            352,
+            1740,
+            405,
+            1777
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hội;",
+          "confidence": 96.0,
+          "bbox": [
+            413,
+            1749,
+            450,
+            1777
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "~",
+          "confidence": 88.0,
+          "bbox": [
+            223,
+            1790,
+            229,
+            1792
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Tòa",
+          "confidence": 96.0,
+          "bbox": [
+            237,
+            1780,
+            275,
+            1797
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "án",
+          "confidence": 97.0,
+          "bbox": [
+            282,
+            1780,
+            303,
+            1797
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "nhân",
+          "confidence": 97.0,
+          "bbox": [
+            311,
+            1779,
+            358,
+            1797
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "dân",
+          "confidence": 96.0,
+          "bbox": [
+            365,
+            1778,
+            400,
+            1796
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tối",
+          "confidence": 96.0,
+          "bbox": [
+            407,
+            1773,
+            433,
+            1796
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "cao;",
+          "confidence": 96.0,
+          "bbox": [
+            441,
+            1783,
+            482,
+            1799
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": ":",
+          "confidence": 48.0,
+          "bbox": [
+            491,
+            1801,
+            495,
+            1805
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 91.0,
+          "bbox": [
+            223,
+            1819,
+            229,
+            1821
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Viện",
+          "confidence": 96.0,
+          "bbox": [
+            241,
+            1808,
+            283,
+            1830
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "kiểm",
+          "confidence": 96.0,
+          "bbox": [
+            291,
+            1802,
+            340,
+            1826
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "sát",
+          "confidence": 97.0,
+          "bbox": [
+            348,
+            1808,
+            374,
+            1826
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "nhân",
+          "confidence": 97.0,
+          "bbox": [
+            381,
+            1806,
+            428,
+            1825
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "dân",
+          "confidence": 96.0,
+          "bbox": [
+            437,
+            1806,
+            472,
+            1825
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tối",
+          "confidence": 96.0,
+          "bbox": [
+            479,
+            1805,
+            505,
+            1824
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "cao;",
+          "confidence": 97.0,
+          "bbox": [
+            513,
+            1811,
+            552,
+            1827
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "a",
+          "confidence": 36.0,
+          "bbox": [
+            1127,
+            1813,
+            1132,
+            1819
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": ">",
+          "confidence": 87.0,
+          "bbox": [
+            1189,
+            1813,
+            1194,
+            1819
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 92.0,
+          "bbox": [
+            223,
+            1848,
+            230,
+            1850
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Kiểm",
+          "confidence": 96.0,
+          "bbox": [
+            238,
+            1832,
+            290,
+            1855
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "toán",
+          "confidence": 96.0,
+          "bbox": [
+            298,
+            1837,
+            340,
+            1855
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "nhà",
+          "confidence": 97.0,
+          "bbox": [
+            348,
+            1836,
+            383,
+            1854
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "nước;",
+          "confidence": 96.0,
+          "bbox": [
+            389,
+            1836,
+            446,
+            1857
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Phạm",
+          "confidence": 96.0,
+          "bbox": [
+            1007,
+            1814,
+            1089,
+            1846
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Gia",
+          "confidence": 93.0,
+          "bbox": [
+            1099,
+            1813,
+            1150,
+            1839
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Túc",
+          "confidence": 93.0,
+          "bbox": [
+            1159,
+            1814,
+            1213,
+            1838
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 92.0,
+          "bbox": [
+            224,
+            1877,
+            230,
+            1879
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Ủy",
+          "confidence": 96.0,
+          "bbox": [
+            244,
+            1861,
+            265,
+            1889
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ban",
+          "confidence": 96.0,
+          "bbox": [
+            274,
+            1866,
+            308,
+            1884
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Trung",
+          "confidence": 96.0,
+          "bbox": [
+            316,
+            1866,
+            376,
+            1888
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ương",
+          "confidence": 97.0,
+          "bbox": [
+            383,
+            1870,
+            435,
+            1888
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Mặt",
+          "confidence": 96.0,
+          "bbox": [
+            442,
+            1865,
+            482,
+            1886
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tran",
+          "confidence": 96.0,
+          "bbox": [
+            489,
+            1864,
+            527,
+            1886
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Tổ",
+          "confidence": 57.0,
+          "bbox": [
+            535,
+            1859,
+            561,
+            1882
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "quốc",
+          "confidence": 96.0,
+          "bbox": [
+            568,
+            1859,
+            615,
+            1887
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Việt",
+          "confidence": 96.0,
+          "bbox": [
+            623,
+            1863,
+            665,
+            1885
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Nam;",
+          "confidence": 96.0,
+          "bbox": [
+            672,
+            1863,
+            726,
+            1884
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 85.0,
+          "bbox": [
+            224,
+            1906,
+            230,
+            1908
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Cơ",
+          "confidence": 97.0,
+          "bbox": [
+            238,
+            1896,
+            267,
+            1913
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "quan",
+          "confidence": 97.0,
+          "bbox": [
+            274,
+            1900,
+            320,
+            1918
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "trung",
+          "confidence": 96.0,
+          "bbox": [
+            328,
+            1897,
+            379,
+            1917
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ương",
+          "confidence": 96.0,
+          "bbox": [
+            387,
+            1899,
+            438,
+            1917
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "của",
+          "confidence": 96.0,
+          "bbox": [
+            446,
+            1894,
+            481,
+            1912
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "các",
+          "confidence": 97.0,
+          "bbox": [
+            488,
+            1894,
+            520,
+            1911
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tổ",
+          "confidence": 89.0,
+          "bbox": [
+            526,
+            1888,
+            545,
+            1911
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "chức",
+          "confidence": 97.0,
+          "bbox": [
+            553,
+            1893,
+            599,
+            1921
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "chính",
+          "confidence": 89.0,
+          "bbox": [
+            607,
+            1892,
+            662,
+            1926
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "trị",
+          "confidence": 96.0,
+          "bbox": [
+            669,
+            1892,
+            704,
+            1914
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 93.0,
+          "bbox": [
+            697,
+            1883,
+            705,
+            1930
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "xã",
+          "confidence": 93.0,
+          "bbox": [
+            712,
+            1893,
+            734,
+            1910
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "hội;",
+          "confidence": 96.0,
+          "bbox": [
+            741,
+            1891,
+            779,
+            1913
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 91.0,
+          "bbox": [
+            224,
+            1935,
+            231,
+            1938
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Ban",
+          "confidence": 97.0,
+          "bbox": [
+            239,
+            1925,
+            276,
+            1943
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Chỉ",
+          "confidence": 96.0,
+          "bbox": [
+            285,
+            1924,
+            318,
+            1943
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "đạo",
+          "confidence": 97.0,
+          "bbox": [
+            326,
+            1924,
+            361,
+            1946
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "liên",
+          "confidence": 96.0,
+          "bbox": [
+            370,
+            1923,
+            405,
+            1941
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "ngành",
+          "confidence": 93.0,
+          "bbox": [
+            413,
+            1922,
+            474,
+            1946
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "HNQT",
+          "confidence": 92.0,
+          "bbox": [
+            482,
+            1922,
+            550,
+            1944
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "về",
+          "confidence": 96.0,
+          "bbox": [
+            557,
+            1917,
+            579,
+            1940
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "kinh",
+          "confidence": 94.0,
+          "bbox": [
+            587,
+            1921,
+            630,
+            1940
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "tế;",
+          "confidence": 96.0,
+          "bbox": [
+            637,
+            1916,
+            661,
+            1943
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 93.0,
+          "bbox": [
+            225,
+            1964,
+            231,
+            1967
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "VPCP:",
+          "confidence": 93.0,
+          "bbox": [
+            240,
+            1954,
+            304,
+            1972
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "BTCN,",
+          "confidence": 92.0,
+          "bbox": [
+            314,
+            1953,
+            384,
+            1973
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "các",
+          "confidence": 93.0,
+          "bbox": [
+            392,
+            1952,
+            424,
+            1970
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "PCN,",
+          "confidence": 96.0,
+          "bbox": [
+            432,
+            1952,
+            486,
+            1973
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Trợ",
+          "confidence": 96.0,
+          "bbox": [
+            494,
+            1952,
+            531,
+            1973
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "lý",
+          "confidence": 93.0,
+          "bbox": [
+            539,
+            1951,
+            556,
+            1975
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "TTg,",
+          "confidence": 92.0,
+          "bbox": [
+            564,
+            1951,
+            611,
+            1974
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "TGD",
+          "confidence": 92.0,
+          "bbox": [
+            619,
+            1951,
+            669,
+            1969
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Cổng",
+          "confidence": 93.0,
+          "bbox": [
+            677,
+            1945,
+            730,
+            1973
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "TTĐT,",
+          "confidence": 90.0,
+          "bbox": [
+            737,
+            1950,
+            805,
+            1971
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "các",
+          "confidence": 96.0,
+          "bbox": [
+            241,
+            1983,
+            273,
+            2001
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Vụ,",
+          "confidence": 96.0,
+          "bbox": [
+            281,
+            1983,
+            315,
+            2005
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Cục,",
+          "confidence": 96.0,
+          "bbox": [
+            323,
+            1982,
+            368,
+            2004
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "đơn",
+          "confidence": 97.0,
+          "bbox": [
+            376,
+            1981,
+            412,
+            1999
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "vị",
+          "confidence": 96.0,
+          "bbox": [
+            420,
+            1980,
+            439,
+            2003
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "trực",
+          "confidence": 96.0,
+          "bbox": [
+            447,
+            1984,
+            486,
+            2002
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "thuộc,",
+          "confidence": 96.0,
+          "bbox": [
+            493,
+            1980,
+            554,
+            2003
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Công",
+          "confidence": 97.0,
+          "bbox": [
+            562,
+            1980,
+            615,
+            2003
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "báo;",
+          "confidence": 96.0,
+          "bbox": [
+            622,
+            1979,
+            663,
+            2001
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "-",
+          "confidence": 89.0,
+          "bbox": [
+            230,
+            2023,
+            236,
+            2025
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "Lưu:",
+          "confidence": 93.0,
+          "bbox": [
+            245,
+            2013,
+            289,
+            2030
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "VT,",
+          "confidence": 93.0,
+          "bbox": [
+            298,
+            2012,
+            335,
+            2033
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "QHQT",
+          "confidence": 92.0,
+          "bbox": [
+            344,
+            2011,
+            412,
+            2034
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "(2b).",
+          "confidence": 61.0,
+          "bbox": [
+            419,
+            2010,
+            494,
+            2039
+          ],
+          "label": null,
+          "page": 1
+        },
+        {
+          "text": "6g",
+          "confidence": 49.0,
+          "bbox": [
+            472,
+            2006,
+            498,
+            2043
+          ],
+          "label": null,
+          "page": 1
+        }
+      ],
+      "elapsed_sec": 2.8713996000005864,
+      "error": "",
+      "quality_guard": {
+        "token_count": 437,
+        "letter_count": 1480,
+        "marked_letter_ratio": 0.2885,
+        "marked_token_ratio": 0.8421,
+        "admin_keyword_hits": 129,
+        "admin_keyword_ratio": 0.2952,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "raw": {
+        "page_count": 1,
+        "ok_pages": 1,
+        "error_pages": 0,
+        "skipped_pages": 0,
+        "first_page_text": "®Ắ Cơ quan phát hành: VĂN PHÒNG CHÍNH PHỦ THỦ TƯỚNG CHÍNH PHỦ CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM \" Độc lập - Tự do - Hạnh phúc Số: 25/2026/QĐ-TTg. Hà Nội, ngày 18 tháng 5 năm 2026 QUYÉT ĐỊNH Bãi bỏ Quyết định số 182/2007/QĐ-TTE ngày 26 tháng 11 năm 2007 của Thủ tướng Chính phủ về việc kiện toàn Đoàn đàm phán Chính phủ về kinh tế và thương mại quốc tế Căn cứ Luật Tổ chức Chính phủ số 63/2025/QH15; Căn cứ Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15 được sửa đổi, bồ sung một số điều bởi Luật số 87/2025/QH15; Căn cứ Nghị định số 78/2025/NĐ-CP của Chính phủ quy định chỉ tiết một số điều và biện pháp dé tổ chức, hướng dẫn thi hành Luật Ban hành văn bản quy phạm pháp luật được sửa đổi, bồ sung một số điều bởi Nghị định số 187/2025/NĐ-CP; Theo dé nghị của Bộ trưởng Bộ Công Thương; Thủ tướng Chính phủ ban hành Quyết định bãi bỏ Quyết định số 182/2007/QĐ- TTg ngày 26 tháng 11 năm 2007 của Thủ tướng Chính phủ. Điều 1. Bãi bỏ toàn bộ Quyết định của Thủ tướng Chính phủ Bãi bỏ toàn bộ Quyết định số 182/2007/QD-TTg ngày 26 tháng 11 năm 2007 của Thủ tướng Chính phủ về việc kiện toàn Đoàn đàm phán Chính phủ về kinh tế và thương mại quốc tế. Điều 2. Điều khoản thi hành 1. Quyết định này có hiệu lực thi hành kể từ ngày ký ban hành. 2. Các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Chủ tịch Hội đồng nhân dân, Ủy ban nhân dân các tỉnh, thành phó trực thuộc trung ương và các đơn vị có liên quan chịu trách nhiệm thi hành Quyết định này. KT. THỦ TƯỚNG Noi nhận: - Ban Bi thư Trung ương Đảng; - Thủ tướng, các Phó Thủ tướng Chính phủ; - Các bộ, cơ quan ngang bộ;; - HĐND, UBND các tỉnh, thành phố trực thuộc trung ương; - Văn phòng Trung ương và các Ban của Đảng; - Văn phòng Tông Bi thư; - Văn phòng Chủ tịch nước; - Hội đồng Dân tộc và các Ủy ban của Quốc hội; - Văn phòng Quốc hội; ~ Tòa án nhân dân tối cao; : - Viện kiểm sát nhân dân tối cao; a > - Kiểm toán nhà nước; Phạm Gia Túc - Ủy ban Trung ương Mặt tran Tổ quốc Việt Nam; - Cơ quan trung ương của các tổ chức chính trị - xã hội; - Ban Chỉ đạo liên ngành HNQT về kinh tế; - VPCP: BTCN, các PCN, Trợ lý TTg, TGD Cổng TTĐT, các Vụ, Cục, đơn vị trực thuộc, Công báo; - Lưu: VT, QHQT (2b). 6g",
+        "page_elapsed_total": 2.86414479999803,
+        "wall_elapsed_sec": 2.8713996000005864,
+        "page_results": [
+          {
+            "page": 1,
+            "status": "ok",
+            "elapsed_sec": 2.86414479999803,
+            "text_len": 2158,
+            "boxes": 471,
+            "error": ""
+          }
+        ]
+      },
+      "cer": null,
+      "wer": null,
+      "ground_truth_compare_length": 0
+    }
+  ],
+  "comparison_summary": {
+    "total_runs": 1,
+    "ok_runs": 1,
+    "error_runs": 0,
+    "skipped_runs": 0,
+    "issue_runs": 0,
+    "has_ground_truth": false,
+    "best_cer": null,
+    "best_wer": null,
+    "fastest": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "label": "tesseract / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 2.871,
+      "text_len": 2158,
+      "avg_confidence": 93.91,
+      "quality_score": 97.26,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 437,
+        "letter_count": 1480,
+        "marked_letter_ratio": 0.2885,
+        "marked_token_ratio": 0.8421,
+        "admin_keyword_hits": 129,
+        "admin_keyword_ratio": 0.2952,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 99.258,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 97.26,
+      "confidence_bar": 93.91
+    },
+    "best_quality": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "label": "tesseract / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 2.871,
+      "text_len": 2158,
+      "avg_confidence": 93.91,
+      "quality_score": 97.26,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 437,
+        "letter_count": 1480,
+        "marked_letter_ratio": 0.2885,
+        "marked_token_ratio": 0.8421,
+        "admin_keyword_hits": 129,
+        "admin_keyword_ratio": 0.2952,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 99.258,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 97.26,
+      "confidence_bar": 93.91
+    },
+    "best_confidence": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "label": "tesseract / opencv_preprocessed",
+      "status": "ok",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 2.871,
+      "text_len": 2158,
+      "avg_confidence": 93.91,
+      "quality_score": 97.26,
+      "quality_source": "confidence + text length + Vietnamese guard",
+      "quality_guard": {
+        "token_count": 437,
+        "letter_count": 1480,
+        "marked_letter_ratio": 0.2885,
+        "marked_token_ratio": 0.8421,
+        "admin_keyword_hits": 129,
+        "admin_keyword_ratio": 0.2952,
+        "broken_token_hits": 0,
+        "broken_token_ratio": 0.0,
+        "likely_vietnamese": true,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 100.0,
+        "quality_penalty": 0.0,
+        "note": "Chất lượng dấu tiếng Việt ổn."
+      },
+      "selection_score": 99.258,
+      "error": "",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 100.0,
+      "text_bar": 100.0,
+      "quality_bar": 97.26,
+      "confidence_bar": 93.91
+    },
+    "rows": [
+      {
+        "engine": "tesseract",
+        "variant": "opencv_preprocessed",
+        "label": "tesseract / opencv_preprocessed",
+        "status": "ok",
+        "cer_pct": null,
+        "wer_pct": null,
+        "elapsed_sec": 2.871,
+        "text_len": 2158,
+        "avg_confidence": 93.91,
+        "quality_score": 97.26,
+        "quality_source": "confidence + text length + Vietnamese guard",
+        "quality_guard": {
+          "token_count": 437,
+          "letter_count": 1480,
+          "marked_letter_ratio": 0.2885,
+          "marked_token_ratio": 0.8421,
+          "admin_keyword_hits": 129,
+          "admin_keyword_ratio": 0.2952,
+          "broken_token_hits": 0,
+          "broken_token_ratio": 0.0,
+          "likely_vietnamese": true,
+          "diacritic_loss": false,
+          "severe_diacritic_loss": false,
+          "vietnamese_quality_score": 100.0,
+          "quality_penalty": 0.0,
+          "note": "Chất lượng dấu tiếng Việt ổn."
+        },
+        "selection_score": 99.258,
+        "error": "",
+        "cer_bar": 0,
+        "wer_bar": 0,
+        "time_bar": 100.0,
+        "text_bar": 100.0,
+        "quality_bar": 97.26,
+        "confidence_bar": 93.91
+      }
+    ],
+    "preprocessing_effect": [],
+    "engine_status": [
+      {
+        "engine": "tesseract",
+        "ok": 1,
+        "skipped": 0,
+        "error": 0,
+        "total": 1
+      }
+    ]
+  },
+  "layoutlmv3_postprocess": {
+    "mode": "layoutlmv3_model",
+    "extractor": "layoutlmv3",
+    "note": "Đã chạy LayoutLMv3 thật bằng transformers từ model D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification. Field từ model được kiểm định theo từng trường rồi mới merge với rule fallback.",
+    "model_configured": true,
+    "model_ran": true,
+    "model_path": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification",
+    "processor_path": "D:\\ocr_workspace\\ocr_full_demo_v2_latest\\models\\layoutlmv3-congvan-token-classification",
+    "runtime": "transformers",
+    "model_word_count": 121,
+    "field_label_compatible": true,
+    "compatible_fields": [
+      "co_quan_ban_hanh",
+      "loai_van_ban",
+      "ngay_ban_hanh",
+      "noi_gui",
+      "noi_nhan",
+      "so_ky_hieu",
+      "trich_yeu"
+    ],
+    "expected_fields": [
+      "co_quan_ban_hanh",
+      "loai_van_ban",
+      "ngay_ban_hanh",
+      "noi_gui",
+      "noi_nhan",
+      "so_ky_hieu",
+      "trich_yeu"
+    ],
+    "fields_source": "layoutlmv3+best_ocr_rule",
+    "model_fields": {
+      "co_quan_ban_hanh": "®Ắ Cơ quan phát hành: VĂN PHÒNG CHÍNH PHỦ THỦ TƯỚNG CHÍNH PHỦ",
+      "so_ky_hieu": "25/2026/QĐ-TTG",
+      "ngay_ban_hanh": "18/05/2026",
+      "loai_van_ban": "QUYÉT ĐỊNH",
+      "trich_yeu": "Bãi Quyết của Thủ tướng Chính phủ về việc kiện toàn Đoàn đàm phán Chính phủ về kinh tế và thương mại quốc tế"
+    },
+    "accepted_model_fields": {
+      "so_ky_hieu": "25/2026/QĐ-TTG",
+      "ngay_ban_hanh": "18/05/2026",
+      "trich_yeu": "Bãi Quyết của Thủ tướng Chính phủ về việc kiện toàn Đoàn đàm phán Chính phủ về kinh tế và thương mại quốc tế"
+    },
+    "rejected_model_fields": {
+      "co_quan_ban_hanh": "®Ắ Cơ quan phát hành: VĂN PHÒNG CHÍNH PHỦ THỦ TƯỚNG CHÍNH PHỦ",
+      "loai_van_ban": "QUYÉT ĐỊNH"
+    },
+    "fields": {
+      "co_quan_ban_hanh": "®Ắ CƠ QUAN PHÁT HÀNH: VĂN PHÒNG CHÍNH PHỦ THỦ TƯỚNG CHÍNH PHỦ",
+      "loai_van_ban": "QUYẾT ĐỊNH",
+      "ngay_ban_hanh": "18/05/2026",
+      "noi_gui": "",
+      "noi_nhan": "",
+      "so_ky_hieu": "25/2026/QĐ-TTG",
+      "trich_yeu": "Bãi Quyết của Thủ tướng Chính phủ về việc kiện toàn Đoàn đàm phán Chính phủ về kinh tế và thương mại quốc tế",
+      "confidence_note": "layoutlmv3+best_ocr_rule"
+    },
+    "labels_preview": [
+      [
+        "®Ắ",
+        "B-co_quan_ban_hanh"
+      ],
+      [
+        "Cơ",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "quan",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "phát",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "hành:",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "VĂN",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "PHÒNG",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "CHÍNH",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "PHỦ",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "THỦ",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "TƯỚNG",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "CHÍNH",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "PHỦ",
+        "I-co_quan_ban_hanh"
+      ],
+      [
+        "CỘNG",
+        "O"
+      ],
+      [
+        "HÒA",
+        "O"
+      ],
+      [
+        "XÃ",
+        "O"
+      ],
+      [
+        "HỘI",
+        "O"
+      ],
+      [
+        "CHỦ",
+        "O"
+      ],
+      [
+        "NGHĨA",
+        "O"
+      ],
+      [
+        "VIỆT",
+        "O"
+      ],
+      [
+        "NAM",
+        "O"
+      ],
+      [
+        "\"",
+        "I-so_ky_hieu"
+      ],
+      [
+        "Độc",
+        "O"
+      ],
+      [
+        "lập",
+        "O"
+      ],
+      [
+        "-",
+        "I-so_ky_hieu"
+      ],
+      [
+        "Tự",
+        "I-so_ky_hieu"
+      ],
+      [
+        "do",
+        "I-so_ky_hieu"
+      ],
+      [
+        "-",
+        "I-so_ky_hieu"
+      ],
+      [
+        "Hạnh",
+        "O"
+      ],
+      [
+        "phúc",
+        "O"
+      ],
+      [
+        "Số:",
+        "O"
+      ],
+      [
+        "25/2026/QĐ-TTg.",
+        "B-so_ky_hieu"
+      ],
+      [
+        "Hà",
+        "O"
+      ],
+      [
+        "Nội,",
+        "O"
+      ],
+      [
+        "ngày",
+        "B-ngay_ban_hanh"
+      ],
+      [
+        "18",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "tháng",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "5",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "năm",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "2026",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "QUYÉT",
+        "B-loai_van_ban"
+      ],
+      [
+        "ĐỊNH",
+        "I-loai_van_ban"
+      ],
+      [
+        "Bãi",
+        "B-trich_yeu"
+      ],
+      [
+        "bỏ",
+        "O"
+      ],
+      [
+        "Quyết",
+        "B-trich_yeu"
+      ],
+      [
+        "định",
+        "O"
+      ],
+      [
+        "số",
+        "O"
+      ],
+      [
+        "182/2007/QĐ-TTE",
+        "O"
+      ],
+      [
+        "ngày",
+        "B-ngay_ban_hanh"
+      ],
+      [
+        "26",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "tháng",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "11",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "năm",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "2007",
+        "I-ngay_ban_hanh"
+      ],
+      [
+        "của",
+        "I-trich_yeu"
+      ],
+      [
+        "Thủ",
+        "I-trich_yeu"
+      ],
+      [
+        "tướng",
+        "I-trich_yeu"
+      ],
+      [
+        "Chính",
+        "I-trich_yeu"
+      ],
+      [
+        "phủ",
+        "I-trich_yeu"
+      ],
+      [
+        "về",
+        "I-trich_yeu"
+      ],
+      [
+        "việc",
+        "I-trich_yeu"
+      ],
+      [
+        "kiện",
+        "I-trich_yeu"
+      ],
+      [
+        "toàn",
+        "I-trich_yeu"
+      ],
+      [
+        "Đoàn",
+        "I-trich_yeu"
+      ],
+      [
+        "đàm",
+        "I-trich_yeu"
+      ],
+      [
+        "phán",
+        "I-trich_yeu"
+      ],
+      [
+        "Chính",
+        "I-trich_yeu"
+      ],
+      [
+        "phủ",
+        "I-trich_yeu"
+      ],
+      [
+        "về",
+        "I-trich_yeu"
+      ],
+      [
+        "kinh",
+        "I-trich_yeu"
+      ],
+      [
+        "tế",
+        "I-trich_yeu"
+      ],
+      [
+        "và",
+        "I-trich_yeu"
+      ],
+      [
+        "thương",
+        "I-trich_yeu"
+      ],
+      [
+        "mại",
+        "I-trich_yeu"
+      ],
+      [
+        "quốc",
+        "I-trich_yeu"
+      ],
+      [
+        "tế",
+        "I-trich_yeu"
+      ],
+      [
+        "Căn",
+        "O"
+      ],
+      [
+        "cứ",
+        "O"
+      ],
+      [
+        "Luật",
+        "O"
+      ],
+      [
+        "Tổ",
+        "O"
+      ]
+    ],
+    "labels_preview_rows": [
+      {
+        "token": "®Ắ",
+        "label": "B-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "Cơ",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "quan",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "phát",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "hành:",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "VĂN",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "PHÒNG",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "CHÍNH",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "PHỦ",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "THỦ",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "TƯỚNG",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "CHÍNH",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "PHỦ",
+        "label": "I-co_quan_ban_hanh",
+        "field": "co_quan_ban_hanh"
+      },
+      {
+        "token": "CỘNG",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "HÒA",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "XÃ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "HỘI",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "CHỦ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NGHĨA",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "VIỆT",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "NAM",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "\"",
+        "label": "I-so_ky_hieu",
+        "field": "so_ky_hieu"
+      },
+      {
+        "token": "Độc",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "lập",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "-",
+        "label": "I-so_ky_hieu",
+        "field": "so_ky_hieu"
+      },
+      {
+        "token": "Tự",
+        "label": "I-so_ky_hieu",
+        "field": "so_ky_hieu"
+      },
+      {
+        "token": "do",
+        "label": "I-so_ky_hieu",
+        "field": "so_ky_hieu"
+      },
+      {
+        "token": "-",
+        "label": "I-so_ky_hieu",
+        "field": "so_ky_hieu"
+      },
+      {
+        "token": "Hạnh",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "phúc",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Số:",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "25/2026/QĐ-TTg.",
+        "label": "B-so_ky_hieu",
+        "field": "so_ky_hieu"
+      },
+      {
+        "token": "Hà",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Nội,",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "ngày",
+        "label": "B-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "18",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "tháng",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "5",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "năm",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "2026",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "QUYÉT",
+        "label": "B-loai_van_ban",
+        "field": "loai_van_ban"
+      },
+      {
+        "token": "ĐỊNH",
+        "label": "I-loai_van_ban",
+        "field": "loai_van_ban"
+      },
+      {
+        "token": "Bãi",
+        "label": "B-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "bỏ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Quyết",
+        "label": "B-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "định",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "số",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "182/2007/QĐ-TTE",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "ngày",
+        "label": "B-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "26",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "tháng",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "11",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "năm",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "2007",
+        "label": "I-ngay_ban_hanh",
+        "field": "ngay_ban_hanh"
+      },
+      {
+        "token": "của",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Thủ",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "tướng",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Chính",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "phủ",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "về",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "việc",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "kiện",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "toàn",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Đoàn",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "đàm",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "phán",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Chính",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "phủ",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "về",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "kinh",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "tế",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "và",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "thương",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "mại",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "quốc",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "tế",
+        "label": "I-trich_yeu",
+        "field": "trich_yeu"
+      },
+      {
+        "token": "Căn",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "cứ",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Luật",
+        "label": "O",
+        "field": "outside"
+      },
+      {
+        "token": "Tổ",
+        "label": "O",
+        "field": "outside"
+      }
+    ],
+    "torch_device": "cuda",
+    "ocr_source": {
+      "engine": "tesseract",
+      "variant": "opencv_preprocessed",
+      "page": 1,
+      "note": "Token LayoutLMv3 lấy từ OCR/bbox trang 1 của engine được chọn."
+    },
+    "ocr_source_quality": {
+      "diacritic_loss": false,
+      "severe_diacritic_loss": false,
+      "vietnamese_quality_score": 100.0
+    },
+    "labels_preview_note": "Token preview lấy từ tesseract / opencv_preprocessed trang 1. Nếu OCR nguồn rụng chữ thì token LayoutLMv3 cũng rụng theo; field cuối vẫn được hậu kiểm bằng best-OCR/rule."
+  },
+  "best_engine": {
+    "engine": "tesseract",
+    "variant": "opencv_preprocessed"
+  },
+  "document_archive": {
+    "document_id": "d00cb8c2dbcf",
+    "status": "scanned",
+    "storage_root": "documents/2026/06/d00cb8c2dbcf",
+    "manifest_path": "documents/2026/06/d00cb8c2dbcf/manifest.json",
+    "index_path": "documents/index.jsonl",
+    "workflow_manifest_path": "documents/2026/06/d00cb8c2dbcf/06_metadata/workflow_manifest.json",
+    "extracted_fields_path": "documents/2026/06/d00cb8c2dbcf/06_metadata/extracted_fields.json",
+    "ocr_output_count": 1,
+    "created_at": "2026-06-22T22:36:06+07:00",
+    "manifest": {
+      "document_id": "d00cb8c2dbcf",
+      "job_id": "d00cb8c2dbcf",
+      "created_at": "2026-06-22T22:36:06+07:00",
+      "source_filename": "25_2026_QD-TTg.pdf",
+      "page_count": 1,
+      "status": "scanned",
+      "storage_root": "documents/2026/06/d00cb8c2dbcf",
+      "original_file": {
+        "path": "documents/2026/06/d00cb8c2dbcf/01_original/25_2026_QD-TTg.pdf",
+        "filename": "25_2026_QD-TTg.pdf",
+        "size_bytes": 505327,
+        "sha256": "3b8d64b328606280fc33e5fddc08873ddd3f2094f793a41e62776e9c0f4eb390"
+      },
+      "pages": {
+        "raw": [
+          {
+            "path": "documents/2026/06/d00cb8c2dbcf/02_pages/raw/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 1774569,
+            "sha256": "25b750555ecb6c1e32db1a9a72d1822a1b4c8700d80af56225a2ea11ec42757a",
+            "page": 1
+          }
+        ],
+        "opencv_preprocessed": [
+          {
+            "path": "documents/2026/06/d00cb8c2dbcf/02_pages/opencv_preprocessed/page_001.png",
+            "filename": "page_001.png",
+            "size_bytes": 2232854,
+            "sha256": "22425847f47f74416a649f9abaa4626d82605af0a5825b8138f95cd6defacd32",
+            "page": 1
+          }
+        ]
+      },
+      "ground_truth": null,
+      "extracted_fields_path": "documents/2026/06/d00cb8c2dbcf/06_metadata/extracted_fields.json",
+      "workflow_manifest_path": "documents/2026/06/d00cb8c2dbcf/06_metadata/workflow_manifest.json",
+      "ocr_outputs": [
+        {
+          "engine": "tesseract",
+          "variant": "opencv_preprocessed",
+          "status": "ok",
+          "elapsed_sec": 2.8713996000005864,
+          "text_length": 2158,
+          "text_path": "documents/2026/06/d00cb8c2dbcf/04_ocr_text/tesseract__opencv_preprocessed.txt",
+          "json_path": "documents/2026/06/d00cb8c2dbcf/05_ocr_json/tesseract__opencv_preprocessed.json",
+          "word_path": "documents/2026/06/d00cb8c2dbcf/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "word_file": {
+            "path": "documents/2026/06/d00cb8c2dbcf/08_word_outputs/tesseract__opencv_preprocessed.docx",
+            "filename": "tesseract__opencv_preprocessed.docx",
+            "size_bytes": 2850,
+            "sha256": "d92b0b51ef6bdbb00f67b1a85b3931f97688ca46f7e1a3c093c3e339a5edd668"
+          },
+          "word_kind": "editable_ocr_layout",
+          "word_layout_version": "2026-05-26-structured-v2",
+          "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+          "page_count": 1
+        }
+      ],
+      "exports": {
+        "benchmark_csv": "documents/2026/06/d00cb8c2dbcf/07_exports/benchmark_results.csv",
+        "comparison_summary": "documents/2026/06/d00cb8c2dbcf/07_exports/comparison_summary.json",
+        "report_snapshot": "documents/2026/06/d00cb8c2dbcf/07_exports/report_snapshot.json"
+      }
+    },
+    "source_filename": "25_2026_QD-TTg.pdf",
+    "page_count": 1,
+    "storage_root_absolute": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf",
+    "manifest_url": "/storage/documents/2026/06/d00cb8c2dbcf/manifest.json",
+    "index_url": "/storage/documents/index.jsonl",
+    "original_file": {
+      "path": "documents/2026/06/d00cb8c2dbcf/01_original/25_2026_QD-TTg.pdf",
+      "filename": "25_2026_QD-TTg.pdf",
+      "size_bytes": 505327,
+      "sha256": "3b8d64b328606280fc33e5fddc08873ddd3f2094f793a41e62776e9c0f4eb390",
+      "url": "/storage/documents/2026/06/d00cb8c2dbcf/01_original/25_2026_QD-TTg.pdf",
+      "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\01_original\\25_2026_QD-TTg.pdf",
+      "size_label": "493.5 KB",
+      "sha256_short": "3b8d64b32860"
+    },
+    "ground_truth": null,
+    "pages": {
+      "raw": [
+        {
+          "path": "documents/2026/06/d00cb8c2dbcf/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 1774569,
+          "sha256": "25b750555ecb6c1e32db1a9a72d1822a1b4c8700d80af56225a2ea11ec42757a",
+          "page": 1,
+          "url": "/storage/documents/2026/06/d00cb8c2dbcf/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\02_pages\\raw\\page_001.png",
+          "size_label": "1.7 MB",
+          "sha256_short": "25b750555ecb"
+        }
+      ],
+      "opencv_preprocessed": [
+        {
+          "path": "documents/2026/06/d00cb8c2dbcf/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 2232854,
+          "sha256": "22425847f47f74416a649f9abaa4626d82605af0a5825b8138f95cd6defacd32",
+          "page": 1,
+          "url": "/storage/documents/2026/06/d00cb8c2dbcf/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "2.1 MB",
+          "sha256_short": "22425847f47f"
+        }
+      ]
+    },
+    "preview_pages": [
+      {
+        "page": 1,
+        "raw": {
+          "path": "documents/2026/06/d00cb8c2dbcf/02_pages/raw/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 1774569,
+          "sha256": "25b750555ecb6c1e32db1a9a72d1822a1b4c8700d80af56225a2ea11ec42757a",
+          "page": 1,
+          "url": "/storage/documents/2026/06/d00cb8c2dbcf/02_pages/raw/page_001.png",
+          "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\02_pages\\raw\\page_001.png",
+          "size_label": "1.7 MB",
+          "sha256_short": "25b750555ecb"
+        },
+        "opencv": {
+          "path": "documents/2026/06/d00cb8c2dbcf/02_pages/opencv_preprocessed/page_001.png",
+          "filename": "page_001.png",
+          "size_bytes": 2232854,
+          "sha256": "22425847f47f74416a649f9abaa4626d82605af0a5825b8138f95cd6defacd32",
+          "page": 1,
+          "url": "/storage/documents/2026/06/d00cb8c2dbcf/02_pages/opencv_preprocessed/page_001.png",
+          "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\02_pages\\opencv_preprocessed\\page_001.png",
+          "size_label": "2.1 MB",
+          "sha256_short": "22425847f47f"
+        }
+      }
+    ],
+    "ocr_outputs": [
+      {
+        "engine": "tesseract",
+        "variant": "opencv_preprocessed",
+        "status": "ok",
+        "elapsed_sec": 2.8713996000005864,
+        "text_length": 2158,
+        "text_path": "documents/2026/06/d00cb8c2dbcf/04_ocr_text/tesseract__opencv_preprocessed.txt",
+        "json_path": "documents/2026/06/d00cb8c2dbcf/05_ocr_json/tesseract__opencv_preprocessed.json",
+        "word_path": "documents/2026/06/d00cb8c2dbcf/08_word_outputs/tesseract__opencv_preprocessed.docx",
+        "word_file": {
+          "path": "documents/2026/06/d00cb8c2dbcf/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "filename": "tesseract__opencv_preprocessed.docx",
+          "size_bytes": 2850,
+          "sha256": "d92b0b51ef6bdbb00f67b1a85b3931f97688ca46f7e1a3c093c3e339a5edd668",
+          "url": "/storage/documents/2026/06/d00cb8c2dbcf/08_word_outputs/tesseract__opencv_preprocessed.docx",
+          "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\08_word_outputs\\tesseract__opencv_preprocessed.docx",
+          "size_label": "2.8 KB",
+          "sha256_short": "d92b0b51ef6b"
+        },
+        "word_kind": "editable_ocr_layout",
+        "word_layout_version": "2026-05-26-structured-v2",
+        "word_note": "Word editable dựng từ OCR text/box; có thể sửa trực tiếp trong Word. Bố cục được mô phỏng theo dòng/trang OCR, không nhúng ảnh scan làm nội dung chính.",
+        "page_count": 1,
+        "text_url": "/storage/documents/2026/06/d00cb8c2dbcf/04_ocr_text/tesseract__opencv_preprocessed.txt",
+        "text_absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\04_ocr_text\\tesseract__opencv_preprocessed.txt",
+        "json_url": "/storage/documents/2026/06/d00cb8c2dbcf/05_ocr_json/tesseract__opencv_preprocessed.json",
+        "json_absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\05_ocr_json\\tesseract__opencv_preprocessed.json",
+        "word_url": "/storage/documents/2026/06/d00cb8c2dbcf/08_word_outputs/tesseract__opencv_preprocessed.docx",
+        "word_absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\08_word_outputs\\tesseract__opencv_preprocessed.docx",
+        "word_filename": "tesseract__opencv_preprocessed.docx",
+        "word_size_label": "2.8 KB"
+      }
+    ],
+    "exports": {
+      "benchmark_csv": {
+        "path": "documents/2026/06/d00cb8c2dbcf/07_exports/benchmark_results.csv",
+        "url": "/storage/documents/2026/06/d00cb8c2dbcf/07_exports/benchmark_results.csv",
+        "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\07_exports\\benchmark_results.csv"
+      },
+      "comparison_summary": {
+        "path": "documents/2026/06/d00cb8c2dbcf/07_exports/comparison_summary.json",
+        "url": "/storage/documents/2026/06/d00cb8c2dbcf/07_exports/comparison_summary.json",
+        "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\07_exports\\comparison_summary.json"
+      },
+      "report_snapshot": {
+        "path": "documents/2026/06/d00cb8c2dbcf/07_exports/report_snapshot.json",
+        "url": "/storage/documents/2026/06/d00cb8c2dbcf/07_exports/report_snapshot.json",
+        "absolute_path": "D:\\ocr_workspace\\storage\\documents\\2026\\06\\d00cb8c2dbcf\\07_exports\\report_snapshot.json"
+      }
+    },
+    "workflow_manifest_url": "/storage/documents/2026/06/d00cb8c2dbcf/06_metadata/workflow_manifest.json",
+    "extracted_fields_url": "/storage/documents/2026/06/d00cb8c2dbcf/06_metadata/extracted_fields.json"
+  }
+}

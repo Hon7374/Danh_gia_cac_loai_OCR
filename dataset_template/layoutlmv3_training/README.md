@@ -75,7 +75,7 @@ Mac dinh script coi box la toa do pixel tren anh goc. Neu box da chuan hoa 0-100
 Tu PowerShell:
 
 ```powershell
-cd D:\ocr_workspace\ocr_full_demo_v2_latest
+cd <duong-dan-project>\ocr_full_demo_v2_latest
 .\dataset_template\layoutlmv3_training\train.ps1
 ```
 

@@ -1,0 +1,61 @@
+{
+  "total_runs": 1,
+  "ok_runs": 0,
+  "error_runs": 1,
+  "skipped_runs": 0,
+  "issue_runs": 1,
+  "has_ground_truth": false,
+  "best_cer": null,
+  "best_wer": null,
+  "fastest": null,
+  "best_quality": null,
+  "best_confidence": null,
+  "rows": [
+    {
+      "engine": "fake_error",
+      "variant": "opencv_preprocessed",
+      "label": "fake_error / opencv_preprocessed",
+      "status": "error",
+      "cer_pct": null,
+      "wer_pct": null,
+      "elapsed_sec": 0.0,
+      "text_len": 0,
+      "avg_confidence": null,
+      "quality_score": null,
+      "quality_source": null,
+      "quality_guard": {
+        "token_count": 0,
+        "letter_count": 0,
+        "marked_letter_ratio": 0.0,
+        "marked_token_ratio": 0.0,
+        "admin_keyword_hits": 0,
+        "broken_token_hits": 0,
+        "likely_vietnamese": false,
+        "diacritic_loss": false,
+        "severe_diacritic_loss": false,
+        "vietnamese_quality_score": 0.0,
+        "quality_penalty": 0.0,
+        "note": "Không đủ text để đánh giá chất lượng tiếng Việt."
+      },
+      "selection_score": -1.0,
+      "ground_truth_metric_warning": null,
+      "error": "Trang 1: expected smoke failure",
+      "cer_bar": 0,
+      "wer_bar": 0,
+      "time_bar": 0,
+      "text_bar": 0,
+      "quality_bar": 0,
+      "confidence_bar": 0
+    }
+  ],
+  "preprocessing_effect": [],
+  "engine_status": [
+    {
+      "engine": "fake_error",
+      "ok": 0,
+      "skipped": 0,
+      "error": 1,
+      "total": 1
+    }
+  ]
+}

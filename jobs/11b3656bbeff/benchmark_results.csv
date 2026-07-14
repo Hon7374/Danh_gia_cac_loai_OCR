@@ -1,0 +1,3 @@
+﻿engine,variant,status,elapsed_sec,cer,wer,error,text_preview
+fake_ok,opencv_preprocessed,ok,5.4999953135848045e-05,,,,CÔNG VĂN Số: 1/2026/TEST
+fake_error,opencv_preprocessed,error,1.3500102795660496e-05,,,Trang 1: expected smoke failure,
